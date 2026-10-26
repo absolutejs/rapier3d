@@ -1,0 +1,34 @@
+{
+  "name": "@absolutejs/rapier3d",
+  "version": "0.1.0",
+  "description": "Rapier 3D with separate geometric and clustered solver-contact inspection",
+  "type": "module",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/absolutejs/rapier3d.git"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "absolutejs/README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/rapier.d.ts",
+      "import": "./dist/rapier.mjs"
+    }
+  },
+  "module": "./dist/rapier.mjs",
+  "types": "./dist/types/rapier.d.ts",
+  "scripts": {
+    "build:api": "bun absolutejs/scripts/build-api.ts",
+    "test": "bun test absolutejs/tests",
+    "build": "bash absolutejs/scripts/build-native.sh"
+  },
+  "devDependencies": {
+    "@dimforge/rapier3d-compat": "0.21.0",
+    "@types/bun": "1.4.2",
+    "typescript": "5.9.3"
+  }
+}

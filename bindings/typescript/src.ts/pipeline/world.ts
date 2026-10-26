@@ -30,6 +30,7 @@ import {
     Shape,
     ColliderShapeCastHit,
     TempContactManifold,
+    SolverContactManifold,
 } from "../geometry";
 import {
     CCDSolver,
@@ -1325,6 +1326,18 @@ export class World {
             this.bodies,
             f,
         );
+    }
+
+    /**
+     * Visits solver manifolds, including contact clusters not exposed by contactPair().
+     * The callback view is temporary. Do not mutate, step or free this world inside it.
+     */
+    public solverContactPair(
+        collider1: Collider,
+        collider2: Collider,
+        f: (manifold: SolverContactManifold, flipped: boolean) => void,
+    ) {
+        this.narrowPhase.solverContactPair(collider1.handle, collider2.handle, this.bodies, f);
     }
 
     /**

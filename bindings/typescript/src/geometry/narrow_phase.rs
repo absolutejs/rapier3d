@@ -79,6 +79,18 @@ impl RawContactPair {
         unsafe { utils::flat_handle((*self.0).collider2.0) }
     }
 
+    /// The manifolds actually consumed by the solver, including contact clusters.
+    pub fn numSolverManifolds(&self) -> usize {
+        unsafe { (*self.0).solver_manifolds().len() }
+    }
+
+    pub fn solverManifold(&self, i: usize) -> Option<RawContactManifold> {
+        unsafe {
+            (*self.0).solver_manifolds().get(i)
+                .map(|m| RawContactManifold(m as *const ContactManifold))
+        }
+    }
+
     pub fn numContactManifolds(&self) -> usize {
         unsafe { (*self.0).manifolds().len() }
     }

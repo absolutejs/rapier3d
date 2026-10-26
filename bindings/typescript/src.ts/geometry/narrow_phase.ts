@@ -92,6 +92,34 @@ export class NarrowPhase {
     }
 
     /**
+     * Visits the manifolds consumed by the solver, including clustered contacts.
+     * Original geometric manifolds remain available through contactPair().
+     * The view is valid only during the callback. Do not step, free, or mutate
+     * the world in the callback. Copy values that must survive the call.
+     * Clustered contacts do not preserve geometric subshape identifiers.
+     */
+    public solverContactPair(
+        collider1: ColliderHandle,
+        collider2: ColliderHandle,
+        bodies: RigidBodySet,
+        f: (manifold: SolverContactManifold, flipped: boolean) => void,
+    ) {
+        const pair = this.raw.contact_pair(collider1, collider2);
+        if (!pair) return;
+        try {
+            const flipped = pair.collider1() != collider1;
+            for (let i = 0; i < pair.numSolverManifolds(); i++) {
+                const raw = pair.solverManifold(i);
+                if (!raw) continue;
+                const view = new TempContactManifold(raw);
+                view.bodies = bodies;
+                try { f(view, flipped); }
+                finally { view.free(); }
+            }
+        } finally { pair.free(); }
+    }
+
+    /**
      * Returns `true` if `collider1` and `collider2` intersect and at least one of them is a sensor.
      * @param collider1 − The first collider involved in the intersection.
      * @param collider2 − The second collider involved in the intersection.
@@ -274,3 +302,8 @@ export class TempContactManifold {
         return VectorOps.fromBuffer(scratchBuffer, target);
     }
 }
+
+/** Read-only solver view; geometric subshape and local-surface queries are excluded. */
+export type SolverContactManifold = Pick<TempContactManifold,
+    'normal' | 'numSolverContacts' | 'solverContactPoint' | 'solverContactDist' |
+    'friction' | 'restitution' | 'solverContactTangentVelocity'>;

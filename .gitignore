@@ -28,3 +28,7 @@ build/
 .ruff_cache/
 .venv/
 venv/
+
+# Reproducible AbsoluteJS native builds and selected durable evidence.
+.cache/
+.absolutejs/
