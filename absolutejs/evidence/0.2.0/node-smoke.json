@@ -1,0 +1,6 @@
+{
+  "node": "v22.14.0",
+  "contacts": 4,
+  "contactClustering": true,
+  "minCcdDt": 0.00016666667943354696
+}
