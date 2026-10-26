@@ -549,14 +549,12 @@ impl PhysicsPipeline {
                 }
 
                 if let Some(toi) = first_impact {
-                    let original_interval = remaining_time / (remaining_substeps as Real);
-
-                    if toi < original_interval {
-                        integration_parameters.dt = original_interval;
-                    } else {
-                        integration_parameters.dt =
-                            toi + (remaining_time - toi) / (remaining_substeps as Real);
-                    }
+                    // Resolve the first impact before advancing the remaining interval.
+                    // Deliberate overshoot followed by position clamping discards common
+                    // translation, making dynamic CCD depend on the inertial frame.
+                    integration_parameters.dt = toi
+                        .max(integration_parameters.min_ccd_dt)
+                        .min(remaining_time);
 
                     remaining_substeps -= 1;
                 } else {

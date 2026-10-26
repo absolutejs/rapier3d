@@ -1,0 +1,11 @@
+18 |   w.step(events);const recorded=[];events.drainCollisionEvents((a,b,started)=>recorded.push({a,b,started}));
+19 |   const crossed=bodies[0].translation().x>bodies[1].translation().x;
+20 |   if(mode==='solid'&&crossed)throw Error('Solid tunneled');
+21 |   if(mode!=='solid'&&!crossed)throw Error('Pseudo/filtered pair clamped');
+22 |   if(mode==='collision-groups'&&recorded.length)throw Error('Excluded pair emitted events');
+23 |   if(mode==='sensor'&&(recorded.length!==2||!recorded[0].started||recorded[1].started)) throw Error('Sensor crossing must emit exactly one ordered start/stop pair');
+                                                                                                   ^
+error: Sensor crossing must emit exactly one ordered start/stop pair
+      at /home/alexkahn/alex/rapier-relative-motion-research/absolutejs/research/relative-sweep/filters-probe.ts:23:95
+
+Bun v1.4.4+absolute.1 (Linux x64)

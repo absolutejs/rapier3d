@@ -1,0 +1,19 @@
+{
+  "scope": "Kinematic qualification observations, not acceptance",
+  "cases": [
+    {
+      "kind": "velocity",
+      "bodyX": -0.5,
+      "targetX": -1.5,
+      "crossed": true,
+      "passes": 0
+    },
+    {
+      "kind": "position",
+      "bodyX": -0.5,
+      "targetX": -1.5,
+      "crossed": true,
+      "passes": 0
+    }
+  ]
+}
