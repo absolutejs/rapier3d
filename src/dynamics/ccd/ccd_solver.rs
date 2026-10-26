@@ -109,8 +109,8 @@ impl CCDSolver {
         &mut self,
         dt: Real, // NOTE: this doesn’t necessarily match the `params.dt`.
         params: &IntegrationParameters,
-        islands: &IslandManager,
-        bodies: &RigidBodySet,
+        islands: &mut IslandManager,
+        bodies: &mut RigidBodySet,
         colliders: &ColliderSet,
         broad_phase: &mut BroadPhaseBvh,
         narrow_phase: &NarrowPhase,
@@ -134,7 +134,7 @@ impl CCDSolver {
             .collect();
 
         let moving = MovingCcdTargets::new(islands, bodies, colliders, dt, true);
-        let fractions = map_bodies_parallel(&fast_bodies, hooks, |handle, hooks| {
+        let results = map_bodies_parallel(&fast_bodies, hooks, |handle, hooks| {
             let rb1 = &bodies[handle];
             // `next_position` isn't solved yet: sweep to the forces/velocities integration.
             let predicted_body_pos = motion_end(rb1, true, dt);
@@ -150,10 +150,21 @@ impl CCDSolver {
                 linear_slop,
                 PseudoHitMode::Ignore,
             )
-            .fraction
         });
 
-        let min_fraction = fractions.into_iter().fold(1.0, Real::min);
+        let min_fraction = results.iter().map(|result| result.fraction).fold(1.0, Real::min);
+        // A continuous hit can precede discrete contact generation by its slop.
+        // Wake only the solid earliest-hit participants, after immutable queries
+        // finish, so the following solve includes the previously sleeping target.
+        for result in results {
+            if result.fraction <= min_fraction && result.fraction < 1.0 {
+                for handle in [Some(result.handle), result.impact_body].into_iter().flatten() {
+                    if bodies[handle].is_dynamic() && bodies[handle].is_sleeping() {
+                        islands.wake_up(bodies, handle, true);
+                    }
+                }
+            }
+        }
         (min_fraction < 1.0).then_some(min_fraction * dt)
     }
 

@@ -1,0 +1,394 @@
+{
+  "candidateOnly": true,
+  "scope": "Recorded solver-parameter interventions, not runtime tuning or acceptance",
+  "engineSha256": "980ef74242ff7b52f72656e17adaeaa30752fc7ba4403fd06ce5c4a6175c50c8",
+  "cases": [
+    {
+      "iterations": 4,
+      "frequency": 30,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.031047773361206066,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.026856136322021495,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.023230266571044933,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.02009410858154298,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.017381858825683605,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.015034866333007824,
+          "bodyV": -120,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.031047773361206066
+    },
+    {
+      "iterations": 4,
+      "frequency": 120,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.008986663818359386,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.005056095123291027,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.002844524383544933,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.0016004562377929799,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.0008995056152343861,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.0005056381225586049,
+          "bodyV": -120,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.008986663818359386
+    },
+    {
+      "iterations": 4,
+      "frequency": 240,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.004523348808288585,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.0015277385711670033,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.0005166053771972767,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.0001747131347656361,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.00005931854248047985,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.000019264221191417352,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.004523348808288585
+    },
+    {
+      "iterations": 16,
+      "frequency": 30,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.025582265853881847,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.022582483291625988,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.019934844970703136,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.017596912384033214,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.015533638000488292,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.013711166381835949,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.025582265853881847
+    },
+    {
+      "iterations": 16,
+      "frequency": 120,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.008714509010314953,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.004878950119018566,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.0027315139770507924,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.0015294075012207142,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.0008565902709961049,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.0004779815673828236,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.008714509010314953
+    },
+    {
+      "iterations": 16,
+      "frequency": 240,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.004369688034057628,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.0013510704040527455,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.00041790008544922985,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.0001289367675781361,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.0000392913818359486,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.000012588500976573602,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.004369688034057628
+    },
+    {
+      "iterations": 32,
+      "frequency": 30,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.021088552474975597,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.019007396697998058,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.017131996154785167,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.01544160842895509,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.013918113708496105,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.012544822692871105,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.021088552474975597
+    },
+    {
+      "iterations": 32,
+      "frequency": 120,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.008495521545410167,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.004889202117919933,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.002814006805419933,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.0016195297241211049,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.0009319305419921986,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.0005361557006836049,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.008495521545410167
+    },
+    {
+      "iterations": 32,
+      "frequency": 240,
+      "frames": [
+        {
+          "step": 0,
+          "penetration": 0.004392099380493175,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 1,
+          "penetration": 0.0013768196105957142,
+          "bodyV": -120,
+          "targetV": -120
+        },
+        {
+          "step": 2,
+          "penetration": 0.00043125152587891735,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 3,
+          "penetration": 0.00013513565063477673,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 4,
+          "penetration": 0.00004215240478516735,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        },
+        {
+          "step": 5,
+          "penetration": 0.000012588500976573602,
+          "bodyV": -120.00000762939453,
+          "targetV": -120
+        }
+      ],
+      "peakPenetration": 0.004392099380493175
+    }
+  ]
+}

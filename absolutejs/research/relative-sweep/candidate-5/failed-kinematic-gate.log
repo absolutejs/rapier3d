@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/alexkahn/alex/rapier-relative-motion-research/absolutejs/research/relative-sweep/check-kinematic-qualification.py", line 18, in <module>
+    assert not frame['crossed'], case
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'kind': 'velocity', 'cap': 4, 'sleeping': True, 'frames': [{'step': 1, 'bodyX': -0.5, 'targetX': -1.500000238418579, 'targetV': -120, 'endpointError': 2.384185791015625e-07, 'crossed': True, 'passes': 2}, {'step': 2, 'bodyX': -0.5, 'targetX': -3.500000238418579, 'targetV': -120, 'endpointError': 2.384185791015625e-07, 'crossed': True, 'passes': 1}, {'step': 3, 'bodyX': -0.5, 'targetX': -5.5, 'targetV': -120, 'endpointError': 0, 'crossed': True, 'passes': 1}]}

@@ -354,6 +354,7 @@ pub(super) struct BodyContinuousResult {
     pub(super) handle: RigidBodyHandle,
     /// The earliest solid impact fraction in `[0, 1]`; `1.0` if the body sweeps freely.
     pub(super) fraction: Real,
+    pub(super) impact_body: Option<RigidBodyHandle>,
     pub(super) pseudo_hits: Vec<PseudoHit>,
 }
 
@@ -673,6 +674,7 @@ pub(super) fn sweep_fast_body(
 ) -> BodyContinuousResult {
     let rb1 = &bodies[handle];
     let mut fraction: Real = 1.0;
+    let mut impact_body = None;
     let mut pseudo_hits = Vec::new();
 
     for ch1 in &rb1.colliders.0 {
@@ -743,6 +745,7 @@ pub(super) fn sweep_fast_body(
                     });
                 } else {
                     fraction = hit_fraction;
+                    impact_body = bh2;
                 }
             }
         };
@@ -775,6 +778,7 @@ pub(super) fn sweep_fast_body(
     BodyContinuousResult {
         handle,
         fraction,
+        impact_body,
         pseudo_hits,
     }
 }

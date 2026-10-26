@@ -1,0 +1,451 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "980ef74242ff7b52f72656e17adaeaa30752fc7ba4403fd06ce5c4a6175c50c8",
+  "cases": [
+    {
+      "count": 2,
+      "reversed": false,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 2,
+      "reversed": false,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 2,
+      "reversed": true,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 2,
+      "reversed": true,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": false,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": false,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": true,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": true,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": false,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": false,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": true,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": true,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -0.5,
+          "crossed": true,
+          "sleeping": false
+        }
+      ]
+    }
+  ],
+  "failures": 12
+}

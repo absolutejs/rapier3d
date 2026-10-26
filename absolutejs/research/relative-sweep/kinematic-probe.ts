@@ -29,7 +29,7 @@ for (const kind of ['velocity', 'position']) {
      if (kind === 'velocity') target.setLinvel({x:-120,y:0,z:0},true);
      else target.setNextKinematicTranslation({x:expectedX,y:0,z:0});
      w.step();
-     frames.push({step,bodyX:body.translation().x,targetX:target.translation().x,targetV:target.linvel().x,endpointError:Math.abs(target.translation().x-expectedX),crossed:target.translation().x<body.translation().x,passes:w.ccdSubsteps()});
+     frames.push({step,bodyX:body.translation().x,targetX:target.translation().x,targetV:target.linvel().x,endpointError:Math.abs(target.translation().x-expectedX),crossed:target.translation().x<body.translation().x,penetration:Math.max(0,.2-Math.abs(target.translation().x-body.translation().x)),passes:w.ccdSubsteps()});
     }
     cases.push({kind,cap,sleeping,frames});
    } finally { w.free(); }
