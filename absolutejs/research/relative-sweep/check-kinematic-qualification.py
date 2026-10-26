@@ -32,7 +32,7 @@ simultaneous = read('simultaneous.json')
 assert len(simultaneous['cases']) == 12 and simultaneous['failures'] == 0
 for case in simultaneous['cases']:
     assert all(not b['crossed'] for b in case['bodies']), case
-hashes = {result['engineSha256'] for result in (kinematic, paths, filters, scales, simultaneous)}
+hashes = {result['engineSha256'] for result in (kinematic, paths, filters, scales, simultaneous, world)}
 assert len(hashes) == 1, 'Mixed candidate artifacts'
 print('Narrow kinematic gates pass: 12 crossing cases, 6 paths, 5 filters, 36 scale/order/frame cases, 135 dynamic controls, 12 simultaneous-impact cases.')
 print('Not full solver acceptance: residual penetration, cap-one response, general rotation/shapes and bounded cost remain separate gates.')

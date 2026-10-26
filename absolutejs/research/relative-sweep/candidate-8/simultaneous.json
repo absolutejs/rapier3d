@@ -1,0 +1,451 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "e62534bcb8c9d05c071f9781e668b90b548026930351c6e6a684e83031c25d74",
+  "cases": [
+    {
+      "count": 2,
+      "reversed": false,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 2,
+      "reversed": false,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 2,
+      "reversed": true,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 2,
+      "reversed": true,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": false,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": false,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": true,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 4,
+      "reversed": true,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": false,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": false,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": true,
+      "kind": "velocity",
+      "targetX": -1.5000001192092896,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    },
+    {
+      "count": 8,
+      "reversed": true,
+      "kind": "position",
+      "targetX": -1.5,
+      "passes": 2,
+      "bodies": [
+        {
+          "i": 0,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 1,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 2,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 3,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 4,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 5,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 6,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        },
+        {
+          "i": 7,
+          "x": -1.668952465057373,
+          "crossed": false,
+          "sleeping": false
+        }
+      ]
+    }
+  ],
+  "failures": 0
+}

@@ -488,7 +488,7 @@ fn cast_moving_compound(
             }
             if output.status != SweepToiStatus::Separated
                 && (output.fraction > 0.0 || is_pseudo)
-                && output.fraction < max_fraction {
+                && output.fraction <= max_fraction {
                 max_fraction = output.fraction;
                 best = Some(output.fraction);
             }
@@ -560,7 +560,8 @@ fn cast_sub_shape(
         };
     }
 
-    if 0.0 < output.fraction && output.fraction < max_fraction {
+    if output.status != SweepToiStatus::Separated
+        && 0.0 < output.fraction && output.fraction <= max_fraction {
         return Some(output.fraction);
     }
 
@@ -578,7 +579,8 @@ fn cast_sub_shape(
                 max_fraction,
                 linear_slop,
             );
-            if 0.0 < output.fraction && output.fraction < max_fraction {
+            if output.status != SweepToiStatus::Separated
+                && 0.0 < output.fraction && output.fraction <= max_fraction {
                 return Some(output.fraction);
             }
         }
@@ -641,7 +643,7 @@ fn fallback_nonlinear_fraction(
     if is_pseudo {
         (fraction <= max_fraction).then_some(fraction)
     } else {
-        (0.0 < fraction && fraction < max_fraction).then_some(fraction)
+        (0.0 < fraction && fraction <= max_fraction).then_some(fraction)
     }
 }
 
