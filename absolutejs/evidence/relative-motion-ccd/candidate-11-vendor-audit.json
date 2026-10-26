@@ -6,5 +6,9 @@
   ],
   "epaBeforeSha256": "def513419ea51e3bf79e3a684eabaec52ca49b7d16e69f832a28d8f5dc92e13b",
   "epaAfterSha256": "700cb98d5852eb215b9960382431dff70a53d041a249e9e2320712a53dee3fdc",
-  "qualified": false
+  "qualified": false,
+  "addedFiles": [
+    "LICENSE"
+  ],
+  "licenseNote": "Standard Apache-2.0 text supplied from repository LICENSE; upstream crate declares Apache-2.0 but its archive omits the license file."
 }
