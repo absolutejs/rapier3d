@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/alexkahn/alex/rapier-relative-motion-research/absolutejs/research/relative-sweep/check-kinematic-qualification.py", line 32, in <module>
+    assert len(simultaneous['cases']) == 12 and simultaneous['failures'] == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

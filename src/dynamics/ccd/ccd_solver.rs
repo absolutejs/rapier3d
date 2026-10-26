@@ -156,13 +156,19 @@ impl CCDSolver {
         // A continuous hit can precede discrete contact generation by its slop.
         // Wake only the solid earliest-hit participants, after immutable queries
         // finish, so the following solve includes the previously sleeping target.
+        let mut wake_handles = Vec::new();
         for result in results {
             if result.fraction <= min_fraction && result.fraction < 1.0 {
-                for handle in [Some(result.handle), result.impact_body].into_iter().flatten() {
-                    if bodies[handle].is_dynamic() && bodies[handle].is_sleeping() {
-                        islands.wake_up(bodies, handle, true);
-                    }
-                }
+                wake_handles.push(result.handle);
+                wake_handles.extend(result.impact_bodies);
+            }
+        }
+        // Equal-time contacts must not depend on BVH traversal or collider order.
+        wake_handles.sort_unstable_by_key(|handle| handle.into_raw_parts());
+        wake_handles.dedup();
+        for handle in wake_handles {
+            if bodies[handle].is_dynamic() && bodies[handle].is_sleeping() {
+                islands.wake_up(bodies, handle, true);
             }
         }
         (min_fraction < 1.0).then_some(min_fraction * dt)
