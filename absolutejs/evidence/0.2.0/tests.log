@@ -1,0 +1,19 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [946.46ms]
+(pass) live separation follows pose changes while cached distance stays fixed [797.19ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [723.28ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [945.73ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [735.00ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0 [2373.40ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0.3 [2394.60ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0 [4812.19ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0.3 [9472.24ms]
+
+ 9 pass
+ 0 fail
+ 39606 expect() calls
+Ran 9 tests across 2 files. [23.46s]

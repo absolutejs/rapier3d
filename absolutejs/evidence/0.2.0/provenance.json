@@ -1,0 +1,10 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "91d68ed4f46fa1febbaf82abb7e8018150a3ad982560381df700e009997e6721",
+  "wasmBytes": 3297510,
+  "solverChanges": false,
+  "addition": "Live solver anchors, clustered query, and explicit clustering/CCD minimum controls"
+}

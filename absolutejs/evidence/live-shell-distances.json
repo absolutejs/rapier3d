@@ -1,0 +1,216 @@
+{
+  "energyMeasurement": "Translational and rotational kinetic plus gravitational potential energy in joules, sampled after outer steps; excludes contact elastic energy and internal CCD substeps",
+  "scope": "Analytic cube-shell diagnostic; no runtime qualification",
+  "solverDistance": "cached contact update",
+  "cornerDistance": "current transformed vertices after every outer world.step; internal CCD substeps are not sampled",
+  "observations": [
+    {
+      "elapsedMs": 1404.4304200000001,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7534080000000001,
+      "finalMechanicalEnergyJ": 0.007511482766189577,
+      "clustering": true,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 960,
+      "tilt": 0,
+      "contacts": 46080,
+      "peakCornerM": 0.00045869700970108563,
+      "peakCachedDepthM": 0.00002176821231842041,
+      "peakLiveDepthM": 0.0004586923122406006,
+      "finalCornerM": 0.000014753904167972287,
+      "peakAt": {
+        "step": 610,
+        "seconds": 0.6364583333333333,
+        "cornerM": 0.00045869700970108563,
+        "cachedDepthM": 0,
+        "liveDepthM": 0.0004586923122406006
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 1183.2184750000001,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7534080000000001,
+      "finalMechanicalEnergyJ": 0.007511731324310305,
+      "clustering": true,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 960,
+      "tilt": 0.3,
+      "contacts": 46080,
+      "peakCornerM": 0.00003101173738931262,
+      "peakCachedDepthM": 0.000013017058372497558,
+      "peakLiveDepthM": 0.00003172761993482709,
+      "finalCornerM": 0.000004860790331049358,
+      "peakAt": {
+        "step": 616,
+        "seconds": 0.6427083333333333,
+        "cornerM": 0.00003101173738931262,
+        "cachedDepthM": 0.000013017058372497558,
+        "liveDepthM": 0.00003172761993482709
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 2133.2354399999995,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7539393170656086,
+      "finalMechanicalEnergyJ": 0.00751708234056473,
+      "clustering": true,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 1920,
+      "tilt": 0,
+      "contacts": 92160,
+      "peakCornerM": 0.00045669197995726,
+      "peakCachedDepthM": 0.000056861042976379396,
+      "peakLiveDepthM": 0.00045668840408325196,
+      "finalCornerM": 0.000004062532645574546,
+      "peakAt": {
+        "step": 1220,
+        "seconds": 0.6359375,
+        "cornerM": 0.00045669197995726,
+        "cachedDepthM": 0,
+        "liveDepthM": 0.00045668840408325196
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 2448.753444,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7538029161398578,
+      "finalMechanicalEnergyJ": 0.007516845009098055,
+      "clustering": true,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 1920,
+      "tilt": 0.3,
+      "contacts": 92160,
+      "peakCornerM": 0.000019627462307088004,
+      "peakCachedDepthM": 0.000019623818807303906,
+      "peakLiveDepthM": 0.000020261707250028848,
+      "finalCornerM": 0.0000036005870631261593,
+      "peakAt": {
+        "step": 1227,
+        "seconds": 0.6395833333333333,
+        "cornerM": 0.000019627462307088004,
+        "cachedDepthM": 0.000005938410758972168,
+        "liveDepthM": 0.000020261707250028848
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 1194.883557,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7534080000000001,
+      "finalMechanicalEnergyJ": 0.0075272282607650775,
+      "clustering": false,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 960,
+      "tilt": 0,
+      "contacts": 46080,
+      "peakCornerM": 0.000468488410215675,
+      "peakCachedDepthM": 0.0000389862060546875,
+      "peakLiveDepthM": 0.00046852350234985354,
+      "finalCornerM": 0.000006893601753612533,
+      "peakAt": {
+        "step": 610,
+        "seconds": 0.6364583333333333,
+        "cornerM": 0.000468488410215675,
+        "cachedDepthM": 0,
+        "liveDepthM": 0.00046852350234985354
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 1159.29659,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7534080000000001,
+      "finalMechanicalEnergyJ": 0.007511762815074922,
+      "clustering": false,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 960,
+      "tilt": 0.3,
+      "contacts": 46080,
+      "peakCornerM": 0.000028382512895788192,
+      "peakCachedDepthM": 0.000012054620310664176,
+      "peakLiveDepthM": 0.000028545241802930833,
+      "finalCornerM": 0.000004555360600619896,
+      "peakAt": {
+        "step": 905,
+        "seconds": 0.94375,
+        "cornerM": 0.000028382512895788192,
+        "cachedDepthM": 3.051754720218014e-7,
+        "liveDepthM": 0.000028545241802930833
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 2457.6224440000005,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7539393170656086,
+      "finalMechanicalEnergyJ": 0.007529515242462159,
+      "clustering": false,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 1920,
+      "tilt": 0,
+      "contacts": 92160,
+      "peakCornerM": 0.0004595233420376665,
+      "peakCachedDepthM": 0.0000898510217666626,
+      "peakLiveDepthM": 0.0004595327377319336,
+      "finalCornerM": 0.000004170820581443912,
+      "peakAt": {
+        "step": 1220,
+        "seconds": 0.6359375,
+        "cornerM": 0.0004595233420376665,
+        "cachedDepthM": 0,
+        "liveDepthM": 0.0004595327377319336
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "elapsedMs": 3034.6917059999996,
+      "initialMechanicalEnergyJ": 0.7534080000000001,
+      "maxMechanicalEnergyJ": 0.7538029161398578,
+      "finalMechanicalEnergyJ": 0.007532227714347842,
+      "clustering": false,
+      "minCcdDt": 0.00016666667943354696,
+      "hz": 1920,
+      "tilt": 0.3,
+      "contacts": 92160,
+      "peakCornerM": 0.000007651480304950997,
+      "peakCachedDepthM": 0.000007100701332092285,
+      "peakLiveDepthM": 0.000008450056193396448,
+      "finalCornerM": 0.000003736637701714507,
+      "peakAt": {
+        "step": 1224,
+        "seconds": 0.6380208333333334,
+        "cornerM": 0.000007651480304950997,
+        "cachedDepthM": 0.000006015300750732422,
+        "liveDepthM": 0.000008450056193396448
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    }
+  ]
+}

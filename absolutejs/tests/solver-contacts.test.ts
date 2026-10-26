@@ -25,9 +25,10 @@ test('query is reentrant, preserves argument flipping, and frees views after thr
  }finally{w.free();}
 });
 for(const hz of [960,1920])for(const tilt of [0,.3]) test(`query-only build preserves upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+ const started=performance.now();
  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
-  for(let i=0;i<2*hz;i++) {a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+  for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
    if(i%120===0) for(let k=0;k<2;k++) {expect(a.bodies[k]!.translation()).toEqual(b.bodies[k]!.translation());expect(a.bodies[k]!.rotation()).toEqual(b.bodies[k]!.rotation());expect(a.bodies[k]!.linvel()).toEqual(b.bodies[k]!.linvel());}
   }
  }finally{a.w.free();b.w.free();}
-});
+},15000);

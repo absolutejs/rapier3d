@@ -1,0 +1,11 @@
+23 |    return sum+.5*body.mass()*(v.x*v.x+v.y*v.y+v.z*v.z)/10000+.5*inertias[i]!*(omega.x*omega.x+omega.y*omega.y+omega.z*omega.z)+body.mass()*9.81*body.translation().y/100;
+24 |   },0);
+25 |   const initialMechanicalEnergyJ=mechanicalEnergy();let maxMechanicalEnergyJ=initialMechanicalEnergyJ;
+26 |   let peakCornerM=0,peakCachedDepthM=0,peakLiveDepthM=0,finalCornerM=0,peakAt:any=null,contacts=0;
+27 |   for(let step=0;step<hz*2;step++) {
+28 |    if(performance.now()-started>45000)throw Error('Live shell audit CPU budget exceeded');
+                                                 ^
+error: Live shell audit CPU budget exceeded
+      at /home/alexkahn/alex/rapier-contact-release/absolutejs/scripts/audit-shell.ts:28:45
+
+Bun v1.4.4+absolute.1 (Linux x64)
