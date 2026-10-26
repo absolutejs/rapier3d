@@ -3,12 +3,12 @@
 //! and the per-body continuous solve.
 
 use crate::alloc_prelude::*;
-use crate::dynamics::{RigidBody, RigidBodyHandle, RigidBodySet, SoftBodySet};
+use crate::dynamics::{RigidBody, RigidBodyHandle, RigidBodySet, SoftBodySet, IslandManager, RigidBodyPosition};
 use crate::geometry::{Collider, ColliderHandle, ColliderSet};
 use crate::math::{Pose, Real, Vector};
 use crate::parry::bounding_volume::Aabb;
 use crate::parry::bounding_volume::BoundingVolume;
-use crate::parry::partitioning::Bvh;
+use crate::parry::partitioning::{Bvh, BvhBuildStrategy};
 use crate::pipeline::{ActiveHooks, PairFilterContext, PhysicsHooks};
 #[cfg(feature = "dim2")]
 use parry::query::sweep_toi::CORE_FRACTION;
@@ -32,20 +32,57 @@ fn is_auto_target(rb: Option<&RigidBody>, co: &Collider) -> bool {
     is_fixed_target(rb) || co.is_deformable_collider()
 }
 
-/// Is `rb` a bullet (a dynamic body with the full-CCD upgrade)? Bullets never sweep against
-/// other bullets.
+/// A dynamic body explicitly requesting dynamic/kinematic CCD pairs.
 pub(super) fn is_bullet(rb: &RigidBody) -> bool {
     rb.is_dynamic() && rb.ccd.ccd_enabled
 }
 
-/// The target-selection rule for a fast body `rb1`: a non-bullet fast body only sweeps
-/// against automatic targets (fixed geometry and soft-body meshes); a bullet sweeps against
-/// every body type except other bullets.
+/// Dynamic pairs participate when either side requests full CCD.
 fn tier_allows(rb1: &RigidBody, rb2: Option<&RigidBody>, co2: &Collider) -> bool {
-    if is_bullet(rb1) {
-        !rb2.map(is_bullet).unwrap_or(false)
-    } else {
-        is_auto_target(rb2, co2)
+    is_bullet(rb1) || rb2.map(is_bullet).unwrap_or(false) || is_auto_target(rb2, co2)
+}
+
+pub(super) fn motion_end(rb: &RigidBody, predicted: bool, dt: Real) -> Pose {
+    if predicted && rb.is_dynamic() {
+        rb.pos.integrate_forces_and_velocities(dt, &rb.forces, &rb.vels, &rb.mprops)
+    } else { rb.pos.next_position }
+}
+
+/// Conservative bounds around the moving center of mass, including intermediate rotations.
+fn motion_bounds(co: &Collider, rb: &RigidBody, end: &Pose) -> Aabb {
+    let parent = co.parent.as_ref().unwrap();
+    let local_com = parent.pos_wrt_parent.inverse_transform_point(rb.mprops.local_mprops.local_com);
+    let sphere = co.shape.compute_local_bounding_sphere();
+    let radius = sphere.radius + (sphere.center - local_com).length();
+    let a = rb.pos.position.transform_point(rb.mprops.local_mprops.local_com);
+    let b = end.transform_point(rb.mprops.local_mprops.local_com);
+    Aabb::new(a.min(b) - Vector::splat(radius), a.max(b) + Vector::splat(radius))
+}
+
+/// Dense transient leaves for awake dynamic/kinematic targets. Static broadphase is untouched.
+pub(super) struct MovingCcdTargets {
+    bvh: Bvh,
+    handles: Vec<ColliderHandle>,
+}
+impl MovingCcdTargets {
+    pub(super) fn new(islands: &IslandManager, bodies: &RigidBodySet, colliders: &ColliderSet, dt: Real, predicted: bool) -> Self {
+        let mut entries = Vec::new();
+        for handle in islands.active_bodies() {
+            let rb = &bodies[handle];
+            if rb.is_fixed() || rb.is_soft_frame() { continue; }
+            let end = motion_end(rb, predicted, dt);
+            for ch in &rb.colliders.0 {
+                let co = &colliders[*ch];
+                if co.is_enabled() { entries.push((*ch, motion_bounds(co, rb, &end))); }
+            }
+        }
+        entries.sort_by_key(|(h, _)| h.into_raw_parts());
+        let handles = entries.iter().map(|(h, _)| *h).collect();
+        let bvh = Bvh::from_iter(BvhBuildStrategy::Binned, entries.into_iter().enumerate().map(|(i, (_, aabb))| (i, aabb)));
+        Self { bvh, handles }
+    }
+    fn contains(&self, handle: ColliderHandle) -> bool {
+        self.handles.binary_search_by_key(&handle.into_raw_parts(), |h| h.into_raw_parts()).is_ok()
     }
 }
 
@@ -147,6 +184,7 @@ pub(super) enum CcdTargets<'a> {
     },
     /// The full broad-phase BVH.
     FullBvh(&'a Bvh),
+    Relative { base: &'a Bvh, moving: &'a MovingCcdTargets },
 }
 
 /// Maximum number of fixed colliders stored in the flat list before falling back to the
@@ -326,8 +364,20 @@ fn cast_collider_pair(
     dt: Real,
     linear_slop: Real,
     is_pseudo: bool,
+    predicted: bool,
 ) -> Option<Real> {
-    let target_pose = target_collider_pose(co2, rb2);
+    let (target_start, target_pose, target_com) = match (rb2, co2.parent.as_ref()) {
+        (Some(rb), Some(parent)) => (rb.pos.position * parent.pos_wrt_parent,
+            motion_end(rb, predicted, dt) * parent.pos_wrt_parent,
+            parent.pos_wrt_parent.inverse_transform_point(rb.mprops.local_mprops.local_com)),
+        _ => (co2.pos.0, co2.pos.0, Vector::ZERO),
+    };
+    let target_sweep = Sweep::from_poses(&target_start, &target_pose, target_com);
+    // The composite sweep API only accepts a stationary target. Use its nonlinear
+    // dispatcher counterpart for a moving composite rather than freezing it.
+    if rb2.is_some_and(|rb| !rb.is_fixed()) && ToiProxy::from_shape(co2.shape.as_ref()).is_none() {
+        return fallback_nonlinear_fraction(dispatcher, fast, co2, &target_pose, max_fraction, dt, is_pseudo, rb2, predicted);
+    }
 
     let sub_shapes: &[FastSubShape] = match &fast.kind {
         FastShapeKind::Convex(sub) => core::slice::from_ref(sub),
@@ -341,6 +391,8 @@ fn cast_collider_pair(
                 max_fraction,
                 dt,
                 is_pseudo,
+                rb2,
+                predicted,
             );
         }
     };
@@ -360,6 +412,8 @@ fn cast_collider_pair(
                 max_fraction,
                 dt,
                 is_pseudo,
+                rb2,
+                predicted,
             );
         }
     };
@@ -375,6 +429,7 @@ fn cast_collider_pair(
             &target,
             shape2,
             &target_pose,
+            &target_sweep,
             max_fraction,
             linear_slop,
             is_pseudo,
@@ -393,16 +448,16 @@ fn cast_sub_shape(
     target: &TargetKind,
     shape2: &dyn Shape,
     target_pose: &Pose,
+    target_sweep: &Sweep,
     max_fraction: Real,
     linear_slop: Real,
     is_pseudo: bool,
 ) -> Option<Real> {
     let output = match target {
         TargetKind::Proxy(target_proxy) => {
-            let target_sweep = Sweep::constant(target_pose, Vector::ZERO);
             sweep_time_of_impact(
                 target_proxy,
-                &target_sweep,
+                target_sweep,
                 &sub.proxy,
                 &sub.sweep,
                 max_fraction,
@@ -459,10 +514,9 @@ fn cast_sub_shape(
         // so a body already touching a surface isn't pinned at fraction 0.
         if let TargetKind::Proxy(target_proxy) = target {
             let core = ToiProxy::point(sub.local_centroid, CORE_FRACTION * sub.min_extent);
-            let target_sweep = Sweep::constant(target_pose, Vector::ZERO);
             let output = sweep_time_of_impact(
                 target_proxy,
-                &target_sweep,
+                target_sweep,
                 &core,
                 &sub.sweep,
                 max_fraction,
@@ -488,6 +542,8 @@ fn fallback_nonlinear_fraction(
     max_fraction: Real,
     dt: Real,
     is_pseudo: bool,
+    rb2: Option<&RigidBody>,
+    predicted: bool,
 ) -> Option<Real> {
     if dt == 0.0 {
         return None;
@@ -495,14 +551,23 @@ fn fallback_nonlinear_fraction(
 
     let rb1 = fast.body;
     let parent1 = fast.collider.parent.as_ref()?;
+    let pos1 = RigidBodyPosition { position: rb1.pos.position, next_position: motion_end(rb1, predicted, dt) };
+    let v1 = pos1.interpolate_velocity(1.0 / dt, rb1.mprops.local_mprops.local_com);
     let motion1 = NonlinearRigidMotion::new(
         rb1.pos.position,
         rb1.mprops.local_mprops.local_com,
-        rb1.ccd_vels.linvel,
-        rb1.ccd_vels.angvel,
+        v1.linvel,
+        v1.angvel,
     )
     .prepend(parent1.pos_wrt_parent);
-    let motion2 = NonlinearRigidMotion::constant_position(*target_pose);
+    let motion2 = match (rb2, co2.parent.as_ref()) {
+        (Some(rb), Some(parent)) if !rb.is_fixed() => {
+            let positions = RigidBodyPosition { position: rb.pos.position, next_position: motion_end(rb, predicted, dt) };
+            let velocity = positions.interpolate_velocity(1.0 / dt, rb.mprops.local_mprops.local_com);
+            NonlinearRigidMotion::new(rb.pos.position, rb.mprops.local_mprops.local_com, velocity.linvel, velocity.angvel).prepend(parent.pos_wrt_parent)
+        },
+        _ => NonlinearRigidMotion::constant_position(*target_pose),
+    };
 
     let hit = dispatcher
         .cast_shapes_nonlinear(
@@ -575,9 +640,7 @@ pub(super) fn sweep_fast_body(
         };
 
         // Swept box: union of the collider's AABBs at the start and end poses.
-        let start_aabb = co1.shape.compute_aabb(&start);
-        let end_aabb = co1.shape.compute_aabb(&end);
-        let swept_aabb = start_aabb.merged(&end_aabb);
+        let swept_aabb = motion_bounds(co1, rb1, &end_body_pose);
 
         let mut handle_candidate = |ch2: ColliderHandle, co2: &Collider| {
             if ch2 == *ch1 {
@@ -615,6 +678,7 @@ pub(super) fn sweep_fast_body(
                 dt,
                 linear_slop,
                 is_pseudo,
+                pseudo_mode == PseudoHitMode::Ignore,
             ) {
                 if is_pseudo {
                     pseudo_hits.push(PseudoHit {
@@ -634,6 +698,15 @@ pub(super) fn sweep_fast_body(
                     if aabb2.intersects(&swept_aabb) {
                         handle_candidate(*ch2, &colliders[*ch2]);
                     }
+                }
+            }
+            CcdTargets::Relative { base, moving } => {
+                for (ch2, co2) in intersect_swept_aabb(base, colliders, swept_aabb) {
+                    if !moving.contains(ch2) { handle_candidate(ch2, co2); }
+                }
+                for leaf in moving.bvh.leaves(|node| node.aabb().intersects(&swept_aabb)) {
+                    let ch2 = moving.handles[leaf as usize];
+                    handle_candidate(ch2, &colliders[ch2]);
                 }
             }
             CcdTargets::FullBvh(bvh) => {

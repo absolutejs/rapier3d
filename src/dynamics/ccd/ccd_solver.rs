@@ -11,7 +11,7 @@ use parry::query::sweep_toi::Sweep;
 
 use super::sweeps::{
     BodyContinuousResult, CcdTargets, PseudoHitMode, collect_fixed_targets, collect_soft_targets,
-    is_bullet, map_bodies_parallel, sweep_fast_body,
+    is_bullet, map_bodies_parallel, sweep_fast_body, MovingCcdTargets,
 };
 
 /// Continuous Collision Detection solver preventing fast objects from tunneling:
@@ -133,6 +133,7 @@ impl CCDSolver {
             .filter(|h| bodies[*h].ccd.ccd_active)
             .collect();
 
+        let moving = MovingCcdTargets::new(islands, bodies, colliders, dt, true);
         let fractions = map_bodies_parallel(&fast_bodies, hooks, |handle, hooks| {
             let rb1 = &bodies[handle];
             // `next_position` isn't solved yet: sweep to the forces/velocities integration.
@@ -144,7 +145,7 @@ impl CCDSolver {
                 bodies,
                 colliders,
                 predicted_body_pos,
-                CcdTargets::FullBvh(bvh),
+                CcdTargets::Relative { base: bvh, moving: &moving },
                 dispatcher,
                 hooks,
                 dt,
@@ -184,90 +185,18 @@ impl CCDSolver {
         // NOTE: broad-phase AABBs are NOT enlarged to the swept volumes: only the fast body's
         // query box is swept; stationary targets keep their fat AABBs. Swept AABBs in
         // the tree leak into the next step's broad phase (pair explosion, ~2x narrow-phase cost).
-        let (non_bullets, bullets): (Vec<_>, Vec<_>) = islands
-            .active_bodies()
-            .filter(|h| bodies[*h].ccd.ccd_active)
-            .partition(|h| !is_bullet(&bodies[*h]));
-
-        let mut all_results = Vec::new();
-
-        // Pass 1: fast non-bullet bodies vs fixed targets (all targets are stationary, so
-        // the bodies are independent and can run in parallel).
-        {
-            let query_pipeline = broad_phase.as_query_pipeline(
-                narrow_phase.query_dispatcher(),
-                bodies,
-                colliders,
-                QueryFilter::default(),
-            );
-            let (bvh, dispatcher) = (query_pipeline.bvh, query_pipeline.dispatcher);
-            // Non-bullet fast bodies only hit fixed targets: sweep against the (small) cached
-            // fixed-collider list instead of the full BVH.
-            let prediction = params.prediction_distance();
-            let cache_valid = self
-                .fixed_targets_cache
-                .as_ref()
-                .is_some_and(|(p, _)| *p == prediction);
-            if !cache_valid {
-                self.fixed_targets_cache = Some((
-                    prediction,
-                    collect_fixed_targets(bodies, colliders, prediction),
-                ));
-            }
-            // Soft-body meshes deform every step without any scene change, so they are
-            // gathered fresh (one AABB per mesh, not a collider scan).
-            let soft = collect_soft_targets(soft_bodies, colliders, prediction);
-            let targets = match &self.fixed_targets_cache.as_ref().unwrap().1 {
-                Some(fixed) => CcdTargets::Lists { fixed, soft: &soft },
-                None => CcdTargets::FullBvh(bvh),
-            };
-            let results = map_bodies_parallel(&non_bullets, hooks, |handle, hooks| {
-                sweep_fast_body(
-                    handle,
-                    bodies,
-                    colliders,
-                    bodies[handle].pos.next_position,
-                    targets,
-                    dispatcher,
-                    hooks,
-                    dt,
-                    linear_slop,
-                    PseudoHitMode::Record,
-                )
-            });
-            all_results.extend(results);
-        }
+        // All sweeps read the same solved endpoints before any clamping occurs.
+        let fast_bodies: Vec<_> = islands.active_bodies().filter(|h| bodies[*h].ccd.ccd_active).collect();
+        let all_results = {
+            let moving = MovingCcdTargets::new(islands, bodies, colliders, dt, false);
+            let query_pipeline = broad_phase.as_query_pipeline(narrow_phase.query_dispatcher(), bodies, colliders, QueryFilter::default());
+            map_bodies_parallel(&fast_bodies, hooks, |handle, hooks| {
+                sweep_fast_body(handle, bodies, colliders, bodies[handle].pos.next_position,
+                    CcdTargets::Relative { base: query_pipeline.bvh, moving: &moving },
+                    query_pipeline.dispatcher, hooks, dt, linear_slop, PseudoHitMode::Record)
+            })
+        };
         Self::apply_clamps(bodies, &all_results);
-
-        // Pass 2: bullets vs everything except other bullets. Targets read the (already
-        // clamped) `next_position` from pass 1 (deferred bullet stage).
-        if !bullets.is_empty() {
-            let bullet_results = {
-                let query_pipeline = broad_phase.as_query_pipeline(
-                    narrow_phase.query_dispatcher(),
-                    bodies,
-                    colliders,
-                    QueryFilter::default(),
-                );
-                let (bvh, dispatcher) = (query_pipeline.bvh, query_pipeline.dispatcher);
-                map_bodies_parallel(&bullets, hooks, |handle, hooks| {
-                    sweep_fast_body(
-                        handle,
-                        bodies,
-                        colliders,
-                        bodies[handle].pos.next_position,
-                        CcdTargets::FullBvh(bvh),
-                        dispatcher,
-                        hooks,
-                        dt,
-                        linear_slop,
-                        PseudoHitMode::Record,
-                    )
-                })
-            };
-            Self::apply_clamps(bodies, &bullet_results);
-            all_results.extend(bullet_results);
-        }
 
         // Emit intersection events for sensor crossings that happened strictly before each
         // body's final solid impact and that the narrow phase would never observe (no

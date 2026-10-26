@@ -1,0 +1,4868 @@
+{
+  "candidateOnly": true,
+  "scope": "135 two-sphere world cases, crossing and energy observations; not full physical qualification",
+  "cases": [
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          0.3050000071525574,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          0.30500006675720215,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          0.30500006675720215,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1.5000000596046448,
+          0,
+          0
+        ],
+        [
+          0.4999999403953552,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          0.7401644587516785,
+          0,
+          0
+        ],
+        [
+          0.9351644515991211,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          59.999996185302734,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3599.9997711181713,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          0.8407237529754639,
+          0,
+          0
+        ],
+        [
+          1.0357236862182617,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60.00000762939453,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600.000457763701,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          0.7919909954071045,
+          0,
+          0
+        ],
+        [
+          0.9869911670684814,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600,
+      "passes": 3
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          0.8521285653114319,
+          0,
+          0
+        ],
+        [
+          1.047128677368164,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          0.8771543502807617,
+          0,
+          0
+        ],
+        [
+          1.0721542835235596,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600,
+      "passes": 3
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          0.8753821849822998,
+          0,
+          0
+        ],
+        [
+          1.0703821182250977,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600,
+      "passes": 4
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          1.6949999928474426,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1.064835548400879,
+          0,
+          0
+        ],
+        [
+          1.2598355412483215,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60.000003814697266,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600.000228881843,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1.5000000596046448,
+          0,
+          0
+        ],
+        [
+          0.4999999403953552,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          0.9528713226318359,
+          0,
+          0
+        ],
+        [
+          1.1478714346885681,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          0,
+          0
+        ],
+        [
+          60,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 3600,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 2
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1.137885868549347,
+          -0.13788583874702454,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          0.5862634181976318,
+          0.4137365221977234,
+          0
+        ],
+        [
+          0.724149227142334,
+          0.27585071325302124,
+          0
+        ]
+      ],
+      "v": [
+        [
+          60,
+          60,
+          0
+        ],
+        [
+          60,
+          60,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 7200,
+      "passes": 2
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          0.479691743850708,
+          0.5203081965446472,
+          0
+        ],
+        [
+          0.6175776720046997,
+          0.38242247700691223,
+          0
+        ]
+      ],
+      "v": [
+        [
+          59.99999237060547,
+          60,
+          0
+        ],
+        [
+          60.000003814697266,
+          59.999996185302734,
+          0
+        ]
+      ],
+      "reversedOrder": false,
+      "kinetic": 7199.999542236372,
+      "passes": 2
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.000000238418579,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          120,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 14400,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "p": [
+        [
+          1.500000238418579,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "p": [
+        [
+          1.5,
+          0.30000001192092896,
+          0
+        ],
+        [
+          0.5,
+          0,
+          0
+        ]
+      ],
+      "v": [
+        [
+          120,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "reversedOrder": true,
+      "kinetic": 7200,
+      "passes": 1
+    }
+  ],
+  "crossings": 75,
+  "energyGains": 0
+}

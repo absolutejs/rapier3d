@@ -4,7 +4,7 @@ import { createHash } from 'node:crypto';
 const root = process.cwd();
 const generated = resolve('.absolutejs/api');
 const bindgen = resolve('.cache/tools/wasm-bindgen-0.2.129-x86_64-unknown-linux-musl/wasm-bindgen');
-const native = resolve('.cache/target/wasm32-unknown-unknown/release/rapier_wasm3d.wasm');
+const native = process.env.ABSOLUTEJS_NATIVE_WASM ?? resolve('.cache/target/wasm32-unknown-unknown/release/rapier_wasm3d.wasm');
 mkdirSync(generated,{recursive:true});
 const compile=Bun.spawnSync([bindgen,'--target','web','--out-dir',generated,native],{stdout:'inherit',stderr:'inherit'});
 if(compile.exitCode) throw Error('wasm-bindgen failed');
@@ -42,5 +42,5 @@ writeFileSync('.absolutejs/api-tsconfig.json',JSON.stringify({compilerOptions:{t
 const types=Bun.spawnSync(['bun','run','tsc','-p','.absolutejs/api-tsconfig.json'],{stdout:'inherit',stderr:'inherit'});
 if(types.exitCode) throw Error('Declaration build failed');
 copyFileSync(join(generated,'rapier_wasm3d.d.ts'),'dist/types/rapier_wasm3d.d.ts');
-writeFileSync('dist/provenance.json',JSON.stringify({upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:createHash('sha256').update(wasm).digest('hex'),wasmBytes:wasm.length,solverChanges:false,addition:'Live contacts, fresh CCD pass counts, and aggregate CCD/TOI timing repair'},null,2)+'\n');
+writeFileSync('dist/provenance.json',JSON.stringify({upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:createHash('sha256').update(wasm).digest('hex'),wasmBytes:wasm.length,solverChanges:true,addition:'UNQUALIFIED relative-motion CCD research candidate'},null,2)+'\n');
 console.log('Built standalone API, declarations and provenance.');
