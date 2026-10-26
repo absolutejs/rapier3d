@@ -1,0 +1,14 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [1050.41ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [763.84ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0 [2360.46ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0.3 [2329.28ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0 [4168.97ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0.3 [4598.54ms]
+
+ 6 pass
+ 0 fail
+ 38991 expect() calls
+Ran 6 tests across 1 file. [15.53s]

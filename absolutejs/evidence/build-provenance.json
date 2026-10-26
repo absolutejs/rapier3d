@@ -1,0 +1,10 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "2b2be5df0023f15b0dfc54629019f8e370365b90d8669be98fd67cc49230a5d5",
+  "wasmBytes": 3295710,
+  "solverChanges": false,
+  "addition": "Separate clustered solverContactPair query"
+}
