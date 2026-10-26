@@ -1,0 +1,9 @@
+{
+  "version": "0.3.0",
+  "sourceCommit": "226b2154ea558841a078dbe0cef1a30a338c3e75",
+  "tarballSha1": "fd522fad747e9115cec3878ce3cecf0d877c429e",
+  "publishExitCode": 0,
+  "npmMessage": "Your package is being processed and may take a few minutes to become available.",
+  "registryAvailability": "Pending; initial read after successful upload returned 404",
+  "gameAdoption": "Pending registry availability and artifact verification"
+}
