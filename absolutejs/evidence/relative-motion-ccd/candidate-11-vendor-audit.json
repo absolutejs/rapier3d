@@ -1,0 +1,10 @@
+{
+  "upstreamArchiveSha256": "7b626edc0b497dba4bdf6e1e0797895294ed9f61dac2bd28cb5d34d37ad2ca7e",
+  "filesCompared": 434,
+  "changedFiles": [
+    "src/query/epa/epa3.rs"
+  ],
+  "epaBeforeSha256": "def513419ea51e3bf79e3a684eabaec52ca49b7d16e69f832a28d8f5dc92e13b",
+  "epaAfterSha256": "700cb98d5852eb215b9960382431dff70a53d041a249e9e2320712a53dee3fdc",
+  "qualified": false
+}
