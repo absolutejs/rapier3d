@@ -1,0 +1,10 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [12.93ms]
+(pass) invalid contact policy values fail before mutating native state [0.23ms]
+
+ 2 pass
+ 0 fail
+ 46 expect() calls
+Ran 2 tests across 1 file. [131.00ms]

@@ -1,0 +1,7 @@
+{
+  "candidateOnly": true,
+  "matchingFrames": 512,
+  "baselineEngineSha256": "83a84939c55eb1b4cc7ab49071df9e6711f337f81327792d7772f52f065eab0a",
+  "candidateEngineSha256": "86d17d4adf7ff84d6199314c3dbffd01329fd207a3c371ff8dc60719174dd606",
+  "scope": "Exact saved body/contact fingerprints; not full physical acceptance"
+}
