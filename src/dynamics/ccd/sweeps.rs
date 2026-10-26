@@ -77,6 +77,10 @@ impl MovingCcdTargets {
             let rb = &bodies[handle];
             if rb.is_fixed() || rb.is_soft_frame() { continue; }
             let end = motion_end(rb, predicted, dt);
+            // An unchanged pose has no swept extent beyond its ordinary broadphase
+            // bounds. Keep it in the base query instead of rebuilding a transient leaf.
+            // Exact equality only: slow motion and rotation still require swept bounds.
+            if end == rb.pos.position { continue; }
             for ch in &rb.colliders.0 {
                 let co = &colliders[*ch];
                 if co.is_enabled() { entries.push((*ch, motion_bounds(co, rb, &end))); }

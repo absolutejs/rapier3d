@@ -1,0 +1,22 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "83a84939c55eb1b4cc7ab49071df9e6711f337f81327792d7772f52f065eab0a",
+  "cases": [
+    {
+      "fraction": 0.99,
+      "endpointX": 2,
+      "error": 0
+    },
+    {
+      "fraction": 0.995,
+      "endpointX": 2,
+      "error": 0
+    },
+    {
+      "fraction": 0.999,
+      "endpointX": 2,
+      "error": 0
+    }
+  ],
+  "failures": 0
+}

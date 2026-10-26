@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "mode": "solid",
+      "crossed": false,
+      "events": [
+        {
+          "a": 0,
+          "b": 5e-324,
+          "started": true
+        }
+      ]
+    },
+    {
+      "mode": "sensor",
+      "crossed": true,
+      "events": [
+        {
+          "a": 0,
+          "b": 5e-324,
+          "started": true
+        },
+        {
+          "a": 0,
+          "b": 5e-324,
+          "started": false
+        }
+      ]
+    },
+    {
+      "mode": "collision-groups",
+      "crossed": true,
+      "events": []
+    },
+    {
+      "mode": "solver-groups",
+      "crossed": true,
+      "events": []
+    }
+  ]
+}

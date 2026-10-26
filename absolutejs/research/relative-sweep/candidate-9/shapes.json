@@ -1,0 +1,368 @@
+{
+  "candidateOnly": true,
+  "scope": "Cone contact is oblique: reversed X ordering alone does not establish tunneling",
+  "engineSha256": "83a84939c55eb1b4cc7ab49071df9e6711f337f81327792d7772f52f065eab0a",
+  "cases": [
+    {
+      "shape": "ball",
+      "sleeping": false,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.500000238418579,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "ball",
+      "sleeping": false,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "ball",
+      "sleeping": true,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.500000238418579,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "ball",
+      "sleeping": true,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "box",
+      "sleeping": false,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5000001192092896,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "box",
+      "sleeping": false,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "box",
+      "sleeping": true,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5000001192092896,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "box",
+      "sleeping": true,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "capsule",
+      "sleeping": false,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.500000238418579,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "capsule",
+      "sleeping": false,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "capsule",
+      "sleeping": true,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.500000238418579,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "capsule",
+      "sleeping": true,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.668952465057373,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "cylinder",
+      "sleeping": false,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.67350435256958,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.67350435256958,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "cylinder",
+      "sleeping": false,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.67350435256958,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.67350435256958,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "cylinder",
+      "sleeping": true,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.67350435256958,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.67350435256958,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "cylinder",
+      "sleeping": true,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.67350435256958,
+        "y": 0,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -120,
+        "y": 0,
+        "z": 0
+      },
+      "bodyX": -1.67350435256958,
+      "targetX": -1.5,
+      "reversedXOrdering": false
+    },
+    {
+      "shape": "cone",
+      "sleeping": false,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.4082797765731812,
+        "y": 0.454139769077301,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -96.00001525878906,
+        "y": 47.999996185302734,
+        "z": 0
+      },
+      "bodyX": -1.4082797765731812,
+      "targetX": -1.5000001192092896,
+      "reversedXOrdering": true
+    },
+    {
+      "shape": "cone",
+      "sleeping": false,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.4082796573638916,
+        "y": 0.454139769077301,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -96,
+        "y": 47.99999237060547,
+        "z": 0
+      },
+      "bodyX": -1.4082796573638916,
+      "targetX": -1.5,
+      "reversedXOrdering": true
+    },
+    {
+      "shape": "cone",
+      "sleeping": true,
+      "kind": "velocity",
+      "bodyPosition": {
+        "x": -1.4082797765731812,
+        "y": 0.454139769077301,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -96.00001525878906,
+        "y": 47.999996185302734,
+        "z": 0
+      },
+      "bodyX": -1.4082797765731812,
+      "targetX": -1.5000001192092896,
+      "reversedXOrdering": true
+    },
+    {
+      "shape": "cone",
+      "sleeping": true,
+      "kind": "position",
+      "bodyPosition": {
+        "x": -1.4082796573638916,
+        "y": 0.454139769077301,
+        "z": 0
+      },
+      "bodyVelocity": {
+        "x": -96,
+        "y": 47.99999237060547,
+        "z": 0
+      },
+      "bodyX": -1.4082796573638916,
+      "targetX": -1.5,
+      "reversedXOrdering": true
+    }
+  ],
+  "headOnCrossings": 0
+}

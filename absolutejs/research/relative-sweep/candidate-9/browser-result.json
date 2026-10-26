@@ -1,0 +1,18 @@
+{
+  "gpu": false,
+  "result": {
+    "totalCcdMs": 35.70000000000012,
+    "totalToiMs": 33.10000000000007,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}

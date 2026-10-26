@@ -1,0 +1,10 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "23736b73c40fdec615bb97f68178d1364275d4887001a2a45882c32e312c2124",
+  "wasmBytes": 3330149,
+  "solverChanges": true,
+  "addition": "UNQUALIFIED relative-motion CCD research candidate"
+}
