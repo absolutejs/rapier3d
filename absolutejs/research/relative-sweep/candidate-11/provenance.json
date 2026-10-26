@@ -1,0 +1,14 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "75e566dafc03a31da96b66b56df8db19847c82a28c10dbdabeb67bc066245c7f",
+  "wasmBytes": 3327961,
+  "solverChanges": true,
+  "addition": "UNQUALIFIED relative-motion CCD and EPA precision research candidate",
+  "contactPrecision": {
+    "parryVersion": "0.31.1",
+    "epaSourceSha256": "700cb98d5852eb215b9960382431dff70a53d041a249e9e2320712a53dee3fdc"
+  }
+}

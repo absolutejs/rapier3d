@@ -1,0 +1,15 @@
+{
+  totalCcdMs: 42.60000000000015,
+  totalToiMs: 39.300000000000104,
+  maximumCcdSubsteps: 1,
+  fastCcdSubsteps: 2,
+  restoredOwners: true,
+  passed: true,
+  version: "0.21.0",
+  original: 0,
+  solver: 24,
+  points: 24,
+  liveAnchors: true,
+  clusteringControl: true,
+  ccdMinimumControl: true,
+}

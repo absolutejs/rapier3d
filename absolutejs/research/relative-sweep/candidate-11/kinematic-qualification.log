@@ -1,0 +1,2 @@
+Narrow kinematic gates pass: 12 crossing cases, 6 paths, 5 filters, 36 scale/order/frame cases, 135 dynamic controls, 12 simultaneous-impact cases.
+Not full solver acceptance: residual penetration, cap-one response, general rotation/shapes and bounded cost remain separate gates.

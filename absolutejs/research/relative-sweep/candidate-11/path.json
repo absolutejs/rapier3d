@@ -1,0 +1,151 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "351c8f9586aa6739f5cb0ffff1feaeb8c4b09d2841a4846d305a00881e4b1866",
+  "cases": [
+    {
+      "cap": 1,
+      "offset": 0,
+      "frames": [
+        {
+          "step": 1,
+          "endpointError": 0,
+          "rotationError": 1.554362449862623e-8,
+          "passes": 1
+        },
+        {
+          "step": 2,
+          "endpointError": 0,
+          "rotationError": 1.5543624387603927e-8,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "endpointError": 0,
+          "rotationError": 2.6718907323636308e-24,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "cap": 1,
+      "offset": 0.4,
+      "frames": [
+        {
+          "step": 1,
+          "endpointError": 0,
+          "rotationError": 1.554362449862623e-8,
+          "passes": 1
+        },
+        {
+          "step": 2,
+          "endpointError": 0,
+          "rotationError": 1.5543624387603927e-8,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "endpointError": 0,
+          "rotationError": 2.6718907323636308e-24,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "cap": 4,
+      "offset": 0,
+      "frames": [
+        {
+          "step": 1,
+          "endpointError": 0,
+          "rotationError": 1.554362449862623e-8,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "endpointError": 0,
+          "rotationError": 1.5543624387603927e-8,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "endpointError": 0,
+          "rotationError": 2.6718907323636308e-24,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "cap": 4,
+      "offset": 0.4,
+      "frames": [
+        {
+          "step": 1,
+          "endpointError": 0,
+          "rotationError": 1.554362449862623e-8,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "endpointError": 0,
+          "rotationError": 1.5543624387603927e-8,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "endpointError": 0,
+          "rotationError": 2.6718907323636308e-24,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "cap": 16,
+      "offset": 0,
+      "frames": [
+        {
+          "step": 1,
+          "endpointError": 0,
+          "rotationError": 1.554362449862623e-8,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "endpointError": 0,
+          "rotationError": 1.5543624387603927e-8,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "endpointError": 0,
+          "rotationError": 2.6718907323636308e-24,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "cap": 16,
+      "offset": 0.4,
+      "frames": [
+        {
+          "step": 1,
+          "endpointError": 0,
+          "rotationError": 1.554362449862623e-8,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "endpointError": 0,
+          "rotationError": 1.5543624387603927e-8,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "endpointError": 0,
+          "rotationError": 2.6718907323636308e-24,
+          "passes": 1
+        }
+      ]
+    }
+  ],
+  "failures": 0
+}
