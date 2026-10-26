@@ -240,7 +240,7 @@ impl CCDSolver {
                 }
             }
         }
-        let resolved_fractions = Self::apply_clamps(bodies, &all_results);
+        let resolved_fractions = Self::apply_clamps(bodies, colliders, narrow_phase, linear_slop, &all_results);
 
         // Emit intersection events for sensor crossings that happened strictly before each
         // body's final solid impact and that the narrow phase would never observe (no
@@ -319,7 +319,7 @@ impl CCDSolver {
     /// fraction of their original solved sweeps. Leaving a slower target at its full
     /// endpoint after stopping only its CCD-active partner creates new penetration.
     /// Kinematic trajectories and soft frames are never shortened; velocities stay unchanged.
-    fn apply_clamps(bodies: &mut RigidBodySet, results: &[BodyContinuousResult]) -> Vec<(super::clamp_graph::BodyKey, Real)> {
+    fn apply_clamps(bodies: &mut RigidBodySet, colliders: &ColliderSet, narrow_phase: &NarrowPhase, linear_slop: Real, results: &[BodyContinuousResult]) -> Vec<(super::clamp_graph::BodyKey, Real)> {
         let mut hits = Vec::new();
         for result in results {
             let origin = &bodies[result.handle];
@@ -333,6 +333,44 @@ impl CCDSolver {
                 }
             }
             if !linked { hits.push((result.handle.into_raw_parts(), None, result.fraction)); }
+        }
+        // Expand only the current dynamic contact component of actually clamped
+        // participants. Shared static/kinematic supports are not graph vertices.
+        // Use live anchors, so recycled cached distances do not invent contact links.
+        let mut discovered = alloc::collections::BTreeSet::new();
+        let mut links = alloc::collections::BTreeSet::new();
+        let mut pending = Vec::new();
+        for &(origin, target, _) in &hits {
+            for key in core::iter::once(origin).chain(target) {
+                if discovered.insert(key) { pending.push(key); }
+            }
+        }
+        while let Some(key) = pending.pop() {
+            let handle = crate::dynamics::RigidBodyHandle::from_raw_parts(key.0, key.1);
+            for collider in bodies[handle].colliders() {
+                for pair in narrow_phase.contact_pairs_with(*collider) {
+                    let other_collider = if pair.collider1 == *collider { pair.collider2 } else { pair.collider1 };
+                    let Some(other) = colliders[other_collider].parent() else { continue; };
+                    let other_body = &bodies[other];
+                    if other == handle || !other_body.is_dynamic() || other_body.is_soft_frame() || other_body.is_sleeping() || !other_body.is_enabled() { continue; }
+                    let other_key = other.into_raw_parts();
+                    let edge = if key < other_key { (key, other_key) } else { (other_key, key) };
+                    if links.contains(&edge) { continue; }
+                    let touching = pair.solver_manifolds().iter().any(|m| {
+                        m.data.relative_dominance == 0
+                        && m.data.solver_flags.contains(crate::geometry::SolverFlags::COMPUTE_RIGID_IMPULSES)
+                        && m.data.solver_contacts.iter().any(|contact| {
+                            let (p1, p2) = m.data.solver_contact_world_points(contact, bodies);
+                            (p2 - p1).dot(m.data.normal) <= linear_slop
+                        })
+                    });
+                    if touching {
+                        links.insert(edge);
+                        hits.push((key, Some(other_key), 1.0));
+                        if discovered.insert(other_key) { pending.push(other_key); }
+                    }
+                }
+            }
         }
         let fractions = super::clamp_graph::coherent_fractions(&hits);
         for ((index, generation), fraction) in &fractions {

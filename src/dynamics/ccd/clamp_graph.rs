@@ -1,4 +1,4 @@
-//! Deterministic accepted-impact components. No world scan or spatial sampling.
+//! Deterministic accepted-impact and touching-contact components. No world scan or spatial sampling.
 use crate::alloc_prelude::*;
 use crate::math::Real;
 use alloc::collections::BTreeMap;
@@ -6,10 +6,11 @@ pub(super) type BodyKey = (u32, u32);
 
 /// Only dynamic participants are supplied by the caller. `None` represents an
 /// external/static/kinematic target; it must not connect unrelated dynamic bodies.
+/// A fraction of 1 with two bodies is a contact link, not an impact-time seed.
 pub(super) fn coherent_fractions(hits: &[(BodyKey, Option<BodyKey>, Real)]) -> Vec<(BodyKey, Real)> {
     let mut indices = BTreeMap::new();
     for &(a, b, t) in hits {
-        if !(0.0..1.0).contains(&t) { continue; }
+        if !(0.0..=1.0).contains(&t) || (t == 1.0 && b.is_none()) { continue; }
         indices.insert(a, 0);
         if let Some(b) = b { indices.insert(b, 0); }
     }
@@ -24,7 +25,7 @@ pub(super) fn coherent_fractions(hits: &[(BodyKey, Option<BodyKey>, Real)]) -> V
         i
     }
     for &(a, b, t) in hits {
-        if !(0.0..1.0).contains(&t) { continue; }
+        if !(0.0..=1.0).contains(&t) || (t == 1.0 && b.is_none()) { continue; }
         let ai = indices[&a];
         times[ai] = Real::min(times[ai], t);
         if let Some(b) = b {
@@ -41,5 +42,5 @@ pub(super) fn coherent_fractions(hits: &[(BodyKey, Option<BodyKey>, Real)]) -> V
         let r = root(&mut parents, i);
         component_times[r] = Real::min(component_times[r], *time);
     }
-    indices.into_iter().map(|(key, i)| (key, component_times[root(&mut parents, i)])).collect()
+    indices.into_iter().map(|(key, i)| (key, component_times[root(&mut parents, i)])).filter(|(_, time)| *time < 1.0).collect()
 }

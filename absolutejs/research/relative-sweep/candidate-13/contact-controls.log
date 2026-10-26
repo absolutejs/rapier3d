@@ -1,0 +1,21 @@
+{
+  failures: [],
+  cases: [
+    {
+      mode: "touching-slide",
+      error: 1.043081283569336e-7,
+    }, {
+      mode: "positive-gap",
+      error: 1.043081283569336e-7,
+    }, {
+      mode: "sensor",
+      error: 1.043081283569336e-7,
+    }, {
+      mode: "solver-filter",
+      error: 1.043081283569336e-7,
+    }, {
+      mode: "kinematic",
+      error: 1.043081283569336e-7,
+    }
+  ],
+}

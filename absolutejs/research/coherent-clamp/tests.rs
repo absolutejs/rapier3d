@@ -30,3 +30,10 @@ use clamp_graph::coherent_fractions as solve;
  let hits:Vec<_>=(0..1000).map(|i|((i,0),Some((i+1,0)),if i==999 {0.1}else{0.9})).collect();
  let result=solve(&hits);assert_eq!(result.len(),1001);assert!(result.iter().all(|(_,t)|*t==0.1));
 }
+#[test] fn touching_links_propagate_only_from_impact_seeds() {
+ assert!(solve(&[((1,0),Some((2,0)),1.0)]).is_empty());
+ assert_eq!(solve(&[((1,0),Some((2,0)),1.0),((2,0),Some((3,0)),1.0),((1,0),None,0.125)]),vec![((1,0),0.125),((2,0),0.125),((3,0),0.125)]);
+}
+#[test] fn disconnected_touching_group_is_not_shortened() {
+ assert_eq!(solve(&[((1,0),None,0.25),((2,0),Some((3,0)),1.0)]),vec![((1,0),0.25)]);
+}

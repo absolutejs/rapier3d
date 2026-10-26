@@ -1,0 +1,12 @@
+
+running 8 tests
+test chains_are_coherent_and_order_independent ... ok
+test disconnected_touching_group_is_not_shortened ... ok
+test duplicates_generations_and_invalid_fractions ... ok
+test external_targets_do_not_join_unrelated_components ... ok
+test includes_slow_dynamic_target ... ok
+test shared_time_preserves_common_translation_clearance ... ok
+test touching_links_propagate_only_from_impact_seeds ... ok
+test bounded_linear_chain_uses_all_accepted_edges ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
