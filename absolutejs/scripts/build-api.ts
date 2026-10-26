@@ -42,5 +42,5 @@ writeFileSync('.absolutejs/api-tsconfig.json',JSON.stringify({compilerOptions:{t
 const types=Bun.spawnSync(['bun','run','tsc','-p','.absolutejs/api-tsconfig.json'],{stdout:'inherit',stderr:'inherit'});
 if(types.exitCode) throw Error('Declaration build failed');
 copyFileSync(join(generated,'rapier_wasm3d.d.ts'),'dist/types/rapier_wasm3d.d.ts');
-writeFileSync('dist/provenance.json',JSON.stringify({upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:createHash('sha256').update(wasm).digest('hex'),wasmBytes:wasm.length,solverChanges:false,addition:'Live solver anchors, clustered query, and explicit clustering/CCD minimum controls'},null,2)+'\n');
+writeFileSync('dist/provenance.json',JSON.stringify({upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:createHash('sha256').update(wasm).digest('hex'),wasmBytes:wasm.length,solverChanges:false,addition:'Live solver anchors, explicit diagnostic controls, and correct restored collider ownership'},null,2)+'\n');
 console.log('Built standalone API, declarations and provenance.');

@@ -84,3 +84,11 @@ upstream default stays `1/60/100`, even when the outer timestep is changed.
 The setter rejects negative, non-finite and f32-overflowing values. Smaller values
 can introduce instability; changing it is an explicit experiment, not an automatic
 quality preset. Both controls are retained through native snapshot serialization.
+
+## Restored collider ownership (0.2.1)
+
+Snapshot restoration now preserves `null` for an unowned collider's `parent()`.
+Previously an absent native handle could be coerced to body zero during JavaScript
+wrapper reconstruction. Real body-zero and fixed-body attachments remain intact.
+This changes wrapper metadata only; native ownership, WASM and solver behavior are
+unchanged. Repeated snapshot restoration and browser workers are regression tested.

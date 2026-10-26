@@ -184,9 +184,9 @@ export class Collider {
     /** @internal */
     public finalizeDeserialization(bodies: RigidBodySet) {
         if (this.handle != null) {
-            this._parent = bodies.get(
-                this.colliderSet.raw.coParent(this.handle),
-            );
+            const parent = this.colliderSet.raw.coParent(this.handle);
+            // An absent native handle must not be coerced to body zero.
+            this._parent = parent == null ? null : bodies.get(parent);
         }
     }
 

@@ -14,6 +14,8 @@ try {
   if(w.integrationParameters.contactClustering!==false)throw Error('Clustering control did not apply');
   w.integrationParameters.minCcdDt=1/960/100;
   if(Math.abs(w.integrationParameters.minCcdDt-1/960/100)>1e-10)throw Error('CCD minimum setter failed');
-  postMessage({passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const restored=R.World.restoreSnapshot(w.takeSnapshot());
+  try { if(restored.getCollider(0).parent()!==null)throw Error('Restored floor aliases body zero');if(restored.getCollider(a.handle).parent()?.handle!==a.parent()?.handle)throw Error('Restored moving owner changed'); } finally {restored.free();}
+  postMessage({restoredOwners:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
