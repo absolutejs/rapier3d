@@ -1,0 +1,10 @@
+{
+  "status": "npm accepted upload; registry processing pending",
+  "version": "0.2.0",
+  "sourceCommit": "f44af06260cba7fa173e1c684ff61bf458a63b2c",
+  "reportedTarballSha1": "1cda5f98910536c5ff27388bb56b2a0b002bedb8",
+  "reportedFiles": 49,
+  "qualificationPackSha1": "fa32ac318f8154c77f99376e17314583926f8573",
+  "packDifference": "Switching to main reapplied sparse checkout, omitting absolutejs/README.md at publish time. Root README.md contains the same documentation; dist code/types/provenance remain present. absolutejs is now included in sparse checkout. Registry artifact inspection pending.",
+  "acceptedAtUtc": "2026-10-26T17:12:09.290095+00:00"
+}
