@@ -1,5 +1,1362 @@
 {
   "candidateOnly": true,
+  "frameComparisons": [
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 1.1949999928474426
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0.5975000113248825
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 0.5975001454353333
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 1.1949999332427979
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0.2987499237060547
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0.14937497675418854
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 0.14937496185302734
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0.2987499237060547
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0.0746874213218689
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0.03734371066093445
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 0.03734391927719116
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0.07468748092651367
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 1.1949999928474426
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0.5975000113248825
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 0.5975001454353333
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 1.1949999332427979
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0.2987499237060547
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0.14937497675418854
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 0.14937496185302734
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0.2987499237060547
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0.0746874213218689
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0.03734371066093445
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 0.03734391927719116
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0.07468748092651367
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 1.1949999928474426
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0.5975000113248825
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 0.5975001454353333
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 1.1949999332427979
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0.2987499237060547
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0.14937497675418854
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 0.14937496185302734
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0.2987499237060547
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0.0746874213218689
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0.03734371066093445
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 0.03734391927719116
+    },
+    {
+      "kind": "head-on",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0.07468748092651367
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 1.137885868549347
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0.5689429342746735
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 0.5689429640769958
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 1.1378858983516693
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0.284471333026886
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0.14223581552505493
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 0.14223581552505493
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0.28447145223617554
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0.0711178183555603
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0.035559117794036865
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 0.03555893898010254
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0.07111787796020508
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 1.137885868549347
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0.5689429342746735
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 0.5689429640769958
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 1.1378858983516693
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0.284471333026886
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0.14223581552505493
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 0.14223581552505493
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0.28447145223617554
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0.0711178183555603
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0.035559117794036865
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 0.03555893898010254
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0.07111787796020508
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 1.137885868549347
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0.5689429342746735
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 0.5689429640769958
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 1.1378858983516693
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0.284471333026886
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0.14223581552505493
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 0.14223581552505493
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0.28447145223617554
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0.0711178183555603
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0.035559117794036865
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 0.03555893898010254
+    },
+    {
+      "kind": "perpendicular",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0.07111787796020508
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        false
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        true,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 1,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 4,
+      "boost": 120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -120,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": -60,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 0,
+      "maxPositionDifference": 0
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 60,
+      "maxPositionDifference": 2.384185791015625e-7
+    },
+    {
+      "kind": "near-miss",
+      "flags": [
+        false,
+        true
+      ],
+      "cap": 16,
+      "boost": 120,
+      "maxPositionDifference": 0
+    }
+  ],
+  "maxFrameDifferenceByCap": {
+    "1": 1.1949999928474426,
+    "4": 0.2987499237060547,
+    "16": 0.07468748092651367
+  },
   "scope": "135 two-sphere world cases, crossing and energy observations; not full physical qualification",
   "cases": [
     {

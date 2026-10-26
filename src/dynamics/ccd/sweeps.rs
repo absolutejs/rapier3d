@@ -375,7 +375,8 @@ fn cast_collider_pair(
     let target_sweep = Sweep::from_poses(&target_start, &target_pose, target_com);
     // The composite sweep API only accepts a stationary target. Use its nonlinear
     // dispatcher counterpart for a moving composite rather than freezing it.
-    if rb2.is_some_and(|rb| !rb.is_fixed()) && ToiProxy::from_shape(co2.shape.as_ref()).is_none() {
+    if rb2.is_some_and(|rb| !rb.is_fixed()) && ToiProxy::from_shape(co2.shape.as_ref()).is_none()
+        && !matches!(co2.shape.as_typed_shape(), TypedShape::Compound(_)) {
         return fallback_nonlinear_fraction(dispatcher, fast, co2, &target_pose, max_fraction, dt, is_pseudo, rb2, predicted);
     }
 
@@ -397,6 +398,14 @@ fn cast_collider_pair(
         }
     };
 
+    if rb2.is_some_and(|rb| !rb.is_fixed()) {
+        if let TypedShape::Compound(compound) = co2.shape.as_typed_shape() {
+            match cast_moving_compound(sub_shapes, compound, &target_sweep, max_fraction, linear_slop, is_pseudo) {
+                Ok(result) => return result,
+                Err(()) => return fallback_nonlinear_fraction(dispatcher, fast, co2, &target_pose, max_fraction, dt, is_pseudo, rb2, predicted),
+            }
+        }
+    }
     let shape2 = co2.shape.as_ref();
     let target = match ToiProxy::from_shape(shape2) {
         Some(proxy) => TargetKind::Proxy(proxy),
@@ -439,6 +448,46 @@ fn cast_collider_pair(
         }
     }
     best
+}
+
+/// Moving compound children retain their own sweeps and the upstream initial-overlap fallback.
+/// A conservative sphere in target-local coordinates bounds relative COM motion under rotation.
+fn cast_moving_compound(
+    subs: &[FastSubShape], compound: &parry::shape::Compound, target: &Sweep,
+    mut max_fraction: Real, linear_slop: Real, is_pseudo: bool,
+) -> Result<Option<Real>, ()> {
+    let mut best = None;
+    for sub in subs {
+        let local = sub.proxy.compute_aabb(&Pose::IDENTITY);
+        let extent = local.half_extents().length() + (local.center() - sub.sweep.local_center).length();
+        let relative_radius = (sub.sweep.c1 - target.c1).length().max((sub.sweep.c2 - target.c2).length()) + extent;
+        let bounds = Aabb::from_half_extents(target.local_center, Vector::splat(relative_radius));
+        for child_id in compound.bvh().intersect_aabb(&bounds) {
+            let (child_pose, child_shape) = &compound.shapes()[child_id as usize];
+            let proxy = ToiProxy::from_shape(child_shape.as_ref()).ok_or(())?;
+            let sweep = Sweep::from_poses(
+                &(target.transform_at(0.0) * *child_pose),
+                &(target.final_transform() * *child_pose),
+                child_pose.inverse_transform_point(target.local_center),
+            );
+            let mut output = sweep_time_of_impact(&proxy, &sweep, &sub.proxy, &sub.sweep, max_fraction, linear_slop);
+            if !is_pseudo && output.fraction == 0.0 {
+                #[cfg(feature = "dim2")]
+                let radius = CORE_FRACTION * sub.min_extent;
+                #[cfg(feature = "dim3")]
+                let radius = (0.75 * sub.min_extent).max(4.0 * linear_slop) + linear_slop;
+                let core = ToiProxy::point(sub.local_centroid, radius);
+                output = sweep_time_of_impact(&proxy, &sweep, &core, &sub.sweep, max_fraction, linear_slop);
+            }
+            if output.status != SweepToiStatus::Separated
+                && (output.fraction > 0.0 || is_pseudo)
+                && output.fraction < max_fraction {
+                max_fraction = output.fraction;
+                best = Some(output.fraction);
+            }
+        }
+    }
+    Ok(best)
 }
 
 /// Casts one convex piece of the fast collider against the target collider's shape and

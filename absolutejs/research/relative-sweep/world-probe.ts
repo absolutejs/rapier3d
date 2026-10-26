@@ -1,9 +1,10 @@
 import { pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
-const R = (await import(pathToFileURL(resolve(process.argv[2] ?? 'dist/rapier.mjs')).href)).default;
+import type Rapier from '../../../dist/types/rapier';
+const R: typeof Rapier = (await import(pathToFileURL(resolve(process.argv[2] ?? 'dist/rapier.mjs')).href)).default;
 import { writeFileSync } from 'node:fs';
 await R.init();
-const cases = [];
+const cases: Array<{kind:string;flags:boolean[];cap:number;boost:number;p:number[][];v:number[][];reversedOrder:boolean;kinetic:number;passes:number|null}> = [];
 const started = performance.now();
 for (const kind of ['head-on', 'perpendicular', 'near-miss']) {
  for (const flags of [[true,false],[true,true],[false,true]]) {
@@ -34,6 +35,11 @@ for (const kind of ['head-on', 'perpendicular', 'near-miss']) {
 }
 const crossings=cases.filter(c=>c.kind!=='near-miss'&&c.reversedOrder);
 const gains=cases.filter(c=>c.kinetic>(c.kind==='perpendicular'?14400:7200)+.1);
-const result={candidateOnly:true,scope:'135 two-sphere world cases, crossing and energy observations; not full physical qualification',cases,crossings:crossings.length,energyGains:gains.length};
+const frameComparisons=cases.map(c=>{
+ const reference=cases.find(r=>r.kind===c.kind&&r.cap===c.cap&&r.boost===0&&r.flags.join()===c.flags.join())!;
+ return {kind:c.kind,flags:c.flags,cap:c.cap,boost:c.boost,maxPositionDifference:Math.max(...c.p.flat().map((x,i)=>Math.abs(x-reference.p.flat()[i])))};
+});
+const maxFrameDifferenceByCap=Object.fromEntries([1,4,16].map(cap=>[cap,Math.max(...frameComparisons.filter(c=>c.cap===cap).map(c=>c.maxPositionDifference))]));
+const result={candidateOnly:true,frameComparisons,maxFrameDifferenceByCap,scope:'135 two-sphere world cases, crossing and energy observations; not full physical qualification',cases,crossings:crossings.length,energyGains:gains.length};
 writeFileSync('absolutejs/research/relative-sweep/' + (process.argv[3] ?? 'world-result.json'),JSON.stringify(result,null,2)+'\n');
-console.log({cases:cases.length,crossings:crossings.length,energyGains:gains.length});
+console.log({cases:cases.length,crossings:crossings.length,energyGains:gains.length,maxFrameDifferenceByCap});
