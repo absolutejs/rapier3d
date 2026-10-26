@@ -1,0 +1,10 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "6917efd2079fa9d54e58013ca553c9eb5cb79e9cbbc660e3e3284a166fbecd02",
+  "wasmBytes": 3297751,
+  "solverChanges": false,
+  "addition": "Live contacts, restored ownership, and fresh profiled CCD substep counts"
+}

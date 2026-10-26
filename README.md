@@ -92,3 +92,15 @@ Previously an absent native handle could be coerced to body zero during JavaScri
 wrapper reconstruction. Real body-zero and fixed-body attachments remain intact.
 This changes wrapper metadata only; native ownership, WASM and solver behavior are
 unchanged. Repeated snapshot restoration and browser workers are regression tested.
+
+## Actual CCD substeps (0.3)
+
+Enable `world.profilerEnabled = true`, step the world, then read
+`world.ccdSubsteps()`. It reports the native count of CCD passes in the last
+completed profiled step, rather than the configured maximum. Zero means CCD did
+not act, not that the world failed to advance. It returns null when unavailable:
+before a profiled step, while profiling is disabled, or after toggling profiling
+until a new step completes. Setting an already enabled profiler to true is idempotent.
+Restored worlds start with profiling disabled and no sample. Event-enabled stepping
+is covered too. This is opt-in telemetry; no physics policy or defaults change.
+The counter does not expose individual substep durations or times of impact.

@@ -1,0 +1,27 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [517.79ms]
+(pass) live separation follows pose changes while cached distance stays fixed [528.61ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [439.03ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [1.70ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [897.47ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [4.34ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [2.18ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [535.43ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [428.83ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0 [1456.83ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0.3 [1435.19ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0 [2686.43ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0.3 [2980.99ms]
+
+ 13 pass
+ 0 fail
+ 45490 expect() calls
+Ran 13 tests across 4 files. [12.09s]

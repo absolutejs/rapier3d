@@ -1371,6 +1371,17 @@ export class World {
     }
 
     /**
+     * Actual CCD passes recorded by the last completed profiled step, not the
+     * configured maximum. Zero means CCD did not act; the world still advanced.
+     * Returns null before a profiled step, while profiling is disabled, and after
+     * changing profilerEnabled until another step completes. Profiling is opt-in.
+     * This count does not expose internal substep durations or time of impact.
+     */
+    public ccdSubsteps(): number | null {
+        return this.physicsPipeline.raw.ccd_substeps() ?? null;
+    }
+
+    /**
      * The time spent in milliseconds by the last step to run the entire simulation step.
      *
      * Only works if the internal profiler is enabled with `World.profilerEnabled = true`.

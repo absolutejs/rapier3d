@@ -1,0 +1,39 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [640.30ms]
+(pass) live separation follows pose changes while cached distance stays fixed [529.51ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [435.72ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [1.73ms]
+28 |    expect(Number.isInteger(count)).toBe(true);expect(count!).toBeGreaterThanOrEqual(0);expect(count!).toBeLessThanOrEqual(4);
+29 |    maximum=Math.max(maximum,count!);
+30 |    expect(control.w.ccdSubsteps()).toBeNull();
+31 |    for(let i=0;i<2;i++) {expect(measured.bodies[i]!.translation()).toEqual(control.bodies[i]!.translation());expect(measured.bodies[i]!.rotation()).toEqual(control.bodies[i]!.rotation());}
+32 |   }
+33 |   expect(maximum).toBeGreaterThan(1);
+                       ^
+error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 1
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-contact-release/absolutejs/tests/ccd-counters.test.ts:33:19)
+(fail) profiled CCD counts preserve every fixture pose with and without event collection [918.07ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [2.94ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [548.53ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [483.60ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0 [1785.79ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0.3 [1664.87ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0 [2936.85ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0.3 [3670.38ms]
+
+ 11 pass
+ 1 fail
+ 45484 expect() calls
+Ran 12 tests across 4 files. [13.79s]

@@ -13,3 +13,6 @@ world.solverContactPair(first, second, (m: SolverContactManifold, flipped: boole
  m.subshape1();
  void [p, distance, flipped];
 });
+
+const ccdSubsteps: number | null = world.ccdSubsteps();
+void ccdSubsteps;

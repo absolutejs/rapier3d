@@ -9,7 +9,7 @@ use crate::rapier::pipeline::PhysicsPipeline;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-pub struct RawPhysicsPipeline(pub(crate) PhysicsPipeline);
+pub struct RawPhysicsPipeline(pub(crate) PhysicsPipeline, bool);
 
 #[wasm_bindgen]
 impl RawPhysicsPipeline {
@@ -17,10 +17,13 @@ impl RawPhysicsPipeline {
     pub fn new() -> Self {
         let mut pipeline = PhysicsPipeline::new();
         pipeline.counters.disable(); // Disable perf counters by default.
-        RawPhysicsPipeline(pipeline)
+        RawPhysicsPipeline(pipeline, false)
     }
 
     pub fn set_profiler_enabled(&mut self, enabled: bool) {
+        if enabled != self.0.counters.enabled() {
+            self.1 = false;
+        }
         if enabled {
             self.0.counters.enable();
         } else {
@@ -30,6 +33,15 @@ impl RawPhysicsPipeline {
 
     pub fn is_profiler_enabled(&self) -> bool {
         self.0.counters.enabled()
+    }
+
+    // A native counter is meaningful only after a completed profiled step.
+    pub fn ccd_substeps(&self) -> Option<usize> {
+        if self.1 && self.0.counters.enabled() {
+            Some(self.0.counters.ccd.num_substeps)
+        } else {
+            None
+        }
     }
 
     pub fn timing_step(&self) -> f64 {
@@ -110,6 +122,7 @@ impl RawPhysicsPipeline {
         articulations: &mut RawMultibodyJointSet,
         ccd_solver: &mut RawCCDSolver,
     ) {
+        self.1 = false;
         self.0.step(
             gravity.0,
             &integrationParameters.0,
@@ -125,6 +138,7 @@ impl RawPhysicsPipeline {
             &(),
             &(),
         );
+        self.1 = self.0.counters.enabled();
     }
 
     pub fn stepWithEvents(
@@ -155,6 +169,7 @@ impl RawPhysicsPipeline {
             filter_intersection_pair: hookFilterIntersectionPair,
         };
 
+        self.1 = false;
         self.0.step(
             gravity.0,
             &integrationParameters.0,
@@ -170,5 +185,6 @@ impl RawPhysicsPipeline {
             &hooks,
             &eventQueue.collector,
         );
+        self.1 = self.0.counters.enabled();
     }
 }
