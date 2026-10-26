@@ -21,3 +21,13 @@ was used. npm registry reported no existing 0.4.0 before publication preparation
 Publication and registry-byte verification are separate final steps. Do not infer
 publication from this preparation record. The game retains 0.3.0 until a published
 artifact has been verified and adopted.
+
+## Verified publication — 2026-10-26
+
+npm completed publication after browser authentication and confirmation. Registry
+metadata is saved in registry-metadata.json. Downloaded registry tarball is byte-for-byte
+identical (`cmp`) to the qualified local tarball; SHA256
+`3ac9d8a6f9ea0c20f0c9c72b2c254d8869f04f561cc9f5a2672e583c3abab75f`.
+Registry SHA1 and integrity also match the preparation record.
+The published source is commit 28bcc1707b2a82679e69f4f72e264da6d55b9710.
+Game adoption is tracked separately in the game repository.
