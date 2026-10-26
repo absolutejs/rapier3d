@@ -1,0 +1,23 @@
+[
+  {
+    mode: "solid",
+    crossed: false,
+    events: [
+      [Object ...]
+    ],
+  }, {
+    mode: "sensor",
+    crossed: true,
+    events: [
+      [Object ...], [Object ...]
+    ],
+  }, {
+    mode: "collision-groups",
+    crossed: true,
+    events: [],
+  }, {
+    mode: "solver-groups",
+    crossed: true,
+    events: [],
+  }
+]

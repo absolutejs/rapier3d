@@ -24,16 +24,6 @@
           "a": 0,
           "b": 5e-324,
           "started": false
-        },
-        {
-          "a": 5e-324,
-          "b": 0,
-          "started": true
-        },
-        {
-          "a": 5e-324,
-          "b": 0,
-          "started": false
         }
       ]
     },

@@ -201,6 +201,7 @@ impl CCDSolver {
         // Emit intersection events for sensor crossings that happened strictly before each
         // body's final solid impact and that the narrow phase would never observe (no
         // overlap at either the start or the clamped end pose).
+        let mut emitted_sensor_pairs = alloc::collections::BTreeSet::new();
         for result in &all_results {
             for hit in &result.pseudo_hits {
                 if hit.fraction >= result.fraction {
@@ -243,6 +244,13 @@ impl CCDSolver {
                     && (co1.flags.active_events | co2.flags.active_events)
                         .contains(ActiveEvents::COLLISION_EVENTS)
                 {
+                    // Symmetric relative sweeps may discover the same crossing twice.
+                    // Deduplicate only after endpoint/event eligibility checks so an
+                    // ineligible direction cannot suppress the valid one.
+                    let first = hit.ch1.into_raw_parts();
+                    let second = hit.ch2.into_raw_parts();
+                    let pair = if first <= second { (first, second) } else { (second, first) };
+                    if !emitted_sensor_pairs.insert(pair) { continue; }
                     // Emit one intersection-started and one intersection-stopped event.
                     events.handle_collision_event(
                         bodies,
