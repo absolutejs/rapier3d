@@ -18,6 +18,28 @@ export class IntegrationParameters {
         this.raw = undefined;
     }
 
+    /** Merge compatible contact manifolds into solver clusters. Upstream default: true. */
+    get contactClustering(): boolean {
+        return this.raw.contactClustering;
+    }
+
+    /** Change between simulation steps; false may increase solver workload. */
+    set contactClustering(value: boolean) {
+        if (typeof value !== 'boolean') throw new TypeError('contactClustering must be a boolean');
+        this.raw.contactClustering = value;
+    }
+
+    /** Minimum CCD substep duration in seconds; upstream default is 1/60/100. */
+    get minCcdDt(): number {
+        return this.raw.minCcdDt;
+    }
+
+    /** Change between steps. Very small values may introduce numerical instability. */
+    set minCcdDt(value: number) {
+        if (!Number.isFinite(value) || !Number.isFinite(Math.fround(value)) || value < 0) throw new RangeError('minCcdDt must be finite and nonnegative');
+        this.raw.minCcdDt = value;
+    }
+
     /**
      * The timestep length (default: `1.0 / 60.0`)
      */

@@ -1,12 +1,12 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Rapier 3D with separate geometric and clustered solver-contact inspection",
   "type": "module",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/absolutejs/rapier3d.git"
+    "url": "git+https://github.com/absolutejs/rapier3d.git"
   },
   "files": [
     "dist",

@@ -326,6 +326,57 @@ impl RawContactManifold {
         }
     }
 
+    /// Current world-space solver anchor; includes solver skin/hook offsets.
+    pub fn solver_contact_point1(
+        &self, bodies: &RawRigidBodySet, i: usize,
+        scratch_buffer: &js_sys::Float32Array,
+    ) -> bool {
+        unsafe {
+            let data = &(*self.0).data;
+            data.solver_contacts.get(i).map_or(false, |c| {
+                let points = data.solver_contact_world_points(c, &bodies.0);
+                let p = points.0;
+                scratch_buffer.set_index(0, p.x);
+                scratch_buffer.set_index(1, p.y);
+                #[cfg(feature = "dim3")]
+                scratch_buffer.set_index(2, p.z);
+                true
+            })
+        }
+    }
+
+    /// Current world-space solver anchor; includes solver skin/hook offsets.
+    pub fn solver_contact_point2(
+        &self, bodies: &RawRigidBodySet, i: usize,
+        scratch_buffer: &js_sys::Float32Array,
+    ) -> bool {
+        unsafe {
+            let data = &(*self.0).data;
+            data.solver_contacts.get(i).map_or(false, |c| {
+                let points = data.solver_contact_world_points(c, &bodies.0);
+                let p = points.1;
+                scratch_buffer.set_index(0, p.x);
+                scratch_buffer.set_index(1, p.y);
+                #[cfg(feature = "dim3")]
+                scratch_buffer.set_index(2, p.z);
+                true
+            })
+        }
+    }
+
+    /// Current anchor separation along the stored world-space solver normal.
+    pub fn solver_contact_separation(
+        &self, bodies: &RawRigidBodySet, i: usize,
+    ) -> Option<Real> {
+        unsafe {
+            let data = &(*self.0).data;
+            data.solver_contacts.get(i).map(|c| {
+                let (p1, p2) = data.solver_contact_world_points(c, &bodies.0);
+                (p2 - p1).dot(data.normal)
+            })
+        }
+    }
+
     pub fn solver_contact_dist(&self, i: usize) -> Real {
         unsafe {
             (&(*self.0).data)

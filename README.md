@@ -12,7 +12,10 @@ await RAPIER.init();
 world.solverContactPair(firstCollider, secondCollider, (manifold, flipped) => {
   for (let i = 0; i < manifold.numSolverContacts(); i++) {
     const point = manifold.solverContactPoint(i);
-    const distance = manifold.solverContactDist(i);
+    const cachedDistance = manifold.solverContactDist(i);
+    const separation = manifold.solverContactSeparation(i);
+    const anchor1 = manifold.solverContactPoint1(i);
+    const anchor2 = manifold.solverContactPoint2(i);
     // Copy values here. The callback view expires when the callback returns.
   }
 });
@@ -55,3 +58,29 @@ queries and exception cleanup. Browser-worker validation is separate from native
 GPU performance testing; no GPU is required by the engine.
 
 This is a maintained AbsoluteJS distribution, not an official Dimforge release.
+
+## Live anchors and explicit clustering control (0.2)
+
+`solverContactPoint1/2` return the native solver anchors transformed by current body
+poses. `solverContactSeparation` projects their difference onto the stored world
+solver normal. Negative means overlapping anchors; invalid indices return null.
+Anchor values include contact skin and hook offsets, so they are not necessarily
+points on the visible material surface. The normal is from the contact update;
+this is not a new narrow-phase query or a continuous material penetration bound.
+The old cached `solverContactDist` remains explicitly separate.
+
+`world.integrationParameters.contactClustering` exposes the existing engine switch.
+It defaults to true, exactly as upstream. Set it only between steps; disabling it
+may increase solver workload and is not a general penetration fix. Snapshot restore
+preserves the setting. The game is not instructed to turn it off by this release.
+
+The independent every-step cube/cavity audit demonstrates the distinction: about
+0.459mm current penetration is visible in live anchors when the cached distance is
+zero. Disabling clustering retains about 0.469mm peak penetration in that case.
+Neither extra telemetry nor changing clustering is presented as a physics cure.
+
+`minCcdDt` exposes the engine's minimum CCD substep duration in seconds. Its
+upstream default stays `1/60/100`, even when the outer timestep is changed.
+The setter rejects negative, non-finite and f32-overflowing values. Smaller values
+can introduce instability; changing it is an explicit experiment, not an automatic
+quality preset. Both controls are retained through native snapshot serialization.

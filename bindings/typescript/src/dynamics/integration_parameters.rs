@@ -13,6 +13,26 @@ impl RawIntegrationParameters {
     }
 
     #[wasm_bindgen(getter)]
+    pub fn contactClustering(&self) -> bool {
+        self.0.contact_clustering
+    }
+
+    #[wasm_bindgen(setter)]
+    pub fn set_contactClustering(&mut self, value: bool) {
+        self.0.contact_clustering = value;
+    }
+
+    #[wasm_bindgen(getter)]
+    pub fn minCcdDt(&self) -> f32 {
+        self.0.min_ccd_dt
+    }
+
+    #[wasm_bindgen(setter)]
+    pub fn set_minCcdDt(&mut self, value: f32) {
+        self.0.min_ccd_dt = value;
+    }
+
+    #[wasm_bindgen(getter)]
     pub fn dt(&self) -> f32 {
         self.0.dt
     }

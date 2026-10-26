@@ -270,6 +270,31 @@ export class TempContactManifold {
         return exists ? VectorOps.fromBuffer(scratchBuffer, target) : null;
     }
 
+    /** Current world-space solver anchor on side 1; includes skin/hook offsets. */
+    public solverContactPoint1(i: number, target?: Vector): Vector | null {
+        if (!Number.isSafeInteger(i) || i < 0 || i > 0xffffffff) return null;
+        const exists = this.raw.solver_contact_point1(this.bodies.raw, i, scratchBuffer);
+        return exists ? VectorOps.fromBuffer(scratchBuffer, target) : null;
+    }
+
+    /** Current world-space solver anchor on side 2; includes skin/hook offsets. */
+    public solverContactPoint2(i: number, target?: Vector): Vector | null {
+        if (!Number.isSafeInteger(i) || i < 0 || i > 0xffffffff) return null;
+        const exists = this.raw.solver_contact_point2(this.bodies.raw, i, scratchBuffer);
+        return exists ? VectorOps.fromBuffer(scratchBuffer, target) : null;
+    }
+
+    /**
+     * Current anchor separation along the stored solver normal (negative means overlap).
+     * This is not a fresh collision query or a bound on unsampled material surfaces.
+     * Returns null for an invalid index. Unlike solverContactDist, uses current poses.
+     */
+    public solverContactSeparation(i: number): number | null {
+        if (!Number.isSafeInteger(i) || i < 0 || i > 0xffffffff) return null;
+        return this.raw.solver_contact_separation(this.bodies.raw, i) ?? null;
+    }
+
+    /** Cached distance at the last contact update; does not track subsequent motion. */
     public solverContactDist(i: number): number {
         return this.raw.solver_contact_dist(i);
     }
@@ -306,4 +331,5 @@ export class TempContactManifold {
 /** Read-only solver view; geometric subshape and local-surface queries are excluded. */
 export type SolverContactManifold = Pick<TempContactManifold,
     'normal' | 'numSolverContacts' | 'solverContactPoint' | 'solverContactDist' |
-    'friction' | 'restitution' | 'solverContactTangentVelocity'>;
+    'friction' | 'restitution' | 'solverContactTangentVelocity' |
+    'solverContactPoint1' | 'solverContactPoint2' | 'solverContactSeparation'>;
