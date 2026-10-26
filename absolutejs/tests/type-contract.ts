@@ -28,3 +28,20 @@ world.integrationParameters.contactRecycling = 1;
 // @ts-expect-error Solver coefficients are numeric.
 world.integrationParameters.warmstartCoefficient = '0.5';
 void [recycling, recycleDistance, warmstart];
+
+world.stepTraceEnabled = true;
+const trace = world.stepTrace();
+if (trace) {
+ const version: 1 = trace.schemaVersion;
+ const stride: 27 = trace.stride;
+ const data: Float64Array = trace.data;
+ const truncated: boolean = trace.truncated;
+ void [version, stride, data, truncated];
+}
+// @ts-expect-error Step tracing is a boolean capability.
+world.stepTraceEnabled = 1;
+if (trace) {
+ const impacts: Float64Array = trace.impacts;
+ const impactStride: 7 = trace.impactStride;
+ void [impacts, impactStride];
+}

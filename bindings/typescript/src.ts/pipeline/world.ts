@@ -1370,6 +1370,32 @@ export class World {
         return this.physicsPipeline.raw.is_profiler_enabled();
     }
 
+    // #if DIM3
+    /** Opt-in bounded body-state trace. Disabled by default; changing it clears old data.
+     * Does not persist through snapshots. At most 32 bodies and 1024 rows per outer step.
+     */
+    set stepTraceEnabled(enabled: boolean) {
+        if (typeof enabled !== "boolean") throw new TypeError("stepTraceEnabled must be boolean");
+        this.physicsPipeline.raw.set_step_trace_enabled(enabled);
+    }
+    get stepTraceEnabled(): boolean { return this.physicsPipeline.raw.is_step_trace_enabled(); }
+    /** Last completed outer step, or null before a step/when disabled. Returned data is owned.
+     * Row stride 27: phase, pass, dt, remainingTime, bodyIndex, bodyGeneration,
+     * position xyz, rotation xyzw, nextPosition xyz, nextRotation xyzw,
+     * linearVelocity xyz, angularVelocity xyz, ccdActive (0/1).
+     * Phase 0: before planning; 1: before solve; 2: after solve; 3: after CCD clamping;
+     * 4: after advancement. Coordinates use native world units. Truncation is explicit.
+     * Impact stride 7: pass, source body index/generation, target body index/generation,
+     * fraction, sourceDynamic (0/1). Target -1/-1 means no parent body was recorded.
+     * At most 1024 impact rows. Kinematic hits are observed but not clamped.
+     * This captures body states and accepted sweep hits, not solver impulses or exact contact time.
+     */
+    public stepTrace(): {schemaVersion: 1; stride: 27; truncated: boolean; data: Float64Array; impactStride: 7; impacts: Float64Array} | null {
+        const data = this.physicsPipeline.raw.step_trace_data();
+        return data == null ? null : {schemaVersion: 1, stride: 27, truncated: this.physicsPipeline.raw.step_trace_truncated(), data, impactStride: 7, impacts: this.physicsPipeline.raw.step_trace_impacts()!};
+    }
+    // #endif
+
     /**
      * Actual CCD passes recorded by the last completed profiled step, not the
      * configured maximum. Zero means CCD did not act; the world still advanced.

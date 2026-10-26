@@ -18,6 +18,8 @@ mod quarantine;
 pub use quarantine::Quarantine;
 mod solve;
 mod substep;
+#[cfg(feature = "dim3")]
+mod step_trace;
 #[cfg(test)]
 mod test;
 #[cfg(test)]
@@ -43,6 +45,8 @@ mod test_staged;
 /// 4. **Position correction**: Fix any remaining overlaps that might have occurred
 // NOTE: this contains only workspace data, so there is no point in making this serializable.
 pub struct PhysicsPipeline {
+    #[cfg(feature = "dim3")]
+    step_trace: step_trace::StepTrace,
     /// Counters used for benchmarking only.
     pub counters: Counters,
     joint_constraint_indices: Vec<ContactManifoldIndex>,
@@ -108,6 +112,8 @@ impl PhysicsPipeline {
     pub fn new() -> PhysicsPipeline {
         PhysicsPipeline {
             counters: Counters::new(true),
+            #[cfg(feature = "dim3")]
+            step_trace: step_trace::StepTrace::default(),
             #[cfg(feature = "parallel")]
             active_body_handles: vec![],
             sleep_observations: Vec::new(),

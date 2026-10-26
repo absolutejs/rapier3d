@@ -25,6 +25,12 @@ use super::sweeps::{
 #[derive(Clone, Default)]
 #[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 pub struct CCDSolver {
+    #[cfg(feature = "dim3")]
+    #[cfg_attr(feature = "serde-serialize", serde(skip))]
+    trace_hits: Option<Vec<f64>>,
+    #[cfg(feature = "dim3")]
+    #[cfg_attr(feature = "serde-serialize", serde(skip))]
+    trace_truncated: bool,
     /// Cached fixed-target list for the non-bullet sweep pass: the AABB loosening it was built
     /// with; `None` past [`FIXED_TARGETS_LIST_MAX`] (sweep queries the full BVH). Invalidated by
     /// the scene-change flag — re-scanning every collider each step dominated CCD on large scenes.
@@ -37,6 +43,11 @@ pub struct CCDSolver {
 type FixedTargetsCache = (Real, Option<Vec<(ColliderHandle, Aabb)>>);
 
 impl CCDSolver {
+    #[cfg(feature = "dim3")]
+    pub(crate) fn begin_hit_trace(&mut self) { self.trace_hits = Some(Vec::new()); self.trace_truncated = false; }
+    #[cfg(feature = "dim3")]
+    pub(crate) fn take_hit_trace(&mut self) -> (Vec<f64>, bool) { (self.trace_hits.take().unwrap_or_default(), self.trace_truncated) }
+
     /// Initializes a new CCD solver
     pub fn new() -> Self {
         Self::default()
@@ -211,6 +222,24 @@ impl CCDSolver {
                     query_pipeline.dispatcher, hooks, dt, linear_slop, PseudoHitMode::Record)
             })
         };
+        #[cfg(feature = "dim3")]
+        if let Some(trace) = &mut self.trace_hits {
+            for result in &all_results {
+                if result.fraction >= 1.0 { continue; }
+                let (i,g) = result.handle.into_raw_parts();
+                let targets = result.impact_bodies.len().max(1);
+                if trace.len() / 6 + targets > 1024 { self.trace_truncated = true; break; }
+                let dynamic = if bodies[result.handle].is_dynamic() { 1.0 } else { 0.0 };
+                if result.impact_bodies.is_empty() {
+                    trace.extend_from_slice(&[i as f64,g as f64,-1.0,-1.0,result.fraction as f64,dynamic]);
+                } else {
+                    for target in &result.impact_bodies {
+                        let (ti,tg)=target.into_raw_parts();
+                        trace.extend_from_slice(&[i as f64,g as f64,ti as f64,tg as f64,result.fraction as f64,dynamic]);
+                    }
+                }
+            }
+        }
         Self::apply_clamps(bodies, &all_results);
 
         // Emit intersection events for sensor crossings that happened strictly before each

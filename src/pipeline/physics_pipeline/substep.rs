@@ -328,6 +328,8 @@ impl PhysicsPipeline {
     ) {
         self.counters.reset();
         self.counters.step_started();
+        #[cfg(feature = "dim3")]
+        self.step_trace.begin_step();
         self.quarantine.clear();
 
         // Apply some of delayed wake-ups.
@@ -483,9 +485,13 @@ impl PhysicsPipeline {
             );
             colliders.set_modified(modified_colliders);
             self.counters.step_completed();
+            #[cfg(feature = "dim3")]
+            { self.step_trace.completed = true; }
             return;
         }
 
+        #[cfg(feature = "dim3")]
+        self.trace_body_phase(0, 0, integration_parameters.dt, integration_parameters.dt, bodies);
         let mut remaining_time = integration_parameters.dt;
         // The CCD passes shrink `integration_parameters.dt`: what predicts the next step (the
         // end-of-step AABBs and soft-body sync) reads the full step's parameters instead.
@@ -603,6 +609,8 @@ impl PhysicsPipeline {
             self.counters.custom.resume();
             self.interpolate_kinematic_velocities(&integration_parameters, islands, bodies);
             self.counters.custom.pause();
+            #[cfg(feature = "dim3")]
+            self.trace_body_phase(1, num_passes, integration_parameters.dt, remaining_time, bodies);
             self.build_islands_and_solve_velocity_constraints(
                 gravity,
                 &integration_parameters,
@@ -615,6 +623,9 @@ impl PhysicsPipeline {
                 soft_bodies,
                 events,
             );
+
+            #[cfg(feature = "dim3")]
+            self.trace_body_phase(2, num_passes, integration_parameters.dt, remaining_time, bodies);
 
             // If CCD is enabled, execute the CCD motion clamping.
             if ccd_is_enabled {
@@ -636,6 +647,10 @@ impl PhysicsPipeline {
                 any_ccd_active |= ccd_active;
                 if ccd_active {
                     self.join_deferred_bvh_optimize(broad_phase);
+                    #[cfg(feature = "dim3")]
+                    let tracing = self.step_trace.enabled && !self.step_trace.truncated;
+                    #[cfg(feature = "dim3")]
+                    if tracing { ccd_solver.begin_hit_trace(); }
                     self.run_ccd_motion_clamping(
                         &integration_parameters,
                         islands,
@@ -648,6 +663,16 @@ impl PhysicsPipeline {
                         hooks,
                         events,
                     );
+                    #[cfg(feature = "dim3")]
+                    if tracing {
+                        let (hits, truncated) = ccd_solver.take_hit_trace();
+                        self.step_trace.truncated |= truncated;
+                        for hit in hits.chunks_exact(6) {
+                            if self.step_trace.impacts.len() / 7 >= 1024 { self.step_trace.truncated = true; break; }
+                            self.step_trace.impacts.push(num_passes as f64);
+                            self.step_trace.impacts.extend_from_slice(hit);
+                        }
+                    }
                 }
                 if self.counters.enabled() {
                     self.counters.stages.ccd_time.pause();
@@ -655,6 +680,8 @@ impl PhysicsPipeline {
             }
 
             self.counters.stages.update_time.resume();
+            #[cfg(feature = "dim3")]
+            self.trace_body_phase(3, num_passes, integration_parameters.dt, remaining_time, bodies);
             // After the last pass, the AABBs predict the whole next step, not another pass.
             let prediction_parameters = if remaining_substeps > 0 {
                 &integration_parameters
@@ -662,6 +689,8 @@ impl PhysicsPipeline {
                 &step_parameters
             };
             self.advance_to_final_positions(prediction_parameters, islands, bodies, colliders);
+            #[cfg(feature = "dim3")]
+            self.trace_body_phase(4, num_passes, integration_parameters.dt, remaining_time, bodies);
             // Neutralize bodies whose integrated pose went non-finite before the remaining
             // CCD substeps can spread their velocities.
             self.quarantine.apply_end_step(bodies, colliders);
@@ -754,5 +783,7 @@ impl PhysicsPipeline {
         self.counters.stages.collision_detection_time.pause();
 
         self.counters.step_completed();
+        #[cfg(feature = "dim3")]
+        { self.step_trace.completed = true; }
     }
 }

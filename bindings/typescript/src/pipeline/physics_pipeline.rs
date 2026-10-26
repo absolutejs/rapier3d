@@ -44,6 +44,17 @@ impl RawPhysicsPipeline {
         }
     }
 
+    #[cfg(feature = "dim3")]
+    pub fn set_step_trace_enabled(&mut self, enabled: bool) { self.0.set_step_trace_enabled(enabled); }
+    #[cfg(feature = "dim3")]
+    pub fn is_step_trace_enabled(&self) -> bool { self.0.is_step_trace_enabled() }
+    #[cfg(feature = "dim3")]
+    pub fn step_trace_data(&self) -> Option<Vec<f64>> { self.0.step_trace_data() }
+    #[cfg(feature = "dim3")]
+    pub fn step_trace_impacts(&self) -> Option<Vec<f64>> { self.0.step_trace_impacts() }
+    #[cfg(feature = "dim3")]
+    pub fn step_trace_truncated(&self) -> bool { self.0.step_trace_truncated() }
+
     pub fn timing_step(&self) -> f64 {
         self.0.counters.step_time_ms()
     }

@@ -1,0 +1,11 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/step-trace.test.ts:
+(pass) step traces are opt-in, owned, fresh and preserve snapshot motion [52.84ms]
+(pass) step trace rejects invalid flags and reports a bounded body-limit overflow [3.88ms]
+(pass) step trace attributes accepted static CCD clamps without changing the solve [1.66ms]
+
+ 3 pass
+ 0 fail
+ 1187 expect() calls
+Ran 3 tests across 1 file. [243.00ms]
