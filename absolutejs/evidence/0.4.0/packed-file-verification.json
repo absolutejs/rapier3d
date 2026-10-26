@@ -1,0 +1,206 @@
+{
+  "version": "0.4.0",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "ceacfa4d7fa67df64ab09a56fe248c50a3bfc9bc00374d69bd74ad763b14b89c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5c05529f427abcaa1352a0b605432f9ce0e29871ba9c88b3686b2a34a7306d59"
+    },
+    {
+      "path": "absolutejs/README.md",
+      "sha256": "ebc676bdcfc949604dae6c28e8708150a0de0f96180f250ec822257cd3740543"
+    },
+    {
+      "path": "dist/provenance.json",
+      "sha256": "07d7b7dad710d144ac7e9c500f37e1e682d4361887c80ffc8899c504398c6d89"
+    },
+    {
+      "path": "dist/rapier.mjs",
+      "sha256": "dbd49c66b99c56de6cb80deef1836cdfc7d04efa21d8f7c753b7f37a5fb6e542"
+    },
+    {
+      "path": "dist/types/coarena.d.ts",
+      "sha256": "725e23eb72608995aa389ae6acbd6f719c13a8eae665c1e6c0012b0e6675803c"
+    },
+    {
+      "path": "dist/types/control/character_controller.d.ts",
+      "sha256": "9e8315c9f474d0b4960792b6c12ed4c10aef49758f2c7e400425877860c06da0"
+    },
+    {
+      "path": "dist/types/control/index.d.ts",
+      "sha256": "924ad716eea184c044910281e437cbb3a22802d0bb5e4ab02da6d7cd384762bf"
+    },
+    {
+      "path": "dist/types/control/pid_controller.d.ts",
+      "sha256": "b891ce0325ce16c36a440ee3ff2aa967c9b2b8a5479ea21120e7e9b8218cbee8"
+    },
+    {
+      "path": "dist/types/control/ray_cast_vehicle_controller.d.ts",
+      "sha256": "448c4cfcf9a15895d6506fc4acb12d770f5d12ec2aad7821ef108a60d76f15ef"
+    },
+    {
+      "path": "dist/types/dynamics/ccd_solver.d.ts",
+      "sha256": "f103aa89570932ae3d2257763cc9de257e608ed33ae052edf11aecdf2fe5c6c4"
+    },
+    {
+      "path": "dist/types/dynamics/coefficient_combine_rule.d.ts",
+      "sha256": "ff3b75425ae1a5e723087a077061883092b7c8b87ca39418ae9e901f19fe2338"
+    },
+    {
+      "path": "dist/types/dynamics/impulse_joint_set.d.ts",
+      "sha256": "7725508db200d2294ccd0037713496f093093abaa0fcdf651212147597efc577"
+    },
+    {
+      "path": "dist/types/dynamics/impulse_joint.d.ts",
+      "sha256": "5b59f65d3228ce6f15af6318d4eaf1ddd282007e8af51a523ac2a155e0bd92ea"
+    },
+    {
+      "path": "dist/types/dynamics/index.d.ts",
+      "sha256": "fc56cbf2661969c926ebbb4b099ba58cac44a2f204ee51656096764c0cfb4e09"
+    },
+    {
+      "path": "dist/types/dynamics/integration_parameters.d.ts",
+      "sha256": "557cfec25848f208addfcbdda1743452a9abab2408df8a62766ee95ec46937f7"
+    },
+    {
+      "path": "dist/types/dynamics/island_manager.d.ts",
+      "sha256": "555d769b11e202f31d2ed3524300ee6c266b82920865456527731b5de7824170"
+    },
+    {
+      "path": "dist/types/dynamics/multibody_joint_set.d.ts",
+      "sha256": "887ba0d3284d495a6b9be7f933570e3d8155ae4af580bede84f4eabc44085395"
+    },
+    {
+      "path": "dist/types/dynamics/multibody_joint.d.ts",
+      "sha256": "a54510ec774cf1c31a285278f5a6f7781dbf384199af1930efc28bfa3b0f71f7"
+    },
+    {
+      "path": "dist/types/dynamics/rigid_body_set.d.ts",
+      "sha256": "a168d96fc6c209a82269ecd9c761513f857e4b52162304d72ea87654624f79cf"
+    },
+    {
+      "path": "dist/types/dynamics/rigid_body.d.ts",
+      "sha256": "ad747f0f548b742af97c2b9046c1fd1f89ee54ffca0f9bf175ee58658c6a4006"
+    },
+    {
+      "path": "dist/types/dynamics/soft_body_set.d.ts",
+      "sha256": "c06b58b0563d88256550f5bf216ee913be85419f13aec3d3b7a5e20c2408e6ee"
+    },
+    {
+      "path": "dist/types/dynamics/soft_body.d.ts",
+      "sha256": "9ce31116228ae23291323a87db14474ccffc303130fa105dfeab0958273ee2c9"
+    },
+    {
+      "path": "dist/types/exports.d.ts",
+      "sha256": "025e7d2d5951e63fdb1d32875f95a6afc5ffacc89255fc6544bb914ad0cc2898"
+    },
+    {
+      "path": "dist/types/geometry/broad_phase.d.ts",
+      "sha256": "5870e3157e830b643508a95d61547765e0bb6e62cfa3c7f52d224f4e78a36900"
+    },
+    {
+      "path": "dist/types/geometry/collider_set.d.ts",
+      "sha256": "f7a6e6e727a72a4f5c1d33a13b444a1aa5ed3b51d5d69fedbbba89fc3cdef21a"
+    },
+    {
+      "path": "dist/types/geometry/collider.d.ts",
+      "sha256": "a2bbf8f03d08bbcc208537019406fe72779340e7febd217930953012076fa5aa"
+    },
+    {
+      "path": "dist/types/geometry/contact.d.ts",
+      "sha256": "1766cb07e0fa8b0eadcc1f3c0431d4d400cf441c7eb1a9ded1f523ff6badfd3d"
+    },
+    {
+      "path": "dist/types/geometry/feature.d.ts",
+      "sha256": "2e8a26bcf5dcc690d5bcd53bcb268fc9841d730ba7a6d6d2deea219b684a1fd9"
+    },
+    {
+      "path": "dist/types/geometry/index.d.ts",
+      "sha256": "c4901a47ca09589f782af8f7f73bf4102c53cf10f07f36f02c7fe5b81b0ab897"
+    },
+    {
+      "path": "dist/types/geometry/interaction_groups.d.ts",
+      "sha256": "7d14b3493ba1c8a2a8dcd29693813146a56d0e6f86b5c110745ed38e4d8b4bb0"
+    },
+    {
+      "path": "dist/types/geometry/narrow_phase.d.ts",
+      "sha256": "445563500ee7f6954892bdb2db8a3f6ff92643be0b046e14b1d38e3c92d95ecc"
+    },
+    {
+      "path": "dist/types/geometry/point.d.ts",
+      "sha256": "6bee78f28570d268b7b850df501d88bb4f29791bd67bc9d015cab1472cfdbdf2"
+    },
+    {
+      "path": "dist/types/geometry/ray.d.ts",
+      "sha256": "dcd44303a53f9345cc57728c1c31c7261966f59a6abfa9364b8e7d08215c4bab"
+    },
+    {
+      "path": "dist/types/geometry/shape.d.ts",
+      "sha256": "b0e43db4e4bb5f72fccaff3bb4bd6151e67f8587e98352a1f5263b104946a8b6"
+    },
+    {
+      "path": "dist/types/geometry/toi.d.ts",
+      "sha256": "61d02f90b3ebd4824c095baa86a6982fd771873d3c664ab98f6376dfead914f3"
+    },
+    {
+      "path": "dist/types/init.d.ts",
+      "sha256": "66ee0c751362894a00f1295f1fb9523344b49ffbe6148c5c4b6263c25b3a1c46"
+    },
+    {
+      "path": "dist/types/math.d.ts",
+      "sha256": "051a3b44ae5f234d8d430ad774077a32429a3e2dfbe6f8c501de27d5fe814af7"
+    },
+    {
+      "path": "dist/types/pipeline/debug_render_pipeline.d.ts",
+      "sha256": "bb9dc8e4761e623d2ea89d5a77ca332b2d40bbb22b5672134c94daf09f84ded5"
+    },
+    {
+      "path": "dist/types/pipeline/event_queue.d.ts",
+      "sha256": "53e67e99cef9780c2c4acb445494f60df3908f98cd1c3e74359ca230480f1ba6"
+    },
+    {
+      "path": "dist/types/pipeline/index.d.ts",
+      "sha256": "c4b89c3eeef14aa0c0fdf471ffc31918b2488ed751718cb67e5278f71d018b23"
+    },
+    {
+      "path": "dist/types/pipeline/physics_hooks.d.ts",
+      "sha256": "b540920dc7cb3fcd9f337cb53c2e30e029d1dd0a7fe0529229302dff4248a70b"
+    },
+    {
+      "path": "dist/types/pipeline/physics_pipeline.d.ts",
+      "sha256": "983de8c13b87d358ce7fc313fd9b42b6984469376b7c995077de357c4a04aff5"
+    },
+    {
+      "path": "dist/types/pipeline/query_pipeline.d.ts",
+      "sha256": "d6f67708340458125b830c5c7ccbc99321a713fddea99e58077377dc15378010"
+    },
+    {
+      "path": "dist/types/pipeline/serialization_pipeline.d.ts",
+      "sha256": "3c9cfaa21c1af78a7c013f464c188aebc291c17b38bfe49e67655e7e3b560df0"
+    },
+    {
+      "path": "dist/types/pipeline/world.d.ts",
+      "sha256": "2acf290e5ff6f27c62587824182b48ec01068ac146c611117d9a676d0d0359b6"
+    },
+    {
+      "path": "dist/types/rapier_wasm3d.d.ts",
+      "sha256": "5149dafee816d0a84a90153ead54bf05d7595159aff47cc48d62c171f30f9d6e"
+    },
+    {
+      "path": "dist/types/rapier.d.ts",
+      "sha256": "d38a78daa72781b6fe046cd95e76c55924b4acde46409ca9705ca326642d2b10"
+    },
+    {
+      "path": "dist/types/raw.d.ts",
+      "sha256": "87b313c00e53c0acb0f76d350dc98429cbb330bf46ed005bf7d70cc816fee7ff"
+    },
+    {
+      "path": "package.json",
+      "sha256": "cf03a41fc36274588b95c9279ecf1f66df08e67ba53c5e5caa53b5e654833905"
+    }
+  ],
+  "allMatch": true
+}

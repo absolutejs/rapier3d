@@ -21,8 +21,12 @@ try {
   if(w.integrationParameters.contactClustering!==false)throw Error('Clustering control did not apply');
   w.integrationParameters.minCcdDt=1/960/100;
   if(Math.abs(w.integrationParameters.minCcdDt-1/960/100)>1e-10)throw Error('CCD minimum setter failed');
+  if(w.integrationParameters.contactRecycling!==true||w.integrationParameters.warmstartCoefficient!==1)throw Error('Contact policy defaults changed');
+  w.integrationParameters.contactRecycling=false;
+  w.integrationParameters.normalizedContactRecycleDistance=.001;
+  w.integrationParameters.warmstartCoefficient=.5;
   const restored=R.World.restoreSnapshot(w.takeSnapshot());
-  try { if(restored.getCollider(0).parent()!==null)throw Error('Restored floor aliases body zero');if(restored.getCollider(a.handle).parent()?.handle!==a.parent()?.handle)throw Error('Restored moving owner changed'); } finally {restored.free();}
-  postMessage({totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  try { if(restored.integrationParameters.contactRecycling!==false||Math.abs(restored.integrationParameters.normalizedContactRecycleDistance-.001)>1e-8||restored.integrationParameters.warmstartCoefficient!==.5)throw Error('Contact policy snapshot mismatch');if(restored.getCollider(0).parent()!==null)throw Error('Restored floor aliases body zero');if(restored.getCollider(a.handle).parent()?.handle!==a.parent()?.handle)throw Error('Restored moving owner changed'); } finally {restored.free();}
+  postMessage({totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

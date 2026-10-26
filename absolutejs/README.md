@@ -110,3 +110,25 @@ across all passes in a step. The TOI timer also accumulates instead of resetting
 for every clamp pass. Both are recorded only with profiling enabled. The timing
 fix leaves contact equations and trajectories unchanged; package tests compare
 profiled/unprofiled poses and official upstream trajectories.
+
+## Contact policy controls (0.4)
+
+The following existing native settings are now exposed through
+`world.integrationParameters`. Defaults and solver algorithms are unchanged.
+
+| Property | Default | Meaning |
+| --- | --- | --- |
+| `contactRecycling` | `true` | Reuse contact manifolds while relative poses stay within the native reuse bounds. |
+| `normalizedContactRecycleDistance` | `0.05` | Relative-pose drift bound, multiplied by `lengthUnit`; zero prevents recycling. |
+| `warmstartCoefficient` | `1` | Fraction of cached impulses reused by the solver, from zero to one. |
+
+Change settings between simulation steps. The boolean setter rejects coercible
+non-booleans; numeric setters reject non-finite/out-of-range input, including f32
+overflow for the distance. Native snapshots preserve all three settings.
+
+These controls support explicit diagnosis and application-specific qualification.
+Disabling recycling increases contact-generation work and can change contact
+features; disabling warm starting changes convergence. Neither is a general fix
+for penetration. Evaluate the entire requested simulation horizon and geometric
+intersections, alongside live/cached contact diagnostics. A process that exits
+successfully after an early physical guard is not a completed physical test.
