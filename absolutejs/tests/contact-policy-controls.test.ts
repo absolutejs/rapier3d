@@ -40,3 +40,24 @@ test('invalid contact policy values fail before mutating native state',()=>{
   expect(p.normalizedContactRecycleDistance).toBe(0);expect(p.warmstartCoefficient).toBe(0);
  }finally{p.free();}
 });
+
+for(const recycling of [true,false])for(const warmstart of [0,1])
+test(`explicit policy still resolves solid floor contacts recycling=${recycling} warmstart=${warmstart}`,()=>{
+ const w=new R.World({x:0,y:-9.81,z:0});
+ try {
+  w.timestep=1/60;w.integrationParameters.contactRecycling=recycling;w.integrationParameters.warmstartCoefficient=warmstart;
+  const floor=w.createCollider(R.ColliderDesc.cuboid(5,.1,5));
+  const body=w.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(0,1,0));
+  const ball=w.createCollider(R.ColliderDesc.ball(.1).setRestitution(0),body);
+  let contacts=0;
+  for(let i=0;i<120;i++){
+   w.step();
+   w.solverContactPair(floor,ball,m=>{contacts+=m.numSolverContacts();});
+   expect(Number.isFinite(body.translation().y)).toBe(true);
+  }
+  expect(contacts).toBeGreaterThan(0);
+  expect(body.translation().y).toBeGreaterThan(.18);
+  expect(body.translation().y).toBeLessThan(.22);
+  expect(Math.abs(body.linvel().y)).toBeLessThan(.1);
+ }finally{w.free();}
+});
