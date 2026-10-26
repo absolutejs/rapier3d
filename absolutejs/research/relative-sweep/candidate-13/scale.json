@@ -1,0 +1,370 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "df53f1742dabffb2523c149c9dcb2804d839272aa692a31a605bac0b12faeed1",
+  "cases": [
+    {
+      "kind": "velocity",
+      "scale": 0.01,
+      "boost": -60,
+      "reversed": false,
+      "bodyX": -1.6689525693655014,
+      "targetX": -1.500000037252903,
+      "crossed": false,
+      "normalizedPenetration": 0.031047467887401592
+    },
+    {
+      "kind": "velocity",
+      "scale": 0.01,
+      "boost": -60,
+      "reversed": true,
+      "bodyX": -1.6689525693655014,
+      "targetX": -1.500000037252903,
+      "crossed": false,
+      "normalizedPenetration": 0.031047467887401592
+    },
+    {
+      "kind": "velocity",
+      "scale": 0.01,
+      "boost": 0,
+      "reversed": false,
+      "bodyX": -1.6689524054527283,
+      "targetX": -1.5000000596046448,
+      "crossed": false,
+      "normalizedPenetration": 0.031047654151916515
+    },
+    {
+      "kind": "velocity",
+      "scale": 0.01,
+      "boost": 0,
+      "reversed": true,
+      "bodyX": -1.6689524054527283,
+      "targetX": -1.5000000596046448,
+      "crossed": false,
+      "normalizedPenetration": 0.031047654151916515
+    },
+    {
+      "kind": "velocity",
+      "scale": 0.01,
+      "boost": 60,
+      "reversed": false,
+      "bodyX": -1.6689524743705988,
+      "targetX": -1.5000000353902578,
+      "crossed": false,
+      "normalizedPenetration": 0.031047561019659053
+    },
+    {
+      "kind": "velocity",
+      "scale": 0.01,
+      "boost": 60,
+      "reversed": true,
+      "bodyX": -1.6689524743705988,
+      "targetX": -1.5000000353902578,
+      "crossed": false,
+      "normalizedPenetration": 0.031047561019659053
+    },
+    {
+      "kind": "velocity",
+      "scale": 1,
+      "boost": -60,
+      "reversed": false,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047534942626964
+    },
+    {
+      "kind": "velocity",
+      "scale": 1,
+      "boost": -60,
+      "reversed": true,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047534942626964
+    },
+    {
+      "kind": "velocity",
+      "scale": 1,
+      "boost": 0,
+      "reversed": false,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.500000238418579,
+      "crossed": false,
+      "normalizedPenetration": 0.031047773361206066
+    },
+    {
+      "kind": "velocity",
+      "scale": 1,
+      "boost": 0,
+      "reversed": true,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.500000238418579,
+      "crossed": false,
+      "normalizedPenetration": 0.031047773361206066
+    },
+    {
+      "kind": "velocity",
+      "scale": 1,
+      "boost": 60,
+      "reversed": false,
+      "bodyX": -1.6689523458480835,
+      "targetX": -1.5000001192092896,
+      "crossed": false,
+      "normalizedPenetration": 0.031047773361206066
+    },
+    {
+      "kind": "velocity",
+      "scale": 1,
+      "boost": 60,
+      "reversed": true,
+      "bodyX": -1.6689523458480835,
+      "targetX": -1.5000001192092896,
+      "crossed": false,
+      "normalizedPenetration": 0.031047773361206066
+    },
+    {
+      "kind": "velocity",
+      "scale": 100,
+      "boost": -60,
+      "reversed": false,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047668457031274
+    },
+    {
+      "kind": "velocity",
+      "scale": 100,
+      "boost": -60,
+      "reversed": true,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047668457031274
+    },
+    {
+      "kind": "velocity",
+      "scale": 100,
+      "boost": 0,
+      "reversed": false,
+      "bodyX": -1.6689524841308594,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047515869140646
+    },
+    {
+      "kind": "velocity",
+      "scale": 100,
+      "boost": 0,
+      "reversed": true,
+      "bodyX": -1.6689524841308594,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047515869140646
+    },
+    {
+      "kind": "velocity",
+      "scale": 100,
+      "boost": 60,
+      "reversed": false,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5000000381469727,
+      "crossed": false,
+      "normalizedPenetration": 0.03104770660400391
+    },
+    {
+      "kind": "velocity",
+      "scale": 100,
+      "boost": 60,
+      "reversed": true,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5000000381469727,
+      "crossed": false,
+      "normalizedPenetration": 0.03104770660400391
+    },
+    {
+      "kind": "position",
+      "scale": 0.01,
+      "boost": -60,
+      "reversed": false,
+      "bodyX": -1.6689525693655014,
+      "targetX": -1.500000037252903,
+      "crossed": false,
+      "normalizedPenetration": 0.031047467887401592
+    },
+    {
+      "kind": "position",
+      "scale": 0.01,
+      "boost": -60,
+      "reversed": true,
+      "bodyX": -1.6689525693655014,
+      "targetX": -1.500000037252903,
+      "crossed": false,
+      "normalizedPenetration": 0.031047467887401592
+    },
+    {
+      "kind": "position",
+      "scale": 0.01,
+      "boost": 0,
+      "reversed": false,
+      "bodyX": -1.6689522191882133,
+      "targetX": -1.4999999664723873,
+      "crossed": false,
+      "normalizedPenetration": 0.031047747284173977
+    },
+    {
+      "kind": "position",
+      "scale": 0.01,
+      "boost": 0,
+      "reversed": true,
+      "bodyX": -1.6689522191882133,
+      "targetX": -1.4999999664723873,
+      "crossed": false,
+      "normalizedPenetration": 0.031047747284173977
+    },
+    {
+      "kind": "position",
+      "scale": 0.01,
+      "boost": 60,
+      "reversed": false,
+      "bodyX": -1.6689523346722126,
+      "targetX": -1.499999988824129,
+      "crossed": false,
+      "normalizedPenetration": 0.031047654151916515
+    },
+    {
+      "kind": "position",
+      "scale": 0.01,
+      "boost": 60,
+      "reversed": true,
+      "bodyX": -1.6689523346722126,
+      "targetX": -1.499999988824129,
+      "crossed": false,
+      "normalizedPenetration": 0.031047654151916515
+    },
+    {
+      "kind": "position",
+      "scale": 1,
+      "boost": -60,
+      "reversed": false,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047534942626964
+    },
+    {
+      "kind": "position",
+      "scale": 1,
+      "boost": -60,
+      "reversed": true,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047534942626964
+    },
+    {
+      "kind": "position",
+      "scale": 1,
+      "boost": 0,
+      "reversed": false,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047534942626964
+    },
+    {
+      "kind": "position",
+      "scale": 1,
+      "boost": 0,
+      "reversed": true,
+      "bodyX": -1.668952465057373,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047534942626964
+    },
+    {
+      "kind": "position",
+      "scale": 1,
+      "boost": 60,
+      "reversed": false,
+      "bodyX": -1.6689523458480835,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047654151916515
+    },
+    {
+      "kind": "position",
+      "scale": 1,
+      "boost": 60,
+      "reversed": true,
+      "bodyX": -1.6689523458480835,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047654151916515
+    },
+    {
+      "kind": "position",
+      "scale": 100,
+      "boost": -60,
+      "reversed": false,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047668457031274
+    },
+    {
+      "kind": "position",
+      "scale": 100,
+      "boost": -60,
+      "reversed": true,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047668457031274
+    },
+    {
+      "kind": "position",
+      "scale": 100,
+      "boost": 0,
+      "reversed": false,
+      "bodyX": -1.6689524841308594,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047515869140646
+    },
+    {
+      "kind": "position",
+      "scale": 100,
+      "boost": 0,
+      "reversed": true,
+      "bodyX": -1.6689524841308594,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047515869140646
+    },
+    {
+      "kind": "position",
+      "scale": 100,
+      "boost": 60,
+      "reversed": false,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047668457031274
+    },
+    {
+      "kind": "position",
+      "scale": 100,
+      "boost": 60,
+      "reversed": true,
+      "bodyX": -1.6689523315429686,
+      "targetX": -1.5,
+      "crossed": false,
+      "normalizedPenetration": 0.031047668457031274
+    }
+  ],
+  "crossings": 0,
+  "maxFrameError": 3.501772880554199e-7,
+  "maxOrderError": 0,
+  "maxNormalizedPenetration": 0.031047773361206066
+}

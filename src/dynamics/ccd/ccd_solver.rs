@@ -240,14 +240,15 @@ impl CCDSolver {
                 }
             }
         }
-        Self::apply_clamps(bodies, &all_results);
+        let resolved_fractions = Self::apply_clamps(bodies, &all_results);
 
         // Emit intersection events for sensor crossings that happened strictly before each
         // body's final solid impact and that the narrow phase would never observe (no
         // overlap at either the start or the clamped end pose).
         let mut emitted_sensor_pairs = alloc::collections::BTreeSet::new();
         for result in &all_results {
-            let resolved_fraction = if bodies[result.handle].is_dynamic() { result.fraction } else { 1.0 };
+            let resolved_fraction = resolved_fractions.binary_search_by_key(&result.handle.into_raw_parts(), |(key, _)| *key)
+                .map(|i| resolved_fractions[i].1).unwrap_or(1.0);
             for hit in &result.pseudo_hits {
                 if hit.fraction >= resolved_fraction {
                     // The body stops before reaching this sensor.
@@ -314,22 +315,32 @@ impl CCDSolver {
         }
     }
 
-    /// Clamps each impacted body's `next_position` to the interpolated pose at its impact
-    /// fraction. Pose only — velocities are preserved.
-    fn apply_clamps(bodies: &mut RigidBodySet, results: &[BodyContinuousResult]) {
+    /// Dynamic participants in one accepted-impact component advance to a common
+    /// fraction of their original solved sweeps. Leaving a slower target at its full
+    /// endpoint after stopping only its CCD-active partner creates new penetration.
+    /// Kinematic trajectories and soft frames are never shortened; velocities stay unchanged.
+    fn apply_clamps(bodies: &mut RigidBodySet, results: &[BodyContinuousResult]) -> Vec<(super::clamp_graph::BodyKey, Real)> {
+        let mut hits = Vec::new();
         for result in results {
-            if result.fraction < 1.0 {
-                let rb = bodies.index_mut_internal(result.handle);
-                // A prescribed kinematic trajectory may drive a dynamic body but is
-                // never shortened by CCD. Its impacts trigger global time subdivision.
-                if !rb.is_dynamic() { continue; }
-                let sweep = Sweep::from_poses(
-                    &rb.pos.position,
-                    &rb.pos.next_position,
-                    rb.mprops.local_mprops.local_com,
-                );
-                rb.pos.next_position = sweep.transform_at(result.fraction);
+            let origin = &bodies[result.handle];
+            if result.fraction >= 1.0 || !origin.is_dynamic() || origin.is_soft_frame() { continue; }
+            let mut linked = false;
+            for target in &result.impact_bodies {
+                let rb = &bodies[*target];
+                if rb.is_dynamic() && !rb.is_soft_frame() {
+                    hits.push((result.handle.into_raw_parts(), Some(target.into_raw_parts()), result.fraction));
+                    linked = true;
+                }
             }
+            if !linked { hits.push((result.handle.into_raw_parts(), None, result.fraction)); }
         }
+        let fractions = super::clamp_graph::coherent_fractions(&hits);
+        for ((index, generation), fraction) in &fractions {
+            let handle = crate::dynamics::RigidBodyHandle::from_raw_parts(*index, *generation);
+            let rb = bodies.index_mut_internal(handle);
+            let sweep = Sweep::from_poses(&rb.pos.position, &rb.pos.next_position, rb.mprops.local_mprops.local_com);
+            rb.pos.next_position = sweep.transform_at(*fraction);
+        }
+        fractions
     }
 }

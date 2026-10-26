@@ -1,0 +1,14 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "31d6aca4fdb36ebdfa0edc1c4b844911e19d69f649be1f232b66d049d5722c64",
+  "wasmBytes": 3339685,
+  "solverChanges": true,
+  "addition": "UNQUALIFIED relative-motion CCD, EPA precision, coherent-clamp and phase-trace research candidate",
+  "contactPrecision": {
+    "parryVersion": "0.31.1",
+    "epaSourceSha256": "700cb98d5852eb215b9960382431dff70a53d041a249e9e2320712a53dee3fdc"
+  }
+}
