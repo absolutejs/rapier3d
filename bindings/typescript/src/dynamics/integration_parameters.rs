@@ -23,6 +23,24 @@ impl RawIntegrationParameters {
     }
 
     #[wasm_bindgen(getter)]
+    pub fn contactRecycling(&self) -> bool { self.0.contact_recycling }
+
+    #[wasm_bindgen(setter)]
+    pub fn set_contactRecycling(&mut self, value: bool) { self.0.contact_recycling = value; }
+
+    #[wasm_bindgen(getter)]
+    pub fn normalizedContactRecycleDistance(&self) -> f32 { self.0.normalized_contact_recycle_distance }
+
+    #[wasm_bindgen(setter)]
+    pub fn set_normalizedContactRecycleDistance(&mut self, value: f32) { self.0.normalized_contact_recycle_distance = value; }
+
+    #[wasm_bindgen(getter)]
+    pub fn warmstartCoefficient(&self) -> f32 { self.0.warmstart_coefficient }
+
+    #[wasm_bindgen(setter)]
+    pub fn set_warmstartCoefficient(&mut self, value: f32) { self.0.warmstart_coefficient = value; }
+
+    #[wasm_bindgen(getter)]
     pub fn minCcdDt(&self) -> f32 {
         self.0.min_ccd_dt
     }

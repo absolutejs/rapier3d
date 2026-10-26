@@ -16,3 +16,15 @@ world.solverContactPair(first, second, (m: SolverContactManifold, flipped: boole
 
 const ccdSubsteps: number | null = world.ccdSubsteps();
 void ccdSubsteps;
+
+const recycling: boolean = world.integrationParameters.contactRecycling;
+const recycleDistance: number = world.integrationParameters.normalizedContactRecycleDistance;
+const warmstart: number = world.integrationParameters.warmstartCoefficient;
+world.integrationParameters.contactRecycling = false;
+world.integrationParameters.normalizedContactRecycleDistance = 0.001;
+world.integrationParameters.warmstartCoefficient = 0.5;
+// @ts-expect-error Contact recycling is a boolean policy, not a number.
+world.integrationParameters.contactRecycling = 1;
+// @ts-expect-error Solver coefficients are numeric.
+world.integrationParameters.warmstartCoefficient = '0.5';
+void [recycling, recycleDistance, warmstart];

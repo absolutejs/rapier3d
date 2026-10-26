@@ -29,6 +29,27 @@ export class IntegrationParameters {
         this.raw.contactClustering = value;
     }
 
+    /** Reuse nearby contact manifolds between updates. Default true; false increases narrow-phase work. */
+    get contactRecycling(): boolean { return this.raw.contactRecycling; }
+    set contactRecycling(value: boolean) {
+        if (typeof value !== 'boolean') throw new TypeError('contactRecycling must be a boolean');
+        this.raw.contactRecycling = value;
+    }
+
+    /** Relative-pose drift threshold, multiplied by lengthUnit. Default 0.05. Change between steps. */
+    get normalizedContactRecycleDistance(): number { return this.raw.normalizedContactRecycleDistance; }
+    set normalizedContactRecycleDistance(value: number) {
+        if (!Number.isFinite(value) || !Number.isFinite(Math.fround(value)) || value < 0) throw new RangeError('normalizedContactRecycleDistance must be finite and nonnegative');
+        this.raw.normalizedContactRecycleDistance = value;
+    }
+
+    /** Fraction of cached impulses reused by the solver, in [0, 1]. Default 1. Change between steps. */
+    get warmstartCoefficient(): number { return this.raw.warmstartCoefficient; }
+    set warmstartCoefficient(value: number) {
+        if (!Number.isFinite(value) || value < 0 || value > 1) throw new RangeError('warmstartCoefficient must be in [0, 1]');
+        this.raw.warmstartCoefficient = value;
+    }
+
     /** Minimum CCD substep duration in seconds; upstream default is 1/60/100. */
     get minCcdDt(): number {
         return this.raw.minCcdDt;
