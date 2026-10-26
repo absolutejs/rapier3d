@@ -1,0 +1,417 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "ee1939d368b211b1f1fd28c4fd8095e4c570e481c00b5356f488fcb20f6cce83",
+  "scope": "Prescribed kinematic path and dynamic crossing observations; cap 1 is an explicit limitation",
+  "cases": [
+    {
+      "kind": "velocity",
+      "cap": 1,
+      "sleeping": false,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "velocity",
+      "cap": 1,
+      "sleeping": true,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "velocity",
+      "cap": 4,
+      "sleeping": false,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -1.668952465057373,
+          "targetX": -1.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": false,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -3.6731441020965576,
+          "targetX": -3.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": false,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -5.676769733428955,
+          "targetX": -5.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "velocity",
+      "cap": 4,
+      "sleeping": true,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": true,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "velocity",
+      "cap": 16,
+      "sleeping": false,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -1.668952465057373,
+          "targetX": -1.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": false,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -3.6731441020965576,
+          "targetX": -3.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": false,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -5.676769733428955,
+          "targetX": -5.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "velocity",
+      "cap": 16,
+      "sleeping": true,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": true,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.500000238418579,
+          "targetV": -120,
+          "endpointError": 2.384185791015625e-7,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "position",
+      "cap": 1,
+      "sleeping": false,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "position",
+      "cap": 1,
+      "sleeping": true,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "position",
+      "cap": 4,
+      "sleeping": false,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -1.668952465057373,
+          "targetX": -1.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -3.6731436252593994,
+          "targetX": -3.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -5.676769256591797,
+          "targetX": -5.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "position",
+      "cap": 4,
+      "sleeping": true,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "position",
+      "cap": 16,
+      "sleeping": false,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -1.668952465057373,
+          "targetX": -1.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -3.6731436252593994,
+          "targetX": -3.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -5.676769256591797,
+          "targetX": -5.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": false,
+          "passes": 1
+        }
+      ]
+    },
+    {
+      "kind": "position",
+      "cap": 16,
+      "sleeping": true,
+      "frames": [
+        {
+          "step": 1,
+          "bodyX": -0.5,
+          "targetX": -1.5,
+          "targetV": -120,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 2
+        },
+        {
+          "step": 2,
+          "bodyX": -0.5,
+          "targetX": -3.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        },
+        {
+          "step": 3,
+          "bodyX": -0.5,
+          "targetX": -5.5,
+          "targetV": -119.99999237060547,
+          "endpointError": 0,
+          "crossed": true,
+          "passes": 1
+        }
+      ]
+    }
+  ],
+  "endpointFailures": 0,
+  "multiPassCrossings": 4
+}

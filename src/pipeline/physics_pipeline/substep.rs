@@ -502,7 +502,23 @@ impl PhysicsPipeline {
                 (true, integration_parameters.max_ccd_substeps)
             };
 
+        // Preserve position-driven trajectories over the complete requested step.
+        // Per-substep target endpoints must not become the next outer-step request.
+        let kinematic_paths: Vec<_> = islands.active_bodies().filter_map(|handle| {
+            let rb = &bodies[handle];
+            (rb.body_type == RigidBodyType::KinematicPositionBased).then(|| (
+                handle,
+                parry::query::sweep_toi::Sweep::from_poses(&rb.pos.position, &rb.pos.next_position, rb.mprops.local_mprops.local_com),
+            ))
+        }).collect();
+
         while remaining_substeps > 0 {
+            // Planning sees the remaining prescribed path, not a stale solved endpoint.
+            for (handle, path) in &kinematic_paths {
+                let rb = bodies.index_mut_internal(*handle);
+                rb.pos.next_position = path.final_transform();
+                rb.vels = rb.pos.interpolate_velocity(crate::utils::inv(remaining_time), rb.mprops.local_mprops.local_com);
+            }
             // If there are more than one CCD substep, we need to split
             // the timestep into multiple intervals. First, estimate the
             // size of the time slice we will integrate for this substep.
@@ -568,6 +584,7 @@ impl PhysicsPipeline {
                 // Avoid substep length that are too small.
                 if remaining_time <= integration_parameters.min_ccd_dt {
                     integration_parameters.dt += remaining_time;
+                    remaining_time = 0.0;
                     remaining_substeps = 0;
                 }
             } else {
@@ -578,6 +595,11 @@ impl PhysicsPipeline {
 
             num_passes += 1;
 
+            let end_fraction = (1.0 - remaining_time / step_parameters.dt).clamp(0.0, 1.0);
+            for (handle, path) in &kinematic_paths {
+                let rb = bodies.index_mut_internal(*handle);
+                rb.pos.next_position = if end_fraction == 1.0 { path.final_transform() } else { path.transform_at(end_fraction) };
+            }
             self.counters.custom.resume();
             self.interpolate_kinematic_velocities(&integration_parameters, islands, bodies);
             self.counters.custom.pause();

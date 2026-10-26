@@ -11,7 +11,7 @@ use parry::query::sweep_toi::Sweep;
 
 use super::sweeps::{
     BodyContinuousResult, CcdTargets, PseudoHitMode, collect_fixed_targets, collect_soft_targets,
-    is_bullet, map_bodies_parallel, sweep_fast_body, MovingCcdTargets,
+    is_bullet, map_bodies_parallel, sweep_fast_body, MovingCcdTargets, motion_end,
 };
 
 /// Continuous Collision Detection solver preventing fast objects from tunneling:
@@ -70,7 +70,7 @@ impl CCDSolver {
             if rb.is_soft_frame() {
                 // A cluster proxy's pose is derived from its particles: it is never swept.
                 rb.ccd.ccd_active = false;
-            } else if rb.is_dynamic() {
+            } else if rb.is_dynamic_or_kinematic() {
                 let moving_fast = if include_forces {
                     // Pre-solve (substep splitter): `next_position` isn't solved yet, use the
                     // current velocity with forces, like `find_first_impact`. The last solved
@@ -78,7 +78,7 @@ impl CCDSolver {
                     rb.ccd.is_moving_fast(
                         dt,
                         &rb.vels,
-                        Some((&rb.forces, &rb.mprops)),
+                        if rb.is_dynamic() { Some((&rb.forces, &rb.mprops)) } else { None },
                         rb.mprops.max_extent(),
                     )
                 } else {
@@ -137,9 +137,7 @@ impl CCDSolver {
         let fractions = map_bodies_parallel(&fast_bodies, hooks, |handle, hooks| {
             let rb1 = &bodies[handle];
             // `next_position` isn't solved yet: sweep to the forces/velocities integration.
-            let predicted_body_pos =
-                rb1.pos
-                    .integrate_forces_and_velocities(dt, &rb1.forces, &rb1.vels, &rb1.mprops);
+            let predicted_body_pos = motion_end(rb1, true, dt);
             sweep_fast_body(
                 handle,
                 bodies,
@@ -203,8 +201,9 @@ impl CCDSolver {
         // overlap at either the start or the clamped end pose).
         let mut emitted_sensor_pairs = alloc::collections::BTreeSet::new();
         for result in &all_results {
+            let resolved_fraction = if bodies[result.handle].is_dynamic() { result.fraction } else { 1.0 };
             for hit in &result.pseudo_hits {
-                if hit.fraction >= result.fraction {
+                if hit.fraction >= resolved_fraction {
                     // The body stops before reaching this sensor.
                     continue;
                 }
@@ -275,6 +274,9 @@ impl CCDSolver {
         for result in results {
             if result.fraction < 1.0 {
                 let rb = bodies.index_mut_internal(result.handle);
+                // A prescribed kinematic trajectory may drive a dynamic body but is
+                // never shortened by CCD. Its impacts trigger global time subdivision.
+                if !rb.is_dynamic() { continue; }
                 let sweep = Sweep::from_poses(
                     &rb.pos.position,
                     &rb.pos.next_position,

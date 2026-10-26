@@ -987,7 +987,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 // Capture the post-solve velocity used by the CCD sweep — for *every* dynamic
                 // body (fast bodies get CCD vs fixed colliders by default), skipped entirely
                 // when CCD is globally off (`max_ccd_substeps == 0`) so those users pay nothing.
-                if base_params.max_ccd_substeps != 0 && rb.is_dynamic() && !rb.is_soft_frame() {
+                if base_params.max_ccd_substeps != 0 && rb.is_dynamic_or_kinematic() && !rb.is_soft_frame() {
                     rb.ccd_vels = rb
                         .pos
                         .interpolate_velocity(base_params.inv_dt(), rb.local_center_of_mass());

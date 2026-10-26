@@ -3,7 +3,7 @@
 //! and the per-body continuous solve.
 
 use crate::alloc_prelude::*;
-use crate::dynamics::{RigidBody, RigidBodyHandle, RigidBodySet, SoftBodySet, IslandManager, RigidBodyPosition};
+use crate::dynamics::{RigidBody, RigidBodyHandle, RigidBodySet, SoftBodySet, IslandManager, RigidBodyPosition, RigidBodyType};
 use crate::geometry::{Collider, ColliderHandle, ColliderSet};
 use crate::math::{Pose, Real, Vector};
 use crate::parry::bounding_volume::Aabb;
@@ -39,12 +39,18 @@ pub(super) fn is_bullet(rb: &RigidBody) -> bool {
 
 /// Dynamic pairs participate when either side requests full CCD.
 fn tier_allows(rb1: &RigidBody, rb2: Option<&RigidBody>, co2: &Collider) -> bool {
-    is_bullet(rb1) || rb2.map(is_bullet).unwrap_or(false) || is_auto_target(rb2, co2)
+    if rb1.is_kinematic() {
+        rb2.map(is_bullet).unwrap_or(false)
+    } else {
+        is_bullet(rb1) || rb2.map(is_bullet).unwrap_or(false) || is_auto_target(rb2, co2)
+    }
 }
 
 pub(super) fn motion_end(rb: &RigidBody, predicted: bool, dt: Real) -> Pose {
     if predicted && rb.is_dynamic() {
         rb.pos.integrate_forces_and_velocities(dt, &rb.forces, &rb.vels, &rb.mprops)
+    } else if predicted && rb.body_type == RigidBodyType::KinematicVelocityBased {
+        rb.vels.integrate(dt, &rb.pos.position, &rb.mprops.local_mprops.local_com)
     } else { rb.pos.next_position }
 }
 

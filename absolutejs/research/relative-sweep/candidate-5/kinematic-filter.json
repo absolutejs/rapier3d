@@ -1,0 +1,58 @@
+{
+  "candidateOnly": true,
+  "engineSha256": "ee1939d368b211b1f1fd28c4fd8095e4c570e481c00b5356f488fcb20f6cce83",
+  "cases": [
+    {
+      "mode": "solid",
+      "bodyX": -0.5,
+      "targetX": -1.500000238418579,
+      "sleeping": false,
+      "passes": 2,
+      "events": [
+        {
+          "started": true
+        }
+      ]
+    },
+    {
+      "mode": "sensor",
+      "bodyX": -0.5,
+      "targetX": -1.5,
+      "sleeping": true,
+      "passes": 1,
+      "events": [
+        {
+          "started": true
+        },
+        {
+          "started": false
+        }
+      ]
+    },
+    {
+      "mode": "collision-groups",
+      "bodyX": -0.5,
+      "targetX": -1.5,
+      "sleeping": true,
+      "passes": 1,
+      "events": []
+    },
+    {
+      "mode": "solver-groups",
+      "bodyX": -0.5,
+      "targetX": -1.5,
+      "sleeping": true,
+      "passes": 1,
+      "events": []
+    },
+    {
+      "mode": "no-full-ccd",
+      "bodyX": -0.5,
+      "targetX": -1.5,
+      "sleeping": true,
+      "passes": 1,
+      "events": []
+    }
+  ],
+  "violations": 1
+}
