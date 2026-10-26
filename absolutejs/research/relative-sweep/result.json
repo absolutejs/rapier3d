@@ -1,0 +1,459 @@
+{
+  "cases": [
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        -120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        -120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        -60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        -60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        0.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        0.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.4000004529953003,
+      "boost": [
+        60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.4000004529953003,
+      "boost": [
+        60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 0.7262924313545227,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Hit",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.40000051259994507,
+      "boost": [
+        120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.40000051259994507,
+      "fixture": "head-on",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        -120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        -120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        -60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        -60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        0.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        0.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.42928963899612427,
+      "boost": [
+        60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.42928963899612427,
+      "boost": [
+        60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": false
+    },
+    {
+      "actualFraction": 0.42928966879844666,
+      "boost": [
+        120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": 0.42928966879844666,
+      "fixture": "perpendicular",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Separated",
+      "status": "Hit",
+      "swap": true
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        -120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": false
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        -120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": true
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        -60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": false
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        -60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": true
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        0.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 0.4203106760978699,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Hit",
+      "status": "Separated",
+      "swap": false
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        0.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": true
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 0.607542872428894,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Hit",
+      "status": "Separated",
+      "swap": false
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        60.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": true
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 0.712816059589386,
+      "frozenTargetMatchesAnalytic": false,
+      "frozenTargetStatus": "Hit",
+      "status": "Separated",
+      "swap": false
+    },
+    {
+      "actualFraction": 1.0,
+      "boost": [
+        120.0,
+        37.0,
+        -11.0
+      ],
+      "expectedFraction": null,
+      "fixture": "near-miss",
+      "frozenTargetFraction": 1.0,
+      "frozenTargetMatchesAnalytic": true,
+      "frozenTargetStatus": "Separated",
+      "status": "Separated",
+      "swap": true
+    }
+  ],
+  "frozenTargetMismatches": 23,
+  "parry": "0.31.1",
+  "passed": true,
+  "precision": "f32",
+  "scope": "Two-sweep primitive only; no world integration, broadphase, rotation, or compound acceptance claim"
+}

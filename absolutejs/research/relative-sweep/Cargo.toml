@@ -1,0 +1,11 @@
+[package]
+name = "absolutejs-relative-sweep-probe"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[dependencies]
+parry3d = "=0.31.1"
+serde_json = "1"
