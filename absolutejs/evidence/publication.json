@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "sourceCommit": "a771a174feb09720a999a9d62563e422668fa55b",
   "npmAccepted": true,
-  "registryVerified": false,
+  "registryVerified": true,
   "tarballSha1": "bc7945393891843bd7b1a458983b0491a119a742",
-  "note": "Browser confirmation completed; npm reported package processing. Registry metadata still returned 404 at the initial checks. Do not adopt until the registry artifact is verified."
+  "note": "Registry tarball downloaded and SHA1 matched the accepted release. Metadata and tarball initially returned 404 during npm processing."
 }

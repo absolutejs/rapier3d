@@ -1,0 +1,79 @@
+{
+  "scope": "Analytic cube-shell diagnostic; no runtime qualification",
+  "solverDistance": "cached contact update",
+  "cornerDistance": "current transformed vertices, evaluated every physics step",
+  "observations": [
+    {
+      "hz": 960,
+      "tilt": 0,
+      "contacts": 46080,
+      "peakCornerM": 0.00045869700970108563,
+      "peakCachedDepthM": 0.00002176821231842041,
+      "finalCornerM": 0.000014753904167972287,
+      "peakAt": {
+        "step": 610,
+        "seconds": 0.6364583333333333,
+        "cornerM": 0.00045869700970108563,
+        "cachedDepthM": 0
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "hz": 960,
+      "tilt": 0.3,
+      "contacts": 46080,
+      "peakCornerM": 0.00003101173738931262,
+      "peakCachedDepthM": 0.000013017058372497558,
+      "finalCornerM": 0.000004860790331049358,
+      "peakAt": {
+        "step": 616,
+        "seconds": 0.6427083333333333,
+        "cornerM": 0.00003101173738931262,
+        "cachedDepthM": 0.000013017058372497558
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "hz": 1920,
+      "tilt": 0,
+      "contacts": 92160,
+      "peakCornerM": 0.00045669197995726,
+      "peakCachedDepthM": 0.000056861042976379396,
+      "finalCornerM": 0.000004062532645574546,
+      "peakAt": {
+        "step": 1220,
+        "seconds": 0.6359375,
+        "cornerM": 0.00045669197995726,
+        "cachedDepthM": 0
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "hz": 1920,
+      "tilt": 0.3,
+      "contacts": 92160,
+      "peakCornerM": 0.000019627462307088004,
+      "peakCachedDepthM": 0.000019623818807303906,
+      "finalCornerM": 0.0000036005870631261593,
+      "peakAt": {
+        "step": 1227,
+        "seconds": 0.6395833333333333,
+        "cornerM": 0.000019627462307088004,
+        "cachedDepthM": 0.000005938410758972168
+      },
+      "sleeping": [
+        true,
+        true
+      ]
+    }
+  ]
+}
