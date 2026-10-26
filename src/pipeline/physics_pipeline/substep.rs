@@ -64,7 +64,9 @@ impl PhysicsPipeline {
         hooks: &dyn PhysicsHooks,
         events: &dyn EventHandler,
     ) {
-        self.counters.ccd.toi_computation_time.start();
+        if self.counters.enabled() {
+            self.counters.ccd.toi_computation_time.resume();
+        }
         // Handle CCD: sweep the fast bodies and clamp their `next_position` to their
         // earliest time of impact (velocities are preserved).
         ccd_solver.solve_continuous(
@@ -78,7 +80,9 @@ impl PhysicsPipeline {
             hooks,
             events,
         );
-        self.counters.ccd.toi_computation_time.pause();
+        if self.counters.enabled() {
+            self.counters.ccd.toi_computation_time.pause();
+        }
     }
 
     /// `integration_parameters.dt` is the length of the interval the soft-CCD prediction of the
@@ -510,6 +514,9 @@ impl PhysicsPipeline {
             // If there is only one or zero CCD substep, there is no need
             // to split the timestep interval. So we can just skip this part.
             if ccd_is_enabled && remaining_substeps > 1 {
+                if self.counters.enabled() {
+                    self.counters.stages.ccd_time.resume();
+                }
                 // NOTE: Take forces into account when updating the bodies CCD activation flags
                 //       these forces have not been integrated to the body's velocity yet.
                 let ccd_active =
@@ -517,7 +524,10 @@ impl PhysicsPipeline {
                 any_ccd_active |= ccd_active;
                 self.join_deferred_bvh_optimize(broad_phase);
                 let first_impact = if ccd_active {
-                    ccd_solver.find_first_impact(
+                    if self.counters.enabled() {
+                        self.counters.ccd.toi_computation_time.resume();
+                    }
+                    let impact = ccd_solver.find_first_impact(
                         remaining_time,
                         &integration_parameters,
                         islands,
@@ -526,10 +536,17 @@ impl PhysicsPipeline {
                         broad_phase,
                         narrow_phase,
                         hooks,
-                    )
+                    );
+                    if self.counters.enabled() {
+                        self.counters.ccd.toi_computation_time.pause();
+                    }
+                    impact
                 } else {
                     None
                 };
+                if self.counters.enabled() {
+                    self.counters.stages.ccd_time.pause();
+                }
 
                 if let Some(toi) = first_impact {
                     let original_interval = remaining_time / (remaining_substeps as Real);
@@ -581,6 +598,9 @@ impl PhysicsPipeline {
 
             // If CCD is enabled, execute the CCD motion clamping.
             if ccd_is_enabled {
+                if self.counters.enabled() {
+                    self.counters.stages.ccd_time.resume();
+                }
                 // The staged solver's body writeback already computed the post-solve CCD flags;
                 // a serial walk is only needed when that verdict is unavailable (multibodies).
                 // NOTE: don't include forces — the solver already integrated them into the velocities.
@@ -608,6 +628,9 @@ impl PhysicsPipeline {
                         hooks,
                         events,
                     );
+                }
+                if self.counters.enabled() {
+                    self.counters.stages.ccd_time.pause();
                 }
             }
 

@@ -1,0 +1,10 @@
+{
+  "version": "0.3.0",
+  "sourceCommit": "33e4781de452c1a87491da288578b1468993e033",
+  "status": "Original counter-only upload failed with connection resets; bounded retry ended FETCH_ERROR network timeout. Registry still returned 404 at 2026-10-26T18:35Z. No accepted publication established. These checks precede the final timer-repaired artifact.",
+  "packSha1": "5dc3a4366e6955baa4f8c14667a66d7d10146cca",
+  "observedNetworkFailures": [
+    "30 http fetch PUT <registry-url> attempt 1 failed with ECONNRESET",
+    "31 http fetch PUT <registry-url> attempt 2 failed with ECONNRESET"
+  ]
+}

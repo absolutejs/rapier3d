@@ -7,7 +7,7 @@ flag resets across profiler transitions and before stepping, and becomes valid a
 normal or event-enabled stepping completes. Restored worlds have no profiler sample.
 No engine algorithm, timestep policy or solver parameter changes.
 
-Qualification: 13 tests, 45,490 assertions; strict TypeScript consumer; GPU-disabled
+Qualification: 13 tests, 47,442 assertions; strict TypeScript consumer; GPU-disabled
 browser worker; Node initialization/counter smoke. Two fixture worlds match every
 pose/rotation with profiling enabled versus disabled, alternating event collection.
 Existing official-upstream motion parity tests also pass. A fast sphere/thin-wall
@@ -24,3 +24,18 @@ The native counter gives the number of passes, not individual dt values, impact
 fractions or a guarantee against material overlap. Profiling is opt-in and remains
 disabled by default. Published artifact contents and checksum must be verified before
 game adoption; the running game remains on 0.2.1 until then.
+
+## Native profiler repair
+
+The native aggregate CCD timer was never started, and the TOI timer restarted
+instead of accumulating across passes. This release also wires opt-in aggregate
+CCD timers around planning and clamping, and accumulates TOI time across both.
+This changes native instrumentation, not solver equations or timestep decisions.
+The added timing regression fails on the preceding counter-only build (retained
+in timing-regression-before.log) and passes on this artifact. Timers remain finite,
+nonnegative, and nested consistently in the CPU and GPU-disabled browser fixtures.
+
+The explicit candidate replay matches all 128 saved game frame hashes against
+registry 0.2.1. The game dependency was not replaced. At the overlap spike the
+counter reports two passes despite a configured cap of four. Host timing samples
+are diagnostic observations, not hardware FPS benchmarks or a physics acceptance.

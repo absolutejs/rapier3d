@@ -3,10 +3,10 @@
     "id": "@absolutejs/rapier3d@0.3.0",
     "name": "@absolutejs/rapier3d",
     "version": "0.3.0",
-    "size": 1785327,
-    "unpackedSize": 5115510,
-    "shasum": "5dc3a4366e6955baa4f8c14667a66d7d10146cca",
-    "integrity": "sha512-XKPvvGngjjzDjZU1TWAoUjzlDe5fUqMDxCzMRS5Qsp0ZoWT2oU8Zmr0RKidlTvHxHGA5PfwfAFbygCdLX3R77A==",
+    "size": 1785777,
+    "unpackedSize": 5117761,
+    "shasum": "fd522fad747e9115cec3878ce3cecf0d877c429e",
+    "integrity": "sha512-BVSi5C/5vZ4SLhE++MFxIywgsuf1zP2QdY96YOy1MreZADL7Hrso1iN+jHooOo1NhIh4ZTBPzablgiEHAycAkw==",
     "filename": "absolutejs-rapier3d-0.3.0.tgz",
     "files": [
       {
@@ -16,22 +16,22 @@
       },
       {
         "path": "README.md",
-        "size": 6083,
+        "size": 6512,
         "mode": 420
       },
       {
         "path": "absolutejs/README.md",
-        "size": 6083,
+        "size": 6512,
         "mode": 420
       },
       {
         "path": "dist/provenance.json",
-        "size": 355,
+        "size": 356,
         "mode": 420
       },
       {
         "path": "dist/rapier.mjs",
-        "size": 4628492,
+        "size": 4629884,
         "mode": 420
       },
       {

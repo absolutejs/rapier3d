@@ -1,0 +1,24 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [7.19ms]
+27 |    const count=measured.w.ccdSubsteps();expect(count).not.toBeNull();
+28 |    expect(Number.isInteger(count)).toBe(true);expect(count!).toBeGreaterThanOrEqual(0);expect(count!).toBeLessThanOrEqual(4);
+29 |    maximum=Math.max(maximum,count!);
+30 |    const total=measured.w.timingCcd(),toi=measured.w.timingCcdToiComputation();
+31 |    expect(Number.isFinite(total)&&total>=0).toBe(true);expect(Number.isFinite(toi)&&toi>=0).toBe(true);
+32 |    expect(total+1e-6).toBeGreaterThanOrEqual(toi);ccdTime+=total;toiTime+=toi;
+                           ^
+error: expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= 0.035676
+Received: 0.000001
+
+      at <anonymous> (/home/alexkahn/alex/rapier-contact-release/absolutejs/tests/ccd-counters.test.ts:32:23)
+(fail) profiled CCD counts preserve every fixture pose with and without event collection [661.98ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [5.52ms]
+
+ 2 pass
+ 1 fail
+ 2842 expect() calls
+Ran 3 tests across 1 file. [849.00ms]

@@ -42,8 +42,8 @@ web/Node/Bun; it does not claim a 2D, f64, CommonJS or SIMD distribution.
 
 Source base: dimforge/rapier commit
 `b716d375efc0201003f0cd9ef7168eee0b62c177`. Upstream Apache-2.0 licensing is retained.
-All engine source remains upstream; changes are confined to binding queries and
-this package's build/test tooling.
+Engine calculations remain upstream. Additions cover binding queries, package
+build/test tooling, and CCD profiler timer wiring; no solver equations are changed.
 
 Use Bun 1.4.4+absolute.1, Rust 1.94.0 with `wasm32-unknown-unknown`, and Python 3.12.
 Run `bun install --frozen-lockfile`, then `bash absolutejs/scripts/build-native.sh`.
@@ -104,3 +104,9 @@ until a new step completes. Setting an already enabled profiler to true is idemp
 Restored worlds start with profiling disabled and no sample. Event-enabled stepping
 is covered too. This is opt-in telemetry; no physics policy or defaults change.
 The counter does not expose individual substep durations or times of impact.
+
+CCD timing now accumulates activation/impact-planning and motion-clamping work
+across all passes in a step. The TOI timer also accumulates instead of resetting
+for every clamp pass. Both are recorded only with profiling enabled. The timing
+fix leaves contact equations and trajectories unchanged; package tests compare
+profiled/unprofiled poses and official upstream trajectories.

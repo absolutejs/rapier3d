@@ -19,7 +19,7 @@ test('CCD counter distinguishes unavailable, inactive and fresh profiled steps',
 });
 test('profiled CCD counts preserve every fixture pose with and without event collection',()=>{
  const measured=fixture(R),control=fixture(R),events=new R.EventQueue(true);
- let maximum=0;
+ let maximum=0,ccdTime=0,toiTime=0;
  try {
   measured.w.profilerEnabled=true;
   for(let step=0;step<650;step++) {
@@ -27,10 +27,13 @@ test('profiled CCD counts preserve every fixture pose with and without event col
    const count=measured.w.ccdSubsteps();expect(count).not.toBeNull();
    expect(Number.isInteger(count)).toBe(true);expect(count!).toBeGreaterThanOrEqual(0);expect(count!).toBeLessThanOrEqual(4);
    maximum=Math.max(maximum,count!);
+   const total=measured.w.timingCcd(),toi=measured.w.timingCcdToiComputation();
+   expect(Number.isFinite(total)&&total>=0).toBe(true);expect(Number.isFinite(toi)&&toi>=0).toBe(true);
+   expect(total+1e-6).toBeGreaterThanOrEqual(toi);ccdTime+=total;toiTime+=toi;
    expect(control.w.ccdSubsteps()).toBeNull();
    for(let i=0;i<2;i++) {expect(measured.bodies[i]!.translation()).toEqual(control.bodies[i]!.translation());expect(measured.bodies[i]!.rotation()).toEqual(control.bodies[i]!.rotation());}
   }
-  expect(maximum).toBeGreaterThan(0);
+  expect(maximum).toBeGreaterThan(0);expect(ccdTime).toBeGreaterThan(0);expect(toiTime).toBeGreaterThan(0);
   measured.w.profilerEnabled=false;expect(measured.w.ccdSubsteps()).toBeNull();
   measured.w.profilerEnabled=true;expect(measured.w.ccdSubsteps()).toBeNull();
  }finally{events.free();measured.w.free();control.w.free();}

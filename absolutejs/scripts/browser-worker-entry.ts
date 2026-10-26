@@ -5,8 +5,9 @@ try {
  const {w,a,b}=fixture(R);
  try {
   if(w.ccdSubsteps()!==null)throw Error('Unprofiled CCD count must be unavailable');
-  w.profilerEnabled=true;let maximumCcdSubsteps=0;
-  for(let i=0;i<650;i++){w.step();const count=w.ccdSubsteps();if(count===null||!Number.isInteger(count)||count<0||count>4)throw Error('Invalid fresh CCD count');maximumCcdSubsteps=Math.max(maximumCcdSubsteps,count);}
+  w.profilerEnabled=true;let maximumCcdSubsteps=0,totalCcdMs=0,totalToiMs=0;
+  for(let i=0;i<650;i++){w.step();const count=w.ccdSubsteps();if(count===null||!Number.isInteger(count)||count<0||count>4)throw Error('Invalid fresh CCD count');maximumCcdSubsteps=Math.max(maximumCcdSubsteps,count);const total=w.timingCcd(),toi=w.timingCcdToiComputation();if(total+1e-6<toi)throw Error("CCD timing does not cover TOI");totalCcdMs+=total;totalToiMs+=toi;}
+  if(!(totalCcdMs>0&&totalToiMs>0))throw Error('Active CCD timing was not recorded');
   if(maximumCcdSubsteps<1)throw Error('Expected CCD activation');
   const fast=new R.World({x:0,y:0,z:0});let fastCcdSubsteps;
   try {fast.timestep=1/60;fast.integrationParameters.maxCcdSubsteps=4;fast.profilerEnabled=true;fast.createCollider(R.ColliderDesc.cuboid(.01,2,2));const body=fast.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(-1,0,0).setLinvel(120,0,0).setCcdEnabled(true));fast.createCollider(R.ColliderDesc.ball(.1),body);fast.step();fastCcdSubsteps=fast.ccdSubsteps();if(fastCcdSubsteps!==2)throw Error('Expected two actual CCD passes');}finally{fast.free();}
@@ -22,6 +23,6 @@ try {
   if(Math.abs(w.integrationParameters.minCcdDt-1/960/100)>1e-10)throw Error('CCD minimum setter failed');
   const restored=R.World.restoreSnapshot(w.takeSnapshot());
   try { if(restored.getCollider(0).parent()!==null)throw Error('Restored floor aliases body zero');if(restored.getCollider(a.handle).parent()?.handle!==a.parent()?.handle)throw Error('Restored moving owner changed'); } finally {restored.free();}
-  postMessage({maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
