@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-27T23:46:41.355440+00:00",
+  "checks": [
+    {
+      "url": "https://status.npmjs.org/api/v2/status.json",
+      "status": 200,
+      "body": {
+        "page": {
+          "id": "wyvgptkd90hm",
+          "name": "npm",
+          "url": "https://status.npmjs.org",
+          "time_zone": "Etc/UTC",
+          "updated_at": "2026-10-27T23:19:32.531Z"
+        },
+        "status": {
+          "indicator": "none",
+          "description": "All Systems Operational"
+        }
+      }
+    },
+    {
+      "url": "https://status.npmjs.org/api/v2/incidents/unresolved.json",
+      "status": 200,
+      "body": {
+        "page": {
+          "id": "wyvgptkd90hm",
+          "name": "npm",
+          "url": "https://status.npmjs.org",
+          "time_zone": "Etc/UTC",
+          "updated_at": "2026-10-27T23:19:32.531Z"
+        },
+        "incidents": []
+      }
+    },
+    {
+      "url": "https://registry.npmjs.org/-/ping",
+      "status": 200,
+      "body": {}
+    },
+    {
+      "url": "https://www.npmjs.com/",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "https://www.npmjs.com/login",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ],
+  "userReported": "Service Unavailable on two fresh publish confirmations and separate login flow",
+  "releasePublished": false,
+  "qualifiedReleaseTag": "absolutejs-v0.8.0",
+  "archiveSha256": "ea6ce1b68e69c47f042b0d290ae1c95ed1d9f63cfb9d945f40ebefecfba8eda4"
+}
