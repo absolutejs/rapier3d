@@ -7,6 +7,9 @@ export interface PhysicsBuildInfo {
     readonly qualifiedKernelRelease: string;
     readonly upstream: string;
     readonly engine: string;
+    /** Collision library version and exact Cargo source identity used by this build. */
+    readonly collisionLibraryVersion: string;
+    readonly collisionSource: string;
     readonly bindings: string;
     readonly bindgen: string;
     readonly wasmSha256: string;

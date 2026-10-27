@@ -9,6 +9,12 @@ test('build identity matches the actual package and qualified native bytes',()=>
  const wasm=readFileSync('.absolutejs/api/rapier_wasm3d_bg.wasm');
  expect(buildInfo.packageName).toBe(pkg.name);
  expect(buildInfo.packageVersion).toBe(pkg.version);
+ const lock=Bun.TOML.parse(readFileSync('bindings/typescript/Cargo.lock','utf8')) as {package:{name:string;version:string;source?:string}[]};
+ const collision=lock.package.filter(p=>p.name==='parry3d');
+ expect(collision).toHaveLength(1);
+ expect(buildInfo.collisionLibraryVersion).toBe(collision[0]!.version);
+ expect(buildInfo.collisionSource).toBe(collision[0]!.source);
+
  expect(buildInfo.wasmSha256).toBe(createHash('sha256').update(wasm).digest('hex'));
  expect(buildInfo.wasmBytes).toBe(wasm.length);
  expect(buildInfo).toEqual(JSON.parse(readFileSync('dist/provenance.json','utf8')));

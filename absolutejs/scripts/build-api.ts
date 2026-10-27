@@ -31,7 +31,12 @@ const wasm=readFileSync(join(generated,'rapier_wasm3d_bg.wasm'));
 const nativeQualification=JSON.parse(readFileSync('absolutejs/native-kernel.json','utf8'));
 const qualifiedWasmSha256=assertQualifiedNative(wasm,nativeQualification);
 const packageInfo=JSON.parse(readFileSync('package.json','utf8'));
-const buildInfo={schemaVersion:1,scope:'package',packageName:packageInfo.name,packageVersion:packageInfo.version,qualifiedKernelRelease:nativeQualification.qualifiedKernelRelease,upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:qualifiedWasmSha256,wasmBytes:wasm.length,solverChanges:nativeQualification.solverChanges};
+const nativeLock=Bun.TOML.parse(readFileSync('bindings/typescript/Cargo.lock','utf8')) as {package?:{name?:string;version?:string;source?:string}[]};
+const collisionPackages=nativeLock.package?.filter(p=>p.name==='parry3d')??[];
+if(collisionPackages.length!==1||!collisionPackages[0]!.version||!collisionPackages[0]!.source)throw Error('Collision provenance requires one locked Parry source');
+const collisionPackage=collisionPackages[0]!;
+
+const buildInfo={schemaVersion:1,scope:'package',packageName:packageInfo.name,packageVersion:packageInfo.version,qualifiedKernelRelease:nativeQualification.qualifiedKernelRelease,upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',collisionLibraryVersion:collisionPackage.version,collisionSource:collisionPackage.source,bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:qualifiedWasmSha256,wasmBytes:wasm.length,solverChanges:nativeQualification.solverChanges};
 writeFileSync(join(generated,'build-info.ts'),readFileSync('absolutejs/api/build-info.ts','utf8')+'\n/** Frozen metadata; available before init(). */\nexport const buildInfo: PhysicsBuildInfo = Object.freeze('+JSON.stringify(buildInfo)+');\n');
 writeFileSync(join(generated,'exports.ts'),readFileSync(join(generated,'exports.ts'),'utf8')+'\nexport {buildInfo, type PhysicsBuildInfo} from "./build-info";\n');
 writeFileSync(join(generated,'init.ts'),`import initialize, {type InitInput} from './rapier_wasm3d.js';
