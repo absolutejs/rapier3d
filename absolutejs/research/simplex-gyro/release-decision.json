@@ -1,6 +1,6 @@
 {
   "version": "0.8.0",
-  "decision": "ready-to-publish",
+  "decision": "published-registry-verified-and-adopted",
   "nativeWasmSha256": "2ce107fb8534f00010b0238448eff1a4512e19b6312ef8b9359ac455c85511ab",
   "tarballSha256": "ea6ce1b68e69c47f042b0d290ae1c95ed1d9f63cfb9d945f40ebefecfba8eda4",
   "tarballIntegrity": "sha512-Stx+pRVmGSJEGfLq0JxGoSUiBsqzOxVg5dj/+Ak3jCajsBd8LJThokjCx7Mq/wRdFHUMrrp7bXW9sOB4FT2/YQ==",
@@ -28,9 +28,7 @@
     "coupled trajectories intentionally differ from previous rounding",
     "no hardware frame-rate or speedup claim"
   ],
-  "pending": [
-    "npm publication",
-    "registry integrity verification",
-    "published-package game adoption"
-  ]
+  "pending": [],
+  "gameInstalledFilesVerified": 52,
+  "installedGameTypesPassed": true
 }

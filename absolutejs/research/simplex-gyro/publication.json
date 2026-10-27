@@ -2,6 +2,6 @@
   "version": "0.8.0",
   "publishExitCode": 0,
   "publishOutput": "+ @absolutejs/rapier3d@0.8.0",
-  "registryVerification": "pending; first read returned E404",
+  "registryVerification": "passed; registry integrity equals qualified archive",
   "releaseTag": "absolutejs-v0.8.0"
 }
