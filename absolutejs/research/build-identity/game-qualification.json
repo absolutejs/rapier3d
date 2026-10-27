@@ -1,0 +1,47 @@
+{
+  "status": "qualified-isolated-candidate; registry adoption pending",
+  "package": "@absolutejs/rapier3d@0.7.0",
+  "packageSourceCommit": "7e1de838bd6592a2e7b6e18c6f303732e99ec658",
+  "nativeKernelUnchanged": true,
+  "physicsBuild": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.7.0",
+    "qualifiedKernelRelease": "0.6.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4",
+    "wasmBytes": 3291678,
+    "solverChanges": true
+  },
+  "tarball": {
+    "version": "0.7.0",
+    "distributionFiles": 48,
+    "tarballSha256": "53a50034b2cc5034ee2b099c36a15360a7550cf83bf49cc08639e277f882d46b",
+    "integrity": "sha512-Hgs8gmBKjhdWdMN2eD5euJb/xyWfC3N+Cs6TIS+colaD0Fj8bcxqLC1KBmpYBoNFyb5AjkYy5YsjFFsdJM4i9w==",
+    "wasm": {
+      "schemaVersion": 1,
+      "qualifiedKernelRelease": "0.6.0",
+      "wasmSha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4",
+      "wasmBytes": 3291678,
+      "solverChanges": true
+    }
+  },
+  "tests": {
+    "pass": 825,
+    "fail": 0,
+    "assertions": 7408536,
+    "files": 274
+  },
+  "applicationTypes": true,
+  "physicsToolTypes": true,
+  "logSha256": {
+    "tests.log": "0ede8917b30f35e8923387e5bf4401edd7a778ac1feb2f4b57ce75cf5e2e4c6f",
+    "types.log": "08207a53801e6d1c6035c3ba169c410596cf685e244599bb6dc581bf9a64541e",
+    "physics-types.log": "0594f176507ebc83973222c2e09c46fa97434ef768810035d9e5384179483379"
+  },
+  "gameSourceCommit": "a946efb"
+}
