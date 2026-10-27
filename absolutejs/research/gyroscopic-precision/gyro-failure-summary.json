@@ -1,0 +1,80 @@
+[
+  {
+    "kind": "refinement",
+    "simulationHz": 960,
+    "termination": "contact-limit",
+    "replayFailure": null,
+    "steps": 1553,
+    "rejectedBody": 0,
+    "accepted": false,
+    "maximumContactPenetration": 0.14719921112060547,
+    "minimumClearance": -9.755630916673252e-06,
+    "elapsedMs": 533.801508
+  },
+  {
+    "kind": "refinement",
+    "simulationHz": 1920,
+    "termination": "sleep",
+    "replayFailure": null,
+    "steps": 5402,
+    "rejectedBody": null,
+    "accepted": true,
+    "maximumContactPenetration": 0.000126190185546875,
+    "minimumClearance": -0.00011075744587321634,
+    "elapsedMs": 1153.5935200000001
+  },
+  {
+    "kind": "contact",
+    "variant": 0,
+    "shape": "authored",
+    "hz": 480,
+    "accepted": true,
+    "termination": "sleep",
+    "sleeping": true,
+    "penetration": 4.150390625e-05,
+    "clearance": -4.117066859108537e-05,
+    "center": [
+      0.6628415119488159,
+      2.868304934603998,
+      -0.23931013562985823
+    ],
+    "volume": 0.008829445288335853,
+    "contactSamples": 36110
+  },
+  {
+    "kind": "contact",
+    "variant": 0,
+    "shape": "authored",
+    "hz": 960,
+    "accepted": true,
+    "termination": "sleep",
+    "sleeping": true,
+    "penetration": 2.7313232421875e-05,
+    "clearance": -2.701710577190236e-05,
+    "center": [
+      0.6628415119488159,
+      2.868304934603998,
+      -0.23931013562985823
+    ],
+    "volume": 0.008829445288335853,
+    "contactSamples": 49741
+  },
+  {
+    "kind": "contact",
+    "variant": 0,
+    "shape": "authored",
+    "hz": 1920,
+    "accepted": false,
+    "termination": "contact-limit",
+    "sleeping": false,
+    "penetration": 15.3789306640625,
+    "clearance": -1.177736071729385e-06,
+    "center": [
+      0.6628415119488159,
+      2.868304934603998,
+      -0.23931013562985823
+    ],
+    "volume": 0.008829445288335853,
+    "contactSamples": 17221
+  }
+]

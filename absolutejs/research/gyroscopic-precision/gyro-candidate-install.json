@@ -1,0 +1,19 @@
+{
+  "scope": "Isolated prepublication candidate qualification, not delivered dependency override",
+  "packageVersion": "0.7.0",
+  "runtimeSha256": "fb50b988f22c3aec4d3b327d7b89d4f1c3d2041955de667b34bc7d7ccdafe607",
+  "tarballAudit": {
+    "version": "0.7.0",
+    "distributionFiles": 48,
+    "tarballSha256": "68ff10fcddd9b10b67ea890b32f2adff8322d96014f1d8a0d213d8fe5fa442cc",
+    "integrity": "sha512-APQxMawnDutdgqFk/9Dgwvym+fu3wQOlNLtQvctVOYO3byGoLMYLsy8eFNItaQcptPG9btgFCGq7xS4cAYRSkQ==",
+    "wasm": {
+      "schemaVersion": 1,
+      "qualifiedKernelRelease": "0.7.0",
+      "wasmSha256": "c80fd631798a17f0a25160436921b08bce302a506d82a11d0bd51f839353708e",
+      "wasmBytes": 3291707,
+      "solverChanges": true
+    }
+  },
+  "mainGameRemains": "Published 0.6.0 until registry verification"
+}

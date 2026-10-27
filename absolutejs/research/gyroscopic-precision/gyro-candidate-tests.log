@@ -1,0 +1,1447 @@
+$ bun run check:dependencies && bun test ./tests
+$ bun scripts/check-local-dependencies.ts
+{
+  "scope": "Static runtime AbsoluteJS imports in src and config; resolution only",
+  "checked": [
+    "@absolutejs/absolute",
+    "@absolutejs/absolute/react",
+    "@absolutejs/beacon/outbox",
+    "@absolutejs/diagnostics/redact",
+    "@absolutejs/errors",
+    "@absolutejs/geometry",
+    "@absolutejs/geometry/manifold",
+    "@absolutejs/logs",
+    "@absolutejs/performance/client",
+    "@absolutejs/rapier3d",
+    "@absolutejs/rapier3d/build-info",
+    "@absolutejs/reports/react"
+  ],
+  "failures": []
+}
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+tests/timber-grid-expansion.test.ts:
+(pass) grid extension copies cells by centered integer offsets and rejects shrinking or unbounded fields [1.16ms]
+(pass) growing measured geometry preserves cut coordinates, removal history, volume and texture texels [78.38ms]
+(pass) historical grids remain readable and expanded input dimensions are validated before decoding [2.85ms]
+
+tests/finite-sections.test.ts:
+(pass) actual selected-limb sections shrink and vanish without crediting unrelated crossing twigs [7893.67ms]
+(pass) a descendant cut outside the selected root is explicit and never a zero-strength ratio [109.51ms]
+
+tests/horizon.test.ts:
+(pass) distant terrain and water topology > preserves canonical height and stitched edges [1325.74ms]
+(pass) distant terrain and water topology > shore contour roots converge within the bounded solver budget [0.39ms]
+(pass) distant terrain and water topology > distant ocean carries physical coastal coordinates and slopes [84.76ms]
+(pass) distant terrain and water topology > water excludes dry land and follows the rendered river banks [497.56ms]
+
+tests/boussinesq-coefficients.test.ts:
+(pass) constant-depth coefficients reproduce the enhanced Boussinesq implicit Fourier symbol [2.88ms]
+(pass) linear depth gives independent polynomial operator response and fixed boundary rows [0.72ms]
+(pass) transposing the bathymetry transposes directional coefficients exactly [1.35ms]
+(pass) near-dry identity rows preserve prescribed RHS without silently masking steep beds [0.99ms]
+(pass) coefficient contracts reject zero depth without mask, precision loss and invalid grids [0.90ms]
+
+tests/water-lifecycle.test.ts:
+(pass) frame budgets retain all demand, including stalls, zero-work pauses and failed steps [19.97ms]
+(pass) deadline limits are checked between steps and preserve the outstanding time [0.40ms]
+(pass) a JSON checkpoint resumes exactly, with boundary forcing, accumulated flux and time debt [9.02ms]
+(pass) stationary patch addressing handles negative coordinates and returning restores state and debt [4.67ms]
+(pass) failed persistence keeps the resident and serialized requests recover after failure [2.21ms]
+(pass) concurrent requests serialize mutation and a corrupt stored clock never replaces the resident [1.58ms]
+(pass) GPU time uniforms retain sub-float precision and reject unbounded epochs [2.26ms]
+(pass) invalid load metadata does not silently reset a world patch [2.09ms]
+(pass) missing saved time and incomplete boundary arrays fail closed [3.25ms]
+
+tests/surface-atlas-textures.test.ts:
+(pass) atlas texture owner preserves borrowed data, declares field sampling and disposes exactly once [2.54ms]
+(pass) atlas texture owner rejects unsupported device limits and corrupt layout [1.04ms]
+
+tests/polyhedral-mass.test.ts:
+(pass) clipped box mass, centroid and pivot inertia match analytic values [2.99ms]
+(pass) mass integration preserves translation, winding and density scaling [1.02ms]
+(pass) all actual wood meshes have finite mass and positive pivot inertia above a cut [95.33ms]
+(pass) invalid, empty and degenerate mass inputs fail rather than yielding NaN [1.47ms]
+
+tests/canopy-preview.test.ts:
+(pass) canopy preview propagates unknown initial storage, is bounded and never invents snow melt [18.79ms]
+(pass) 15-second weather preview stays close to a two-second reference in the storm fixture [35.95ms]
+(pass) measured gap replaces the assumption without changing rain forcing [6.74ms]
+
+tests/gpu-drain.test.ts:
+(pass) GPU drain flushes once, polls with zero timeout and yields until signaled [0.92ms]
+(pass) GPU drain releases on cancellation and failures without touching a lost context [0.55ms]
+
+tests/finite-canopy.test.ts:
+(pass) finite canopy ownership conserves whole authored units across all tree shapes and cuts [11018.95ms]
+(pass) a tool centered on an authored support removes the entire foliage unit [74.27ms]
+(pass) repeated exact supports reuse membership work while preserving every foliage unit [132.42ms]
+(pass) wedge foliage support uses its sloped planes rather than its bounding box [117.26ms]
+(pass) oak exterior supports identify unique surviving bodies without rejecting boundary points [176.62ms]
+
+tests/broadleaf-surface.test.ts:
+(pass) broadleaf maps are scene-owned, linear, bounded and shared across material clones [25.38ms]
+(pass) pine and wood retain their authored material maps [0.49ms]
+(pass) effect replay reacquires maps; independent owners and repeated cleanup release exactly once [1.49ms]
+(pass) photographed silhouettes retain their UV-matched embedded maps and ownership [0.60ms]
+
+tests/relit-texture-array.test.ts:
+(pass) relit layers retain data identity, budget every mip and dispose exactly once [5.79ms]
+
+tests/geometry-residency.test.ts:
+(pass) private GPU identities sharing CPU data are counted even in a hidden LOD [5.69ms]
+(pass) shared geometry and interleaved storage count one buffer per owner [0.62ms]
+(pass) inspection reports bounded traversal and rejects invalid budgets [1.18ms]
+
+tests/timber-geometry.test.ts:
+(pass) measured cross section agrees with a known cylinder and generated caps stay at the kerf [37.12ms]
+(pass) all forest assets produce nonempty bounded footprints without changing loader buffers [247.73ms]
+(pass) real generated tree fails from measured wood loss and rejects distant or post-fall strikes [1475.35ms]
+(pass) compatibility picking uses the real trunk and rejects hidden or distant candidates [39.83ms]
+
+tests/lod-coverage-transition.test.ts:
+(pass) LOD coverage composes hooks and keeps one shader variant for mutable ranges [1.18ms]
+(pass) LOD bands form a complete partition and never draw more than two levels [14.05ms]
+(pass) LOD transitions compose with distance culling and restore traversal ownership [7.21ms]
+(pass) LOD transitions reject invalid ranges and shader hooks [2.09ms]
+(pass) LOD transition endpoints ignore sub-micrometre roundoff [1.16ms]
+(pass) owned transition material preserves centered cutout hooks without owning borrowed textures [2.13ms]
+
+tests/terminal-twig.test.ts:
+(pass) twig library preserves exact path/petiole attachment, identity and bounded physical dimensions [186.55ms]
+(pass) instanced crown keeps root ownership and culling bounds while sharing storage and releasing GPU owners [1515.84ms]
+(pass) dense crown budgets reject without disposing borrowed materials and disposed owners reject mutations [183.99ms]
+
+tests/finite-wood-colliders.test.ts:
+(pass) Current trees preserve notches, engine mass and geometry across all species, shapes and two body origins [2588.20ms]
+(pass) Fixed numerical fixtures preserve notches, engine mass and geometry across all species, shapes and two body origins [1173.70ms]
+
+tests/surf.test.ts:
+(pass) sheltered surf vanishes; stronger waves and steeper beaches increase bounded runup [2.43ms]
+(pass) crests travel shoreward at shallow-water travel times and cycles join continuously [1.58ms]
+(pass) metric interpolation is continuous at chunk and climate-node boundaries [0.78ms]
+(pass) reported beach has both uprush and backwash and finite query normals [15.57ms]
+(pass) submerged gradient controls travel independently of foreshore runup slope [0.36ms]
+(pass) seeded arrivals vary, replay deterministically and join without height or foam jumps [2.53ms]
+(pass) swash foam ages from local inundation instead of whitening the whole flooded sheet [0.83ms]
+(pass) wetting foam stays bounded, dry locations stay foam-free, and shoreline regimes join [9.01ms]
+(pass) foam excursion and query transport share bounded shoreward uprush and seaward backwash [100.21ms]
+
+tests/forest-assets.test.ts:
+(pass) canonical forest assets cover every species/view, keep crowns within bake bounds, and retain UV/color attributes [343.17ms]
+(pass) litter field stays bounded, deterministic and aligned when the streamed origin shifts [6.45ms]
+(pass) shared understory meshes stay inside a bounded draw and finite-normal budget [11.89ms]
+(pass) trunks block entry, allow escaping an overlapping spawn, and disappear when removed from the resident forest [0.62ms]
+(pass) stone families have distinct silhouettes, finite normals and bounded shared geometry [12.43ms]
+
+tests/finite-drop.test.ts:
+(pass) accepted finite drops retain validated per-body geometry, mass and bounded attempt evidence [2505.76ms]
+(pass) formerly rejected broad pine now passes the same contact and mass gates on a solid floor [544.66ms]
+203 | 		console.log(
+204 | 			'FINITE_REFINEMENT_OBSERVATION',
+205 | 			JSON.stringify(result.attempts)
+206 | 		);
+207 | 	expect(validFiniteDrop(result)).toBe(true);
+208 | 	expect(result.attempts.map((a) => [a.simulationHz, a.accepted])).toEqual([
+                                                                        ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      960,
++     false,
++   ],
++   [
++     1920,
+      true,
+    ],
+  ]
+
+- Expected  - 0
++ Received  + 4
+
+      at <anonymous> (/home/alexkahn/alex/hello-world-gyro-adoption/tests/finite-drop.test.ts:208:67)
+(fail) accurate deeper pine cut passes its first attempt and preserves bounded audit evidence [876.52ms]
+
+tests/muscl-reconstruction.test.ts:
+(pass) depth-weighted velocity faces preserve the original cell-average discharge [1.79ms]
+(pass) constant depth reduces to the centered velocity reconstruction and dry films have no velocity [0.25ms]
+(pass) symmetric limiter retains linear slopes, avoids extrema and bounds reconstructed faces [1.85ms]
+
+tests/prepared-lod-transition.test.ts:
+(pass) preparing, ready and released forest detail never consume unavailable coverage [21.80ms]
+(pass) invalid transition is rejected before altering level registration [0.69ms]
+(pass) prepared reveal composes with distance coverage and resets on cancellation [1.79ms]
+(pass) cached shadow coverage switches once per crossing and never leaves a partial caster [0.44ms]
+(pass) small coverage jitter does not rebuild cached shadows [0.12ms]
+
+tests/occlusion-samples.test.ts:
+(pass) occlusion observations are asynchronous, camera-keyed, age-bounded and disposed [2.52ms]
+(pass) active queries close safely and context loss discards observations without reading invalid objects [0.11ms]
+(pass) occlusion pools reject unbounded or fractional budgets [0.21ms]
+
+tests/wood-cut-volume.test.ts:
+(pass) low root cuts preserve volume and containment for tree 0 [504.92ms]
+(pass) low root cuts preserve volume and containment for tree 1 [499.91ms]
+(pass) low root cuts preserve volume and containment for tree 2 [518.74ms]
+(pass) low root cuts preserve volume and containment for tree 3 [312.89ms]
+(pass) low root cuts preserve volume and containment for tree 4 [297.96ms]
+(pass) low root cuts preserve volume and containment for tree 5 [439.22ms]
+(pass) low root cuts preserve volume and containment for tree 6 [308.25ms]
+(pass) low root cuts preserve volume and containment for tree 7 [256.65ms]
+
+tests/foam-coverage.test.ts:
+(pass) foam coverage is periodic across positive and negative tile seams [17.96ms]
+(pass) baked coverage has holes and foam, distinct scales, and stable area coverage through mip averaging [132.64ms]
+(pass) joint point occupancy rejects correlated diagonal bands [3.62ms]
+
+tests/forest-deformation.test.ts:
+(pass) forest Jacobian normals remain perpendicular to finite-difference surface tangents [7.30ms]
+(pass) forest shader preserves position hooks and corrects normals/tangents before instance transform [0.57ms]
+
+tests/coast-detail.test.ts:
+(pass) analytic noise derivatives agree with centered differences, including negative coordinates and lattice seams [0.20ms]
+(pass) coastal displacement is bounded, fades smoothly and leaves remote land/ocean untouched [3.68ms]
+(pass) warped continental gradient uses the chain rule and coast detail is globally continuous [1.70ms]
+(pass) plate neighborhood reuse remains bounded and deterministic after travel and seed switching [4.05ms]
+
+tests/diagnostics.test.ts:
+(pass) reports stalls in frame percentiles and weights FPS by elapsed time [0.76ms]
+(pass) handles an idle renderer and rejects invalid intervals [0.13ms]
+
+tests/tree-structure.test.ts:
+(pass) branch ownership binds to the exact served GLB and validates all eight species variants [312.26ms]
+(pass) separating a leafy branch conserves every triangle and owns independent buffers [993.96ms]
+(pass) invalid parent cycles, ownership and selected roots fail closed [24.18ms]
+(pass) canopy metadata rejects detached anchors, mismatched owners and unused units [70.74ms]
+
+tests/hydrology.test.ts:
+(pass) conserves water and solid volume while transporting sediment and eroding a sloped bed [169.59ms]
+(pass) keeps a level lake and a dry patch at rest, validates bounded requests [106.05ms]
+(pass) applies a continuous patch delta to density including negative coordinates and chunk boundaries [152.23ms]
+
+tests/box-tool-containment.test.ts:
+(pass) oriented support containment respects rotation, offsets and narrow tool slabs [0.85ms]
+
+tests/shader-sampler-bindings.test.ts:
+(pass) shared numerical boundary sampler cannot silently inherit an unrelated texture unit [0.85ms]
+(pass) sampler contracts accept explicit arrays and integer samplers, ignore comments, and reject inherited or undefined slots [0.14ms]
+
+tests/float32-floor.test.ts:
+(pass) float32 time flooring never exceeds a bound and the next representable value does [0.31ms]
+
+tests/wedge-tool.test.ts:
+(pass) wedge planes, exact support and native volume agree without expanding to the bounding box [28.64ms]
+(pass) rotated wedge conserves retained/removed volume across surface and convex-cell paths [86.05ms]
+
+tests/shore-moisture.test.ts:
+(pass) wet sand follows surf contact, stays damp after recession and remains bounded [12.44ms]
+(pass) sheltered, high, inactive and out-of-reach sand is not painted wet [0.81ms]
+(pass) bounded history is replayable and continuous at clock and event boundaries [1.05ms]
+(pass) worker shore inputs match water, share borders and exclude underground floors [297.09ms]
+
+tests/branch-ground.test.ts:
+(pass) ground sampler agrees with rendered triangles, including diagonal and outer edges [162.04ms]
+(pass) generated fixture preserves world elevations and rejects invalid locations [13.35ms]
+(pass) compound body settles on sloped triangles at the physical separation [49.67ms]
+(pass) raised terrain starts clear and out-of-patch jobs fail explicitly [45.43ms]
+
+tests/simplify-surface-geometry.test.ts:
+(pass) visual reduction preserves attribute samples, input bytes, connected components and deterministic budgets [27.87ms]
+(pass) disconnected leaf sheets survive a target below their topology minimum [2.75ms]
+(pass) invalid geometry and budgets reject before publishing a LOD [1.28ms]
+
+tests/cloud-weather.test.ts:
+(pass) cloud storm uniforms preserve regional forcing and reuse bounded storage across seeks [5.40ms]
+
+tests/landscape-pass.test.ts:
+(pass) runup is bounded, deterministic and changes wet/dry state without flooding outside the strip [2.04ms]
+(pass) ocean mesh includes a bounded dry runup skirt with signed bed depth [355.67ms]
+(pass) cover roots follow the mesh and unsupported placements are omitted [1.51ms]
+(pass) grass detail levels have strictly decreasing bounded geometry [11.88ms]
+(pass) mixed habitat has trees without requiring woodland to win; cover remains continuous and bounded [291.91ms]
+(pass) refined moving-shore mesh has no unmatched interior edges or unbounded subdivision [412.76ms]
+(pass) swash stays connected to the ocean through the full cycle on the reported beach [115.96ms]
+(pass) cover support rejects downward-facing cave ceilings [0.32ms]
+
+tests/rigid-pose-sampler.test.ts:
+(pass) mass-centre interpolation removes the artificial orbit of an offset geometry origin [20.92ms]
+(pass) irregular replay follows linear COM motion while rotating in three dimensions [5.19ms]
+(pass) replay is invariant to rebasing source geometry and preserves independently owned samplers [0.74ms]
+(pass) framing bounds enclose an off-centre box throughout interpolation, including between keys [3.22ms]
+
+tests/muscl-water.test.ts:
+(pass) second-order hydrostatic line preserves wet and partially dry lakes over uneven bed [76.11ms]
+(pass) nonlinear dam break wets dry cells while conserving mass and positivity [45.55ms]
+(pass) periodic uniform flow and stationary bed source do not generate spurious acceleration [5.17ms]
+(pass) invalid line and step domains reject without state mutation [0.83ms]
+(pass) numerical dry-film treatment retains mass and accounts for removed momentum [0.72ms]
+
+tests/canopy-registry.test.ts:
+(pass) prepared canopy ownership survives replacement and follows the promoted pose [1.69ms]
+(pass) static reference applies canonical phenotype/yaw without changing source geometry [1.92ms]
+
+tests/horizon-coast.test.ts:
+(pass) solved shoreline survives water subdivision at the resident cut boundary [5417.29ms]
+
+tests/sloping-wave-reference.test.ts:
+(pass) Bessel fixture satisfies independent finite-difference PDE and closed-wall flux [1.84ms]
+(pass) column waves approach the independent sloping-bed long-wave mode under refinement [171.80ms]
+
+tests/leaf-owner-visibility.test.ts:
+(pass) coarse leaf ownership composes with physical lighting without compiling a new program per inspected node [0.97ms]
+
+tests/coastal-profile.test.ts:
+(pass) coastal profiles meet sea level and rejoin regional terrain without a height or slope seam [4.51ms]
+(pass) resistant uplifting and sedimentary margins produce distinct coherent profiles [0.94ms]
+(pass) reported foreshore slopes toward sea without arbitrary dune bumps [1.77ms]
+
+tests/adams-weights.test.ts:
+(pass) equal-step Adams quadrature matches published AB3/AM4 coefficients and startup [1.90ms]
+(pass) variable-step weights integrate independent monomials exactly through available degree [7.28ms]
+(pass) time history is detached, bounded and rejects unsupported changes instead of reusing fixed coefficients [1.13ms]
+
+tests/worker-stamp.test.ts:
+(pass) worker invalidation includes shared helpers, dependency lock and source removal [7.55ms]
+
+tests/rgba-layer-reduction.test.ts:
+(pass) RGBA reduction averages in linear light and isolates layers without altering source [0.99ms]
+
+tests/texture-sampling.test.ts:
+(pass) sampling respects hardware limits and uploads a shared packed map only once [0.75ms]
+
+tests/timber-destruction.test.ts:
+(pass) uncut numerical section agrees with analytic circular beam [1.89ms]
+(pass) localized cuts conserve removed volume/work and weaken support directionally [1.75ms]
+(pass) damage survives serialization and future strikes replay deterministically [5.62ms]
+(pass) empty section fails even without applied moment; invalid strikes are atomic [1.99ms]
+(pass) fall time debt is bounded and replay independent of render cadence [1.62ms]
+(pass) fall gains gravitational energy then stops at contact without tunnelling [0.75ms]
+(pass) reload catch-up preserves the exact requested timestamp through fractional steps [1.28ms]
+(pass) measured off-axis mass starts falling under gravity and conserves energy within integration tolerance [0.40ms]
+
+tests/render-target-scope.test.ts:
+(pass) offscreen scopes restore attachment and clipping after thrown work [1.48ms]
+(pass) synchronous reads submit from a neutral target and rebind the multisample attachment [1.28ms]
+
+tests/prepared-scene.test.ts:
+(pass) detects coverage hiding terrain behind a preparation boundary [0.88ms]
+(pass) visible predecessor covers a preparing replacement of the same chunk [0.23ms]
+(pass) reports visible and preparing ground cover separately for streaming diagnosis [0.15ms]
+(pass) tree chunk labels cannot conceal a missing terrain mesh in coverage diagnostics [0.27ms]
+(pass) grass diagnostics count only the selected visible LOD, excluding preparing tiles [1.44ms]
+
+tests/wood-growth-coordinates.test.ts:
+(pass) all authored limb piths stay at the center of the solid material field through tree deformation [252.00ms]
+(pass) solid cut shader consumes limb coordinates and retains filtered species detail without new textures [5.30ms]
+
+tests/column-spectral.test.ts:
+(pass) mixed sine/cosine inverse solves flat-bed operator including rectangular grids and wall slots [32.06ms]
+(pass) flat inverse remains a valid positive symmetric preconditioner over uneven beds [105.32ms]
+(pass) spectral bounds are checked even for zero forcing and minimum depth remains representable [13.97ms]
+
+tests/muscl-water-patch.test.ts:
+(pass) 2D reconstruction preserves wet and partially dry lakes on nonseparable terrain [131.28ms]
+(pass) 2D fluxes conserve mass, remain positive and transpose with exchanged momentum [64.70ms]
+(pass) single-direction waves agree with the independent line reference at matched steps [31.61ms]
+(pass) periodic oblique uniform flow is unchanged and invalid requests are atomic [9.33ms]
+(pass) reconstruction and Euler audit buffers are detached and never publish a step [1.62ms]
+
+tests/canopy-capture-lifecycle.test.ts:
+(pass) late image snapshot closes after abort, without starting a worker [4.08ms]
+(pass) late image snapshot closes after dispose, without starting a worker [0.46ms]
+
+tests/triangle-orientation.test.ts:
+(pass) surface metrics distinguish horizontal and vertical leaves with invariant area under winding reversal [0.34ms]
+(pass) summed projected area explicitly counts occlusion overlaps and records degeneracy [0.73ms]
+(pass) unrepresentable geometry fails explicitly rather than publishing nonfinite metrics [0.07ms]
+
+tests/surface-output.test.ts:
+(pass) surface outputs retain authored bark and share a mutable normal-frame uniform [3.95ms]
+(pass) relit views decode coverage-weighted channels and use stored roughness without duplicating borrowed textures [4.50ms]
+(pass) packed depth output requires explicit eye range and retains the shared uniform [0.57ms]
+
+tests/precipitation-shelter.test.ts:
+(pass) shelter follows the top rendered plane, including reversed winding and cave roofs [5.05ms]
+(pass) missing coverage stays closed, translation preserves slopes and inputs remain owned [1.10ms]
+(pass) malformed or unbounded shelter input is rejected [1.24ms]
+(pass) canonical excavations lower rain contact while an intact cave roof still shelters [429.42ms]
+(pass) solid/water classification follows the top surface and water wins coincident planes [11.06ms]
+
+tests/finite-branch-work.test.ts:
+(pass) finite tool inspection stages validate across all authored species and deformations without publishing physics [16611.78ms]
+(pass) browser geometry kernel is pinned, licensed and byte-identical to the installed dependency [3.53ms]
+
+tests/growth-mesh.test.ts:
+(pass) seeded crown meshes retain physical leaves, finite bounded geometry and release ownership after effect replay [2994.59ms]
+
+tests/kerf-surface.test.ts:
+(pass) all tree cut surfaces preserve finite bark attributes, closed-face ownership and loader buffers [443.56ms]
+(pass) coincident faces retain distinct UV, normal and RGBA seams after welding [3.28ms]
+
+tests/closed-components.test.ts:
+(pass) coincident closed solids stay separate, with compact exact topology and conserved mass [4.21ms]
+
+tests/shallow-water-coupling.test.ts:
+(pass) four patches match a continuous grid as a dam release crosses both seam axes [252.34ms]
+(pass) submerged bed steps and dry topography remain balanced across patch corners [231.96ms]
+(pass) real generated shoreline retains continuous-grid behavior across four patch boundaries [1082.35ms]
+(pass) a late preparation failure cannot partly advance a coupled group [0.93ms]
+(pass) coupling rejects duplicate owners, mismatched clocks and incompatible grids before publishing [0.22ms]
+
+tests/horizon-coast-edges.test.ts:
+(pass) shore audit cancels interior edges but retains duplicate exterior outlet faces [18.79ms]
+(pass) rising river faces do not erase the sea-level contour [0.20ms]
+
+tests/resource-preparation.test.ts:
+(pass) async compilation restores renderer state before completion [2.55ms]
+(pass) geometry upload uses original buffers, zero triangles and restores state after render failure [3.27ms]
+(pass) resource failure reaches the progress store and does not block subsequent preparation [9.39ms]
+(pass) program reflection waits for completion, yields, skips finalized programs and honours cancellation [1.66ms]
+(pass) without parallel shader compilation, reflection completes before readiness; failures are retryable [0.77ms]
+(pass) one batch compiles all upload variants and restores material ownership while pending [6.49ms]
+(pass) shadow variants compile together with distinct depth materials and restore on rejection [6.91ms]
+(pass) cancellation between a signaled fence and its continuation never uploads disposed resources [2.70ms]
+(pass) already uploaded shared textures bypass GPU fences, but changed versions and restored contexts upload again [10.14ms]
+
+tests/ocean-update-metrics.test.ts:
+(pass) paused simulation reports no submitted passes or CPU time [1.00ms]
+
+tests/geography.test.ts:
+(pass) regional views contain downhill reaches with excavated channel beds [1100.02ms]
+(pass) keeps global relief continuous at positive and negative region borders [263.12ms]
+(pass) connects every cave passage and keeps its centerline traversable with surface exits [10.82ms]
+(pass) regenerates regions independently of cache eviction and traversal order [272.52ms]
+(pass) marks flowing channels and lake footprints while leaving dry boundaries unwatered [607.07ms]
+
+tests/canopy-volume.test.ts:
+(pass) actual cut-to-fallen projection and JSON restore keep water and capacity unchanged [3.09ms]
+(pass) leaf loss releases explicit excess; complete removal and future rain conserve volume [0.44ms]
+(pass) changing forcing, projection, leaf loss and reload preserve the whole ledger [16.00ms]
+(pass) offline constant forcing agrees with partitioned advancement after area changes [1.92ms]
+(pass) duplicate, missing and backward intervals reject rather than inventing weather [0.71ms]
+(pass) measured-area preview exposes two independently conserved litre budgets [12.89ms]
+(pass) zero time is an exact no-op even after roundoff-sensitive area conversion [0.59ms]
+
+tests/thermal-habitat.test.ts:
+(pass) temperature uses metres and Celsius with climate-dependent growth limits [0.42ms]
+(pass) the former demo elevation cuts cannot erase otherwise suitable habitat [0.28ms]
+(pass) reported high ground can place real supported trees within existing candidate bounds [219.93ms]
+
+tests/branch-bodies.test.ts:
+(pass) separate bodies collide with each other and settle into a stack, not through each other [330.50ms]
+(pass) multi-body jobs reject body and collider budget violations before allocating a world [2.00ms]
+(pass) irreversible contact failure stops the whole compound after its first audited step [4.53ms]
+(pass) accepted sleeping trajectories expose their complete termination state [44.76ms]
+(pass) attempt summaries reject forged or inconsistent stop evidence [0.47ms]
+(pass) replay centre uses native collider COM even when the solver origin is offset [35.17ms]
+
+tests/draw-submission-trace.test.ts:
+(pass) draw tracing preserves renderer errors, ignores reporter errors and restores its wrapper [9.18ms]
+
+tests/physics-build-context.test.ts:
+(pass) keeps package identity when context collection fails [0.46ms]
+(pass) cannot misattribute the physics kernel through world context [8.68ms]
+
+tests/closed-cut.test.ts:
+(pass) axis and oblique cuts close both halves and conserve volume, center and inertia [10.89ms]
+(pass) tangent and outside planes do not manufacture zero-volume fragments [5.66ms]
+(pass) finite kerf retains removed volume and both inner surfaces [10.15ms]
+(pass) star-shaped concave sections close, while unsupported U-shaped sections fail explicitly [16.51ms]
+
+tests/bracketed-zero.test.ts:
+(pass) bounded root solver resolves a shoreline slope kink and nonlinear roots without leaving the bracket [1.43ms]
+(pass) invalid, discontinuous and exhausted root problems are explicit [1.31ms]
+
+tests/projected-detail-registry.test.ts:
+(pass) registry enforces shared geometry budget and reports bounded partial admission [6.47ms]
+(pass) registry preserves stable selections, respects owner readiness and rejects duplicate identity [3.94ms]
+
+tests/wedge-tree.test.ts:
+(pass) 72 real wedge histories preserve surface ancestry, selected sections and separate chip/body volumes [18746.94ms]
+
+tests/queued-worker-task.test.ts:
+(pass) queued inputs are lazy, serial, bounded, and cancelled inputs are never constructed [8.29ms]
+(pass) running cancellation retires the worker and queue recovers after input failure [6.88ms]
+(pass) dispose rejects running and queued work without creating queued buffers [4.15ms]
+
+tests/rapier-runtime.test.ts:
+(pass) physics consumers share initialization and preserve live worlds across subsequent requests [1.45ms]
+
+tests/surface-projection.test.ts:
+(pass) bounded Float32 material projection preserves interpolation without accepting unrelated faces [0.84ms]
+
+tests/timber-store.test.ts:
+(pass) expanded measured cuts survive storage, another strike, and a later geometry reconciliation [481.95ms]
+(pass) tree changes persist per world and region without sharing caller mutation [18.72ms]
+(pass) failed saves and concurrent-tab changes never publish or overwrite damage [15.88ms]
+(pass) invalid/replayed strikes and corrupt saved regions fail closed [15.20ms]
+(pass) compact saves preserve every cell and migrate old saves only after a successful write [34.63ms]
+(pass) corrupt packed cells and unknown save formats are not repaired or overwritten [19.81ms]
+(pass) field comparison ignores property insertion order while rejecting changed phenotype [35.50ms]
+(pass) failed compact migration preserves the old bytes and published snapshot [29.09ms]
+(pass) geometry reconciliation preserves strikes, owns the removal ledger and rejects stale or failed writes [266.36ms]
+
+tests/renderer-capabilities.test.ts:
+(pass) masked identity remains explicitly unknown and capabilities survive privacy filtering [0.93ms]
+
+tests/translating-lake.test.ts:
+(pass) clipped 2D lake cell integrals recover analytic mass at moving circular boundaries [46.94ms]
+(pass) independent translating lake satisfies both nonlinear momentum equations and continuity [0.96ms]
+(pass) cell quadrature agrees under subdivision and rejects invalid domain [1.64ms]
+
+tests/prepared-lod.test.ts:
+(pass) fallback stays visible while detail prepares and after detail is released [14.12ms]
+(pass) hysteresis and zoom retain ordinary Three LOD behavior [1.24ms]
+
+tests/owned-buffer-transfer.test.ts:
+(pass) owned buffers transfer once while preserving aliases and receiver values [0.54ms]
+(pass) transfer guards protect unrelated/shared storage and bound handoff size [0.36ms]
+
+tests/cover-deformation.test.ts:
+(pass) cover wind normal follows independent finite-difference tangents [7.19ms]
+(pass) all canonical cover assets stay inside the nonfolding local-height domain [14.12ms]
+
+tests/prepared-mip-texture.test.ts:
+(pass) prepared mip ownership preserves shared loader image, transform and color space [3.05ms]
+(pass) truncated and overlapping mip payloads fail before reaching WebGL [0.69ms]
+
+tests/delivery-pacer.test.ts:
+(pass) a serial delivery burst stays below the collector limit and does not catch up in a burst after idle [4.55ms]
+(pass) abort cancels pacing promptly so the outbox can retain and retry the record [1.13ms]
+
+tests/binary-mask.test.ts:
+(pass) binary masks preserve every nibble, edge cell and deterministic mixed pattern [2.00ms]
+(pass) malformed masks reject before allocating decoded storage [0.63ms]
+
+tests/index-float-geometry.test.ts:
+(pass) exact indexing preserves expanded attribute bits, triangle groups, range and bounds [1.91ms]
+(pass) attribute seams and signed zero survive; unprofitable indexing leaves buffers unchanged [0.62ms]
+(pass) work bounds and unsupported layouts fail without modifying the input [2.85ms]
+(pass) instance records are never interpreted as per-vertex data [1.77ms]
+(pass) 16-bit restart sentinel is avoided at the index-width boundary [521.25ms]
+
+tests/soil-settlement.test.ts:
+(pass) flat and subcritical slopes stay unchanged [30.38ms]
+(pass) unstable pile spreads without losing volume or excavating substrate [50.93ms]
+(pass) cut edges slump into a depression without modifying sealed borders [17.23ms]
+(pass) boundary and inventory limitations are reported rather than hidden [55.91ms]
+(pass) solver is deterministic and rejects malformed persisted patches [91.82ms]
+(pass) real meadow strokes settle and retain valid save envelopes [478.23ms]
+(pass) relaxed terrain keeps shared render boundaries intact [684.15ms]
+
+tests/camera-route.test.ts:
+(pass) route ends at the same position despite skipped callbacks [1.18ms]
+
+tests/frame-sphere.test.ts:
+(pass) camera framing contains sphere samples in portrait and landscape without near-plane clipping [41.08ms]
+
+tests/bark-assets.test.ts:
+(pass) bark UV seams have smooth matching normals and a connected main stem [312.14ms]
+(pass) bark source derivatives and embedded normal map retain hashes and bounded texture sizes [81.17ms]
+(pass) every authored limb keeps longitudinal bark density regardless of its slope [154.88ms]
+
+tests/foliage-geometry.test.ts:
+(pass) recorded baseline controls remain byte-identical and bounded geometry options stay finite [73.72ms]
+
+tests/finite-convex-edits.test.ts:
+(pass) successive convex cuts preserve local frames, source ownership and the real tool void [254.63ms]
+(pass) air strikes and repeated identical cuts preserve cell bytes and do not grow the partition [21.62ms]
+(pass) dominating cutters rebuild the minimal solid difference rather than accumulating coplanar slivers [139.41ms]
+
+tests/gpu-samples.test.ts:
+(pass) GPU results belong to submission owner, not the benchmark active at arrival [10.89ms]
+(pass) GPU histories are bounded and reset between runs [22.86ms]
+
+tests/water-physics.test.ts:
+(pass) wave vertical velocity and normals agree with numerical derivatives in uniform depth [4.54ms]
+(pass) dry surfaces and calm wind have no wave motion; shallow waves are bounded [1.56ms]
+(pass) half-density cube settles at half volume with buoyancy equal to weight [9.76ms]
+(pass) neutral body stays submerged; dense body sinks and contacts the bed [4.64ms]
+(pass) quadratic drag dissipates relative motion without reversing it [0.68ms]
+(pass) invalid time steps are rejected; airborne body falls under gravity [0.25ms]
+(pass) water mesh uses the same base height and depth as physics at chunk borders [88.04ms]
+
+tests/material-inspection.test.ts:
+(pass) material comparisons preserve shared originals and dispose only their own overrides [7.52ms]
+(pass) physical diagnostic views preserve authored procedural color, clipping and normal hooks [2.34ms]
+
+tests/grass-pigment.test.ts:
+(pass) grass condition is bounded, wetter habitat stays greener and local origins agree [1.51ms]
+(pass) grass mean metadata identifies the exact served photograph and linear normalization [5.54ms]
+
+tests/render-target-samples.test.ts:
+(pass) multisampling uses the intersection of color and depth format capabilities [0.74ms]
+(pass) capture accounting includes multisample storage in addition to resolved textures [0.10ms]
+
+tests/native-collider-owners.test.ts:
+(pass) snapshot ownership keeps an unowned floor separate from body zero and explicit fixed bodies [16.25ms]
+(pass) snapshot inspection distinguishes geometric manifolds from clustered solver contacts [29.13ms]
+
+tests/native-safety.test.ts:
+(pass) fast steady frames cannot clear a multi-second loading stall [0.37ms]
+(pass) context failure and live stop invalidate otherwise bounded native runs [0.12ms]
+
+tests/incomplete-cholesky.test.ts:
+(pass) full-pattern incomplete factor solves an independently specified SPD matrix [7.45ms]
+(pass) factor compensation is explicit, bounded and does not imply the original matrix is positive [0.95ms]
+(pass) column IC preconditioning solves the original uneven-bed system, with unchanged residual gates [70.36ms]
+(pass) sparse tridiagonal factor is exact and respects compensation numerically [0.99ms]
+
+tests/stem-solid.test.ts:
+(pass) all authored stems close independently without giving decorative scars volume [596.88ms]
+(pass) missing and forged volume roles reject instead of guessing decorative geometry [31.54ms]
+
+tests/owned-mesh-disposal.test.ts:
+(pass) owned mesh cleanup deduplicates shared buffers and leaves borrowed textures alone [1.81ms]
+
+tests/tree-phenotype.test.ts:
+(pass) static phenotype normals are perpendicular to finite-difference surface tangents [2.93ms]
+(pass) rendered phenotype preserves loader buffers and matches static shader equation [411.78ms]
+(pass) lower, middle and upper deformed branches have bounded contact and consistent mass [14626.99ms]
+(pass) uniform scale changes closed volume, center and inertia by physical powers [12.84ms]
+
+tests/surface-materials.test.ts:
+(pass) material fractions remain bounded and cold soil does not become bedrock [17.29ms]
+(pass) reported fertile cold meadow has little exposed rock; coast preserves sand [228.76ms]
+
+tests/foam-contact.test.ts:
+(pass) contact foam has bounded world-space width instead of widening on shallow beaches [0.55ms]
+(pass) contact foam has spatial breakup, vanishes without runup and stays finite across pixel footprints [1.16ms]
+
+tests/surface-depth-proxy.test.ts:
+(pass) depth proxy rejects invalid ray, range and unbounded search configuration [2.48ms]
+(pass) depth proxy retains relighting and borrowed fields, separates search programs and rejects incompatible depth modes [2.66ms]
+
+tests/canopy-water.test.ts:
+(pass) rain fills storage, saturation passes overflow, and drainage survives the rain [0.33ms]
+(pass) analytic advancement agrees with subdivision across dry, retention and full boundaries [4.82ms]
+(pass) tiny intervals, long offline intervals and removal preserve the water budget [0.79ms]
+
+tests/birch-bark.test.ts:
+(pass) birch detail composes with clipping and stays in source UV coordinates [0.58ms]
+(pass) cloned materials receive their own hook despite copied metadata; other surfaces are excluded [0.78ms]
+
+tests/benchmark-acceptance.test.ts:
+(pass) accepts a sufficient hardware sample and applies the selected refresh target [0.80ms]
+(pass) mean FPS does not conceal stalls in real captures [0.28ms]
+(pass) rejects hidden, interrupted, incomplete, inconsistent and non-finite evidence [0.38ms]
+(pass) rejects invalid policy rather than silently passing comparisons against NaN [0.07ms]
+
+tests/flow-lab.test.ts:
+(pass) flow inlet retains volume and nonnegative depth through a bounded second [475.44ms]
+(pass) flow dam retains volume and nonnegative depth through a bounded second [480.87ms]
+(pass) flow lake retains volume and nonnegative depth through a bounded second [398.46ms]
+(pass) flow basin retains volume and nonnegative depth through a bounded second [359.57ms]
+(pass) flow waves retains volume and nonnegative depth through a bounded second [510.35ms]
+
+tests/river-banks.test.ts:
+(pass) confluence water triangles follow the same continuous bank surface [2386.40ms]
+(pass) nearby river chunks agree on shared water edge samples [965.82ms]
+(pass) worker normals accumulate indexed faces and leave unused vertices finite [0.43ms]
+
+tests/local-dependency-preflight.test.ts:
+(pass) dependency preflight distinguishes runtime imports from erased contracts [74.04ms]
+
+tests/terrain-lod.test.ts:
+(pass) all mesh LOD combinations preserve shared borders around caves, edits and negative coordinates [2258.04ms]
+(pass) distance thresholds have hysteresis and valid inputs [0.46ms]
+
+tests/coastal-landform.test.ts:
+(pass) coastal relief is bounded, continuous, and leaves sea and highland unchanged [35.11ms]
+(pass) reported sea sample stays seabed and coastal relief is seamless at storage borders [187.90ms]
+
+tests/kerf-bodies.test.ts:
+(pass) actual cut groups conserve retained mass and collide in one bounded solver [7803.41ms]
+
+tests/exact-stream.test.ts:
+(pass) bounded stream cancels overflow and rejects short bodies [6.51ms]
+(pass) bounded stream copies chunks once and aborts a stalled producer [0.57ms]
+
+tests/terrain.test.ts:
+(pass) volumetric terrain > is reproducible regardless of generation order [399.20ms]
+(pass) volumetric terrain > shares a crack-free sample boundary, including cross-chunk excavation [244.89ms]
+(pass) volumetric terrain > carves solid volume and invalidates all four neighbors at a corner [0.72ms]
+(pass) volumetric terrain > handles negative coordinates and finite outward normals [84.12ms]
+(pass) indexes only existing vertices in both rendering profiles [46.52ms]
+(pass) keeps excavation surfaces consistently oriented across shared triangle edges [167.17ms]
+
+tests/precipitation.test.ts:
+(pass) analytic storm inspection is bounded, deterministic and produces rain without changing worlds [0.89ms]
+(pass) recent liquid rain remains after the front and reconstructs after seeking [8.74ms]
+(pass) particle phase preserves world positions across camera recentering and long epochs [0.80ms]
+
+tests/projected-detail.test.ts:
+(pass) projected detail follows physical pixel size, frustum and hysteresis without mutating source [2.67ms]
+(pass) projected detail uses stable ids and explicit item/triangle ceilings, with atomic input validation [6.54ms]
+(pass) projected detail matches rendered pixel spans for cropped perspective views [1.77ms]
+(pass) projected detail refreshes parent transforms and respects reversed depth frusta [2.67ms]
+
+tests/coordinate-random.test.ts:
+(pass) coordinate random separates mirrored cells and remains bounded and balanced [26.62ms]
+(pass) coordinate order, signed coordinates and seed channels remain distinct [0.86ms]
+
+tests/faded-lod-culling.test.ts:
+(pass) edge roots stay selectable until fully faded across zoom, approach and retreat [3.77ms]
+(pass) world transform scales root bounds, not the world-space fade range [1.97ms]
+
+tests/surface-cloud.test.ts:
+(pass) cloud cancellation and unsupported texture limits leave borrowed geometry alive [7.29ms]
+
+tests/shadow-invalidation.test.ts:
+(pass) prepared geometry invalidates cached casting lights without enabling continuous updates [4.82ms]
+
+tests/terrain-cover-worker.test.ts:
+(pass) far-first chunks defer cover, promote once, and reuse it without sending distant placements [1057.47ms]
+
+tests/understory-assets.test.ts:
+(pass) canonical understory preserves distinct source shapes within mesh and texture budgets [38.22ms]
+(pass) derived vertices retain source UVs and botanical rotations, excluding catalogue translation [95.22ms]
+
+tests/finite-bodies.test.ts:
+(pass) finite body models partition every surface and collider with separately measured mass across 96 tree fixtures [20695.73ms]
+(pass) an enclosed oak cut keeps cavity walls in the body and partitions all collider cells [181.23ms]
+
+tests/depth-visibility-probe.test.ts:
+(pass) post-render visibility probe makes no GPU state queries and restores masks on failure [3.53ms]
+
+tests/shallow-water.test.ts:
+(pass) lake at rest balances irregular submerged and dry topography without creating waves [28.17ms]
+(pass) dry-bed dam break conserves water, wets new ground and approximates the Ritter solution [6.52ms]
+(pass) two-dimensional release remains rotationally symmetric and conserves closed-boundary volume [27.22ms]
+(pass) wave pulse runs up a sloping dry beach and retreats without losing mass [45.15ms]
+(pass) bounded catch-up returns remaining time and CFL rejection leaves the state untouched [0.79ms]
+(pass) open boundaries preserve a uniform current and balance incoming/outgoing volume [12.55ms]
+(pass) characteristic reservoir floods a dry patch within the ghost-aware CFL bound [4.49ms]
+(pass) characteristic boundary transmits an outgoing wave with less reflection than a wall [72.62ms]
+(pass) boundary injection is rotationally consistent and keeps a steady wet reservoir at rest [8.98ms]
+
+tests/wet-surface-reconstruction.test.ts:
+(pass) flat lake stays horizontal and its clipped ramp shoreline matches an independent plane [37.47ms]
+(pass) surface extension cannot cascade or mark dry dam-release cells as wet [0.91ms]
+(pass) wet display fields reject invalid inputs rather than fabricate depth [0.29ms]
+(pass) moving sloped water meets an oblique bed without flattening the extrapolated surface [23.08ms]
+(pass) a disconnected pool cannot influence a fitted wet-front plane across a dry barrier [0.64ms]
+
+tests/ocean-propagation.test.ts:
+(pass) opposing current shortens waves, increases action gain and eventually blocks the incoming branch [1.65ms]
+(pass) global field overlap is reproducible, dry obstacles absorb swell and buffers stay bounded [9682.16ms]
+(pass) coastal optical path gradient shortens waves toward a shoal [8694.12ms]
+(pass) real route has exposed deep water, a shoal, sheltered bay and verified wet connecting segments [8644.84ms]
+
+tests/linear-rgba-reduction.test.ts:
+(pass) linear area reduction conserves each channel, fractional coverage and row orientation [1.50ms]
+(pass) coverage-weighted surfaces average before decode, preserving empty-pixel boundaries [0.19ms]
+(pass) reduction rejects malformed data and unbounded allocations before work [17.32ms]
+(pass) fractional depth channels survive reduction without early byte rounding [0.94ms]
+
+tests/finite-canopy-protocol.test.ts:
+(pass) transferred canopy ownership retains source correspondence without transferring authored metadata [0.91ms]
+(pass) canopy protocol rejects split units and wrong selection even with conserved label counts [0.82ms]
+
+tests/verified-gzip.test.ts:
+(pass) verified gzip keeps exact asset bytes and rejects corrupt identity, truncated output and expansion past declaration [13.52ms]
+(pass) verified gzip rejects oversized contracts and cancellation before work [2.50ms]
+
+tests/rigid-rotation-sampling.test.ts:
+(pass) adaptive samples preserve full turns that fixed 60 Hz quaternion keys lose [3.91ms]
+(pass) sign-equivalent quaternions do not create motion and recorder copies caller-owned input [0.99ms]
+(pass) under-resolved native spins and sample-budget failures are atomic [2.69ms]
+(pass) the fastest body selects shared timestamps for a multi-body replay [0.65ms]
+(pass) collision-like changes in angular speed retain native poses within the interpolation tolerance [1.92ms]
+(pass) native-history buffering stays bounded even when the caller omits nominal forced keys [3.87ms]
+(pass) rotation audit rejects malformed and out-of-budget worker evidence [0.74ms]
+(pass) replay failures carry serializable bounded evidence for independent retry validation [1.17ms]
+
+tests/segment-index.test.ts:
+(pass) bounded segment broad phase matches exhaustive nearest geometry across signed cell boundaries [39.78ms]
+(pass) index owns coordinates, breaks ties consistently and rejects unbounded work [2.82ms]
+
+tests/simple-wave-reference.test.ts:
+(pass) characteristic simple wave independently satisfies nonlinear mass and momentum PDEs [1.29ms]
+(pass) simple wave is periodic and cell averages preserve known initial total mass [1.45ms]
+
+tests/world-topology.test.ts:
+(pass) storage borders cross both continuous land and sea rather than mandatory ocean corridors [4.53ms]
+(pass) province support boundaries remain continuous and survey regions have varied land fractions [1.73ms]
+(pass) coast surveys bracket the canonical field and spawns are dry; rivers have downhill paths [516.40ms]
+(pass) deep floor still meshes and geology is traversal-order independent [8.63ms]
+
+tests/face-pressure-load.test.ts:
+(pass) face pressure integrates analytic translating and spinning cube loads [4.20ms]
+(pass) pressure torque transforms with orientation and dissipates for mixed motion [17.03ms]
+(pass) surface coordinates are copied and centre offsets preserve force and torque [0.87ms]
+(pass) invalid pressure geometry and states fail explicitly [1.48ms]
+(pass) partially windward pressure is invariant to coplanar triangulation [0.91ms]
+(pass) pressure state rejects missing vector components instead of defaulting them [0.52ms]
+
+tests/dispersive-mode.test.ts:
+(pass) dispersive modes preserve finite-volume continuity, transverse flux and corrected energy [14.67ms]
+(pass) travelling waves retain exact finite-depth phase and amplitude over many steps [40.64ms]
+(pass) symbols and step validation bound the reference workload and leave inputs untouched [1.16ms]
+(pass) independent spatial DFT reconstructs real fields and locally conservative face transport including Nyquist [14.61ms]
+
+tests/wave-boundary-audit.test.ts:
+(pass) travelling decomposition preserves both propagation directions and canonical large-epoch phases [23.93ms]
+(pass) boundary screening distinguishes dispersion, linear amplitude and truncation without hiding lost energy [1.57ms]
+(pass) finite-depth projection preserves frequency and tangential wavenumber and satisfies linear continuity [0.45ms]
+(pass) boundary energy accounting is exhaustive and malformed magnitudes cannot pass screening [14.66ms]
+
+tests/forest-detail-residency.test.ts:
+(pass) bounds initial residency and includes every possible near LOD within the camera cell [9.52ms]
+(pass) keeps a release margin while respecting the resident chunk set [0.34ms]
+(pass) rejects nonfinite or unbounded queries [0.16ms]
+
+tests/timber-work.test.ts:
+(pass) structured-cloned worker mass input reproduces an analytic body and validates the result [1.25ms]
+(pass) worker section reconstruction exactly matches measured mesh footprints across every asset [254.03ms]
+
+tests/automatic-resolution.test.ts:
+(pass) requires sustained pressure, observes cooldown and bounds [1.21ms]
+(pass) hidden/benchmark/loading exclusions discard accumulated pressure [0.16ms]
+(pass) raises resolution slowly after 30 healthy observations and never above one [0.22ms]
+
+tests/run-record.test.ts:
+(pass) review manifest survives abrupt child exit and records handled failure separately [140.94ms]
+(pass) changing source invalidates completed success [92.56ms]
+(pass) changing source invalidates passed success [70.65ms]
+(pass) termination is recorded and a completed failure cannot be overwritten [142.30ms]
+(pass) missing source at shutdown still produces a terminal manifest [62.38ms]
+(pass) imported helper mutation invalidates a run and names the changed file [58.82ms]
+(pass) structured and circular failure details remain useful and bounded in the terminal manifest [84.61ms]
+(pass) post-completion exit failure cannot masquerade as a clean pass [89.03ms]
+(pass) post-completion signal failure cannot masquerade as a clean pass [62.42ms]
+
+tests/gpu-pass-timing.test.ts:
+(pass) boundaries close on exceptions; detached observers cannot retain or remove newer owners [0.70ms]
+(pass) main boundary follows preparation passes and ignores nested offscreen scene renders [1.32ms]
+
+tests/leaf-lighting.test.ts:
+(pass) leaf lighting hooks the installed Three standard shader and rejects unsupported inputs [0.75ms]
+(pass) owned leaf setup composes deformation, preserves source and separates program keys [1.44ms]
+(pass) textured tree transmission shares static diffuse-only sky lighting [3.39ms]
+
+tests/rigid-energy-audit.test.ts:
+(pass) energy audit retains peak times through later dissipation and rejects poisoned samples atomically [2.92ms]
+(pass) a single-sample audit cannot claim an unobserved peak or different final state [0.35ms]
+
+tests/single-worker-task.test.ts:
+(pass) worker task reuses successes, ignores stale replies, and prevents concurrent submissions [3.22ms]
+(pass) abort retires a worker and permits a fresh computation without stale callbacks [0.70ms]
+(pass) timeouts, invalid replies, validator exceptions and worker errors fail closed [13.26ms]
+(pass) pre-aborted input never creates a worker; posting failure retires one [2.14ms]
+
+tests/solid-section.test.ts:
+(pass) native slices preserve cavities and arbitrary right-handed plane orientation [42.88ms]
+(pass) overlapping authored components are unioned in the section rather than double-counted [7.21ms]
+
+tests/preparation-presentation.test.ts:
+(pass) initial loading holds until generation and resource preparation both complete [0.61ms]
+(pass) ordinary streaming keeps rendering; a distant jump holds the previous frame until ready [0.13ms]
+(pass) resource failure releases presentation so partial state and recovery remain observable [0.07ms]
+(pass) software presentation waits for late projected detail, then resumes without a recurring hold [0.14ms]
+
+tests/compare-surface-runs.test.ts:
+(pass) surface evidence joins shuffled cases by identity and reports missing interior comparisons honestly [2.44ms]
+(pass) surface evidence rejects unmatched, duplicate, incompatible or invalid results [1.55ms]
+(pass) surface evidence refuses to pair different or unknown projection contracts [1.01ms]
+
+tests/soil.test.ts:
+(pass) cut and spoil conserve volume under independent numerical quadrature [7.04ms]
+(pass) save payload validation rejects malformed or oversized strokes [0.82ms]
+(pass) soil updates canonical density without applying the admin sphere [1.06ms]
+(pass) local mesh refinement is manifold and resolves the displacement [30.31ms]
+(pass) refinement shares chunk borders [208.86ms]
+(pass) tools constrain reach, water, and repeated depletion [190.97ms]
+(pass) surface strokes do not deform an underground upward-facing cave floor [0.43ms]
+(pass) stroke limit rejects without claiming material was moved [0.13ms]
+
+tests/finite-wood-contact.test.ts:
+138 | 								);
+139 | 							// Double-position cut export changes the exact center used to
+140 | 							// place collider frames. The formerly rejected 480 Hz broad
+141 | 							// pine now passes; retain all contact limits and negative
+142 | 							// validator cases rather than pinning a rounding artifact.
+143 | 							expect(validBranchDrop(d, hz)).toBe(true);
+                                            ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/alexkahn/alex/hello-world-gyro-adoption/tests/finite-wood-contact.test.ts:143:39)
+(fail) fixed coarse pine floor audit accepts accurate cut frames at 480/960/1920 Hz [1720.31ms]
+
+tests/finite-removed-cells.test.ts:
+(pass) 96 authored cut histories partition actual removed wood without degenerate skins [22505.24ms]
+(pass) removed history handles duplicate cuts, disjoint cuts and invalid budgets [226.21ms]
+(pass) one connected source can release two separately connected chips [237.47ms]
+
+tests/projected-triangle-area.test.ts:
+(pass) heightfield area rejection uses serialized geometry and retains nonzero slivers [0.41ms]
+
+tests/cover-residency.test.ts:
+(pass) bounded cover region contains every potentially visible root through cell transitions [11.43ms]
+
+tests/select-solid-owner.test.ts:
+(pass) coincident authored solids stay separate and selection preserves face ancestry [1.15ms]
+(pass) partial surfaces and invalid ownership cannot become a closed selected solid [0.29ms]
+
+tests/water-vegetation.test.ts:
+(pass) water is finite, upward-facing and has matching chunk seam vertices [318.03ms]
+(pass) river flow points downstream and lakes have level still surfaces; edits change depth not footprint [149.23ms]
+(pass) tree placement is reproducible, spaced across chunk borders, dry and responsive to root excavation [343.22ms]
+(pass) displaced open water has no unmatched interior edges or triangle T junctions [226.27ms]
+
+tests/column-waves.test.ts:
+(pass) uneven-bed column waves preserve volume and bound energy error; failed solves are atomic [634.75ms]
+(pass) a constant free surface stays at rest on an uneven bed [3.18ms]
+(pass) flat-bed acceleration matches independently derived column dispersion at resolved wavelengths [6.93ms]
+
+tests/curve-tube.test.ts:
+(pass) transported curved skin shares internal rings, closes caps and keeps UV seams and frames continuous [22.29ms]
+(pass) straight closed frustum matches analytic volume; open tubes keep only side triangles [1.77ms]
+(pass) maximum-length hierarchy skins without argument-spread overflow [53.39ms]
+
+tests/branch-fragments.test.ts:
+(pass) nested cuts partition edges once, in stable order, without leaking into adjacent subtrees [2.44ms]
+(pass) partitioning maximum-depth hierarchy is bounded and nonrecursive [2.09ms]
+(pass) authored and deformed subtree fragments conserve wood mass, center, inertia and triangle ownership [358.65ms]
+(pass) worker fragment audit rejects inconsistent masks and response summaries [219.15ms]
+
+tests/wood-grid-cut.test.ts:
+(pass) actual live axe fixture produces interior faces contained by the authored stem [161.61ms]
+(pass) species 0 preserves uncut volume and bounds notched/through-cut interior surfaces [899.69ms]
+(pass) species 1 preserves uncut volume and bounds notched/through-cut interior surfaces [927.26ms]
+(pass) species 2 preserves uncut volume and bounds notched/through-cut interior surfaces [790.45ms]
+(pass) species 3 preserves uncut volume and bounds notched/through-cut interior surfaces [670.26ms]
+(pass) species 4 preserves uncut volume and bounds notched/through-cut interior surfaces [613.63ms]
+(pass) species 5 preserves uncut volume and bounds notched/through-cut interior surfaces [564.86ms]
+(pass) species 6 preserves uncut volume and bounds notched/through-cut interior surfaces [601.15ms]
+(pass) species 7 preserves uncut volume and bounds notched/through-cut interior surfaces [596.10ms]
+
+tests/convex-cell-assignment.test.ts:
+(pass) cells from one source hull are assigned to the correct severed solids by overlap [8.94ms]
+(pass) a collider spanning the removed gap cannot be assigned to either fragment [16.44ms]
+
+tests/flow-exchange-snapshot.test.ts:
+(pass) GPU lab snapshot distinguishes physical exchange, roundoff and numerical mass error [1.76ms]
+
+tests/canopy-cover.test.ts:
+(pass) bounded canopy bins match all-crown evaluation across negative coordinates and chunk edges [61.46ms]
+(pass) neighbor root edits invalidate canopy without including unrelated distant work [0.49ms]
+(pass) forest ground cover avoids stems and ferns require actual canopy [394.41ms]
+
+tests/water-boundary-wave.test.ts:
+(pass) incoming wave preserves the outgoing shallow-water invariant for each normal orientation [3.50ms]
+(pass) wave descriptors reject unsafe or ambiguous programs and preserve serialized float32 values [1.55ms]
+
+tests/bounded-gpu-advance.test.ts:
+(pass) bounded GPU work retains accepted time on cancellation and limits dispatch [4.18ms]
+(pass) GPU scheduler rejects invalid clocks, hidden reads and overshoot [0.54ms]
+(pass) GPU scheduler stops at accepted endpoint without inventing steps [0.40ms]
+
+tests/rigid-pose-segment.test.ts:
+(pass) replay sampling uses actual irregular times and clamps the short terminal segment [0.86ms]
+
+tests/instance-footprints.test.ts:
+(pass) footprints measure projected sphere extent and distinguish hidden and out-of-frustum instances [6.99ms]
+(pass) footprints enforce instance and scene budgets, visibility branches and camera layers [38.59ms]
+(pass) footprints cap near-plane spheres and account for parent and instance scales [2.43ms]
+(pass) off-axis sphere estimates bound independently projected surface samples [3.74ms]
+(pass) invalid camera transforms fail without reporting fabricated visible instances [5.54ms]
+
+tests/surface-view-baker.test.ts:
+(pass) offline bake restores attachment, viewport, clear state and borrowed assets on success and thrown draw [17.51ms]
+(pass) bake rejects invalid geometry and parameters before GPU submission and caps view count [69.19ms]
+(pass) masked capture uses independent coverage rather than squared resolved alpha [6.53ms]
+(pass) float depth capture rejects unsupported formats before drawing [1.48ms]
+
+tests/muscl-gpu-boundary.test.ts:
+(pass) GPU boundary descriptors detach and freeze float32 targets and encode all four edges [2.82ms]
+(pass) boundary encoding rejects malformed shapes and callbacks and allocates no target map for wall/open edges [1.21ms]
+(pass) uniform edge records normalize to the canonical closed or open descriptor [0.16ms]
+
+tests/playtest-store.test.ts:
+(pass) acknowledged batches survive reopening and a retry cannot duplicate events or reports [118.10ms]
+(pass) grouping uses AbsoluteJS errors and hardware filters do not mix software samples [6.28ms]
+(pass) retention uses receipt time, bounds rows, and preserves independent report context [5.57ms]
+(pass) rejects malformed and oversized entries and non-JPEG report payloads [2.18ms]
+
+tests/finite-edit.test.ts:
+(pass) successive solid edits retain seed faces and earlier cut surfaces without retaining old meshes [47.71ms]
+(pass) through cuts preserve seed-component ancestry and rejected edits leave the current solid untouched [24.55ms]
+(pass) two crossing finite cuts preserve material ancestry on every authored species variant [560.16ms]
+(pass) exposed surface projection stays fixed across later cuts and rejects mismatched tool ancestry [19.26ms]
+
+tests/octahedral-view-catalog.test.ts:
+(pass) capture catalog is a deduplicated closed sphere with outward faces and bounded storage [8.26ms]
+(pass) constant-time lookup reconstructs full-sphere rays including vertices, seams and extreme finite magnitudes [170.43ms]
+(pass) catalog refuses invalid budgets and rays and exposes immutable topology [2.08ms]
+(pass) view weights stay continuous across octant seams and triangular-cell boundaries [2.20ms]
+
+tests/kerf-worker.test.ts:
+(pass) cut worker exposes bounded attachment groups and rejects malformed ancestry summaries [880.17ms]
+(pass) broad oak browser fixture decomposes inflated twig hulls and lands four bodies on the excavation [20685.84ms]
+
+tests/chunk-publication.test.ts:
+(pass) an excavation crossing four chunks remains atomic despite staggered workers and an upload budget of two [0.81ms]
+
+tests/leaf-coverage.test.ts:
+(pass) centered needle coverage composes with wind/lighting and falls back without MSAA [1.25ms]
+(pass) shadow callback restores authored cutoff for grouped and ordinary needles only [1.68ms]
+(pass) photographed leaf silhouettes center their cutoff with and without MSAA [0.40ms]
+
+tests/session-reliability.test.ts:
+(pass) build identity follows actual content, including installed local dependencies, not timestamps [45.51ms]
+(pass) unclean tab marker is evidence of missing ending, clean hide is not a crash [1.01ms]
+(pass) late retry cannot reopen ended sessions; recovered session and delivery counters are visible [12.28ms]
+(pass) timeline sorts client time and associates only nearby relevant pressure events [9.70ms]
+(pass) build change is sticky, invalid responses do not cause false positives [0.36ms]
+(pass) dev build identity updates after source edits without restarting the module [9.26ms]
+(pass) Bun file dependency symlinks contribute the target code to build identity [3.17ms]
+
+tests/specular-footprint.test.ts:
+(pass) footprint preserves constant normals and bounds roughness under growing derivatives [1.19ms]
+(pass) filter preserves geometry protection and the caller shader hook [0.81ms]
+
+tests/contact-resolution.test.ts:
+(pass) contact support fractions remain scale/unit invariant and use rotated convex width [41.94ms]
+(pass) cached contact inspection rejects replaced or added topology [3.11ms]
+(pass) dynamic fragment contacts are reported separately from fixed-surface contacts [4.66ms]
+
+tests/grass-sward.test.ts:
+(pass) sward roots retain their world-local positions across geometry detail and keep expanded triangle budgets [28.30ms]
+(pass) short and tall blades both brighten from rooted bases to tips; reeds stay unchanged [17.42ms]
+
+tests/convex-separation-bound.test.ts:
+(pass) convex diagnostic bounds containment, touching, overlap and separated hulls [15.81ms]
+
+tests/fft-pass-schedule.test.ts:
+(pass) fused passes cover every axis stage exactly once without sampling their destination or foam history [134.35ms]
+
+tests/rigid-body-energy.test.ts:
+(pass) energy uses centre of mass, world angular inertia and explicit length units [8.79ms]
+(pass) bounded free fall keeps sampled mechanical energy near its analytic initial value [16.15ms]
+
+tests/incident-report.test.ts:
+(pass) interrupted run survives unrelated completions, malformed tail and session filtering [2.20ms]
+(pass) missing GPU measurements stay unknown and pressure counters remain separate [0.43ms]
+
+tests/timber-contact.test.ts:
+(pass) flat-ground contact matches the analytic tip contact angle [1.26ms]
+(pass) rising terrain arrests the trunk earlier with bounded samples [0.76ms]
+(pass) trunk capsule blocks approaching the log, permits retreat and clears above it [0.66ms]
+(pass) leaning measured tip contact rotates consistently for arbitrary world direction [1.98ms]
+
+tests/precipitation-lifecycle.test.ts:
+(node:9) [THREE_CJS_DEPRECATED] DeprecationWarning: `require("three")` is deprecated and will be removed.
+Replace `const THREE = require("three")` with `import * as THREE from "three"`.
+(Use `bun --trace-warnings ...` to show where the warning was created)
+(pass) ready shelter registration retains the predecessor until publication and releases exact ownership [0.88ms]
+(pass) shared field retires once and survives immediate replacement ownership [0.59ms]
+
+tests/simplify-growth.test.ts:
+(pass) chain simplification preserves exact forks, tips, hierarchy ownership and every source point within its bound [241.46ms]
+(pass) simplification falls back atomically on work exhaustion and handles exact collinearity [2.05ms]
+
+tests/collision-mesh.test.ts:
+(pass) collision snapshot preserves canonical chunk vertices and indices exactly in local space [274.93ms]
+(pass) canonical excavation changes collision landing and snapshot identity [697.03ms]
+
+tests/locations.test.ts:
+(pass) best-first search matches an exhaustive finite-region oracle across features, seeds and boundaries [2074.01ms]
+(pass) 50km nearest search prunes region evaluation; restrictive searches report bounded partial results [10.15ms]
+(pass) lake filter and distance bounds hold [0.29ms]
+
+tests/surface-depth-encoding.test.ts:
+(pass) RG16F preserves faint weighted depth at the same byte cost without changing source data [3.57ms]
+(pass) RG16F validates unsupported or corrupt channel arrays [0.44ms]
+(pass) half-depth rounding uses nearest values with ties to even at normal and subnormal boundaries [0.15ms]
+
+tests/bounded-advance.test.ts:
+(pass) bounded advancement uses accepted time, yields cooperatively and ends at requested time [3.87ms]
+(pass) cancellation at a yield preserves completed steps and schedules no extra work [3.41ms]
+(pass) bad clocks and exhausted budgets fail instead of looping forever [1.65ms]
+
+tests/mesh-partitions.test.ts:
+(pass) partitioning preserves every triangle and encloses crossing-edge vertices [3.92ms]
+
+tests/closed-wall-transform.test.ts:
+(pass) FFT closed-wall transforms match direct sine/cosine sums and preserve norm [80.30ms]
+(pass) closed-wall transform rejects invalid or aliased storage [0.73ms]
+
+tests/convex-motion.test.ts:
+(pass) convex point-speed inspection uses world transforms and offset COM with explicit units [8.80ms]
+(pass) convex motion inspector refuses unsupported dynamic shapes instead of inventing surface speeds [0.76ms]
+
+tests/water-characteristic-boundary.test.ts:
+(pass) subcritical reservoir retains outgoing invariant and prescribed incoming invariant in either orientation [0.33ms]
+(pass) supercritical outflow ignores the reservoir, inflow and dry boundaries take incoming state [0.60ms]
+(pass) mixed wall/reservoir patch meters incoming water and includes boundary speeds in CFL [89.81ms]
+(pass) reservoir validation is atomic and a uniform matching reservoir preserves oblique state [18.36ms]
+(pass) forcing samples stage times once and failed or reentrant samplers publish no state or budget [1.52ms]
+(pass) stage-sampled smooth forcing retains second-order temporal accuracy on a fixed grid [29.65ms]
+
+tests/cut-species-contact.test.ts:
+(fail) all species and lab shapes pass cut contact gates; former slender pine failure passes at 960 Hz [65100.06ms]
+  ^ this test timed out after 60000ms.
+
+tests/frame-cadence.test.ts:
+(pass) demand idle gaps are not stalls, but continuous long frames are retained [0.41ms]
+(pass) repeated idle notifications cannot manufacture an interval [0.06ms]
+
+tests/rendering.test.ts:
+(pass) omitting unused vertex colors preserves terrain topology, shading normals and culling bounds [197.69ms]
+(pass) native terrain sphere culling retains a visible chunk and rejects a chunk behind the camera [48.20ms]
+(pass) all eight tree variants and both baked views have distinct padded atlas tiles [0.77ms]
+(pass) world-space ecological attributes agree across local origins and survive geometry upload/accounting [0.80ms]
+
+tests/area-moments.test.ts:
+(pass) section integrals preserve translation and rotation of analytic rectangle moments [1.57ms]
+(pass) signed holes subtract area and second moments; empty sections have no centroid [0.63ms]
+
+tests/spectral-ocean.test.ts:
+(pass) spectrum is seeded, finite, energy calibrated, and band limited [205.91ms]
+(pass) direct Fourier reference preserves known modes and world anchored periodicity [13.81ms]
+(pass) zero sea remains flat and displaced coordinate inversion reports its residual [26.98ms]
+(pass) crossing swell preserves total energy and changes long-wave structure independently of wind [98.04ms]
+
+tests/solid-point-membership.test.ts:
+(pass) exact collapsed clipping faces preserve topology, boundary detection and solid membership [18.29ms]
+(pass) solid membership distinguishes a cavity, material, exterior and boundaries [19.05ms]
+
+tests/botanical-leaf.test.ts:
+(pass) species blades stay at botanical scale with connected nondegenerate geometry and exact support anchors [186.79ms]
+(pass) foliage is deterministically keyed, translation invariant and handles vertical supports [3.06ms]
+(pass) coarse leaves preserve keyed dimensions, attachments and projected area at six triangles [31.12ms]
+
+tests/botanical-shoot.test.ts:
+(pass) new shoots stay on their support, taper consistently, and close into positive finite wood volumes [77.70ms]
+
+tests/surface-view-atlas.test.ts:
+(pass) surface atlas copies reused capture buffers in stable layers and yields before publishing [36.31ms]
+(pass) surface atlas cancels at yield boundaries without publishing partial captures [17.64ms]
+(pass) surface atlas rejects inconsistent fields and metadata rather than publishing corrupt layers [18.06ms]
+(pass) atlas reports coverage-weighted packed-depth rounding in physical units [84.60ms]
+
+tests/native-resolution-gate.test.ts:
+(pass) native resolution advancement requires explicit headroom at the immediately preceding tier [0.95ms]
+(pass) movement requires valid hardware samples and bounded tail latency [0.51ms]
+
+tests/wood-surface-protocol.test.ts:
+(pass) wood surface protocol rejects malformed, oversized and nonconserving worker output [1.83ms]
+
+tests/finite-material-audit.test.ts:
+(pass) removed-material audit distinguishes overlapping source wood from disjoint successive cuts [1783.05ms]
+
+tests/canopy-inspection.test.ts:
+(pass) worker validates bounded weather context and complete measured-area budgets [97.00ms]
+(pass) worker refuses forged volume, missing history, unsafe numbers and mismatched projection [78.30ms]
+
+tests/ocean-surface-sampler.test.ts:
+(pass) surface sampler reproduces a travelling mode and its material velocity [5.20ms]
+(pass) bounded geometry sampler agrees with independent dense oracle for calm, crossing and severe seas [932.06ms]
+(pass) Eulerian height rate accounts for horizontal displacement; replay has no history dependence [16.13ms]
+(pass) folds and invalid queries are explicit, while a zero sea stays stationary [13.60ms]
+(pass) positive choppiness compresses crests and surface motion follows crest propagation [0.18ms]
+
+tests/branch-solid.test.ts:
+(pass) capped cylinders and frusta match analytic polygonal volumes and inertia [48.10ms]
+(pass) actual branch subtrees close every limb and produce positive finite woody mass [198.12ms]
+(pass) nonmanifold input, wrong winding and invalid indices fail instead of inventing a solid [1.90ms]
+(pass) star-shaped and warped boundary rings are rejected instead of being fan-filled [1.23ms]
+
+tests/weather.test.ts:
+(pass) weather reconstructs directly after absence, survives time seek and seed changes [2.31ms]
+(pass) moisture and cloud cover are continuous across spatial and temporal boundaries [0.36ms]
+(pass) storm forcing raises cloud coverage and precipitation; altitude changes phase [14.62ms]
+(pass) cloud advection retains sub-meter phase at long epochs and wraps continuously [1.03ms]
+(pass) vegetation wind phase is bounded and reconstructible across loops and long absences [1.08ms]
+
+tests/muscl-open-boundary.test.ts:
+(pass) open uniform oblique flow preserves state and accounts for signed volume on each edge [598.87ms]
+(pass) open wet/dry lake equilibrium and closed/periodic ledgers do not invent boundary water [168.86ms]
+(pass) outgoing simple-wave pulse agrees with an extended domain and its mass leaves through the ledger [925.71ms]
+
+tests/grid-rectangles.test.ts:
+(pass) rectangle packing preserves every cell, including holes and diagonal contacts [55.23ms]
+(pass) fragmented masks respect explicit output and input budgets [8.13ms]
+
+tests/principal-angular-state.test.ts:
+(pass) principal angular diagnostic matches diagonal energy and unit conversion [4.54ms]
+(pass) principal angular diagnostic composes body and mass frames [1.42ms]
+(pass) principal angular diagnostic rejects malformed and overflowing inputs [0.87ms]
+
+tests/tool-surface-operations.test.ts:
+(pass) generated faces must remain on a creating plane while seed faces retain ancestry [3.48ms]
+
+tests/surface-clusters.test.ts:
+(pass) partition preserves every triangle and exact attribute with whole-component ownership [30.13ms]
+(pass) cluster count is a hard bound and reports unsatisfied spatial targets [6.38ms]
+
+tests/scene-passes.test.ts:
+(pass) passes run in priority order, tolerate either disposal order and restore original hook [6.14ms]
+(pass) offscreen and nested renders do not repeat simulation or capture; thrown passes recover [1.58ms]
+(pass) a removed later pass cannot run from the current render snapshot [0.36ms]
+(pass) slow pass timing retains isolated spikes, bounds reporting and survives observer failure [1.28ms]
+(pass) post-scene passes precede completion observers and always restore them after failure [0.85ms]
+
+tests/projected-fallback-eligible.test.ts:
+(pass) projected forest selection sees current transforms and readiness before any render [11.57ms]
+
+tests/physical-branch.test.ts:
+(pass) physical oak cavity stays one body while opened and separated material splits independently of limb identity [2510.17ms]
+(pass) physical cuts handle an air strike, repeated tool and complete removal without inventing mass [1616.17ms]
+(pass) physical preparation validates hierarchy and operation bounds [67.60ms]
+(pass) explicit native mass preserves all six inertia directions for tiny severed pine and oak pieces [1615.30ms]
+
+tests/finite-cavity-sequence.test.ts:
+(pass) successive oak cavities preserve removed mass and native hollow-body contacts through detachment [10022.83ms]
+
+tests/alpha-coverage.test.ts:
+(pass) bilinear coverage includes edge clamps and handles one-dimensional images [0.61ms]
+(pass) bounded quantized rescaling improves a faded mip without changing its input [1.43ms]
+(pass) unrepresentable tails remain explicit instead of flooding the last mip [1.14ms]
+
+tests/ocean-coastal.test.ts:
+(pass) dispersion satisfies gravity-wave relation and energy flux across depths [0.41ms]
+(pass) combined sea breaks smoothly, stays finite and respects its depth limit [174.05ms]
+(pass) partitioned world water velocity differentiates the rendered height model at epoch times [68.15ms]
+(pass) depth-limited surf is retained outside the narrow numerical wet edge [4.06ms]
+
+tests/end-grain-material.test.ts:
+(pass) end-grain hooks compile against installed standard shader layout and preserve lighting-only scope [17.87ms]
+(pass) cut focus selects the largest exposed section rather than a distant twig [2.40ms]
+
+tests/column-pressure.test.ts:
+(pass) column energy agrees with independent vertical Gauss integration on uneven beds [6.13ms]
+(pass) pressure matrix is symmetric positive and PCG recovers manufactured solutions [36.70ms]
+(pass) pressure reference bounds input and does not mutate caller vectors or bed [2.82ms]
+(pass) pressure force and divergence are exact adjoints including closed walls [11.53ms]
+(pass) coupled vertical preconditioner preserves manufactured solutions and strict residuals [43.87ms]
+
+tests/triangle-weights.test.ts:
+(pass) attribute weights preserve vertex seams and stay stable on thin rotated triangles [1.93ms]
+
+tests/wave-model-dispersion.test.ts:
+(pass) model group speeds agree with independent frequency differences across depth scales [13.36ms]
+(pass) layer relations meet published approximate phase ranges but group accuracy is a separate gate [1.18ms]
+(pass) dispersion comparisons reject undefined models and invalid bounds [1.08ms]
+
+tests/canopy-projection.test.ts:
+(pass) canopy capture owns buffers, respects texture transforms, and measures current rotation [499.47ms]
+(pass) unsupported material and partial geometry fail instead of inventing coverage [1.13ms]
+(pass) worker pose snapshot matches rendered phenotype and pivot transforms without touching source data [6.07ms]
+(pass) packed and interleaved normalized snapshots preserve renderer UV transforms [4.56ms]
+
+tests/browser-failures.test.ts:
+(pass) WebGL invalid-operation warnings fail browser audits; expected context logs and timing notices do not [0.72ms]
+
+tests/cover-inspection.test.ts:
+(pass) cover inspection observes rendered tile metadata and indexed primitive counts without mutating visibility [6.06ms]
+(pass) wide and deep scenes obey inspection limits and report truncation [69.22ms]
+
+tests/nested-lod-coverage.test.ts:
+(pass) nested coverage preserves parent hooks and explicit instance selection [3.00ms]
+
+tests/run-source-snapshot.test.ts:
+(pass) snapshot covers imported helpers, test fixtures and installed local dependency code [46.56ms]
+(pass) snapshot refuses oversized evidence and does not traverse arbitrary symlinks [9.68ms]
+(pass) Bun individual-file links identify the installed package implementation [19.91ms]
+(pass) tool-specific TypeScript configuration changes invalidate source identity [6.59ms]
+(pass) local vendor implementation and provenance changes invalidate evidence [22.67ms]
+
+tests/surface-multi-view-proxy.test.ts:
+(pass) multi-view rejects invalid selection, singular transforms and dead owners before shader mutation [20.47ms]
+(pass) multi-view keeps coverage output and relighting composable and borrows all atlas textures [3.20ms]
+(pass) perspective rays require finite capture-space camera origins and a distinct shader program [14.96ms]
+(pass) refinement budgets keep independent shader cache identities without changing borrowed fields [2.37ms]
+
+tests/section-stress.test.ts:
+(pass) analytic rectangular axial and biaxial stress, sign and scale [3.94ms]
+(pass) unsymmetric section satisfies equilibrium and is invariant under rotation and translation [7.11ms]
+(pass) holes contribute negative area and thin/empty sections have explicit states [0.93ms]
+
+tests/native-current-contact.test.ts:
+(pass) offline inspection distinguishes fresh geometry after an unpropagated edit [17.98ms]
+(pass) offline fresh-query budgets are explicit and cannot mutate the world [17.20ms]
+
+tests/tridiagonal.test.ts:
+(pass) Thomas reference solves asymmetric dominant systems without mutating input [29.49ms]
+(pass) tridiagonal contract rejects wraparound, singular rows and nonfinite data [12.11ms]
+
+tests/water-runtime.test.ts:
+(pass) fixed-step buoyancy is independent of 30/60/120 Hz delivery [55.02ms]
+(pass) manual step and stalled frame bounds are explicit [0.96ms]
+
+tests/ecology.test.ts:
+(pass) ecological fields and pigment remain deterministic and continuous across climate and chunk seams [7.30ms]
+(pass) bounded ecological search finds real contrasting environments within one region [52.47ms]
+(pass) tree populations vary in age, crown and foliage without duplicate positions or unstable chunk results [66.38ms]
+(pass) ground cover is reproducible, bounded, and loses support after excavation [262.80ms]
+(pass) coastal exposure decreases inland instead of staying at its maximum [0.28ms]
+(pass) coastal sediment leaves dry coastal meadows and interior lowlands vegetated [8.86ms]
+(pass) reported coastal plain supports low trees and diverse cover without underwater roots [3429.02ms]
+(pass) rocky-coast search follows resistant geology instead of any exposed beach [725.73ms]
+(pass) grass sward shape is bounded and stable without increasing placement budgets [513.94ms]
+(pass) non-grass roots occupy full coarse cells rather than repeated narrow rows [1081.29ms]
+
+tests/precipitation-coverage.test.ts:
+(pass) camera handoffs retain only unchanged prepared coverage inside the full weather footprint [1.65ms]
+
+tests/grass-indexed.test.ts:
+(pass) indexed grass preserves every triangle position and pigment bit with bounded smooth normals [86.28ms]
+
+tests/preparation-queue.test.ts:
+(pass) preparation yields, serializes asynchronous work and cancels stale owners [14.17ms]
+(pass) a failed preparation rejects its owner without poisoning later work [5.96ms]
+
+tests/baked-needle-mips.test.ts:
+(pass) served needle mip asset preserves source identity, RGB and measured coverage [543.54ms]
+
+tests/gl-submission-trace.test.ts:
+(pass) GL trace preserves receiver, results, errors and inherited ownership without querying GL [4.29ms]
+(pass) GL trace is bounded and never removes a replacement installed by another owner [4.61ms]
+(pass) aggregate GL counters retain every call even when event reports are throttled [2.07ms]
+
+tests/crown-growth.test.ts:
+(pass) crown samples fill volume with bounded reproducible exclusion and no silent shortfall [108.66ms]
+(pass) pipe radii conserve terminal demand at forks without making children thicker than parents [8.56ms]
+
+tests/branch-kerf.test.ts:
+(pass) tool kerfs through actual deformed branches conserve wood including the removed strip [1826.14ms]
+
+tests/forest-detail-bounds.test.ts:
+(pass) projected tree bounds enclose independent warped source samples at world coordinates [64.02ms]
+
+tests/thin-sheet-geometry.test.ts:
+(pass) bounded thin sheet visual LOD > reduces local sheets, conserves area and support, leaves source unchanged [98.98ms]
+(pass) bounded thin sheet visual LOD > keeps distinct texture crops separate and supports rotated sheets [55.06ms]
+(pass) bounded thin sheet visual LOD > falls back when scale cannot conserve area [8.60ms]
+(pass) bounded thin sheet visual LOD > rejects unsupported budgets, UV domains, and partial material ranges [5.62ms]
+
+tests/ocean-environment.test.ts:
+(pass) weather reconstructs from world epoch, is continuous across region and lifetime boundaries [1.18ms]
+(pass) analytic expedition lookup finds deep real water, arrival intensifies and then clears [3.00ms]
+(pass) surface height and velocity share the envelope and absolute spectrum phase; currents move a real body reproducibly [1234.29ms]
+
+tests/dispersive-checkpoint.test.ts:
+(pass) dispersive checkpoints preserve exact float32 phase state through JSON and detach ownership [3.80ms]
+(pass) checkpoint schema rejects malformed domains, sparse or corrupt arrays and unsupported precision [184.01ms]
+
+tests/branch-drop.test.ts:
+(pass) all eight representative branch subtrees have consistent collider mass and settle on the floor [9043.64ms]
+(pass) invalid and oversized physics jobs fail before creating simulation state [7.72ms]
+(pass) generated ground supports actual separated oak and pine subtrees [1365.99ms]
+(pass) actual oak subtree drops onto edited canonical terrain with validated contact diagnostics [1218.33ms]
+
+tests/oscillating-bowl.test.ts:
+(pass) oscillating-bowl cell integrals conserve exact volume through moving dry boundaries [11.33ms]
+(pass) bowl translation satisfies independently differenced shallow-water equations in wet interior [0.73ms]
+
+tests/render-layers.test.ts:
+(pass) nested selections restore initially hidden objects and tolerate removal during a run [15.66ms]
+(pass) unknown and empty selections leave scene visibility unchanged [52.48ms]
+
+tests/forest-composition.test.ts:
+(pass) stand field is bounded, seed-specific and continuous across signed lattice boundaries [2.98ms]
+(pass) species suitability blends continuously with climate and riparian habitat [10.91ms]
+(pass) fixed habitat produces coherent composition differences without changing candidate count [6.64ms]
+
+tests/visible-meshes.test.ts:
+(pass) optics visibility gate retains potential surfaces and rejects hidden, empty, offscreen and excluded-layer meshes [6.12ms]
+(pass) large horizontal water uses a displacement-padded box rather than a sphere enclosing the sky [2.39ms]
+
+tests/canopy-water-ownership.test.ts:
+(pass) uninitialized foliage remains unknown, including removed support [1.92ms]
+(pass) whole known states follow exact source units without area rescaling or implicit release [4.70ms]
+(pass) duplicate, missing-destination, inconsistent-time and forged summaries reject [2.13ms]
+(pass) maximum sparse inventory stays bounded and conserves floating-point sums [120.79ms]
+
+tests/savedWorlds.test.ts:
+(pass) does not create a default world in fresh storage [0.93ms]
+(pass) recovers edited seeds without importing empty previews or changing legacy data [0.83ms]
+(pass) round-trips named worlds and positions independently by seed [0.48ms]
+(pass) rejects corrupt catalogs without silently replacing them [0.14ms]
+(pass) filters invalid and duplicate records and unsafe saved positions [0.17ms]
+(pass) migrates world metadata once while preserving incompatible terrain edits untouched [0.26ms]
+
+tests/timber-footprint-reconciliation.test.ts:
+(pass) rounder trunks preserve saved cut cell coordinates and every removed cell across all species, shapes and cut heights [5069.53ms]
+(pass) refinement rejects over-budget geometry and frame changes instead of clipping or resampling a saved cut [4.00ms]
+
+tests/boussinesq-stencil.test.ts:
+(pass) dispersive spatial stencil matches independently differentiated polynomial fields [15.47ms]
+(pass) spatial stencil is rotationally consistent under transpose and momentum exchange [6.23ms]
+(pass) lake at rest over uneven bed has zero spatial source and an explicit unevaluated boundary [3.12ms]
+(pass) dry-bed stencil requires a complete explicit guard; invalid field inputs reject [2.39ms]
+(pass) flat-bed oblique Fourier mode matches the discrete third-derivative and mixed symbols [2.46ms]
+
+tests/drainage.test.ts:
+(pass) receivers are acyclic and contributing area is conserved at every node and outlet [362.17ms]
+(pass) reported location drains across storage regions to a real ocean outlet with tributaries [5.68ms]
+(pass) adjacent storage regions expose the same cross-border reach and continuous bed/water [33.55ms]
+(pass) stronger bedrock resists incision under identical uplift and catchment geometry [18.54ms]
+(pass) cold rebuild and seed switching preserve exact drainage, geometry and cross-bin discovery [891.17ms]
+
+tests/muscl-checkpoint.test.ts:
+(pass) hydrostatic checkpoint JSON round-trips detached float32 state and physical counters [24.82ms]
+(pass) checkpoint rejects incompatible, sparse, nonfinite, unrepresentable and inconsistent state [2.74ms]
+(pass) exchange checkpoints preserve physical mass and reject lost budgets or altered reservoir precision [8.82ms]
+(pass) equivalent all-wall records cannot conceal a nonzero exchange ledger [0.50ms]
+
+tests/finite-cavities.test.ts:
+(pass) successive interior cavities retain signed voids, then open to the exterior [100.67ms]
+(pass) enlarging a closed cavity removes a hollow volume rather than refilling the old void [23.85ms]
+(pass) authored hollow seed requires explicit shared shell ownership and preserves it after cutting [24.84ms]
+(pass) coincident authored solids keep independent additive ownership [50.62ms]
+(pass) disconnected remnants keep common ancestry without filling either interior void [58.10ms]
+(pass) enclosed wedge edits preserve sloped inner surfaces through later box and wedge cuts [67.80ms]
+
+tests/convex-cells.test.ts:
+(pass) centroid cells conserve a cube, reject unsupported concavity and invalid measurement callbacks [8.88ms]
+
+tests/attachment-groups.test.ts:
+(pass) only authored attachments with remaining contact join, including split occurrences of one limb [0.51ms]
+
+tests/space-colonization.test.ts:
+(pass) incremental spatial assignment matches exhaustive growth including negative grid cells and ties [1429.58ms]
+(pass) growth budgets stop explicitly; disconnected and cancelling influence remain observable [2.45ms]
+(pass) balanced attractors never grow coincident copies of the same child [0.99ms]
+
+tests/finite-closed-cut.test.ts:
+(pass) finite notch conserves analytic volume without cutting the opposite surface; through cut disconnects [69.24ms]
+(pass) finite tool broad phase preserves distant components; empty and invalid tools fail explicitly [22.24ms]
+(pass) bounded notches and through cuts preserve all-species provenance and conservation across lab shapes [1415.61ms]
+(pass) a shallow surface shaving preserves native cut planes without Float32 export rounding [10.63ms]
+
+tests/solid-attachment-groups.test.ts:
+(pass) a finite notch removes a real attachment without its convex hull filling the void [76.32ms]
+(pass) partial overlap survives and parent metadata prevents invented proximity joints [16.90ms]
+(pass) mixed ownership and invalid parent graphs are rejected before native queries [1.33ms]
+(pass) worker graph validation rejects missing, duplicated and falsely glued components [5.72ms]
+(pass) closed cavity walls remain with their material and do not create attachment through a void [21.67ms]
+
+tests/surface-preview.test.ts:
+(pass) native preview uses independent coverage, preserves input and flips GPU rows [1.89ms]
+(pass) native preview rejects corrupt buffers and colored masks instead of inventing coverage [0.58ms]
+
+tests/preparation-status.test.ts:
+(pass) progress snapshots are stable between updates and released owners cannot publish [1.94ms]
+(pass) one failed owner does not hide other work or leak across a new world [0.44ms]
+
+tests/finite-convex-tree.test.ts:
+(pass) successive real-tree cuts keep engine mass and both cutter interiors empty across all species and deformations [11288.73ms]
+
+3 tests failed:
+(fail) accurate deeper pine cut passes its first attempt and preserves bounded audit evidence [876.52ms]
+(fail) fixed coarse pine floor audit accepts accurate cut frames at 480/960/1920 Hz [1720.31ms]
+(fail) all species and lab shapes pass cut contact gates; former slender pine failure passes at 960 Hz [65100.06ms]
+  ^ this test timed out after 60000ms.
+
+ 822 pass
+ 3 fail
+ 7408318 expect() calls
+Ran 825 tests across 274 files. [429.42s]
+error: script "test" exited with code 1

@@ -1,0 +1,54 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+tests/finite-drop.test.ts:
+FINITE_REFINEMENT_OBSERVATION [{"worldEnergy":{"revision":"rigid-energy-audit-1","nominalHz":60,"samples":100,"initial":{"bodies":1,"massKg":7.009539604187012,"linearJ":0,"angularJ":0,"potentialJ":334.11754747687735,"totalJ":334.11754747687735,"maxSpeed":0,"maxAngularSpeed":0},"final":{"bodies":1,"massKg":7.009539604187012,"linearJ":0.324429104778958,"angularJ":0.09715527010559324,"potentialJ":2.605038405489347,"totalJ":3.026622780373898,"maxSpeed":0.30424969741451546,"maxAngularSpeed":4.833732243840962},"finalSeconds":1.6177083333333333,"minimumTotalJ":3.0263860014441986,"maximumTotalJ":334.11754747687735,"maximumTotalAtSeconds":0,"maximumSpeed":9.6471337890625,"maximumSpeedAtSeconds":0.9833333333333333,"maximumAngularSpeed":35.37688055151428,"maximumAngularSpeedAtSeconds":1.15},"simulationHz":960,"termination":"contact-limit","replayFailure":null,"steps":1553,"rejectedBody":0,"accepted":false,"maximumContactPenetration":0.14719921112060547,"minimumClearance":-0.000009755630916673252,"elapsedMs":533.801508},{"worldEnergy":{"revision":"rigid-energy-audit-1","nominalHz":60,"samples":171,"initial":{"bodies":1,"massKg":7.009539604187012,"linearJ":0,"angularJ":0,"potentialJ":334.11754747687735,"totalJ":334.11754747687735,"maxSpeed":0,"maxAngularSpeed":0},"final":{"bodies":1,"massKg":7.009539604187012,"linearJ":0,"angularJ":0,"potentialJ":2.577980404652,"totalJ":2.577980404652,"maxSpeed":0,"maxAngularSpeed":0},"finalSeconds":2.8135416666666666,"minimumTotalJ":2.577980404652,"maximumTotalJ":334.11754747687735,"maximumTotalAtSeconds":0,"maximumSpeed":9.64511474609375,"maximumSpeedAtSeconds":0.9833333333333333,"maximumAngularSpeed":51.83084107052252,"maximumAngularSpeedAtSeconds":1},"simulationHz":1920,"termination":"sleep","replayFailure":null,"steps":5402,"rejectedBody":null,"accepted":true,"maximumContactPenetration":0.000126190185546875,"minimumClearance":-0.00011075744587321634,"elapsedMs":1153.5935200000001}]
+203 | 		console.log(
+204 | 			'FINITE_REFINEMENT_OBSERVATION',
+205 | 			JSON.stringify(result.attempts)
+206 | 		);
+207 | 	expect(validFiniteDrop(result)).toBe(true);
+208 | 	expect(result.attempts.map((a) => [a.simulationHz, a.accepted])).toEqual([
+                                                                        ^
+error: expect(received).toEqual(expected)
+
+  [
+    [
+      960,
++     false,
++   ],
++   [
++     1920,
+      true,
+    ],
+  ]
+
+- Expected  - 0
++ Received  + 4
+
+      at <anonymous> (/home/alexkahn/alex/hello-world-gyro-adoption/tests/finite-drop.test.ts:208:67)
+(fail) accurate deeper pine cut passes its first attempt and preserves bounded audit evidence [2198.24ms]
+
+tests/finite-wood-contact.test.ts:
+FINITE_CONTACT_OBSERVATION {"variant":0,"shape":"authored","hz":480,"accepted":true,"termination":"sleep","sleeping":true,"penetration":0.00004150390625,"clearance":-0.00004117066859108537,"center":[0.6628415119488159,2.868304934603998,-0.23931013562985823],"volume":0.008829445288335853,"contactSamples":36110}
+FINITE_CONTACT_OBSERVATION {"variant":0,"shape":"authored","hz":960,"accepted":true,"termination":"sleep","sleeping":true,"penetration":0.000027313232421875,"clearance":-0.00002701710577190236,"center":[0.6628415119488159,2.868304934603998,-0.23931013562985823],"volume":0.008829445288335853,"contactSamples":49741}
+FINITE_CONTACT_OBSERVATION {"variant":0,"shape":"authored","hz":1920,"accepted":false,"termination":"contact-limit","sleeping":false,"penetration":15.3789306640625,"clearance":-0.000001177736071729385,"center":[0.6628415119488159,2.868304934603998,-0.23931013562985823],"volume":0.008829445288335853,"contactSamples":17221}
+138 | 								);
+139 | 							// Double-position cut export changes the exact center used to
+140 | 							// place collider frames. The formerly rejected 480 Hz broad
+141 | 							// pine now passes; retain all contact limits and negative
+142 | 							// validator cases rather than pinning a rounding artifact.
+143 | 							expect(validBranchDrop(d, hz)).toBe(true);
+                                            ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/alexkahn/alex/hello-world-gyro-adoption/tests/finite-wood-contact.test.ts:143:39)
+(fail) fixed coarse pine floor audit accepts accurate cut frames at 480/960/1920 Hz [1671.58ms]
+
+ 0 pass
+ 2 filtered out
+ 2 fail
+ 29 expect() calls
+Ran 2 tests across 2 files. [4.33s]
