@@ -1,0 +1,95 @@
+[
+  {
+    hz: 60,
+    omega: 30,
+    reverse: false,
+    steps: 3,
+    peakFrame: 0,
+    peakSeparationM: -0.0010846663118242866,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [
+      4, 0, 0, 1, 0, 0.9977102875709534, 0, 4, 1, 0, 0, 0, 0.9977102875709534, 1
+    ],
+  }, {
+    hz: 60,
+    omega: 30,
+    reverse: true,
+    steps: 3,
+    peakFrame: 0,
+    peakSeparationM: -0.0010846663118242866,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [
+      4, 0, 0, 1, 0, 0.9977102875709534, 1, 4, 1, 0, 0, 0, 0.9977102875709534, 0
+    ],
+  }, {
+    hz: 240,
+    omega: 30,
+    reverse: false,
+    steps: 12,
+    peakFrame: 11,
+    peakSeparationM: -0.0002649226809651045,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [],
+  }, {
+    hz: 240,
+    omega: 30,
+    reverse: true,
+    steps: 12,
+    peakFrame: 11,
+    peakSeparationM: -0.0002649226809651045,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [],
+  }, {
+    hz: 960,
+    omega: 6,
+    reverse: false,
+    steps: 240,
+    peakFrame: 216,
+    peakSeparationM: -0.000034490804681971965,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [ 3, 0, 0, 1, 0, 0.5, 0 ],
+  }, {
+    hz: 960,
+    omega: 6,
+    reverse: true,
+    steps: 240,
+    peakFrame: 185,
+    peakSeparationM: -0.000023316720808227998,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [ 2, 1, 0, 0, 0, 0.5, 0 ],
+  }, {
+    hz: 960,
+    omega: 30,
+    reverse: false,
+    steps: 48,
+    peakFrame: 47,
+    peakSeparationM: -0.00009759338285918184,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [],
+  }, {
+    hz: 960,
+    omega: 30,
+    reverse: true,
+    steps: 48,
+    peakFrame: 47,
+    peakSeparationM: -0.00009759338285918184,
+    peakPhases: [
+      [Object ...], [Object ...], [Object ...], [Object ...], [Object ...]
+    ],
+    peakImpacts: [],
+  }
+]

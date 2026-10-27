@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "cases": 1000,
+  "featureCounts": {
+    "face": 250,
+    "edge": 250,
+    "corner": 250,
+    "interior": 250
+  },
+  "maxDistanceError": 0.0,
+  "maxDerivativeError": 5.1942922851822004e-08,
+  "sourceSha256": "43f939a7ed492643a7e9d15c918c3339c3229f15a85733f67ed398b50106f16e",
+  "scope": "Analytic finite-box/radius-0.1 sphere geometry, both box lengths, all sign quadrants and smooth face/edge/corner/interior regions. Feature ties are nonsmooth and excluded from centered-derivative assertions. No native solver execution or physical acceptance."
+}

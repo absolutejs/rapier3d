@@ -1,0 +1,3015 @@
+{
+  "physicalAcceptance": false,
+  "negativeMetadataControlPassed": true,
+  "caseCount": 300,
+  "inputHashes": {
+    "tagged.json": "3ab810685ae520da4a98771841458c3f7df6580e35b1c17675e0911cb459fe35",
+    "no-ccd.json": "635cde28b8decd81a704283c612d5ff2d622272a64c7b3002abbcc0c271b6ac9",
+    "substeps-64.json": "593bdc5c811cc8ab0a3166db4c0e19f6afcf450e8fb51f4a5ccd30a551b82f37",
+    "substeps-128.json": "9e07d1a1e9cb6c092ac6fb0729099a9d6d759ab6bc3145c66a2e2157d1609fa9",
+    "no-ccd-128.json": "c69149835a54cd6a1086fbc3859fb07ad894a010ca29eaf949c9974fb49baa7f"
+  },
+  "cases": [
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 0.00010770852071372017
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 0.00010770852071372017
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.002094812806852517
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.002094812806852517
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 2.8777601815618836e-05
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 2.8777601815618836e-05
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0014867684672782294
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0014867684672782294
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 8.23839863016429e-06
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 8.23839863016429e-06
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.000174609434953385
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.000174609434953385
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 0.00017129598315311634
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 0.00017129598315311634
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0038760660505366834
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0038760660505366834
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 4.0701577286847423e-05
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 4.0701577286847423e-05
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0014865617252702717
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0014865617252702717
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.21043084640865e-05
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.21043084640865e-05
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.00026489216814527816
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.00026489216814527816
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "tagged",
+      "solverBudget": 32,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 0.00010759453881280245
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 0.00010759453881280245
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.002096289417581762
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.002096289417581762
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 2.8651173349700243e-05
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 2.8651173349700243e-05
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0005857433575139209
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0005857433575139209
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 8.23839863016429e-06
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 8.23839863016429e-06
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.00017438931347611708
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.00017438931347611708
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 0.00017152186985001927
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 0.00017152186985001927
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0038757720205190166
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0038757720205190166
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 4.074017247567008e-05
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 4.074017247567008e-05
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0009180894320560545
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0009180894320560545
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.1844948507019892e-05
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.1844948507019892e-05
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0002648497032567837
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0002648497032567837
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd",
+      "solverBudget": 32,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 5.100207886508945e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 5.100207886508945e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0009984205097968019
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0009984205097968019
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.4896434395214597e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.4896434395214597e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0004502905789354056
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0004502905789354056
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 5.348528022572352e-06
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 5.348528022572352e-06
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.00010205350089297072
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.00010205350089297072
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 7.996286333709912e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 7.996286333709912e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0018465199779115066
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0018465199779115066
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 2.100503606615456e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 2.100503606615456e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0004779198902614551
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0004779198902614551
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.2861293445007305e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.3638853521111272e-05
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.00015697849640360084
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.00015697849640360084
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-64",
+      "solverBudget": 64,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 2.553225850919494e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 2.553225850919494e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0010860099133409157
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0010860099133409157
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.4470587516232647e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.4470587516232647e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0001672426787512199
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0001672426787512199
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 6.500342122670033e-06
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 6.500342122670033e-06
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 6.372611777703818e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 6.372611777703818e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 4.044033639881428e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 4.044033639881428e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0010846663118242866
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0010846663118242866
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.2008454628550935e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.2008454628550935e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0002649226809651045
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0002649226809651045
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 3.4490804681971965e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 2.3316720808227998e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 9.759338285918184e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 9.759338285918184e-05
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "substeps-128",
+      "solverBudget": 128,
+      "fullCcd": true,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 2.5650238712801587e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 2.5650238712801587e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0004964883003972659
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0004964883003972659
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 8.069498141569098e-06
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 8.069498141569098e-06
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.00016720126218482123
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.00016720126218482123
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 6.500342122670033e-06
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 6.500342122670033e-06
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 6.433952265148812e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 6.433952265148812e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 4.074017247567008e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 4.074017247567008e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0009180894320560545
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0009180894320560545
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 1.1790142534370829e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 1.1790142534370829e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 0.0002648497032567837
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 0.0002648497032567837
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "peakDepthM": 7.2806754253113e-06
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "peakDepthM": 7.2806754253113e-06
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "peakDepthM": 9.853333269714548e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "peakDepthM": 9.853333269714548e-05
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "peakDepthM": 0
+    },
+    {
+      "policy": "no-ccd-128",
+      "solverBudget": 128,
+      "fullCcd": false,
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "peakDepthM": 0
+    }
+  ],
+  "scope": "Configured solver substeps per CCD pass, not constant total actual work: CCD scheduling can create multiple passes. Disabling full CCD changes planning as well as endpoint clamping. This matrix does not isolate clamping by itself; phase traces do."
+}

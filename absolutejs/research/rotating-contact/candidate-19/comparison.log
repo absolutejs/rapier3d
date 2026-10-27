@@ -1,0 +1,13 @@
+Exact untagged parity frames: 4284
+{'span': 2, 'hz': 60, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.015312094452424416, 'candidateDepthM': 0.00010770852071372017}
+{'span': 2, 'hz': 60, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.09755610100878297, 'candidateDepthM': 0.002094812806852517}
+{'span': 2, 'hz': 240, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.0014461112146609695, 'candidateDepthM': 2.8777601815618836e-05}
+{'span': 2, 'hz': 240, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.035900233917253596, 'candidateDepthM': 0.0014867684672782294}
+{'span': 2, 'hz': 960, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.00105851794476651, 'candidateDepthM': 8.23839863016429e-06}
+{'span': 2, 'hz': 960, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.006329667567188196, 'candidateDepthM': 0.000174609434953385}
+{'span': 20, 'hz': 60, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.021393695934899357, 'candidateDepthM': 0.00017129598315311634}
+{'span': 20, 'hz': 60, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.09817862682473542, 'candidateDepthM': 0.0038760660505366834}
+{'span': 20, 'hz': 240, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.0020954915054597206, 'candidateDepthM': 4.0701577286847423e-05}
+{'span': 20, 'hz': 240, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.08258078111150279, 'candidateDepthM': 0.0014865617252702717}
+{'span': 20, 'hz': 960, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.00041613290211515996, 'candidateDepthM': 1.21043084640865e-05}
+{'span': 20, 'hz': 960, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.009138642700143515, 'candidateDepthM': 0.00026489216814527816}
