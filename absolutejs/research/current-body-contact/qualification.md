@@ -9,3 +9,5 @@ All 22 package tests pass with 48,008 assertions. New tests cover unpropagated e
 The packed 0.5.0 tarball passes all three new tests (24 assertions) and strict type checks. The packed bundle equals the built bundle and retains the exact stable native hash. Pack contents and integrity are in pack.json; SHA-256 receipts are in packed-provenance.json. The initial pack attempt failed because npm's default cache was read-only; rerunning with the durable checkout cache succeeded.
 
 Game adoption is prepared separately in hello-world/docs/rapier-current-body-contact-2026-10-27, including an explicit bounded fresh-pair budget and snapshot/query semantics. The game must adopt the published registry version, not a file dependency or node_modules patch.
+
+Publication completed after npm browser confirmation. Registry integrity and SHA-1 match the exact tested tarball; see registry-verification.json. The game installed registry 0.5.0 and verified the installed bundle hash and native kernel hash before applying its bounded inspector change.
