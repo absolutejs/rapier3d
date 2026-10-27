@@ -1,0 +1,6 @@
+{
+  "qualifiedArchivePasses": true,
+  "modifiedInstalledMetadataRejected": true,
+  "positiveOutput": "Verified 52 installed files against qualified archive",
+  "negativeOutput": "Installed file differs from qualified archive: dist/build-info.mjs"
+}
