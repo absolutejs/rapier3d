@@ -1,0 +1,19 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/solver-contacts.test.ts:
+25 |  }finally{w.free();}
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`query-only build preserves upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+                                                                                                                                            ^
+error: Parity fixture exceeded 10s CPU-work wall budget
+      at <anonymous> (/home/alexkahn/alex/rapier-contact-release/absolutejs/tests/solver-contacts.test.ts:30:136)
+(fail) query-only build preserves upstream motion 1920Hz tilt=0.3 [10174.68ms]
+
+ 0 pass
+ 5 filtered out
+ 1 fail
+ 156 expect() calls
+Ran 1 test across 1 file. [10.66s]

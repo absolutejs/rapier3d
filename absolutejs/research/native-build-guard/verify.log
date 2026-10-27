@@ -1,0 +1,7 @@
+{
+  passed: true,
+  stableSha256: "65ebc43d69dc3b4b290b29ca30ff44955711c8002799503749bcc03060783b39",
+  researchSha256: "078c43018007a80a3ebb010a94663c2389d655087a1ffc2c544c94b009686bea",
+  researchRejected: true,
+  reason: "Error: Native kernel is not qualified for this stable package: got 078c43018007a80a3ebb010a94663c2389d655087a1ffc2c544c94b009686bea (3372484 bytes), expected 65ebc43d69dc3b4b290b29ca30ff44955711c8002799503749bcc03060783b39 (3299287 bytes). Rebuild the stable native source or qualify a new kernel; never reuse a research build.",
+}

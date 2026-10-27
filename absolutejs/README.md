@@ -52,6 +52,14 @@ wasm-bindgen 0.2.129 CLI archive is checksum verified before extraction. Caches 
 generated build output are reproducible; modified source and selected test
 receipts are committed. `dist/provenance.json` records the resulting WASM hash.
 
+API packaging verifies the post-bindgen native bytes against
+`absolutejs/native-kernel.json` before writing the distribution. A shared Cargo
+cache containing a research kernel therefore fails closed. Rebuild stable native
+source after research builds. Do not update the qualification hash merely to make
+a build pass: a changed kernel requires physical qualification and a recorded
+release decision. API-only releases retain the qualified native hash.
+See `absolutejs/research/native-build-guard/` for positive and negative controls.
+
 Run `bun test absolutejs/tests` after building. Tests compare the official pinned
 release's motion against this build, exercise actual clustered contacts, nested
 queries and exception cleanup. Browser-worker validation is separate from native

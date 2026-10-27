@@ -1,6 +1,6 @@
+import {assertQualifiedNative} from './qualified-native';
 import { mkdirSync, readdirSync, readFileSync, writeFileSync, copyFileSync } from 'node:fs';
 import { resolve, join, relative, dirname } from 'node:path';
-import { createHash } from 'node:crypto';
 const root = process.cwd();
 const generated = resolve('.absolutejs/api');
 const bindgen = resolve('.cache/tools/wasm-bindgen-0.2.129-x86_64-unknown-linux-musl/wasm-bindgen');
@@ -28,6 +28,8 @@ function copy(dir:string) {for(const e of readdirSync(dir,{withFileTypes:true}))
 copy(source);
 writeFileSync(join(generated,'raw.ts'),'export * from "./rapier_wasm3d.js";\n');
 const wasm=readFileSync(join(generated,'rapier_wasm3d_bg.wasm'));
+const nativeQualification=JSON.parse(readFileSync('absolutejs/native-kernel.json','utf8'));
+const qualifiedWasmSha256=assertQualifiedNative(wasm,nativeQualification);
 writeFileSync(join(generated,'init.ts'),`import initialize, {type InitInput} from './rapier_wasm3d.js';
 let pending: Promise<void> | undefined;
 /** Initialize once; concurrent callers share the same initialization. */
@@ -42,5 +44,5 @@ writeFileSync('.absolutejs/api-tsconfig.json',JSON.stringify({compilerOptions:{t
 const types=Bun.spawnSync(['bun','run','tsc','-p','.absolutejs/api-tsconfig.json'],{stdout:'inherit',stderr:'inherit'});
 if(types.exitCode) throw Error('Declaration build failed');
 copyFileSync(join(generated,'rapier_wasm3d.d.ts'),'dist/types/rapier_wasm3d.d.ts');
-writeFileSync('dist/provenance.json',JSON.stringify({upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:createHash('sha256').update(wasm).digest('hex'),wasmBytes:wasm.length,solverChanges:false,addition:'Current-body-pose shape contact query; validated contact policy and CCD diagnostics; native kernel unchanged'},null,2)+'\n');
+writeFileSync('dist/provenance.json',JSON.stringify({upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:qualifiedWasmSha256,wasmBytes:wasm.length,solverChanges:nativeQualification.solverChanges,addition:'Current-body-pose shape contact query; validated contact policy and CCD diagnostics; native kernel unchanged'},null,2)+'\n');
 console.log('Built standalone API, declarations and provenance.');

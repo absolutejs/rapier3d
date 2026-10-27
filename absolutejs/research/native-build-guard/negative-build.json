@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "exitCode": 1,
+  "stableBundleUnchanged": true,
+  "bundleSha256": "f2b120fe26a264dde76c4b07ee108b79703caaec4ee21bee6160dcb851d8a4c1",
+  "reason": "Actual API build rejects research native bytes in shared target cache before writing a bundle."
+}
