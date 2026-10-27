@@ -1,0 +1,6 @@
+{
+  "cases": 72,
+  "unchangedPrescribedFrames": 1440,
+  "changedDynamicFrames": 476,
+  "scope": "Prescribed velocity/position controls remain byte-identical to 0.6.0. Dynamic rounding is intentionally changed; this does not qualify contact physics."
+}

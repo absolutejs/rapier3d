@@ -1,7 +1,7 @@
 {
   "scope": "Two-second cavity/chip contact trajectories. Translation and linear velocity use fixture centimeters; rotation is quaternion component distance, angular velocity radians/second. Chaotic contact differences are recorded, not treated as proof of improved contact physics.",
   "packageSha256": "fb50b988f22c3aec4d3b327d7b89d4f1c3d2041955de667b34bc7d7ccdafe607",
-  "sourceSha256": "fe377ea154e2de3949c9d1024b3dca02b2af21d9c12143a8fd7811b05799df25",
+  "sourceSha256": "0b578ad8e2f33b46cf4f98228f02938be13dd394d59ed91e63a2b8bb7f14d634",
   "rows": [
     {
       "hz": 960,
@@ -14,7 +14,7 @@
         "linvel": 7.905748240228633,
         "angvel": 2.763782605764828
       },
-      "elapsedMs": 4365.284159
+      "elapsedMs": 3875.0517170000003
     },
     {
       "hz": 960,
@@ -27,7 +27,7 @@
         "linvel": 127.9661008016871,
         "angvel": 46.99320936650995
       },
-      "elapsedMs": 3808.5084240000006
+      "elapsedMs": 3832.9016690000008
     },
     {
       "hz": 1920,
@@ -40,7 +40,7 @@
         "linvel": 28.52379162101448,
         "angvel": 11.757743009383994
       },
-      "elapsedMs": 7885.528144
+      "elapsedMs": 6728.220846
     },
     {
       "hz": 1920,
@@ -53,7 +53,7 @@
         "linvel": 87.12447882210606,
         "angvel": 15.20814522084308
       },
-      "elapsedMs": 9505.946979
+      "elapsedMs": 8053.991531
     }
   ]
 }

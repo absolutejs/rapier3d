@@ -1,0 +1,224 @@
+{
+  "passed": true,
+  "scope": "Existing 400 units/s and quarter-pi-per-step angular caps preserved, both signs. Endpoint precision is reported separately.",
+  "engineSha256": "fb50b988f22c3aec4d3b327d7b89d4f1c3d2041955de667b34bc7d7ccdafe607",
+  "sourceSha256": "b068bd0f6c7d21714ac5f384bc3ab276536a9e8ee568908c381a5fdbab601244",
+  "rows": [
+    {
+      "budget": 1,
+      "sign": -1,
+      "position": {
+        "x": -6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": -0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": -400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": -47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 1,
+      "sign": 1,
+      "position": {
+        "x": 6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": 400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": 47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 4,
+      "sign": -1,
+      "position": {
+        "x": -6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": -0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": -400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": -47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 4,
+      "sign": 1,
+      "position": {
+        "x": 6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": 400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": 47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 32,
+      "sign": -1,
+      "position": {
+        "x": -6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": -0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": -400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": -47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 32,
+      "sign": 1,
+      "position": {
+        "x": 6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": 400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": 47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 128,
+      "sign": -1,
+      "position": {
+        "x": -6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": -0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": -400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": -47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    },
+    {
+      "budget": 128,
+      "sign": 1,
+      "position": {
+        "x": 6.6666669845581055,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0.3826834559440613,
+        "w": 0.9238795042037964
+      },
+      "velocity": {
+        "x": 400,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": 47.1238899230957
+      },
+      "linearSpeed": 400,
+      "angularSpeed": 47.1238899230957
+    }
+  ]
+}

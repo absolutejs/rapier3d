@@ -1,0 +1,10 @@
+{
+  "identical": true,
+  "wasmSha256": "c80fd631798a17f0a25160436921b08bce302a506d82a11d0bd51f839353708e",
+  "wasmBytes": 3291707,
+  "rustSourceFiles": 239,
+  "firstCheckout": "rapier-gyro-release",
+  "secondCheckout": "rapier-gyro-repro",
+  "sourceCommit": "7c4c8ed3dbb0d96e95829e039276ada2d291a861",
+  "localPathsAbsent": true
+}
