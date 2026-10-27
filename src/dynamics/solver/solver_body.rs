@@ -36,6 +36,9 @@ macro_rules! scatter(
 /// `SolverBodies.flags` byte parallel to `vels`/`poses` so the scalar integrate-positions loop
 /// can read it without disturbing the SIMD-gathered `SolverVel`/`SolverPose` layouts.
 pub(crate) const SOLVER_BODY_ALLOW_FAST_ROTATION: u8 = 1;
+/// A prescribed constant velocity can be evaluated from the pass origin rather
+/// than accumulated in tiny increments. Soft-frame proxies are excluded.
+pub(crate) const SOLVER_BODY_VELOCITY_KINEMATIC: u8 = 2;
 
 #[derive(Default)]
 pub struct SolverBodies {
@@ -88,6 +91,10 @@ impl SolverBodies {
         } else {
             0
         };
+
+        if rb.body_type == crate::dynamics::RigidBodyType::KinematicVelocityBased && !rb.is_soft_frame() {
+            self.flags[i] |= SOLVER_BODY_VELOCITY_KINEMATIC;
+        }
 
         // NOTE: gyroscopic forces (3D) are applied per-substep by the staged
         // solver's velocity-increment stage, not here.

@@ -1,0 +1,311 @@
+{
+  "scope": "Three alternating CPU samples per engine/configuration; no contacts, CCD or GPU. Timing observations only, not a statistical performance guarantee.",
+  "engines": [
+    {
+      "path": "/home/alexkahn/alex/rapier-relative-motion-research/.absolutejs/candidate-19/dist/rapier.mjs",
+      "sha256": "8aa3c342ae8313964950596060d311cc8f90a0feef3d83c424d7921352f53807"
+    },
+    {
+      "path": "/home/alexkahn/alex/rapier-relative-motion-research/dist/rapier.mjs",
+      "sha256": "f841923c01295b6328c7de17c516969e538572a5c0ef54221e9bc17cbf7d61da"
+    }
+  ],
+  "samples": [
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.1505989333333332
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.37252509999999955
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.15423679999999726
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.1131129000000025
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.10903556666666721
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.06478159999999965
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.14970906666666603
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.40338130000000094
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.2184550333333353
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.24534170000000208
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.12184406666666897
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.31577140000000176
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 0.8445351333333367
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 1.2439023333333352
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 0.9106466666666696
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 1.5985762000000023
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 0.4910752000000002
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 1.0035655999999942
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.4878172999999985
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.7890499666666604
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.6519795666666596
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.4830417333333344
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.5244713666666712
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.7802608666666705
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.6397488999999951
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 2.2854926333333347
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 1.1909947000000025
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.574936633333338
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.6104687999999973
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 1.0914843666666685
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 1.2768314333333364
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 3.1741794666666694
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 2.572249833333338
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 1.0183206000000002
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 0.9458311333333314
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 2.3371366666666744
+    }
+  ],
+  "comparisons": [
+    {
+      "count": 16,
+      "budget": 4,
+      "baselineMedianMs": 0.1131129000000025,
+      "candidateMedianMs": 0.15423679999999726,
+      "ratio": 1.3635650752477733
+    },
+    {
+      "count": 16,
+      "budget": 32,
+      "baselineMedianMs": 0.14970906666666603,
+      "candidateMedianMs": 0.31577140000000176,
+      "ratio": 2.1092336424959552
+    },
+    {
+      "count": 16,
+      "budget": 128,
+      "baselineMedianMs": 0.8445351333333367,
+      "candidateMedianMs": 1.0035655999999942,
+      "ratio": 1.1883053296302457
+    },
+    {
+      "count": 128,
+      "budget": 4,
+      "baselineMedianMs": 0.4878172999999985,
+      "candidateMedianMs": 0.7802608666666705,
+      "ratio": 1.5994940455508095
+    },
+    {
+      "count": 128,
+      "budget": 32,
+      "baselineMedianMs": 0.6104687999999973,
+      "candidateMedianMs": 1.1909947000000025,
+      "ratio": 1.9509509740710875
+    },
+    {
+      "count": 128,
+      "budget": 128,
+      "baselineMedianMs": 1.0183206000000002,
+      "candidateMedianMs": 2.572249833333338,
+      "ratio": 2.5259725015219545
+    }
+  ]
+}

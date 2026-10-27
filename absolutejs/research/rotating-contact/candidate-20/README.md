@@ -1,0 +1,11 @@
+# Candidate 20: evaluate prescribed velocity-driven poses from the pass origin
+
+This change is independent of the tagged contact geometry experiment. It marks non-articulated velocity-driven kinematic solver bodies in the existing flag byte and evaluates their pose from the CCD-pass origin at elapsed time using the already speed-capped velocity. Dynamic bodies, position-driven kinematics, soft-frame proxies and multibody integration retain their previous paths. No extra per-body allocation is added.
+
+The separate path probe covers 72 configurations across three body types, four subdivision budgets, displaced/centered mass centers and three angular speeds. All 24 velocity-driven cases stay below 3 micrometers of position error and 2 microradians of rotation error over half a second. The original worst angular error is 0.30128rad at one subdivision; offset-center origin error reaches 0.11115m. All 1,440 dynamic/position-driven control frames remain bit-for-bit unchanged. Eight signed cap controls retain 400 units/s and quarter-pi-per-step limits. Full research suite remains 21 pass / four upstream-motion parity failures with 48,827 assertions.
+
+The tagged box contact probes show mixed small changes; this does not solve all contact or CCD errors. In the common-boost 960Hz slow case, prescribed translation drift falls from about 84 micrometers to below 1 micrometer. Contact depths still vary and remain unqualified. Do not conflate prescribed-path accuracy with general contact acceptance.
+
+Three alternating CPU observations per configuration show extra cost from absolute pose evaluation. In the 128-body/32-subdivision no-contact case median observed step time rises from about 0.610ms to 1.191ms; at 128 subdivisions from 1.018ms to 2.572ms. These are bounded observations, not browser FPS or statistical capacity guarantees. Before stable adoption, simplify the algebra to evaluate center-of-mass translation and rotation directly rather than constructing a body pose and converting it back to a center-of-mass pose. Preserve the exact path and control checks and measure that implementation independently on the stable kernel.
+
+This research branch still contains tagged, unqualified shape work. Only the isolated kinematic integration change may be considered for a separately tested stable release; never merge this branch wholesale.

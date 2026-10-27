@@ -1,0 +1,726 @@
+{
+  "passed": true,
+  "unchangedControlFrames": 1440,
+  "cases": [
+    {
+      "kind": "velocity",
+      "budget": 1,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 1.784161275279017e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 1,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 1.784161275279017e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.0024964088577353436,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 1,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 1.784161275279017e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.3012791161293674,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 1,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 1.7078577020042424e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 1,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 0.0009248492261728657,
+      "candidatePositionErrorM": 1.3718814087018289e-06,
+      "baselineRotationErrorRad": 0.0024964088577353436,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 1,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.111152260633493,
+      "candidatePositionErrorM": 1.9021102262196058e-06,
+      "baselineRotationErrorRad": 0.3012791161293674,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 4,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 4,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.0001565978620465278,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 4,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.019484316999138135,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 4,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 4,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 5.3416200674191834e-05,
+      "candidatePositionErrorM": 1.3718814087018289e-06,
+      "baselineRotationErrorRad": 0.0001565978620465278,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 4,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.007210233487320204,
+      "candidatePositionErrorM": 1.9021102262196058e-06,
+      "baselineRotationErrorRad": 0.019484316999138135,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 32,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 2.288818359375e-05,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 32,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 2.288818359375e-05,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 4.332728825900508e-06,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 32,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 2.288818359375e-05,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.000304752746470405,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 32,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 4.178791484872179e-05,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 32,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 4.141794313879274e-05,
+      "candidatePositionErrorM": 1.3718814087018289e-06,
+      "baselineRotationErrorRad": 4.332728825900508e-06,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 32,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.00011907715486682458,
+      "candidatePositionErrorM": 1.9021102262196058e-06,
+      "baselineRotationErrorRad": 0.000304752746470405,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 128,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 0.00024644871701834847,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 128,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 0.00024644871701834847,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 2.6147899381547605e-05,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 128,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 0.00024644871701834847,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 1.7892119052015348e-05,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "velocity",
+      "budget": 128,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 0.0002418650433982446,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "velocity",
+      "budget": 128,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 0.00023950838972082244,
+      "candidatePositionErrorM": 1.3718814087018289e-06,
+      "baselineRotationErrorRad": 2.6147899381547605e-05,
+      "candidateRotationErrorRad": 4.41034096090459e-07
+    },
+    {
+      "kind": "velocity",
+      "budget": 128,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.0002469502248572039,
+      "candidatePositionErrorM": 1.9021102262196058e-06,
+      "baselineRotationErrorRad": 1.7892119052015348e-05,
+      "candidateRotationErrorRad": 1.244581521619644e-06
+    },
+    {
+      "kind": "dynamic",
+      "budget": 1,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 1.784161275279017e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 1,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 1.784161275279017e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.00249393826557357,
+      "candidateRotationErrorRad": 0.00249393826557357
+    },
+    {
+      "kind": "dynamic",
+      "budget": 1,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 1.784161275279017e-06,
+      "candidatePositionErrorM": 1.784161275279017e-06,
+      "baselineRotationErrorRad": 0.30125356223042055,
+      "candidateRotationErrorRad": 0.30125356223042055
+    },
+    {
+      "kind": "dynamic",
+      "budget": 1,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 1.7078577020042424e-06,
+      "candidatePositionErrorM": 1.7078577020042424e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 1,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 0.0009244724267766394,
+      "candidatePositionErrorM": 0.0009244724267766394,
+      "baselineRotationErrorRad": 0.00249393826557357,
+      "candidateRotationErrorRad": 0.00249393826557357
+    },
+    {
+      "kind": "dynamic",
+      "budget": 1,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.11114270541185785,
+      "candidatePositionErrorM": 0.11114270541185785,
+      "baselineRotationErrorRad": 0.30125356223042055,
+      "candidateRotationErrorRad": 0.30125356223042055
+    },
+    {
+      "kind": "dynamic",
+      "budget": 4,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 5.820539291254855e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 4,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 5.820539291254855e-06,
+      "baselineRotationErrorRad": 0.0001464579456428171,
+      "candidateRotationErrorRad": 0.0001464579456428171
+    },
+    {
+      "kind": "dynamic",
+      "budget": 4,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 5.820539291254855e-06,
+      "baselineRotationErrorRad": 0.01951842074371139,
+      "candidateRotationErrorRad": 0.01951842074371139
+    },
+    {
+      "kind": "dynamic",
+      "budget": 4,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 5.820539291254855e-06,
+      "candidatePositionErrorM": 5.820539291254855e-06,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 4,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 4.9931938989254325e-05,
+      "candidatePositionErrorM": 4.9931938989254325e-05,
+      "baselineRotationErrorRad": 0.0001464579456428171,
+      "candidateRotationErrorRad": 0.0001464579456428171
+    },
+    {
+      "kind": "dynamic",
+      "budget": 4,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.007222426519984984,
+      "candidatePositionErrorM": 0.007222426519984984,
+      "baselineRotationErrorRad": 0.01951842074371139,
+      "candidateRotationErrorRad": 0.01951842074371139
+    },
+    {
+      "kind": "dynamic",
+      "budget": 32,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 2.288818359375e-05,
+      "candidatePositionErrorM": 2.288818359375e-05,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 32,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 2.288818359375e-05,
+      "candidatePositionErrorM": 2.288818359375e-05,
+      "baselineRotationErrorRad": 0.00013630765834517943,
+      "candidateRotationErrorRad": 0.00013630765834517943
+    },
+    {
+      "kind": "dynamic",
+      "budget": 32,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 2.288818359375e-05,
+      "candidatePositionErrorM": 2.288818359375e-05,
+      "baselineRotationErrorRad": 0.00039320833092981234,
+      "candidateRotationErrorRad": 0.00039320833092981234
+    },
+    {
+      "kind": "dynamic",
+      "budget": 32,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 4.178791484872179e-05,
+      "candidatePositionErrorM": 4.178791484872179e-05,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 32,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 8.987974355637006e-05,
+      "candidatePositionErrorM": 8.987974355637006e-05,
+      "baselineRotationErrorRad": 0.00013630765834517943,
+      "candidateRotationErrorRad": 0.00013630765834517943
+    },
+    {
+      "kind": "dynamic",
+      "budget": 32,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.00018496209169478438,
+      "candidatePositionErrorM": 0.00018496209169478438,
+      "baselineRotationErrorRad": 0.00039320833092981234,
+      "candidateRotationErrorRad": 0.00039320833092981234
+    },
+    {
+      "kind": "dynamic",
+      "budget": 128,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 0.00024644871701834847,
+      "candidatePositionErrorM": 0.00024644871701834847,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 128,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 0.00024644871701834847,
+      "candidatePositionErrorM": 0.00024644871701834847,
+      "baselineRotationErrorRad": 0.0005732239314494728,
+      "candidateRotationErrorRad": 0.0005732239314494728
+    },
+    {
+      "kind": "dynamic",
+      "budget": 128,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 0.00024644871701834847,
+      "candidatePositionErrorM": 0.00024644871701834847,
+      "baselineRotationErrorRad": 0.0024939043219397348,
+      "candidateRotationErrorRad": 0.0024939043219397348
+    },
+    {
+      "kind": "dynamic",
+      "budget": 128,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 0.0002418650433982446,
+      "candidatePositionErrorM": 0.0002418650433982446,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "dynamic",
+      "budget": 128,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 0.0001919369828212645,
+      "candidatePositionErrorM": 0.0001919369828212645,
+      "baselineRotationErrorRad": 0.0005732239314494728,
+      "candidateRotationErrorRad": 0.0005732239314494728
+    },
+    {
+      "kind": "dynamic",
+      "budget": 128,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 0.0009052910858939959,
+      "candidatePositionErrorM": 0.0009052910858939959,
+      "baselineRotationErrorRad": 0.0024939043219397348,
+      "candidateRotationErrorRad": 0.0024939043219397348
+    },
+    {
+      "kind": "position",
+      "budget": 1,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 1,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 1,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 1,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 1.559876318184091e-07,
+      "candidatePositionErrorM": 1.559876318184091e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 1,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 1.648972900318554e-07,
+      "candidatePositionErrorM": 1.648972900318554e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 1,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 1.7481694012165857e-07,
+      "candidatePositionErrorM": 1.7481694012165857e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 4,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 4,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 4,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 4,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 1.559876318184091e-07,
+      "candidatePositionErrorM": 1.559876318184091e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 4,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 1.648972900318554e-07,
+      "candidatePositionErrorM": 1.648972900318554e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 4,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 1.7481694012165857e-07,
+      "candidatePositionErrorM": 1.7481694012165857e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 32,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 32,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 32,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 32,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 1.559876318184091e-07,
+      "candidatePositionErrorM": 1.559876318184091e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 32,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 1.648972900318554e-07,
+      "candidatePositionErrorM": 1.648972900318554e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 32,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 1.7481694012165857e-07,
+      "candidatePositionErrorM": 1.7481694012165857e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 128,
+      "offset": false,
+      "omega": 0,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 128,
+      "offset": false,
+      "omega": 6,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 128,
+      "offset": false,
+      "omega": 30,
+      "baselinePositionErrorM": 1.1385718021705147e-07,
+      "candidatePositionErrorM": 1.1385718021705147e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 128,
+      "offset": true,
+      "omega": 0,
+      "baselinePositionErrorM": 1.559876318184091e-07,
+      "candidatePositionErrorM": 1.559876318184091e-07,
+      "baselineRotationErrorRad": 0,
+      "candidateRotationErrorRad": 0
+    },
+    {
+      "kind": "position",
+      "budget": 128,
+      "offset": true,
+      "omega": 6,
+      "baselinePositionErrorM": 1.648972900318554e-07,
+      "candidatePositionErrorM": 1.648972900318554e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    },
+    {
+      "kind": "position",
+      "budget": 128,
+      "offset": true,
+      "omega": 30,
+      "baselinePositionErrorM": 1.7481694012165857e-07,
+      "candidatePositionErrorM": 1.7481694012165857e-07,
+      "baselineRotationErrorRad": 7.300048299977715e-08,
+      "candidateRotationErrorRad": 7.300048299977715e-08
+    }
+  ]
+}
