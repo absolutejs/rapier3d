@@ -1,0 +1,10 @@
+{
+  "cases": 336,
+  "allRowsExactlyEqualToPreviousStableBaseline": true,
+  "referenceControlsExactlyEqual": true,
+  "oldResultSha256": "c90e51f0a5dc986e578032bb91a4fa05df4687b70117d414a30ee7e68bf76e26",
+  "newResultSha256": "338c1b88ca392801065b586ebe01bee23db223aaf3336582af63badb7d1bb6ce",
+  "contactKernelSha256": "e6c502bc49f667043b29add2bfaa892037137abde1813ad49760aa0d3c8e8780",
+  "maximumRelativeEnergyError": 0.0040326956853830925,
+  "scope": "Force-free controls only; not a contact acceptance or performance claim"
+}
