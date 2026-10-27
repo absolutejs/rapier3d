@@ -1,0 +1,11 @@
+52 | const physical = ({ physicsBuild: _identity, ...value }: any) => value;
+53 | const beforeEqual =
+54 | 	JSON.stringify(physical(rows[0]!.before)) ===
+55 | 	JSON.stringify(physical(rows[1]!.before));
+56 | if (!beforeEqual)
+57 | 	throw Error('Different snapshot decoding; replay comparison is invalid');
+            ^
+error: Different snapshot decoding; replay comparison is invalid
+      at /home/alexkahn/alex/hello-world/scripts/replay-gyro-contact-regression.ts:57:8
+
+Bun v1.4.4+absolute.1 (Linux x64)

@@ -1,0 +1,15 @@
+{
+  "status": "private candidate; package tests pass; full game qualification running",
+  "wasmSha256": "e6c502bc49f667043b29add2bfaa892037137abde1813ad49760aa0d3c8e8780",
+  "wasmBytes": 3292612,
+  "canonicalParryRevision": "dbd99a8dfce020da3698056471262435d56d3f69",
+  "wasmReplaySnapshotRoundTripsExactly": true,
+  "bindingsGlueIdenticalToStable": true,
+  "stableGlueSha256": "e3a96e7ede4dd5d4f35ca523abf3d7f90f6e33f74e78eac4ca1f0bbd2a374837",
+  "gyroCorrectionIncluded": false,
+  "packageTests": {
+    "pass": 31,
+    "fail": 0,
+    "assertions": 48042
+  }
+}

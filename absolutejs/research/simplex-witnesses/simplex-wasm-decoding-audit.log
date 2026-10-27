@@ -1,0 +1,11 @@
+62 | 	JSON.stringify({ snapshotSha256: sha(bytes), beforeEqual, rows }, null, 2) +
+63 | 		'\n',
+64 | 	{ flag: 'wx' }
+65 | );
+66 | if (!beforeEqual)
+67 | 	throw Error('Different snapshot decoding; replay comparison is invalid; evidence saved');
+            ^
+error: Different snapshot decoding; replay comparison is invalid; evidence saved
+      at /home/alexkahn/alex/hello-world/scripts/replay-gyro-contact-regression.ts:67:8
+
+Bun v1.4.4+absolute.1 (Linux x64)

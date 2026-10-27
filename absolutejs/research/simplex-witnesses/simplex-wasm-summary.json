@@ -1,0 +1,38 @@
+{
+  "beforeEqual": true,
+  "snapshotRoundTripsExactly": true,
+  "inspectionReadOnly": true,
+  "freshBeforeQueriesChanged": true,
+  "rows": [
+    {
+      "physicsBuild": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.7.0",
+        "qualifiedKernelRelease": "0.6.0",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4",
+        "wasmBytes": 3291678,
+        "solverChanges": true
+      },
+      "pairMinimumDistanceCm": -14.719921112060547,
+      "allContactMinimumDistanceCm": -14.719921112060547,
+      "afterSnapshotSha256": "379a6cb26937d73cde9f96a2bd0eee6ba6e65c6331549511cf3cc5ff4c939ed4"
+    },
+    {
+      "physicsBuild": {
+        "scope": "custom-wasm",
+        "wasmSha256": "e6c502bc49f667043b29add2bfaa892037137abde1813ad49760aa0d3c8e8780",
+        "wasmBytes": 3292612
+      },
+      "pairMinimumDistanceCm": 0.0006346320733428001,
+      "allContactMinimumDistanceCm": 2.2888274543220177e-05,
+      "afterSnapshotSha256": "18cd1b3d55ffb71f9d4cdf860120c765289076d4e1bf90a527d17897e0652d1e"
+    }
+  ],
+  "scope": "One-step regression; full game and package gates pending"
+}
