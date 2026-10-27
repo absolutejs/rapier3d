@@ -1,0 +1,248 @@
+{
+  "passed": true,
+  "physicalAcceptance": false,
+  "engineExecuted": false,
+  "derivativeCases": 1000,
+  "maxDerivativeError": 4.3147463379966666e-10,
+  "rigidRotationCases": 1000,
+  "maxInvarianceError": 2.220446049250313e-15,
+  "touchingCounterexampleFalseGapM": 0.012241743810962661,
+  "anchorBiasCases": [
+    {
+      "falseSphereTorqueArmM": 0.0,
+      "staleToExactEffectiveMassRatio": 1.0,
+      "angleRad": 0,
+      "center": [
+        1,
+        0.15,
+        0
+      ],
+      "exactSeparationM": -1.3877787807814457e-17,
+      "transportedAnchorSeparationM": -1.3877787807814457e-17,
+      "biasM": 0.0
+    },
+    {
+      "falseSphereTorqueArmM": 0.0,
+      "staleToExactEffectiveMassRatio": 1.0,
+      "angleRad": 0,
+      "center": [
+        1.3,
+        0.16,
+        0
+      ],
+      "exactSeparationM": 0.009999999999999995,
+      "transportedAnchorSeparationM": 0.009999999999999995,
+      "biasM": 0.0
+    },
+    {
+      "falseSphereTorqueArmM": 0.0,
+      "staleToExactEffectiveMassRatio": 1.0,
+      "angleRad": 0,
+      "center": [
+        -0.4,
+        0.2,
+        0.1
+      ],
+      "exactSeparationM": 0.05000000000000002,
+      "transportedAnchorSeparationM": 0.05,
+      "biasM": -1.3877787807814457e-17
+    },
+    {
+      "falseSphereTorqueArmM": 0.0006249959309975306,
+      "staleToExactEffectiveMassRatio": 0.9999023545571228,
+      "angleRad": 0.00625,
+      "center": [
+        1,
+        0.15,
+        0
+      ],
+      "exactSeparationM": -0.00625288898793859,
+      "transportedAnchorSeparationM": -0.0062509358692964135,
+      "biasM": 1.9531186421766628e-06
+    },
+    {
+      "falseSphereTorqueArmM": 0.0006249959309975306,
+      "staleToExactEffectiveMassRatio": 0.9999023545571228,
+      "angleRad": 0.00625,
+      "center": [
+        1.3,
+        0.16,
+        0
+      ],
+      "exactSeparationM": 0.0018719279072045986,
+      "transportedAnchorSeparationM": 0.0018738810258467854,
+      "biasM": 1.9531186421868543e-06
+    },
+    {
+      "falseSphereTorqueArmM": 0.0006249959309975306,
+      "staleToExactEffectiveMassRatio": 0.9999023545571228,
+      "angleRad": 0.00625,
+      "center": [
+        -0.4,
+        0.2,
+        0.1
+      ],
+      "exactSeparationM": 0.05249607748670579,
+      "transportedAnchorSeparationM": 0.05249803060534794,
+      "biasM": 1.953118642150642e-06
+    },
+    {
+      "falseSphereTorqueArmM": 0.0024997395914712335,
+      "staleToExactEffectiveMassRatio": 0.9984402620765284,
+      "angleRad": 0.025,
+      "center": [
+        1,
+        0.15,
+        0
+      ],
+      "exactSeparationM": -0.02504426847335696,
+      "transportedAnchorSeparationM": -0.02501302010092721,
+      "biasM": 3.1248372429747845e-05
+    },
+    {
+      "falseSphereTorqueArmM": 0.0024997395914712335,
+      "staleToExactEffectiveMassRatio": 0.9984402620765284,
+      "angleRad": 0.025,
+      "center": [
+        1.3,
+        0.16,
+        0
+      ],
+      "exactSeparationM": -0.022546612085013615,
+      "transportedAnchorSeparationM": -0.022515363712583877,
+      "biasM": 3.1248372429737437e-05
+    },
+    {
+      "falseSphereTorqueArmM": 0.0024997395914712335,
+      "staleToExactEffectiveMassRatio": 0.9984402620765284,
+      "angleRad": 0.025,
+      "center": [
+        -0.4,
+        0.2,
+        0.1
+      ],
+      "exactSeparationM": 0.05993646162102548,
+      "transportedAnchorSeparationM": 0.0599677099934552,
+      "biasM": 3.124837242972356e-05
+    },
+    {
+      "falseSphereTorqueArmM": 0.009983341664682815,
+      "staleToExactEffectiveMassRatio": 0.9756889747142191,
+      "angleRad": 0.1,
+      "center": [
+        1,
+        0.15,
+        0
+      ],
+      "exactSeparationM": -0.1005827918551243,
+      "transportedAnchorSeparationM": -0.1000832083829269,
+      "biasM": 0.0004995834721973902
+    },
+    {
+      "falseSphereTorqueArmM": 0.009983341664682815,
+      "staleToExactEffectiveMassRatio": 0.9756889747142191,
+      "angleRad": 0.1,
+      "center": [
+        1.3,
+        0.16,
+        0
+      ],
+      "exactSeparationM": -0.12058277519639247,
+      "transportedAnchorSeparationM": -0.12008319172419508,
+      "biasM": 0.0004995834721973902
+    },
+    {
+      "falseSphereTorqueArmM": 0.009983341664682815,
+      "staleToExactEffectiveMassRatio": 0.9756889747142191,
+      "angleRad": 0.1,
+      "center": [
+        -0.4,
+        0.2,
+        0.1
+      ],
+      "exactSeparationM": 0.08893419971433644,
+      "transportedAnchorSeparationM": 0.08943378318653383,
+      "biasM": 0.0004995834721973902
+    },
+    {
+      "falseSphereTorqueArmM": 0.01246747333852277,
+      "staleToExactEffectiveMassRatio": 0.9625941006682552,
+      "angleRad": 0.125,
+      "center": [
+        1,
+        0.15,
+        0
+      ],
+      "exactSeparationM": -0.12584508330082833,
+      "transportedAnchorSeparationM": -0.12506485002376128,
+      "biasM": 0.000780233277067055
+    },
+    {
+      "falseSphereTorqueArmM": 0.01246747333852277,
+      "staleToExactEffectiveMassRatio": 0.9625941006682552,
+      "angleRad": 0.125,
+      "center": [
+        1.3,
+        0.16,
+        0
+      ],
+      "exactSeparationM": -0.15332552664410337,
+      "transportedAnchorSeparationM": -0.15254529336703626,
+      "biasM": 0.0007802332770671105
+    },
+    {
+      "falseSphereTorqueArmM": 0.01246747333852277,
+      "staleToExactEffectiveMassRatio": 0.9625941006682552,
+      "angleRad": 0.125,
+      "center": [
+        -0.4,
+        0.2,
+        0.1
+      ],
+      "exactSeparationM": 0.09830942679995688,
+      "transportedAnchorSeparationM": 0.09908966007702397,
+      "biasM": 0.0007802332770670828
+    },
+    {
+      "falseSphereTorqueArmM": 0.0479425538604203,
+      "staleToExactEffectiveMassRatio": 0.6350730049969109,
+      "angleRad": 0.5,
+      "center": [
+        1,
+        0.15,
+        0
+      ],
+      "exactSeparationM": -0.49778815432064716,
+      "transportedAnchorSeparationM": -0.4855464105096844,
+      "biasM": 0.012241743810962769
+    },
+    {
+      "falseSphereTorqueArmM": 0.0479425538604203,
+      "staleToExactEffectiveMassRatio": 0.6350730049969109,
+      "angleRad": 0.5,
+      "center": [
+        1.3,
+        0.16,
+        0
+      ],
+      "exactSeparationM": -0.6328399902830043,
+      "transportedAnchorSeparationM": -0.6205982464720416,
+      "biasM": 0.012241743810962658
+    },
+    {
+      "falseSphereTorqueArmM": 0.0479425538604203,
+      "staleToExactEffectiveMassRatio": 0.6350730049969109,
+      "angleRad": 0.5,
+      "center": [
+        -0.4,
+        0.2,
+        0.1
+      ],
+      "exactSeparationM": 0.2172867278197558,
+      "transportedAnchorSeparationM": 0.2295284716307185,
+      "biasM": 0.012241743810962685
+    }
+  ],
+  "sourceSha256": "24fb7836d9eccea6af22209ce915607891aa6e06a3c1bc6b4b2b1fda43ba5522",
+  "scope": "Analytic infinite plane against a sphere. Valid for a cuboid broad face only while the closest feature remains that face. Not a replay of internal solver anchors and not a general convex contact algorithm."
+}
