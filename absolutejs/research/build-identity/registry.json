@@ -1,0 +1,17 @@
+{
+  "shasum": "46054271c48d768dda6735e2ed074b23d3709e2c",
+  "tarball": "https://registry.npmjs.org/@absolutejs/rapier3d/-/rapier3d-0.7.0.tgz",
+  "fileCount": 52,
+  "integrity": "sha512-Hgs8gmBKjhdWdMN2eD5euJb/xyWfC3N+Cs6TIS+colaD0Fj8bcxqLC1KBmpYBoNFyb5AjkYy5YsjFFsdJM4i9w==",
+  "signatures": [
+    {
+      "sig": "MEUCIQD017US0ty+y+SyiFf4HkZ8y8SNPVjas9HczhgOJh52WQIgR+00pM8e6dtF+z6Sp2sOcd8bjD/Tvpt6PQmGdlVbgfk=",
+      "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+    },
+    {
+      "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+      "sig": "MEUCIQDS71VUmX0q1olWey1qiYqqN2QwMzLzteSnkkaex1nmFQIgVn6sZpiEfvTspUAwCvybdiFQFzR2k2+5HI5s5DFq0Lg="
+    }
+  ],
+  "unpackedSize": 5126895
+}
