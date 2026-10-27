@@ -132,3 +132,29 @@ features; disabling warm starting changes convergence. Neither is a general fix
 for penetration. Evaluate the entire requested simulation horizon and geometric
 intersections, alongside live/cached contact diagnostics. A process that exits
 successfully after an early physical guard is not a completed physical test.
+
+
+## Current-body shape contact queries (0.5.0)
+
+```ts
+const contact = firstCollider.contactColliderAtCurrentBodyPoses(secondCollider, 0);
+```
+
+This additive query composes each collider's local pose with its current parent
+body pose. It observes direct body edits before the next world step without
+propagating poses, stepping the simulation, or altering cached solver contacts.
+Parentless colliders use their own world pose. The optional third argument reuses
+a `ShapeContact` result. Prediction must be finite and nonnegative, in world units.
+
+Use this for bounded explicit diagnostics, not every render/physics tick. It
+allocates shape queries and returns a world-space native shape contact, not a
+solver manifold, continuous sweep or authored-material overlap bound. Collision
+filters, hooks and contact skin are not applied. Native unsupported shape pairs
+can return null as well as separated pairs; null is not a general disjointness
+proof. Existing `contactCollider` retains its stored-collider-pose semantics.
+
+The distinction matters for rotating contacts: projecting current anchors onto a
+stored normal can report no penetration while a fresh shape query finds overlap.
+Both observations are useful, but answer different questions. Release 0.5.0 keeps
+the 0.4.0 native kernel byte-for-byte unchanged; it does not include the private
+relative-motion, EPA or clamp-graph solver experiments.

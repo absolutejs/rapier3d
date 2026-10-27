@@ -1,0 +1,40 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [26.00ms]
+(pass) invalid contact policy values fail before mutating native state [0.94ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [24.09ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [20.79ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [8.24ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [7.85ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1124.80ms]
+(pass) live separation follows pose changes while cached distance stays fixed [884.91ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [831.37ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [5.62ms]
+(pass) current-body query composes noncommuting parent and child rotations [3.83ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.59ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [1.55ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [1775.71ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [2.45ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [1.90ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [1087.71ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [986.27ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0 [3391.21ms]
+(pass) query-only build preserves upstream motion 960Hz tilt=0.3 [3157.78ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0 [5645.37ms]
+(pass) query-only build preserves upstream motion 1920Hz tilt=0.3 [6874.73ms]
+
+ 22 pass
+ 0 fail
+ 48008 expect() calls
+Ran 22 tests across 6 files. [28.79s]

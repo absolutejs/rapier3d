@@ -1,0 +1,10 @@
+{
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "65ebc43d69dc3b4b290b29ca30ff44955711c8002799503749bcc03060783b39",
+  "wasmBytes": 3299287,
+  "solverChanges": false,
+  "addition": "Validated contact recycling, recycle distance and warm-start controls; contact and CCD diagnostics"
+}

@@ -27,6 +27,19 @@ try {
   w.integrationParameters.warmstartCoefficient=.5;
   const restored=R.World.restoreSnapshot(w.takeSnapshot());
   try { if(restored.integrationParameters.contactRecycling!==false||Math.abs(restored.integrationParameters.normalizedContactRecycleDistance-.001)>1e-8||restored.integrationParameters.warmstartCoefficient!==.5)throw Error('Contact policy snapshot mismatch');if(restored.getCollider(0).parent()!==null)throw Error('Restored floor aliases body zero');if(restored.getCollider(a.handle).parent()?.handle!==a.parent()?.handle)throw Error('Restored moving owner changed'); } finally {restored.free();}
-  postMessage({totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const freshWorld=new R.World({x:0,y:0,z:0});
+  try {
+   const fixed=freshWorld.createCollider(R.ColliderDesc.ball(1));
+   const body=freshWorld.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(0,1.8,0));
+   const moving=freshWorld.createCollider(R.ColliderDesc.ball(1),body);
+   body.setTranslation({x:0,y:3,z:0},true);
+   const before=freshWorld.takeSnapshot();
+   if(fixed.contactColliderAtCurrentBodyPoses(moving)!==null)throw Error('Fresh body pose was ignored');
+   const hit=fixed.contactColliderAtCurrentBodyPoses(moving,1.1);
+   if(!hit||Math.abs(hit.distance-1)>1e-5)throw Error('Fresh prediction failed');
+   const after=freshWorld.takeSnapshot();
+   if(before.length!==after.length||before.some((v,i)=>v!==after[i]))throw Error('Fresh query changed snapshot');
+  }finally{freshWorld.free();}
+  postMessage({currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

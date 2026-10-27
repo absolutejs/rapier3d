@@ -1,0 +1,11 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+.absolutejs/packed-0.5.0/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [9.76ms]
+(pass) current-body query composes noncommuting parent and child rotations [4.49ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.42ms]
+
+ 3 pass
+ 0 fail
+ 24 expect() calls
+Ran 3 tests across 1 file. [145.00ms]

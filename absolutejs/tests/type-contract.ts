@@ -28,3 +28,9 @@ world.integrationParameters.contactRecycling = 1;
 // @ts-expect-error Solver coefficients are numeric.
 world.integrationParameters.warmstartCoefficient = '0.5';
 void [recycling, recycleDistance, warmstart];
+
+const fresh: R.ShapeContact | null = first.contactColliderAtCurrentBodyPoses(second, 0.01);
+first.contactColliderAtCurrentBodyPoses(second);
+if (fresh) first.contactColliderAtCurrentBodyPoses(second, 0, fresh);
+// @ts-expect-error Prediction is numeric.
+first.contactColliderAtCurrentBodyPoses(second, '0.01');

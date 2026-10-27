@@ -1,7 +1,7 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.4.0",
-  "description": "Rapier 3D with solver-contact diagnostics and validated contact-policy controls",
+  "version": "0.5.0",
+  "description": "Rapier 3D with current-body shape queries and solver-contact diagnostics",
   "type": "module",
   "license": "Apache-2.0",
   "repository": {
