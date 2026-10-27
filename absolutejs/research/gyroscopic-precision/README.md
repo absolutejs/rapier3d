@@ -23,3 +23,5 @@ Use BVM Bun 1.4.4+absolute.1 and the Rust/Cargo/bindgen versions enforced by `bu
 - `verify-browser.ts` uses a GPU-disabled worker. Pack with `npm pack --ignore-scripts --json`; `audit-pack.py` compares every distribution file.
 - Run the existing kinematic `path-probe.ts` against the extracted tarball, then `audit-paths.py` verifies unchanged prescribed motion. Run its `cap-probe.ts` for signed speed limits.
 - `audit-repro.py <second-checkout>` compares native outputs from separately staged source roots and records hashes. The build recipe is checkout-path reproducible under the pinned toolchain, not a cross-toolchain guarantee.
+
+After rejection this checkout is marked `private: true` to prevent accidental npm publication. Earlier qualification receipts identify their exact pre-rejection source and candidate artifacts; they do not authorize publishing those archives. The production metadata release is on `release/build-identity`.
