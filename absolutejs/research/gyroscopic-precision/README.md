@@ -9,3 +9,17 @@ The solver-contact tests now compare queried and unqueried candidate worlds to p
 The new `@absolutejs/rapier3d/build-info` subpath reports the packaged WASM identity without loading the physics bundle or initializing WebAssembly. Metadata is frozen and also exposed on the main module and provenance JSON. It describes the package artifact, not custom bytes supplied to `init(input)`. Build tests compare the hash to actual native bytes and import the lightweight entry with WebAssembly disabled. Browser checks use a CPU worker with GPU disabled and a 20-second budget.
 
 Release status: qualification in progress; not published or adopted by the game. Native reproducibility, extracted-tarball checks, browser checks and game validation must complete before publication/adoption. The private experimental solver remains unqualified and unpublished.
+
+The warmed paired CPU matrix (six configurations, five alternating pairs each) has median candidate/baseline ratios from 0.798 to 1.088. Timing ranges overlap; this run does not support a speedup claim. The correction adds precision, with possible CPU cost requiring hardware-level measurement in the real workload. Full raw samples and load averages are retained.
+
+## Reproduction
+
+Use BVM Bun 1.4.4+absolute.1 and the Rust/Cargo/bindgen versions enforced by `build-native.sh`. Build native code sequentially with two Cargo jobs. Build the API only after the native checksum manifest matches the intentionally qualified artifact. Keep full tests and timing probes separate from compilation.
+
+- `bun test absolutejs/tests` checks runtime contracts and precision. `RAPIER_TEST_ENGINE=/absolute/path/to/published-0.6/rapier.mjs bun test absolutejs/tests/free-spin.test.ts` is the deliberately failing negative control.
+- Run `free-spin-probe.ts <engine> <output>` for baseline and candidate; `audit-spin.py` verifies comparable evidence and reports regressions.
+- `upstream-motion-probe.ts` records dynamic differences without silently replacing exact upstream parity with a loose tolerance.
+- `cost-probe.ts <baseline> <candidate> <output>` records warmed, paired CPU measurements and load averages.
+- `verify-browser.ts` uses a GPU-disabled worker. Pack with `npm pack --ignore-scripts --json`; `audit-pack.py` compares every distribution file.
+- Run the existing kinematic `path-probe.ts` against the extracted tarball, then `audit-paths.py` verifies unchanged prescribed motion. Run its `cap-probe.ts` for signed speed limits.
+- `audit-repro.py <second-checkout>` compares native outputs from separately staged source roots and records hashes. The build recipe is checkout-path reproducible under the pinned toolchain, not a cross-toolchain guarantee.

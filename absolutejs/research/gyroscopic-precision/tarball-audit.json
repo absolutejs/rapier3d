@@ -1,0 +1,13 @@
+{
+  "version": "0.7.0",
+  "distributionFiles": 48,
+  "tarballSha256": "68ff10fcddd9b10b67ea890b32f2adff8322d96014f1d8a0d213d8fe5fa442cc",
+  "integrity": "sha512-APQxMawnDutdgqFk/9Dgwvym+fu3wQOlNLtQvctVOYO3byGoLMYLsy8eFNItaQcptPG9btgFCGq7xS4cAYRSkQ==",
+  "wasm": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "0.7.0",
+    "wasmSha256": "c80fd631798a17f0a25160436921b08bce302a506d82a11d0bd51f839353708e",
+    "wasmBytes": 3291707,
+    "solverChanges": true
+  }
+}

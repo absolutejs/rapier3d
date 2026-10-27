@@ -1,0 +1,539 @@
+{
+  "scope": "Spinning dynamic cuboids, no contacts/CCD/GPU. Two warmed modules, five alternating paired samples, 512 steps per sample. Bounded timing observations, not production capacity or statistical guarantees.",
+  "sourceSha256": "1a8432aaf26c3dd3354ff20b9baf02759deac4d8304f13cc2a6fb263cd93d6dc",
+  "initialLoad": [
+    5.52,
+    4.55,
+    4.08
+  ],
+  "finalLoad": [
+    5.55,
+    4.63,
+    4.12
+  ],
+  "engines": [
+    {
+      "path": "/home/alexkahn/alex/rapier-gyro-release/.absolutejs/baseline-dist/rapier.mjs",
+      "sha256": "ad644b2f36baf1a43a71d1221bc212583ff84191db0af345d2b9fb9d44d78d65"
+    },
+    {
+      "path": "/home/alexkahn/alex/rapier-gyro-release/dist/rapier.mjs",
+      "sha256": "fb50b988f22c3aec4d3b327d7b89d4f1c3d2041955de667b34bc7d7ccdafe607"
+    }
+  ],
+  "samples": [
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.07725407421874975
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.0751778203125002
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.0979677968749999
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.0528453730468752
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.07663379101562473
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.06199525976562503
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.07423459570312474
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.05060748242187474
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.07484154296875012
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.05817596679687531
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.12017148828124924
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.16778880078125002
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.11195434960937511
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.12813331054687538
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.12417118554687434
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.09594176953125011
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.08941628515624966
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.08718031445312491
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.09459686132812539
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.08519073828124935
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 0.2376335566406249
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 0.24869397265625004
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 0.28202587890624997
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 0.2653536035156252
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 0.2502529765624999
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 0.32648536718750076
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 0.2929177949218751
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 0.3364477753906252
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 0.3155046367187495
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 0.2857482011718746
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.21029234960937515
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.2292770605468757
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.2912995742187512
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.23582562500000037
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.22494321093750003
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.26842222851562525
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.20002832617187494
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.2025303730468746
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.21273516210937515
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.22338110351562435
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.5656539394531244
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.6447973300781236
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.6424079628906245
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.5653146347656257
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.5911961679687501
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.5585442500000006
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.48486118945312384
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.5584259824218751
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.5267791484375017
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.528365015624999
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 2.013982705078128
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 2.415641037109374
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 1.8773259453124993
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 1.8586946816406247
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 2.0079399902343766
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 2.1684153808593756
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 2.487962363281248
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 2.2088897675781283
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 2.0473105019531275
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 2.191099310546875
+    }
+  ],
+  "comparisons": [
+    {
+      "count": 16,
+      "budget": 4,
+      "baselineMedianMs": 0.07484154296875012,
+      "candidateMedianMs": 0.07423459570312474,
+      "ratio": 0.9918902358028774,
+      "baselineRange": [
+        0.05060748242187474,
+        0.07725407421874975
+      ],
+      "candidateRange": [
+        0.05817596679687531,
+        0.0979677968749999
+      ]
+    },
+    {
+      "count": 16,
+      "budget": 32,
+      "baselineMedianMs": 0.12017148828124924,
+      "candidateMedianMs": 0.09594176953125011,
+      "ratio": 0.7983738148162739,
+      "baselineRange": [
+        0.08718031445312491,
+        0.12813331054687538
+      ],
+      "candidateRange": [
+        0.08519073828124935,
+        0.16778880078125002
+      ]
+    },
+    {
+      "count": 16,
+      "budget": 128,
+      "baselineMedianMs": 0.2653536035156252,
+      "candidateMedianMs": 0.2857482011718746,
+      "ratio": 1.0768581899248582,
+      "baselineRange": [
+        0.2376335566406249,
+        0.3364477753906252
+      ],
+      "candidateRange": [
+        0.24869397265625004,
+        0.32648536718750076
+      ]
+    },
+    {
+      "count": 128,
+      "budget": 4,
+      "baselineMedianMs": 0.21273516210937515,
+      "candidateMedianMs": 0.2292770605468757,
+      "ratio": 1.07775817722599,
+      "baselineRange": [
+        0.2025303730468746,
+        0.23582562500000037
+      ],
+      "candidateRange": [
+        0.20002832617187494,
+        0.2912995742187512
+      ]
+    },
+    {
+      "count": 128,
+      "budget": 32,
+      "baselineMedianMs": 0.5653146347656257,
+      "candidateMedianMs": 0.5585442500000006,
+      "ratio": 0.9880236874312797,
+      "baselineRange": [
+        0.5267791484375017,
+        0.5911961679687501
+      ],
+      "candidateRange": [
+        0.48486118945312384,
+        0.6447973300781236
+      ]
+    },
+    {
+      "count": 128,
+      "budget": 128,
+      "baselineMedianMs": 2.013982705078128,
+      "candidateMedianMs": 2.191099310546875,
+      "ratio": 1.0879434590089372,
+      "baselineRange": [
+        1.8586946816406247,
+        2.2088897675781283
+      ],
+      "candidateRange": [
+        1.8773259453124993,
+        2.487962363281248
+      ]
+    }
+  ],
+  "elapsedMs": 19398.564441000002
+}
