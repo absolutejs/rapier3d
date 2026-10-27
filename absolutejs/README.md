@@ -1,7 +1,8 @@
 # AbsoluteJS Rapier 3D
 
 A focused distribution of Rapier 0.21.0 / engine 0.36.0 with solver-contact
-diagnostics, current-body geometry queries, and accurate prescribed kinematics. The engine's original geometric manifolds and its
+diagnostics, current-body geometry queries, accurate prescribed kinematics, and
+corrected contact-witness and force-free rotation calculations. The engine's original geometric manifolds and its
 clustered solver manifolds are distinct. The upstream JavaScript contact query
 only exposes the former, which can have no solver-contact entries even when the
 solver is resolving contact. This package exposes the latter separately.
@@ -29,10 +30,11 @@ Nested read-only solver queries are supported; callback exceptions release query
 wrappers before propagating. Solver distances are the engine's cached contact
 update distances, not a continuous or post-step exact penetration guarantee.
 
-`contactPair` retains its existing geometric behavior. Version 0.6 improves
-velocity-driven kinematic integration as described below. Contact and CCD policy
-defaults are unchanged; this is not a general fix for physical overlap. Runtime
-motion still needs independent geometric and energy checks.
+`contactPair` exposes geometric manifolds; `solverContactPair` exposes solver
+manifolds. Version 0.6 improves velocity-driven kinematics. The 0.8 candidate
+corrects previous-simplex witness preservation and reduces force-free rotation
+roundoff, as described below. Contact and CCD policy defaults remain unchanged.
+Runtime motion still needs independent geometric and energy checks.
 
 The ESM package includes WASM initialization and requires no separate asset URL.
 Concurrent `init()` calls share initialization. The package targets 3D f32
@@ -44,8 +46,9 @@ Source base: dimforge/rapier commit
 `b716d375efc0201003f0cd9ef7168eee0b62c177`. Upstream Apache-2.0 licensing is retained.
 The distribution adds binding queries, package build/test tooling, and CCD profiler
 timer wiring. Version 0.6 also evaluates velocity-driven kinematic poses directly
-from each solver-pass origin; contact equations and dynamic-body integration retain
-the pinned source implementation.
+from each solver-pass origin. The 0.8 candidate additionally pins the corrected
+Parry collision source and applies the gyroscopic momentum increment without
+reconstructing the entire angular velocity through the inertia frame.
 
 Use Bun 1.4.4+absolute.1, Rust 1.94.0 with `wasm32-unknown-unknown`, and Python 3.12.
 Run `bun install --frozen-lockfile`, then `bash absolutejs/scripts/build-native.sh`.
@@ -65,9 +68,11 @@ See `absolutejs/research/native-build-guard/` for positive and negative controls
 The build copies this canonical documentation to the root README used by npm,
 so published package documentation stays synchronized.
 
-Run `bun test absolutejs/tests` after building. Tests compare the official pinned
-release's motion against this build, exercise actual clustered contacts, nested
-queries and exception cleanup. Browser-worker validation is separate from native
+Run `bun test absolutejs/tests` after building. Tests compare queried and unqueried
+worlds under the same kernel, exercise actual clustered contacts, nested queries,
+exception cleanup, captured contact regressions and analytic rotation controls.
+The independent upstream-motion probe records intentional trajectory differences;
+exact old floating-point rounding is not a physical acceptance criterion. Browser-worker validation is separate from native
 GPU performance testing; no GPU is required by the engine.
 
 This is a maintained AbsoluteJS distribution, not an official Dimforge release.
@@ -216,3 +221,35 @@ export. Package and kernel releases can differ when an API-only upgrade reuses
 a qualified kernel. The lightweight subpath contains metadata only and works
 before `init()`. It reports the packaged kernel; supplying custom bytes to
 `init(input)` does not change that identity and must be recorded separately.
+
+
+## Contact witnesses and force-free rotation (0.8 candidate)
+
+The collision dependency is pinned to `absolutejs/parry` revision
+`dbd99a8dfce020da3698056471262435d56d3f69`, based on upstream 0.31.1.
+Tetrahedron-to-face reduction now preserves support points needed by GJK's
+previous-simplex calculation. Previously, an overwritten point could be combined
+with its old barycentric weight, inventing a deep contact. A captured floor/hull
+case reported -14.719921 cm despite separation; the corrected native replay
+reports a small positive separation. Snapshot decoding and query read-only
+behavior remain byte-exact. No contact tolerance, CCD default or game rejection
+threshold is changed by this correction.
+
+The rotation correction applies only the computed gyroscopic momentum increment.
+Principal-axis and isotropic force-free bodies therefore avoid artificial spin-up
+from repeatedly reconstructing the entire velocity through inertia and its inverse.
+Genuine asymmetric precession remains active and is checked against a converged
+double-precision Euler/RK4 reference.
+
+In the recorded 336-case, 0.1-second free-spin matrix, worst relative energy error
+falls from about 0.004033 to 0.000562. One tilted long-box control has about
+1.305 ppm more energy error. These measurements cover specific shapes, rates and
+iteration budgets; they are not a universal energy-error bound, a performance
+claim, or a substitute for coupled-contact acceptance. f32 conditioning and time
+integration errors remain.
+
+`buildInfo.collisionLibraryVersion` and `buildInfo.collisionSource` identify the
+exact locked collision library alongside the native WASM hash. They are lightweight
+serialized strings and require no WASM initialization. Packaging rejects ambiguous
+multiple Parry source entries. Full qualification evidence and current candidate
+status are retained in `absolutejs/research/simplex-gyro/`.
