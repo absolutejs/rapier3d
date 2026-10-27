@@ -1,0 +1,37 @@
+{
+  "gpu": false,
+  "result": {
+    "buildInfo": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.8.0",
+      "qualifiedKernelRelease": "0.8.0-candidate-simplex",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "e6c502bc49f667043b29add2bfaa892037137abde1813ad49760aa0d3c8e8780",
+      "wasmBytes": 3292612,
+      "solverChanges": true
+    },
+    "simplexMinimumDistanceCm": 0.0006346320733428001,
+    "kinematicPositionErrorM": 3.5762786865234375e-7,
+    "kinematicRotationErrorRad": 3.3717478808715265e-7,
+    "currentBodyPoseQuery": true,
+    "totalCcdMs": 28.500000000000053,
+    "totalToiMs": 24.900000000000027,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "contactPolicyControls": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}

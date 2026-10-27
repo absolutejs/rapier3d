@@ -1,0 +1,32 @@
+{
+  "scope": "isolated qualification only; canonical game remains pinned to published 0.7.0",
+  "packageVersion": "0.8.0",
+  "private": true,
+  "apiSha256": "c527d09f334b75bbdce0a01ece0b385ff1a58356b7fc600cda2a87d5105f89c1",
+  "physicsBuild": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.8.0",
+    "qualifiedKernelRelease": "0.8.0-candidate-simplex",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "e6c502bc49f667043b29add2bfaa892037137abde1813ad49760aa0d3c8e8780",
+    "wasmBytes": 3292612,
+    "solverChanges": true
+  },
+  "sourceBranch": "release/simplex-witnesses",
+  "canonicalParryRevision": "dbd99a8dfce020da3698056471262435d56d3f69",
+  "gameTests": {
+    "pass": 825,
+    "fail": 0,
+    "assertions": 7408536,
+    "files": 274,
+    "elapsedSeconds": 409.33
+  },
+  "logSha256": "cb3e97dfeeaf9480ef06b14bb98f3aa44ae585c13a62f395d8d608da67d7bf9b",
+  "appSourceChanged": false,
+  "acceptanceLimitsChanged": false
+}

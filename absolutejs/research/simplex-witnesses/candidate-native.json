@@ -1,5 +1,5 @@
 {
-  "status": "private candidate; package tests pass; full game qualification running",
+  "status": "private contact-only candidate; package/game/browser pass; independent native reproduction pending",
   "wasmSha256": "e6c502bc49f667043b29add2bfaa892037137abde1813ad49760aa0d3c8e8780",
   "wasmBytes": 3292612,
   "canonicalParryRevision": "dbd99a8dfce020da3698056471262435d56d3f69",
@@ -11,5 +11,16 @@
     "pass": 31,
     "fail": 0,
     "assertions": 48042
+  },
+  "browser": {
+    "gpu": false,
+    "passed": true,
+    "simplexMinimumDistanceCm": 0.0006346320733428001
+  },
+  "gameTests": {
+    "pass": 825,
+    "fail": 0,
+    "assertions": 7408536,
+    "sourceEvidenceCommit": "8cefd71"
   }
 }
