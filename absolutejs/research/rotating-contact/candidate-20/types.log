@@ -1,3 +1,0 @@
-absolutejs/research/rotating-contact/candidate-20/cost-probe.ts(5,7): error TS7034: Variable 'samples' implicitly has type 'any[]' in some locations where its type cannot be determined.
-absolutejs/research/rotating-contact/candidate-20/cost-probe.ts(19,34): error TS7005: Variable 'samples' implicitly has an 'any[]' type.
-error: "tsc" exited with code 2

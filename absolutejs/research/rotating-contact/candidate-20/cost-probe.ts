@@ -2,7 +2,7 @@
 import {readFileSync,writeFileSync} from 'node:fs';import {resolve} from 'node:path';import {pathToFileURL} from 'node:url';import {createHash} from 'node:crypto';
 const paths=process.argv.slice(2,4).map(p=>resolve(p)),output=process.argv[4];if(paths.length!==2||!output)throw Error('Two engines and output required');
 const engines=await Promise.all(paths.map(async p=>{const R=(await import(pathToFileURL(p).href)).default;await R.init();return R;}));
-const samples=[];const totalStart=performance.now();
+const samples: {engine:number;count:number;budget:number;repeat:number;msPerStep:number}[]=[];const totalStart=performance.now();
 for(const count of [16,128])for(const budget of [4,32,128])for(let repeat=0;repeat<3;repeat++)for(const index of repeat%2?[1,0]:[0,1]){
  if(performance.now()-totalStart>20000)throw Error('CPU observation exceeded 20s budget');
  const R=engines[index]!,w=new R.World({x:0,y:0,z:0});
