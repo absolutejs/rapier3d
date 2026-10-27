@@ -3,6 +3,18 @@ import {buildInfo} from '../../dist/build-info.mjs';
 import {fixture} from '../tests/fixture';
 try {
  await Promise.all([R.init(),R.init()]);
+ const response=await fetch('/simplex-fixture.bin');
+ if(!response.ok)throw Error('Simplex fixture unavailable');
+ const simplexBytes=new Uint8Array(await response.arrayBuffer());
+ const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',simplexBytes)),v=>v.toString(16).padStart(2,'0')).join('');
+ if(digest!=='c865ce89eaec5ddd19ea2a32884cf0b4e744cb5b856969535b705d473b7fe195')throw Error('Simplex fixture identity mismatch');
+ const simplexWorld=R.World.restoreSnapshot(simplexBytes);let simplexMinimumDistanceCm=Infinity;
+ try {
+  const floor=simplexWorld.getCollider(0),wood=simplexWorld.getCollider(2e-323);
+  simplexWorld.step();let count=0;
+  simplexWorld.contactPair(floor,wood,m=>{for(let i=0;i<m.numContacts();i++){count++;simplexMinimumDistanceCm=Math.min(simplexMinimumDistanceCm,m.contactDist(i));}});
+  if(!count||!Number.isFinite(simplexMinimumDistanceCm)||simplexMinimumDistanceCm<=-0.01)throw Error('Invalid floor/hull simplex witness');
+ }finally{simplexWorld.free();}
  const {w,a,b}=fixture(R);
  try {
   if(w.ccdSubsteps()!==null)throw Error('Unprofiled CCD count must be unavailable');
@@ -52,6 +64,6 @@ try {
    if(kinematicPositionErrorM>3e-6||kinematicRotationErrorRad>2e-6)throw Error('Prescribed kinematic path drifted');
   }finally{pathWorld.free();}
   if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
-  postMessage({buildInfo,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({buildInfo,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
