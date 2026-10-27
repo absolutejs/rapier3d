@@ -2202,7 +2202,10 @@ pub(crate) fn gyroscopic_corrected_angvel(
     if total_momentum_sqnorm != 0.0 {
         let capped_momentum =
             total_momentum * (curr_momentum.length_squared() / total_momentum_sqnorm).sqrt();
-        principal_axes * (inv_principal_inertia * capped_momentum)
+        // Apply only the momentum increment. Reconstructing the whole angular
+        // velocity through the inertia frame adds roundoff even when gyro torque
+        // is zero (principal-axis and isotropic force-free motion).
+        angvel + principal_axes * (inv_principal_inertia * (capped_momentum - curr_momentum))
     } else {
         angvel
     }
