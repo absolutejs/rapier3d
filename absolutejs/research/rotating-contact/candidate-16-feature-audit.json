@@ -1,0 +1,1676 @@
+{
+  "source": "candidate-16-refresh-1.json",
+  "sourceSha256": "a4800d2bec0316734b09ccdbb11254cd7f935ffa845cdf25d4d2162511aede80",
+  "analyzerSha256": "ab456ded6e2503bb8786de5e8c49b210d90a1b3f6b7e30d6a009267387c1a34f",
+  "engineSha256": "4ae17255f26589e98f3319f5beee4724f381dc6af6b227ac135d4ec59a6b7cfc",
+  "physicalAcceptance": false,
+  "scope": "Closest box feature at saved outer-step poses. Not the cached manifold feature, within-step chronology, or a causal attribution. Broad-face margin is distance along the plane to the nearest edge; sphere radius is 0.1m.",
+  "cases": [
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 12,
+        "edge": 2,
+        "end-face": 1
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 11,
+          "depthM": 0.015312094452424416,
+          "broadFaceMarginM": 0.0029520959270188385,
+          "local": [
+            1.9970479040729812,
+            0.1346879055475756,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999941078915067
+        },
+        "edge": {
+          "frame": 12,
+          "depthM": 0,
+          "broadFaceMarginM": -0.1742319353466213,
+          "local": [
+            2.1742319353466213,
+            0.1328319407916807,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999894386705903
+        },
+        "end-face": {
+          "frame": 14,
+          "depthM": 0,
+          "broadFaceMarginM": -0.5677716491583795,
+          "local": [
+            2.5677716491583795,
+            -0.01066323120421897,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 12,
+        "edge": 2,
+        "end-face": 1
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 11,
+          "depthM": 0.01531221780765711,
+          "broadFaceMarginM": 0.0029530711817202793,
+          "local": [
+            1.9970469288182797,
+            0.1346877821923429,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.10000007542764233
+        },
+        "edge": {
+          "frame": 12,
+          "depthM": 0,
+          "broadFaceMarginM": -0.17423080263984758,
+          "local": [
+            2.1742308026398476,
+            0.13283156447601674,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999844843063306
+        },
+        "end-face": {
+          "frame": 14,
+          "depthM": 0,
+          "broadFaceMarginM": -0.5677704642680417,
+          "local": [
+            2.5677704642680417,
+            -0.010663374984808627,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9800281689108523,
+            0.24909393767505927,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999993962195963
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9800281689108523,
+            0.24909393767505927,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999993962195963
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 2,
+        "edge": 1
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 1,
+          "depthM": 0.09755610100878297,
+          "broadFaceMarginM": 0.4067933721813093,
+          "local": [
+            1.5932066278186907,
+            -0.05244389899121704,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.49998919101134376
+        },
+        "edge": {
+          "frame": 2,
+          "depthM": 0,
+          "broadFaceMarginM": -0.0008044364814350224,
+          "local": [
+            2.000804436481435,
+            -0.6942693986430168,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.4999894560050945
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 2,
+        "edge": 1
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 1,
+          "depthM": 0.09755603659802135,
+          "broadFaceMarginM": 0.4067934724913802,
+          "local": [
+            1.5932065275086198,
+            -0.052443963401978655,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.49998919101134376
+        },
+        "edge": {
+          "frame": 2,
+          "depthM": 0,
+          "broadFaceMarginM": -0.0008043175710019668,
+          "local": [
+            2.000804317571002,
+            -0.6942694070788169,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.49998947360107565
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.805670149854014,
+            0.6110635060969085,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.4999898295547102
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.805670149854014,
+            0.6110635060969085,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.4999898295547102
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 47,
+        "edge": 9,
+        "end-face": 4
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 46,
+          "depthM": 0.0014461112146609695,
+          "broadFaceMarginM": 0.016548797917555813,
+          "local": [
+            1.9834512020824442,
+            0.14855388878533904,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.025000038283749557
+        },
+        "edge": {
+          "frame": 47,
+          "depthM": 0,
+          "broadFaceMarginM": -0.026686277368169975,
+          "local": [
+            2.02668627736817,
+            0.14850994192250044,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.024998213826347256
+        },
+        "end-face": {
+          "frame": 56,
+          "depthM": 0,
+          "broadFaceMarginM": -0.45826985270764586,
+          "local": [
+            2.458269852707646,
+            0.0383919971293607,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 47,
+        "edge": 9,
+        "end-face": 4
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 46,
+          "depthM": 0.0014460660292162503,
+          "broadFaceMarginM": 0.016549462784072988,
+          "local": [
+            1.983450537215927,
+            0.14855393397078376,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.025000038283749557
+        },
+        "edge": {
+          "frame": 47,
+          "depthM": 0,
+          "broadFaceMarginM": -0.02668565703460768,
+          "local": [
+            2.0266856570346077,
+            0.1485098926061783,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.0250004362780707
+        },
+        "end-face": {
+          "frame": 56,
+          "depthM": 0,
+          "broadFaceMarginM": -0.4582691190633428,
+          "local": [
+            2.458269119063343,
+            0.03839207014457191,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9959376557539783,
+            0.17496053096866013,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.025000005071638607
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9959376557539783,
+            0.17496053096866013,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.025000005071638607
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 9,
+        "edge": 2,
+        "end-face": 1
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 8,
+          "depthM": 0.035900233917253596,
+          "broadFaceMarginM": 0.13712084992620155,
+          "local": [
+            1.8628791500737985,
+            0.11409976608274641,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.124999893486577
+        },
+        "edge": {
+          "frame": 9,
+          "depthM": 0.017679082487595532,
+          "broadFaceMarginM": -0.0636772462152555,
+          "local": [
+            2.0636772462152555,
+            0.10217223183385804,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.12499896985535511
+        },
+        "end-face": {
+          "frame": 10,
+          "depthM": 0,
+          "broadFaceMarginM": -0.28453497491589985,
+          "local": [
+            2.2845349749159,
+            0.027164170977448387,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 1.0093828541861618
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 9,
+        "edge": 2,
+        "end-face": 1
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 8,
+          "depthM": 0.03590034623367287,
+          "broadFaceMarginM": 0.1371205320081823,
+          "local": [
+            1.8628794679918177,
+            0.11409965376632714,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.12500053098038474
+        },
+        "edge": {
+          "frame": 9,
+          "depthM": 0.017678945067235552,
+          "broadFaceMarginM": -0.06367754764975109,
+          "local": [
+            2.063677547649751,
+            0.10217208075740225,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.12499881910371753
+        },
+        "end-face": {
+          "frame": 10,
+          "depthM": 0,
+          "broadFaceMarginM": -0.28453525516306,
+          "local": [
+            2.28453525516306,
+            0.027163983498445843,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 1.0093869457233937
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 12
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.973495252329556,
+            0.2735141633593956,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.124999839749461
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 12
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.973495252329556,
+            0.2735141633593956,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.124999839749461
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 189,
+        "edge": 36,
+        "end-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 187,
+          "depthM": 0.00105851794476651,
+          "broadFaceMarginM": 0.015028328581547123,
+          "local": [
+            1.9849716714184529,
+            0.1489414820552335,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.01874778175937387
+        },
+        "edge": {
+          "frame": 189,
+          "depthM": 0.0006886524112904996,
+          "broadFaceMarginM": -0.006500338965919283,
+          "local": [
+            2.0065003389659193,
+            0.1490983821927161,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.012503439418388539
+        },
+        "end-face": {
+          "frame": 225,
+          "depthM": 0,
+          "broadFaceMarginM": -0.435682603028825,
+          "local": [
+            2.435682603028825,
+            0.049299186950151785,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 189,
+        "edge": 37,
+        "end-face": 14
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 146,
+          "depthM": 0.0007647790931630677,
+          "broadFaceMarginM": 0.39289686805278623,
+          "local": [
+            1.6071031319472138,
+            0.14923522090683694,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.018737275828976878
+        },
+        "edge": {
+          "frame": 189,
+          "depthM": 0.00027029930180851036,
+          "broadFaceMarginM": -0.007653318122929242,
+          "local": [
+            2.0076533181229292,
+            0.14943560691754287,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006257380090017969
+        },
+        "end-face": {
+          "frame": 226,
+          "depthM": 0,
+          "broadFaceMarginM": -0.45147410826626366,
+          "local": [
+            2.4514741082662637,
+            0.048460881847911086,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9990429120427293,
+            0.15625703630091137,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006250001883756705
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9990429120427293,
+            0.15625703630091137,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006250001883756705
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 37,
+        "edge": 8,
+        "end-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 36,
+          "depthM": 0.006086323119498846,
+          "broadFaceMarginM": 0.05267701287326698,
+          "local": [
+            1.947322987126733,
+            0.14391367688050116,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.031246605337570534
+        },
+        "edge": {
+          "frame": 37,
+          "depthM": 0.0063296675671881825,
+          "broadFaceMarginM": -6.423379122644235e-05,
+          "local": [
+            2.0000642337912264,
+            0.14367031040886724,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.03124763357577133
+        },
+        "end-face": {
+          "frame": 45,
+          "depthM": 0,
+          "broadFaceMarginM": -0.4784124254594202,
+          "local": [
+            2.47841242545942,
+            0.03258753745327736,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 37,
+        "edge": 8,
+        "end-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 36,
+          "depthM": 0.006086255478287547,
+          "broadFaceMarginM": 0.05267730311887586,
+          "local": [
+            1.9473226968811241,
+            0.14391374452171246,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.03124639592054973
+        },
+        "edge": {
+          "frame": 37,
+          "depthM": 0.006329591087074177,
+          "broadFaceMarginM": -6.394580083934898e-05,
+          "local": [
+            2.0000639458008393,
+            0.14367038708604385,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.031246577650967524
+        },
+        "end-face": {
+          "frame": 45,
+          "depthM": 0,
+          "broadFaceMarginM": -0.47841218123472906,
+          "local": [
+            2.478412181234729,
+            0.03258756484722136,
+            0.0
+          ],
+          "contacts": 0,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 48
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9948247089202167,
+            0.1811816768020925,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.031249999363519024
+        }
+      }
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 48
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9948247089202167,
+            0.1811816768020925,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.031249999363519024
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 14,
+          "depthM": 0.021393695934899357,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.590561633241027,
+            0.12860630406510065,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999884252930485
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 14,
+          "depthM": 0.021393467546714992,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.5905613780276218,
+            0.12860653245328502,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999939584655962
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9800281689108523,
+            0.24909393767505927,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999993962195963
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 15
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9800281689108523,
+            0.24909393767505927,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.09999993962195963
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 1,
+          "depthM": 0.09817862682473542,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.5947717050439625,
+            -0.051821373175264585,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.49998922845200505
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 1,
+          "depthM": 0.09817867697977088,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.594771672838582,
+            -0.051821323020229126,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.4999892956282634
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.805670149854014,
+            0.6110635060969085,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.4999898295547102
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 3
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.805670149854014,
+            0.6110635060969085,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.4999898295547102
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 59,
+          "depthM": 0.0020954915054597206,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.650599371324484,
+            0.1479045084945403,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.02499081162088005
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 59,
+          "depthM": 0.0020956878936809614,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.650600341316589,
+            0.14790431210631905,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.02499057966763398
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9959376557539783,
+            0.17496053096866013,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.025000005071638607
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 60
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9959376557539783,
+            0.17496053096866013,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.025000005071638607
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 12
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 11,
+          "depthM": 0.08258078111150279,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.551073621877417,
+            0.06741921888849722,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.12499941832876649
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 12
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 11,
+          "depthM": 0.08258060274552347,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.5510736092283373,
+            0.06741939725447654,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.12499991212304913
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 12
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.973495252329556,
+            0.2735141633593956,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.124999839749461
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 12
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.973495252329556,
+            0.2735141633593956,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.124999839749461
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            1.0,
+            0.15001000463962555,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 239,
+          "depthM": 0.00041613290211515996,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.666343688150997,
+            0.14958386709788485,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006229512090220381
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 239,
+          "depthM": 0.00041610946009172645,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.6663424914023692,
+            0.14958389053990828,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006220468913992635
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9990429120427293,
+            0.15625703630091137,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006250001883756705
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 240
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9990429120427293,
+            0.15625703630091137,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.006250001883756705
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 48
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 47,
+          "depthM": 0.009138642700143515,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.641010591620177,
+            0.1408613572998565,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.03125063820733938
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 48
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 47,
+          "depthM": 0.009138821950587336,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            2.6410122774478753,
+            0.14086117804941267,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.03125063820733938
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "frameCounts": {
+        "broad-face": 48
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9948247089202167,
+            0.1811816768020925,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.031249999363519024
+        }
+      }
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "frameCounts": {
+        "broad-face": 48
+      },
+      "featurePeaks": {
+        "broad-face": {
+          "frame": 0,
+          "depthM": 0,
+          "broadFaceMarginM": 0.5,
+          "local": [
+            0.9948247089202167,
+            0.1811816768020925,
+            0.0
+          ],
+          "contacts": 1,
+          "observedNormalAngleRad": 0.031249999363519024
+        }
+      }
+    }
+  ]
+}
