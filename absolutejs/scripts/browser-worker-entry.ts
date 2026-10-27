@@ -11,6 +11,29 @@ try {
   if(maximumCcdSubsteps<1)throw Error('Expected CCD activation');
   const fast=new R.World({x:0,y:0,z:0});let fastCcdSubsteps;
   try {fast.timestep=1/60;fast.integrationParameters.maxCcdSubsteps=4;fast.profilerEnabled=true;fast.createCollider(R.ColliderDesc.cuboid(.01,2,2));const body=fast.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(-1,0,0).setLinvel(120,0,0).setCcdEnabled(true));fast.createCollider(R.ColliderDesc.ball(.1),body);fast.step();fastCcdSubsteps=fast.ccdSubsteps();if(fastCcdSubsteps!==2)throw Error('Expected two actual CCD passes');}finally{fast.free();}
+  const traced=new R.World({x:0,y:0,z:0});let traceRows=0,traceImpactRows=0;
+  try {
+   if(traced.stepTraceEnabled!==false||traced.stepTrace()!==null)throw Error('Trace must default off');
+   traced.timestep=1/60;traced.integrationParameters.maxCcdSubsteps=1;
+   traced.createCollider(R.ColliderDesc.cuboid(.01,2,2));
+   const moving=traced.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(-1,0,0).setLinvel(120,0,0).setCcdEnabled(true));
+   traced.createCollider(R.ColliderDesc.ball(.1),moving);
+   const snapshot=traced.takeSnapshot();
+   const untraced=R.World.restoreSnapshot(snapshot);
+   try {
+    traced.stepTraceEnabled=true;traced.step();untraced.step();
+    const record=traced.stepTrace();
+    if(!record||record.schemaVersion!==1||record.stride!==27||record.impactStride!==7||record.truncated||!record.data.length||!record.impacts.length)throw Error('Invalid browser phase trace');
+    if(!Array.from(record.data).every(Number.isFinite)||!Array.from(record.impacts).every(Number.isFinite))throw Error('Nonfinite trace');
+    if(JSON.stringify(moving.translation())!==JSON.stringify(untraced.getRigidBody(moving.handle).translation()))throw Error('Trace changed motion');
+    traceRows=record.data.length/27;traceImpactRows=record.impacts.length/7;
+    const first=record.data[0];record.data[0]=999;
+    if(traced.stepTrace()?.data[0]!==first)throw Error('Trace arrays alias native storage');
+    const restoredTrace=R.World.restoreSnapshot(traced.takeSnapshot());
+    try {if(restoredTrace.stepTraceEnabled||restoredTrace.stepTrace()!==null)throw Error('Trace leaked into snapshot');} finally {restoredTrace.free();}
+    traced.stepTraceEnabled=false;if(traced.stepTrace()!==null)throw Error('Disabling trace did not clear it');
+   }finally{untraced.free();}
+  }finally{traced.free();}
   w.profilerEnabled=false;if(w.ccdSubsteps()!==null)throw Error('Disabled counter must be unavailable');
   let original=0,solver=0,points=0;
   w.contactPair(a,b,m=>{original+=m.numSolverContacts();});
@@ -23,6 +46,6 @@ try {
   if(Math.abs(w.integrationParameters.minCcdDt-1/960/100)>1e-10)throw Error('CCD minimum setter failed');
   const restored=R.World.restoreSnapshot(w.takeSnapshot());
   try { if(restored.getCollider(0).parent()!==null)throw Error('Restored floor aliases body zero');if(restored.getCollider(a.handle).parent()?.handle!==a.parent()?.handle)throw Error('Restored moving owner changed'); } finally {restored.free();}
-  postMessage({totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({traceRows,traceImpactRows,traceOwnedArrays:true,traceSnapshotIsolation:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

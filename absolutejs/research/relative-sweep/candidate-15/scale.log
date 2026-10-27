@@ -1,0 +1,7 @@
+{
+  cases: 36,
+  crossings: 0,
+  maxFrameError: 3.501772880554199e-7,
+  maxOrderError: 0,
+  maxNormalizedPenetration: 0.031047773361206066,
+}

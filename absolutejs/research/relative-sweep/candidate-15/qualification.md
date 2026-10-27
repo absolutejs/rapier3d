@@ -1,0 +1,13 @@
+# Candidate 15: contact-normal-aware clamp propagation
+
+Research only; do not publish or adopt in the game. Starts with candidate 13 accepted-impact components, then visits their active dynamic contact neighbors. A contact joins only if independent clamp poses create a negative normal separation beyond linear slop and worsen the fully solved endpoint by more than slop. Changed fractions requeue affected bodies; links are monotone. Fixed/kinematic supports, sensors, disabled/sleeping neighbors and non-solving or dominance contacts do not form links. Velocities and prescribed kinematic paths are unchanged by this operation.
+
+Candidate 14 is rejected: mere touching adjacency dragged a freely sliding neighbor. Candidate 15 passes 42 physical controls: seven contact cases, three scales (0.1, 1, 2), both insertion orders. All six supported-stack cases fail in candidate 13, while candidate 15 preserves them and still allows tangential and separating motion. Scales stay below the engine speed cap to avoid confusing speed limiting with contact response.
+
+Eight further cold stacked controls (2, 8, 32, 64 bodies, both insertion orders) preserve clearance, speed and an unrelated freefall path. Measured cold single-step durations were below 7ms here; these small CPU fixtures are not a game frame-rate claim or asymptotic scalability proof. Rebuilding union-find after each accepted contact link can be superlinear; replace or bound it before production-scale use.
+
+Narrow kinematic gates pass: 135 dynamic controls, 12 crossings, six paths, five filters, 36 scale/order/frame cases and 12 simultaneous cases. GPU-disabled Chromium passes the trace ownership, snapshot isolation, accepted-hit, contact and CCD diagnostics. All three phase-trace tests pass. Full package: 18 pass, four upstream-motion parity failures, 48,803 assertions. The two additional parity failures are retained: this is a solver intervention, not a query-only drop-in. Their physical consequences still require separate qualification.
+
+Exact game replay intervention at step 863 reduces the problematic clamp endpoint from 6.226346% to 0.071520% native-envelope overlap, then to 0.032512% after the next solve. Step 921 retains candidate 13's 0.169682% clamp endpoint. Both verify baseline replay separately and prove trace-on/off trajectory parity.
+
+All three cold game histories complete 1,920 steps. Sampled overlap peaks: no-recycling 960Hz 0.229745% (candidate 13: 4.55063%); default 960Hz 0.218764%; default 240Hz 0.498880% (candidate 13: 0.590119%). Every-step replay windows, rotation, wider shapes, contact-normal transport and trajectory/energy acceptance remain distinct gates. Stable game dependency remains published 0.4.0.

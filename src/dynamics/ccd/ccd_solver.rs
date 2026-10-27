@@ -334,18 +334,14 @@ impl CCDSolver {
             }
             if !linked { hits.push((result.handle.into_raw_parts(), None, result.fraction)); }
         }
-        // Expand only the current dynamic contact component of actually clamped
-        // participants. Shared static/kinematic supports are not graph vertices.
-        // Use live anchors, so recycled cached distances do not invent contact links.
-        let mut discovered = alloc::collections::BTreeSet::new();
+        // Only join a touching neighbor when unequal clamping worsens its normal
+        // constraint. Tangential sliding must remain free. Revisit changed components
+        // until fractions stop decreasing; each added edge permanently joins components.
+        let mut fractions: alloc::collections::BTreeMap<_, _> =
+            super::clamp_graph::coherent_fractions(&hits).into_iter().collect();
+        let mut pending: alloc::collections::BTreeSet<_> = fractions.keys().copied().collect();
         let mut links = alloc::collections::BTreeSet::new();
-        let mut pending = Vec::new();
-        for &(origin, target, _) in &hits {
-            for key in core::iter::once(origin).chain(target) {
-                if discovered.insert(key) { pending.push(key); }
-            }
-        }
-        while let Some(key) = pending.pop() {
+        while let Some(key) = pending.pop_first() {
             let handle = crate::dynamics::RigidBodyHandle::from_raw_parts(key.0, key.1);
             for collider in bodies[handle].colliders() {
                 for pair in narrow_phase.contact_pairs_with(*collider) {
@@ -356,23 +352,42 @@ impl CCDSolver {
                     let other_key = other.into_raw_parts();
                     let edge = if key < other_key { (key, other_key) } else { (other_key, key) };
                     if links.contains(&edge) { continue; }
-                    let touching = pair.solver_manifolds().iter().any(|m| {
-                        m.data.relative_dominance == 0
-                        && m.data.solver_flags.contains(crate::geometry::SolverFlags::COMPUTE_RIGID_IMPULSES)
-                        && m.data.solver_contacts.iter().any(|contact| {
+                    let violates = pair.solver_manifolds().iter().any(|m| {
+                        if m.data.relative_dominance != 0
+                            || !m.data.solver_flags.contains(crate::geometry::SolverFlags::COMPUTE_RIGID_IMPULSES) { return false; }
+                        let (Some(h1), Some(h2)) = (m.data.rigid_body1, m.data.rigid_body2) else { return false; };
+                        let (r1, r2) = (&bodies[h1], &bodies[h2]);
+                        let t1 = fractions.get(&h1.into_raw_parts()).copied().unwrap_or(1.0);
+                        let t2 = fractions.get(&h2.into_raw_parts()).copied().unwrap_or(1.0);
+                        if t1 == t2 { return false; }
+                        let pose1 = Sweep::from_poses(&r1.pos.position, &r1.pos.next_position, r1.mprops.local_mprops.local_com).transform_at(t1);
+                        let pose2 = Sweep::from_poses(&r2.pos.position, &r2.pos.next_position, r2.mprops.local_mprops.local_com).transform_at(t2);
+                        m.data.solver_contacts.iter().any(|contact| {
                             let (p1, p2) = m.data.solver_contact_world_points(contact, bodies);
-                            (p2 - p1).dot(m.data.normal) <= linear_slop
+                            let current = (p2 - p1).dot(m.data.normal);
+                            if current > linear_slop { return false; }
+                            let local1 = r1.mprops.local_mprops.local_com + contact.anchor1;
+                            let local2 = r2.mprops.local_mprops.local_com + contact.anchor2;
+                            let solved = (r2.pos.next_position * local2 - r1.pos.next_position * local1).dot(m.data.normal);
+                            let clamped = (pose2 * local2 - pose1 * local1).dot(m.data.normal);
+                            clamped < -linear_slop && clamped < solved - linear_slop
                         })
                     });
-                    if touching {
+                    if violates {
                         links.insert(edge);
                         hits.push((key, Some(other_key), 1.0));
-                        if discovered.insert(other_key) { pending.push(other_key); }
+                        let updated = super::clamp_graph::coherent_fractions(&hits);
+                        for (changed, fraction) in updated {
+                            if fraction < fractions.get(&changed).copied().unwrap_or(1.0) {
+                                fractions.insert(changed, fraction);
+                                pending.insert(changed);
+                            }
+                        }
                     }
                 }
             }
         }
-        let fractions = super::clamp_graph::coherent_fractions(&hits);
+        let fractions: Vec<_> = fractions.into_iter().collect();
         for ((index, generation), fraction) in &fractions {
             let handle = crate::dynamics::RigidBodyHandle::from_raw_parts(*index, *generation);
             let rb = bodies.index_mut_internal(handle);
