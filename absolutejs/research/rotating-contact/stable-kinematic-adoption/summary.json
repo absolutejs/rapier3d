@@ -1,0 +1,611 @@
+{
+  "physicalAcceptance": false,
+  "cases": 60,
+  "baselineEngine": "f2b120fe26a264dde76c4b07ee108b79703caaec4ee21bee6160dcb851d8a4c1",
+  "candidateEngine": "ad644b2f36baf1a43a71d1221bc212583ff84191db0af345d2b9fb9d44d78d65",
+  "staticControlsIdentical": true,
+  "maximumDepthRegressionM": 7.440038142236816e-07,
+  "maximumDepthImprovementM": 1.9291557158629402e-05,
+  "rows": [
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "beforeDepthM": 0.015311894594154926,
+      "afterDepthM": 0.015311324652126243,
+      "depthDeltaM": -5.699420286831014e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "beforeDepthM": 0.01531191318535706,
+      "afterDepthM": 0.015311559225068647,
+      "depthDeltaM": -3.5396028841283567e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "beforeDepthM": 1.002554975738923e-05,
+      "afterDepthM": 1.0004052689013831e-05,
+      "depthDeltaM": -2.1497068375397888e-08,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "beforeDepthM": 1.002554975738923e-05,
+      "afterDepthM": 1.0004052689013831e-05,
+      "depthDeltaM": -2.1497068375397888e-08,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "beforeDepthM": 0.0014461112146609695,
+      "afterDepthM": 0.001445110220509624,
+      "depthDeltaM": -1.00099415134558e-06,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "beforeDepthM": 0.0014460758405109159,
+      "afterDepthM": 0.0014451832893876831,
+      "depthDeltaM": -8.92551123232721e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "beforeDepthM": 0.03590081159631607,
+      "afterDepthM": 0.03590149944184849,
+      "depthDeltaM": 6.878455324210719e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "beforeDepthM": 0.035900809217372806,
+      "afterDepthM": 0.03590155322118703,
+      "depthDeltaM": 7.440038142236816e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "beforeDepthM": 0.00105851794476651,
+      "afterDepthM": 0.0010587843602808261,
+      "depthDeltaM": 2.6641551431616506e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "beforeDepthM": 0.0007647790931630677,
+      "afterDepthM": 0.0007454875360044383,
+      "depthDeltaM": -1.9291557158629402e-05,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "beforeDepthM": 0.006329684836576588,
+      "afterDepthM": 0.006325564656165711,
+      "depthDeltaM": -4.120180410877028e-06,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "beforeDepthM": 0.006329616746272998,
+      "afterDepthM": 0.006325551850989819,
+      "depthDeltaM": -4.064895283178993e-06,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 2,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "beforeDepthM": 0.021390202141256517,
+      "afterDepthM": 0.021390056224710116,
+      "depthDeltaM": -1.4591654640128127e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "beforeDepthM": 0.021389998905327542,
+      "afterDepthM": 0.021390180566141045,
+      "depthDeltaM": 1.816608135030151e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "beforeDepthM": 1.010401218863588e-05,
+      "afterDepthM": 1.0213284675250622e-05,
+      "depthDeltaM": 1.0927248661474209e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "beforeDepthM": 1.010401218863588e-05,
+      "afterDepthM": 1.0213284675250622e-05,
+      "depthDeltaM": 1.0927248661474209e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "beforeDepthM": 0.0020954575753627663,
+      "afterDepthM": 0.0020952221637463436,
+      "depthDeltaM": -2.3541161642270936e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "beforeDepthM": 0.0020955690092413354,
+      "afterDepthM": 0.002095597187744422,
+      "depthDeltaM": 2.81785030864512e-08,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "beforeDepthM": 0.04782883285488203,
+      "afterDepthM": 0.04782849043833935,
+      "depthDeltaM": -3.424165426757497e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "beforeDepthM": 0.04782881388050085,
+      "afterDepthM": 0.04782854700223692,
+      "depthDeltaM": -2.668782639325684e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": true
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "beforeDepthM": 0.00041619059668827896,
+      "afterDepthM": 0.0004162619935389328,
+      "depthDeltaM": 7.13968506538265e-08,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "beforeDepthM": 0.0004160393886128849,
+      "afterDepthM": 0.0004164703860803781,
+      "depthDeltaM": 4.3099746749319934e-07,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "beforeDepthM": 0.009138306876122035,
+      "afterDepthM": 0.009132029151487683,
+      "depthDeltaM": -6.2777246343515e-06,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "beforeDepthM": 0.009138319186441021,
+      "afterDepthM": 0.00913193996850091,
+      "depthDeltaM": -6.379217940111204e-06,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "beforeDepthM": 0,
+      "afterDepthM": 0,
+      "depthDeltaM": 0,
+      "staticFramesIdentical": null
+    }
+  ]
+}
