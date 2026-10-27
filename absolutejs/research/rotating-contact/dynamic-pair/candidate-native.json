@@ -1,0 +1,15 @@
+{
+  "candidate": 21,
+  "private": true,
+  "physicalAcceptance": false,
+  "nativeSourceCommit": "2c151f123df8ca262324626b3f3501703f8b5aa6",
+  "wasmSha256": "9197c2f7de5e8be8050861d1e65233ba54691d955c13899b74181e4c61117017",
+  "bundleSha256": "11135af69edea357b7c2d3c473d5fb86056cc100d3edfcf41012148358157bd4",
+  "tests": {
+    "passed": 21,
+    "failed": 4,
+    "assertions": 48827,
+    "failures": "The same four pre-existing private-kernel upstream-motion parity failures; this is not a passing stable release suite."
+  },
+  "scope": "Only explicitly tagged dynamic box/sphere contact activation; no gyroscopic correction change."
+}

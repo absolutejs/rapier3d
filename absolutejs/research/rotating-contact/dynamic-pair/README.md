@@ -33,3 +33,5 @@ change is included in the dynamic-contact candidate.
 Canonical source and selected evidence are stored here and committed. Generated
 candidate engines remain under `.absolutejs/`; explicit engine hashes in every
 probe output distinguish them. This branch is private and must not be published.
+
+Candidate 21 completes all 144 tagged feature cases and preserves all 5,292 untagged frames exactly. Separated-body frames are identical. Maximum measured penetration falls from 107.600mm to 2.002mm; no case regresses by more than one micrometer and none reaches the speed-cap proximity threshold. Linear/angular momentum and energy are recorded separately; conservation is not qualified. The package suite retains its prior 21 passes and four upstream-motion parity failures (48,827 assertions), recorded explicitly in `candidate-native.json`.

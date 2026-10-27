@@ -1,0 +1,6 @@
+{
+  cases: 336,
+  maxAngularVelocityError: 0.16157223556883632,
+  maxRelativeEnergyError: 0.0040326956853830925,
+  speedCapCases: 0,
+}

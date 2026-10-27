@@ -1,0 +1,7 @@
+# Force-free spin precision investigation
+
+The probe covers 336 cases across short/long boxes and spheres, identity/tilted initial poses, principal-axis spins at 6/30rad/s, an oblique spin, 60/960Hz and 1/4/32/128 solver subdivisions. Every step is evaluated; peak and final witnesses are retained. Principal-axis and isotropic motion have analytic references. Asymmetric oblique rotation uses Euler equations integrated in f64 with RK4; two time resolutions, momentum and energy conservation independently check the reference.
+
+Published stable 0.6.0 and private candidate 21 produce identical measurements in all 336 cases. No case approaches its angular speed cap. The largest energy error is about 0.4033% over 0.1s in a long box spinning about a principal axis at 960Hz/128 subdivisions. A true principal-axis free spin has constant world angular velocity. More subdivisions can therefore amplify roundoff even while reducing time-discretization error. Low-subdivision orientation/precession errors are measured separately.
+
+Source inspection finds a full angular-velocity round trip through the principal frame, inertia and inverse inertia on every gyroscopic update, even when the computed correction is zero. The next isolated experiment will apply only the computed momentum increment to the existing world velocity. It must preserve genuine gyroscopic precession and pass the reference/energy controls; this is not a proposal to disable gyroscopic forces. No new stable physics release is claimed.
