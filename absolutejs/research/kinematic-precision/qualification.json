@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "release": "0.6.0",
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "0.6.0",
+    "wasmSha256": "83e902d7d539d0ec2380f6c1ea70c374a3885c70be523ce2b29b252146cebb5f",
+    "wasmBytes": 3300702,
+    "solverChanges": true
+  },
+  "bundleSha256": "24d566c101b81ff5226f68a14ff17f813b7f335b0540ad73c9a7463449b7fb07",
+  "researchKernelRejected": true,
+  "rejectedResearchWasmSha256": "8fd2d56ff592edcc0e30dade085ff1720e6de21064ff96c5c91d17c86ebba4f3",
+  "tests": {
+    "passed": 28,
+    "failed": 0,
+    "assertions": 48020
+  },
+  "pathConfigurations": 72,
+  "unchangedDynamicAndPositionFrames": 1440,
+  "maxVelocityPathPositionErrorM": 0.0000018803366400825854,
+  "maxVelocityPathRotationErrorRad": 0.000001244581521619644,
+  "browserGpu": false,
+  "tarballIntegrity": "sha512-eVe0hl6V3PhitQ2AUs0TYYXJfRJmBKKPiNpOey0DuSwQB9tObCkPpo5QX5h3pLqUIzY1RDzlm7CZk5KUYL2g5Q==",
+  "scope": "Only prescribed velocity-driven kinematic integration changes. No tagged geometry or CCD research. Additional CPU cost is documented; general contact accuracy remains separately unqualified."
+}

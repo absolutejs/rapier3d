@@ -1,0 +1,39 @@
+[
+  {
+    count: 16,
+    budget: 4,
+    baselineMedianMs: 0.09631330000000086,
+    candidateMedianMs: 0.1333476666666646,
+    ratio: 1.3845197565306493,
+  }, {
+    count: 16,
+    budget: 32,
+    baselineMedianMs: 0.13613203333333104,
+    candidateMedianMs: 0.4009499333333338,
+    ratio: 2.945301877270673,
+  }, {
+    count: 16,
+    budget: 128,
+    baselineMedianMs: 0.36035630000000085,
+    candidateMedianMs: 0.7674463333333317,
+    ratio: 2.1296875712546997,
+  }, {
+    count: 128,
+    budget: 4,
+    baselineMedianMs: 0.3435989333333282,
+    candidateMedianMs: 0.6824671000000004,
+    ratio: 1.9862317189964422,
+  }, {
+    count: 128,
+    budget: 32,
+    baselineMedianMs: 0.9296969666666655,
+    candidateMedianMs: 1.439884466666672,
+    ratio: 1.5487675213454037,
+  }, {
+    count: 128,
+    budget: 128,
+    baselineMedianMs: 1.3822646,
+    candidateMedianMs: 2.046243066666663,
+    ratio: 1.480355546012437,
+  }
+]

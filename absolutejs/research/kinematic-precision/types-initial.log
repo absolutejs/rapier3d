@@ -1,0 +1,2 @@
+absolutejs/tests/kinematic-path.test.ts(2,15): error TS7016: Could not find a declaration file for module '../../dist/rapier.mjs'. '/home/alexkahn/alex/rapier-kinematic-release/dist/rapier.mjs' implicitly has an 'any' type.
+error: "tsc" exited with code 2

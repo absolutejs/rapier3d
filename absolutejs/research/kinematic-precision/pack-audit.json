@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "version": "0.6.0",
+  "integrity": "sha512-eVe0hl6V3PhitQ2AUs0TYYXJfRJmBKKPiNpOey0DuSwQB9tObCkPpo5QX5h3pLqUIzY1RDzlm7CZk5KUYL2g5Q==",
+  "sha1": "14ef2e9fe7335e37131dda911a62b6d7c927273f",
+  "bundleSha256": "24d566c101b81ff5226f68a14ff17f813b7f335b0540ad73c9a7463449b7fb07",
+  "fileCount": 50,
+  "whitelistPassed": true,
+  "declarationsUnchanged": true,
+  "tarballPathCases": 72
+}

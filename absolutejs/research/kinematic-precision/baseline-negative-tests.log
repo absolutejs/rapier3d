@@ -1,0 +1,66 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/kinematic-path.test.ts:
+10 |   w.createCollider(R.ColliderDesc.ball(.2).setTranslation(local.x,local.y,local.z),b);b.recomputeMassPropertiesFromColliders();
+11 |   for(let i=0;i<30;i++)w.step();
+12 |   // Independent Rodrigues rotation of the known local center-of-mass offset.
+13 |   const angle=15,c=Math.cos(angle),s=Math.sin(angle),d=axis.x*local.x+axis.y*local.y+axis.z*local.z;
+14 |   const rotated={x:local.x*c+(axis.y*local.z-axis.z*local.y)*s+axis.x*d*(1-c),y:local.y*c+(axis.z*local.x-axis.x*local.z)*s+axis.y*d*(1-c),z:local.z*c+(axis.x*local.y-axis.y*local.x)*s+axis.z*d*(1-c)};
+15 |   const p=b.translation();expect(Math.hypot(p.x-(1+local.x+1.5-rotated.x),p.y-(2+local.y-1-rotated.y),p.z-(-1+local.z+.5-rotated.z))).toBeLessThan(3e-6);
+                                                                                                                                           ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000003
+Received: 0.111152260633493
+
+      at <anonymous> (/home/alexkahn/alex/rapier-kinematic-release/absolutejs/tests/kinematic-path.test.ts:15:135)
+(fail) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [26.88ms]
+10 |   w.createCollider(R.ColliderDesc.ball(.2).setTranslation(local.x,local.y,local.z),b);b.recomputeMassPropertiesFromColliders();
+11 |   for(let i=0;i<30;i++)w.step();
+12 |   // Independent Rodrigues rotation of the known local center-of-mass offset.
+13 |   const angle=15,c=Math.cos(angle),s=Math.sin(angle),d=axis.x*local.x+axis.y*local.y+axis.z*local.z;
+14 |   const rotated={x:local.x*c+(axis.y*local.z-axis.z*local.y)*s+axis.x*d*(1-c),y:local.y*c+(axis.z*local.x-axis.x*local.z)*s+axis.y*d*(1-c),z:local.z*c+(axis.x*local.y-axis.y*local.x)*s+axis.z*d*(1-c)};
+15 |   const p=b.translation();expect(Math.hypot(p.x-(1+local.x+1.5-rotated.x),p.y-(2+local.y-1-rotated.y),p.z-(-1+local.z+.5-rotated.z))).toBeLessThan(3e-6);
+                                                                                                                                           ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000003
+Received: 0.0072102334873202075
+
+      at <anonymous> (/home/alexkahn/alex/rapier-kinematic-release/absolutejs/tests/kinematic-path.test.ts:15:135)
+(fail) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [7.85ms]
+10 |   w.createCollider(R.ColliderDesc.ball(.2).setTranslation(local.x,local.y,local.z),b);b.recomputeMassPropertiesFromColliders();
+11 |   for(let i=0;i<30;i++)w.step();
+12 |   // Independent Rodrigues rotation of the known local center-of-mass offset.
+13 |   const angle=15,c=Math.cos(angle),s=Math.sin(angle),d=axis.x*local.x+axis.y*local.y+axis.z*local.z;
+14 |   const rotated={x:local.x*c+(axis.y*local.z-axis.z*local.y)*s+axis.x*d*(1-c),y:local.y*c+(axis.z*local.x-axis.x*local.z)*s+axis.y*d*(1-c),z:local.z*c+(axis.x*local.y-axis.y*local.x)*s+axis.z*d*(1-c)};
+15 |   const p=b.translation();expect(Math.hypot(p.x-(1+local.x+1.5-rotated.x),p.y-(2+local.y-1-rotated.y),p.z-(-1+local.z+.5-rotated.z))).toBeLessThan(3e-6);
+                                                                                                                                           ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000003
+Received: 0.00007552768706191505
+
+      at <anonymous> (/home/alexkahn/alex/rapier-kinematic-release/absolutejs/tests/kinematic-path.test.ts:15:135)
+(fail) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [5.26ms]
+10 |   w.createCollider(R.ColliderDesc.ball(.2).setTranslation(local.x,local.y,local.z),b);b.recomputeMassPropertiesFromColliders();
+11 |   for(let i=0;i<30;i++)w.step();
+12 |   // Independent Rodrigues rotation of the known local center-of-mass offset.
+13 |   const angle=15,c=Math.cos(angle),s=Math.sin(angle),d=axis.x*local.x+axis.y*local.y+axis.z*local.z;
+14 |   const rotated={x:local.x*c+(axis.y*local.z-axis.z*local.y)*s+axis.x*d*(1-c),y:local.y*c+(axis.z*local.x-axis.x*local.z)*s+axis.y*d*(1-c),z:local.z*c+(axis.x*local.y-axis.y*local.x)*s+axis.z*d*(1-c)};
+15 |   const p=b.translation();expect(Math.hypot(p.x-(1+local.x+1.5-rotated.x),p.y-(2+local.y-1-rotated.y),p.z-(-1+local.z+.5-rotated.z))).toBeLessThan(3e-6);
+                                                                                                                                           ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000003
+Received: 0.00024695022485727956
+
+      at <anonymous> (/home/alexkahn/alex/rapier-kinematic-release/absolutejs/tests/kinematic-path.test.ts:15:135)
+(fail) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [6.25ms]
+(pass) prescribed position endpoint remains authoritative [3.77ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [4.26ms]
+
+ 2 pass
+ 4 fail
+ 8 expect() calls
+Ran 6 tests across 1 file. [489.00ms]

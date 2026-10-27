@@ -1,7 +1,7 @@
 # AbsoluteJS Rapier 3D
 
-A focused distribution of Rapier 0.21.0 / engine 0.36.0 with an additive
-`World.solverContactPair` query. The engine's original geometric manifolds and its
+A focused distribution of Rapier 0.21.0 / engine 0.36.0 with solver-contact
+diagnostics, current-body geometry queries, and accurate prescribed kinematics. The engine's original geometric manifolds and its
 clustered solver manifolds are distinct. The upstream JavaScript contact query
 only exposes the former, which can have no solver-contact entries even when the
 solver is resolving contact. This package exposes the latter separately.
@@ -29,21 +29,23 @@ Nested read-only solver queries are supported; callback exceptions release query
 wrappers before propagating. Solver distances are the engine's cached contact
 update distances, not a continuous or post-step exact penetration guarantee.
 
-`contactPair` retains its existing geometric behavior. No collision, integration,
-clustering, mass, or solver parameters are changed. This is a diagnostic API
-improvement, not a fix for the physical overlap reproduced in the game. Runtime
-motion must still pass independent geometric and energy checks.
+`contactPair` retains its existing geometric behavior. Version 0.6 improves
+velocity-driven kinematic integration as described below. Contact and CCD policy
+defaults are unchanged; this is not a general fix for physical overlap. Runtime
+motion still needs independent geometric and energy checks.
 
 The ESM package includes WASM initialization and requires no separate asset URL.
-Concurrent `init()` calls share initialization. This first release targets 3D f32
+Concurrent `init()` calls share initialization. The package targets 3D f32
 web/Node/Bun; it does not claim a 2D, f64, CommonJS or SIMD distribution.
 
 ## Build and provenance
 
 Source base: dimforge/rapier commit
 `b716d375efc0201003f0cd9ef7168eee0b62c177`. Upstream Apache-2.0 licensing is retained.
-Engine calculations remain upstream. Additions cover binding queries, package
-build/test tooling, and CCD profiler timer wiring; no solver equations are changed.
+The distribution adds binding queries, package build/test tooling, and CCD profiler
+timer wiring. Version 0.6 also evaluates velocity-driven kinematic poses directly
+from each solver-pass origin; contact equations and dynamic-body integration retain
+the pinned source implementation.
 
 Use Bun 1.4.4+absolute.1, Rust 1.94.0 with `wasm32-unknown-unknown`, and Python 3.12.
 Run `bun install --frozen-lockfile`, then `bash absolutejs/scripts/build-native.sh`.
@@ -59,6 +61,9 @@ source after research builds. Do not update the qualification hash merely to mak
 a build pass: a changed kernel requires physical qualification and a recorded
 release decision. API-only releases retain the qualified native hash.
 See `absolutejs/research/native-build-guard/` for positive and negative controls.
+
+The build copies this canonical documentation to the root README used by npm,
+so published package documentation stays synchronized.
 
 Run `bun test absolutejs/tests` after building. Tests compare the official pinned
 release's motion against this build, exercise actual clustered contacts, nested
@@ -166,3 +171,21 @@ stored normal can report no penetration while a fresh shape query finds overlap.
 Both observations are useful, but answer different questions. Release 0.5.0 keeps
 the 0.4.0 native kernel byte-for-byte unchanged; it does not include the private
 relative-motion, EPA or clamp-graph solver experiments.
+
+
+## Prescribed velocity-driven paths (0.6)
+
+Velocity-driven kinematic bodies now evaluate their prescribed center-of-mass
+translation and rotation from the start of each solver pass. This removes angular
+phase error from repeatedly linearizing the prescribed rotation and limits
+substep-dependent accumulation drift. Existing linear/angular speed caps still
+apply. Dynamic bodies, position-driven endpoints, multibody integration and
+soft-frame proxies retain their prior integration paths.
+
+No API changes are required. This changes motion involving velocity-driven
+kinematic bodies, including the contact response of bodies they touch. Floating
+point rounding remains; this is not a general contact or continuous-collision
+accuracy guarantee. Native qualification records, independent analytic path
+controls, negative tests against 0.5.0, and bounded CPU observations are retained
+in `absolutejs/research/kinematic-precision/`. The private tagged contact research
+is excluded from this release.

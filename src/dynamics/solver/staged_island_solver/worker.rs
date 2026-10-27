@@ -11,7 +11,7 @@ use crate::dynamics::solver::contact_constraint::ContactWithCoulombFrictionBuild
 #[cfg(feature = "dim3")]
 use crate::dynamics::solver::contact_constraint::ContactWithTwistFrictionBuilder;
 use crate::dynamics::solver::joint_constraint::GenericJointConstraintBuilder;
-use crate::dynamics::solver::solver_body::SOLVER_BODY_ALLOW_FAST_ROTATION;
+use crate::dynamics::solver::solver_body::{SOLVER_BODY_ALLOW_FAST_ROTATION, SOLVER_BODY_VELOCITY_KINEMATIC};
 use crate::dynamics::solver::solver_contact_graph::ContactRef;
 use crate::dynamics::{JointGraphEdge, RigidBodyType, RigidBodyVelocity};
 use crate::geometry::ContactManifold;
@@ -685,11 +685,28 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                             linvel: vels.linear,
                             angvel: vels.angular,
                         };
-                        new_vels.integrate_linearized(
-                            params.dt,
-                            &mut pose.translation,
-                            &mut pose.rotation,
-                        );
+                        if vs.solver_bodies.flags[i] & SOLVER_BODY_VELOCITY_KINEMATIC != 0 {
+                            // Prescribed velocity is constant within this solver pass. Avoid
+                            // substep-count-dependent accumulation drift; use the already
+                            // capped velocity and the original body pose. This flag is only
+                            // set for non-multibody rigid slots, never soft particles/proxies.
+                            // SAFETY: these non-multibody bodies remain read-only during the
+                            // integration stage; workers write only their solver-body slots.
+                            let rb = unsafe { &(&*ctx.bodies)[ctx.island_bodies[i]] };
+                            let elapsed = if is_last_substep { base_params.dt } else { (substep_id + 1) as Real * params.dt };
+                            // Solver poses are center-of-mass poses: evaluate them directly,
+                            // without constructing and converting an intermediate body pose.
+                            let initial_com = rb.pos.position * rb.mprops.local_mprops.local_com;
+                            pose.translation = initial_com + new_vels.linvel * elapsed;
+                            pose.rotation = crate::math::rotation_from_angle(new_vels.angvel * elapsed)
+                                * rb.pos.position.rotation;
+                        } else {
+                            new_vels.integrate_linearized(
+                                params.dt,
+                                &mut pose.translation,
+                                &mut pose.rotation,
+                            );
+                        }
                     }
                     done += claimed_len;
                 }

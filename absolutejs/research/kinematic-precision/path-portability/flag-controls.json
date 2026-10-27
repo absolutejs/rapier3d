@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "space-containing path is one encoded argument",
+    "ordinary RUSTFLAGS preserved",
+    "encoded flags take precedence",
+    "empty encoded flags take precedence",
+    "specific roots follow broad checkout prefix"
+  ]
+}

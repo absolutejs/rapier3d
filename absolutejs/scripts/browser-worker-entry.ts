@@ -40,6 +40,16 @@ try {
    const after=freshWorld.takeSnapshot();
    if(before.length!==after.length||before.some((v,i)=>v!==after[i]))throw Error('Fresh query changed snapshot');
   }finally{freshWorld.free();}
-  postMessage({currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const pathWorld=new R.World({x:0,y:0,z:0});let kinematicPositionErrorM=0,kinematicRotationErrorRad=0;
+  try {
+   pathWorld.timestep=1/60;pathWorld.numSolverIterations=1;pathWorld.integrationParameters.maxCcdSubsteps=0;
+   const body=pathWorld.createRigidBody(R.RigidBodyDesc.kinematicVelocityBased().setLinvel(3,0,0).setAngvel({x:0,y:0,z:30}));pathWorld.createCollider(R.ColliderDesc.ball(.1),body);
+   for(let i=0;i<30;i++)pathWorld.step();const p=body.translation(),q=body.rotation();
+   kinematicPositionErrorM=Math.hypot(p.x-1.5,p.y,p.z);
+   const alignment=Math.abs(q.z*Math.sin(7.5)+q.w*Math.cos(7.5))/Math.hypot(q.x,q.y,q.z,q.w);
+   kinematicRotationErrorRad=2*Math.acos(Math.min(1,alignment));
+   if(kinematicPositionErrorM>3e-6||kinematicRotationErrorRad>2e-6)throw Error('Prescribed kinematic path drifted');
+  }finally{pathWorld.free();}
+  postMessage({kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

@@ -1,0 +1,14 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [22.75ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [3.86ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [2.18ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [3.69ms]
+(pass) prescribed position endpoint remains authoritative [1.31ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [1.96ms]
+
+ 6 pass
+ 0 fail
+ 12 expect() calls
+Ran 6 tests across 1 file. [339.00ms]
