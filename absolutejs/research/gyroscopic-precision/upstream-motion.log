@@ -1,0 +1,51 @@
+[
+  {
+    hz: 960,
+    tilt: 0,
+    frames: 1920,
+    firstDifferentFrame: 1,
+    peaks: {
+      translation: 0.023108499708008667,
+      rotation: 0.0029046778306263694,
+      linvel: 7.905748240228633,
+      angvel: 2.763782605764828,
+    },
+    elapsedMs: 4365.284159,
+  }, {
+    hz: 960,
+    tilt: 0.3,
+    frames: 1920,
+    firstDifferentFrame: 1,
+    peaks: {
+      translation: 0.7110455031320356,
+      rotation: 0.11932499948480899,
+      linvel: 127.9661008016871,
+      angvel: 46.99320936650995,
+    },
+    elapsedMs: 3808.5084240000006,
+  }, {
+    hz: 1920,
+    tilt: 0,
+    frames: 3840,
+    firstDifferentFrame: 1,
+    peaks: {
+      translation: 0.04562639057001207,
+      rotation: 0.004471203318721703,
+      linvel: 28.52379162101448,
+      angvel: 11.757743009383994,
+    },
+    elapsedMs: 7885.528144,
+  }, {
+    hz: 1920,
+    tilt: 0.3,
+    frames: 3840,
+    firstDifferentFrame: 1,
+    peaks: {
+      translation: 2.935694411391395,
+      rotation: 0.3242623022530481,
+      linvel: 87.12447882210606,
+      angvel: 15.20814522084308,
+    },
+    elapsedMs: 9505.946979,
+  }
+]

@@ -30,7 +30,8 @@ wrappers before propagating. Solver distances are the engine's cached contact
 update distances, not a continuous or post-step exact penetration guarantee.
 
 `contactPair` retains its existing geometric behavior. Version 0.6 improves
-velocity-driven kinematic integration as described below. Contact and CCD policy
+velocity-driven kinematic integration; 0.7 reduces repeated gyroscopic roundoff
+as described below. Contact and CCD policy
 defaults are unchanged; this is not a general fix for physical overlap. Runtime
 motion still needs independent geometric and energy checks.
 
@@ -199,3 +200,29 @@ paths to stable virtual prefixes before checking the qualified WASM checksum.
 Custom compiler flags are preserved, but their output must still match the
 qualified kernel. A checksum mismatch stops API packaging; it does not silently
 adopt a different native solver.
+
+## Gyroscopic increments and build identity (0.7)
+
+Gyroscopic updates now add the computed momentum correction to the existing
+world angular velocity. This avoids reconstructing the entire velocity through
+inertia and inverse inertia when the correction is zero or very small. Gyroscopic
+precession stays enabled. Rotation and contact response can change because the
+previous round trips accumulated artificial spin-up at high subdivision counts.
+Floating-point and time-discretization errors remain, especially for tilted,
+elongated bodies. Contact algorithms and CCD policies are unchanged.
+
+Diagnostic collectors can identify the exact package and native kernel without
+loading or initializing the physics runtime:
+
+```ts
+import {buildInfo} from '@absolutejs/rapier3d/build-info';
+report.physicsBuild = buildInfo;
+```
+
+The frozen metadata includes package version, qualified kernel release, native
+WASM SHA-256/byte count, upstream/binding versions and native-change status. The
+same values are available as `RAPIER.buildInfo` and the root named `buildInfo`
+export. Package and kernel releases can differ when an API-only upgrade reuses
+a qualified kernel. The lightweight subpath contains metadata only and works
+before `init()`. It reports the packaged kernel; supplying custom bytes to
+`init(input)` does not change that identity and must be recorded separately.

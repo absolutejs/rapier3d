@@ -1,0 +1,59 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [51.16ms]
+(pass) invalid contact policy values fail before mutating native state [1.19ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [26.51ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [13.72ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [6.84ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [5.33ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1467.18ms]
+(pass) live separation follows pose changes while cached distance stays fixed [1323.78ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [1244.95ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [17.62ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [2.57ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [1.52ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [1.89ms]
+(pass) prescribed position endpoint remains authoritative [0.91ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.68ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [6.70ms]
+(pass) current-body query composes noncommuting parent and child rotations [5.56ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [2.26ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [1.94ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [2817.72ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [4.28ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [20.11ms]
+(pass) diagnostic identity imports independently of the physics runtime [27.39ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [17.65ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [15.52ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [15.86ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [18.66ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [83.70ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [4.59ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [1636.43ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [1325.44ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [4380.34ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [3691.59ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [7574.78ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0.3 [10083.42ms]
+
+ 35 pass
+ 0 fail
+ 48051 expect() calls
+Ran 35 tests across 9 files. [39.37s]

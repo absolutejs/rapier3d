@@ -1,0 +1,2 @@
+absolutejs/research/gyroscopic-precision/upstream-motion-probe.ts(4,15): error TS7016: Could not find a declaration file for module '../../../dist/rapier.mjs'. '/home/alexkahn/alex/rapier-gyro-release/dist/rapier.mjs' implicitly has an 'any' type.
+error: "tsc" exited with code 2

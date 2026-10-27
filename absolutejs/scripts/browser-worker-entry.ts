@@ -1,4 +1,5 @@
 import R from '../../dist/rapier.mjs';
+import {buildInfo} from '../../dist/build-info.mjs';
 import {fixture} from '../tests/fixture';
 try {
  await Promise.all([R.init(),R.init()]);
@@ -50,6 +51,15 @@ try {
    kinematicRotationErrorRad=2*Math.acos(Math.min(1,alignment));
    if(kinematicPositionErrorM>3e-6||kinematicRotationErrorRad>2e-6)throw Error('Prescribed kinematic path drifted');
   }finally{pathWorld.free();}
-  postMessage({kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
+  const spinWorld=new R.World({x:0,y:0,z:0});let angularVelocityDrift=0;
+  try {
+   spinWorld.timestep=1/960;spinWorld.numSolverIterations=128;spinWorld.integrationParameters.maxCcdSubsteps=0;
+   const body=spinWorld.createRigidBody(R.RigidBodyDesc.dynamic().setAngvel({x:6,y:0,z:0}).setCanSleep(false));
+   spinWorld.createCollider(R.ColliderDesc.cuboid(20,.05,.5),body);
+   for(let i=0;i<96;i++)spinWorld.step();const w=body.angvel();angularVelocityDrift=Math.hypot(w.x-6,w.y,w.z);
+   if(angularVelocityDrift>1e-6)throw Error('Principal-axis free spin accelerated');
+  }finally{spinWorld.free();}
+  postMessage({buildInfo,angularVelocityDrift,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

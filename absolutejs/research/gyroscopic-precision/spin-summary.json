@@ -1,0 +1,20 @@
+{
+  "cases": 336,
+  "beforeMaxRelativeEnergyError": 0.0040326956853830925,
+  "afterMaxRelativeEnergyError": 0.0005619750655194739,
+  "energyRegressionsOverOnePpm": [
+    {
+      "shape": "long-box",
+      "hz": 960,
+      "tilted": true,
+      "spin": "x6",
+      "budget": 4,
+      "stepsCompleted": 96,
+      "beforeEnergyError": 1.6770510094334394e-05,
+      "afterEnergyError": 1.8075763316103754e-05,
+      "angularErrorDelta": 4.479662090043783e-06
+    }
+  ],
+  "angularRegressionsOver0_0001RadPerSecond": [],
+  "scope": "No contacts or CCD; does not establish general contact accuracy. f32 conditioning and time-discretization error remain."
+}

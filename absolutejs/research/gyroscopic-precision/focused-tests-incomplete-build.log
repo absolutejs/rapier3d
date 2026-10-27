@@ -1,0 +1,26 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/build-info.test.ts:
+ 9 |  const wasm=readFileSync('.absolutejs/api/rapier_wasm3d_bg.wasm');
+10 |  expect(buildInfo.packageName).toBe(pkg.name);
+11 |  expect(buildInfo.packageVersion).toBe(pkg.version);
+12 |  expect(buildInfo.wasmSha256).toBe(createHash('sha256').update(wasm).digest('hex'));
+13 |  expect(buildInfo.wasmBytes).toBe(wasm.length);
+14 |  expect(buildInfo).toEqual(JSON.parse(readFileSync('dist/provenance.json','utf8')));
+                                           ^
+error: ENOENT: no such file or directory, open 'dist/provenance.json'
+      at <anonymous> (/home/alexkahn/alex/rapier-gyro-release/absolutejs/tests/build-info.test.ts:14:39)
+(fail) build identity matches the actual package and qualified native bytes [32.15ms]
+(pass) diagnostic identity imports independently of the physics runtime [40.13ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [157.63ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [49.11ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [37.55ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [40.90ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [130.37ms]
+
+ 6 pass
+ 1 fail
+ 25 expect() calls
+Ran 7 tests across 2 files. [1282.00ms]

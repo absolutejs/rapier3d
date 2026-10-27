@@ -34,3 +34,10 @@ first.contactColliderAtCurrentBodyPoses(second);
 if (fresh) first.contactColliderAtCurrentBodyPoses(second, 0, fresh);
 // @ts-expect-error Prediction is numeric.
 first.contactColliderAtCurrentBodyPoses(second, '0.01');
+
+import {buildInfo, type PhysicsBuildInfo} from '@absolutejs/rapier3d/build-info';
+const identity: PhysicsBuildInfo = buildInfo;
+const hash: string = identity.wasmSha256;
+// @ts-expect-error Artifact identity is read-only.
+identity.packageVersion = 'spoof';
+void hash;

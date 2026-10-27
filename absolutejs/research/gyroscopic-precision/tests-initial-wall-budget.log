@@ -1,0 +1,71 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [36.58ms]
+(pass) invalid contact policy values fail before mutating native state [1.62ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [31.84ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [12.53ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [9.80ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [5.78ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1737.63ms]
+(pass) live separation follows pose changes while cached distance stays fixed [1342.76ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [1312.05ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [5.34ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [9.92ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [2.22ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [2.41ms]
+(pass) prescribed position endpoint remains authoritative [0.91ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.44ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [3.78ms]
+(pass) current-body query composes noncommuting parent and child rotations [4.82ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [2.34ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [2.05ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [2673.76ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [1.72ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [9.40ms]
+(pass) diagnostic identity imports independently of the physics runtime [19.19ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [11.89ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [19.78ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [18.79ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [17.56ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [62.18ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [4.18ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [1582.20ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [1916.91ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [4296.84ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [4208.66ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [9150.48ms]
+24 |  }finally{w.free();}
+25 | });
+26 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`contact inspection preserves native motion ${hz}Hz tilt=${tilt}`,()=>{
+27 |  const started=performance.now();
+28 |  const a=fixture(R,hz,tilt),b=fixture(R,hz,tilt);try{
+29 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+                                                                                                                                            ^
+error: Parity fixture exceeded 10s CPU-work wall budget
+      at <anonymous> (/home/alexkahn/alex/rapier-gyro-release/absolutejs/tests/solver-contacts.test.ts:29:136)
+(fail) contact inspection preserves native motion 1920Hz tilt=0.3 [10308.83ms]
+
+1 tests failed:
+(fail) contact inspection preserves native motion 1920Hz tilt=0.3 [10308.83ms]
+
+ 34 pass
+ 1 fail
+ 48021 expect() calls
+Ran 35 tests across 9 files. [45.44s]
