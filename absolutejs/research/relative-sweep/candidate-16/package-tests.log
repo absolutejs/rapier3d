@@ -1,0 +1,132 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [25.64ms]
+(pass) invalid contact policy values fail before mutating native state [0.68ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [21.48ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [12.32ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [7.10ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [10.73ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1223.01ms]
+(pass) live separation follows pose changes while cached distance stays fixed [907.65ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [834.64ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [12.07ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [1799.86ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [3.89ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [7.46ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [935.17ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [768.76ms]
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`query-only build preserves upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+31 |    if(i%120===0) for(let k=0;k<2;k++) {expect(a.bodies[k]!.translation()).toEqual(b.bodies[k]!.translation());expect(a.bodies[k]!.rotation()).toEqual(b.bodies[k]!.rotation());expect(a.bodies[k]!.linvel()).toEqual(b.bodies[k]!.linvel());}
+                                                                               ^
+error: expect(received).toEqual(expected)
+
+- DI {
+-   "x": 0.28863826394081116,
+-   "y": 2.5422635078430176,
+-   "z": 1.056158185005188,
++ ag {
++   "x": 0.2872812747955322,
++   "y": 2.546332359313965,
++   "z": 1.0637551546096802,
+  }
+
+- Expected  - 4
++ Received  + 4
+
+      at <anonymous> (/home/alexkahn/alex/rapier-relative-motion-research/absolutejs/tests/solver-contacts.test.ts:31:75)
+(fail) query-only build preserves upstream motion 960Hz tilt=0 [1864.20ms]
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`query-only build preserves upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+31 |    if(i%120===0) for(let k=0;k<2;k++) {expect(a.bodies[k]!.translation()).toEqual(b.bodies[k]!.translation());expect(a.bodies[k]!.rotation()).toEqual(b.bodies[k]!.rotation());expect(a.bodies[k]!.linvel()).toEqual(b.bodies[k]!.linvel());}
+                                                                               ^
+error: expect(received).toEqual(expected)
+
+- DI {
+-   "x": 0.08911208063364029,
+-   "y": 6.459242820739746,
+-   "z": -17.6909122467041,
++ ag {
++   "x": -0.18517570197582245,
++   "y": 3.7478489875793457,
++   "z": -9.449027061462402,
+  }
+
+- Expected  - 4
++ Received  + 4
+
+      at <anonymous> (/home/alexkahn/alex/rapier-relative-motion-research/absolutejs/tests/solver-contacts.test.ts:31:75)
+(fail) query-only build preserves upstream motion 960Hz tilt=0.3 [1340.19ms]
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`query-only build preserves upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+31 |    if(i%120===0) for(let k=0;k<2;k++) {expect(a.bodies[k]!.translation()).toEqual(b.bodies[k]!.translation());expect(a.bodies[k]!.rotation()).toEqual(b.bodies[k]!.rotation());expect(a.bodies[k]!.linvel()).toEqual(b.bodies[k]!.linvel());}
+                                                                               ^
+error: expect(received).toEqual(expected)
+
+- DI {
+-   "x": 0.14679589867591858,
+-   "y": 3.770474672317505,
+-   "z": 0.39874863624572754,
++ ag {
++   "x": 0.1457008272409439,
++   "y": 3.793954372406006,
++   "z": 0.40206435322761536,
+  }
+
+- Expected  - 4
++ Received  + 4
+
+      at <anonymous> (/home/alexkahn/alex/rapier-relative-motion-research/absolutejs/tests/solver-contacts.test.ts:31:75)
+(fail) query-only build preserves upstream motion 1920Hz tilt=0 [3055.61ms]
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`query-only build preserves upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+31 |    if(i%120===0) for(let k=0;k<2;k++) {expect(a.bodies[k]!.translation()).toEqual(b.bodies[k]!.translation());expect(a.bodies[k]!.rotation()).toEqual(b.bodies[k]!.rotation());expect(a.bodies[k]!.linvel()).toEqual(b.bodies[k]!.linvel());}
+                                                                               ^
+error: expect(received).toEqual(expected)
+
+- DI {
+-   "x": 0.4678293764591217,
+-   "y": 5.38312292098999,
+-   "z": -8.856465339660645,
++ ag {
++   "x": -0.3002545237541199,
++   "y": 4.578521728515625,
++   "z": -4.371449947357178,
+  }
+
+- Expected  - 4
++ Received  + 4
+
+      at <anonymous> (/home/alexkahn/alex/rapier-relative-motion-research/absolutejs/tests/solver-contacts.test.ts:31:75)
+(fail) query-only build preserves upstream motion 1920Hz tilt=0.3 [3433.61ms]
+
+absolutejs/tests/step-trace.test.ts:
+(pass) step traces are opt-in, owned, fresh and preserve snapshot motion [44.38ms]
+(pass) step trace rejects invalid flags and reports a bounded body-limit overflow [5.95ms]
+(pass) step trace attributes accepted static CCD clamps without changing the solve [2.09ms]
+
+ 18 pass
+ 4 fail
+ 48803 expect() calls
+Ran 22 tests across 6 files. [17.65s]

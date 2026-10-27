@@ -29,7 +29,7 @@ does not prove that replacing this one call fixes world-level CCD.
 
 ## World-level prototypes
 
-The branch now also contains nine numbered, unreleased Rapier candidates. Candidate
+The branch now also contains numbered, unreleased Rapier candidates. Candidate
 folders preserve source-identified build/API receipts, kernels' provenance, sphere
 matrices and failed qualification records. Candidate 4 fixes duplicated sensor
 crossing events and preserves candidate 3's physical trajectory.
@@ -44,7 +44,7 @@ Toolchain for these CPU/WASM builds: rustc 1.94.0, cargo 1.94.0, Bun
 1.4.4+absolute.1, wasm-bindgen 0.2.129. Native builds use two Cargo jobs. Research
 WASM is retained in this checkout's durable .cache/target directory; source and
 receipts, not generated caches, are the remote backup. Production remains registry
-@absolutejs/rapier3d 0.3.0. No native GPU work or PAAS change was performed.
+@absolutejs/rapier3d 0.4.0. No native GPU work or PAAS change was performed.
 
 ## Kinematic follow-up and measured cost
 
@@ -66,3 +66,31 @@ python3 absolutejs/research/relative-sweep/check-kinematic-qualification.py abso
 The game checkpoint probe's `--state-audit` flag and `compare-ccd-state.py` add exact
 bounded body/contact fingerprints for optimization comparisons. They do not make
 physical acceptance claims or add per-frame production telemetry overhead.
+
+## Contact precision and clamp follow-up
+
+Candidates 10–11 isolate a false compound contact and test EPA precision. Removing
+that false contact alone is insufficient: candidate 11 regresses a cold material
+history to 14.79% sampled overlap. Candidate 12 adds bounded opt-in phase and
+accepted-hit tracing; it preserves all three 128-frame baseline fixtures exactly.
+The trace identifies CCD endpoint shortening as the source of large overlap spikes.
+
+Candidate 13 advances accepted dynamic impact components at one shared time
+fraction, including slower targets. This fixes one mechanism but misses a floor hit
+where an already-touching chip has no new sweep hit. Candidate 14's broad touching
+component is rejected: it drags a frictionless neighbor with no blocked trajectory.
+Candidate 15 propagates only across contacts whose normal constraint is worsened by
+independent clamping. See [qualification and limits](candidate-15/qualification.md).
+Its 126 oriented controls and eight stacked controls pass, as do narrow kinematic
+and GPU-disabled browser checks. Residual material overlap and four retained
+upstream-motion parity failures prevent release.
+
+Candidate 16 optimizes the contact graph incrementally; qualification evidence is
+kept in its own folder. Treat it as unqualified until its receipt explicitly records
+trajectory parity and the physical controls. Neither these solver changes nor the
+research-only trace API has been adopted in the published game dependency.
+
+The game repository contains `docs/material-provenance-2026-10-26/` with exact
+replay snapshots, phase measurements, every-frame windows and the corresponding
+findings. Read those records before repeating investigations. Candidate numbers
+identify reproducible experiments, not npm release versions.

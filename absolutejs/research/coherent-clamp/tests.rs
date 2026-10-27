@@ -37,3 +37,39 @@ use clamp_graph::coherent_fractions as solve;
 #[test] fn disconnected_touching_group_is_not_shortened() {
  assert_eq!(solve(&[((1,0),None,0.25),((2,0),Some((3,0)),1.0)]),vec![((1,0),0.25)]);
 }
+
+#[test] fn incremental_updates_only_return_changed_members() {
+ let mut graph=clamp_graph::ClampGraph::new();
+ assert_eq!(graph.add_hit((1,0),None,0.5),vec![((1,0),0.5)]);
+ assert_eq!(graph.add_hit((1,0),Some((2,0)),1.0),vec![((2,0),0.5)]);
+ assert!(graph.add_hit((2,0),Some((1,0)),0.8).is_empty());
+ let mut changed=graph.add_hit((2,0),None,0.25);changed.sort_by_key(|v|v.0);
+ assert_eq!(changed,vec![((1,0),0.25),((2,0),0.25)]);
+ assert_eq!(graph.fractions(),changed);
+}
+#[test] fn incremental_graph_matches_independent_fixed_point_reference() {
+ // Deterministic generated graphs, including duplicate edges and disconnected seeds.
+ let mut seed=731_u32;
+ for _ in 0..50 {
+  let mut hits=Vec::new();let mut times=[1.0_f32;24];let mut edges=Vec::new();
+  for _ in 0..80 {
+   seed=seed.wrapping_mul(1664525).wrapping_add(1013904223);let a=(seed%24) as usize;
+   seed=seed.wrapping_mul(1664525).wrapping_add(1013904223);let b=(seed%24) as usize;
+   seed=seed.wrapping_mul(1664525).wrapping_add(1013904223);let t=(seed%9+1) as f32/10.0;
+   if seed%3==0 { hits.push(((a as u32,0),None,t));times[a]=times[a].min(t); }
+   else { hits.push(((a as u32,0),Some((b as u32,0)),1.0));edges.push((a,b)); }
+  }
+  loop {let mut changed=false;for &(a,b) in &edges {let t=times[a].min(times[b]);changed|=times[a]!=t||times[b]!=t;times[a]=t;times[b]=t;}if !changed {break;}}
+  let expected:Vec<_>=times.iter().enumerate().filter(|(_,t)|**t<1.0).map(|(i,&t)|((i as u32,0),t)).collect();
+  assert_eq!(solve(&hits),expected);hits.reverse();assert_eq!(solve(&hits),expected);
+ }
+}
+#[test] fn long_incremental_chain_reports_each_new_body_once() {
+ let mut graph=clamp_graph::ClampGraph::new();
+ let mut updates=graph.add_hit((0,0),None,0.125).len();
+ for i in 0..10_000 { updates+=graph.add_hit((i,0),Some((i+1,0)),1.0).len(); }
+ assert_eq!(updates,10_001);
+ let fractions=graph.fractions();assert_eq!(fractions.len(),10_001);
+ assert!(fractions.iter().all(|(_,t)|*t==0.125));
+ assert!(graph.add_hit((0,0),Some((10_000,0)),1.0).is_empty());
+}

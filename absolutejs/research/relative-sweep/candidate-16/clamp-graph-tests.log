@@ -1,0 +1,15 @@
+
+running 11 tests
+test disconnected_touching_group_is_not_shortened ... ok
+test chains_are_coherent_and_order_independent ... ok
+test duplicates_generations_and_invalid_fractions ... ok
+test external_targets_do_not_join_unrelated_components ... ok
+test includes_slow_dynamic_target ... ok
+test incremental_updates_only_return_changed_members ... ok
+test shared_time_preserves_common_translation_clearance ... ok
+test touching_links_propagate_only_from_impact_seeds ... ok
+test bounded_linear_chain_uses_all_accepted_edges ... ok
+test incremental_graph_matches_independent_fixed_point_reference ... ok
+test long_incremental_chain_reports_each_new_body_once ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s

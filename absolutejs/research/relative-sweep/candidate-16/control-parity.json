@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "orientedCases": 126,
+  "stackCases": 8,
+  "excluded": "Only elapsedMs in stack controls; poses, velocities, clearance and oriented phase traces are identical."
+}

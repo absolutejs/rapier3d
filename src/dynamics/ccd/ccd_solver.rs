@@ -337,8 +337,9 @@ impl CCDSolver {
         // Only join a touching neighbor when unequal clamping worsens its normal
         // constraint. Tangential sliding must remain free. Revisit changed components
         // until fractions stop decreasing; each added edge permanently joins components.
-        let mut fractions: alloc::collections::BTreeMap<_, _> =
-            super::clamp_graph::coherent_fractions(&hits).into_iter().collect();
+        let mut graph = super::clamp_graph::ClampGraph::new();
+        for &(origin, target, fraction) in &hits { graph.add_hit(origin, target, fraction); }
+        let mut fractions: alloc::collections::BTreeMap<_, _> = graph.fractions().into_iter().collect();
         let mut pending: alloc::collections::BTreeSet<_> = fractions.keys().copied().collect();
         let mut links = alloc::collections::BTreeSet::new();
         while let Some(key) = pending.pop_first() {
@@ -375,8 +376,7 @@ impl CCDSolver {
                     });
                     if violates {
                         links.insert(edge);
-                        hits.push((key, Some(other_key), 1.0));
-                        let updated = super::clamp_graph::coherent_fractions(&hits);
+                        let updated = graph.add_hit(key, Some(other_key), 1.0);
                         for (changed, fraction) in updated {
                             if fraction < fractions.get(&changed).copied().unwrap_or(1.0) {
                                 fractions.insert(changed, fraction);

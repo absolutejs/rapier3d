@@ -1,0 +1,22 @@
+{
+  "gpu": false,
+  "result": {
+    "traceRows": 5,
+    "traceImpactRows": 1,
+    "traceOwnedArrays": true,
+    "traceSnapshotIsolation": true,
+    "totalCcdMs": 45.40000000000023,
+    "totalToiMs": 42.30000000000022,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}
