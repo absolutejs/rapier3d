@@ -45,3 +45,6 @@ pub(crate) fn compute_tangent_contact_directions<N: ScalarType>(
 
     [tangent1, bitangent1]
 }
+
+#[cfg(feature = "dim3")]
+mod plane_oracle;

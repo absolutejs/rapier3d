@@ -1,0 +1,305 @@
+{
+  "physicalAcceptance": false,
+  "cases": [
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 0,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": false,
+      "depthM": 0.00017152186572265415,
+      "noWarmstartDepthM": 0.00017151185963203142,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0002301984786754474
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 6,
+      "reverse": true,
+      "depthM": 0.00017152186572265415,
+      "noWarmstartDepthM": 0.00017151185963203142,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.00018835983064491302
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -6,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": false,
+      "depthM": 0.003876018328525896,
+      "noWarmstartDepthM": 0.003876059203987134,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.001127641648054123
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": 30,
+      "reverse": true,
+      "depthM": 0.003876018328525896,
+      "noWarmstartDepthM": 0.003876059203987134,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0013466801028698683
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 60,
+      "omega": -30,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 0,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": false,
+      "depthM": 4.0517542971504894e-05,
+      "noWarmstartDepthM": 4.0517542971504894e-05,
+      "oppositeOrderDepthDifferenceM": 1.213171914038469e-07,
+      "maxSpinRadS": 0.0005463953712023795
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 6,
+      "reverse": true,
+      "depthM": 4.063886016290874e-05,
+      "noWarmstartDepthM": 4.0651935044530574e-05,
+      "oppositeOrderDepthDifferenceM": 1.213171914038469e-07,
+      "maxSpinRadS": 0.00040714835631661117
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -6,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": false,
+      "depthM": 0.0014836417606419322,
+      "noWarmstartDepthM": 0.0014836417606419322,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0026582065038383007
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": 30,
+      "reverse": true,
+      "depthM": 0.0014836417606419322,
+      "noWarmstartDepthM": 0.0014836417606419322,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0019294887315481901
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 240,
+      "omega": -30,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 0,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": false,
+      "depthM": 1.2045303325089463e-05,
+      "noWarmstartDepthM": 1.1938872007996593e-05,
+      "oppositeOrderDepthDifferenceM": 3.947549176430698e-08,
+      "maxSpinRadS": 0.0005829299334436655
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 6,
+      "reverse": true,
+      "depthM": 1.2005827833325156e-05,
+      "noWarmstartDepthM": 1.188611028411779e-05,
+      "oppositeOrderDepthDifferenceM": 3.947549176430698e-08,
+      "maxSpinRadS": 0.0004909622948616743
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -6,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": false,
+      "depthM": 0.00026488817396162767,
+      "noWarmstartDepthM": 0.00026489421478502473,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0008293866994790733
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": 30,
+      "reverse": true,
+      "depthM": 0.00026488817396162767,
+      "noWarmstartDepthM": 0.00026489421478502473,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0007682892610318959
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": false,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    },
+    {
+      "span": 20,
+      "hz": 960,
+      "omega": -30,
+      "reverse": true,
+      "depthM": 0,
+      "noWarmstartDepthM": 0,
+      "oppositeOrderDepthDifferenceM": 0.0,
+      "maxSpinRadS": 0.0
+    }
+  ]
+}

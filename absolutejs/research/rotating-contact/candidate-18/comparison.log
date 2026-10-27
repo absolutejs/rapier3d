@@ -1,0 +1,7 @@
+Exact untagged parity frames: 4284
+{'span': 20, 'hz': 60, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.021393695934899357, 'candidateDepthM': 0.00017152186572265415}
+{'span': 20, 'hz': 60, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.09817862682473542, 'candidateDepthM': 0.003876018328525896}
+{'span': 20, 'hz': 240, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.0020954915054597206, 'candidateDepthM': 4.0517542971504894e-05}
+{'span': 20, 'hz': 240, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.08258078111150279, 'candidateDepthM': 0.0014836417606419322}
+{'span': 20, 'hz': 960, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.00041613290211515996, 'candidateDepthM': 1.2045303325089463e-05}
+{'span': 20, 'hz': 960, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.009138642700143515, 'candidateDepthM': 0.00026488817396162767}

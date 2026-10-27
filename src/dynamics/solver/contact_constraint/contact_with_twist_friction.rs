@@ -52,6 +52,8 @@ pub(crate) struct ContactWithTwistFrictionBuilder<N: ScalarType> {
     /// The pair's restitution coefficient (needed by `update` to recompute the
     /// restitution rhs seed).
     restitution: N,
+    #[cfg(feature = "dim3")]
+    oracle_roles: [i8; SIMD_WIDTH],
 }
 
 impl ContactWithTwistFrictionBuilder<SimdReal> {
@@ -68,6 +70,8 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         // frontier pair's sleeping body acting as a world-attached wall), so the rigid-body
         // set is never read here.
         let _ = bodies;
+        #[cfg(feature = "dim3")]
+        { out_builder.oracle_roles = super::plane_oracle::roles(manifolds, bodies); }
         let ids1: [u32; SIMD_WIDTH] = array![|ii| if manifolds[ii].data.relative_dominance <= 0
             && !manifold_id[ii].is_padding()
         {
@@ -82,6 +86,11 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         } else {
             u32::MAX
         }];
+
+        #[cfg(feature = "dim3")]
+        for i in 0..SIMD_WIDTH {
+            if manifold_id[i].is_padding() { out_builder.oracle_roles[i] = 0; }
+        }
 
         // Optional guard: validate the solver-body ids once here, before the
         // unchecked SIMD gathers below (and every per-iteration gather that
@@ -423,6 +432,30 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         }
     }
 
+    #[cfg(feature = "dim3")]
+    fn refresh_plane_oracle(&self, bodies: &SolverBodies, constraint: &mut ContactWithTwistFriction<SimdReal>) -> Option<(SimdReal, SimdReal)> {
+        if self.oracle_roles.iter().all(|r| *r == 0) { return None; }
+        let samples: [super::plane_oracle::Sample; SIMD_WIDTH] = core::array::from_fn(|i|
+            super::plane_oracle::sample(self.oracle_roles[i], constraint.solver_vel1[i], constraint.solver_vel2[i], bodies));
+        let active = SimdReal::from(array![|i| if self.oracle_roles[i] == 0 { 0.0 } else { 1.0 }]);
+        let mask = active.simd_gt(SimdReal::zero());
+        let dir = <SimdReal as ScalarType>::Vector::from(gather![|i| samples[i].dir1.into()]);
+        let torque1 = <SimdReal as ScalarType>::AngVector::from(gather![|i| samples[i].torque1.into()]);
+        let torque2 = <SimdReal as ScalarType>::AngVector::from(gather![|i| samples[i].torque2.into()]);
+        let p1 = bodies.gather_poses(constraint.solver_vel1);
+        let p2 = bodies.gather_poses(constraint.solver_vel2);
+        let ii1 = p1.ii.transform_vector(torque1);
+        let ii2 = p2.ii.transform_vector(torque2);
+        let mass = utils::simd_inv(dir.gdot((p1.im + p2.im).component_mul(&dir)) + torque1.gdot(ii1) + torque2.gdot(ii2));
+        constraint.dir1 = dir.select(mask, constraint.dir1);
+        let part = &mut constraint.normal_part[0];
+        part.torque_dir1 = torque1.select(mask, part.torque_dir1);
+        part.torque_dir2 = torque2.select(mask, part.torque_dir2);
+
+        part.r = mass.select(mask, part.r);
+        Some((active, SimdReal::from(array![|i| samples[i].distance])))
+    }
+
     pub fn update(
         &self,
         params: &IntegrationParameters,
@@ -431,6 +464,8 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         _multibodies: &MultibodyJointSet,
         constraint: &mut ContactWithTwistFriction<SimdReal>,
     ) {
+        #[cfg(feature = "dim3")]
+        let oracle = self.refresh_plane_oracle(bodies, constraint);
         // Contacts touching a fixed body (world-attached side ⇒ solver-vel id `u32::MAX`)
         // use a stiffer "static" softness. Blend per lane with a 0/1 mask.
         let lane_static = |ii: usize| -> Real {
@@ -475,6 +510,8 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
             let p1 = poses1.transform_point(info.local_p1) + tangent_delta;
             let p2 = poses2.transform_point(info.local_p2);
             let dist = info.dist + (p1 - p2).gdot(constraint.dir1);
+            #[cfg(feature = "dim3")]
+            let dist = if let Some((active, value)) = oracle { value.select(active.simd_gt(SimdReal::zero()), dist) } else { dist };
 
             // Normal part.
             {
@@ -533,6 +570,8 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         bodies: &SolverBodies,
         constraint: &mut ContactWithTwistFriction<SimdReal>,
     ) {
+        #[cfg(feature = "dim3")]
+        let oracle = self.refresh_plane_oracle(bodies, constraint);
         let inv_dt = SimdReal::splat(params.inv_dt());
         let poses1 = bodies.gather_transforms(constraint.solver_vel1);
         let poses2 = bodies.gather_transforms(constraint.solver_vel2);
@@ -544,6 +583,8 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
             let p1 = poses1.transform_point(info.local_p1) + tangent_delta;
             let p2 = poses2.transform_point(info.local_p2);
             let dist = info.dist + (p1 - p2).gdot(constraint.dir1);
+            #[cfg(feature = "dim3")]
+            let dist = if let Some((active, value)) = oracle { value.select(active.simd_gt(SimdReal::zero()), dist) } else { dist };
             // See `update`: the restitution seed is applied by `apply_restitution`, not here.
             normal_part.rhs = dist.simd_max(SimdReal::zero()) * inv_dt;
             normal_part.cfm_factor = SimdReal::splat(1.0);
