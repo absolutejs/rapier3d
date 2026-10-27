@@ -1,0 +1,13 @@
+{
+  "registryVersion": "0.31.1",
+  "canonicalRevision": "dbd99a8dfce020da3698056471262435d56d3f69",
+  "sourceFiles": 344,
+  "missing": [],
+  "added": [],
+  "changed": [
+    "query/gjk/voronoi_simplex3.rs"
+  ],
+  "registryChangedHash": "e98dff10973194683a5f54dd2ab7c373b9a7e8f565d15607e9e8226da00b4950",
+  "canonicalChangedHash": "87e43c509f7fdac40def3c4626d553aae6aa8e59e1ab0262d0d7b761c11e4b78",
+  "allOtherSourceFilesIdentical": true
+}
