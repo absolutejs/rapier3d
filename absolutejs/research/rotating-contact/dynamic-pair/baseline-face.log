@@ -1,0 +1,9 @@
+{
+  cases: 48,
+  feature: "face",
+  oracle: false,
+  peakDepthM: 0.10760014501547564,
+  maxMomentumError: 4.338892622790509e-7,
+  maxAngularMomentumError: 1.4981729105898012,
+  maxEnergyGain: 8.915615412099214,
+}

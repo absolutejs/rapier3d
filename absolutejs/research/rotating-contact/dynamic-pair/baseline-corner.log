@@ -1,0 +1,9 @@
+{
+  cases: 48,
+  feature: "corner",
+  oracle: false,
+  peakDepthM: 0,
+  maxMomentumError: 3.386912998537949e-8,
+  maxAngularMomentumError: 1.338501340952604,
+  maxEnergyGain: 0,
+}

@@ -1,4 +1,5 @@
-//! PRIVATE RESEARCH ONLY: explicit tagged radius-0.1 sphere / prescribed plane oracle.
+//! PRIVATE RESEARCH ONLY: tagged radius-0.1 sphere / plane or finite-box oracle.
+//! Supports may be prescribed or dynamic; conservation is qualified separately.
 //! Not a general contact algorithm; user-data tags are set only by the research fixture.
 use crate::dynamics::{RigidBodySet};
 use crate::dynamics::solver::solver_body::SolverBodies;
@@ -16,8 +17,8 @@ pub(super) fn roles(manifolds: [&ContactManifold; SIMD_WIDTH], bodies: &RigidBod
         let Some(a) = m.rigid_body1.and_then(|h| bodies.get(h)) else { return 0 };
         let Some(b) = m.rigid_body2.and_then(|h| bodies.get(h)) else { return 0 };
         let shape_role = |tag| if tag == PLANE_TAG { 1 } else if tag == BOX20_TAG { 2 } else if tag == BOX2_TAG { 3 } else { 0 };
-        let role = if shape_role(a.user_data) != 0 && b.user_data == SPHERE_TAG && a.is_kinematic() && b.is_dynamic() { shape_role(a.user_data) }
-            else if shape_role(b.user_data) != 0 && a.user_data == SPHERE_TAG && b.is_kinematic() && a.is_dynamic() { -shape_role(b.user_data) }
+        let role = if shape_role(a.user_data) != 0 && b.user_data == SPHERE_TAG && a.is_dynamic_or_kinematic() && b.is_dynamic() { shape_role(a.user_data) }
+            else if shape_role(b.user_data) != 0 && a.user_data == SPHERE_TAG && b.is_dynamic_or_kinematic() && a.is_dynamic() { -shape_role(b.user_data) }
             else { return 0 };
         assert!(m.friction == 0.0 && m.restitution == 0.0 && m.num_active_contacts() == 1,
             "Plane oracle requires one frictionless, nonbouncy contact");
