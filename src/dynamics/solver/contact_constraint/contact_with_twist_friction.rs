@@ -423,6 +423,36 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         }
     }
 
+    /// Research: differentiate the same fixed-normal anchor constraint at its current
+    /// poses. Limit this experiment to a single frictionless row; no normal transport,
+    /// tangent-frame change or multi-point block refresh is implied.
+    #[cfg(feature = "dim3")]
+    fn refresh_single_frictionless_arms(
+        &self,
+        bodies: &SolverBodies,
+        constraint: &mut ContactWithTwistFriction<SimdReal>,
+    ) {
+        if constraint.num_contacts != 1 { return; }
+        let part = &mut constraint.normal_part[0];
+        let eligible = constraint.limit.simd_eq(SimdReal::zero()) & part.r.simd_gt(SimdReal::zero());
+        if !eligible.any() { return; }
+        let p1 = bodies.gather_poses(constraint.solver_vel1);
+        let p2 = bodies.gather_poses(constraint.solver_vel2);
+        let arm1 = p1.rotation * self.infos[0].local_p1;
+        let arm2 = p2.rotation * self.infos[0].local_p2;
+        let torque1 = arm1.gcross(constraint.dir1);
+        let torque2 = arm2.gcross(-constraint.dir1);
+        let ii1 = p1.ii.transform_vector(torque1);
+        let ii2 = p2.ii.transform_vector(torque2);
+        let effective_mass = utils::simd_inv(
+            constraint.dir1.gdot((p1.im + p2.im).component_mul(&constraint.dir1))
+            + torque1.gdot(ii1) + torque2.gdot(ii2),
+        );
+        part.torque_dir1 = crate::utils::SimdSelect::select(torque1, eligible, part.torque_dir1);
+        part.torque_dir2 = crate::utils::SimdSelect::select(torque2, eligible, part.torque_dir2);
+        part.r = effective_mass.select(eligible, part.r);
+    }
+
     pub fn update(
         &self,
         params: &IntegrationParameters,
@@ -431,6 +461,9 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         _multibodies: &MultibodyJointSet,
         constraint: &mut ContactWithTwistFriction<SimdReal>,
     ) {
+        #[cfg(feature = "dim3")]
+        self.refresh_single_frictionless_arms(bodies, constraint);
+
         // Contacts touching a fixed body (world-attached side ⇒ solver-vel id `u32::MAX`)
         // use a stiffer "static" softness. Blend per lane with a 0/1 mask.
         let lane_static = |ii: usize| -> Real {
@@ -533,6 +566,9 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         bodies: &SolverBodies,
         constraint: &mut ContactWithTwistFriction<SimdReal>,
     ) {
+        #[cfg(feature = "dim3")]
+        self.refresh_single_frictionless_arms(bodies, constraint);
+
         let inv_dt = SimdReal::splat(params.inv_dt());
         let poses1 = bodies.gather_transforms(constraint.solver_vel1);
         let poses2 = bodies.gather_transforms(constraint.solver_vel2);
