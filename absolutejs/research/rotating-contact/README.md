@@ -43,3 +43,10 @@ Changing only that normal would leave effective mass, torque/friction directions
 contact feature ownership and warm-start state inconsistent. Do not make that
 partial solver patch. The game checkpoint refresh matrix tests whether these
 controlled results transfer to the actual chip/cavity failures.
+
+Further controls: `plane-oracle/` verifies the exact rotating plane/sphere
+constraint and why normal-only transport retains incorrect surface witnesses.
+`angular-audit/` records sphere spin with exact saved-trajectory parity and adds
+32-refresh controls. Spin is small in the current fixture; full refresh reduces
+but does not remove penetration. These findings narrow future experiments and do
+not qualify a native solver change.

@@ -1,0 +1,1592 @@
+{
+  "physicalAcceptance": false,
+  "matchedTrajectoryFrames": 8568,
+  "angularObservations": [
+    {
+      "name": "support",
+      "inputSha256": "317c6ca3a02d9f91f2f4f4d0e3eb60243826a68320db490a49d535b8823ca408",
+      "baselineSha256": "a4800d2bec0316734b09ccdbb11254cd7f935ffa845cdf25d4d2162511aede80",
+      "engineSha256": "8181aebf516b66343aa21cec60ed541bf6f226f4404c2e644b7ba3410977abe9",
+      "maxSpinRadS": 0.0015554319834336638,
+      "cases": [
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 8.761633216636255e-05,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.015312094452424416
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 5.755751044489443e-05,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.01531221780765711
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0006444156169891357,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.09755610100878297
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.00041460373904556036,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.09755603659802135
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0001537149801151827,
+          "peakSpinFrame": 39,
+          "peakDepthM": 0.0014461112146609695
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00020123411377426237,
+          "peakSpinFrame": 46,
+          "peakDepthM": 0.0014460660292162503
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0013243842404335737,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.035900233917253596
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.001144441426731646,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.03590034623367287
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.00024849019246175885,
+          "peakSpinFrame": 186,
+          "peakDepthM": 0.00105851794476651
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.0003148804244119674,
+          "peakSpinFrame": 185,
+          "peakDepthM": 0.0007647790931630677
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0005169120850041509,
+          "peakSpinFrame": 32,
+          "peakDepthM": 0.006329667567188196
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.0007165147108025849,
+          "peakSpinFrame": 38,
+          "peakDepthM": 0.006329591087074191
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0004502416995819658,
+          "peakSpinFrame": 14,
+          "peakDepthM": 0.021393695934899357
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00039221474435180426,
+          "peakSpinFrame": 14,
+          "peakDepthM": 0.021393467546714992
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.00046602790826000273,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.09817862682473542
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.0003344171855133027,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.09817867697977088
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0003308254817966372,
+          "peakSpinFrame": 59,
+          "peakDepthM": 0.0020954915054597206
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.000496532884426415,
+          "peakSpinFrame": 59,
+          "peakDepthM": 0.0020956878936809614
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0015554319834336638,
+          "peakSpinFrame": 11,
+          "peakDepthM": 0.08258078111150279
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.0012629599077627063,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.08258060274552347
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0006189498817548156,
+          "peakSpinFrame": 239,
+          "peakDepthM": 0.00041613290211515996
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.0005746399401687086,
+          "peakSpinFrame": 239,
+          "peakDepthM": 0.00041610946009172645
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0014233948895707726,
+          "peakSpinFrame": 42,
+          "peakDepthM": 0.009138642700143515
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.0008526911260560155,
+          "peakSpinFrame": 42,
+          "peakDepthM": 0.009138821950587336
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        }
+      ]
+    },
+    {
+      "name": "candidate-17",
+      "inputSha256": "31e0e7b4c6837c05f76a6158a952a5fabc5063f1c28bf051c29c142916815cc6",
+      "baselineSha256": "f0a7a60e912d2b03f424eafd3619dd0cee490075b02864308020cf001feac29e",
+      "engineSha256": "433c697ceb79fbe6f7d66228d5305c9325fbfa34d9f03188e6a8c9ea8a4c4307",
+      "maxSpinRadS": 0.002446638885885477,
+      "cases": [
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.00019706576131284237,
+          "peakSpinFrame": 10,
+          "peakDepthM": 0.015491050986047625
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00010034732986241579,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.015491063343559527
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 3.156040475005284e-05,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.07768493922602716
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 3.9822734834160656e-05,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.07768493922602716
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 60,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0001993624900933355,
+          "peakSpinFrame": 47,
+          "peakDepthM": 0.001465867923986161
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00017527473391965032,
+          "peakSpinFrame": 46,
+          "peakDepthM": 0.001465885998163871
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0012480791192501783,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.03832312857524044
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.0007459743646904826,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.03832301625882105
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 240,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0002473855565767735,
+          "peakSpinFrame": 187,
+          "peakDepthM": 0.0010619468858269338
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00030240052728913724,
+          "peakSpinFrame": 189,
+          "peakDepthM": 0.0007679721435916859
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.00037278112722560763,
+          "peakSpinFrame": 28,
+          "peakDepthM": 0.0064350090530472664
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.00051352777518332,
+          "peakSpinFrame": 32,
+          "peakDepthM": 0.006435042935317145
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 2,
+          "hz": 960,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.00018910897779278457,
+          "peakSpinFrame": 9,
+          "peakDepthM": 0.021626110753722214
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00014895701315253973,
+          "peakSpinFrame": 10,
+          "peakDepthM": 0.021626248530662293
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.0001819015888031572,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.07559190187258723
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.00024675787426531315,
+          "peakSpinFrame": 1,
+          "peakDepthM": 0.0755915507873388
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 60,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0002445621939841658,
+          "peakSpinFrame": 59,
+          "peakDepthM": 0.002117007948817848
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.00031872751424089074,
+          "peakSpinFrame": 55,
+          "peakDepthM": 0.0021170245311937647
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.002446638885885477,
+          "peakSpinFrame": 11,
+          "peakDepthM": 0.08720771359236555
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.0019804746843874454,
+          "peakSpinFrame": 11,
+          "peakDepthM": 0.0872078027753652
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 240,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 0,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 0,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 6,
+          "reverse": false,
+          "maxSpinRadS": 0.0005216389545239508,
+          "peakSpinFrame": 239,
+          "peakDepthM": 0.00041966074105791173
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 6,
+          "reverse": true,
+          "maxSpinRadS": 0.0005814461037516594,
+          "peakSpinFrame": 239,
+          "peakDepthM": 0.000419723912370093
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -6,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -6,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 30,
+          "reverse": false,
+          "maxSpinRadS": 0.001034609042108059,
+          "peakSpinFrame": 41,
+          "peakDepthM": 0.009250631647469296
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": 30,
+          "reverse": true,
+          "maxSpinRadS": 0.001176060177385807,
+          "peakSpinFrame": 41,
+          "peakDepthM": 0.009250635363432833
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -30,
+          "reverse": false,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        },
+        {
+          "span": 20,
+          "hz": 960,
+          "omega": -30,
+          "reverse": true,
+          "maxSpinRadS": 0.0,
+          "peakSpinFrame": 0,
+          "peakDepthM": 0
+        }
+      ]
+    }
+  ],
+  "contactRefresh32": {
+    "engineSha256": "8181aebf516b66343aa21cec60ed541bf6f226f4404c2e644b7ba3410977abe9",
+    "inputSha256": "9e4b146e878fd045dbdca8a94ab1d4de1c38fc0d10068e1e8ffbfb731f9b9234",
+    "elapsedMs": 2273.84114,
+    "scope": "32 total solver substeps but 32 world steps per recorded interval; changes narrow-phase, CCD and warm-start scheduling. CPU timing is a single bounded run, not a benchmark.",
+    "cases": [
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": 0,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": 0,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": 6,
+        "reverse": false,
+        "baselineDepthM": 0.015312094452424416,
+        "refresh32DepthM": 0.0006178463716525057
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": 6,
+        "reverse": true,
+        "baselineDepthM": 0.01531221780765711,
+        "refresh32DepthM": 0.00046745539447611006
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": -6,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": -6,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": 30,
+        "reverse": false,
+        "baselineDepthM": 0.09755610100878297,
+        "refresh32DepthM": 0.0025735421012469256
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": 30,
+        "reverse": true,
+        "baselineDepthM": 0.09755603659802135,
+        "refresh32DepthM": 0.002138402699540562
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": -30,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 60,
+        "omega": -30,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": 0,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": 0,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": 6,
+        "reverse": false,
+        "baselineDepthM": 0.0014461112146609695,
+        "refresh32DepthM": 0.0006041633550343123
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": 6,
+        "reverse": true,
+        "baselineDepthM": 0.0014460660292162503,
+        "refresh32DepthM": 0.0004955846574362516
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": -6,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": -6,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": 30,
+        "reverse": false,
+        "baselineDepthM": 0.035900233917253596,
+        "refresh32DepthM": 0.002439539891012074
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": 30,
+        "reverse": true,
+        "baselineDepthM": 0.03590034623367287,
+        "refresh32DepthM": 0.002127592780019824
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": -30,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 240,
+        "omega": -30,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": 0,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": 0,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": 6,
+        "reverse": false,
+        "baselineDepthM": 0.00105851794476651,
+        "refresh32DepthM": 0.0006764036197778184
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": 6,
+        "reverse": true,
+        "baselineDepthM": 0.0007647790931630677,
+        "refresh32DepthM": 0.0005432052474986099
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": -6,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": -6,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": 30,
+        "reverse": false,
+        "baselineDepthM": 0.006329667567188196,
+        "refresh32DepthM": 0.0027002744466711887
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": 30,
+        "reverse": true,
+        "baselineDepthM": 0.006329591087074191,
+        "refresh32DepthM": 0.0022709264782337785
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": -30,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 2,
+        "hz": 960,
+        "omega": -30,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": 0,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": 0,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": 6,
+        "reverse": false,
+        "baselineDepthM": 0.021393695934899357,
+        "refresh32DepthM": 0.0001755695256760864
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": 6,
+        "reverse": true,
+        "baselineDepthM": 0.021393467546714992,
+        "refresh32DepthM": 0.00017561726017999157
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": -6,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": -6,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": 30,
+        "reverse": false,
+        "baselineDepthM": 0.09817862682473542,
+        "refresh32DepthM": 0.003943333937582158
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": 30,
+        "reverse": true,
+        "baselineDepthM": 0.09817867697977088,
+        "refresh32DepthM": 0.003943267050476526
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": -30,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 60,
+        "omega": -30,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": 0,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": 0,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": 6,
+        "reverse": false,
+        "baselineDepthM": 0.0020954915054597206,
+        "refresh32DepthM": 0.00012687594204639774
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": 6,
+        "reverse": true,
+        "baselineDepthM": 0.0020956878936809614,
+        "refresh32DepthM": 0.0001296196844592229
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": -6,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": -6,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": 30,
+        "reverse": false,
+        "baselineDepthM": 0.08258078111150279,
+        "refresh32DepthM": 0.0010208464781867738
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": 30,
+        "reverse": true,
+        "baselineDepthM": 0.08258060274552347,
+        "refresh32DepthM": 0.0010208602021833796
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": -30,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 240,
+        "omega": -30,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": 0,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": 0,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": 6,
+        "reverse": false,
+        "baselineDepthM": 0.00041613290211515996,
+        "refresh32DepthM": 0.00014702489911543049
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": 6,
+        "reverse": true,
+        "baselineDepthM": 0.00041610946009172645,
+        "refresh32DepthM": 0.0001347595968993337
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": -6,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": -6,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": 30,
+        "reverse": false,
+        "baselineDepthM": 0.009138642700143515,
+        "refresh32DepthM": 0.0008891238679234886
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": 30,
+        "reverse": true,
+        "baselineDepthM": 0.009138821950587336,
+        "refresh32DepthM": 0.0008890635778501105
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": -30,
+        "reverse": false,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      },
+      {
+        "span": 20,
+        "hz": 960,
+        "omega": -30,
+        "reverse": true,
+        "baselineDepthM": 0,
+        "refresh32DepthM": 0
+      }
+    ]
+  }
+}

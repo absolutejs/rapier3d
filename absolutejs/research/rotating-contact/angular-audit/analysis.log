@@ -1,0 +1,8 @@
+Exact trajectory parity: 8568 frames
+Maximum sphere spin rad/s: [('support', 0.0015554319834336638), ('candidate-17', 0.002446638885885477)]
+{'span': 20, 'hz': 60, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.021393695934899357, 'refresh32DepthM': 0.0001755695256760864}
+{'span': 20, 'hz': 60, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.09817862682473542, 'refresh32DepthM': 0.003943333937582158}
+{'span': 20, 'hz': 240, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.0020954915054597206, 'refresh32DepthM': 0.00012687594204639774}
+{'span': 20, 'hz': 240, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.08258078111150279, 'refresh32DepthM': 0.0010208464781867738}
+{'span': 20, 'hz': 960, 'omega': 6, 'reverse': False, 'baselineDepthM': 0.00041613290211515996, 'refresh32DepthM': 0.00014702489911543049}
+{'span': 20, 'hz': 960, 'omega': 30, 'reverse': False, 'baselineDepthM': 0.009138642700143515, 'refresh32DepthM': 0.0008891238679234886}

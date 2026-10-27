@@ -24,7 +24,7 @@ for(const [p,q,expected] of [
 ] as const)if(Math.abs(separation(p,q)-expected)>1e-12)throw Error('Analytic oracle failed');
 const fullDuration=process.argv.includes('--full-duration'),narrowOnly=process.argv.includes('--narrow-only'),queryFresh=!process.argv.includes('--no-fresh-query');
 const subdivisions=Number(process.argv.find(v=>v.startsWith('--subdivisions='))?.split('=')[1]??1);
-if(![1,2,4,8].includes(subdivisions))throw Error('Unsupported subdivision count');
+if(![1,2,4,8,16,32].includes(subdivisions))throw Error('Unsupported subdivision count');
 const cases=[];const started=performance.now();
 for(const span of (narrowOnly?[2]:[2,20]))for(const hz of [60,240,960])for(const omega of [0,6,-6,30,-30])for(const reverse of [false,true]) {
  if(performance.now()-started>20000)throw Error('Probe exceeded 20s work budget');
@@ -55,7 +55,7 @@ for(const span of (narrowOnly?[2]:[2,20]))for(const hz of [60,240,960])for(const
      contacts++;maxLiveDepth=Math.max(maxLiveDepth,-m.solverContactSeparation(i));maxCachedDepth=Math.max(maxCachedDepth,-m.solverContactDist(i));
     }
    });
-   frames.push({frame,freshDistance:fresh?.distance??null,freshNormal:fresh?.normal1??null,position:p,velocity:body.linvel(),rotation:q,separation:sep,pathError,contacts,maxLiveDepth,maxCachedDepth,maxNormalAngle});
+   frames.push({frame,freshDistance:fresh?.distance??null,freshNormal:fresh?.normal1??null,position:p,velocity:body.linvel(),sphereAngularVelocity:body.angvel(),sphereRotation:body.rotation(),rotation:q,separation:sep,pathError,contacts,maxLiveDepth,maxCachedDepth,maxNormalAngle});
   }
   const peak=frames.reduce((a,b)=>a.separation<b.separation?a:b);
   cases.push({span,hz,omega,reverse,steps,maxPathError,peak,frames});
