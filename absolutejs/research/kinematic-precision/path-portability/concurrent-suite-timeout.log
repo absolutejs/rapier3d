@@ -1,0 +1,70 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [100.58ms]
+(pass) invalid contact policy values fail before mutating native state [1.85ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [31.16ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [22.98ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [10.36ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [6.94ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [2748.45ms]
+(pass) live separation follows pose changes while cached distance stays fixed [2242.88ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [2675.54ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [18.48ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [12.52ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [9.62ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [4.10ms]
+(pass) prescribed position endpoint remains authoritative [14.32ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [1.00ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [8.16ms]
+(pass) current-body query composes noncommuting parent and child rotations [6.76ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [11.80ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [10.69ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [5999.87ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [4.49ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [10.22ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [4273.45ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [2989.80ms]
+(pass) dynamic-only fixtures preserve upstream motion 960Hz tilt=0 [7054.46ms]
+(pass) dynamic-only fixtures preserve upstream motion 960Hz tilt=0.3 [7114.63ms]
+25 |  }finally{w.free();}
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`dynamic-only fixtures preserve upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+                                                                                                                                            ^
+error: Parity fixture exceeded 10s CPU-work wall budget
+      at <anonymous> (/home/alexkahn/alex/rapier-kinematic-release/absolutejs/tests/solver-contacts.test.ts:30:136)
+(fail) dynamic-only fixtures preserve upstream motion 1920Hz tilt=0 [10314.54ms]
+25 |  }finally{w.free();}
+26 | });
+27 | for(const hz of [960,1920])for(const tilt of [0,.3]) test(`dynamic-only fixtures preserve upstream motion ${hz}Hz tilt=${tilt}`,()=>{
+28 |  const started=performance.now();
+29 |  const a=fixture(R,hz,tilt),b=fixture(upstream,hz,tilt);try{
+30 |   for(let i=0;i<2*hz;i++) {if(i%120===0&&performance.now()-started>10000)throw Error("Parity fixture exceeded 10s CPU-work wall budget");a.w.step();b.w.step();a.w.solverContactPair(a.a,a.b,()=>{});
+                                                                                                                                            ^
+error: Parity fixture exceeded 10s CPU-work wall budget
+      at <anonymous> (/home/alexkahn/alex/rapier-kinematic-release/absolutejs/tests/solver-contacts.test.ts:30:136)
+(fail) dynamic-only fixtures preserve upstream motion 1920Hz tilt=0.3 [10031.77ms]
+
+2 tests failed:
+(fail) dynamic-only fixtures preserve upstream motion 1920Hz tilt=0 [10314.54ms]
+(fail) dynamic-only fixtures preserve upstream motion 1920Hz tilt=0.3 [10031.77ms]
+
+ 26 pass
+ 2 fail
+ 47834 expect() calls
+Ran 28 tests across 7 files. [61.46s]

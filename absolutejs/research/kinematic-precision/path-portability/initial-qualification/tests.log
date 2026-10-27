@@ -1,0 +1,48 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [43.96ms]
+(pass) invalid contact policy values fail before mutating native state [1.10ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [28.69ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [12.49ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [16.42ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [12.52ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1420.79ms]
+(pass) live separation follows pose changes while cached distance stays fixed [1384.91ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [1216.29ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [2.61ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [3.33ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [1.12ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [1.69ms]
+(pass) prescribed position endpoint remains authoritative [2.17ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.78ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [4.92ms]
+(pass) current-body query composes noncommuting parent and child rotations [3.34ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.53ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [2.23ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [2844.14ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [3.24ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [7.15ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [1534.37ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [1313.53ms]
+(pass) dynamic-only fixtures preserve upstream motion 960Hz tilt=0 [4183.10ms]
+(pass) dynamic-only fixtures preserve upstream motion 960Hz tilt=0.3 [3984.41ms]
+(pass) dynamic-only fixtures preserve upstream motion 1920Hz tilt=0 [8085.27ms]
+(pass) dynamic-only fixtures preserve upstream motion 1920Hz tilt=0.3 [9138.11ms]
+
+ 28 pass
+ 0 fail
+ 48020 expect() calls
+Ran 28 tests across 7 files. [38.03s]

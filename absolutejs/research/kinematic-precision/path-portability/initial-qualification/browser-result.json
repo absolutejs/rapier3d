@@ -1,0 +1,22 @@
+{
+  "gpu": false,
+  "result": {
+    "kinematicPositionErrorM": 3.5762786865234375e-7,
+    "kinematicRotationErrorRad": 3.3717478808715265e-7,
+    "currentBodyPoseQuery": true,
+    "totalCcdMs": 19.699999999999985,
+    "totalToiMs": 17.099999999999973,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "contactPolicyControls": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}
