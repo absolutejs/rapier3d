@@ -1,5 +1,5 @@
 {
-  "status": "private combined candidate; package/conservation checks pass; coupled game qualification pending",
+  "status": "physical package/game/browser qualification passes; release remains private pending independent native reproduction and artifact checks",
   "wasmSha256": "2ce107fb8534f00010b0238448eff1a4512e19b6312ef8b9359ac455c85511ab",
   "wasmBytes": 3292641,
   "snapshotRoundTrips": true,
@@ -17,5 +17,16 @@
     "rowsExactlyMatchPreviousGyroCandidate": true,
     "maxRelativeEnergyError": 0.0005619750655194739,
     "energyRegressionsOverOnePpm": 1
+  },
+  "gameTests": {
+    "pass": 825,
+    "fail": 0,
+    "assertions": 7408536,
+    "evidenceCommit": "f34f3cc"
+  },
+  "browser": {
+    "gpu": false,
+    "passed": true,
+    "simplexMinimumDistanceCm": 0.0006346320733428001
   }
 }

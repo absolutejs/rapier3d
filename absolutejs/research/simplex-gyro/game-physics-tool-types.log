@@ -1,0 +1,1 @@
+$ bun run tsc --noEmit --project tsconfig.physics-tools.json

@@ -1,0 +1,17 @@
+{
+  "rows": [
+    {
+      "file": "rapier.mjs",
+      "testedCandidateSha256": "2ec95da46d08ff77d19b2bb995916acd02de666740bc8b3b2036c83ec74e9588",
+      "releaseSha256": "09a2cce7ea6a9d7203f73400a7b5095980ccd77067330bce05773e8f0c388021",
+      "onlyChange": "qualifiedKernelRelease candidate marker -> 0.8.0"
+    },
+    {
+      "file": "build-info.mjs",
+      "testedCandidateSha256": "251cd33f270679ba07e2191ad177b2d3ef129c5fab73d60b1288cdc99fff12f3",
+      "releaseSha256": "3d14fcbaa6a978576cc4f351bd0c79435e01a0682b7c204c86b079ba52cec3d2",
+      "onlyChange": "qualifiedKernelRelease candidate marker -> 0.8.0"
+    }
+  ],
+  "nativeWasmUnchanged": "2ce107fb8534f00010b0238448eff1a4512e19b6312ef8b9359ac455c85511ab"
+}

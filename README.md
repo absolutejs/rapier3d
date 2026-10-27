@@ -31,7 +31,7 @@ wrappers before propagating. Solver distances are the engine's cached contact
 update distances, not a continuous or post-step exact penetration guarantee.
 
 `contactPair` exposes geometric manifolds; `solverContactPair` exposes solver
-manifolds. Version 0.6 improves velocity-driven kinematics. The 0.8 candidate
+manifolds. Version 0.6 improves velocity-driven kinematics. Version 0.8
 corrects previous-simplex witness preservation and reduces force-free rotation
 roundoff, as described below. Contact and CCD policy defaults remain unchanged.
 Runtime motion still needs independent geometric and energy checks.
@@ -46,7 +46,7 @@ Source base: dimforge/rapier commit
 `b716d375efc0201003f0cd9ef7168eee0b62c177`. Upstream Apache-2.0 licensing is retained.
 The distribution adds binding queries, package build/test tooling, and CCD profiler
 timer wiring. Version 0.6 also evaluates velocity-driven kinematic poses directly
-from each solver-pass origin. The 0.8 candidate additionally pins the corrected
+from each solver-pass origin. Version 0.8 additionally pins the corrected
 Parry collision source and applies the gyroscopic momentum increment without
 reconstructing the entire angular velocity through the inertia frame.
 
@@ -223,7 +223,7 @@ before `init()`. It reports the packaged kernel; supplying custom bytes to
 `init(input)` does not change that identity and must be recorded separately.
 
 
-## Contact witnesses and force-free rotation (0.8 candidate)
+## Contact witnesses and force-free rotation (0.8)
 
 The collision dependency is pinned to `absolutejs/parry` revision
 `dbd99a8dfce020da3698056471262435d56d3f69`, based on upstream 0.31.1.
@@ -251,5 +251,5 @@ integration errors remain.
 `buildInfo.collisionLibraryVersion` and `buildInfo.collisionSource` identify the
 exact locked collision library alongside the native WASM hash. They are lightweight
 serialized strings and require no WASM initialization. Packaging rejects ambiguous
-multiple Parry source entries. Full qualification evidence and current candidate
-status are retained in `absolutejs/research/simplex-gyro/`.
+multiple Parry source entries. Release qualification evidence and retained experiment
+results are recorded in `absolutejs/research/simplex-gyro/`.

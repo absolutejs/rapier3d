@@ -1,0 +1,13 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [36.40ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [6.85ms]
+(pass) diagnostic identity imports independently of the physics runtime [16.68ms]
+
+ 3 pass
+ 0 fail
+ 25 expect() calls
+Ran 3 tests across 2 files. [366.00ms]
