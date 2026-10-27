@@ -189,3 +189,13 @@ accuracy guarantee. Native qualification records, independent analytic path
 controls, negative tests against 0.5.0, and bounded CPU observations are retained
 in `absolutejs/research/kinematic-precision/`. The private tagged contact research
 is excluded from this release.
+
+Direct rotation evaluation adds CPU work for velocity-driven kinematic bodies.
+Profile kinematic-heavy scenes; increasing solver subdivisions is not a free
+accuracy improvement. The recorded CPU probes are not browser FPS guarantees.
+
+Native builds use pinned Rust and wasm-bindgen versions and remap checkout/cache
+paths to stable virtual prefixes before checking the qualified WASM checksum.
+Custom compiler flags are preserved, but their output must still match the
+qualified kernel. A checksum mismatch stops API packaging; it does not silently
+adopt a different native solver.

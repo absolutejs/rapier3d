@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checkouts": [
+    "/home/alexkahn/alex/rapier-kinematic-release",
+    "/home/alexkahn/alex/rapier-kinematic-repro"
+  ],
+  "files": [
+    {
+      "path": "src/dynamics/solver/solver_body.rs",
+      "sha256": "2aedb844bacc4d26f1a1c6787f034fb00f4c5daba0817165d0c5b597fa073f5f"
+    },
+    {
+      "path": "src/dynamics/solver/staged_island_solver/worker.rs",
+      "sha256": "b10704033b668ebb516453dc663b76ccff5d8aca91e22372aecc472d3e7b0411"
+    },
+    {
+      "path": "bindings/typescript/Cargo.lock",
+      "sha256": "481f6ab7e84bd814be89873131711fb63bdf64cbeb0029cc1ef0f9b6a15fb906"
+    },
+    {
+      "path": "absolutejs/scripts/prepare-native-workspace.py",
+      "sha256": "4b6850f0a87ac0d2d2b3f478fdde58e118e9a8a1fea9d5d94fd55183c0a2ec37"
+    }
+  ]
+}

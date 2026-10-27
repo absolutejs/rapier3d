@@ -1,0 +1,140 @@
+{
+  "passed": false,
+  "reason": "Independent checkout bytes differ despite no local path strings",
+  "artifacts": [
+    {
+      "path": "/home/alexkahn/alex/rapier-kinematic-release/.absolutejs/portable-qualification/rapier_wasm3d_bg.wasm",
+      "bytes": 3293982,
+      "sha256": "187d1d481df4e8ff60682c35744f65732c9d9f46348cc933fbddd87dd31f6d71",
+      "sections": [
+        [
+          1,
+          2660,
+          "38efc7443b3d4cb13e583ec2566c5887b61ad68c47814ff349d58a4852667b2b"
+        ],
+        [
+          2,
+          1732,
+          "f1a66befaea63458db1ea4b781d2e2aa63d1d60d5b78dac40233bb9c04a814fc"
+        ],
+        [
+          3,
+          4446,
+          "d65dea5a887e2e580c51d29736fcb1e11f5f6b199e350ba28a420153b5080781"
+        ],
+        [
+          4,
+          7,
+          "4fd49b672206ee7148652e8c824697dc14aec8076703f9af77b3e5d7e3317a9b"
+        ],
+        [
+          5,
+          3,
+          "e3c4e8c4be74ea7897d60436685f5014a88654a4f415f7e08b959984bf15f5d0"
+        ],
+        [
+          6,
+          25,
+          "aef17f6e4d3df7f7d70ffc86b338d4b8df90ba3f56b579b543aff53a74112723"
+        ],
+        [
+          7,
+          34858,
+          "451883db7d39f1fe19a6812ba5b03ee40407600e934f450acd55720d1a52cc03"
+        ],
+        [
+          9,
+          2444,
+          "8864d0b02bc4f9e2bc65c7944b4dc29715b892232804426cc8d7f5a3fa0f3f5a"
+        ],
+        [
+          10,
+          3149477,
+          "8bad5e4084508c271a64a8c6655003a1e67e5869db7ebd8306458c29fae75840"
+        ],
+        [
+          11,
+          98155,
+          "ab55e7a53187345263f3d92ee16406496646f246140cca469dc9642a4a6b0d9f"
+        ],
+        [
+          0,
+          60,
+          "6b4b4caf231629daff7cdaa5cc96c83d7d436bd354d61bd98f4e1a35098b53c7"
+        ],
+        [
+          0,
+          72,
+          "ffb35865466d19f272a1d6031ee54d052b5ef8a39da1b40bfbef5e107cbf4ea3"
+        ]
+      ]
+    },
+    {
+      "path": "/home/alexkahn/alex/rapier-kinematic-repro/.absolutejs/portable-qualification/rapier_wasm3d_bg.wasm",
+      "bytes": 3293982,
+      "sha256": "7d3e96bde7025bc151a693f1e0b6cace843db68e84b1775fdbdd40ae425b5f8b",
+      "sections": [
+        [
+          1,
+          2660,
+          "38efc7443b3d4cb13e583ec2566c5887b61ad68c47814ff349d58a4852667b2b"
+        ],
+        [
+          2,
+          1732,
+          "f1a66befaea63458db1ea4b781d2e2aa63d1d60d5b78dac40233bb9c04a814fc"
+        ],
+        [
+          3,
+          4446,
+          "8ddb5df0a556f7fd0506731cad01894e9009fac60967455d87df8399fdf7443c"
+        ],
+        [
+          4,
+          7,
+          "4fd49b672206ee7148652e8c824697dc14aec8076703f9af77b3e5d7e3317a9b"
+        ],
+        [
+          5,
+          3,
+          "e3c4e8c4be74ea7897d60436685f5014a88654a4f415f7e08b959984bf15f5d0"
+        ],
+        [
+          6,
+          25,
+          "aef17f6e4d3df7f7d70ffc86b338d4b8df90ba3f56b579b543aff53a74112723"
+        ],
+        [
+          7,
+          34858,
+          "451883db7d39f1fe19a6812ba5b03ee40407600e934f450acd55720d1a52cc03"
+        ],
+        [
+          9,
+          2444,
+          "9d56f49521cccd86d572469549af3aa3e160016a5ccb7677524eb063fc288607"
+        ],
+        [
+          10,
+          3149477,
+          "c867ae0c6b5311cbf18a610b03ebcab8ed538996b341bbd80a03528150b6a342"
+        ],
+        [
+          11,
+          98155,
+          "cead921bed59fd8327e948ec0afdcc7f873473d674394d49c993cb8232f1fa13"
+        ],
+        [
+          0,
+          60,
+          "6b4b4caf231629daff7cdaa5cc96c83d7d436bd354d61bd98f4e1a35098b53c7"
+        ],
+        [
+          0,
+          72,
+          "ffb35865466d19f272a1d6031ee54d052b5ef8a39da1b40bfbef5e107cbf4ea3"
+        ]
+      ]
+    }
+  ]
+}
