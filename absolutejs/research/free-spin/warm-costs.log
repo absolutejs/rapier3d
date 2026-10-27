@@ -1,0 +1,51 @@
+[
+  {
+    count: 16,
+    budget: 4,
+    baselineMedianMs: 0.0693659082031246,
+    candidateMedianMs: 0.0674886503906249,
+    ratio: 0.9729368812269781,
+    baselineRange: [ 0.03859399414062459, 0.10322393164062493 ],
+    candidateRange: [ 0.052251142578125354, 0.12012174804687525 ],
+  }, {
+    count: 16,
+    budget: 32,
+    baselineMedianMs: 0.1097780312500003,
+    candidateMedianMs: 0.10384305859374976,
+    ratio: 0.9459366087306241,
+    baselineRange: [ 0.09826904882812482, 0.1482530136718747 ],
+    candidateRange: [ 0.0864993828124998, 0.15357220703124952 ],
+  }, {
+    count: 16,
+    budget: 128,
+    baselineMedianMs: 0.26696814843750083,
+    candidateMedianMs: 0.2508425449218752,
+    ratio: 0.9395972755176794,
+    baselineRange: [ 0.21799994335937534, 0.41094429296875035 ],
+    candidateRange: [ 0.23802789257812496, 0.32226703125 ],
+  }, {
+    count: 128,
+    budget: 4,
+    baselineMedianMs: 0.15864636523437348,
+    candidateMedianMs: 0.16860346289062456,
+    ratio: 1.062762847680381,
+    baselineRange: [ 0.1266048261718744, 0.20636357031249908 ],
+    candidateRange: [ 0.14485349023437522, 0.17807499609375022 ],
+  }, {
+    count: 128,
+    budget: 32,
+    baselineMedianMs: 0.4444363652343757,
+    candidateMedianMs: 0.3954581503906258,
+    ratio: 0.8897970133071335,
+    baselineRange: [ 0.4332382050781245, 0.5279003242187486 ],
+    candidateRange: [ 0.36622836523437563, 0.43139455468750043 ],
+  }, {
+    count: 128,
+    budget: 128,
+    baselineMedianMs: 1.5084220371093764,
+    candidateMedianMs: 1.3389973398437505,
+    ratio: 0.887680839249539,
+    baselineRange: [ 1.5012397910156245, 1.5627691777343777 ],
+    candidateRange: [ 1.212465779296874, 1.4817263886718735 ],
+  }
+]

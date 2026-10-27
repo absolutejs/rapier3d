@@ -1,0 +1,9 @@
+{
+  cases: 48,
+  feature: "edge",
+  oracle: true,
+  peakDepthM: 0,
+  maxMomentumError: 2.9510885431557733e-8,
+  maxAngularMomentumError: 1.5485518726445662,
+  maxEnergyGain: 0,
+}

@@ -1,0 +1,539 @@
+{
+  "scope": "Spinning dynamic cuboids, no contacts/CCD/GPU. Two warmed modules, five alternating paired samples, 512 steps per sample. Bounded timing observations, not production capacity or statistical guarantees.",
+  "sourceSha256": "1a8432aaf26c3dd3354ff20b9baf02759deac4d8304f13cc2a6fb263cd93d6dc",
+  "initialLoad": [
+    3.06,
+    2.76,
+    3.56
+  ],
+  "finalLoad": [
+    3.33,
+    2.84,
+    3.57
+  ],
+  "engines": [
+    {
+      "path": "/home/alexkahn/alex/rapier-relative-motion-research/.absolutejs/candidate-21/dist/rapier.mjs",
+      "sha256": "11135af69edea357b7c2d3c473d5fb86056cc100d3edfcf41012148358157bd4"
+    },
+    {
+      "path": "/home/alexkahn/alex/rapier-relative-motion-research/.absolutejs/candidate-22/dist/rapier.mjs",
+      "sha256": "4047f4b175c710b98040246695a2bad9a40dd73d5a263779daf77ed304c5b6aa"
+    }
+  ],
+  "samples": [
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.10322393164062493
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.12012174804687525
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.052251142578125354
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.07413802343749953
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.0693659082031246
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.07192332812500002
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.05697076367187481
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.03859399414062459
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.04841507617187535
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.0674886503906249
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.1482530136718747
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.15357220703124952
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.1386371191406255
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.10321687500000021
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.1097780312500003
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.0864993828124998
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.10214140039062514
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.09826904882812482
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.12705062109375032
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.10384305859374976
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 0.26696814843750083
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 0.2508425449218752
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 0.26133812500000086
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 0.23747470117187497
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 0.21799994335937534
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 0.23802789257812496
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 0.24296518554687552
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 0.30920534179687564
+    },
+    {
+      "engine": 0,
+      "count": 16,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 0.41094429296875035
+    },
+    {
+      "engine": 1,
+      "count": 16,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 0.32226703125
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.20636357031249908
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 0,
+      "msPerStep": 0.17807499609375022
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.14485349023437522
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 1,
+      "msPerStep": 0.15864636523437348
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.1266048261718744
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 2,
+      "msPerStep": 0.16860346289062456
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.17608057421874967
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 3,
+      "msPerStep": 0.161720777343751
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.14989473632812533
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 4,
+      "repeat": 4,
+      "msPerStep": 0.16768901171874973
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.5279003242187486
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 0,
+      "msPerStep": 0.43139455468750043
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.4288662226562501
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 1,
+      "msPerStep": 0.4332382050781245
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.4382656503906244
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 2,
+      "msPerStep": 0.3954581503906258
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.36622836523437563
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 3,
+      "msPerStep": 0.45088724609374964
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.4444363652343757
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 32,
+      "repeat": 4,
+      "msPerStep": 0.37663633593749957
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 1.5084220371093764
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 0,
+      "msPerStep": 1.212465779296874
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 1.4817263886718735
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 1,
+      "msPerStep": 1.5627691777343777
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 1.5012397910156245
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 2,
+      "msPerStep": 1.3833992773437487
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 1.3389973398437505
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 3,
+      "msPerStep": 1.504445414062502
+    },
+    {
+      "engine": 0,
+      "count": 128,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 1.515406363281251
+    },
+    {
+      "engine": 1,
+      "count": 128,
+      "budget": 128,
+      "repeat": 4,
+      "msPerStep": 1.307692025390626
+    }
+  ],
+  "comparisons": [
+    {
+      "count": 16,
+      "budget": 4,
+      "baselineMedianMs": 0.0693659082031246,
+      "candidateMedianMs": 0.0674886503906249,
+      "ratio": 0.9729368812269781,
+      "baselineRange": [
+        0.03859399414062459,
+        0.10322393164062493
+      ],
+      "candidateRange": [
+        0.052251142578125354,
+        0.12012174804687525
+      ]
+    },
+    {
+      "count": 16,
+      "budget": 32,
+      "baselineMedianMs": 0.1097780312500003,
+      "candidateMedianMs": 0.10384305859374976,
+      "ratio": 0.9459366087306241,
+      "baselineRange": [
+        0.09826904882812482,
+        0.1482530136718747
+      ],
+      "candidateRange": [
+        0.0864993828124998,
+        0.15357220703124952
+      ]
+    },
+    {
+      "count": 16,
+      "budget": 128,
+      "baselineMedianMs": 0.26696814843750083,
+      "candidateMedianMs": 0.2508425449218752,
+      "ratio": 0.9395972755176794,
+      "baselineRange": [
+        0.21799994335937534,
+        0.41094429296875035
+      ],
+      "candidateRange": [
+        0.23802789257812496,
+        0.32226703125
+      ]
+    },
+    {
+      "count": 128,
+      "budget": 4,
+      "baselineMedianMs": 0.15864636523437348,
+      "candidateMedianMs": 0.16860346289062456,
+      "ratio": 1.062762847680381,
+      "baselineRange": [
+        0.1266048261718744,
+        0.20636357031249908
+      ],
+      "candidateRange": [
+        0.14485349023437522,
+        0.17807499609375022
+      ]
+    },
+    {
+      "count": 128,
+      "budget": 32,
+      "baselineMedianMs": 0.4444363652343757,
+      "candidateMedianMs": 0.3954581503906258,
+      "ratio": 0.8897970133071335,
+      "baselineRange": [
+        0.4332382050781245,
+        0.5279003242187486
+      ],
+      "candidateRange": [
+        0.36622836523437563,
+        0.43139455468750043
+      ]
+    },
+    {
+      "count": 128,
+      "budget": 128,
+      "baselineMedianMs": 1.5084220371093764,
+      "candidateMedianMs": 1.3389973398437505,
+      "ratio": 0.887680839249539,
+      "baselineRange": [
+        1.5012397910156245,
+        1.5627691777343777
+      ],
+      "candidateRange": [
+        1.212465779296874,
+        1.4817263886718735
+      ]
+    }
+  ],
+  "elapsedMs": 14153.274878
+}
