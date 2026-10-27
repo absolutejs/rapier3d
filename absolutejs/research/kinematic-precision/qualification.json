@@ -4,11 +4,17 @@
   "native": {
     "schemaVersion": 1,
     "qualifiedKernelRelease": "0.6.0",
-    "wasmSha256": "83e902d7d539d0ec2380f6c1ea70c374a3885c70be523ce2b29b252146cebb5f",
-    "wasmBytes": 3300702,
+    "wasmSha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4",
+    "wasmBytes": 3291678,
     "solverChanges": true
   },
-  "bundleSha256": "24d566c101b81ff5226f68a14ff17f813b7f335b0540ad73c9a7463449b7fb07",
+  "portableNativeBuild": {
+    "independentCheckouts": 2,
+    "byteIdentical": true,
+    "localPathLeakage": false,
+    "unchangedPathFrames": 2160
+  },
+  "bundleSha256": "ad644b2f36baf1a43a71d1221bc212583ff84191db0af345d2b9fb9d44d78d65",
   "researchKernelRejected": true,
   "rejectedResearchWasmSha256": "8fd2d56ff592edcc0e30dade085ff1720e6de21064ff96c5c91d17c86ebba4f3",
   "tests": {
@@ -21,6 +27,6 @@
   "maxVelocityPathPositionErrorM": 0.0000018803366400825854,
   "maxVelocityPathRotationErrorRad": 0.000001244581521619644,
   "browserGpu": false,
-  "tarballIntegrity": "sha512-eVe0hl6V3PhitQ2AUs0TYYXJfRJmBKKPiNpOey0DuSwQB9tObCkPpo5QX5h3pLqUIzY1RDzlm7CZk5KUYL2g5Q==",
+  "tarballIntegrity": "sha512-SL6+jfr8fygTjhtCiL7ZhZejIZD2bGs0NdEf2acG0x93Hjg+I+oeOAi7niOWXy4z6+9N+IyRK7ftCzEW4Is4ag==",
   "scope": "Only prescribed velocity-driven kinematic integration changes. No tagged geometry or CCD research. Additional CPU cost is documented; general contact accuracy remains separately unqualified."
 }

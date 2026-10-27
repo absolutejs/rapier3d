@@ -1,9 +1,9 @@
 {
   "passed": true,
   "version": "0.6.0",
-  "integrity": "sha512-eVe0hl6V3PhitQ2AUs0TYYXJfRJmBKKPiNpOey0DuSwQB9tObCkPpo5QX5h3pLqUIzY1RDzlm7CZk5KUYL2g5Q==",
-  "sha1": "14ef2e9fe7335e37131dda911a62b6d7c927273f",
-  "bundleSha256": "24d566c101b81ff5226f68a14ff17f813b7f335b0540ad73c9a7463449b7fb07",
+  "integrity": "sha512-SL6+jfr8fygTjhtCiL7ZhZejIZD2bGs0NdEf2acG0x93Hjg+I+oeOAi7niOWXy4z6+9N+IyRK7ftCzEW4Is4ag==",
+  "sha1": "408c640fc7d0c31cc0804d6a882f1f312217b962",
+  "bundleSha256": "ad644b2f36baf1a43a71d1221bc212583ff84191db0af345d2b9fb9d44d78d65",
   "fileCount": 50,
   "whitelistPassed": true,
   "declarationsUnchanged": true,

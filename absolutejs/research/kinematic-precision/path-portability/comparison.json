@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "Two pinned-toolchain checkout builds; not a cross-toolchain guarantee",
+  "artifacts": [
+    {
+      "path": "/home/alexkahn/alex/rapier-kinematic-release/.absolutejs/staged-portable/rapier_wasm3d_bg.wasm",
+      "bytes": 3291678,
+      "sha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4"
+    },
+    {
+      "path": "/home/alexkahn/alex/rapier-kinematic-repro/.absolutejs/staged-portable/rapier_wasm3d_bg.wasm",
+      "bytes": 3291678,
+      "sha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4"
+    }
+  ],
+  "localPathLeakage": false,
+  "byteIdentical": true
+}

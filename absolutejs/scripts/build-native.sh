@@ -5,6 +5,10 @@ if [[ "$(rustc --version)" != 'rustc 1.94.0 (4a4ef493e 2026-03-02)' ]]; then
   echo 'This release is qualified with Rust 1.94.0; use that toolchain.' >&2
   exit 1
 fi
+if [[ "$(cargo --version)" != 'cargo 1.94.0 (85eff7c80 2026-01-15)' ]]; then
+  echo 'This release is qualified with Cargo 1.94.0; use that toolchain.' >&2
+  exit 1
+fi
 export CARGO_HOME="${CARGO_HOME:-$PWD/.cache/cargo}"
 export CARGO_TARGET_DIR="$PWD/.cache/target"
 export CARGO_BUILD_JOBS=2

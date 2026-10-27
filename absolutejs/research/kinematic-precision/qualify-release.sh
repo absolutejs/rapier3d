@@ -13,6 +13,7 @@ test -f "$receipt_dir/path-portability/comparison.json"
 test "$(bun --version)" = '1.4.4+absolute.1'
 mkdir -p .absolutejs/logs .absolutejs/pack .absolutejs/extracted
 python3 absolutejs/scripts/test-native-build-flags.py > "$receipt_dir/path-portability/flag-tests.log" 2>&1
+python3 absolutejs/scripts/test-native-workspace.py > "$receipt_dir/path-portability/workspace-tests.log" 2>&1
 bun test absolutejs/tests > "$receipt_dir/tests.log" 2>&1
 bun run tsc --noEmit --strict --skipLibCheck --target ES2022 --module ESNext --moduleResolution bundler --types bun \
   absolutejs/tests/type-contract.ts absolutejs/tests/kinematic-path.test.ts \

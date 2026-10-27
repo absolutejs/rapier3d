@@ -1,4 +1,4 @@
-# Portable native qualification, in progress
+# Portable native qualification
 
 The initial 0.6.0 candidate passed physics and browser checks, but its post-bindgen WASM contains 229 occurrences of the local home prefix, including 119 checkout-name occurrences. Rebuilding in another checkout necessarily changes these strings and the hash. A fixed native qualification hash therefore needs a portable build, not a checkout-specific exception list.
 
@@ -22,4 +22,4 @@ The first remapped pair failed byte identity: both kernels were 3,293,982 bytes 
 
 `prepare-native-workspace.py` now snapshots canonical source bytes into a content-addressed directory under `.absolutejs/native-source/`. It places the engine and binding crate inside one workspace root. Engine manifest inheritance is resolved from canonical workspace values, features are merged, and unused engine development dependencies are excluded from this runtime dependency build. The original Rust files and locked package versions are unchanged. `dependency-graph.json` proves equality of all 85 resolved packages, enabled features and dependency edges between original and staged manifests. The canonical source stays in Git; this generated snapshot is a reproducible build artifact, never the only copy.
 
-The new staged builds still require independent checkout byte comparison and complete qualification. They are not yet approved for publication.
+The staged builds now pass independent checkout byte comparison (`comparison.json`) and complete sequential artifact qualification (`../qualification.json`). Both produce SHA-256 `17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4`, 3,291,678 bytes. The existing native guard stays enabled. Registry publication is still a separate step.

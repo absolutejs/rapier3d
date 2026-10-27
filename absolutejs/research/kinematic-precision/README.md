@@ -1,9 +1,10 @@
 # Rapier 0.6.0: prescribed kinematic integration qualification
 
-Publication is pending a portable-build follow-up. The initial qualified artifact
-contains checkout-specific paths; `path-portability/` tracks the correction.
-Do not publish the initial path-dependent tarball. Final qualification and package
-receipts must be regenerated after the portable kernel passes its controls.
+The final artifact passes portable-build and release qualification. Two separate
+checkout builds produce identical WASM bytes with no local path leakage.
+`path-portability/` preserves the original failed comparisons and the correction;
+the original path-dependent tarball is superseded and must not be published.
+Registry publication remains a separate delivery step.
 
 Velocity-driven kinematic motion previously accumulated linearized angular increments and tiny positional increments at each temporal subdivision. That makes the actual path depend on the subdivision count despite a prescribed constant velocity. Over half a second at 30rad/s, the one-subdivision test accumulates about 0.30128rad of angular error and 0.11115m of body-origin error with an offset mass center.
 
@@ -32,3 +33,5 @@ bun absolutejs/research/kinematic-precision/qualify.ts /path/to/private-research
 ```
 
 The negative kernel path is explicit. `qualification.json` records its actual hash. Registry publication and adoption receipts will be recorded separately after npm confirms publication.
+
+Final portable qualification: the sequential suite passes all 28 tests / 48,020 assertions in 23.60 seconds with unchanged per-case limits. Strict types, CPU-only browser checks, extracted-tarball controls and private-kernel rejection pass. Both independent builds produce native SHA-256 `17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4` (3,291,678 bytes). All 275 Rust source files match the canonical repository, all 85 resolved dependency graph nodes match the original graph, and all 2,160 prescribed-path/control frames match the initial candidate. `qualify-release.sh` reproduces the sequential artifact checks.

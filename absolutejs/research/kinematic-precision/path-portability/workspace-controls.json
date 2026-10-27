@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "stableRepeatedSnapshot": true,
+  "unexpectedFileRejected": true,
+  "snapshotReusableAfterNegativeControl": true
+}

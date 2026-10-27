@@ -78,6 +78,9 @@ hashes = {name: hashlib.sha256(data).hexdigest() for name, data in sorted(output
 digest = hashlib.sha256(json.dumps(hashes, sort_keys=True).encode()).hexdigest()
 destination = root / '.absolutejs/native-source' / digest
 destination.mkdir(parents=True, exist_ok=True)
+unexpected = {str(p.relative_to(destination)) for p in destination.rglob('*') if p.is_file()} - set(outputs) - {'source-manifest.json'}
+if unexpected:
+    raise SystemExit('Unexpected files in generated native workspace: ' + ', '.join(sorted(unexpected)))
 for name, data in outputs.items():
     path = destination / name
     path.parent.mkdir(parents=True, exist_ok=True)

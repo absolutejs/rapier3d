@@ -1,7 +1,7 @@
 {
   "physicalAcceptance": false,
   "scope": "No-contact, no-CCD half-second trajectories; includes dynamic and position-driven controls. Analytic body origin follows a constant-velocity center of mass and fixed-axis rotation. Native f32 values have finite rounding error.",
-  "engineSha256": "24d566c101b81ff5226f68a14ff17f813b7f335b0540ad73c9a7463449b7fb07",
+  "engineSha256": "ad644b2f36baf1a43a71d1221bc212583ff84191db0af345d2b9fb9d44d78d65",
   "sourceSha256": "d3733a33e58d7fa05bc966b15d16376d11f4e60580bcf6ae00041a069729c3ed",
   "rows": [
     {

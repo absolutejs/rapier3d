@@ -8,6 +8,17 @@ const manifest=json('absolutejs/native-kernel.json');
 assertQualifiedNative(readFileSync('.absolutejs/api/rapier_wasm3d_bg.wasm'),manifest);
 const portability=json(dir+'path-portability/comparison.json');
 if(!portability.passed||!portability.byteIdentical||portability.localPathLeakage!==false||portability.artifacts.length!==2||portability.artifacts.some((a:any)=>a.sha256!==manifest.wasmSha256||a.bytes!==manifest.wasmBytes))throw Error('Independent checkout portability qualification failed');
+const staged=json(dir+'path-portability/staged-source-identity.json');
+const stagedRoot='.absolutejs/native-source/'+staged.contentSha256+'/';
+const stagedManifest=json(stagedRoot+'source-manifest.json');
+const graph=json(dir+'path-portability/dependency-graph.json');
+if(!staged.passed||!graph.passed||!graph.identicalResolvedPackagesFeaturesAndEdges||graph.packageCount!==85)throw Error('Native workspace inputs changed');
+let nativeSourceFiles=0;
+for(const [path,hash] of Object.entries(stagedManifest.outputs))if(path.endsWith('.rs')){
+ if(hash!==sha(path)||hash!==sha(stagedRoot+path))throw Error('Generated native source differs from canonical source');
+ nativeSourceFiles++;
+}
+if(nativeSourceFiles!==275)throw Error('Incomplete native source snapshot');
 const researchPath=process.argv[2];if(!researchPath)throw Error('Explicit research WASM negative control required');
 const research=readFileSync(researchPath);if(research.subarray(0,4).toString('hex')!=='0061736d')throw Error('Negative control is not a WASM file');
 let researchRejected=false;

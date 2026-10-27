@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "contentSha256": "483864fc059a9cc49f46e6d79ceea6b2b94cd72322f6337dda94b80d0f6a73bf",
+  "fileCount": 280,
+  "rustSourceBytesUnchanged": true,
+  "lockedPackageVersionsUnchanged": true
+}

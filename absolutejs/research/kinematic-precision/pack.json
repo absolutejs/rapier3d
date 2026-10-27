@@ -3,10 +3,10 @@
     "id": "@absolutejs/rapier3d@0.6.0",
     "name": "@absolutejs/rapier3d",
     "version": "0.6.0",
-    "size": 1788755,
-    "unpackedSize": 5133979,
-    "shasum": "14ef2e9fe7335e37131dda911a62b6d7c927273f",
-    "integrity": "sha512-eVe0hl6V3PhitQ2AUs0TYYXJfRJmBKKPiNpOey0DuSwQB9tObCkPpo5QX5h3pLqUIzY1RDzlm7CZk5KUYL2g5Q==",
+    "size": 1788394,
+    "unpackedSize": 5123113,
+    "shasum": "408c640fc7d0c31cc0804d6a882f1f312217b962",
+    "integrity": "sha512-SL6+jfr8fygTjhtCiL7ZhZejIZD2bGs0NdEf2acG0x93Hjg+I+oeOAi7niOWXy4z6+9N+IyRK7ftCzEW4Is4ag==",
     "filename": "absolutejs-rapier3d-0.6.0.tgz",
     "files": [
       {
@@ -16,12 +16,12 @@
       },
       {
         "path": "README.md",
-        "size": 11028,
+        "size": 11611,
         "mode": 420
       },
       {
         "path": "absolutejs/README.md",
-        "size": 11028,
+        "size": 11611,
         "mode": 420
       },
       {
@@ -31,7 +31,7 @@
       },
       {
         "path": "dist/rapier.mjs",
-        "size": 4634664,
+        "size": 4622632,
         "mode": 420
       },
       {
