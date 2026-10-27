@@ -1,0 +1,13 @@
+{
+  "source": "alexkahndev/hello-world-absolutejs/docs/physics-build-2026-10-27/gyro-capture/pine-contact-before.bin",
+  "sourceCommit": "44dd7e6c1330eb4f859b73be8c9e7158d0a3af32",
+  "sha256": "c865ce89eaec5ddd19ea2a32884cf0b4e744cb5b856969535b705d473b7fe195",
+  "bytes": 13431,
+  "units": "centimetres",
+  "scope": "Synthetic authored pine tool-cut simulation, one step before a reproducible invalid floor/hull contact. No player data or credentials.",
+  "baselineCachedDistanceCm": -14.719921112060547,
+  "floorColliderHandle": 0,
+  "woodColliderHandle": 2e-323,
+  "fixtureContainsRejectedGyroTrajectory": true,
+  "sameSnapshotReproducesUnderStableKernel": true
+}

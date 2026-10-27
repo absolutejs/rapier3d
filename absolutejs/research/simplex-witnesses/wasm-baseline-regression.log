@@ -1,0 +1,22 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/simplex-witness.test.ts:
+18 |   });
+19 |   expect(distances.length).toBeGreaterThan(0);
+20 |   expect(distances.every(Number.isFinite)).toBe(true);
+21 |   // Native coordinates are centimetres. The old query reported -14.719921 cm
+22 |   // while the hull was separated. Allow 0.1 mm numerical contact tolerance.
+23 |   expect(Math.min(...distances)).toBeGreaterThan(-0.01);
+                                      ^
+error: expect(received).toBeGreaterThan(expected)
+
+Expected: > -0.01
+Received: -14.719921112060547
+
+      at <anonymous> (/home/alexkahn/alex/rapier-simplex-release/absolutejs/tests/simplex-witness.test.ts:23:34)
+(fail) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [65.97ms]
+
+ 0 pass
+ 1 fail
+ 6 expect() calls
+Ran 1 test across 1 file. [692.00ms]
