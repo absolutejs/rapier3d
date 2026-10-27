@@ -1327,6 +1327,65 @@ export class Collider {
         return result;
     }
 
+    // #if DIM3
+    /**
+     * Queries the two native shapes at their current parent-body poses without stepping
+     * the world or propagating body poses into the collider set. Includes each collider's
+     * local translation and rotation; parentless colliders use their stored world pose.
+     *
+     * Useful for explicit diagnostics after body edits, when contactCollider and stored
+     * manifolds may still refer to the previous collider poses. This is an allocating shape
+     * query, not a solver contact, continuous sweep, or authored-material penetration bound.
+     * Collision filters, hooks, and contact skin are not applied. The result is world-space.
+     * A null result can also indicate an unsupported native shape pair; it is not a proof
+     * that arbitrary compound or authored material is disjoint.
+     *
+     * @param prediction - Finite nonnegative prediction distance in world length units.
+     * @param target - Optional reusable result object.
+     */
+    contactColliderAtCurrentBodyPoses(
+        collider2: Collider,
+        prediction: number = 0,
+        target?: ShapeContact,
+    ): ShapeContact | null {
+        if (!Number.isFinite(prediction) || prediction < 0)
+            throw new RangeError("Contact prediction must be finite and nonnegative");
+        if (!this.isValid() || !collider2.isValid())
+            throw new Error("Current-body contact queries require valid colliders");
+        const first = this.currentBodyPose();
+        const second = collider2.currentBodyPose();
+        return this.shape.contactShape(
+            first.position, first.rotation, collider2.shape,
+            second.position, second.rotation, prediction, target,
+        );
+    }
+
+    private currentBodyPose(): {position: Vector; rotation: Rotation} {
+        const parent = this.parent();
+        if (!parent) return {position: this.translation(), rotation: this.rotation()};
+        const local = this.translationWrtParent()!;
+        const child = this.rotationWrtParent()!;
+        const position = parent.translation();
+        const q = parent.rotation();
+        const tx = 2 * (q.y * local.z - q.z * local.y);
+        const ty = 2 * (q.z * local.x - q.x * local.z);
+        const tz = 2 * (q.x * local.y - q.y * local.x);
+        return {
+            position: {
+                x: position.x + local.x + q.w * tx + q.y * tz - q.z * ty,
+                y: position.y + local.y + q.w * ty + q.z * tx - q.x * tz,
+                z: position.z + local.z + q.w * tz + q.x * ty - q.y * tx,
+            },
+            rotation: {
+                x: q.w * child.x + q.x * child.w + q.y * child.z - q.z * child.y,
+                y: q.w * child.y - q.x * child.z + q.y * child.w + q.z * child.x,
+                z: q.w * child.z + q.x * child.y - q.y * child.x + q.z * child.w,
+                w: q.w * child.w - q.x * child.x - q.y * child.y - q.z * child.z,
+            },
+        };
+    }
+    // #endif
+
     /**
      * Find the closest intersection between a ray and this collider.
      *

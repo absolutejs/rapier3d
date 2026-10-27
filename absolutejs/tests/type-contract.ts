@@ -45,3 +45,9 @@ if (trace) {
  const impactStride: 7 = trace.impactStride;
  void [impacts, impactStride];
 }
+
+const freshBodyContact: R.ShapeContact | null = first.contactColliderAtCurrentBodyPoses(second, 0.01);
+first.contactColliderAtCurrentBodyPoses(second);
+if (freshBodyContact) first.contactColliderAtCurrentBodyPoses(second, 0, freshBodyContact);
+// @ts-expect-error Prediction is numeric.
+first.contactColliderAtCurrentBodyPoses(second, '0.01');

@@ -94,3 +94,6 @@ The game repository contains `docs/material-provenance-2026-10-26/` with exact
 replay snapshots, phase measurements, every-frame windows and the corresponding
 findings. Read those records before repeating investigations. Candidate numbers
 identify reproducible experiments, not npm release versions.
+
+
+The stable 0.5.0 current-body contact API is now incorporated into this private branch with unchanged candidate-16 native code. See ../rotating-contact/api-adoption for source lineage and tests. The published game uses stable 0.5.0 with its unchanged 0.4.0 kernel; only this private branch contains the experimental solver.
