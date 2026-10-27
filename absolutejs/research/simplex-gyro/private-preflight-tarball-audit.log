@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/alexkahn/alex/rapier-simplex-gyro-release/absolutejs/scripts/audit-pack.py", line 20, in <module>
+    assert manifest['name']=='@absolutejs/rapier3d' and not manifest.get('private',False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

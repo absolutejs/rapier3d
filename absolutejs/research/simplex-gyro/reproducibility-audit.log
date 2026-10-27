@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-simplex-gyro-repro",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 48,
+  "packagedNativeSha256": "2ce107fb8534f00010b0238448eff1a4512e19b6312ef8b9359ac455c85511ab",
+  "packagedNativeBytes": 3292641,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "227e3b0cca12d12accb29bfaf9f4c89281c1207158aeabff5117669bc4e2087d",
+  "rawIndependentSha256": "93bad3ad6786c25534583cca89aa218596f5250126dc3bc6770c5a38e927507a",
+  "sourceInputDifferences": [
+    "README.md"
+  ],
+  "primarySourceContentSha256": "3af302b67c4369e1be00398cfeae214f954bcb66c7d85de4d9c032f3e9612842",
+  "independentSourceContentSha256": "b0016b22824be428d839a2d3fe8dce2898ea11b5df373dd6968bf0374247a0d6",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

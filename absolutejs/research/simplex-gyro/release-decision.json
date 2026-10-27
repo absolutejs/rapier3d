@@ -1,0 +1,36 @@
+{
+  "version": "0.8.0",
+  "decision": "ready-to-publish",
+  "nativeWasmSha256": "2ce107fb8534f00010b0238448eff1a4512e19b6312ef8b9359ac455c85511ab",
+  "tarballSha256": "ea6ce1b68e69c47f042b0d290ae1c95ed1d9f63cfb9d945f40ebefecfba8eda4",
+  "tarballIntegrity": "sha512-Stx+pRVmGSJEGfLq0JxGoSUiBsqzOxVg5dj/+Ak3jCajsBd8LJThokjCx7Mq/wRdFHUMrrp7bXW9sOB4FT2/YQ==",
+  "packageTests": {
+    "pass": 36,
+    "fail": 0
+  },
+  "gameTests": {
+    "pass": 825,
+    "fail": 0,
+    "assertions": 7408536
+  },
+  "browserGpuDisabled": true,
+  "bothGameTypeChecksPassed": true,
+  "publicTypeContractPassed": true,
+  "releaseIdentityFocusedChecksPassed": true,
+  "independentPackagedNativeAndAll48DistributionFilesMatch": true,
+  "nativeRuntimeSectionsMatch": true,
+  "rawCompilerMetadataDifferenceRetained": true,
+  "privateArchivePreflightCorrectlyRejected": true,
+  "physicsLimitsUnchanged": true,
+  "knownLimits": [
+    "f32 conditioning and integration error remain",
+    "one tilted long-box free-spin case has 1.305 ppm more energy error",
+    "coupled trajectories intentionally differ from previous rounding",
+    "no hardware frame-rate or speedup claim"
+  ],
+  "pending": [
+    "npm publication",
+    "registry integrity verification",
+    "published-package game adoption"
+  ]
+}
