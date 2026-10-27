@@ -199,3 +199,20 @@ paths to stable virtual prefixes before checking the qualified WASM checksum.
 Custom compiler flags are preserved, but their output must still match the
 qualified kernel. A checksum mismatch stops API packaging; it does not silently
 adopt a different native solver.
+
+## Lightweight build identity (0.7)
+
+Version 0.7 adds package metadata without changing the qualified 0.6 native kernel. Package version and kernel release are deliberately separate fields. This release does not include the experimental gyroscopic increment correction; game contact regressions keep that native change under investigation.
+
+```ts
+import {buildInfo} from '@absolutejs/rapier3d/build-info';
+report.physicsBuild = buildInfo;
+```
+
+The frozen metadata includes package version, qualified kernel release, native
+WASM SHA-256/byte count, upstream/binding versions and whether the kernel changes the pinned upstream solver. The
+same values are available as `RAPIER.buildInfo` and the root named `buildInfo`
+export. Package and kernel releases can differ when an API-only upgrade reuses
+a qualified kernel. The lightweight subpath contains metadata only and works
+before `init()`. It reports the packaged kernel; supplying custom bytes to
+`init(input)` does not change that identity and must be recorded separately.

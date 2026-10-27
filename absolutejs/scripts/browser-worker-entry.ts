@@ -1,4 +1,5 @@
 import R from '../../dist/rapier.mjs';
+import {buildInfo} from '../../dist/build-info.mjs';
 import {fixture} from '../tests/fixture';
 try {
  await Promise.all([R.init(),R.init()]);
@@ -50,6 +51,7 @@ try {
    kinematicRotationErrorRad=2*Math.acos(Math.min(1,alignment));
    if(kinematicPositionErrorM>3e-6||kinematicRotationErrorRad>2e-6)throw Error('Prescribed kinematic path drifted');
   }finally{pathWorld.free();}
-  postMessage({kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
+  postMessage({buildInfo,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

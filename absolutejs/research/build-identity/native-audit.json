@@ -1,0 +1,9 @@
+{
+  "sameNativeBytes": true,
+  "excludedGyroKernelRejected": true,
+  "schemaVersion": 1,
+  "qualifiedKernelRelease": "0.6.0",
+  "wasmSha256": "17f66b696ecebb8180f8ab01fe1a4773c3565e4e56b3e7db74e51183590b06f4",
+  "wasmBytes": 3291678,
+  "solverChanges": true
+}

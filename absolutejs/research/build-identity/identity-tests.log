@@ -1,0 +1,10 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [11.63ms]
+(pass) diagnostic identity imports independently of the physics runtime [98.86ms]
+
+ 2 pass
+ 0 fail
+ 14 expect() calls
+Ran 2 tests across 1 file. [420.00ms]

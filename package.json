@@ -1,7 +1,7 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.6.0",
-  "description": "Rapier 3D with accurate prescribed kinematics and solver-contact diagnostics",
+  "version": "0.7.0",
+  "description": "Rapier 3D with native solver diagnostics and lightweight build identity",
   "type": "module",
   "license": "Apache-2.0",
   "repository": {
@@ -17,6 +17,10 @@
     ".": {
       "types": "./dist/types/rapier.d.ts",
       "import": "./dist/rapier.mjs"
+    },
+    "./build-info": {
+      "types": "./dist/types/build-info.d.ts",
+      "import": "./dist/build-info.mjs"
     }
   },
   "module": "./dist/rapier.mjs",
