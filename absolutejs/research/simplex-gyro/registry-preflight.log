@@ -1,0 +1,8 @@
+npm error code E404
+npm error 404 No match found for version 0.8.0
+npm error 404
+npm error 404  The requested resource '@absolutejs/rapier3d@0.8.0' could not be found or you do not have permission to access it.
+npm error 404
+npm error 404 Note that you can also install from a
+npm error 404 tarball, folder, http url, or git url.
+npm error A complete log of this run can be found in: /home/alexkahn/alex/rapier-simplex-gyro-release/.cache/npm/_logs/2026-10-27T22_50_14_274Z-debug-0.log

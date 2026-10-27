@@ -41,3 +41,8 @@ const hash: string = identity.wasmSha256;
 // @ts-expect-error Artifact identity is read-only.
 identity.packageVersion = 'spoof';
 void hash;
+const collisionVersion: string = identity.collisionLibraryVersion;
+const collisionSource: string = identity.collisionSource;
+// @ts-expect-error Collision provenance is immutable too.
+identity.collisionSource = 'unverified';
+void [collisionVersion, collisionSource];
