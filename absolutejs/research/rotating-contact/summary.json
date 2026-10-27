@@ -1,0 +1,203 @@
+{
+  "physicalAcceptance": false,
+  "sourceSha256": "d9dd295f73e73f4ee05374e59b13745ba1eb6897723918665bee578ad0a27328",
+  "engineSha256": "4ae17255f26589e98f3319f5beee4724f381dc6af6b227ac135d4ec59a6b7cfc",
+  "oracleChecks": 4,
+  "readOnlyParityCases": 60,
+  "readOnlyParityFrames": 4284,
+  "boundedMaximumSpeed": 101.303359404261,
+  "refreshRows": [
+    {
+      "subdivisions": 1,
+      "hz": 60,
+      "omega": 6,
+      "peakDepthM": 0.021393695934899357,
+      "peakLiveAnchorDepthM": 0,
+      "peakNormalAngleRadians": 0.09999884252930485
+    },
+    {
+      "subdivisions": 1,
+      "hz": 60,
+      "omega": 30,
+      "peakDepthM": 0.09817862682473542,
+      "peakLiveAnchorDepthM": 0,
+      "peakNormalAngleRadians": 0.49998922845200505
+    },
+    {
+      "subdivisions": 1,
+      "hz": 240,
+      "omega": 6,
+      "peakDepthM": 0.0020954915054597206,
+      "peakLiveAnchorDepthM": 0.000623646192252636,
+      "peakNormalAngleRadians": 0.02499081162088005
+    },
+    {
+      "subdivisions": 1,
+      "hz": 240,
+      "omega": 30,
+      "peakDepthM": 0.08258078111150279,
+      "peakLiveAnchorDepthM": 0.05047323554754257,
+      "peakNormalAngleRadians": 0.12499941832876649
+    },
+    {
+      "subdivisions": 1,
+      "hz": 960,
+      "omega": 6,
+      "peakDepthM": 0.00041613290211515996,
+      "peakLiveAnchorDepthM": 0.0003217431949451566,
+      "peakNormalAngleRadians": 0.006229512090220381
+    },
+    {
+      "subdivisions": 1,
+      "hz": 960,
+      "omega": 30,
+      "peakDepthM": 0.009138642700143515,
+      "peakLiveAnchorDepthM": 0.006862579379230738,
+      "peakNormalAngleRadians": 0.03125063820733938
+    },
+    {
+      "subdivisions": 2,
+      "hz": 60,
+      "omega": 6,
+      "peakDepthM": 0.006221813901569825,
+      "peakLiveAnchorDepthM": 0.0005199974402785301,
+      "peakNormalAngleRadians": 0.04999788081399998
+    },
+    {
+      "subdivisions": 2,
+      "hz": 60,
+      "omega": 30,
+      "peakDepthM": 0.08360120643258416,
+      "peakLiveAnchorDepthM": 0.01872222125530243,
+      "peakNormalAngleRadians": 0.2499946603507759
+    },
+    {
+      "subdivisions": 2,
+      "hz": 240,
+      "omega": 6,
+      "peakDepthM": 0.0008289806982594156,
+      "peakLiveAnchorDepthM": 0.0004548795986920595,
+      "peakNormalAngleRadians": 0.012481956409314814
+    },
+    {
+      "subdivisions": 2,
+      "hz": 240,
+      "omega": 30,
+      "peakDepthM": 0.021620571661140717,
+      "peakLiveAnchorDepthM": 0.012881878763437271,
+      "peakNormalAngleRadians": 0.06250013541912092
+    },
+    {
+      "subdivisions": 2,
+      "hz": 960,
+      "omega": 6,
+      "peakDepthM": 0.00019936150813891496,
+      "peakLiveAnchorDepthM": 0.0001755314297042787,
+      "peakNormalAngleRadians": 0.0030768735636603284
+    },
+    {
+      "subdivisions": 2,
+      "hz": 960,
+      "omega": 30,
+      "peakDepthM": 0.0044249385524267465,
+      "peakLiveAnchorDepthM": 0.003843273501843214,
+      "peakNormalAngleRadians": 0.015612613784359257
+    },
+    {
+      "subdivisions": 4,
+      "hz": 60,
+      "omega": 6,
+      "peakDepthM": 0.002103549835634419,
+      "peakLiveAnchorDepthM": 0.0006323005072772503,
+      "peakNormalAngleRadians": 0.025002190393865087
+    },
+    {
+      "subdivisions": 4,
+      "hz": 60,
+      "omega": 30,
+      "peakDepthM": 0.07979329043730542,
+      "peakLiveAnchorDepthM": 0.0476626381278038,
+      "peakNormalAngleRadians": 0.12499693796678993
+    },
+    {
+      "subdivisions": 4,
+      "hz": 240,
+      "omega": 6,
+      "peakDepthM": 0.0003670709661568322,
+      "peakLiveAnchorDepthM": 0.00027225876692682505,
+      "peakNormalAngleRadians": 0.006199297100531802
+    },
+    {
+      "subdivisions": 4,
+      "hz": 240,
+      "omega": 30,
+      "peakDepthM": 0.008163467832369528,
+      "peakLiveAnchorDepthM": 0.005887093022465706,
+      "peakNormalAngleRadians": 0.031246084235923254
+    },
+    {
+      "subdivisions": 4,
+      "hz": 960,
+      "omega": 6,
+      "peakDepthM": 0.00019928261140798875,
+      "peakLiveAnchorDepthM": 0.00017542741261422634,
+      "peakNormalAngleRadians": 0.0030768735636603284
+    },
+    {
+      "subdivisions": 4,
+      "hz": 960,
+      "omega": 30,
+      "peakDepthM": 0.0022170697731663663,
+      "peakLiveAnchorDepthM": 0.002069989452138543,
+      "peakNormalAngleRadians": 0.007792011518823219
+    },
+    {
+      "subdivisions": 8,
+      "hz": 60,
+      "omega": 6,
+      "peakDepthM": 0.0008339069091857082,
+      "peakLiveAnchorDepthM": 0.0004601171240210533,
+      "peakNormalAngleRadians": 0.01250454814967086
+    },
+    {
+      "subdivisions": 8,
+      "hz": 60,
+      "omega": 30,
+      "peakDepthM": 0.020729843795509337,
+      "peakLiveAnchorDepthM": 0.01198967918753624,
+      "peakNormalAngleRadians": 0.062495979118282856
+    },
+    {
+      "subdivisions": 8,
+      "hz": 240,
+      "omega": 6,
+      "peakDepthM": 0.00017413770264039508,
+      "peakLiveAnchorDepthM": 0.00014987803297117352,
+      "peakNormalAngleRadians": 0.0030203400468248364
+    },
+    {
+      "subdivisions": 8,
+      "hz": 240,
+      "omega": 30,
+      "peakDepthM": 0.003918813114329386,
+      "peakLiveAnchorDepthM": 0.003337809117510915,
+      "peakNormalAngleRadians": 0.01563336083094047
+    },
+    {
+      "subdivisions": 8,
+      "hz": 960,
+      "omega": 6,
+      "peakDepthM": 0.00014599911818900801,
+      "peakLiveAnchorDepthM": 0.00013271163334138691,
+      "peakNormalAngleRadians": 0.002303591643571676
+    },
+    {
+      "subdivisions": 8,
+      "hz": 960,
+      "omega": 30,
+      "peakDepthM": 0.0011515745129050264,
+      "peakLiveAnchorDepthM": 0.0011144420132040977,
+      "peakNormalAngleRadians": 0.003875065062689225
+    }
+  ]
+}
