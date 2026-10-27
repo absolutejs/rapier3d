@@ -1,0 +1,59 @@
+{
+  "scope": "Two-second cavity/chip contact trajectories. Translation and linear velocity use fixture centimeters; rotation is quaternion component distance, angular velocity radians/second. Chaotic contact differences are recorded, not treated as proof of improved contact physics.",
+  "packageSha256": "2ec95da46d08ff77d19b2bb995916acd02de666740bc8b3b2036c83ec74e9588",
+  "sourceSha256": "0b578ad8e2f33b46cf4f98228f02938be13dd394d59ed91e63a2b8bb7f14d634",
+  "rows": [
+    {
+      "hz": 960,
+      "tilt": 0,
+      "frames": 1920,
+      "firstDifferentFrame": 1,
+      "peaks": {
+        "translation": 0.023108499708008667,
+        "rotation": 0.0029046778306263694,
+        "linvel": 7.905748240228633,
+        "angvel": 2.763782605764828
+      },
+      "elapsedMs": 4707.9389519999995
+    },
+    {
+      "hz": 960,
+      "tilt": 0.3,
+      "frames": 1920,
+      "firstDifferentFrame": 1,
+      "peaks": {
+        "translation": 0.7110455031320356,
+        "rotation": 0.11932499948480899,
+        "linvel": 127.9661008016871,
+        "angvel": 46.99320936650995
+      },
+      "elapsedMs": 4179.489958
+    },
+    {
+      "hz": 1920,
+      "tilt": 0,
+      "frames": 3840,
+      "firstDifferentFrame": 1,
+      "peaks": {
+        "translation": 0.04562639057001207,
+        "rotation": 0.004471203318721703,
+        "linvel": 28.52379162101448,
+        "angvel": 11.757743009383994
+      },
+      "elapsedMs": 8126.1944459999995
+    },
+    {
+      "hz": 1920,
+      "tilt": 0.3,
+      "frames": 3840,
+      "firstDifferentFrame": 1,
+      "peaks": {
+        "translation": 2.935694411391395,
+        "rotation": 0.3242623022530481,
+        "linvel": 87.12447882210606,
+        "angvel": 15.20814522084308
+      },
+      "elapsedMs": 8704.928518
+    }
+  ]
+}
