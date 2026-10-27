@@ -1,0 +1,9 @@
+{
+  "onlyChangedPackage": "parry3d",
+  "versionUnchanged": "0.31.1",
+  "otherLockEntriesAndDependencyListsUnchanged": true,
+  "sourceRevision": "dbd99a8dfce020da3698056471262435d56d3f69",
+  "engineChanges": false,
+  "gyroIncrementCorrectionIncluded": false,
+  "qualification": "private candidate; native replay and game gates pending"
+}

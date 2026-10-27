@@ -1,7 +1,7 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.7.0",
-  "description": "Rapier 3D with native solver diagnostics and lightweight build identity",
+  "version": "0.8.0",
+  "description": "Rapier 3D with preserved native contact witnesses and solver diagnostics",
   "type": "module",
   "license": "Apache-2.0",
   "repository": {
@@ -35,5 +35,6 @@
     "@types/bun": "1.4.2",
     "playwright": "1.61.1",
     "typescript": "5.9.3"
-  }
+  },
+  "private": true
 }

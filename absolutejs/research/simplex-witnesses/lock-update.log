@@ -1,0 +1,10 @@
+error: failed to acquire package cache lock
+
+Caused by:
+  failed to open: /home/alexkahn/alex/rapier-simplex-release/.cache/cargo/.package-cache
+
+Caused by:
+  failed to create directory `/home/alexkahn/alex/rapier-simplex-release/.cache/cargo`
+
+Caused by:
+  File exists (os error 17)
