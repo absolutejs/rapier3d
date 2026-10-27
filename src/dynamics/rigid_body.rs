@@ -2202,7 +2202,11 @@ pub(crate) fn gyroscopic_corrected_angvel(
     if total_momentum_sqnorm != 0.0 {
         let capped_momentum =
             total_momentum * (curr_momentum.length_squared() / total_momentum_sqnorm).sqrt();
-        principal_axes * (inv_principal_inertia * capped_momentum)
+        // Apply only the computed gyroscopic increment. Reconstructing the
+        // entire world velocity through inertia and its inverse introduces
+        // roundoff even when the momentum correction is zero; thousands of
+        // temporal subdivisions can accumulate that into artificial spin-up.
+        angvel + principal_axes * (inv_principal_inertia * (capped_momentum - curr_momentum))
     } else {
         angvel
     }
