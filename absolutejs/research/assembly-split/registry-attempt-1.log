@@ -1,0 +1,11 @@
+13 |   headers: { 'Cache-Control': 'no-cache' }, signal: AbortSignal.timeout(20000),
+14 | });
+15 | const receipt: Record<string, unknown> = { package: audit.name, version: audit.version, checkedAt: new Date().toISOString(), registryStatus: response.status };
+16 | if (!response.ok) {
+17 |   writeFileSync(output, JSON.stringify(receipt, null, 2) + '\n', { flag: 'wx' });
+18 |   throw Error(`Registry not available yet: ${response.status}; do not republish an accepted version`);
+             ^
+error: Registry not available yet: 404; do not republish an accepted version
+      at /home/alexkahn/alex/rapier-assembly-split-research/absolutejs/scripts/verify-registry-archive.ts:18:9
+
+Bun v1.4.4+absolute.1 (Linux x64)

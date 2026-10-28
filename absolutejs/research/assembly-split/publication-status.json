@@ -1,0 +1,10 @@
+{
+  "package": "@absolutejs/rapier3d",
+  "version": "0.16.0",
+  "status": "npm-publish-accepted-awaiting-registry",
+  "publishExitCode": 0,
+  "sourceCommit": "c19e57e01b2f2f1b521f8ceab3334e603d7bd8af",
+  "archiveSha256": "7b3ca457a07fd00c64bce505958de3a764bc212e0cf78ef52ed2134de9f75c75",
+  "initialNpmView": "E404 after acceptance; do not republish",
+  "recordedAt": "2026-10-28T17:37:30.196735+00:00"
+}
