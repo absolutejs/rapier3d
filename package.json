@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.16.2-certified-normal-research.1",
+  "version": "0.16.2-certified-normal-research.2",
   "description": "Rapier 3D with matched free-body rotation, corrected contact witnesses and solver diagnostics",
   "type": "module",
   "license": "Apache-2.0",

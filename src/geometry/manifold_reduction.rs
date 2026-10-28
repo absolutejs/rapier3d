@@ -5,18 +5,27 @@ pub(crate) fn reduce_manifold_naive(
     manifold: &ContactManifold,
     selected: &mut [usize; 4],
     num_selected: &mut usize,
-    prediction_distance: Real,
+    is_eligible: impl Fn(usize) -> bool,
 ) {
+    // Apply the caller's full eligibility rule before choosing the support patch.
+    // Current separation alone excludes velocity-predicted approaching points.
+    *selected = [usize::MAX; 4];
+    *num_selected = 0;
     if manifold.points.len() <= 4 {
+        for i in 0..manifold.points.len() {
+            if is_eligible(i) {
+                selected[*num_selected] = i;
+                *num_selected += 1;
+            }
+        }
         return;
     }
 
-    // 1. Find the deepest contact.
-    *selected = [usize::MAX; 4];
+    // 1. Find the deepest eligible contact.
 
     let mut deepest_dist = Real::MAX;
     for (i, pt) in manifold.points.iter().enumerate() {
-        if pt.dist < deepest_dist {
+        if is_eligible(i) && pt.dist < deepest_dist {
             deepest_dist = pt.dist;
             selected[0] = i;
         }
@@ -32,7 +41,7 @@ pub(crate) fn reduce_manifold_naive(
     let mut furthest_dist = -Real::MAX;
     for (i, pt) in manifold.points.iter().enumerate() {
         let dist = (pt.local_p1 - selected_a).length_squared();
-        if i != selected[0] && pt.dist <= prediction_distance && dist > furthest_dist {
+        if i != selected[0] && is_eligible(i) && dist > furthest_dist {
             furthest_dist = dist;
             selected[1] = i;
         }
@@ -58,7 +67,7 @@ pub(crate) fn reduce_manifold_naive(
     let mut min_dot = Real::MAX;
     let mut max_dot = -Real::MAX;
     for (i, pt) in manifold.points.iter().enumerate() {
-        if i == selected[0] || i == selected[1] || pt.dist > prediction_distance {
+        if i == selected[0] || i == selected[1] || !is_eligible(i) {
             continue;
         }
 

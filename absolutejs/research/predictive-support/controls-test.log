@@ -1,0 +1,13 @@
+   Compiling absolutejs-predictive-support-research v0.0.0 (/home/alexkahn/alex/rapier-composite-contact-research/absolutejs/research/predictive-support)
+    Finished `release` profile [optimized] target(s) in 1.00s
+     Running support.rs (/home/alexkahn/alex/parry-certified-normal-research/.cache/research-target/release/deps/predictive_support-4559f79df8d79f56)
+
+running 5 tests
+test approaching_tilted_patch_retains_its_future_support_extent ... ok
+test contact_skin_eligibility_is_not_discarded_by_raw_distance ... ok
+test moving_patch_support_extents_survive_permuted_contact_order ... ok
+test no_eligible_contacts_and_small_manifolds_obey_the_same_filter ... ok
+test stationary_and_receding_points_outside_margin_stay_excluded ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

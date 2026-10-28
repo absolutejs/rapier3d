@@ -1,0 +1,8 @@
+{
+  "files": {
+    "src/geometry/manifold_reduction.rs": "e62cfdc69156b326e9ef8d7469f393de64dd3f98b47ab125988c6ece5373c5b5",
+    "src/geometry/narrow_phase/pair_update.rs": "3a471863e81148157bb1f8c3c599e478f7c5ea3d80fa80e6af09c524555bb2e2",
+    "absolutejs/research/predictive-support/support.rs": "a30881ac5e0cface5e09a85a99e2b9e4db017f10c6eaa130e667c790583494ce"
+  },
+  "scope": "private production-source admission correction; game acceptance pending"
+}

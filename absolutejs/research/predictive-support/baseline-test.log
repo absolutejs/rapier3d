@@ -1,0 +1,28 @@
+     Locking 41 packages to latest compatible versions
+   Compiling glam v0.33.12
+   Compiling hashbrown v0.17.1
+   Compiling glamx v0.3.1
+   Compiling bitflags v2.13.2
+   Compiling parry3d v0.31.1 (https://github.com/absolutejs/parry?rev=52b1a9b0d0c2a78ac6b254cb13f5924fa65fbabb#52b1a9b0)
+   Compiling absolutejs-predictive-support-research v0.0.0 (/home/alexkahn/alex/rapier-composite-contact-research/absolutejs/research/predictive-support)
+    Finished `release` profile [optimized] target(s) in 1m 11s
+     Running support.rs (/home/alexkahn/alex/parry-certified-normal-research/.cache/research-target/release/deps/predictive_support-4559f79df8d79f56)
+
+running 1 test
+test approaching_tilted_patch_retains_its_future_support_extent ... FAILED
+
+failures:
+
+---- approaching_tilted_patch_retains_its_future_support_extent stdout ----
+
+thread 'approaching_tilted_patch_retains_its_future_support_extent' (138) panicked at support.rs:20:2:
+future x support lost: [0, 3, 4]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    approaching_tilted_patch_retains_its_future_support_extent
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test predictive-support`

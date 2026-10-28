@@ -561,6 +561,24 @@ pub(super) fn process_pair(
                 dominance1.effective_group(&rb_type1) - dominance2.effective_group(&rb_type2);
             manifold.data.normal = world_pos1.rotation * manifold.local_n1;
 
+            // Reduction and final admission must use the same swept eligibility.
+            // Otherwise an approaching support point can be discarded before its
+            // velocity has any chance to qualify it for the solver.
+            let manifold_points = &manifold.points;
+            let manifold_normal = manifold.data.normal;
+            let keep_solver_contact = |contact_id: usize| {
+                let contact = &manifold_points[contact_id];
+                let effective_contact_dist = contact.dist - co1.contact_skin() - co2.contact_skin();
+                effective_contact_dist < prediction_distance + soft_body_prediction || {
+                    let world_pt1 = world_pos1 * contact.local_p1;
+                    let world_pt2 = world_pos2 * contact.local_p2;
+                    let vel1 = rb1.map(|rb| rb.velocity_at_point(world_pt1)).unwrap_or_default();
+                    let vel2 = rb2.map(|rb| rb.velocity_at_point(world_pt2)).unwrap_or_default();
+                    effective_contact_dist + (vel2 - vel1).dot(manifold_normal) * dt
+                        < prediction_distance
+                }
+            };
+
             // Generate solver contacts.
             #[allow(unused_mut)] // Mut not needed in 2D.
             let mut selected = [0, 1, 2, 3];
@@ -572,7 +590,7 @@ pub(super) fn process_pair(
                 manifold,
                 &mut selected,
                 &mut num_selected,
-                prediction_distance,
+                &keep_solver_contact,
             );
 
             // Sort points lexicographically on the contact plane (in `local_n1`'s orthonormal-
@@ -609,21 +627,7 @@ pub(super) fn process_pair(
                 let contact = &manifold.points[*contact_id];
                 let effective_contact_dist = contact.dist - co1.contact_skin() - co2.contact_skin();
 
-                let keep_solver_contact =
-                    effective_contact_dist < prediction_distance + soft_body_prediction || {
-                        let world_pt1 = world_pos1 * contact.local_p1;
-                        let world_pt2 = world_pos2 * contact.local_p2;
-                        let vel1 = rb1
-                            .map(|rb| rb.velocity_at_point(world_pt1))
-                            .unwrap_or_default();
-                        let vel2 = rb2
-                            .map(|rb| rb.velocity_at_point(world_pt2))
-                            .unwrap_or_default();
-                        effective_contact_dist + (vel2 - vel1).dot(manifold.data.normal) * dt
-                            < prediction_distance
-                    };
-
-                if keep_solver_contact {
+                if keep_solver_contact(*contact_id) {
                     // The anchors hold world-space points until the localization pass
                     // below, so the contact-modification hook sees fresh world data.
                     let world_pt1 = world_pos1 * contact.local_p1;
