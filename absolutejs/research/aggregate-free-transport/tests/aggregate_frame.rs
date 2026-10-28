@@ -845,3 +845,56 @@ fn separating_all_links_preserves_instantaneous_motion() {
         println!("AGGREGATE_DETACH root={root} errors={maxima:?}");
     }
 }
+
+#[test]
+fn split_chain_preserves_motion_and_explicit_zero_damping() {
+    let mut world = PhysicsWorld::new();
+    world.gravity = Vector::ZERO;
+    world.integration_parameters.dt = 1.0 / 120.0;
+    world.integration_parameters.num_solver_iterations = 4;
+    world.physics_pipeline.counters.enable();
+    let bodies: Vec<_> = (0..4).map(|i| {
+        let mass = (i + 1) as f32;
+        world.bodies.insert(RigidBodyBuilder::dynamic().can_sleep(false)
+            .translation(Vector::new(i as f32, 0.0, 0.0))
+            .additional_mass_properties(MassProperties::with_principal_inertia_frame(
+                Vector::new(0.1, 0.05, -0.02) * mass, mass,
+                Vector::new(0.2, 0.3, 0.4) * mass, Rotation::IDENTITY)))
+    }).collect();
+    let joints: Vec<_> = (0..3).map(|i| world.multibody_joints.insert(
+        bodies[i], bodies[i+1], FixedJointBuilder::new()
+            .local_anchor1(Vector::X).build(), true).unwrap()).collect();
+    world.step();
+    let (mb, _) = world.multibody_joints.get_mut(joints[0]).unwrap();
+    mb.damping_mut().fill(0.0);
+    mb.generalized_velocity_mut().as_mut_slice()[..6]
+        .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
+    for _ in 0..24 {world.step();}
+    let before: Vec<_> = bodies.iter().map(|h| {
+        let rb=&world.bodies[*h];(*rb.position(),rb.linvel(),rb.angvel())
+    }).collect();
+    let (mass,c0,p0,l0,e0)=quantities(&world,&bodies,None);
+    world.multibody_joints.remove(joints[1],true);
+    for (i,h) in bodies.iter().enumerate() {
+        let rb=&world.bodies[*h];assert_eq!((*rb.position(),rb.linvel(),rb.angvel()),before[i]);
+    }
+    let mut maxima=[0.0_f64;4];
+    for step in 1..=24 {
+        world.step();
+        let (_,c,p,l,e)=quantities(&world,&bodies,None);
+        let time=step as f64 * world.integration_parameters.dt as f64;
+        let expected:V=core::array::from_fn(|i|c0[i]+p0[i]/mass*time);
+        let errors=[norm(difference(p,p0))/norm(p0),norm(difference(l,l0))/norm(l0),
+            (e/e0-1.0).abs(),norm(difference(c,expected))];
+        for i in 0..4 {assert!(errors[i].is_finite());maxima[i]=maxima[i].max(errors[i]);}
+        if step==1 || step==24 {
+            for handle in [joints[0],joints[2]] {
+                let (mb,_) = world.multibody_joints.get_mut(handle).unwrap();
+                println!("SPLIT_DAMPING step={step} values={:?}",mb.damping_mut().as_slice());
+            }
+            println!("SPLIT_MOTION step={step} errors={errors:?} counts={:?}",assembly_counts(&world));
+        }
+    }
+    println!("SPLIT_MAXIMUM errors={maxima:?}");
+    assert!(maxima.iter().all(|x| *x < 1e-4));
+}
