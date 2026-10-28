@@ -1,0 +1,344 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/coupled-mass-ratio.test.ts:
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.3207728862762451
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=60 reverse=false [33.36ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.3207728862762451
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=60 reverse=true [13.72ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.3207728862762451
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=240 reverse=false [8.18ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.3207728862762451
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=240 reverse=true [4.22ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7405040264129639
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=60 reverse=false [10.84ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7405040264129639
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=60 reverse=true [2.76ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7405040264129639
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=240 reverse=false [2.95ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7405040264129639
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=240 reverse=true [3.50ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.02017459502586938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=60 reverse=false [3.95ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.07519474396338843
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=60 reverse=true [18.64ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.02017459502586938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=240 reverse=false [2.90ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.07519522080054664
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=240 reverse=true [1.58ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.041138612307035416
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=60 reverse=false [1.42ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.15334085317758372
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=60 reverse=true [1.29ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.041138612307035416
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=240 reverse=false [1.72ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.15334228368905833
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=240 reverse=true [1.80ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.07519474396338843
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=60 reverse=false [2.99ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.02017459502586938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=60 reverse=true [2.77ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.07519522080054664
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=240 reverse=false [1.41ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.02017459502586938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=240 reverse=true [1.36ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.15334085317758372
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=60 reverse=false [1.98ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.041138612307035416
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=60 reverse=true [1.17ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.15334228368905833
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=240 reverse=false [0.92ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.041138612307035416
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=240 reverse=true [1.59ms]
+
+ 0 pass
+ 24 fail
+ 48 expect() calls
+Ran 24 tests across 1 file. [490.00ms]
