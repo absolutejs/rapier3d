@@ -196,3 +196,10 @@ qualified-kernel identity and README updates; all other runtime/declaration
 bytes and the native payload are exact. Independent public API builds match
 all 49 shipped files. The exact archive is backed up in the game qualification
 checkout and its 53 installed files audit exactly. Publication is pending.
+
+## Published
+
+Registry verification at 2026-10-28T20:21:50.553Z confirms 0.16.2 metadata
+and downloaded SHA-256/SHA-1/SHA-512 exactly match the audited archive. The
+accepted version was not republished during two transient registry 404s.
+Source release commit is `0a321840`; canonical game adoption follows.
