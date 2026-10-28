@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "minimumDistance": -31.968265533447266,
+      "normal": [
+        -0.5430753827095032,
+        -0.2036532759666443,
+        -0.8146131038665771
+      ],
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "pointCount": 5
+    },
+    {
+      "minimumDistance": 8.816721674520522e-6,
+      "normal": [
+        -0.3698001205921173,
+        0.9245002865791321,
+        -0.09245003014802933
+      ],
+      "origin": [
+        1000.0,
+        92.10225677490234,
+        0.0
+      ],
+      "pointCount": 5
+    }
+  ],
+  "scope": "Standalone exact serialized convex geometry; no physics world, snapshots, time stepping or cached manifold"
+}

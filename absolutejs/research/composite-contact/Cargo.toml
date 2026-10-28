@@ -11,3 +11,15 @@ serde_json = "1"
 [[bin]]
 name = "probe-composite-contact"
 path = "probe.rs"
+
+[[bin]]
+name = "probe-heightfield-manifolds"
+path = "manifolds.rs"
+
+[[bin]]
+name = "probe-contact-recenter"
+path = "recenter.rs"
+
+[[bin]]
+name = "probe-contact-standalone"
+path = "standalone.rs"
