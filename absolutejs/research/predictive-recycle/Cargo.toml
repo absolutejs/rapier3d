@@ -18,3 +18,7 @@ parallel = ["rapier3d/parallel"]
 [[bin]]
 name = "probe-terrain-recycle"
 path = "terrain.rs"
+
+[[test]]
+name = "predictive-support-native"
+path = "../predictive-support/native.rs"

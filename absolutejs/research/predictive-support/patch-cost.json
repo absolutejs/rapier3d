@@ -1,0 +1,73 @@
+{
+  "scope": "One approaching tilted mesh patch, 128 independent restored steps per sample; 4 warmups then 8 alternating paired samples; setup/restoration/free excluded; CPU observations, not FPS or a speedup claim",
+  "sources": {
+    "/home/alexkahn/alex/rapier-predictive-support-release/absolutejs/research/predictive-support/benchmark-patch.ts": "010130dc8373874c9480c8e31ba9240b3ae56b8a4d39c03535d98a34c1422118",
+    "/home/alexkahn/alex/hello-world/node_modules/@absolutejs/rapier3d/dist/rapier.mjs": "29b1880a7b28b11a0e558fc3748b7c0bba0a9bfeda16ce8c726bf6cef599b5be",
+    "dist/rapier.mjs": "47fad5d52dfe981220c4c491cf18f87a1498bf3a9a543cb64ed0390a76b1a2d4",
+    "absolutejs/tests/predictive-support-fixture.ts": "06602d5c7051431863a3e277e3f0d5cc028a5c9c119550ce37add71b717f57d7"
+  },
+  "rows": [
+    {
+      "name": "baseline",
+      "buildInfo": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.16.2",
+        "qualifiedKernelRelease": "0.16.2",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "f1539c74bb9192cf8f6dfaa95bb6654a605d326faa0bdd02939d798a455bc57c",
+        "wasmBytes": 3357159,
+        "solverChanges": true
+      },
+      "samplesMs": [
+        27.225705000000403,
+        18.714436000000205,
+        19.78847300000075,
+        18.402131999998574,
+        14.21699200000171,
+        22.111987,
+        20.515739000000394,
+        11.240046000001257
+      ],
+      "medianMs": 19.251454500000477,
+      "finalSha256": "9677f92d96a4cb54e8fcb3801c492ab64dc9a34a62c446487272f1106cc74aa2"
+    },
+    {
+      "name": "candidate",
+      "buildInfo": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.16.3-support-research.0",
+        "qualifiedKernelRelease": "unqualified-isolated-predictive-support",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "1f2e3e463298859e3819d2c8b1f3741ba5bed2673687b71576c57fc1c0c035a2",
+        "wasmBytes": 3357191,
+        "solverChanges": true
+      },
+      "samplesMs": [
+        22.44950399999925,
+        17.5154849999999,
+        13.80005000000142,
+        18.873546000000943,
+        19.442307999999002,
+        20.662783999998737,
+        12.936563000000206,
+        15.211720000000241
+      ],
+      "medianMs": 18.19451550000042,
+      "finalSha256": "dcde758390a6fa9b8009240a30757b5b4907b8d975e5266c51e03ff2e2382dc8"
+    }
+  ]
+}

@@ -40,3 +40,22 @@ All 53 installed game files match. No new rejections occur in 24 paired terrain
 cases. All four generated/excavated work cases and 18 flat-floor tree cases pass.
 Physical results change in some cases; no universal improvement is asserted.
 Full game, cost, feature and independent rebuild qualification remain pending.
+
+## Full-game and CPU checks
+
+The isolated game passes all 844 tests (7,408,742 assertions), types, dependency
+checks and worker bundling. Qualification and exact archive are pushed on
+`research/predictive-support-qualification` at 8bbeca2f. Twenty of 24 terrain
+rows retain recorded physical fields exactly; four change with no new rejection.
+The existing raw variant-0/1920 rejection remains. Actual adaptive terrain work
+passes all four generated/excavated cases, and all 18 flat-tree cases pass.
+
+Three alternating paired CPU control scenes preserve final physical states
+exactly. Median ratios candidate/baseline are 1.033, 1.051 and 0.951. The affected
+moving-patch probe ratio is 0.945. These are observations on a shared host, not
+hardware FPS, universal performance or speedup claims; see complete samples.
+No new allocation is introduced by the production correction.
+
+Three native engine tests pass for scaled/reordered approaching support,
+nonapproaching exclusion and exact replay. Existing native controls, two-worker
+and no-std checks are in progress; independent rebuilt bytes are still pending.

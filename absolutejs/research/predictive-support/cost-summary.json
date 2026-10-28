@@ -1,0 +1,33 @@
+{
+  "scope": "Bounded CPU observations on this shared host; not hardware FPS or a universal performance claim",
+  "rows": [
+    {
+      "scene": "stationary-prediction-32",
+      "baselineMedianMs": 57.27006450000022,
+      "candidateMedianMs": 59.186853000000156,
+      "ratio": 1.0334692917972867,
+      "finalPhysicalExact": true
+    },
+    {
+      "scene": "resting-stack-16",
+      "baselineMedianMs": 27.287541999999576,
+      "candidateMedianMs": 28.68224599999985,
+      "ratio": 1.0511113826228942,
+      "finalPhysicalExact": true
+    },
+    {
+      "scene": "falling-grid-32",
+      "baselineMedianMs": 46.64007750000019,
+      "candidateMedianMs": 44.364025500000025,
+      "ratio": 0.9511996522733017,
+      "finalPhysicalExact": true
+    },
+    {
+      "scene": "approaching tilted mesh patch, 128 steps",
+      "baselineMedianMs": 19.251454500000477,
+      "candidateMedianMs": 18.19451550000042,
+      "ratio": 0.9450982262145423,
+      "finalPhysicalExact": false
+    }
+  ]
+}
