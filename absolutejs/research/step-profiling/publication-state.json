@@ -1,0 +1,7 @@
+{
+  "published": true,
+  "version": "0.12.0",
+  "shasum": "30555bc9f1724c44ecff639ebc69d26834f36af0",
+  "integrity": "sha512-ZukE4A9f0p7LV/urlA/WSxQBExhhayXG8P+oKpgEAOaSwtJLcNea01/vDAt0wJfZd5DuLGoEjKqhFwNkHKWG2A==",
+  "note": "npm accepted browser confirmation; three initial version queries returned E404, online revalidation matches audited archive. No duplicate successful publish."
+}

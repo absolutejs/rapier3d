@@ -51,3 +51,9 @@ Initial npm pack could not write the default cache under sandbox permissions;
 retry used this worktree's .cache/npm. The tarball SHA256 is
 d2fb721bd99699beac726f1fd82539b04f45034e00cf70418947dfd77de457cb.
 Publication and game adoption still require registry and installed-byte checks.
+
+## Publication
+
+Browser confirmation completed; npm accepted 0.12.0. Registry online revalidation
+verifies the exact audited archive SHA1 and integrity after initial E404 responses.
+No duplicate successful publish. Game adoption is verified separately.
