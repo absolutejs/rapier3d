@@ -8,6 +8,67 @@ use crate::math::Real;
 
 use super::{SharedCtx, stage_batch};
 
+/// PRIVATE impact experiment: couple rigid/generic joints to the restitution
+/// graph without re-solving ordinary zero-target contacts. No warm-start or
+/// positional bias is applied here. Soft-body attachments are not qualified.
+pub(super) unsafe fn solve_restitution_joints(
+    ctx: &SharedCtx,
+    group_index: usize,
+    worker_id: usize,
+    mut stage: usize,
+) -> usize {
+    let group = &ctx.groups[group_index];
+    let sync = ctx.sync;
+    for (_, joint_range) in &ctx.joint_color_ranges[group.joint_colors.clone()] {
+        let virt = 0..joint_range.end - joint_range.start;
+        let mut done = 0;
+        while let Some(claimed) = sync.claim(
+            stage, &virt, stage_batch(virt.end, sync.num_workers), worker_id,
+        ) {
+            let claimed_len = claimed.len();
+            for idx in claimed {
+                // Same coloring contract as the ordinary joint pass: no shared
+                // bodies across concurrent chunks; SIMD padding is unchanged.
+                let vs = unsafe { &mut *ctx.velocity_solver };
+                let joints = unsafe { &mut *ctx.joint_constraints };
+                for row in ctx.joint_chunk_rows[joint_range.start + idx].clone() {
+                    let c = &mut joints.simd_velocity_constraints[row];
+                    c.remove_bias_from_rhs();
+                    c.solve(&mut vs.solver_bodies);
+                }
+            }
+            done += claimed_len;
+        }
+        sync.complete(stage, done, virt.end);
+        stage = sync.sync(stage, virt.end);
+    }
+    let has_generic = ctx.groups.len() == 1
+        && !unsafe { &*ctx.joint_constraints }.generic_velocity_constraints.is_empty();
+    if !group.joint_overflow.is_empty() || has_generic {
+        if worker_id == 0 {
+            let vs = unsafe { &mut *ctx.velocity_solver };
+            let joints = unsafe { &mut *ctx.joint_constraints };
+            for joint_id in group.joint_overflow.clone() {
+                for row in ctx.joint_rows[joint_id].clone() {
+                    let c = &mut joints.velocity_constraints[row];
+                    c.remove_bias_from_rhs();
+                    c.solve(&mut vs.solver_bodies);
+                }
+            }
+            if has_generic {
+                let JointConstraintsSet { generic_jacobians, generic_velocity_constraints, .. } = joints;
+                for c in generic_velocity_constraints.iter_mut() {
+                    c.remove_bias_from_rhs();
+                    c.solve(generic_jacobians, &mut vs.solver_bodies, &mut vs.generic_solver_vels);
+                }
+            }
+            sync.complete(stage, 1, 1);
+        }
+        stage = sync.sync(stage, 1);
+    }
+    stage
+}
+
 /// One solve pass: joints (colored, then overflow + generic on worker 0), soft-body rows, then
 /// contact colors (parallel); returns the updated stage ordinal. `soft_update` updates the soft
 /// constraints from the poses first; `soft_warmstart` is `Some(coefficient)` to warm-start them.

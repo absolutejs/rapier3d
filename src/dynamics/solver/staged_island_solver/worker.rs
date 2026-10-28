@@ -18,7 +18,7 @@ use crate::geometry::ContactManifold;
 use crate::math::Real;
 use parry::math::SIMD_WIDTH;
 
-use super::solve::solve_pass;
+use super::solve::{solve_pass, solve_restitution_joints};
 use super::{BODY_BATCH, SharedCtx, chunk_at, stage_batch};
 
 /// Per-full-step angular rotation cap (0.25π ≈ 45°): bodies without
@@ -753,6 +753,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
         if has_bouncy {
             // PRIVATE diagnostic: converge across the whole contact graph.
             for _ in 0..16 {
+            stage = unsafe { solve_restitution_joints(ctx, group_index, worker_id, stage) };
             for (_, color) in &ctx.color_ranges[group.colors.clone()] {
                 let mut done = 0;
                 while let Some(claimed) = sync.claim(
