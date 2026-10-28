@@ -751,6 +751,8 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
          * the speculative `dist * inv_dt` slack would truncate the bounce.
          */
         if has_bouncy {
+            // PRIVATE diagnostic: converge across the whole contact graph.
+            for _ in 0..16 {
             for (_, color) in &ctx.color_ranges[group.colors.clone()] {
                 let mut done = 0;
                 while let Some(claimed) = sync.claim(
@@ -827,6 +829,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 sync.complete(stage, 1, 1);
             }
             stage = sync.sync(stage, 1);
+            }
         }
     }
 
