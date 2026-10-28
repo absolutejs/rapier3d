@@ -1,0 +1,23 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/assembly-split.test.ts:
+(pass) unrelated assembly does not change an isolated ordinary body rotation [102.70ms]
+(pass) partial fixed-chain split preserves motion and exact snapshot replay [88.22ms]
+(pass) surviving root retains explicit damping immediately and after a split step [4.94ms]
+(pass) fixed-to-dynamic root uses prescribed world COM and angular velocity [5.39ms]
+
+absolutejs/tests/pending-topology-snapshot.test.ts:
+(pass) snapshot retains pending impulse topology: insert [29.55ms]
+(pass) snapshot retains pending impulse topology: remove [16.19ms]
+(pass) snapshot retains pending impulse topology: remove-body [9.97ms]
+(pass) snapshot envelope identifies version and rejects unknown or incomplete payloads [3.35ms]
+(pass) historical raw capture imports and re-saves in the canonical envelope [5.98ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [9.63ms]
+(pass) diagnostic identity imports independently of the physics runtime [22.58ms]
+
+ 11 pass
+ 0 fail
+ 1458 expect() calls
+Ran 11 tests across 3 files. [669.00ms]

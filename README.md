@@ -447,3 +447,35 @@ microseconds per assembly/substep (median paired batch ratio 1.12); this is not
 a hardware FPS result. Contact coupling, partial-subtree fracture and extreme
 thin-moment storage remain separate work. See
 `absolutejs/research/aggregate-free-transport/README.md` for evidence and limits.
+
+## Partial assembly splits and pending snapshots (0.16)
+
+Removing a link from a moving fixed assembly can leave multiple assemblies.
+Newly released roots inherit their body's world COM and angular velocity;
+the surviving original root retains its coordinates, damping, armature,
+friction and surviving couplings. Newly free root coordinates use their normal
+defaults. Explicit fixed-to-dynamic activation also preserves prescribed body
+velocity. Initial articulation construction semantics are unchanged.
+
+An ordinary free fragment now retains the matched free-rotation path when an
+unrelated articulation shares its solver batch. Multibody links are excluded
+from ordinary-body initialization, and existing external-constraint, damping,
+torque, lock and speed exclusions still apply. This corrects a batch-dependent
+motion error without applying free-body integration to constrained bodies.
+
+`takeSnapshot()` now writes the `ABSJS3DS` envelope, version 1, including ordered
+pending connectivity edits and dirty impulse-joint state. Saving immediately
+after a cut therefore retains changes not yet consumed by a simulation step.
+Native Rust callers can capture/restore the opaque `PendingIslandEvents`
+companion with the corresponding serialized world sets. Capture neither flushes
+edits nor reconstructs the world's connectivity. Snapshot payloads still depend
+on the native engine layout: retain `buildInfo` with diagnostic captures; the
+envelope is not a promise of cross-engine save compatibility. Prior compatible
+raw captures remain readable for investigation, but edits omitted by their
+original writer cannot be recovered. All new saves use the versioned format.
+
+Qualification and retained failed assumptions are in
+`absolutejs/research/assembly-split/`. Tests measure the remaining material after
+body removal; they do not invent a fracture-energy budget or model cutting
+forces, plastic deformation or coupled-contact accuracy. Those remain separate
+physical models and qualification work.

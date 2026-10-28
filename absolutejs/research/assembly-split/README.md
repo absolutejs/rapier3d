@@ -162,3 +162,22 @@ intermediate match exactly. Both source manifests have content SHA-256
 `665228b558fffba69fbe6a86f1a75e30cbfdfc871db0f68700adab872b5ed0cf`
 with no input differences. See `independent-build-audit.json` and the retained
 build log. Full game qualification is now running against the audited archive.
+
+## Release 0.16.0 qualification
+
+The isolated game checkpoint `3c89fe44` passes all 843 tests (7,408,733 assertions,
+279 files, 223.56 seconds), both type checks, dependency checks and the actual
+finite-worker browser bundle. All 80 forced snapshots roundtrip and replay one
+step exactly; all physical measurements equal the qualified 0.15.0 baseline.
+This transport matrix does not contain cuts; the separate package/native tests
+above cover those transitions.
+
+Release promotion changes only package identity labels, manifest and README.
+`release-equivalence.json` verifies every other runtime/declaration byte against
+the exact private archive used by the game suite. The release archive SHA-256 is
+`7b3ca457a07fd00c64bce505958de3a764bc212e0cf78ef52ed2134de9f75c75`.
+The release passes 11 focused identity/split/snapshot tests. Independent API
+builds retain 49 identical distribution files and the identical native payload;
+no native rebuild or solver change is hidden in promotion. The public archive is
+also backed up in the game's qualification branch. Publication and canonical
+registry adoption are still pending; no published-release claim is made here.
