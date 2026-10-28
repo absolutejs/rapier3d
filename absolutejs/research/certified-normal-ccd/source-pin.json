@@ -1,0 +1,5 @@
+{
+  "parryRevision": "52b1a9b0d0c2a78ac6b254cb13f5924fa65fbabb",
+  "persistentTriangleFramesIncluded": false,
+  "scope": "private GJK normal plus conservative composite CCD qualification"
+}
