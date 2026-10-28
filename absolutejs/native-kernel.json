@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "private-contact-response-refresh-unqualified",
-  "wasmSha256": "f22e1f95f335728918c4d62c8b79cd74ea3f9f758306c0d465d301754536e30c",
-  "wasmBytes": 3301195,
+  "qualifiedKernelRelease": "private-contact-work-restitution-unqualified",
+  "wasmSha256": "b13a15a7eceb18ae70bb4c067ad2c8e2df2080a675f0df619dc7df983af57091",
+  "wasmBytes": 3302666,
   "solverChanges": true
 }
