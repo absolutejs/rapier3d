@@ -40,7 +40,7 @@ fn tangent_j_id(j_id: usize, ndofs1: usize, ndofs2: usize) -> usize {
 
 impl GenericRhs {
     #[inline]
-    fn dvel(
+    pub(super) fn dvel(
         &self,
         j_id: usize,
         ndofs: usize,

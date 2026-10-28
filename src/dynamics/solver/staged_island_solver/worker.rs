@@ -747,18 +747,29 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
         }
 
         /*
-         * Stages: end-of-step restitution, color by color (box2d-style). Applied ONCE after
+         * Stages: end-of-step restitution, color by color (box2d-style). Applied after
          * all substeps, gated on the point having applied an impulse: inside the substep rhs
          * the speculative `dist * inv_dt` slack would truncate the bounce.
          */
         if has_bouncy {
-            // Private convergence experiment: keep the prepare-time targets and
-            // response-refresh law. Revisit all contacts when generic contacts
-            // couple into the island. Ordinary-only worlds retain one sweep.
-            // This fixed diagnostic budget is not a qualified production policy.
-            let restitution_sweeps = if ctx.groups.len() == 1
-                && !unsafe { &*ctx.contact_constraints }.generic_velocity_constraints.is_empty()
-            { 16 } else { 1 };
+            // Private bounded convergence experiment. Only the single-worker,
+            // generic-only path can use this residual: ordinary contact and
+            // multi-worker residual aggregation are deliberately not claimed.
+            let has_generic = ctx.groups.len() == 1
+                && !unsafe { &*ctx.contact_constraints }.generic_velocity_constraints.is_empty();
+            let adaptive_generic = has_generic && sync.num_workers == 1 && num_chunks == 0;
+            let restitution_sweeps = if adaptive_generic { 256 } else if has_generic { 16 } else { 1 };
+            if adaptive_generic {
+                let contacts = unsafe { &mut *ctx.contact_constraints };
+                let vs = unsafe { &*ctx.velocity_solver };
+                // Positions and mass response stay fixed during this stage.
+                // Refresh once, retaining the rows for subsequent sweeps.
+                for (builder, c) in contacts.generic_velocity_constraints_builder.iter()
+                    .zip(contacts.generic_velocity_constraints.iter_mut()) {
+                    builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies,
+                        unsafe { &*ctx.multibodies }, c, &mut contacts.generic_jacobians);
+                }
+            }
             for _restitution_sweep in 0..restitution_sweeps {
             for (_, color) in &ctx.color_ranges[group.colors.clone()] {
                 let mut done = 0;
@@ -825,7 +836,9 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                         .iter()
                         .zip(contacts.generic_velocity_constraints.iter_mut())
                     {
-                        builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies, unsafe { &*ctx.multibodies }, c, &mut contacts.generic_jacobians);
+                        if !adaptive_generic {
+                            builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies, unsafe { &*ctx.multibodies }, c, &mut contacts.generic_jacobians);
+                        }
                         builder.apply_restitution(
                             c,
                             &contacts.generic_jacobians,
@@ -837,6 +850,16 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 sync.complete(stage, 1, 1);
             }
             stage = sync.sync(stage, 1);
+            if adaptive_generic {
+                let contacts = unsafe { &*ctx.contact_constraints };
+                let vs = unsafe { &*ctx.velocity_solver };
+                let residual = contacts.generic_velocity_constraints_builder.iter()
+                    .zip(&contacts.generic_velocity_constraints)
+                    .map(|(builder, c)| builder.restitution_residual(c, &contacts.generic_jacobians,
+                        &vs.solver_bodies, &vs.generic_solver_vels))
+                    .fold(0.0 as Real, Real::max);
+                if residual <= 1.0e-5 * params.length_unit { break; }
+            }
             }
         }
     }

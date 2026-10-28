@@ -602,6 +602,43 @@ impl GenericContactConstraintBuilder {
             .any(|info| info.restitution_seed < 0.0)
     }
 
+    /// Projected normal-velocity residual of the existing restitution law.
+    /// Read-only: a later point can disturb an earlier point, so inspect the
+    /// complete generic set only after a full sweep. No work/energy ledger.
+    pub fn restitution_residual(
+        &self,
+        constraint: &GenericContactConstraint,
+        jacobians: &DVector,
+        bodies: &SolverBodies,
+        generic_solver_vels: &DVector,
+    ) -> Real {
+        let rhs = |id: u32, mask: u8| {
+            if id == u32::MAX { GenericRhs::Fixed }
+            else if constraint.generic_constraint_mask & mask == 0 {
+                GenericRhs::SolverVel(bodies.vels[id as usize])
+            } else { GenericRhs::GenericId(id) }
+        };
+        let v1 = rhs(constraint.solver_vel1, 0b01);
+        let v2 = rhs(constraint.solver_vel2, 0b10);
+        let stride = (constraint.ndofs1 + constraint.ndofs2) * 2 * DIM;
+        let mut residual: Real = 0.0;
+        for (point, (info, part)) in self.infos[..constraint.num_contacts as usize]
+            .iter().zip(&constraint.normal_part[..constraint.num_contacts as usize]).enumerate()
+        {
+            if info.restitution_seed >= 0.0 || part.total_impulse() <= 0.0 || part.r <= 0.0 { continue; }
+            let row = constraint.j_id + point * stride;
+            let velocity = v1.dvel(row, constraint.ndofs1, jacobians,
+                constraint.dir1, part.torque_dir1, generic_solver_vels)
+                + v2.dvel(row + constraint.ndofs1 * 2, constraint.ndofs2,
+                    jacobians, -constraint.dir1, part.torque_dir2, generic_solver_vels);
+            let error = velocity + info.restitution_seed;
+            if !error.is_finite() { return Real::MAX; }
+            let projected = if part.impulse > 0.0 { error.abs() } else { (-error).max(0.0) };
+            residual = residual.max(projected);
+        }
+        residual
+    }
+
     /// End-of-step restitution pass (box2d-style): after all substeps, drive each bouncy
     /// point's normal velocity to its prepare-time `restitution * approach_velocity`, gated
     /// on the point having applied an impulse. Implemented by re-running the normal solve
