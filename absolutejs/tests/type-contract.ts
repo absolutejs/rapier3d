@@ -46,3 +46,10 @@ const collisionSource: string = identity.collisionSource;
 // @ts-expect-error Collision provenance is immutable too.
 identity.collisionSource = 'unverified';
 void [collisionVersion, collisionSource];
+
+// Explicit articulation-wide damping: copied native values and transactional writes.
+function articulationDampingContract(set: import("@absolutejs/rapier3d").MultibodyJointSet, handle:number) {
+ const values:Float32Array|undefined=set.generalizedDamping(handle);
+ const changed:boolean=set.setGeneralizedDamping(handle,values ?? []);
+ return changed;
+}

@@ -260,3 +260,22 @@ exact locked collision library alongside the native WASM hash. They are lightwei
 serialized strings and require no WASM initialization. Packaging rejects ambiguous
 multiple Parry source entries. Release qualification evidence and retained experiment
 results are recorded in `absolutejs/research/simplex-gyro/`.
+
+## Articulation damping controls
+
+`world.multibodyJoints.generalizedDamping(jointHandle)` returns an owned
+`Float32Array` for the entire articulation containing that joint, including its
+floating root. A removed joint returns `undefined`. These coefficients are
+separate from rigid-body damping: native free angular generalized coordinates
+default to `0.1` even when `RigidBody.setAngularDamping(0)` is used.
+
+`setGeneralizedDamping(jointHandle, values)` returns `true` on success. It rejects
+wrong lengths, negative/nonfinite values, native float overflow and removed
+handles without mutation. Coordinate order is the native generalized order;
+read the vector again after adding, removing or changing joints. The setter does
+not wake sleeping bodies; wake the affected bodies explicitly. Neither method
+changes the native default policy for newly created coordinates.
+
+For an explicitly undamped diagnostic, read the vector, replace it with a zero
+vector of the same length, and verify the readback. This is a diagnostic control,
+not a recommendation to remove damping from every game mechanism.

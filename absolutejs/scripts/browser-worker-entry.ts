@@ -74,7 +74,18 @@ try {
      assembly.createCollider(R.ColliderDesc.ball(.25).setMass(masses[i]).setFriction(0).setRestitution(1),rb);bs.push(rb);
     }
     const q={x:0,y:0,z:0,w:1};
-    assembly.createMultibodyJoint(R.JointData.fixed({x:.65,y:0,z:0},q,{x:0,y:0,z:0},q),bs[0],bs[1],true).setContactsEnabled(false);
+    const articulationJoint=assembly.createMultibodyJoint(R.JointData.fixed({x:.65,y:0,z:0},q,{x:0,y:0,z:0},q),bs[0],bs[1],true);
+    articulationJoint.setContactsEnabled(false);
+    const defaults=assembly.multibodyJoints.generalizedDamping(articulationJoint.handle);
+    if(!defaults||defaults.length!==6||defaults[5]!==Math.fround(.1))throw Error('Missing native damping defaults');
+    const dampingWorld=R.World.restoreSnapshot(assembly.takeSnapshot());
+    try {
+     if(!dampingWorld.multibodyJoints.setGeneralizedDamping(articulationJoint.handle,new Float32Array(6)))throw Error('Damping update rejected');
+     if(dampingWorld.multibodyJoints.setGeneralizedDamping(articulationJoint.handle,Array(6).fill(NaN)))throw Error('Invalid damping accepted');
+     dampingWorld.step();
+     if([...dampingWorld.multibodyJoints.generalizedDamping(articulationJoint.handle)!].some(v=>v!==0))throw Error('Explicit damping not retained');
+     if(assembly.multibodyJoints.generalizedDamping(articulationJoint.handle)![5]!==Math.fround(.1))throw Error('Damping leaked between worlds');
+    }finally{dampingWorld.free();}
     for(let i=0;i<30;i++){
      assembly.step();
      if(offset===0)multibodyMomentumError=Math.max(multibodyMomentumError,Math.abs(bs.reduce((p,b,i)=>p+masses[i]*b.linvel().x,0)+20));
@@ -86,6 +97,6 @@ try {
   }
   if(multibodyMomentumError>2e-4||multibodyRigidVelocityError>3e-5)throw Error('Articulated velocity writeback failed');
   if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
-  postMessage({buildInfo,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({buildInfo,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

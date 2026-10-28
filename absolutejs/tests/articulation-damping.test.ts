@@ -54,3 +54,17 @@ test('articulation topology changes require a freshly sized damping vector',()=>
   expect([...w.multibodyJoints.generalizedDamping(joint.handle)!]).toEqual(Array(7).fill(0));
  }finally{w.free();}
 });
+test('zero generalized damping removes native angular decay in a freely rotating assembly',()=>{
+ const retention=[];
+ for(const zero of [false,true]){
+  const w=new R.World({x:0,y:0,z:0});try{
+   w.timestep=1/240;const {a,b,joint}=fixture(w);
+   if(zero)expect(w.multibodyJoints.setGeneralizedDamping(joint.handle,new Float32Array(6))).toBe(true);
+   a.addTorque({x:0,y:0,z:1},true);b.addTorque({x:0,y:0,z:1},true);w.step();
+   a.resetTorques(true);b.resetTorques(true);const initial=a.angvel().z;expect(initial).toBeGreaterThan(.001);
+   for(let i=0;i<240;i++)w.step();retention.push(a.angvel().z/initial);
+  }finally{w.free();}
+ }
+ expect(retention[0]!).toBeLessThan(.9);expect(retention[1]!).toBeGreaterThan(.999);
+ expect(retention[1]!).toBeLessThan(1.001);
+});
