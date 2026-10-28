@@ -1,0 +1,25 @@
+   Compiling absolutejs-rigid-midpoint-reference v0.0.0 (/home/alexkahn/alex/rapier-midpoint-research/absolutejs/research/rigid-midpoint-native)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.83s
+     Running unittests src/lib.rs (.cache/reference-target/debug/deps/absolutejs_rigid_midpoint_reference-241b626c2657bdbd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/invariants.rs (.cache/reference-target/debug/deps/invariants-2f07326ee09b3dfc)
+
+running 1 test
+
+thread 'physically_valid_thin_body_moments_do_not_make_the_newton_system_artificially_singular' (114) panicked at tests/invariants.rs:215:59:
+called `Result::unwrap()` on an `Err` value: SingularJacobian
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test physically_valid_thin_body_moments_do_not_make_the_newton_system_artificially_singular ... FAILED
+
+failures:
+
+failures:
+    physically_valid_thin_body_moments_do_not_make_the_newton_system_artificially_singular
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 7 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test invariants`

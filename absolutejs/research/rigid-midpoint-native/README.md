@@ -45,3 +45,28 @@ performs later constraint passes using prepared responses. Inserting a free
 rotation update into that flow without compatible contact/joint response handling
 would not establish coupled conservation. No production integration or full-game
 claim is made by these arithmetic tests.
+
+## Conditioning and cap boundary
+
+The original momentum-variable Newton system falsely reported a singular
+Jacobian for physically valid thin bodies; `thin-body-baseline.log` preserves
+that failure. The equivalent solve now uses angular velocity. Euler coefficients
+are `(I_j-I_k)/I_i`; physical inertia satisfies `|I_j-I_k| <= I_i`, so these
+coefficients remain bounded while the old momentum Jacobian could contain huge
+principal-moment ratios. The returned momentum still uses the same midpoint
+relation and matching Cayley attitude. Its reported residual is now explicitly
+in radians/second.
+
+Nine tests pass after this change. In addition to the previous trajectories and
+f32 controls, 4,500 deterministic physical-inertia/scale/rotation cases reach at
+most four Newton updates, maximum relative energy error 2.78e-14 and world
+momentum error 9.11e-14. Thin moments down to a 1e-30 ratio no longer trigger the
+artificial singularity.
+
+Four stress cases show why solver integration cannot be blind: a step whose
+initial angular speed is at the existing full-step cap can have a midpoint
+rotation slightly exceeding that cap, even while conserving energy and momentum.
+The exact input cases are printed in `conditioned-stress-final.log`. Cap policy,
+locked axes, external torque, damping and constrained bodies require explicit
+admission/handling. These arithmetic results still do not qualify an installed
+engine change.

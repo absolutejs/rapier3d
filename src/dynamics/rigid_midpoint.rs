@@ -18,6 +18,7 @@ pub struct MidpointStep {
     /// Right-multiply the principal-frame attitude by this x/y/z/w quaternion.
     pub rotation_increment: [f64; 4],
     pub iterations: usize,
+    /// Euclidean residual of the angular-velocity equation, in radians/second.
     pub residual: f64,
 }
 fn cross(a: Vector, b: Vector) -> Vector {
@@ -84,17 +85,28 @@ pub fn midpoint_step(
     {
         return Err(MidpointError::InvalidInput);
     }
-    let magnitude = norm(momentum);
-    if !magnitude.is_finite() {
+    // Precondition in angular velocity rather than momentum. For physical
+    // inertia, |I_j-I_k| <= I_i bounds each Euler coefficient by one, even
+    // when one moment is tiny. A momentum Jacobian instead contains ratios
+    // of principal moments that can spuriously trip a singularity threshold.
+    let principal = inverse.map(|i| 1.0 / i);
+    let initial: Vector = core::array::from_fn(|i| momentum[i] * inverse[i]);
+    let coefficients = [
+        (principal[1] - principal[2]) * inverse[0],
+        (principal[2] - principal[0]) * inverse[1],
+        (principal[0] - principal[1]) * inverse[2],
+    ];
+    let magnitude = norm(initial);
+    if !magnitude.is_finite() || !coefficients.iter().all(|c| c.is_finite()) {
         return Err(MidpointError::NonFinite);
     }
     let tolerance = 64.0 * f64::EPSILON * magnitude.max(f64::MIN_POSITIVE);
-    let mut next = momentum;
+    let mut next = initial;
     for iterations in 0..=16 {
-        let middle = core::array::from_fn(|i| (momentum[i] + next[i]) * 0.5);
-        let omega = core::array::from_fn(|i| middle[i] * inverse[i]);
-        let torque = cross(middle, omega);
-        let f = core::array::from_fn(|i| next[i] - momentum[i] - dt * torque[i]);
+        let omega: Vector = core::array::from_fn(|i| (initial[i] + next[i]) * 0.5);
+        let f: Vector = core::array::from_fn(|i| {
+            next[i] - initial[i] - dt * coefficients[i] * omega[(i + 1) % 3] * omega[(i + 2) % 3]
+        });
         let residual = norm(f);
         if !residual.is_finite() {
             return Err(MidpointError::NonFinite);
@@ -113,8 +125,14 @@ pub fn midpoint_step(
             for v in &mut q {
                 *v /= length;
             }
+            // Apply only the increment, preserving exact zero-change momentum.
+            let momentum =
+                core::array::from_fn(|i| momentum[i] + (next[i] - initial[i]) / inverse[i]);
+            if !momentum.iter().all(|j| j.is_finite()) {
+                return Err(MidpointError::NonFinite);
+            }
             return Ok(MidpointStep {
-                momentum: next,
+                momentum,
                 rotation_increment: q,
                 iterations,
                 residual,
@@ -124,19 +142,12 @@ pub fn midpoint_step(
             return Err(MidpointError::IterationBudget);
         }
         let mut jacobian = [[0.0; 4]; 3];
-        for column in 0..3 {
-            let mut axis = [0.0; 3];
-            axis[column] = 1.0;
-            let mut response = [0.0; 3];
-            response[column] = inverse[column];
-            let first = cross(axis, omega);
-            let second = cross(middle, response);
-            for row in 0..3 {
-                jacobian[row][column] =
-                    (if row == column { 1.0 } else { 0.0 }) - dt * 0.5 * (first[row] + second[row]);
-            }
-        }
         for row in 0..3 {
+            let j = (row + 1) % 3;
+            let k = (row + 2) % 3;
+            jacobian[row][row] = 1.0;
+            jacobian[row][j] = -dt * 0.5 * coefficients[row] * omega[k];
+            jacobian[row][k] = -dt * 0.5 * coefficients[row] * omega[j];
             jacobian[row][3] = -f[row];
         }
         let delta = solve(jacobian)?;
@@ -152,6 +163,7 @@ pub struct RigidRotationStep {
     pub rotation: [f64; 4],
     pub angular_velocity: Vector,
     pub iterations: usize,
+    /// Euclidean residual of the angular-velocity equation, in radians/second.
     pub residual: f64,
 }
 fn normalized(mut q: [f64; 4]) -> Result<[f64; 4], MidpointError> {

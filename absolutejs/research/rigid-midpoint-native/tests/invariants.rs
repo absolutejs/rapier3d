@@ -201,3 +201,84 @@ fn native_trajectory_converges_at_second_order_to_independent_refined_rk4() {
     assert_eq!(count, 12);
     println!("12 independent trajectories at 60/120/240 Hz: max angle {maximum_angle:e}; all error ratios 3.7..4.3");
 }
+
+#[test]
+fn physically_valid_thin_body_moments_do_not_make_the_newton_system_artificially_singular() {
+    for small in [1e-6, 1e-12, 1e-20, 1e-30] {
+        // These are physical moments: |I2-I3| <= I1 and all triangle inequalities hold.
+        let inv = [1.0 / small, 1., 1.];
+        let initial = [2.0 * small, -3., 4.];
+        let mut j = initial;
+        let mut q = [0., 0., 0., 1.];
+        let e0 = energy(j, inv);
+        for _ in 0..240 {
+            let step = midpoint_step(j, inv, 1.0 / 240.0).unwrap();
+            j = step.momentum;
+            q = multiply(q, step.rotation_increment);
+        }
+        let l = rotate(q, j);
+        assert!(
+            norm(core::array::from_fn(|i| l[i] - initial[i])) / norm(initial) < 1e-10,
+            "small={small}"
+        );
+        assert!((energy(j, inv) / e0 - 1.0).abs() < 1e-10, "small={small}");
+    }
+}
+
+#[test]
+fn physical_inertia_stress_matrix_preserves_invariants_with_bounded_iterations() {
+    let mut seed = 0x327e129ab21_u64;
+    let mut random = || {
+        seed = seed.wrapping_mul(6364136223846793005).wrapping_add(1);
+        ((seed >> 11) as f64) / (1u64 << 53) as f64
+    };
+    let mut maximum_iterations = 0;
+    let mut maximum_energy = 0.0_f64;
+    let mut maximum_momentum = 0.0_f64;
+    let mut cap_exceedances = 0;
+    let mut cases = 0;
+    for _ in 0..500 {
+        let covariance = [
+            10.0_f64.powf(-30.0 * random()),
+            10.0_f64.powf(-30.0 * random()),
+            1.0,
+        ];
+        let principal = [
+            covariance[1] + covariance[2],
+            covariance[0] + covariance[2],
+            covariance[0] + covariance[1],
+        ];
+        let mut omega = [random() * 2. - 1., random() * 2. - 1., random() * 2. - 1.];
+        let magnitude = norm(omega);
+        for v in &mut omega {
+            *v /= magnitude;
+        }
+        for scale in [1e-20, 1.0, 1e20] {
+            for dt in [0.001, 0.1, core::f64::consts::FRAC_PI_4] {
+                let moments = principal.map(|i| i * scale);
+                let inverse = moments.map(|i| 1.0 / i);
+                let initial: V = core::array::from_fn(|i| moments[i] * omega[i]);
+                let e0 = energy(initial, inverse);
+                let step = midpoint_step(initial, inverse, dt).unwrap();
+                let world = rotate(step.rotation_increment, step.momentum);
+                maximum_energy =
+                    maximum_energy.max((energy(step.momentum, inverse) / e0 - 1.0).abs());
+                maximum_momentum = maximum_momentum
+                    .max(norm(core::array::from_fn(|i| world[i] - initial[i])) / norm(initial));
+                maximum_iterations = maximum_iterations.max(step.iterations);
+                let q = step.rotation_increment;
+                let angle = 2.0 * norm([q[0], q[1], q[2]]).atan2(q[3].abs());
+                if angle > core::f64::consts::FRAC_PI_4 {
+                    cap_exceedances += 1;
+                    println!("ANGLE_CAP_CASE moments={moments:?} omega={omega:?} dt={dt:e} angle={angle:e}");
+                }
+                cases += 1;
+            }
+        }
+    }
+    println!("physical stress cases={cases}, Newton max={maximum_iterations}, relative energy={maximum_energy:e}, momentum={maximum_momentum:e}, full-step angle-cap exceedances={cap_exceedances}");
+    assert_eq!(cases, 4500);
+    assert!(maximum_iterations <= 8);
+    assert!(maximum_energy < 1e-10);
+    assert!(maximum_momentum < 1e-10);
+}
