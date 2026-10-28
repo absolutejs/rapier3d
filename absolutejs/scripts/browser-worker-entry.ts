@@ -15,6 +15,38 @@ try {
   simplexWorld.contactPair(floor,wood,m=>{for(let i=0;i<m.numContacts();i++){count++;simplexMinimumDistanceCm=Math.min(simplexMinimumDistanceCm,m.contactDist(i));}});
   if(!count||!Number.isFinite(simplexMinimumDistanceCm)||simplexMinimumDistanceCm<=-0.01)throw Error('Invalid floor/hull simplex witness');
  }finally{simplexWorld.free();}
+ // Browser-worker qualification of coupled heavy impacts on a light articulation.
+ let coupledCases=0,coupledMaximumEnergyError=0,coupledMaximumVelocityError=0;
+ for(const restitution of [0,.5,1])for(const reverse of [false,true]){
+  const impact=new R.World({x:0,y:0,z:0});
+  try{
+   impact.timestep=1/60;impact.numSolverIterations=1;
+   impact.integrationParameters.numInternalPgsIterations=1;
+   impact.integrationParameters.contact_natural_frequency=0;
+   const specs=[[-.325,.5,0],[.325,.5,0],[-.825,20,4],[.825,20,-4]];
+   const bodies:any[]=[];
+   for(const i of reverse?[3,2,1,0]:[0,1,2,3]){
+    const [x,mass,vx]=specs[i]!;
+    const body=impact.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x!,0,0).setLinvel(vx!,0,0).setCanSleep(false).setCcdEnabled(true));
+    impact.createCollider(R.ColliderDesc.ball(.25).setMass(mass!).setFriction(0).setRestitution(restitution),body);
+    body.recomputeMassPropertiesFromColliders();bodies[i]=body;
+   }
+   const q={x:0,y:0,z:0,w:1};
+   const joint=impact.createMultibodyJoint(R.JointData.fixed({x:.65,y:0,z:0},q,{x:0,y:0,z:0},q),bodies[0],bodies[1],true);
+   joint.setContactsEnabled(false);
+   const damping=impact.multibodyJoints.generalizedDamping(joint.handle)!;
+   if(!impact.multibodyJoints.setGeneralizedDamping(joint.handle,damping.fill(0)))throw Error('Coupled damping setup failed');
+   for(let step=0;step<15;step++){
+    impact.step();const velocity=bodies.map(b=>b.linvel().x);
+    const error=Math.max(...velocity.map((v,i)=>Math.abs(v-[0,0,-4*restitution,4*restitution][i]!)));
+    const energy=velocity.reduce((sum,v,i)=>sum+.5*specs[i]![1]!*v*v,0);
+    coupledMaximumVelocityError=Math.max(coupledMaximumVelocityError,error);
+    coupledMaximumEnergyError=Math.max(coupledMaximumEnergyError,Math.abs(energy-320*restitution**2));
+    if(error>=.001||Math.abs(energy-320*restitution**2)>=.001)throw Error('Coupled collision failed browser invariants');
+   }
+   coupledCases++;
+  }finally{impact.free();}
+ }
  const {w,a,b}=fixture(R);
  try {
   if(w.ccdSubsteps()!==null)throw Error('Unprofiled CCD count must be unavailable');
@@ -97,6 +129,6 @@ try {
   }
   if(multibodyMomentumError>2e-4||multibodyRigidVelocityError>3e-5)throw Error('Articulated velocity writeback failed');
   if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
-  postMessage({buildInfo,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({buildInfo,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

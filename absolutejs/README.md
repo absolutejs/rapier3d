@@ -282,3 +282,13 @@ changes the native default policy for newly created coordinates.
 For an explicitly undamped diagnostic, read the vector, replace it with a zero
 vector of the same length, and verify the readback. This is a diagnostic control,
 not a recommendation to remove damping from every game mechanism.
+
+## Coupled articulation impacts (0.10)
+
+Coupled contacts can disturb each other: a single late restitution sweep can leave order-dependent velocities when two bodies strike one light articulation. Version 0.10 repeats the existing normal/restitution solve to a projected velocity residual, with a bounded iteration budget. In these adaptive phases, a local double-precision normal-impulse accumulator retains corrections that would otherwise round away. Native velocities, response matrices, warmstart storage, persistent snapshots, and the JavaScript API retain their existing formats. This is not a double-precision engine or an energy clamp.
+
+Adaptive compression applies only to one-group, single-worker, generic-only frictionless contacts, with no soft/FEM bodies or independent joint rows. The configured PGS count remains a minimum; the cap is the larger of that count and 256. Adaptive restitution applies only to one-group, single-worker, generic-only contacts and is capped at 256 sweeps. Both stop at a projected velocity residual of `1e-6 * lengthUnit`. Ordinary and mixed/parallel contact paths retain their previous iteration policy. Reaching the cap is not a guarantee of convergence for arbitrary mass ratios or scenes.
+
+The added regression cases cover opposing impacts, creation-order reversal, restitution 0/0.5/1, unequal masses, timestep and substep changes. Existing integration, contact preparation, damping defaults and geometry are unchanged; known general articulation integration limitations remain.
+
+Accuracy has a CPU cost. A bounded CPU-only paired benchmark of 1/8/32 disconnected heavy-light-heavy impacts measured candidate median step times of 0.62/2.48/7.87 ms, versus 0.41/0.84/1.72 ms for 0.9.0, whose velocity error in that fixture was about 6.94 m/s. The candidate error was below 0.000002 m/s. These are host-specific step measurements excluding rendering and snapshot restoration, not a frame-rate guarantee. Production scenes still need physics budgets and profiling. Detailed qualification and limitations are in `absolutejs/research/contact-convergence/`.
