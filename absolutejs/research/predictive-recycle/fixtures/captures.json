@@ -1,0 +1,78 @@
+{
+  "scope": "First observed current-shape 1 mm penetration of each selected worst peak pair; not an exhaustive collision onset audit. Null query results are retained, not classified as disjoint.",
+  "scriptSha256": "7bdb0e9008a3bbaef9d5960c3c9e9a152607ff4479c06c2ca7f19a51991ab81f",
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.16.1",
+    "qualifiedKernelRelease": "0.16.1",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "8639aa4bc16710820fcfc99274e1065bdf9ebfba7e3b5a27acc41fa2bdb8ca5d",
+    "wasmBytes": 3357015,
+    "solverChanges": true
+  },
+  "rows": [
+    {
+      "name": "tree-1-stage-3-480",
+      "first": 0,
+      "second": 1.5e-323,
+      "crossingStep": 476,
+      "seconds": 0.9916666666666667,
+      "previousDistanceM": 0.0007150258123874664,
+      "distanceM": -0.011470794677734375,
+      "initialSha256": "c498d693db61c21ab11e1cf7e6b0a5bfef0bcdf4f79e35d9226675d9f702807d",
+      "beforeSha256": "a28c6cd9cc88698198c79aca241340d34b524f3f6e114afb740386b4444db348",
+      "afterSha256": "7261192110a761a5117e538c2e3e863a7b7267086a009a5c416c0be2cd474716",
+      "exactReplay": true,
+      "inspectionReadOnly": true
+    },
+    {
+      "name": "tree-4-stage-3-480",
+      "first": 5e-324,
+      "second": 1e-323,
+      "crossingStep": 440,
+      "seconds": 0.9166666666666666,
+      "previousDistanceM": -0.0004706940799951553,
+      "distanceM": -0.003941007554531097,
+      "initialSha256": "5e2f7013b575f9d8dcd0c67fac318277bcb768a3214d12729703712dc9e32f24",
+      "beforeSha256": "99a0ade3b4e1ca62f6c3710200ad8aea53d7dc8617aa9c519be14a59a78b450f",
+      "afterSha256": "97863b09584365325c357f865eedca04561f04f6fcae86eebe6c410825716b67",
+      "exactReplay": true,
+      "inspectionReadOnly": true
+    },
+    {
+      "name": "tree-4-stage-3-960",
+      "first": 5e-324,
+      "second": 1e-323,
+      "crossingStep": 879,
+      "seconds": 0.915625,
+      "previousDistanceM": -0.0006014340370893478,
+      "distanceM": -0.0023458777368068695,
+      "initialSha256": "bdf8dff927a40f157efbeed03b8e7ff64fd17b64c157b462d23cc55a6081eb6e",
+      "beforeSha256": "24e38c4e30ce37b069d5e9183353e3dd02347cbad02b0ede9a5a4c9270c97af5",
+      "afterSha256": "fcbe9f6de4e4b7a01ba1567ded4e21631a42f5aa4212e5ff6203010d8ed6161b",
+      "exactReplay": true,
+      "inspectionReadOnly": true
+    },
+    {
+      "name": "tree-4-stage-3-1920",
+      "first": 5e-324,
+      "second": 1e-323,
+      "crossingStep": 1757,
+      "seconds": 0.9151041666666667,
+      "previousDistanceM": -0.000015677646733820437,
+      "distanceM": -0.0014580565690994263,
+      "initialSha256": "9eed714fa4df7e2b52b45284a83bf23de264903fc31d956d56eb0c3cd4640cef",
+      "beforeSha256": "7bd8c8f0fb739a96a34dbfc6a64df21542751e59da13b5ffdfa4bc113bfe169e",
+      "afterSha256": "9ac5c957d8a8fc9274e7be10596685134b6bf742206b2b263983652e22b34c23",
+      "exactReplay": true,
+      "inspectionReadOnly": true
+    }
+  ]
+}
