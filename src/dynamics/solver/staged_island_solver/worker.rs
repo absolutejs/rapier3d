@@ -752,7 +752,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
          */
         if has_bouncy {
             // PRIVATE diagnostic: converge across the whole contact graph.
-            for _ in 0..16 {
+            for _ in 0..256 {
             stage = unsafe { solve_restitution_joints(ctx, group_index, worker_id, stage) };
             for (_, color) in &ctx.color_ranges[group.colors.clone()] {
                 let mut done = 0;
