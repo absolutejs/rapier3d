@@ -12,3 +12,9 @@ The helper added at final solver writeback runs on worker 0 after the barrier th
 ## First writeback candidate
 
 Native 555c1056a3f6932e3638d42dd708ed5a439ae08934d870318f6e0fbd9a1a0672 passes the 36 collinear/orientation configurations (3,888 assertions). The 48-case comparison leaves all compound metrics unchanged and reduces articulation momentum error from 20.000003 to 0.035213 kg m/s. Off-center rigid velocity consistency still fails by up to 0.015683 m/s. Source review identifies cached world COMs from before the final substep in `update_velocities`; link transforms already represent the final integrated geometry. Preserve this candidate, then test a final-writeback-only COM calculation from those link transforms. Ordinary internal substep updates must retain their existing semantics.
+
+## Final COM candidate
+
+Native `3a9f1a21f01b4868952cd997cf9b47d83f3e4fdd714d42f43b3cdd57912d6303` (3,293,062 bytes, source 14f9e49) passes both initial regressions (8,952 assertions), the 39-test package suite (57,302 assertions), and an added revolute-joint tangent-velocity test (all three focused tests: 9,256 assertions). The 48-case audit leaves compound controls unchanged and reduces fixed-link velocity inconsistency to 2.8e-7 m/s. Articulation momentum reporting improves from 20.000003 to 0.060015 kg m/s. Off-center energy gain remains 0.276682 J from 40 J versus stable 0.275773 J, and angular momentum drift 0.201618 versus 0.201381. The scope is accurate final link velocities, not exact conservation. The native restitution law and sweep count are unchanged from 0.8.0.
+
+An isolated game suite is running. Canonical private release branch `release/multibody-0.8.1` prepares independent native reproduction after that suite completes. No public game dependency changes occur before publication and installed-archive verification.

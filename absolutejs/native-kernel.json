@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "private-multibody-velocity-writeback",
-  "wasmSha256": "555c1056a3f6932e3638d42dd708ed5a439ae08934d870318f6e0fbd9a1a0672",
-  "wasmBytes": 3292677,
+  "qualifiedKernelRelease": "private-multibody-final-com-writeback",
+  "wasmSha256": "3a9f1a21f01b4868952cd997cf9b47d83f3e4fdd714d42f43b3cdd57912d6303",
+  "wasmBytes": 3293062,
   "solverChanges": true
 }
