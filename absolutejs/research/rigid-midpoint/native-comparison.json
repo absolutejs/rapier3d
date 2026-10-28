@@ -1,0 +1,906 @@
+{
+  "scope": "Torque-free separated fixed 3-sphere assembly, zero generalized damping, one second. Independent double reference is not installed in the solver and does not qualify contact or hinge integration.",
+  "engine": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.12.0",
+    "qualifiedKernelRelease": "0.11.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=dbd99a8dfce020da3698056471262435d56d3f69#dbd99a8dfce020da3698056471262435d56d3f69",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "352f0e9ff982bd9486e3771bf65fab1944f81ca53f7a5f5d43bee56acdaff6a0",
+    "wasmBytes": 3298167,
+    "solverChanges": true
+  },
+  "hashes": {
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/compare-native.ts": "f3ea022b5bd79ef5a34a21dc654dad37cefb0322268e91cf9b77bf03f3f3053e",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/reference.ts": "b310a75c81e8168f9f583843b67ab19379db97028810233034052652147d9788",
+    "/home/alexkahn/alex/hello-world/node_modules/@absolutejs/rapier3d/dist/rapier.mjs": "07acc722c7f378eaa1e9c4b763043331affc13361bd43ebe46b884c1f1cd37b7"
+  },
+  "rows": [
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.23285172631343204,
+          0.33915847332941157,
+          -0.04381135230263074
+        ],
+        "linear": [
+          7.8639456033706665,
+          -2.9723286628723145,
+          2.3887808322906494
+        ],
+        "angular": [
+          1.9377100269949996,
+          -2.3133102807986723,
+          4.596526790501203
+        ],
+        "kinetic": 18.844212176504367,
+        "inertia": [
+          0.5206785213048126,
+          -0.007377018597472557,
+          0.21855543538617073,
+          -0.007377018597472557,
+          0.6987388670346388,
+          -0.050584847577240605,
+          0.21855543538617073,
+          -0.050584847577240605,
+          1.001915104819382
+        ]
+      },
+      "initialRigidResidual": 7.802769137592015e-8,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "1-60-1-forward.bin",
+        "sha256": "c210db8f4bd67909dd702edf2f0b6209752856d23450a645a8b26f50bb4699b1"
+      },
+      "maxima": {
+        "linear": 1.801261156452667,
+        "angular": 0.15766126420275398,
+        "energy": 1.1035638973415764,
+        "com": 0.10962755445833533,
+        "referenceAngular": 3.762898379362296e-12,
+        "referenceEnergy": 1.7639223415244487e-12
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.05406710574953391,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.2334303193622165,
+          0.3407935301462809,
+          -0.04287442730532752
+        ],
+        "linear": [
+          8.460631400346756,
+          -1.2056270837783813,
+          3.415463924407959
+        ],
+        "angular": [
+          1.9377101671546852,
+          -2.3133107298141615,
+          4.596526213891945
+        ],
+        "kinetic": 19.306353694501997,
+        "inertia": [
+          0.5206785510986677,
+          -0.00737694890834345,
+          0.21855547529080352,
+          -0.00737694890834345,
+          0.6987388728019939,
+          -0.05058489121130154,
+          0.21855547529080352,
+          -0.05058489121130154,
+          1.0019150593138861
+        ]
+      },
+      "initialRigidResidual": 1.4550327237866312e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "1-60-1-reverse.bin",
+        "sha256": "35de722f3e0e9fbb572fab30066ec24d544d0d7fcd79c00e89f44eab48897373"
+      },
+      "maxima": {
+        "linear": 1.1610513810236374,
+        "angular": 0.10650380170794886,
+        "energy": 0.47325722604716347,
+        "com": 0.06609557966550311,
+        "referenceAngular": 3.761859460670567e-12,
+        "referenceEnergy": 1.7674750552032492e-12
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.05944560844435616,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22765953217943508,
+          0.34147616144683623,
+          -0.045415326332052544
+        ],
+        "linear": [
+          8.894519090652466,
+          -1.9117529392242432,
+          2.6706753969192505
+        ],
+        "angular": [
+          2.006077390552199,
+          -2.294101031848586,
+          4.575667527580557
+        ],
+        "kinetic": 19.590092325729383,
+        "inertia": [
+          0.5288458471616624,
+          -0.0013154194401402558,
+          0.22623769926298593,
+          -0.0013154194401402558,
+          0.6977243646428701,
+          -0.05251490061590429,
+          0.22623769926298593,
+          -0.05251490061590429,
+          0.9947627927403878
+        ]
+      },
+      "initialRigidResidual": 1.263600436701854e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "1-60-4-forward.bin",
+        "sha256": "bd7a7af24e4973dc9423f0d66fb268b95defdccbf177569bd8423083343ed906"
+      },
+      "maxima": {
+        "linear": 0.4564100373820644,
+        "angular": 0.029463717185569487,
+        "energy": 0.22609666380017757,
+        "com": 0.026935258893843163,
+        "referenceAngular": 1.1614439925919503e-14,
+        "referenceEnergy": 1.4210854715202004e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.01659463449179234,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22768618000878227,
+          0.34146167503462893,
+          -0.04543918619553248
+        ],
+        "linear": [
+          8.964968979358673,
+          -1.7647696733474731,
+          2.7450051307678223
+        ],
+        "angular": [
+          2.008459160554858,
+          -2.2935539403797693,
+          4.574910643938723
+        ],
+        "kinetic": 19.65233225423635,
+        "inertia": [
+          0.5288509352037851,
+          -0.0013269232054858165,
+          0.22624162962884975,
+          -0.0013269232054858165,
+          0.6977315006725847,
+          -0.05253962654956449,
+          0.22624162962884975,
+          -0.05253962654956449,
+          0.9947511370224222
+        ]
+      },
+      "initialRigidResidual": 2.024048503069934e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "1-60-4-reverse.bin",
+        "sha256": "545525c99cc6c002758f0ba30f161df7a87805e77f1fab0fea22fa957a9be0d7"
+      },
+      "maxima": {
+        "linear": 0.2960105868138056,
+        "angular": 0.029480654239739928,
+        "energy": 0.12988414100334467,
+        "com": 0.0167385561671385,
+        "referenceAngular": 1.0814278949565476e-14,
+        "referenceEnergy": 3.019806626980426e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.01659433655844762,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22135014397402603,
+          0.3426676850972904,
+          -0.0473036959560381
+        ],
+        "linear": [
+          8.707269310951233,
+          -2.086878538131714,
+          2.631207227706909
+        ],
+        "angular": [
+          1.9945445183623458,
+          -2.2968989710883685,
+          4.580419731563959
+        ],
+        "kinetic": 19.4393380436493,
+        "inertia": [
+          0.5375136423819937,
+          0.004747745315335672,
+          0.2334400459188728,
+          0.004747745315335672,
+          0.6962455200774674,
+          -0.05441440523271766,
+          0.2334400459188728,
+          -0.05441440523271766,
+          0.9875738572755148
+        ]
+      },
+      "initialRigidResidual": 1.1064424813855144e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "1-240-1-forward.bin",
+        "sha256": "e43d1d24bb46d7c06af13b847435680e66534cd1f1dbd8f2dcd581a8abc5360e"
+      },
+      "maxima": {
+        "linear": 0.4566421317683552,
+        "angular": 0.028821770499689935,
+        "energy": 0.22610448990934628,
+        "com": 0.02694317151150393,
+        "referenceAngular": 1.082339338771904e-14,
+        "referenceEnergy": 2.4868995751603507e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.01660649700925464,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.2213887158367369,
+          0.34276976188023883,
+          -0.04724645035134421
+        ],
+        "linear": [
+          8.87226215004921,
+          -1.6458370685577393,
+          2.8794913291931152
+        ],
+        "angular": [
+          1.994544743248132,
+          -2.2968993998554934,
+          4.580418638237527
+        ],
+        "kinetic": 19.58502644777618,
+        "inertia": [
+          0.5375136030247045,
+          0.004747716786942441,
+          0.23344010301970838,
+          0.004747716786942441,
+          0.6962455511247149,
+          -0.05441440395502435,
+          0.23344010301970838,
+          -0.05441440395502435,
+          0.9875737350449594
+        ]
+      },
+      "initialRigidResidual": 1.5226136018455556e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "1-240-1-reverse.bin",
+        "sha256": "78df45d4722cc0969034b4e2a49a06bd9088b56e70e425ab6641fdeee82a1d02"
+      },
+      "maxima": {
+        "linear": 0.2961939642347808,
+        "angular": 0.028822724075634132,
+        "energy": 0.1210594961927356,
+        "com": 0.01672278810782682,
+        "referenceAngular": 9.339080995124634e-15,
+        "referenceEnergy": 1.7763568394002505e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.016606443518041785,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.21985825213293234,
+          0.34304896048787564,
+          -0.04775617147485415
+        ],
+        "linear": [
+          8.981843709945679,
+          -1.8181040287017822,
+          2.69561231136322
+        ],
+        "angular": [
+          2.0123137060520664,
+          -2.292455822623305,
+          4.5748003207193415
+        ],
+        "kinetic": 19.669602624293514,
+        "inertia": [
+          0.5397811271305515,
+          0.0062003627503536,
+          0.2351826993594078,
+          0.0062003627503536,
+          0.6958390484819257,
+          -0.05501061018830632,
+          0.2351826993594078,
+          -0.05501061018830633,
+          0.9857123858377923
+        ]
+      },
+      "initialRigidResidual": 1.1383169919540406e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "1-240-4-forward.bin",
+        "sha256": "2adbc5d034915edae934edd451ed07f2ce4b2b37b42b5b93e4df324b1a1c50d8"
+      },
+      "maxima": {
+        "linear": 0.11459828072589034,
+        "angular": 0.007398606911098029,
+        "energy": 0.05739206282837017,
+        "com": 0.0067505299808772465,
+        "referenceAngular": 2.3431756016863612e-14,
+        "referenceEnergy": 5.1514348342607263e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.004261583405457188,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.21985673738850486,
+          0.3430450724230872,
+          -0.04775838885042402
+        ],
+        "linear": [
+          8.991931110620499,
+          -1.7904837131500244,
+          2.7112372517585754
+        ],
+        "angular": [
+          2.012313458926645,
+          -2.2924560579691033,
+          4.574800656028436
+        ],
+        "kinetic": 19.67883198761176,
+        "inertia": [
+          0.5397811399068517,
+          0.006200390717401069,
+          0.23518269756505444,
+          0.006200390717401069,
+          0.6958391090388243,
+          -0.05501061919763521,
+          0.23518269756505444,
+          -0.05501061919763522,
+          0.9857124924914387
+        ]
+      },
+      "initialRigidResidual": 8.799080703246393e-8,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "1-240-4-reverse.bin",
+        "sha256": "7688ca715739b5ab960c20f1af07025beb22e601ec5dd510a0b53de6083b190e"
+      },
+      "maxima": {
+        "linear": 0.074446514274133,
+        "angular": 0.007400612768065638,
+        "energy": 0.030822994570652185,
+        "com": 0.004194622734861749,
+        "referenceAngular": 1.8720348745267393e-14,
+        "referenceEnergy": 2.6645352591003757e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.004261174032162621,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.23285174051920568,
+          0.33915845420625473,
+          -0.043811384307013625
+        ],
+        "linear": [
+          7.863953704833984,
+          -2.97233169555664,
+          2.3887800598144535
+        ],
+        "angular": [
+          1.9377109525972531,
+          -2.3133100113897345,
+          4.596528601611887
+        ],
+        "kinetic": 18.844227691679137,
+        "inertia": [
+          0.5206785754891492,
+          -0.007377007268714403,
+          0.21855552590779878,
+          -0.007377007268714403,
+          0.6987389129507462,
+          -0.050584848175706854,
+          0.21855552590779878,
+          -0.050584848175706854,
+          1.0019150634755598
+        ]
+      },
+      "initialRigidResidual": 1.0885957144473682e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "100-60-1-forward.bin",
+        "sha256": "0306bac517ab4254bd30619cfdc24440993e6dcfc1a5b240dce7b8b1f4f7df91"
+      },
+      "maxima": {
+        "linear": 1.8012559708647655,
+        "angular": 0.15766294936038877,
+        "energy": 1.1035823888602216,
+        "com": 0.10962723100058692,
+        "referenceAngular": 3.761563674128996e-12,
+        "referenceEnergy": 1.7816859099184512e-12
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.05406687603483206,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.23343032624986434,
+          0.34079351637098526,
+          -0.04287443055046929
+        ],
+        "linear": [
+          8.460633392333985,
+          -1.2056272888183592,
+          3.415462188720703
+        ],
+        "angular": [
+          1.9377101318350354,
+          -2.313310781741208,
+          4.59652648942265
+        ],
+        "kinetic": 19.30635399596145,
+        "inertia": [
+          0.5206786050843717,
+          -0.00737696319516723,
+          0.21855551979707258,
+          -0.00737696319516723,
+          0.6987389908797184,
+          -0.050584886482356345,
+          0.21855551979707258,
+          -0.050584886482356345,
+          1.0019151971699578
+        ]
+      },
+      "initialRigidResidual": 1.0735383488233841e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "100-60-1-reverse.bin",
+        "sha256": "f2c4fffdb51d579ddc045d586b412bfa659a27a2815dc5668f2158bd1651e0e1"
+      },
+      "maxima": {
+        "linear": 1.16105005367656,
+        "angular": 0.10650338897338614,
+        "energy": 0.4732577347757285,
+        "com": 0.06609505726782706,
+        "referenceAngular": 3.76494329905669e-12,
+        "referenceEnergy": 1.7674750552032492e-12
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.05944515095258159,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22765955395168724,
+          0.34147614585028757,
+          -0.04541533761554294
+        ],
+        "linear": [
+          8.894521179199218,
+          -1.9117526245117191,
+          2.670674285888672
+        ],
+        "angular": [
+          2.006077502828994,
+          -2.294101476892064,
+          4.575667920738802
+        ],
+        "kinetic": 19.590096623837333,
+        "inertia": [
+          0.5288457824567647,
+          -0.0013154306645288133,
+          0.2262377061475724,
+          -0.0013154306645288133,
+          0.6977244499434572,
+          -0.05251487354561308,
+          0.2262377061475724,
+          -0.05251487354561308,
+          0.9947628495305565
+        ]
+      },
+      "initialRigidResidual": 6.460715177673719e-8,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "100-60-4-forward.bin",
+        "sha256": "db33c7f840e906ec5c1b26c97d6ed1b3bed3cbc0c6272f436999cbcbfe4ab19e"
+      },
+      "maxima": {
+        "linear": 0.45641097387031465,
+        "angular": 0.029462043000529157,
+        "energy": 0.22608601256674632,
+        "com": 0.026935240955633596,
+        "referenceAngular": 1.1417498175509912e-14,
+        "referenceEnergy": 3.375077994860476e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.016594905083769568,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22768616888258192,
+          0.34146180894639755,
+          -0.045439188215467656
+        ],
+        "linear": [
+          8.96496759414673,
+          -1.7647686767578121,
+          2.745005035400391
+        ],
+        "angular": [
+          2.0084590320008715,
+          -2.293553502678566,
+          4.5749099026753886
+        ],
+        "kinetic": 19.65232702465713,
+        "inertia": [
+          0.5288508797839403,
+          -0.0013269134932856197,
+          0.22624164011786405,
+          -0.0013269134932856197,
+          0.6977314884880135,
+          -0.05253962000475836,
+          0.22624164011786405,
+          -0.05253962000475836,
+          0.9947510527236841
+        ]
+      },
+      "initialRigidResidual": 7.407181967990275e-8,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 61,
+      "exactReplaySteps": 60,
+      "initialSnapshot": {
+        "file": "100-60-4-reverse.bin",
+        "sha256": "86bc871017b74bd94d6a2c3493f1d909661d06b963098fa2235f6bda10a33a5c"
+      },
+      "maxima": {
+        "linear": 0.29600712753184943,
+        "angular": 0.029482770752707523,
+        "energy": 0.1298773282597736,
+        "com": 0.016738703797310194,
+        "referenceAngular": 9.830333712014762e-15,
+        "referenceEnergy": 4.263256414560601e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.016594168025061293,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22135014216105142,
+          0.3426676659451591,
+          -0.047303698725170554
+        ],
+        "linear": [
+          8.707276916503908,
+          -2.086881866455079,
+          2.6312059020996093
+        ],
+        "angular": [
+          1.994545165584089,
+          -2.2968990416741724,
+          4.580421893277876
+        ],
+        "kinetic": 19.439354391932515,
+        "inertia": [
+          0.5375136377843983,
+          0.004747770445714283,
+          0.2334401136581432,
+          0.004747770445714283,
+          0.696245655520696,
+          -0.0544144163316855,
+          0.2334401136581432,
+          -0.0544144163316855,
+          0.9875739100937204
+        ]
+      },
+      "initialRigidResidual": 5.986943143819035e-8,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "100-240-1-forward.bin",
+        "sha256": "96a508065fbb183a87c68e46972c66558f16db09233fb3e249a74a19ef348ecb"
+      },
+      "maxima": {
+        "linear": 0.45664201066888466,
+        "angular": 0.028826388305726904,
+        "energy": 0.22613214787761038,
+        "com": 0.02694345065455908,
+        "referenceAngular": 7.856740153113387e-15,
+        "referenceEnergy": 2.6645352591003757e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.0166061042181657,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.22138874265882702,
+          0.3427697647942437,
+          -0.04724643601311576
+        ],
+        "linear": [
+          8.872263031005861,
+          -1.6458361816406248,
+          2.8794900512695314
+        ],
+        "angular": [
+          1.9945443184215566,
+          -2.2968992594090354,
+          4.5804187824951414
+        ],
+        "kinetic": 19.585024768022933,
+        "inertia": [
+          0.5375135676749807,
+          0.004747758527193807,
+          0.2334401231343121,
+          0.004747758527193807,
+          0.6962456748761736,
+          -0.05441439920452662,
+          0.2334401231343121,
+          -0.05441439920452662,
+          0.9875738529872362
+        ]
+      },
+      "initialRigidResidual": 1.1421213778294539e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "100-240-1-reverse.bin",
+        "sha256": "e38bd0e60364a1dfa74df9e47231c319864592b6a0059495dd935b8ea56b034c"
+      },
+      "maxima": {
+        "linear": 0.29619551256713705,
+        "angular": 0.028821794542551477,
+        "energy": 0.12106002686672568,
+        "com": 0.016722781608098147,
+        "referenceAngular": 1.7428733525895273e-14,
+        "referenceEnergy": 1.2434497875801753e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.016605860071101222,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": false,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.219858255121443,
+          0.34304895334773594,
+          -0.04775617016686333
+        ],
+        "linear": [
+          8.981838836669922,
+          -1.818107299804688,
+          2.695611572265625
+        ],
+        "angular": [
+          2.0123138964216043,
+          -2.292455562911981,
+          4.574800102727504
+        ],
+        "kinetic": 19.669596820465827,
+        "inertia": [
+          0.5397811205628795,
+          0.006200372963215739,
+          0.2351827011202,
+          0.006200372963215739,
+          0.6958390586525821,
+          -0.05501061636188938,
+          0.2351827011202,
+          -0.05501061636188938,
+          0.9857123931579116
+        ]
+      },
+      "initialRigidResidual": 1.1381117729275133e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "100-240-4-forward.bin",
+        "sha256": "824acd8cde406c7f19e02fdf03638879a96702fc16a8dd384a2078c350a9cdd6"
+      },
+      "maxima": {
+        "linear": 0.11459964926165511,
+        "angular": 0.007399691798118236,
+        "energy": 0.05739719670740584,
+        "com": 0.006750712776174638,
+        "referenceAngular": 3.333036708134925e-14,
+        "referenceEnergy": 4.796163466380676e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.004261170456941626,
+      "seconds": 1.0000000521540642
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": true,
+      "initial": {
+        "mass": 9,
+        "com": [
+          0.21985672950744628,
+          0.34304504606458874,
+          -0.047758388519287105
+        ],
+        "linear": [
+          8.991932926177979,
+          -1.7904844665527349,
+          2.7112364196777348
+        ],
+        "angular": [
+          2.0123134755101297,
+          -2.2924556647704017,
+          4.574800152670321
+        ],
+        "kinetic": 19.678831392023916,
+        "inertia": [
+          0.5397811417187341,
+          0.006200406842798711,
+          0.23518269204752829,
+          0.006200406842798711,
+          0.6958390493597253,
+          -0.055010629771715336,
+          0.23518269204752829,
+          -0.055010629771715336,
+          0.9857124215654749
+        ]
+      },
+      "initialRigidResidual": 1.0958204695038918e-7,
+      "initialAngularResidual": 0,
+      "checkedFreeMotionStates": 241,
+      "exactReplaySteps": 240,
+      "initialSnapshot": {
+        "file": "100-240-4-reverse.bin",
+        "sha256": "561eb5805fbd3a330b82e84a0cb6acd36358342fec9397c679ead7378e9a1618"
+      },
+      "maxima": {
+        "linear": 0.07443493200873652,
+        "angular": 0.00739853946020601,
+        "energy": 0.03081515497011722,
+        "com": 0.004193551576147616,
+        "referenceAngular": 3.049699997140002e-14,
+        "referenceEnergy": 2.6645352591003757e-14
+      },
+      "referenceMaximumNewtonIterations": 2,
+      "finalNativeReferenceAngle": 0.004260826387196436,
+      "seconds": 1.0000000521540642
+    }
+  ]
+}

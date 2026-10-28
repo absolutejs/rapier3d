@@ -1,0 +1,8 @@
+{
+  "cases": 16,
+  "maxNativeLinear": 1.801261156452667,
+  "maxNativeAngular": 0.15766294936038877,
+  "maxNativeEnergy": 1.1035823888602216,
+  "maxReferenceAngular": 3.76494329905669e-12,
+  "maxReferenceEnergy": 1.7816859099184512e-12
+}

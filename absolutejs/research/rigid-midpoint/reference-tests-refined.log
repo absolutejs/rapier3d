@@ -1,0 +1,13 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/research/rigid-midpoint/reference.test.ts:
+(pass) matched midpoint and Cayley updates conserve energy and WORLD angular momentum in nonprincipal free spin [41.95ms]
+(pass) reference is time reversible and owns all returned state [1.74ms]
+(pass) principal spin uses the known Cayley angle and zero spin is unchanged [0.28ms]
+(pass) singular/asymmetric inertia and exhausted nonlinear solves fail explicitly [0.29ms]
+(pass) conserved trajectories also converge at second order toward an independent refined RK4 solution [82.67ms]
+
+ 5 pass
+ 0 fail
+ 18 expect() calls
+Ran 5 tests across 1 file. [141.00ms]
