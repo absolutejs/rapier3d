@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "publicationForbidden": true,
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "UNQUALIFIED-private-iteration-trace",
+    "wasmSha256": "e7c2163189d9ecf2d3376deed84e3640b2270103e4e52204fe0e0dc0aed8d05f",
+    "wasmBytes": 3303049,
+    "solverChanges": true
+  },
+  "scope": "Research packaging identity, NOT stable release qualification"
+}

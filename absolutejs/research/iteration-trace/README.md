@@ -34,3 +34,26 @@ steps). Trace query ownership and nonmutation are checked. This establishes only
 instrumentation parity, not physical correctness for every generated mass case.
 The trace has substantial diagnostic overhead, including scratch state copies.
 No timing result from this kernel should be treated as normal physics cost.
+
+## Measured result
+
+The offline two-job build completed in 5m10s. The stable native guard correctly
+rejected the changed bytes; private research packaging uses the explicit
+UNQUALIFIED-private-iteration-trace identity, never a stable qualification.
+Private native SHA256 e7c2163189d9ecf2d3376deed84e3640b2270103e4e52204fe0e0dc0aed8d05f,
+3,303,049 bytes. The package remains private and is not adopted by the game.
+
+All 480 step groups match exact published snapshot bytes for both profiled and
+unprofiled private worlds; 18 phase records are retained. For the 20/1/20 kg
+frictionless fixture, both insertion orders reach a numerically frozen velocity
+tail at sweep 155. All 102 remaining sweeps retain residual 2.1457672119140625e-6,
+while precise AND stored float impulses still change; maximum stored impulse
+change in that tail is 1.52587890625e-5. Trace queries return owned data and do not
+mutate the physical snapshot. Zero numerical velocity delta does not compare
+signed-zero bits; no safe early-stopping policy is established.
+
+Do not replace the cap with 'velocity unchanged' or 'residual repeated'. Those
+shortcuts would skip changes to the saved impulse state. A future optimization
+needs full state/next-step qualification or a better-conditioned update, not
+a relaxed tolerance. The next independent defect is articulated free-motion
+transport; keep that work separate from this contact-iteration investigation.
