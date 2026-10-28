@@ -619,6 +619,7 @@ impl StagedIslandSolver {
 
         let ctx = SharedCtx {
             sync: &self.sync,
+            contact_convergence: counters.enabled.then_some(&mut counters.solver.contact_convergence as *mut _),
             chunk_segments: &self.chunk_segments,
             num_chunks,
             groups: &self.groups,

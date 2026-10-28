@@ -165,6 +165,8 @@ struct GroupJointRanges {
 /// claimed indices, same-color body writes disjoint, worker 0 alone mutates joints/bodies/multibodies.
 struct SharedCtx<'a> {
     sync: &'a StageSync,
+    /// Only dereferenced in single-worker adaptive phases, while profiling is enabled.
+    contact_convergence: Option<*mut crate::counters::ContactConvergenceCounters>,
     /// The SIMD chunk layout as segments over the persistent bucket slices (and
     /// the overflow grouper's output); resolve with [`chunk_at`].
     chunk_segments: &'a [ChunkSegment],

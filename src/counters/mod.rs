@@ -5,7 +5,7 @@ use core::time::Duration;
 
 pub use self::ccd_counters::CCDCounters;
 pub use self::collision_detection_counters::CollisionDetectionCounters;
-pub use self::solver_counters::SolverCounters;
+pub use self::solver_counters::{ContactConvergenceCounters, SolverCounters};
 pub use self::stages_counters::StagesCounters;
 pub use self::timer::Timer;
 

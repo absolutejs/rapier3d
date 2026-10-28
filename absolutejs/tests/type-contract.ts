@@ -53,3 +53,10 @@ function articulationDampingContract(set: import("@absolutejs/rapier3d").Multibo
  const changed:boolean=set.setGeneralizedDamping(handle,values ?? []);
  return changed;
 }
+
+const convergence: R.ContactConvergenceStats | null = world.contactConvergence();
+if (convergence) {
+ const iterations: number = convergence.compressionIterations;
+ const residual: number = convergence.maxRestitutionResidual;
+ void [iterations,residual];
+}

@@ -73,6 +73,21 @@ import {DynamicRayCastVehicleController} from "../control";
 
 // #endif
 
+/** Last profiled step's restricted adaptive contact solves, including CCD passes.
+ * Counts describe solve groups/phases, not individual contacts or physical islands.
+ * Residuals are projected normal velocity errors in world units per second.
+ */
+export interface ContactConvergenceStats {
+    compressionSolves: number;
+    compressionIterations: number;
+    compressionLimitHits: number;
+    maxCompressionResidual: number;
+    restitutionSolves: number;
+    restitutionIterations: number;
+    restitutionLimitHits: number;
+    maxRestitutionResidual: number;
+}
+
 /**
  * The physics world.
  *
@@ -1380,6 +1395,24 @@ export class World {
     public ccdSubsteps(): number | null {
         return this.physicsPipeline.raw.ccd_substeps() ?? null;
     }
+
+    /** Owned observations from the last completed profiled step; null before
+     * that step, after toggling profiling, when disabled, or after restoration.
+     * Zero solves means no eligible adaptive path, not proof of convergence.
+     * A limit hit means the phase exhausted its budget above tolerance.
+     * Reading or modifying the returned object does not affect simulation.
+     */
+    public contactConvergence(): ContactConvergenceStats | null {
+        const values = this.physicsPipeline.raw.contact_convergence();
+        if (values == null) return null;
+        return {
+            compressionSolves: values[0], compressionIterations: values[1],
+            compressionLimitHits: values[2], maxCompressionResidual: values[3],
+            restitutionSolves: values[4], restitutionIterations: values[5],
+            restitutionLimitHits: values[6], maxRestitutionResidual: values[7],
+        };
+    }
+
 
     /**
      * The time spent in milliseconds by the last step to run the entire simulation step.

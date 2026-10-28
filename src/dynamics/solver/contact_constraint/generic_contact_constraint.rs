@@ -631,7 +631,7 @@ impl GenericContactConstraint {
 
     /// Fixed-point residual of the actual softened normal update:
     /// lambda = cfm * max(0, lambda - r * (velocity + rhs)).
-    /// Only used by the restricted frictionless, joint-free serial experiment.
+    /// Only used by the restricted frictionless, joint-free serial path.
     pub fn normal_solve_residual(&self, jacobians: &DVector,
         bodies: &SolverBodies, generic_solver_vels: &DVector) -> Real {
         if self.cfm_factor <= 0.0 { return 0.0; }

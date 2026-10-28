@@ -1,9 +1,26 @@
 use crate::counters::Timer;
+use crate::math::Real;
 use core::fmt::{Display, Formatter, Result};
+
+/// Observations of the restricted adaptive contact paths, summed over CCD passes.
+/// Runtime-only profiling data; never serialized with the physical world.
+#[derive(Default, Clone, Copy, Debug)]
+pub struct ContactConvergenceCounters {
+    pub compression_solves: usize,
+    pub compression_iterations: usize,
+    pub compression_limit_hits: usize,
+    pub max_compression_residual: Real,
+    pub restitution_solves: usize,
+    pub restitution_iterations: usize,
+    pub restitution_limit_hits: usize,
+    pub max_restitution_residual: Real,
+}
 
 /// Performance counters related to constraints resolution.
 #[derive(Default, Clone, Copy, Debug)]
 pub struct SolverCounters {
+    /// Opt-in observations; zero counts mean no eligible adaptive solve.
+    pub contact_convergence: ContactConvergenceCounters,
     /// Number of contact manifolds and impulse joints handed to the constraints solver (summed
     /// over the CCD substeps). Sleeping bodies' contacts and joints aren't counted.
     pub nconstraints: usize,
@@ -28,6 +45,7 @@ impl SolverCounters {
     /// Creates a new counter initialized to zero.
     pub fn new() -> Self {
         SolverCounters {
+            contact_convergence: ContactConvergenceCounters::default(),
             nconstraints: 0,
             ncontacts: 0,
             velocity_assembly_time: Timer::new(),
@@ -41,6 +59,7 @@ impl SolverCounters {
 
     /// Reset all the counters to zero.
     pub fn reset(&mut self) {
+        self.contact_convergence = ContactConvergenceCounters::default();
         self.nconstraints = 0;
         self.ncontacts = 0;
         self.velocity_resolution_time.reset();

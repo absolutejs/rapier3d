@@ -44,6 +44,16 @@ impl RawPhysicsPipeline {
         }
     }
 
+    // Owned result; null freshness semantics match ccd_substeps.
+    pub fn contact_convergence(&self) -> Option<Vec<f64>> {
+        if !self.1 || !self.0.counters.enabled() { return None; }
+        let c = &self.0.counters.solver.contact_convergence;
+        Some(vec![c.compression_solves as f64, c.compression_iterations as f64,
+            c.compression_limit_hits as f64, c.max_compression_residual as f64,
+            c.restitution_solves as f64, c.restitution_iterations as f64,
+            c.restitution_limit_hits as f64, c.max_restitution_residual as f64])
+    }
+
     pub fn timing_step(&self) -> f64 {
         self.0.counters.step_time_ms()
     }
