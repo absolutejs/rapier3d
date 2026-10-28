@@ -1,0 +1,240 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/coupled-impact-convergence.test.ts:
+(pass) symmetric coupled impact e=0 hz=60 substeps=1 reverse=false [34.41ms]
+(pass) symmetric coupled impact e=0 hz=60 substeps=1 reverse=true [9.32ms]
+(pass) symmetric coupled impact e=0 hz=60 substeps=4 reverse=false [13.37ms]
+(pass) symmetric coupled impact e=0 hz=60 substeps=4 reverse=true [6.65ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=1 reverse=false [11.19ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=1 reverse=true [10.91ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=4 reverse=false [20.15ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=4 reverse=true [16.66ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=60 substeps=1 reverse=false [2.05ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=60 substeps=1 reverse=true [5.67ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=60 substeps=4 reverse=false [2.02ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=60 substeps=4 reverse=true [1.68ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=240 substeps=1 reverse=false [1.09ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=240 substeps=1 reverse=true [0.84ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=240 substeps=4 reverse=false [1.00ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=0.5 hz=240 substeps=4 reverse=true [1.32ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=60 substeps=1 reverse=false [1.76ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=60 substeps=1 reverse=true [1.41ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=60 substeps=4 reverse=false [1.18ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=60 substeps=4 reverse=true [0.91ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=240 substeps=1 reverse=false [0.88ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=240 substeps=1 reverse=true [0.78ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=240 substeps=4 reverse=false [0.90ms]
+30 |     const velocity=bodies.map(b=>b.linvel().x);
+31 |     const energy=velocity.reduce((s,v,i)=>s+.5*specs[i]![1]!*v*v,0);
+32 |     const momentum=velocity.reduce((s,v,i)=>s+specs[i]![1]!*v,0);
+33 |     expect(energy).toBeLessThan(80.001);
+34 |     expect(Math.abs(momentum)).toBeLessThan(.0001);
+35 |     expect(Math.max(Math.abs(velocity[0]!),Math.abs(velocity[1]!),Math.abs(velocity[2]!+velocity[3]!))).toBeLessThan(.001);
+                                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/coupled-impact-convergence.test.ts:35:105)
+(fail) symmetric coupled impact e=1 hz=240 substeps=4 reverse=true [1.10ms]
+
+ 8 pass
+ 16 fail
+ 1012 expect() calls
+Ran 24 tests across 1 file. [382.00ms]

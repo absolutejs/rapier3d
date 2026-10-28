@@ -1,0 +1,103 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [37.22ms]
+(pass) invalid contact policy values fail before mutating native state [0.56ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [24.92ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [11.28ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [11.52ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [6.25ms]
+
+absolutejs/tests/dynamic-impact.test.ts:
+(pass) unequal moving spheres obey the analytic impact law across units, ordering and timesteps [352.52ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1059.26ms]
+(pass) live separation follows pose changes while cached distance stays fixed [859.38ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [864.25ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [1.55ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [0.89ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [1.45ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [2.00ms]
+(pass) prescribed position endpoint remains authoritative [1.11ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.51ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [6.28ms]
+(pass) current-body query composes noncommuting parent and child rotations [3.46ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [2.11ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [2.95ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [1766.96ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [3.46ms]
+
+absolutejs/tests/articulation-damping.test.ts:
+(pass) generalized damping exposes root defaults as an owned read-only copy [15.87ms]
+(pass) damping writes are transactional including native bypass, overflow and stale handles [3.95ms]
+(pass) explicit damping survives snapshot restoration and does not affect another articulation [16.16ms]
+(pass) articulation topology changes require a freshly sized damping vector [2.01ms]
+(pass) zero generalized damping removes native angular decay in a freely rotating assembly [41.09ms]
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [9.62ms]
+
+absolutejs/tests/multibody-writeback.test.ts:
+(pass) articulation link velocities expose current solved momentum at every step [232.33ms]
+(pass) fixed articulation velocities use final COM geometry after off-center impacts [148.74ms]
+(pass) a revolute articulation exposes COM velocity tangent to its current hinge [13.73ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [7.83ms]
+(pass) diagnostic identity imports independently of the physics runtime [16.59ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [8.01ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [9.01ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [6.78ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [10.91ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [49.18ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [2.10ms]
+
+absolutejs/tests/contact-work-restitution.test.ts:
+(pass) head-on material transfer e=0 hz=60 iterations=1 touching=false [1.80ms]
+(pass) head-on material transfer e=0 hz=60 iterations=1 touching=true [1.17ms]
+(pass) head-on material transfer e=0 hz=60 iterations=4 touching=false [1.59ms]
+(pass) head-on material transfer e=0 hz=60 iterations=4 touching=true [1.85ms]
+(pass) head-on material transfer e=0 hz=240 iterations=1 touching=false [3.42ms]
+(pass) head-on material transfer e=0 hz=240 iterations=1 touching=true [2.81ms]
+(pass) head-on material transfer e=0 hz=240 iterations=4 touching=false [2.94ms]
+(pass) head-on material transfer e=0 hz=240 iterations=4 touching=true [4.63ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=1 touching=false [1.19ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=1 touching=true [0.59ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=4 touching=false [1.26ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=4 touching=true [1.40ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=1 touching=false [1.61ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=1 touching=true [2.67ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=4 touching=false [3.78ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=4 touching=true [3.84ms]
+(pass) head-on material transfer e=1 hz=60 iterations=1 touching=false [1.14ms]
+(pass) head-on material transfer e=1 hz=60 iterations=1 touching=true [0.74ms]
+(pass) head-on material transfer e=1 hz=60 iterations=4 touching=false [1.22ms]
+(pass) head-on material transfer e=1 hz=60 iterations=4 touching=true [1.13ms]
+(pass) head-on material transfer e=1 hz=240 iterations=1 touching=false [1.46ms]
+(pass) head-on material transfer e=1 hz=240 iterations=1 touching=true [2.11ms]
+(pass) head-on material transfer e=1 hz=240 iterations=4 touching=false [5.09ms]
+(pass) head-on material transfer e=1 hz=240 iterations=4 touching=true [3.10ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [996.69ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [821.96ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [2587.75ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [2610.76ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [5253.87ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0.3 [6405.34ms]
+
+ 69 pass
+ 0 fail
+ 57793 expect() calls
+Ran 69 tests across 14 files. [24.65s]

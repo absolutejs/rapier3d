@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "private-contact-work-restitution-unqualified",
-  "wasmSha256": "b13a15a7eceb18ae70bb4c067ad2c8e2df2080a675f0df619dc7df983af57091",
-  "wasmBytes": 3302666,
+  "qualifiedKernelRelease": "private-coupled-restitution-sweeps-unqualified",
+  "wasmSha256": "6cc2392f4d6fca9f0c5c2ec140c640c43c90aed679cf568a2bbe24547eb318a4",
+  "wasmBytes": 3300717,
   "solverChanges": true
 }
