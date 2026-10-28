@@ -1,6 +1,7 @@
 import R from '../../dist/rapier.mjs';
 import {buildInfo} from '../../dist/build-info.mjs';
 import {fixture} from '../tests/fixture';
+import {equalSnapshot,wakeFixture} from '../tests/snapshot-order-fixture';
 import {rotate, unit, vector, type V} from '../research/gyroscopic-precision/free-spin-math';
 try {
  await Promise.all([R.init(),R.init()]);
@@ -242,6 +243,18 @@ try {
    }
    if(!Number.isFinite(splitMaximumMomentumError)||splitMaximumMomentumError>1e-4)throw Error('Partial split lost browser momentum');
   }finally{splitReplay?.free();splitWorld.free();}
-  postMessage({splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  let wakeExactReplaySteps=0;
+  const wake=wakeFixture('multibody',32,R);let wakeReplay:R.World|undefined;
+  try {
+   wake.releaseSleeping();const before=wake.world.takeSnapshot();
+   wakeReplay=R.World.restoreSnapshot(before);
+   if(!equalSnapshot(before,wakeReplay.takeSnapshot()))throw Error('Browser pending wake roundtrip differs');
+   for(let i=0;i<8;i++){
+    wake.world.step();wakeReplay.step();
+    if(!equalSnapshot(wake.world.takeSnapshot(),wakeReplay.takeSnapshot()))throw Error('Browser sleeping wake replay differs');
+    wakeExactReplaySteps++;
+   }
+  }finally{wakeReplay?.free();wake.world.free();}
+  postMessage({wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

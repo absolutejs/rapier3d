@@ -338,10 +338,16 @@ impl PhysicsPipeline {
             .drain(..)
             .chain(multibody_joints.to_wake_up.drain(..));
         #[cfg(not(feature = "enhanced-determinism"))]
-        let to_wake_up_iterator = impulse_joints
-            .to_wake_up
-            .drain()
-            .chain(multibody_joints.to_wake_up.drain());
+        let to_wake_up_iterator = {
+            // Waking sleeping chunks changes their order in the active set.
+            // Hash-set insertion/bucket history must not affect replay. Sort
+            // only queued edits, retaining impulse-before-multibody priority.
+            let mut impulse: Vec<_> = impulse_joints.to_wake_up.drain().collect();
+            let mut multibody: Vec<_> = multibody_joints.to_wake_up.drain().collect();
+            impulse.sort_unstable_by_key(|handle| handle.into_raw_parts());
+            multibody.sort_unstable_by_key(|handle| handle.into_raw_parts());
+            impulse.into_iter().chain(multibody)
+        };
         for handle in to_wake_up_iterator {
             islands.wake_up(bodies, handle, true);
         }

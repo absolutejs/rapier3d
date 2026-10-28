@@ -1,10 +1,51 @@
 //! Pending connectivity edits are logical state, unlike rebuildable solver caches.
 use crate::alloc_prelude::*;
 use crate::dynamics::soft_body::SoftBodyIslandEvent;
+#[cfg(feature = "serde-serialize")]
+use crate::dynamics::RigidBodyHandle;
 use crate::dynamics::{
     ImpulseJointHandle, ImpulseJointIslandEvent, ImpulseJointSet, MultibodyIndex,
     MultibodyJointSet, SoftBodySet,
 };
+#[cfg(feature = "serde-serialize")]
+use parry::utils::hashset::HashSet;
+
+/// Unordered wake membership has one canonical wire order. The enhanced
+/// determinism feature already uses an insertion-ordered set, which retains
+/// its existing wire/consumption order.
+#[cfg(feature = "serde-serialize")]
+pub(crate) fn serialize_wake_set<S: serde::Serializer>(
+    set: &HashSet<RigidBodyHandle>,
+    serializer: S,
+) -> Result<S::Ok, S::Error> {
+    #[cfg(feature = "enhanced-determinism")]
+    {
+        serde::Serialize::serialize(set, serializer)
+    }
+    #[cfg(not(feature = "enhanced-determinism"))]
+    {
+        let mut handles: Vec<_> = set.iter().collect();
+        handles.sort_unstable_by_key(|handle| handle.into_raw_parts());
+        serde::Serialize::serialize(&handles, serializer)
+    }
+}
+
+#[cfg(feature = "serde-serialize")]
+pub(crate) fn serialize_join_set<S: serde::Serializer>(
+    set: &HashSet<(RigidBodyHandle, RigidBodyHandle)>,
+    serializer: S,
+) -> Result<S::Ok, S::Error> {
+    #[cfg(feature = "enhanced-determinism")]
+    {
+        serde::Serialize::serialize(set, serializer)
+    }
+    #[cfg(not(feature = "enhanced-determinism"))]
+    {
+        let mut pairs: Vec<_> = set.iter().collect();
+        pairs.sort_unstable_by_key(|(a, b)| (a.into_raw_parts(), b.into_raw_parts()));
+        serde::Serialize::serialize(&pairs, serializer)
+    }
+}
 
 /// Opaque checkpoint of connectivity edits not yet consumed by a simulation step.
 ///

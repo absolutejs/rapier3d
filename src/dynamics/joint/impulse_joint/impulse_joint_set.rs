@@ -48,8 +48,10 @@ pub struct ImpulseJointSet {
     joint_ids: Arena<TemporaryInteractionIndex>,
     joint_graph: InteractionGraph<RigidBodyHandle, ImpulseJoint>,
     /// A set of rigid-body handles to wake-up during the next timestep.
+    #[cfg_attr(feature = "serde-serialize", serde(serialize_with = "crate::dynamics::serialize_wake_set"))]
     pub(crate) to_wake_up: HashSet<RigidBodyHandle>,
     /// A set of rigid-body pairs to join in the island manager during the next timestep.
+    #[cfg_attr(feature = "serde-serialize", serde(serialize_with = "crate::dynamics::serialize_join_set"))]
     pub(crate) to_join: HashSet<(RigidBodyHandle, RigidBodyHandle)>,
     /// Persistent-island connectivity events (joint created/removed/rewired),
     /// drained at the start of the next timestep, in order.

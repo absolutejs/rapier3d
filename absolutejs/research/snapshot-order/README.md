@@ -19,3 +19,31 @@ checking membership against the native-deserialized sets. This is intended to
 identify the differing bytes before deciding whether canonical serialization,
 deterministic queue consumption, or another correction is required. Decoder
 qualification is in progress; the collection responsible is not yet claimed.
+
+## Decoded cause and state impact
+
+The decoder and independent audit identify `MultibodyJointSet.to_wake_up` at
+byte range [141803, 142323). The two changed bytes exchange body handles 37 and
+8 at sequence positions 1 and 63. Membership and every byte outside that set
+are unchanged. This is a decoded field finding, not an inference from offsets.
+
+`probe-sleeping-wake.ts` first sleeps 32 two-body assemblies, removes their
+joints with wake-up requested, and saves before the next step. On published
+0.16.0, body states remain equal but all eight post-step snapshots differ.
+Decoding the first pair shows differing active-set IDs on 34 bodies and differing
+island records. Hash-set wake processing changes the order sleeping chunks enter
+the active set. Canonicalizing serialized bytes alone would not resolve this.
+
+The private correction serializes unordered wake/join sets by handle index and
+generation, and processes default-backend wake sets in that same deterministic
+order. Impulse wake requests still precede multibody requests. Only queued edits
+are sorted; there is no scan or sort of all world bodies. The enhanced-
+determinism feature already uses insertion-ordered sets, so its existing wire
+and consumption ordering are retained. Ordered connectivity event vectors remain
+ordered and untouched; native payload layout and envelope version are unchanged.
+
+Two native tests pass with one and two workers: 16 fresh/sleeping cases cover
+both joint types at 1/8/32/64 assemblies, and two handle-reuse cases retain
+generational identity. Every case checks immediate snapshot identity and eight
+exact post-step snapshots. Feature-variant, no-std, WASM/browser, cost and full
+game qualification are still pending. No public package release is prepared.

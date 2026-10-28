@@ -124,3 +124,8 @@ warning: missing documentation for a struct field
 16 |     pub max_restitution_residual: Real,
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-snapshot-order-research v0.0.0 (/home/alexkahn/alex/rapier-snapshot-order-research/absolutejs/research/snapshot-order)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2m 25s
+     Running `.cache/snapshot-target/debug/decode-snapshot-queues absolutejs/research/snapshot-order/published-0160/32-fresh-initial.bin absolutejs/research/snapshot-order/published-0160/decoded-initial.json`
+Decoded 143449 bytes and all field boundaries

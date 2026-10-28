@@ -63,3 +63,5 @@ mod rigid_assembly;
 mod pending_island_events;
 #[cfg(feature = "alloc")]
 pub use self::pending_island_events::PendingIslandEvents;
+#[cfg(all(feature = "alloc", feature = "serde-serialize"))]
+pub(crate) use self::pending_island_events::{serialize_join_set, serialize_wake_set};

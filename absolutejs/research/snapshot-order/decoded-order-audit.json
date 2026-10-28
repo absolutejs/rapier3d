@@ -1,0 +1,25 @@
+{
+  "decodedField": "MultibodyJointSet.to_wake_up",
+  "fieldRange": {
+    "end": 142323,
+    "field": "multibody.to_wake_up",
+    "start": 141803
+  },
+  "changedByteOffsets": [
+    141819,
+    142315
+  ],
+  "membershipExactlyUnchanged": true,
+  "allBytesOutsideWakeSetExactlyUnchanged": true,
+  "wakeOrderChangedAt": [
+    1,
+    63
+  ],
+  "sourceSha256": "46519cf6d796c688fc09e6b8ad2a544183e38b9450ed0713018368721d909a45",
+  "inputHashes": {
+    "32-fresh-initial.bin": "275328e63b9a835216c4d779ad0a4925f6f39cb69ae2bbeb65606e773c031ce8",
+    "32-fresh-0.bin": "9c1936dff9e1ae6f457181ec00462f532245111e5940bec8ed8da7280ff061ba",
+    "decoded-initial.json": "a070835cb6185bf2c1e712b76d6c3ae7941842b7415fdb634838a657b966ae7d",
+    "decoded-restored.json": "0543c053dad51af1b374d191dd4a506e715e0f9508f4f4823fff5b29ef9c71f0"
+  }
+}

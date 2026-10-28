@@ -1,0 +1,113 @@
+{
+  "engine": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.16.0",
+    "qualifiedKernelRelease": "0.16.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "fb44e31fd971a0577889408a95266ab1e61d9293a1f6657647ca51417b93c83d",
+    "wasmBytes": 3324606,
+    "solverChanges": true
+  },
+  "apiSha256": "1aac9e8e9a3664574d7ad6357acf593059955d8b471506b2ee7fe4b2f70fa580",
+  "sourceSha256": "2d9e21054226465413f823709600901662e6605125a4b674d9f2028ec4aed49c",
+  "asleep": 64,
+  "stillSleepingAfterRemoval": 64,
+  "roundtripExact": false,
+  "rows": [
+    {
+      "step": 1,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "20b6fa095c56273ebf1b1faa9cbc908c942a1ec35d7e3acdf4ffdcdb07842ced",
+      "restoredSha256": "bfe122b7e6741d8758b5b2f4221fc57f415be5f46457cb055533275562ec4ed6"
+    },
+    {
+      "step": 2,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "e9b3cf808829c021451f01550dc5b8ea86a7c425e93db609f2af73df8eccaa8a",
+      "restoredSha256": "73bfec4711da951241b931a0739cfd4b785d5d4cb7645a300b09323a2ed70b05"
+    },
+    {
+      "step": 3,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "8b4c036011a79916e5727a99e7a3a2d3f313fe69fd55fc201ee3d73265b12bf2",
+      "restoredSha256": "81c2780d8ae923fdea1de762889f2c1aaf3dca4e7784668b1cf822252051d737"
+    },
+    {
+      "step": 4,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "87bc3fb1a346658dc66c5ee5f523200a8ceff67607c409cbf1ef61e6f2d9c527",
+      "restoredSha256": "b6eb76c105e63cb4cfb86bb92afcc1e46522d78ba9d26f71748582dcf65c7451"
+    },
+    {
+      "step": 5,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "02637ea7b7c18744bfbb8850aab75045ca36314c43db66680ea1f36db1f17c16",
+      "restoredSha256": "f2ae78cda784c9359681f43c1e2db1a9fc350dceb74682d07647aebc87805a22"
+    },
+    {
+      "step": 6,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "411bc3da3a849e1027e02ab7632d0925feadeaedfe6e865cd3e527b5077da6a7",
+      "restoredSha256": "e47d5195e2e876ba512f0f44cae6b5778c9bec51a12d97590e5cb9d0b8d82fba"
+    },
+    {
+      "step": 7,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "264c65546e192a66653e14d17589ef61c7f7aedc7e3139f5692c3a262d841fa4",
+      "restoredSha256": "3ed6738efb4201240259625e70a3147792322fc0ffffd0538e3ad2daebe45585"
+    },
+    {
+      "step": 8,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        37502,
+        37502
+      ],
+      "originalSha256": "7901e984739e69884890c8bfd57904f9659d986ca96262f0aff5481b736886f9",
+      "restoredSha256": "0e29f5033550bb69bed96f7c831690cc0d27eee0f588384405bc1eb3e5d9d569"
+    }
+  ]
+}

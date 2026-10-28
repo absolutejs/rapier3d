@@ -1,0 +1,2038 @@
+{
+  "body_ids": [
+    {
+      "handle": {
+        "generation": 0,
+        "index": 0
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 48,
+        "island_id": 63,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 1
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 49,
+        "island_id": 0,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 2
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 12,
+        "island_id": 61,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 3
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 13,
+        "island_id": 2,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 4
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 20,
+        "island_id": 59,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 5
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 21,
+        "island_id": 4,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 6
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 44,
+        "island_id": 57,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 7
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 45,
+        "island_id": 6,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 8
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 32,
+        "island_id": 55,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 9
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 33,
+        "island_id": 8,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 10
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 26,
+        "island_id": 53,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 11
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 27,
+        "island_id": 10,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 12
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 58,
+        "island_id": 51,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 13
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 59,
+        "island_id": 12,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 14
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 6,
+        "island_id": 49,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 15
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 7,
+        "island_id": 14,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 16
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 0,
+        "island_id": 47,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 17
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 1,
+        "island_id": 16,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 18
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 60,
+        "island_id": 45,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 19
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 61,
+        "island_id": 18,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 20
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 16,
+        "island_id": 43,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 21
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 17,
+        "island_id": 20,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 22
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 62,
+        "island_id": 41,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 23
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 63,
+        "island_id": 22,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 24
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 2,
+        "island_id": 39,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 25
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 3,
+        "island_id": 24,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 26
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 34,
+        "island_id": 37,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 27
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 35,
+        "island_id": 26,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 28
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 38,
+        "island_id": 35,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 29
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 39,
+        "island_id": 28,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 30
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 52,
+        "island_id": 33,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 31
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 53,
+        "island_id": 30,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 32
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 8,
+        "island_id": 31,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 33
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 9,
+        "island_id": 32,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 34
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 30,
+        "island_id": 29,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 35
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 31,
+        "island_id": 34,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 36
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 4,
+        "island_id": 27,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 37
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 5,
+        "island_id": 36,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 38
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 22,
+        "island_id": 25,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 39
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 23,
+        "island_id": 38,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 40
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 46,
+        "island_id": 23,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 41
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 47,
+        "island_id": 40,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 42
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 36,
+        "island_id": 21,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 43
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 37,
+        "island_id": 42,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 44
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 10,
+        "island_id": 19,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 45
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 11,
+        "island_id": 44,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 46
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 40,
+        "island_id": 17,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 47
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 41,
+        "island_id": 46,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 48
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 42,
+        "island_id": 15,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 49
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 43,
+        "island_id": 48,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 50
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 28,
+        "island_id": 13,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 51
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 29,
+        "island_id": 50,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 52
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 50,
+        "island_id": 11,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 53
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 51,
+        "island_id": 52,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 54
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 18,
+        "island_id": 9,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 55
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 19,
+        "island_id": 54,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 56
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 54,
+        "island_id": 7,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 57
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 55,
+        "island_id": 56,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 58
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 14,
+        "island_id": 5,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 59
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 15,
+        "island_id": 58,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 60
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 56,
+        "island_id": 3,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 61
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 57,
+        "island_id": 60,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 62
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 24,
+        "island_id": 1,
+        "island_index": 0
+      }
+    },
+    {
+      "handle": {
+        "generation": 0,
+        "index": 63
+      },
+      "ids": {
+        "active_island_id": 0,
+        "active_set_id": 25,
+        "island_id": 62,
+        "island_index": 0
+      }
+    }
+  ],
+  "bytes": 37502,
+  "impulse": {
+    "to_join": [],
+    "to_wake_up": []
+  },
+  "islands": {
+    "active_set_epoch": 192,
+    "awake_island": 0,
+    "free_islands": [
+      9,
+      13,
+      19,
+      8,
+      17,
+      23,
+      2,
+      30,
+      11,
+      28,
+      3,
+      20,
+      32,
+      6,
+      26,
+      18,
+      5,
+      14,
+      22,
+      15,
+      24,
+      25,
+      4,
+      21,
+      1,
+      27,
+      16,
+      29,
+      31,
+      7,
+      10,
+      12
+    ],
+    "islands": {
+      "n": 1,
+      "v": [
+        {
+          "bodies": [
+            {
+              "generation": 0,
+              "index": 16
+            },
+            {
+              "generation": 0,
+              "index": 17
+            },
+            {
+              "generation": 0,
+              "index": 24
+            },
+            {
+              "generation": 0,
+              "index": 25
+            },
+            {
+              "generation": 0,
+              "index": 36
+            },
+            {
+              "generation": 0,
+              "index": 37
+            },
+            {
+              "generation": 0,
+              "index": 14
+            },
+            {
+              "generation": 0,
+              "index": 15
+            },
+            {
+              "generation": 0,
+              "index": 32
+            },
+            {
+              "generation": 0,
+              "index": 33
+            },
+            {
+              "generation": 0,
+              "index": 44
+            },
+            {
+              "generation": 0,
+              "index": 45
+            },
+            {
+              "generation": 0,
+              "index": 2
+            },
+            {
+              "generation": 0,
+              "index": 3
+            },
+            {
+              "generation": 0,
+              "index": 58
+            },
+            {
+              "generation": 0,
+              "index": 59
+            },
+            {
+              "generation": 0,
+              "index": 20
+            },
+            {
+              "generation": 0,
+              "index": 21
+            },
+            {
+              "generation": 0,
+              "index": 54
+            },
+            {
+              "generation": 0,
+              "index": 55
+            },
+            {
+              "generation": 0,
+              "index": 4
+            },
+            {
+              "generation": 0,
+              "index": 5
+            },
+            {
+              "generation": 0,
+              "index": 38
+            },
+            {
+              "generation": 0,
+              "index": 39
+            },
+            {
+              "generation": 0,
+              "index": 62
+            },
+            {
+              "generation": 0,
+              "index": 63
+            },
+            {
+              "generation": 0,
+              "index": 10
+            },
+            {
+              "generation": 0,
+              "index": 11
+            },
+            {
+              "generation": 0,
+              "index": 50
+            },
+            {
+              "generation": 0,
+              "index": 51
+            },
+            {
+              "generation": 0,
+              "index": 34
+            },
+            {
+              "generation": 0,
+              "index": 35
+            },
+            {
+              "generation": 0,
+              "index": 8
+            },
+            {
+              "generation": 0,
+              "index": 9
+            },
+            {
+              "generation": 0,
+              "index": 26
+            },
+            {
+              "generation": 0,
+              "index": 27
+            },
+            {
+              "generation": 0,
+              "index": 42
+            },
+            {
+              "generation": 0,
+              "index": 43
+            },
+            {
+              "generation": 0,
+              "index": 28
+            },
+            {
+              "generation": 0,
+              "index": 29
+            },
+            {
+              "generation": 0,
+              "index": 46
+            },
+            {
+              "generation": 0,
+              "index": 47
+            },
+            {
+              "generation": 0,
+              "index": 48
+            },
+            {
+              "generation": 0,
+              "index": 49
+            },
+            {
+              "generation": 0,
+              "index": 6
+            },
+            {
+              "generation": 0,
+              "index": 7
+            },
+            {
+              "generation": 0,
+              "index": 40
+            },
+            {
+              "generation": 0,
+              "index": 41
+            },
+            {
+              "generation": 0,
+              "index": 0
+            },
+            {
+              "generation": 0,
+              "index": 1
+            },
+            {
+              "generation": 0,
+              "index": 52
+            },
+            {
+              "generation": 0,
+              "index": 53
+            },
+            {
+              "generation": 0,
+              "index": 30
+            },
+            {
+              "generation": 0,
+              "index": 31
+            },
+            {
+              "generation": 0,
+              "index": 56
+            },
+            {
+              "generation": 0,
+              "index": 57
+            },
+            {
+              "generation": 0,
+              "index": 60
+            },
+            {
+              "generation": 0,
+              "index": 61
+            },
+            {
+              "generation": 0,
+              "index": 12
+            },
+            {
+              "generation": 0,
+              "index": 13
+            },
+            {
+              "generation": 0,
+              "index": 18
+            },
+            {
+              "generation": 0,
+              "index": 19
+            },
+            {
+              "generation": 0,
+              "index": 22
+            },
+            {
+              "generation": 0,
+              "index": 23
+            }
+          ]
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "persistent": {
+      "bootstrapped": true,
+      "contact_link_locs": [],
+      "free_islands": [],
+      "islands": {
+        "n": 64,
+        "v": [
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 1
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 62
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 3
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 60
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 5
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 58
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 7
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 56
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 9
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 54
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 11
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 52
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 13
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 50
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 15
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 48
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 17
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 46
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 19
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 44
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 21
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 42
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 23
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 40
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 25
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 38
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 27
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 36
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 29
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 34
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 31
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 32
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 33
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 30
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 35
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 28
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 37
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 26
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 39
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 24
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 41
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 22
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 43
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 20
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 45
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 18
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 47
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 16
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 49
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 14
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 51
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 12
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 53
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 10
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 55
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 8
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 57
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 6
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 59
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 4
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 61
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 2
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 63
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          },
+          {
+            "bodies": [
+              {
+                "generation": 0,
+                "index": 0
+              }
+            ],
+            "constraint_remove_count": 0,
+            "contact_links": [],
+            "joint_links": [],
+            "sleeping": false,
+            "split_denied_until": 0
+          }
+        ]
+      },
+      "joint_link_locs": [],
+      "removal_journal": [],
+      "sleep_scan_stamp": 32,
+      "split_island": null
+    }
+  },
+  "multibody": {
+    "to_join": [],
+    "to_wake_up": []
+  },
+  "queue_ranges": [
+    {
+      "end": 37400,
+      "field": "multibody.to_wake_up",
+      "start": 37392
+    },
+    {
+      "end": 37408,
+      "field": "multibody.to_join",
+      "start": 37400
+    },
+    {
+      "end": 37412,
+      "field": "multibody.topology_epoch",
+      "start": 37408
+    }
+  ],
+  "ranges": [
+    {
+      "end": 24,
+      "field": "gravity",
+      "start": 12
+    },
+    {
+      "end": 200,
+      "field": "integration_parameters",
+      "start": 24
+    },
+    {
+      "end": 3788,
+      "field": "islands",
+      "start": 200
+    },
+    {
+      "end": 3882,
+      "field": "broad_phase",
+      "start": 3788
+    },
+    {
+      "end": 5020,
+      "field": "narrow_phase",
+      "start": 3882
+    },
+    {
+      "end": 35065,
+      "field": "bodies",
+      "start": 5020
+    },
+    {
+      "end": 35138,
+      "field": "colliders",
+      "start": 35065
+    },
+    {
+      "end": 35235,
+      "field": "impulse_joints",
+      "start": 35138
+    },
+    {
+      "end": 37412,
+      "field": "multibody_joints",
+      "start": 35235
+    },
+    {
+      "end": 37469,
+      "field": "soft_bodies",
+      "start": 37412
+    },
+    {
+      "end": 37502,
+      "field": "pending_islands",
+      "start": 37469
+    }
+  ],
+  "serialized_multibody_join_order": [],
+  "serialized_multibody_wake_order": []
+}

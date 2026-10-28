@@ -59,8 +59,10 @@ pub struct MultibodyJointSet {
     // NOTE: this is mostly for the island extraction. So perhaps we won’t need
     //       that any more in the future when we improve our island builder.
     pub(crate) connectivity_graph: InteractionGraph<RigidBodyHandle, ()>,
+    #[cfg_attr(feature = "serde-serialize", serde(serialize_with = "crate::dynamics::serialize_wake_set"))]
     pub(crate) to_wake_up: HashSet<RigidBodyHandle>,
     /// A set of rigid-body pairs to join in the island manager during the next timestep.
+    #[cfg_attr(feature = "serde-serialize", serde(serialize_with = "crate::dynamics::serialize_join_set"))]
     pub(crate) to_join: HashSet<(RigidBodyHandle, RigidBodyHandle)>,
     /// Multibodies whose structure changed (created, merged, split, removed):
     /// the persistent islands update each one's internal connectivity chain
