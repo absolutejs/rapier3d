@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.16.1-predictive-recycle-research.0",
+  "version": "0.16.1-predictive-recycle-research.1",
   "description": "Rapier 3D with matched free-body rotation, corrected contact witnesses and solver diagnostics",
   "type": "module",
   "license": "Apache-2.0",

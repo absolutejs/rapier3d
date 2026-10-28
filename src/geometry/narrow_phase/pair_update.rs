@@ -148,7 +148,14 @@ pub(super) fn process_pair(
                 // of carrying a speculative feature set across the drift window.
                 // Empty pairs retain their existing prediction-distance bound;
                 // touching pairs retain their existing resting-contact reuse.
-                let supported_or_empty = pair.rigid().is_some_and(|rigid| {
+                // Exactly unchanged relative geometry and world orientations
+                // preserve both features and the frozen world-space normal/arms.
+                // Common translation is harmless; approximate pose equality is
+                // deliberately not sufficient for predictive-contact reuse.
+                let unchanged_geometry = pos12 == state.pos12
+                    && co1.pos.rotation == state.rot1
+                    && co2.pos.rotation == state.rot2;
+                let supported_or_empty = unchanged_geometry || pair.rigid().is_some_and(|rigid| {
                     !rigid.has_any_active_contact()
                         || rigid.solver_manifolds().iter().any(|manifold| {
                             manifold

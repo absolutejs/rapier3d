@@ -73,3 +73,14 @@ features and frozen normal/arms are unchanged. Moving predictive pairs must
 still refresh. `.0` is preserved as an audited private archive, not published
 or adopted. Its first pack attempt lacked the destination directory; the
 corrected pack and audit pass. New-source qualification will be separate.
+
+## Exact-geometry fast path
+
+Private revision `.1` additionally reuses predictive contacts only when the
+relative pose and both world rotations are exactly equal to the cached values.
+This preserves features and frozen world-space normals/arms under unchanged
+geometry (including common translation); it does not introduce approximate
+equality or a new tolerance. Both native tests still pass, including all 32
+exact captured replay states and the three resting-stack sizes. The second
+WASM build and new cost measurements are pending. The first archive remains
+backed up independently; no package is published or adopted from this work.
