@@ -46,3 +46,11 @@ released subtree roots get new free coordinates. The property-retention test and
 all split cases pass after this extension (retained-root-correction.log). The
 expanded full native suite, including fixed-to-dynamic velocity activation, is
 running; browser, independent-build and game qualification remain pending.
+
+The expanded single-worker run passes 13 tests. An independent comparison checks
+386 excluded physical state records and 127 existing aggregate measurements;
+all remain exact. Fixed-to-dynamic activation also preserves the explicitly
+prescribed world COM/angular velocity for three root choices. A further focused
+root-coupling test passes: original-root couplings survive with their indices and
+coefficients intact. Two-worker execution and three existing upstream coupling
+lifecycle tests are being qualified together before any WASM promotion.

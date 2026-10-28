@@ -1075,6 +1075,10 @@ fn split_keeps_surviving_root_generalized_properties() {
     mb.damping_mut().as_mut_slice().copy_from_slice(&damping);
     mb.armature_mut().as_mut_slice().copy_from_slice(&armature);
     mb.frictions_mut().as_mut_slice().copy_from_slice(&friction);
+    mb.add_dof_coupling(rapier3d::dynamics::MultibodyDofCoupling {
+        link1: 0, dof1: 0, axis1: 0, link2: 0, dof2: 1, axis2: 1,
+        coeff: 2.0, offset: 0.0,
+    });
     mb.generalized_velocity_mut()
         .as_mut_slice()
         .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
@@ -1105,11 +1109,19 @@ fn split_keeps_surviving_root_generalized_properties() {
     assert_eq!(mb.damping().as_slice(), damping);
     assert_eq!(mb.armature().as_slice(), armature);
     assert_eq!(mb.frictions().as_slice(), friction);
+    assert_eq!(mb.couplings().len(),1);
+    let coupling=mb.couplings()[0];
+    assert_eq!((coupling.link1,coupling.dof1,coupling.axis1,coupling.link2,coupling.dof2,coupling.axis2), (0,0,0,0,1,1));
+    assert_eq!((coupling.coeff,coupling.offset),(2.0,0.0));
     world.step();
     let mb = world.multibody_joints.get_multibody(index).unwrap();
     assert_eq!(mb.damping().as_slice(), damping);
     assert_eq!(mb.armature().as_slice(), armature);
     assert_eq!(mb.frictions().as_slice(), friction);
+    assert_eq!(mb.couplings().len(),1);
+    let coupling=mb.couplings()[0];
+    assert_eq!((coupling.link1,coupling.dof1,coupling.axis1,coupling.link2,coupling.dof2,coupling.axis2), (0,0,0,0,1,1));
+    assert_eq!((coupling.coeff,coupling.offset),(2.0,0.0));
 }
 
 #[test]

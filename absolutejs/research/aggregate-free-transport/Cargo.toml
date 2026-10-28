@@ -11,3 +11,7 @@ rapier3d = { path = "../../../crates/rapier3d", features = ["profiler"] }
 default = ["candidate"]
 candidate = []
 parallel = ["rapier3d/parallel"]
+
+[[test]]
+name = "upstream-coupling-topology"
+path = "../../../crates/rapier3d/tests/multibody_coupling_topology.rs"
