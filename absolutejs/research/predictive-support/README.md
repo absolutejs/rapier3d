@@ -12,10 +12,10 @@ baseline reproduction. The correction shares the existing complete eligibility
 predicate with reduction and final admission. No solver budget, acceptance
 threshold or material coefficient changes; no new heap allocation.
 
-The copied baseline failure log was produced with the combined branch's Parry
-type; this isolated harness is explicitly pinned back to c566aabd and will be
-rerun against both exact baseline and corrected source. Full browser, game,
-independent-build, no-std and release qualification are pending. Private only.
+The first copied baseline failure log was produced with the combined branch's
+Parry type. The independent isolated rerun below uses published c566aabd; the
+original log is retained as historical evidence. This remains a private candidate
+until independent-build and release archive qualification finish.
 
 The isolated published-source baseline now independently reproduces the failure
 (`isolated-baseline-test.log`, expected exit 101). The preserved baseline reducer
@@ -39,7 +39,8 @@ retained. The script now creates that directory. Audited archive SHA-256:
 All 53 installed game files match. No new rejections occur in 24 paired terrain
 cases. All four generated/excavated work cases and 18 flat-floor tree cases pass.
 Physical results change in some cases; no universal improvement is asserted.
-Full game, cost, feature and independent rebuild qualification remain pending.
+Full game, cost and feature qualification subsequently completed as recorded
+below. Independent rebuild and public release qualification remain pending.
 
 ## Full-game and CPU checks
 
@@ -62,3 +63,18 @@ two-worker build passes all five tests (two prior controls plus three support
 regressions), and the allocation-enabled no-std check passes. Compilation used
 one Cargo job. The recorded resource snapshot is a point-in-time observation,
 not peak usage or a crash diagnosis. Independent rebuilt bytes are still pending.
+
+## Public archive qualification
+
+Independent native builds have identical source manifests and match all 49
+distribution files and packaged WASM. Raw executable/data sections match; only
+unshipped wasm-bindgen custom metadata differs. The public 0.16.3 archive also
+matches the independent distribution. Private/public archive comparison permits
+only package/kernel version labels and documentation; all other runtime and
+declaration bytes are identical. Eleven public focused tests (73 assertions) and
+the GPU-disabled browser regression/replay pass.
+
+Public archive SHA-256:
+`bed2618729b0e70fec71a6c926846d053e4f001309b2636e9c3c80780a2f9863`.
+Publication and canonical game adoption are still pending; do not infer registry
+availability from the completed archive qualification.

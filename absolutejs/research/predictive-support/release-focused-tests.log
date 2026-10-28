@@ -1,0 +1,21 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/predictive-support.test.ts:
+(pass) predicted support spans approaching patch scale=0.01 reverse=false [18.29ms]
+(pass) predicted support spans approaching patch scale=0.01 reverse=true [6.31ms]
+(pass) predicted support spans approaching patch scale=1 reverse=false [5.58ms]
+(pass) predicted support spans approaching patch scale=1 reverse=true [4.31ms]
+(pass) predicted support spans approaching patch scale=100 reverse=false [8.12ms]
+(pass) predicted support spans approaching patch scale=100 reverse=true [2.27ms]
+(pass) nonapproaching outer support stays outside prediction speed=0 [2.68ms]
+(pass) nonapproaching outer support stays outside prediction speed=2 [2.85ms]
+(pass) predicted support snapshot restores and replays exactly [17.73ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [8.02ms]
+(pass) diagnostic identity imports independently of the physics runtime [14.13ms]
+
+ 11 pass
+ 0 fail
+ 73 expect() calls
+Ran 11 tests across 2 files. [349.00ms]

@@ -1,0 +1,24 @@
+{
+  "scope": "qualified private archive versus public release archive",
+  "files": 53,
+  "changedFiles": [
+    "README.md",
+    "absolutejs/README.md",
+    "dist/build-info.mjs",
+    "dist/provenance.json",
+    "dist/rapier.mjs",
+    "package.json"
+  ],
+  "runtimeDifferenceOnly": [
+    "packageVersion",
+    "qualifiedKernelRelease"
+  ],
+  "allOtherRuntimeAndDeclarationBytesIdentical": true,
+  "documentationChanges": [
+    "README.md",
+    "absolutejs/README.md"
+  ],
+  "candidateSha256": "badfff5ed31cb317fa0d70243d0127c990e2f28330b3448e002492b6275b59b6",
+  "releaseSha256": "bed2618729b0e70fec71a6c926846d053e4f001309b2636e9c3c80780a2f9863",
+  "auditSourceSha256": "17095573a0d437cdc1dcc61bba7fd1c965bce44402a31fd51e97c7f1d9f202e8"
+}

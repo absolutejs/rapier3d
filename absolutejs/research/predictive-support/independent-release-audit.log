@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-predictive-support-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 49,
+  "packagedNativeSha256": "1f2e3e463298859e3819d2c8b1f3741ba5bed2673687b71576c57fc1c0c035a2",
+  "packagedNativeBytes": 3357191,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "1ef82777dd47eb29cef2e7455e5f82507d37a9137425c1155577018b8ac5e86d",
+  "rawIndependentSha256": "7e8c45eb075598bffdf6acbe7ef5686958ddbd0c00f632a063ec293255c3612d",
+  "sourceInputDifferences": [],
+  "primarySourceContentSha256": "2f146d982126b6d52d0494610eaff4da37274273c5dda930fd5481f5fad82108",
+  "independentSourceContentSha256": "2f146d982126b6d52d0494610eaff4da37274273c5dda930fd5481f5fad82108",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}
