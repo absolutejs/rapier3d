@@ -727,7 +727,9 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
             /*
              * Stages: solve without bias.
              */
-            for stab_iter in 0..params.num_internal_stabilization_iterations {
+            // Private stage-ablation experiment, never a shipping default.
+            // Preserve the loop and stage ordering but execute no stabilization passes.
+            for stab_iter in 0..0 {
                 stage = unsafe {
                     solve_pass(
                         ctx,
