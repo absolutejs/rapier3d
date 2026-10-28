@@ -2,13 +2,13 @@ import {beforeAll,expect,test} from 'bun:test';
 import type RAPIER from '@absolutejs/rapier3d';
 const R:typeof RAPIER=(await import(process.env.RAPIER_TEST_ENGINE??'@absolutejs/rapier3d')).default;
 beforeAll(async()=>{await R.init();});
-for(const masses of [[20,1,20],[5,1,20],[20,1,5]])for(const e of [.5,1])
+for(const masses of [[20,1,20],[5,1,20],[20,1,5]])for(const e of [0,.5,1])
 for(const hz of [60,240])for(const reverse of [false,true]) {
  test(`coupled mass ratio ${masses.join('/')} e=${e} hz=${hz} reverse=${reverse}`,()=>{
   const w=new R.World({x:0,y:0,z:0});
   try{
    w.timestep=1/hz;w.numSolverIterations=4;
-   w.integrationParameters.numInternalPgsIterations=16;
+   w.integrationParameters.numInternalPgsIterations=1;
    w.integrationParameters.contact_natural_frequency=0;
    const [ml,mc,mr]=masses as [number,number,number];
    const specs=[[-.325,mc/2,0],[.325,mc/2,0],[-.825,ml,4],[.825,mr,-4]];

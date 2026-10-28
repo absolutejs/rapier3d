@@ -1,0 +1,5 @@
+# Private bounded frictionless normal-compression convergence
+
+Preserve parent 610c2ba and its failing strict energy gates at .absolutejs/adaptive-coupled-restitution-dist. Tighten rebound residual from 1e-5 to 1e-6 * length_unit. Add an adaptive biased-normal solve only for one worker, one group, no ordinary contact chunks, no soft/FEM constraints, no independent joint rows, and all generic contact friction limits exactly zero. Honor the configured PGS count as a minimum, then stop on a complete-set residual or at max(configured count,256). No global game setting is changed.
+
+The residual is derived from the actual softened update: v + rhs + lambda*(1-cfm)/(cfm*r), projected at the zero-impulse bound. No energy rescale or work ledger. Stabilization remains unchanged. General frictional compression, mixed contacts and multiple workers are not covered. Reaching the budget cap is not a convergence guarantee. Expand the mass-ratio regression to zero restitution and default one PGS iteration without weakening tolerances.

@@ -612,25 +612,12 @@ impl GenericContactConstraintBuilder {
         bodies: &SolverBodies,
         generic_solver_vels: &DVector,
     ) -> Real {
-        let rhs = |id: u32, mask: u8| {
-            if id == u32::MAX { GenericRhs::Fixed }
-            else if constraint.generic_constraint_mask & mask == 0 {
-                GenericRhs::SolverVel(bodies.vels[id as usize])
-            } else { GenericRhs::GenericId(id) }
-        };
-        let v1 = rhs(constraint.solver_vel1, 0b01);
-        let v2 = rhs(constraint.solver_vel2, 0b10);
-        let stride = (constraint.ndofs1 + constraint.ndofs2) * 2 * DIM;
         let mut residual: Real = 0.0;
         for (point, (info, part)) in self.infos[..constraint.num_contacts as usize]
             .iter().zip(&constraint.normal_part[..constraint.num_contacts as usize]).enumerate()
         {
             if info.restitution_seed >= 0.0 || part.total_impulse() <= 0.0 || part.r <= 0.0 { continue; }
-            let row = constraint.j_id + point * stride;
-            let velocity = v1.dvel(row, constraint.ndofs1, jacobians,
-                constraint.dir1, part.torque_dir1, generic_solver_vels)
-                + v2.dvel(row + constraint.ndofs1 * 2, constraint.ndofs2,
-                    jacobians, -constraint.dir1, part.torque_dir2, generic_solver_vels);
+            let velocity = constraint.normal_velocity(point, jacobians, bodies, generic_solver_vels);
             let error = velocity + info.restitution_seed;
             if !error.is_finite() { return Real::MAX; }
             let projected = if part.impulse > 0.0 { error.abs() } else { (-error).max(0.0) };
@@ -704,6 +691,42 @@ pub(crate) struct GenericContactConstraint {
 }
 
 impl GenericContactConstraint {
+    /// Velocity of one current geometric normal row, without mutating solver state.
+    fn normal_velocity(&self, point: usize, jacobians: &DVector,
+        bodies: &SolverBodies, generic_solver_vels: &DVector) -> Real {
+        let rhs = |id: u32, mask: u8| {
+            if id == u32::MAX { GenericRhs::Fixed }
+            else if self.generic_constraint_mask & mask == 0 {
+                GenericRhs::SolverVel(bodies.vels[id as usize])
+            } else { GenericRhs::GenericId(id) }
+        };
+        let row = self.j_id + point * (self.ndofs1 + self.ndofs2) * 2 * DIM;
+        let part = &self.normal_part[point];
+        rhs(self.solver_vel1, 0b01).dvel(row, self.ndofs1, jacobians,
+            self.dir1, part.torque_dir1, generic_solver_vels)
+            + rhs(self.solver_vel2, 0b10).dvel(row + self.ndofs1 * 2, self.ndofs2,
+                jacobians, -self.dir1, part.torque_dir2, generic_solver_vels)
+    }
+
+    /// Fixed-point residual of the actual softened normal update:
+    /// lambda = cfm * max(0, lambda - r * (velocity + rhs)).
+    /// Only used by the restricted frictionless, joint-free serial experiment.
+    pub fn normal_solve_residual(&self, jacobians: &DVector,
+        bodies: &SolverBodies, generic_solver_vels: &DVector) -> Real {
+        if self.cfm_factor <= 0.0 { return 0.0; }
+        let mut residual: Real = 0.0;
+        for (point, part) in self.normal_part[..self.num_contacts as usize].iter().enumerate() {
+            if part.r <= 0.0 { continue; }
+            let velocity = self.normal_velocity(point, jacobians, bodies, generic_solver_vels);
+            let softness = part.impulse * ((1.0 - self.cfm_factor) / self.cfm_factor) / part.r;
+            let error = velocity + part.rhs + softness;
+            if !error.is_finite() { return Real::MAX; }
+            let projected = if part.impulse > 0.0 { error.abs() } else { (-error).max(0.0) };
+            residual = residual.max(projected);
+        }
+        residual
+    }
+
     pub fn invalid() -> Self {
         Self {
             j_id: usize::MAX,
