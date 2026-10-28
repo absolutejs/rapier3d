@@ -1,0 +1,22 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/multibody-writeback.test.ts:
+19 |    for(let step=0;step<hz/4;step++){
+20 |     world.step();let px=0,py=0,pz=0;
+21 |     for(let i=0;i<3;i++){
+22 |      const v=bodies[i]!.linvel();px+=masses[i]!*v.x/units;py+=masses[i]!*v.y/units;pz+=masses[i]!*v.z/units;
+23 |     }
+24 |     expect(Math.hypot(px+20*c,py+20*s,pz)).toBeLessThan(2e-4);
+                                                ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.0002
+Received: 9.979453086853027
+
+      at <anonymous> (/home/alexkahn/alex/rapier-multibody-research/absolutejs/tests/multibody-writeback.test.ts:24:44)
+(fail) articulation link velocities expose current solved momentum at every step [24.91ms]
+
+ 0 pass
+ 1 fail
+ 3 expect() calls
+Ran 1 test across 1 file. [269.00ms]
