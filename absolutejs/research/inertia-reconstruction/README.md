@@ -33,3 +33,30 @@ Pending: package suite, browser checks, direct compound fixture, independent
 native rebuild, archive audit, stable source promotion and publication/adoption.
 This correction does not fix free rigid-body angular integration or articulated
 COM transport. Those investigations remain separately documented.
+
+## Primary build qualification
+
+Private native bytes: SHA256
+`a6f06627b5b95ff15b87fbe45bf8dfd19eeb78b4f949a912e3fed5805fbcc62b`,
+3,298,974 bytes. The stable-identity guard rejected them as expected before
+private labeling. The first native compilation succeeded; the subsequent bindgen
+installer hit restricted network access. Reusing its existing checksum-pinned
+archive completed packaging. No native rebuild was needed for that retry.
+
+All 189 package tests / 77,522 assertions pass with the private candidate.
+Declaration contracts and GPU-disabled Chromium worker checks pass, including
+an actual small compound tensor reconstruction and previous contact controls.
+Sixteen saved assembly snapshots additionally exercise ordinary collider mass
+aggregation: maximum relative tensor error falls from 9.9419e-5 to 2.7071e-7.
+The reproduction uses the committed rigid-reference research files at 5187717
+in the sibling `rapier-rigid-reference` worktree and records their hashes.
+
+Twenty alternating CPU benchmark pairs after four warmups measure only 2,000
+three-collider mass recomputations per sample. Median baseline: 2.41809 ms;
+candidate: 3.964493 ms, roughly 0.773 microseconds extra per recomputation in
+this workload. This is a correctness/cost tradeoff at geometry updates, not FPS
+or a universal setup-cost claim. No heavy compilation ran during measurement.
+
+Prepared release metadata is 0.13.0 while package.json remains private until
+independent build qualification. Publication, archive and game adoption are
+still pending. The native fix does not resolve angular integration drift.

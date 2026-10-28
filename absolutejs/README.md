@@ -232,7 +232,7 @@ before `init()`. It reports the packaged kernel; supplying custom bytes to
 
 ## Contact witnesses and force-free rotation (0.8)
 
-The collision dependency is pinned to `absolutejs/parry` revision
+Version 0.8 introduced the `absolutejs/parry` collision correction at revision
 `dbd99a8dfce020da3698056471262435d56d3f69`, based on upstream 0.31.1.
 Tetrahedron-to-face reduction now preserves support points needed by GJK's
 previous-simplex calculation. Previously, an overwritten point could be combined
@@ -349,5 +349,29 @@ Reports remain usable after freeing the borrowed world. Always attach the actual
 build identity when storing or sending a report through your existing diagnostics
 system. Sampling has a cost: use explicit application policy and measure it.
 
-This API uses the unchanged qualified 0.11.0 native kernel. It does not change
-solver thresholds, contact policies or physical state serialization.
+The sampler was introduced in 0.12.0 without changing the 0.11.0 native kernel.
+Sampling itself does not change solver thresholds, contact policies or physical
+state serialization. Later native revisions remain identified by buildInfo.
+
+
+## Compound inertia reconstruction (0.13)
+
+The collision dependency now pins `absolutejs/parry` revision
+`c566aabd77be8ac7a427c2b704860c47e34657b9`. Mass-property aggregation uses a
+scale-normalized, bounded Jacobi decomposition with double-precision workspace.
+It corrects principal frames for small tensors and repeated or nearly repeated
+moments. Public f32 types, mass, COM and nonnegative principal-moment policy are
+unchanged; compound mass properties and resulting motion can change when the
+previous decomposition was inaccurate. No JavaScript API is added.
+
+The focused native suite covers 2,688 tensor/aggregation cases in f32 and f64.
+The package tests also reconstruct two- and three-collider physical tensors
+across scale, orientation and insertion order. The small-object baseline could
+exceed 50% relative tensor error; this is a reproduced fixture, not an estimate
+of error across all objects. Angular integration and articulated COM-transport
+limitations are separate and remain under investigation.
+
+This calculation runs when mass properties are recomputed. It is not a render
+optimization: recompute after geometry/mass changes, not unnecessarily every
+frame. Qualification records, measured cost and limits are retained under
+`absolutejs/research/inertia-reconstruction/`.

@@ -1,0 +1,178 @@
+{
+  "sourceSha256": "5930f861d34c010b0074ab5a7795f7129ffc059623859e5ca3e24dd0e977d354",
+  "engines": {
+    "baseline": "07acc722c7f378eaa1e9c4b763043331affc13361bd43ebe46b884c1f1cd37b7",
+    "candidate": "9d496e40a4318c7fae59ab3e0762b5f4387786b50b96fb6b3dca2a3947d45217"
+  },
+  "referenceSources": {
+    "measurement.ts": "8d833cd1600b1be12aaf27093c11c9b403d7bd74ed239e2a8cff448eefd5f09a",
+    "reference.ts": "b310a75c81e8168f9f583843b67ab19379db97028810233034052652147d9788",
+    "native-comparison.json": "268ffa59f0c3093001e3ff545d490956ecd73254e3a0318de5b6476cefd62e20"
+  },
+  "maximumRelativeTensorError": {
+    "baseline": 0.00009941873519012653,
+    "candidate": 2.707088297872781e-7
+  },
+  "rows": [
+    {
+      "engine": "baseline",
+      "fixture": "1-60-1-forward.bin",
+      "relativeTensorError": 0.00009941873519012653
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-60-1-reverse.bin",
+      "relativeTensorError": 1.808808431041904e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-60-4-forward.bin",
+      "relativeTensorError": 6.850015285870782e-8
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-60-4-reverse.bin",
+      "relativeTensorError": 9.893024756786688e-8
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-240-1-forward.bin",
+      "relativeTensorError": 2.492814936256943e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-240-1-reverse.bin",
+      "relativeTensorError": 1.6084455739081403e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-240-4-forward.bin",
+      "relativeTensorError": 0.00009214130945619248
+    },
+    {
+      "engine": "baseline",
+      "fixture": "1-240-4-reverse.bin",
+      "relativeTensorError": 7.011090800657657e-8
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-60-1-forward.bin",
+      "relativeTensorError": 1.0343128805115062e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-60-1-reverse.bin",
+      "relativeTensorError": 0.00006095535274028268
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-60-4-forward.bin",
+      "relativeTensorError": 7.179496106406884e-8
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-60-4-reverse.bin",
+      "relativeTensorError": 1.0922229213870703e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-240-1-forward.bin",
+      "relativeTensorError": 1.4107021707238683e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-240-1-reverse.bin",
+      "relativeTensorError": 1.2946039592656852e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-240-4-forward.bin",
+      "relativeTensorError": 3.4045517791046115e-7
+    },
+    {
+      "engine": "baseline",
+      "fixture": "100-240-4-reverse.bin",
+      "relativeTensorError": 1.3440903929079242e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-60-1-forward.bin",
+      "relativeTensorError": 2.707088297872781e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-60-1-reverse.bin",
+      "relativeTensorError": 1.1328096091470438e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-60-4-forward.bin",
+      "relativeTensorError": 6.85060130094341e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-60-4-reverse.bin",
+      "relativeTensorError": 8.738643775526084e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-240-1-forward.bin",
+      "relativeTensorError": 1.0582296596259034e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-240-1-reverse.bin",
+      "relativeTensorError": 6.889492891863747e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-240-4-forward.bin",
+      "relativeTensorError": 6.410130107346263e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "1-240-4-reverse.bin",
+      "relativeTensorError": 1.0633258528838184e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-60-1-forward.bin",
+      "relativeTensorError": 9.419427303876364e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-60-1-reverse.bin",
+      "relativeTensorError": 1.933197620499175e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-60-4-forward.bin",
+      "relativeTensorError": 5.4741850769065536e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-60-4-reverse.bin",
+      "relativeTensorError": 7.009201341576629e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-240-1-forward.bin",
+      "relativeTensorError": 6.136946979795102e-8
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-240-1-reverse.bin",
+      "relativeTensorError": 1.1410293083010173e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-240-4-forward.bin",
+      "relativeTensorError": 1.398430718022432e-7
+    },
+    {
+      "engine": "candidate",
+      "fixture": "100-240-4-reverse.bin",
+      "relativeTensorError": 9.261658597443879e-8
+    }
+  ]
+}

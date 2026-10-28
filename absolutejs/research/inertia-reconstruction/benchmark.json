@@ -1,0 +1,128 @@
+{
+  "scope": "CPU collider mass-property recomputation only; no world stepping or rendering. Twenty alternating pairs after four warmup pairs, 2000 recomputations per sample. Not FPS or an all-game overhead claim.",
+  "hashes": {
+    "baseline": "07acc722c7f378eaa1e9c4b763043331affc13361bd43ebe46b884c1f1cd37b7",
+    "candidate": "9d496e40a4318c7fae59ab3e0762b5f4387786b50b96fb6b3dca2a3947d45217"
+  },
+  "sourceSha256": "7ff3c9fa6623b38647ae71df0eb8b247f00ba23189ef38707a1b798260ae29f4",
+  "engines": {
+    "baseline": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.12.0",
+      "qualifiedKernelRelease": "0.11.0",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=dbd99a8dfce020da3698056471262435d56d3f69#dbd99a8dfce020da3698056471262435d56d3f69",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "352f0e9ff982bd9486e3771bf65fab1944f81ca53f7a5f5d43bee56acdaff6a0",
+      "wasmBytes": 3298167,
+      "solverChanges": true
+    },
+    "candidate": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.12.0-inertia-research.0",
+      "qualifiedKernelRelease": "UNQUALIFIED-private-inertia-reconstruction",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "a6f06627b5b95ff15b87fbe45bf8dfd19eeb78b4f949a912e3fed5805fbcc62b",
+      "wasmBytes": 3298974,
+      "solverChanges": true
+    }
+  },
+  "medianMilliseconds": {
+    "baseline": 2.4180899999999497,
+    "candidate": 3.9644930000000045
+  },
+  "rows": [
+    {
+      "baseline": 2.2113050000000385,
+      "candidate": 4.12838099999999
+    },
+    {
+      "baseline": 2.6893929999999955,
+      "candidate": 4.147833999999989
+    },
+    {
+      "baseline": 2.6154350000000477,
+      "candidate": 4.349613999999974
+    },
+    {
+      "baseline": 2.5719199999999773,
+      "candidate": 3.5548359999999093
+    },
+    {
+      "baseline": 2.54553999999996,
+      "candidate": 3.8318930000000364
+    },
+    {
+      "baseline": 2.1310680000000275,
+      "candidate": 3.4401490000000194
+    },
+    {
+      "baseline": 2.4398539999999684,
+      "candidate": 3.7722660000000587
+    },
+    {
+      "baseline": 2.781906000000049,
+      "candidate": 4.173849000000018
+    },
+    {
+      "baseline": 2.4558769999999868,
+      "candidate": 3.9444610000000466
+    },
+    {
+      "baseline": 2.593586999999957,
+      "candidate": 4.0514799999999696
+    },
+    {
+      "baseline": 2.2456660000000284,
+      "candidate": 3.7167550000000347
+    },
+    {
+      "baseline": 1.924867000000063,
+      "candidate": 3.9845249999999623
+    },
+    {
+      "baseline": 2.153186000000005,
+      "candidate": 4.006704000000013
+    },
+    {
+      "baseline": 2.5562340000000177,
+      "candidate": 4.639839000000052
+    },
+    {
+      "baseline": 1.9618960000000243,
+      "candidate": 4.486462999999958
+    },
+    {
+      "baseline": 1.9293179999999666,
+      "candidate": 3.6066359999999804
+    },
+    {
+      "baseline": 2.5933030000001054,
+      "candidate": 3.8624600000000555
+    },
+    {
+      "baseline": 1.8692499999999654,
+      "candidate": 3.764408000000003
+    },
+    {
+      "baseline": 1.9801820000000134,
+      "candidate": 4.523382999999967
+    },
+    {
+      "baseline": 2.396325999999931,
+      "candidate": 3.923289000000068
+    }
+  ]
+}
