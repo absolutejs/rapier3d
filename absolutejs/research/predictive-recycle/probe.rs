@@ -7,6 +7,8 @@ fn restore(bytes: &[u8]) -> PhysicsWorld {
     let (mut world, pending): (PhysicsWorld, PendingIslandEvents) =
         bincode::deserialize(&bytes[12..]).unwrap();
     pending.restore(&mut world.impulse_joints, &mut world.multibody_joints, &mut world.soft_bodies);
+    #[cfg(feature = "parallel")]
+    world.configure_thread_pool(2).unwrap();
     world
 }
 
@@ -86,6 +88,8 @@ mod tests {
     fn resting_box_stacks_remain_upright_and_sleep() {
         for count in [1, 8, 16] {
             let mut world = PhysicsWorld::new();
+            #[cfg(feature = "parallel")]
+            world.configure_thread_pool(2).unwrap();
             world.integration_parameters.dt = 1.0 / 60.0;
             world.integration_parameters.num_solver_iterations = 8;
             world.colliders.insert(ColliderBuilder::cuboid(10.0, 0.5, 10.0)

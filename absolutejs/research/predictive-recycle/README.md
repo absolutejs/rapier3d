@@ -1,9 +1,17 @@
 # Predictive contact recycling investigation
 
+Current state: private revision `.1` (exact-geometry fast path), native SHA
+`6695b95a293fe0d5494b304badbbea1ee0333d09735d122ff27aac7c1886e68a`.
+Package tests (227), GPU-disabled browser replay, one/two-worker native replay
+and resting-stack checks, no-std and paired CPU controls pass. The isolated game
+has the audited private archive installed; full game and independent rebuild
+qualification remain pending. Nothing from this candidate is published.
+
+The sections below retain the chronological experiments, including `.0`.
+
 Base: published Rapier 0.16.1, source/receipt `60d97a6`. The canonical game
 uses that registry release. This checkout and package identity are explicitly
-private; no new kernel is qualified. Native source is still unchanged while
-the baseline fixture builds.
+private; no new kernel is qualified. The unchanged-native baseline and later candidate checkpoints are recorded below.
 
 Game evidence `9e366816` preserves exact initial, first-crossing and peak
 replays for real cut-tree proxies. Initial cross-body convex queries find no
@@ -84,3 +92,26 @@ equality or a new tolerance. Both native tests still pass, including all 32
 exact captured replay states and the three resting-stack sizes. The second
 WASM build and new cost measurements are pending. The first archive remains
 backed up independently; no package is published or adopted from this work.
+
+The optimized WASM SHA-256 is
+`6695b95a293fe0d5494b304badbbea1ee0333d09735d122ff27aac7c1886e68a`
+(3,356,980 bytes). All 227 package tests and the GPU-disabled browser pass.
+Against published 0.16.1, optimized median paired CPU ratios are
+0.983/0.939/1.024 for stationary predictions/resting stack/falling grid. A direct
+`.0` versus `.1` comparison gives 0.877/0.894/0.962. Different run wall times
+reflect host variation; retain paired samples rather than interpreting absolute
+times across runs as a speed guarantee. The stationary and falling physical
+records are exact across private candidates. The resting-stack trajectory
+changes: `.0` leans by centimetres while `.1` stays within millimetres laterally
+of the baseline; both passed the original stability bounds. Do not claim full
+physical parity for that scene. `cost-summary.json` preserves each comparison.
+
+Two-worker feature checks, no-std, independent rebuild and full-game/real-tree
+qualification remain pending. The canonical game still uses published 0.16.1.
+
+The two-worker native feature tests pass with a bounded two-worker pool and
+serial test execution. The allocation-enabled no-std check passes through the
+existing isolated harness. The first root-workspace check could not load an
+omitted upstream C-testbed workspace member; its log is preserved and the
+working isolated command is used instead. The optimized private archive audits
+all 53 files and is installed byte-exactly in the isolated game checkout.

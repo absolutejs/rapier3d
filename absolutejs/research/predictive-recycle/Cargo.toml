@@ -11,3 +11,6 @@ serde_json = "1"
 [[bin]]
 name = "probe-predictive-recycle"
 path = "probe.rs"
+
+[features]
+parallel = ["rapier3d/parallel"]

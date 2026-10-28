@@ -1,0 +1,104 @@
+{
+  "scope": "Three separate bounded paired CPU runs, 240 steps per sample; no FPS or general performance guarantee. Scene trajectories may change; all per-run repeat/stability bounds pass.",
+  "runs": [
+    {
+      "run": "cost",
+      "resultsSha256": "b4de71ab033b81891d8db1210552ccbffc2a6f5de5b5676af7237589f3e884c1",
+      "rows": [
+        {
+          "scene": "stationary-prediction-32",
+          "baselineVersion": "0.16.1",
+          "candidateVersion": "0.16.1-predictive-recycle-research.0",
+          "baselineMedianMs": 66.63901549999991,
+          "candidateMedianMs": 76.47873699999991,
+          "medianPairedRatio": 1.1370835650076154,
+          "physicalStateExactlyEqual": true
+        },
+        {
+          "scene": "resting-stack-16",
+          "baselineVersion": "0.16.1",
+          "candidateVersion": "0.16.1-predictive-recycle-research.0",
+          "baselineMedianMs": 32.62153000000035,
+          "candidateMedianMs": 33.2960764999998,
+          "medianPairedRatio": 0.964202208202566,
+          "physicalStateExactlyEqual": false
+        },
+        {
+          "scene": "falling-grid-32",
+          "baselineVersion": "0.16.1",
+          "candidateVersion": "0.16.1-predictive-recycle-research.0",
+          "baselineMedianMs": 48.558527499999855,
+          "candidateMedianMs": 50.45393899999999,
+          "medianPairedRatio": 1.0615391621359969,
+          "physicalStateExactlyEqual": true
+        }
+      ]
+    },
+    {
+      "run": "fast-path-cost",
+      "resultsSha256": "469414046ee508f31dcfbf4fc5c5f283dc02dbec9fc982c9909bfc56180c0e2d",
+      "rows": [
+        {
+          "scene": "stationary-prediction-32",
+          "baselineVersion": "0.16.1",
+          "candidateVersion": "0.16.1-predictive-recycle-research.1",
+          "baselineMedianMs": 81.30405499999983,
+          "candidateMedianMs": 75.3124584999996,
+          "medianPairedRatio": 0.9828616613073222,
+          "physicalStateExactlyEqual": true
+        },
+        {
+          "scene": "resting-stack-16",
+          "baselineVersion": "0.16.1",
+          "candidateVersion": "0.16.1-predictive-recycle-research.1",
+          "baselineMedianMs": 40.16424649999999,
+          "candidateMedianMs": 38.55192050000005,
+          "medianPairedRatio": 0.9386068511442287,
+          "physicalStateExactlyEqual": false
+        },
+        {
+          "scene": "falling-grid-32",
+          "baselineVersion": "0.16.1",
+          "candidateVersion": "0.16.1-predictive-recycle-research.1",
+          "baselineMedianMs": 57.29672049999954,
+          "candidateMedianMs": 56.37295999999969,
+          "medianPairedRatio": 1.024062887459168,
+          "physicalStateExactlyEqual": true
+        }
+      ]
+    },
+    {
+      "run": "fast-path-direct-cost",
+      "resultsSha256": "fe0b2f34bdedb838c4a3fe381696d4fb8d602bad5940cbe68737a067ce22b834",
+      "rows": [
+        {
+          "scene": "stationary-prediction-32",
+          "baselineVersion": "0.16.1-predictive-recycle-research.0",
+          "candidateVersion": "0.16.1-predictive-recycle-research.1",
+          "baselineMedianMs": 105.15388400000029,
+          "candidateMedianMs": 91.69694450000043,
+          "medianPairedRatio": 0.8774051156494467,
+          "physicalStateExactlyEqual": true
+        },
+        {
+          "scene": "resting-stack-16",
+          "baselineVersion": "0.16.1-predictive-recycle-research.0",
+          "candidateVersion": "0.16.1-predictive-recycle-research.1",
+          "baselineMedianMs": 57.730806000000484,
+          "candidateMedianMs": 53.05047699999932,
+          "medianPairedRatio": 0.8943785530785077,
+          "physicalStateExactlyEqual": false
+        },
+        {
+          "scene": "falling-grid-32",
+          "baselineVersion": "0.16.1-predictive-recycle-research.0",
+          "candidateVersion": "0.16.1-predictive-recycle-research.1",
+          "baselineMedianMs": 92.00782350000009,
+          "candidateMedianMs": 88.89859650000017,
+          "medianPairedRatio": 0.961723528659849,
+          "physicalStateExactlyEqual": true
+        }
+      ]
+    }
+  ]
+}
