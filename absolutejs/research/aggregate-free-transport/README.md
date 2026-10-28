@@ -153,3 +153,28 @@ that invocation from loading the workspace. The isolated harness resolves the
 actual local physics crate without that unrelated workspace member. Admission
 also explicitly rejects nonfinite effective gravity forces before attempting
 integration. Browser/WASM, independent rebuild and game adoption remain pending.
+
+## First WASM/package qualification
+
+The private WASM candidate now passes all 198 package tests (85,226 assertions),
+strict public type contracts and the bounded GPU-disabled Chromium worker. The
+browser observed 960 admitted assembly substeps and verified owned/fresh
+counters while exercising the existing contact, root-origin and profiling
+checks. New package tests cover stale counters after restoration/toggles, deep
+ownership across exclusions/detachment, and exact profiled/unprofiled replay.
+
+The native compiler completed in four minutes with two jobs. The stable identity
+guard then correctly rejected the changed bytes; the retained failure log is
+expected. The private manifest now labels the kernel
+`unqualified-aggregate-research`, SHA-256
+`10892b275313607d9983431590c4b1bce07945cf90d2b1c9340173373da3273c`,
+3,317,524 bytes. No stable release qualification is implied by packaging it.
+
+An alternating 12-pair CPU/Bun/WASM benchmark uses 16 falling two-body assemblies,
+120 steps and four substeps after three warmup pairs. Every candidate assembly
+is verified admitted before timing. Median baseline/candidate batches are
+51.5762/57.6831 ms; median paired ratio is 1.1218 and additional cost is
+0.9467 microseconds per assembly/substep. These synthetic costs are not FPS or
+gameplay guarantees; full samples, engine identities and API hashes are retained.
+Independent rebuild, actual game integration and remaining physics-domain
+qualification are still pending.
