@@ -9,3 +9,7 @@ Scope gates: floating six-DOF root, at least two positive-mass dynamic bodies, o
 At each substep, retain old omega and root-to-COM offset r before loading accelerated/solved velocities. After integrating rotation, let rNew=exp(omegaNew*dt)*r and aGeometry=omegaOld×(omegaOld×r). Add rNew-r-dt*(omegaNew×r)-dt²*aGeometry to root position and omegaNew×(rNew-r)-dt*aGeometry to root velocity. Write corrected generalized velocities back to the solver before subsequent stages.
 
 Qualification must measure free-flight momentum, angular momentum, energy, COM motion, root ordering, force/torque response and contact behavior. General 3D gyroscopic integration, changing topology and articulated joints remain separate concerns. Do not publish based only on the planar reproduction. Native build uses two CPU jobs and a checkout-specific target directory.
+
+## First experiment result
+
+Native SHA256 `6e3e1a6d2fc8dd0e60c83c36e2f3f2879856039afef151ed4d6a28c7eda8e580`, 3,296,852 bytes. Native compilation succeeds, followed by expected stable-hash rejection and explicit private API packaging. Game diagnostics complete 80 published/80 candidate diversity cases plus 32 zero/32 default controls. Default damping, compound, translation and excluded local-COM controls remain exactly unchanged. Planar drift improves substantially; nonprincipal 3D drift remains. This is not qualified for release. Full replay data and comparisons are in hello-world/docs/root-transport-2026-10-27.
