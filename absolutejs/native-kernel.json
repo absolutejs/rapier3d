@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "0.16.0",
+  "qualifiedKernelRelease": "unqualified-snapshot-order-research",
   "wasmSha256": "fb44e31fd971a0577889408a95266ab1e61d9293a1f6657647ca51417b93c83d",
   "wasmBytes": 3324606,
-  "solverChanges": true
+  "solverChanges": true,
+  "researchOnly": true
 }

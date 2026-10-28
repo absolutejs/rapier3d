@@ -1,0 +1,71 @@
+{
+  "snapshots": false,
+  "physical": true,
+  "failures": [
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 0,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 2,
+      "physicalExact": true,
+      "beforeSha256": "275328e63b9a835216c4d779ad0a4925f6f39cb69ae2bbeb65606e773c031ce8",
+      "afterSha256": "9c1936dff9e1ae6f457181ec00462f532245111e5940bec8ed8da7280ff061ba"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 1,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 3,
+      "physicalExact": true,
+      "beforeSha256": "9c1936dff9e1ae6f457181ec00462f532245111e5940bec8ed8da7280ff061ba",
+      "afterSha256": "4e96ffe3665977ea33dbe48694571bccefdf475620133f59790262682303d3e8"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 2,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 2,
+      "physicalExact": true,
+      "beforeSha256": "4e96ffe3665977ea33dbe48694571bccefdf475620133f59790262682303d3e8",
+      "afterSha256": "c64b2265c20f75bdbcd05fbfc59b4e60a47161ac65e518728b5640b1915ab517"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 3,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 3,
+      "physicalExact": true,
+      "beforeSha256": "c64b2265c20f75bdbcd05fbfc59b4e60a47161ac65e518728b5640b1915ab517",
+      "afterSha256": "275328e63b9a835216c4d779ad0a4925f6f39cb69ae2bbeb65606e773c031ce8"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 4,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 2,
+      "physicalExact": true,
+      "beforeSha256": "275328e63b9a835216c4d779ad0a4925f6f39cb69ae2bbeb65606e773c031ce8",
+      "afterSha256": "9c1936dff9e1ae6f457181ec00462f532245111e5940bec8ed8da7280ff061ba"
+    }
+  ]
+}
