@@ -146,3 +146,10 @@ thread pool (79.53 seconds). The fixture verifies that it actually configured
 two workers. This is correctness coverage, not a parallel speedup benchmark.
 The TypeScript assembly observation API and bounded profile integration are
 now implemented but remain pending the new WASM build and package tests.
+
+The isolated allocation-enabled no-std crate compiles successfully. The original
+workspace check failure is retained: missing upstream C testbed files prevented
+that invocation from loading the workspace. The isolated harness resolves the
+actual local physics crate without that unrelated workspace member. Admission
+also explicitly rejects nonfinite effective gravity forces before attempting
+integration. Browser/WASM, independent rebuild and game adoption remain pending.

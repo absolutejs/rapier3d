@@ -10,7 +10,7 @@ function fixture() {
  for(const body of [a,b])world.createCollider(R.ColliderDesc.ball(.25).setMass(1).setCollisionGroups(0),body);
  const q={x:0,y:0,z:0,w:1};
  const joint=world.createMultibodyJoint(R.JointData.fixed({x:1,y:0,z:0},q,{x:0,y:0,z:0},q),a,b,true);
- world.multibodyJoints.setGeneralizedDamping(joint.handle,new Float32Array(6));
+ expect(world.multibodyJoints.setGeneralizedDamping(joint.handle,new Float32Array(6))).toBe(true);
  world.step();return {world,a,b,joint};
 }
 test('assembly observations are fresh, owned and absent after restore',()=>{

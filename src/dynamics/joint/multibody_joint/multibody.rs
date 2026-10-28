@@ -1315,6 +1315,7 @@ impl Multibody {
                 || rb.gravity_scale() != gravity_scale
                 || rb.forces.user_force != Vector::ZERO || rb.forces.user_torque != AngVector::ZERO
                 || rb.forces.torque != AngVector::ZERO
+                || !rb.forces.force.is_finite()
                 || rb.forces.force != gravity * rb.mprops.effective_mass() * gravity_scale
                 || link.joint.kinematic || (i != 0 && link.joint.ndofs() != 0)
                 || link.joint.spring_stiffness.iter().any(|v| *v != 0.0)

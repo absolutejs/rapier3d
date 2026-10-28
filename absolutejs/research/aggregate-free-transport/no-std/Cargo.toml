@@ -1,0 +1,8 @@
+[workspace]
+[package]
+name = "aggregate-no-std-check"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[dependencies]
+rapier3d = { path = "../../../../crates/rapier3d", default-features = false, features = ["dim3", "f32", "alloc"] }
