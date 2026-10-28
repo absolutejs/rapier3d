@@ -100,3 +100,28 @@ predeclared 1e-4 relative angular-momentum bound over 120 steps (3.2152e-4).
 `material-removal.log` records an import visibility compile error. This does not
 invalidate the narrower joint-cut results, but blocks a claim of fully qualified
 material-removal conservation. Investigation is pending; the bound is unchanged.
+
+The follow-up observation run (`material-removal-observed.log`) intentionally
+records all four cases without treating their bounds as passed. It reports zero
+ordinary midpoint steps even for the free fragment: the global presence of an
+assembly excludes the entire batch. Ordinary-body initialization already skips
+every multibody link, so removing that redundant global exclusion admits only
+ordinary bodies. Contact, impulse-joint, soft-body and FEM exclusions remain.
+The strict rerun (`material-removal-eligibility.log`) passes all four cases.
+The two cases with an ordinary fragment now report 480 midpoint steps each;
+maximum relative angular-momentum error is 2.338e-5. This is still a bounded
+fixture result, not a claim of general contact/fracture accuracy.
+
+Native checkpoint qualification (`pending-native-snapshot.log`) passes six edit
+scenarios across two tests: impulse insertion/removal, per-joint and bulk disable,
+and soft-body insertion/removal. Each retains exact serialized state through
+eight subsequent steps. The first WASM envelope compilation caught an edition-
+specific missing `TryInto` import; its failure log is retained and the explicit
+import is corrected. The rebuilt WASM tests remain pending.
+
+The combined native run (`full-snapshot-candidate.log`) passes 14 assembly tests,
+two checkpoint tests and three upstream coupling-topology tests. The updated
+comparison script accepts explicit input/output paths so earlier receipts remain
+intact. `snapshot-unaffected-comparison.json` confirms all 386 exclusion-control
+state records and all 127 existing assembly measurements are exactly unchanged
+from the retained 0.15.0 native baseline.

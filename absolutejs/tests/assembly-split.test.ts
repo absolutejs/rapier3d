@@ -2,6 +2,28 @@ import {beforeAll,expect,test} from 'bun:test';
 import R from '@absolutejs/rapier3d';
 beforeAll(async()=>{await R.init();});
 import {fixture,measure,norm,sub} from './assembly-split-fixture';
+test('unrelated assembly does not change an isolated ordinary body rotation',()=>{
+ const {world:w}=fixture();
+ const reference=new R.World({x:0,y:0,z:0});
+ try {
+  reference.timestep=w.timestep;reference.numSolverIterations=w.numSolverIterations;
+  reference.integrationParameters.maxCcdSubsteps=0;
+  const desc=()=>R.RigidBodyDesc.dynamic().setCanSleep(false).setTranslation(20,0,0)
+   .setAdditionalMassProperties(2,{x:.2,y:-.1,z:.3},{x:.4,y:.6,z:.8},{x:0,y:0,z:0,w:1})
+   .setLinvel(.3,-.2,.1).setAngvel({x:2,y:-3,z:4});
+  const body=w.createRigidBody(desc()),isolated=reference.createRigidBody(desc());
+  w.profilerEnabled=true;reference.profilerEnabled=true;
+  for(let i=0;i<120;i++){
+   w.step();reference.step();
+   expect(body.rotation()).toEqual(isolated.rotation());
+   expect(body.angvel()).toEqual(isolated.angvel());
+   expect(body.translation()).toEqual(isolated.translation());
+   expect(body.linvel()).toEqual(isolated.linvel());
+   expect(w.freeRotationStats()!.acceptedSteps).toBe(4);
+   expect(reference.freeRotationStats()!.acceptedSteps).toBe(4);
+  }
+ }finally{reference.free();w.free();}
+});
 test('partial fixed-chain split preserves motion and exact snapshot replay',()=>{
  const {world:w,bodies,joints}=fixture();let restored:R.World|undefined;
  try {

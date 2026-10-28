@@ -123,3 +123,1515 @@ warning: missing documentation for a struct field
    |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
    Compiling bincode v1.3.3
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling hello-rapier-wasm-probe v0.21.0 (/home/alexkahn/alex/rapier-assembly-split-research/.absolutejs/native-source/5efd8049e763c696cb74aa063a9c7bcd91c5b8a18bab00f935e5309d96d5a49b/bindings/typescript/builds/hello-wasm)
+warning: unexpected `cfg` condition value: `dim2`
+ --> bindings/typescript/builds/hello-wasm/../../src/lib.rs:8:7
+  |
+8 | #[cfg(feature = "dim2")]
+  |       ^^^^^^^^^^------
+  |                 |
+  |                 help: there is a expected value with a similar name: `"dim3"`
+  |
+  = note: expected values for `feature` are: `default` and `dim3`
+  = help: consider adding `dim2` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+  = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:214:11
+    |
+214 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:275:11
+    |
+275 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:290:11
+    |
+290 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:309:11
+    |
+309 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:324:11
+    |
+324 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:339:11
+    |
+339 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/character_controller.rs:354:11
+    |
+354 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/control/pid_controller.rs:11:7
+   |
+11 | #[cfg(feature = "dim2")]
+   |       ^^^^^^^^^^------
+   |                 |
+   |                 help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/pid_controller.rs:160:11
+    |
+160 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/pid_controller.rs:236:11
+    |
+236 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/control/pid_controller.rs:53:19
+   |
+53 |             #[cfg(feature = "dim2")]
+   |                   ^^^^^^^^^^------
+   |                             |
+   |                             help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/control/pid_controller.rs:85:19
+   |
+85 |             #[cfg(feature = "dim2")]
+   |                   ^^^^^^^^^^------
+   |                             |
+   |                             help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/pid_controller.rs:117:19
+    |
+117 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/ray_cast_vehicle_controller.rs:108:11
+    |
+108 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/ray_cast_vehicle_controller.rs:251:11
+    |
+251 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/ray_cast_vehicle_controller.rs:278:11
+    |
+278 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/ray_cast_vehicle_controller.rs:349:11
+    |
+349 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/ray_cast_vehicle_controller.rs:370:11
+    |
+370 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/control/ray_cast_vehicle_controller.rs:398:11
+    |
+398 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/impulse_joint.rs:53:11
+   |
+53 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/impulse_joint.rs:80:11
+   |
+80 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/joint.rs:12:7
+   |
+12 | #[cfg(feature = "dim2")]
+   |       ^^^^^^^^^^------
+   |                 |
+   |                 help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/joint.rs:35:7
+   |
+35 | #[cfg(feature = "dim2")]
+   |       ^^^^^^^^^^------
+   |                 |
+   |                 help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/joint.rs:105:7
+    |
+105 | #[cfg(feature = "dim2")]
+    |       ^^^^^^^^^^------
+    |                 |
+    |                 help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/joint.rs:214:11
+    |
+214 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/joint.rs:285:11
+    |
+285 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:17:11
+   |
+17 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:41:11
+   |
+41 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:84:11
+   |
+84 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:116:11
+    |
+116 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:162:11
+    |
+162 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:203:11
+    |
+203 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:216:11
+    |
+216 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:261:11
+    |
+261 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:309:11
+    |
+309 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:353:11
+    |
+353 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:372:11
+    |
+372 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:396:11
+    |
+396 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:419:11
+    |
+419 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:456:11
+    |
+456 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:533:11
+    |
+533 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:560:11
+    |
+560 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:587:11
+    |
+587 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:613:11
+    |
+613 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:659:11
+    |
+659 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:682:11
+    |
+682 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:713:11
+    |
+713 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:875:11
+    |
+875 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:899:11
+    |
+899 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+    --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:1012:11
+     |
+1012 |     #[cfg(feature = "dim2")]
+     |           ^^^^^^^^^^------
+     |                     |
+     |                     help: there is a expected value with a similar name: `"dim3"`
+     |
+     = note: expected values for `feature` are: `default` and `dim3`
+     = help: consider adding `dim2` as a feature in `Cargo.toml`
+     = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+    --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body.rs:1038:11
+     |
+1038 |     #[cfg(feature = "dim2")]
+     |           ^^^^^^^^^^------
+     |                     |
+     |                     help: there is a expected value with a similar name: `"dim3"`
+     |
+     = note: expected values for `feature` are: `default` and `dim3`
+     = help: consider adding `dim2` as a feature in `Cargo.toml`
+     = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/rigid_body_set.rs:142:11
+    |
+142 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/soft_body.rs:651:11
+    |
+651 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/soft_body.rs:739:11
+    |
+739 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/soft_body.rs:744:11
+    |
+744 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/dynamics/soft_body.rs:749:11
+    |
+749 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:24:11
+   |
+24 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:47:11
+   |
+47 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:70:11
+   |
+70 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:112:11
+    |
+112 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:166:11
+    |
+166 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:180:11
+    |
+180 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:213:11
+    |
+213 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:227:11
+    |
+227 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:280:11
+    |
+280 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:322:11
+    |
+322 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:570:11
+    |
+570 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:588:11
+    |
+588 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:642:11
+    |
+642 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:805:11
+    |
+805 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+    --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:1246:11
+     |
+1246 |     #[cfg(feature = "dim2")]
+     |           ^^^^^^^^^^------
+     |                     |
+     |                     help: there is a expected value with a similar name: `"dim3"`
+     |
+     = note: expected values for `feature` are: `default` and `dim3`
+     = help: consider adding `dim2` as a feature in `Cargo.toml`
+     = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:253:19
+    |
+253 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:267:19
+    |
+267 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:507:19
+    |
+507 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:542:19
+    |
+542 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:692:19
+    |
+692 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:706:19
+    |
+706 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:708:19
+    |
+708 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider.rs:788:23
+    |
+788 |                 #[cfg(feature = "dim2")]
+    |                       ^^^^^^^^^^------
+    |                                 |
+    |                                 help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider_set.rs:66:15
+   |
+66 |         #[cfg(feature = "dim2")] principalAngularInertia: f32,
+   |               ^^^^^^^^^^------
+   |                         |
+   |                         help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider_set.rs:132:15
+    |
+132 |         #[cfg(feature = "dim2")] principalAngularInertia: f32,
+    |               ^^^^^^^^^^------
+    |                         |
+    |                         help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider_set.rs:170:19
+    |
+170 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider_set.rs:203:15
+    |
+203 |         #[cfg(feature = "dim2")] principalAngularInertia: f32,
+    |               ^^^^^^^^^^------
+    |                         |
+    |                         help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider_set.rs:288:11
+    |
+288 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/collider_set.rs:421:11
+    |
+421 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/contact.rs:14:11
+   |
+14 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+ --> bindings/typescript/builds/hello-wasm/../../src/geometry/feature.rs:4:7
+  |
+4 | #[cfg(feature = "dim2")]
+  |       ^^^^^^^^^^------
+  |                 |
+  |                 help: there is a expected value with a similar name: `"dim3"`
+  |
+  = note: expected values for `feature` are: `default` and `dim3`
+  = help: consider adding `dim2` as a feature in `Cargo.toml`
+  = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:109:11
+    |
+109 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:132:11
+    |
+132 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:151:11
+    |
+151 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:182:11
+    |
+182 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:207:11
+    |
+207 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:253:11
+    |
+253 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:290:11
+    |
+290 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/narrow_phase.rs:400:11
+    |
+400 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/point.rs:16:11
+   |
+16 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/point.rs:51:11
+   |
+51 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/ray.rs:13:11
+   |
+13 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/ray.rs:55:11
+   |
+55 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:165:7
+    |
+165 | #[cfg(feature = "dim2")]
+    |       ^^^^^^^^^^------
+    |                 |
+    |                 help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:677:11
+    |
+677 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:687:11
+    |
+687 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:778:11
+    |
+778 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:829:11
+    |
+829 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:838:11
+    |
+838 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:320:19
+    |
+320 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:336:19
+    |
+336 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:432:19
+    |
+432 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:473:19
+    |
+473 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:490:19
+    |
+490 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:495:19
+    |
+495 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:606:27
+    |
+606 |                     #[cfg(feature = "dim2")]
+    |                           ^^^^^^^^^^------
+    |                                     |
+    |                                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:885:15
+    |
+885 |         #[cfg(feature = "dim2")]
+    |               ^^^^^^^^^^------
+    |                         |
+    |                         help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:901:19
+    |
+901 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:911:19
+    |
+911 |             #[cfg(feature = "dim2")]
+    |                   ^^^^^^^^^^------
+    |                             |
+    |                             help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:950:15
+    |
+950 |         #[cfg(feature = "dim2")]
+    |               ^^^^^^^^^^------
+    |                         |
+    |                         help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/geometry/shape.rs:961:15
+    |
+961 |         #[cfg(feature = "dim2")]
+    |               ^^^^^^^^^^------
+    |                         |
+    |                         help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/toi.rs:12:11
+   |
+12 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/geometry/toi.rs:61:11
+   |
+61 |     #[cfg(feature = "dim2")]
+   |           ^^^^^^^^^^------
+   |                     |
+   |                     help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+  --> bindings/typescript/builds/hello-wasm/../../src/math.rs:25:7
+   |
+25 | #[cfg(feature = "dim2")]
+   |       ^^^^^^^^^^------
+   |                 |
+   |                 help: there is a expected value with a similar name: `"dim3"`
+   |
+   = note: expected values for `feature` are: `default` and `dim3`
+   = help: consider adding `dim2` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/math.rs:120:11
+    |
+120 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/math.rs:177:11
+    |
+177 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+warning: unexpected `cfg` condition value: `dim2`
+   --> bindings/typescript/builds/hello-wasm/../../src/math.rs:183:11
+    |
+183 |     #[cfg(feature = "dim2")]
+    |           ^^^^^^^^^^------
+    |                     |
+    |                     help: there is a expected value with a similar name: `"dim3"`
+    |
+    = note: expected values for `feature` are: `default` and `dim3`
+    = help: consider adding `dim2` as a feature in `Cargo.toml`
+    = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+
+error[E0599]: no method named `try_into` found for reference `&[u8]` in the current scope
+   --> bindings/typescript/builds/hello-wasm/../../src/pipeline/serialization_pipeline.rs:169:63
+    |
+169 |             let version = u32::from_le_bytes(data.get(8..12)?.try_into().ok()?);
+    |                                                               ^^^^^^^^
+    |
+    = help: items from traits can only be used if the trait is in scope
+    = note: 'std::convert::TryInto' is included in the prelude starting in Edition 2021
+help: trait `TryInto` which provides `try_into` is implemented but not in scope; perhaps you want to import it
+    |
+  1 + use std::convert::TryInto;
+    |
+help: there is a method `into` with a similar name
+    |
+169 -             let version = u32::from_le_bytes(data.get(8..12)?.try_into().ok()?);
+169 +             let version = u32::from_le_bytes(data.get(8..12)?.into().ok()?);
+    |
+
+For more information about this error, try `rustc --explain E0599`.
+warning: `hello-rapier-wasm-probe` (lib) generated 124 warnings
+error: could not compile `hello-rapier-wasm-probe` (lib) due to 1 previous error; 124 warnings emitted

@@ -1,9 +1,10 @@
 """Compare previous native controls with split-transition changes only."""
 from pathlib import Path
-import hashlib,json,re
+import hashlib,json,re,sys
 root=Path(__file__).resolve().parent
 baseline=root.parent/'aggregate-free-transport/gravity-lifecycle-candidate.log'
-candidate=root/'full-native-candidate.log'
+candidate=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else root/'full-native-candidate.log'
+output=Path(sys.argv[2]).resolve() if len(sys.argv)>2 else root/'unaffected-comparison.json'
 a=baseline.read_text();b=candidate.read_text()
 assert 'test result: ok.' in a and 'test result: ok.' in b
 assert 'test result: FAILED' not in a+b
@@ -17,5 +18,5 @@ result={'excludedStateRecordsExactlyIdentical':386,'existingPhysicalMeasurements
         'baselineSha256':hashlib.sha256(baseline.read_bytes()).hexdigest(),
         'candidateSha256':hashlib.sha256(candidate.read_bytes()).hexdigest(),
         'scriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
-(root/'unaffected-comparison.json').write_text(json.dumps(result,indent=2)+'\n')
+output.write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))

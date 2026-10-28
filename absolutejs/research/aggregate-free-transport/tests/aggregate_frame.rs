@@ -1188,6 +1188,7 @@ fn fixed_to_dynamic_root_preserves_prescribed_world_com_velocity() {
 
 #[test]
 fn removing_chain_material_preserves_remaining_motion() {
+    let observe_only = std::env::var_os("SPLIT_OBSERVE_ONLY").is_some();
     for removed in 0..4 {
         let mut world = PhysicsWorld::new();
         world.gravity = Vector::ZERO;
@@ -1251,6 +1252,7 @@ fn removing_chain_material_preserves_remaining_motion() {
             assert_eq!((*b.position(), b.linvel(), b.angvel()), before[i]);
         }
         let mut maxima = [0.0_f64; 4];
+        let mut rotation_counts = [0_usize; 4];
         for step in 1..=120 {
             world.step();
             let (_, c, p, l, e) = quantities(&world, &remaining, None);
@@ -1267,8 +1269,11 @@ fn removing_chain_material_preserves_remaining_motion() {
                 maxima[i] = maxima[i].max(errors[i]);
             }
             assert_eq!(assembly_counts(&world), [4, 0, 0, 0]);
+            for (total, count) in rotation_counts.iter_mut().zip(world.physics_pipeline.counters.solver.midpoint_counts) {
+                *total += count;
+            }
         }
-        println!("REMOVED_MATERIAL index={removed} errors={maxima:?}");
-        assert!(maxima.iter().all(|x| *x < 1e-4));
+        println!("REMOVED_MATERIAL index={removed} errors={maxima:?} rotation_counts={rotation_counts:?} observe_only={observe_only}");
+        if !observe_only { assert!(maxima.iter().all(|x| *x < 1e-4)); }
     }
 }

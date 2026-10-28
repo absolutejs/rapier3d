@@ -638,8 +638,11 @@ impl StagedIslandSolver {
             island_bodies,
             has_multibodies: !self.velocity_solver.multibody_roots.is_empty(),
             #[cfg(feature = "dim3")]
+            // Ordinary-body initialization skips every multibody link. An
+            // unrelated assembly in this batch must not disable free rotation
+            // for a detached ordinary body; external constraints still exclude
+            // the entire batch here.
             midpoint_isolated: graph.len() == 0 && joint_indices.is_empty()
-                && self.velocity_solver.multibody_roots.is_empty()
                 && self.soft_constraints.is_empty()
                 && { #[cfg(feature = "fem")] { self.soft_fem.is_empty() }
                      #[cfg(not(feature = "fem"))] { true } },

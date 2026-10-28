@@ -1,0 +1,7 @@
+{
+  "excludedStateRecordsExactlyIdentical": 386,
+  "existingPhysicalMeasurementsExactlyIdentical": 127,
+  "baselineSha256": "63b5807cc88caa385e94a5666d8c6eac7ea66b85ce1d83e592736e96c68ad5b5",
+  "candidateSha256": "5ac2e069c6d5f100634957ffe29e5ed93e231e3e85ff843cf181cdb26d5e3278",
+  "scriptSha256": "2c3fa35a99cfba66d6a141adb0f896f12e4b400a1404c07c84f8f818db4fc3f9"
+}

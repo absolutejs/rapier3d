@@ -4,10 +4,11 @@ use crate::dynamics::{
 };
 use crate::geometry::{RawBroadPhase, RawColliderSet, RawNarrowPhase};
 use crate::math::RawVector;
+use core::convert::TryInto;
 use js_sys::Uint8Array;
 use rapier::dynamics::{
-    ImpulseJointSet, IntegrationParameters, IslandManager, MultibodyJointSet, RigidBodySet,
-    SoftBodySet, PendingIslandEvents,
+    ImpulseJointSet, IntegrationParameters, IslandManager, MultibodyJointSet, PendingIslandEvents,
+    RigidBodySet, SoftBodySet,
 };
 use rapier::geometry::{ColliderSet, DefaultBroadPhase, NarrowPhase};
 use rapier::math::Vector;
@@ -153,9 +154,12 @@ impl RawSerializationPipeline {
         let payload = bincode::serialize(&SerializableSnapshot {
             world: to_serialize,
             pending_islands: PendingIslandEvents::capture(
-                &impulse_joints.0, &multibody_joints.0, &soft_bodies.0,
+                &impulse_joints.0,
+                &multibody_joints.0,
+                &soft_bodies.0,
             ),
-        }).ok()?;
+        })
+        .ok()?;
         let mut snap = Vec::with_capacity(12 + payload.len());
         snap.extend_from_slice(SNAPSHOT_MAGIC);
         snap.extend_from_slice(&SNAPSHOT_VERSION.to_le_bytes());
@@ -167,16 +171,25 @@ impl RawSerializationPipeline {
         let data = data.to_vec();
         let (mut d, pending) = if data.starts_with(SNAPSHOT_MAGIC) {
             let version = u32::from_le_bytes(data.get(8..12)?.try_into().ok()?);
-            if version != SNAPSHOT_VERSION { return None; }
+            if version != SNAPSHOT_VERSION {
+                return None;
+            }
             let snapshot: DeserializableSnapshot = bincode::deserialize(&data[12..]).ok()?;
             (snapshot.world, Some(snapshot.pending_islands))
         } else {
             // Read prior raw captures for diagnostics. Missing pending edits in
             // that historical format cannot be recovered; all new saves use v1.
-            (bincode::deserialize::<DeserializableWorld>(&data[..]).ok()?, None)
+            (
+                bincode::deserialize::<DeserializableWorld>(&data[..]).ok()?,
+                None,
+            )
         };
         if let Some(pending) = pending {
-            pending.restore(&mut d.impulse_joints, &mut d.multibody_joints, &mut d.soft_bodies);
+            pending.restore(
+                &mut d.impulse_joints,
+                &mut d.multibody_joints,
+                &mut d.soft_bodies,
+            );
         }
         Some(RawDeserializedWorld {
             gravity: Some(RawVector(d.gravity)),
