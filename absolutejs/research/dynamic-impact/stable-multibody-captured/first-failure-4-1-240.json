@@ -1,0 +1,18 @@
+{
+  "fixture": {
+    "mode": "multibody",
+    "stationary": true,
+    "count": 4,
+    "reverse": true,
+    "hz": 240
+  },
+  "step": 9,
+  "mismatch": 0,
+  "momentum": -8.012411117553711,
+  "expectedMomentum": -16,
+  "energy": 8.024841489587288,
+  "beforeSha256": "ec20575151e826367b2922cf596fcde4c3b2baceb02c814e024beb071a3fe63a",
+  "afterSha256": "1a4b8d85a96e0932e57e67f2f704e86298db8e1394b241a91c8129d468d2471d",
+  "roundTrip": true,
+  "exact": true
+}

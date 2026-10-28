@@ -1,0 +1,14 @@
+{
+  "fixture": {
+    "count": 8,
+    "reverse": false,
+    "hz": 60
+  },
+  "step": 2,
+  "mismatch": 0.7712428569793701,
+  "energy": 16.895934253441272,
+  "beforeSha256": "1f676835d0ce64ffc86776aa12d8a65423a3677859cbbb8b2202c8ef60bcd60f",
+  "afterSha256": "6a146cf2daba71a999372056186981827ace7b407fd6bd9abc5545af98017387",
+  "roundTrip": true,
+  "exact": true
+}

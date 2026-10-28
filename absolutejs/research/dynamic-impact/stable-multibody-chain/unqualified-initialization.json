@@ -1,0 +1,1 @@
+{"status":"invalid-comparison","reason":"Multibody construction initializes generalized velocities independently of the preassigned rigid-body velocities; result corresponds to a stationary target. Rerun all engines with explicitly stationary targets and matching analytic oracle."}
