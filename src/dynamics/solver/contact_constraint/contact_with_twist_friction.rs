@@ -577,11 +577,32 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         let mut solver_vel1 = bodies.gather_vels(constraint.solver_vel1);
         let mut solver_vel2 = bodies.gather_vels(constraint.solver_vel2);
 
+        // PRIVATE PLANAR EXPERIMENT: final COM lever arms only. World inverse
+        // inertia is still prepared earlier; this is not a general 3D solution.
+        let poses1 = bodies.gather_poses(constraint.solver_vel1);
+        let poses2 = bodies.gather_poses(constraint.solver_vel2);
         let num = constraint.num_contacts as usize;
         for (info, normal_part) in self.infos[..num]
             .iter()
             .zip(constraint.normal_part[..num].iter_mut())
         {
+            let p1 = poses1.transform_point(info.local_p1);
+            let p2 = poses2.transform_point(info.local_p2);
+            let point = (p1 + p2) * SimdReal::splat(0.5);
+            let torque1 = (point - poses1.translation).gcross(constraint.dir1);
+            let torque2 = (point - poses2.translation).gcross(-constraint.dir1);
+            let ii_torque1 = poses1.ii.transform_vector(torque1);
+            let ii_torque2 = poses2.ii.transform_vector(torque2);
+            // Preserve inactive SIMD lanes; they must remain exact no-ops.
+            let active = normal_part.r.simd_gt(SimdReal::zero());
+            normal_part.torque_dir1 = torque1;
+            normal_part.torque_dir2 = torque2;
+            normal_part.ii_torque_dir1 = ii_torque1;
+            normal_part.ii_torque_dir2 = ii_torque2;
+            normal_part.r = utils::simd_inv(
+                constraint.dir1.gdot((constraint.im1 + constraint.im2).component_mul(&constraint.dir1))
+                    + ii_torque1.gdot(torque1) + ii_torque2.gdot(torque2),
+            ).select(active, SimdReal::zero());
             normal_part.solve_restitution(
                 info.restitution_seed,
                 &constraint.dir1,
