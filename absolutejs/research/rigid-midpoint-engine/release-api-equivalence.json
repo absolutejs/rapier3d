@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "allRuntimeChangesOnlyReleaseIdentity": true,
+  "changedFiles": [
+    {
+      "file": "build-info.mjs",
+      "beforeSha256": "2593c95e729c474288b9033cf5c34764b31e46a2beb6f501127900acfca88b5d",
+      "afterSha256": "11a45eb64d0cf2af40999b4cca0745ce940a73b7d75404a9c3648178f89036ed",
+      "change": "qualifiedKernelRelease identity only"
+    },
+    {
+      "file": "provenance.json",
+      "beforeSha256": "90618d6f07903b23f4ce127b9cd0b878990016f30c68c98d164aedb3a9c4377d",
+      "afterSha256": "ab2ef9ce930fb191906be85208a1c73efa45672d16de68b0932aac5435dae6d9",
+      "change": "qualifiedKernelRelease identity only"
+    },
+    {
+      "file": "rapier.mjs",
+      "beforeSha256": "f1ba7043868712d9a4b4a22bf0cd07ca862e2dc2fe72b3c8633f32df6f199f12",
+      "afterSha256": "72358c90e934afee84c625d78a313867d3388258585d0a0145e26d8bc6d46d0f",
+      "change": "qualifiedKernelRelease identity only"
+    }
+  ]
+}

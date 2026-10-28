@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "release": "0.14.0",
+  "status": "qualified-for-publication; registry confirmation pending",
+  "nativeSha256": "0923de1a2b4be66faf2a17e602c566b227457cd511ef4ea6bab799c9d227af6c",
+  "nativeBytes": 3307201,
+  "independentNativeBuildsByteIdentical": true,
+  "independentCandidateDistributionFilesIdentical": 49,
+  "packageTests": {
+    "passed": 193,
+    "failed": 0,
+    "assertions": 77586
+  },
+  "releaseIdentityFocusedTests": {
+    "passed": 17,
+    "failed": 0,
+    "assertions": 282
+  },
+  "nativeTests": {
+    "arithmetic": 14,
+    "serialEngine": 5,
+    "twoWorkerEngine": 5
+  },
+  "gameTests": {
+    "passed": 841,
+    "failed": 0,
+    "assertions": 7408721,
+    "sourceCommit": "829e4de9665c33a732316e9f38b924114f97e88a",
+    "candidateArchiveFilesAudited": 53,
+    "appTypes": true,
+    "physicsToolTypes": true,
+    "finiteBrowserWorkerBundle": true
+  },
+  "gpuDisabledBrowserPassed": true,
+  "releaseRuntimeChangesOnlyIdentity": true,
+  "archive": {
+    "name": "@absolutejs/rapier3d",
+    "version": "0.14.0",
+    "distributionFiles": 49,
+    "tarballSha256": "b86bdeb022b3b02cd0b3b586cc4c420fee56789dc89e37eca2ed846506d239bd",
+    "shasum": "26240bd76f5e7cc5e498be87fcaf607348c91cdc",
+    "integrity": "sha512-5mDv9ThFTIvGA5q9qffVliSv5vXLxzHoCVNmFWnQc8Wr9nXlkodTK5X2JKsz9iKUTJJR61umeZgnsneaXNbdmw==",
+    "embeddedNativeVerified": true,
+    "allDistributionBytesVerified": true,
+    "provenance": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.14.0",
+      "qualifiedKernelRelease": "0.14.0",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "0923de1a2b4be66faf2a17e602c566b227457cd511ef4ea6bab799c9d227af6c",
+      "wasmBytes": 3307201,
+      "solverChanges": true
+    }
+  },
+  "scope": [
+    "admitted isolated ordinary rigid bodies",
+    "owned opt-in rotation observations",
+    "bounded profiler integration"
+  ],
+  "limits": [
+    "No coupled contact/joint angular correction",
+    "No articulated COM-transport correction",
+    "Nonphysical stored inertia rejected, not repaired",
+    "Synthetic CPU cost increased about 0.7 microseconds/body/substep; not FPS",
+    "Native WSL GPU benchmarking not performed"
+  ]
+}

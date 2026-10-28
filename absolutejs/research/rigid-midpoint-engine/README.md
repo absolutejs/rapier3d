@@ -137,3 +137,20 @@ A final source/documentation rebuild takes 3m44s and produces exactly the same
 The public statistics integration changes API code, not that native kernel.
 Source manifests and both build identities are retained. Independent source
 reproduction and final archive qualification remain required before publishing.
+
+## 0.14.0 release decision
+
+Two independent native builds match byte-for-byte, including the raw intermediate,
+packaged WASM and all 49 candidate distribution files; source inputs are identical.
+The final stable-label API differs only in `qualifiedKernelRelease` in three
+runtime/identity files. Seventeen focused release tests pass (282 assertions),
+and the final npm archive has a verified file allowlist, exact distribution bytes,
+embedded native payload, exports and checksums.
+
+The game integration now passes **841 tests / zero failures / 7,408,721 assertions**
+in one run with the named SDK diagnostics. Application/tool types and the actual
+finite-worker bundle pass. The worker validates every new count/residual; explicit
+offline inspection reports owned observations without stepping. Source and exact
+candidate archive are backed up on the game's qualification branch. See
+`release-decision.json` for its commit and the precise release scope/limitations.
+Publishing and canonical game adoption still require registry verification.

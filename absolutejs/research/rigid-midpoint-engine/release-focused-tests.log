@@ -1,0 +1,29 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [87.36ms]
+(pass) diagnostic identity imports independently of the physics runtime [115.52ms]
+
+absolutejs/tests/free-rotation-stats.test.ts:
+(pass) free rotation observations are fresh, owned, and absent after restore [42.89ms]
+(pass) nonphysical moments report one rejection per solve and retain finite state [20.70ms]
+(pass) bounded profiles retain deep-owned free rotation counts across eligibility changes [7.84ms]
+(pass) free rotation observation sampling preserves exact physics snapshots [34.82ms]
+
+absolutejs/tests/step-profile.test.ts:
+(pass) bounded deterministic sampling measures every managed call and labels omitted native samples [31.43ms]
+(pass) sampling preserves exact native motion and borrowed profiler settings [69.80ms]
+(pass) captured native data and reports are owned and remain readable after the world is freed [2.02ms]
+(pass) World.step failures retain their exact thrown value and restore profiling [1.65ms]
+(pass) bad clocks do not stop physics and never become invented zero timings [7.47ms]
+(pass) finite duration sum overflow is explicit instead of serializing Infinity as a false measurement [2.06ms]
+(pass) native capture failure cannot change the successful physical step or escape as its failure [3.43ms]
+(pass) profiler setup/restore errors are counted while the underlying step still runs [2.58ms]
+(pass) sampling configuration is bounded and rejected before mutating the world [1.74ms]
+(pass) zero sample budget retains no native buffers and steps continue past the cap [42.89ms]
+(pass) event queue and hook arguments are forwarded without taking ownership [3.53ms]
+
+ 17 pass
+ 0 fail
+ 282 expect() calls
+Ran 17 tests across 3 files. [3.70s]
