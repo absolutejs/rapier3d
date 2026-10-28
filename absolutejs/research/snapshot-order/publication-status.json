@@ -1,0 +1,9 @@
+{
+  "version": "0.16.1",
+  "status": "awaiting-npm-publish-confirmation",
+  "sourceCommit": "876391b41cc6725e81284b23be23e66929c1656b",
+  "gameArchiveBackup": "a38232a853175c0c3dfccd026883586fed29d19b",
+  "archiveSha256": "8d13795948f5b0e5a2cbcc66cd3c2df52f1884282f1aa4c7ba3c06a422fdfba1",
+  "initialAttempt": "Rejected with E404; npm whoami then returned E401. User renewed login successfully; second attempt requires npm browser confirmation. No successful publication claimed.",
+  "canonicalGameVersion": "0.16.0"
+}
