@@ -1,0 +1,11 @@
+92 |       ),
+93 |       energy: Math.abs(initial.kinetic - compoundInitial.kinetic),
+94 |       relativeTensor: relativeTensorError,
+95 |     };
+96 |     if (Object.values(initialErrors).some((v) => v > 1e-5))
+97 |       throw Error("Compound physical initial state mismatch");
+                 ^
+error: Compound physical initial state mismatch
+      at /home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/compare-compound.ts:97:13
+
+Bun v1.4.4+absolute.1 (Linux x64)

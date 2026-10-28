@@ -1,0 +1,477 @@
+{
+  "scope": "Equivalent compound rigid body versus published fixed articulation from the same saved physical initial states. Independent midpoint reference uses 16 substeps per outer step. No native changes.",
+  "engine": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.12.0",
+    "qualifiedKernelRelease": "0.11.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=dbd99a8dfce020da3698056471262435d56d3f69#dbd99a8dfce020da3698056471262435d56d3f69",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "352f0e9ff982bd9486e3771bf65fab1944f81ca53f7a5f5d43bee56acdaff6a0",
+    "wasmBytes": 3298167,
+    "solverChanges": true
+  },
+  "sources": {
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/compare-compound.ts": "9354ab548758429289709105f10623268372591daaef71928190bf5db825104f",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/measurement.ts": "8d833cd1600b1be12aaf27093c11c9b403d7bd74ed239e2a8cff448eefd5f09a",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/reference.ts": "b310a75c81e8168f9f583843b67ab19379db97028810233034052652147d9788",
+    "/home/alexkahn/alex/hello-world/node_modules/@absolutejs/rapier3d/dist/rapier.mjs": "07acc722c7f378eaa1e9c4b763043331affc13361bd43ebe46b884c1f1cd37b7",
+    "/home/alexkahn/alex/hello-world/node_modules/@absolutejs/geometry/dist/principalInertia.js": "27fd81eaba420cdbe6b97c290b33e4e016fef7e4a07fa2a379bae21f4c3d45d0",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/native-comparison.json": "268ffa59f0c3093001e3ff545d490956ecd73254e3a0318de5b6476cefd62e20"
+  },
+  "rows": [
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 3.46311279292239e-9,
+        "linear": 1.7881393432617188e-7,
+        "angular": 7.749266887961424e-7,
+        "energy": 0.000001752592847736878,
+        "relativeTensor": 1.5338536073244784e-7
+      },
+      "assembly": {
+        "linear": 1.801261156452667,
+        "angular": 0.15766126420275398,
+        "energy": 1.1035638973415764,
+        "com": 0.10962755445833533,
+        "angle": 0.05734419275048269
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.17330387390318677,
+        "energy": 0.2791620601206617,
+        "com": 4.692469410332257e-7,
+        "angle": 0.05304591865618083
+      }
+    },
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.20535656443818e-8,
+        "linear": 1.2377834115800373e-7,
+        "angular": 5.915120891641096e-7,
+        "energy": 0.0000019050298440959068,
+        "relativeTensor": 9.116255374407182e-8
+      },
+      "assembly": {
+        "linear": 1.1610513810236374,
+        "angular": 0.10650380170794917,
+        "energy": 0.473257226047167,
+        "com": 0.06609557966550311,
+        "angle": 0.06252963598680729
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.1733038321916813,
+        "energy": 0.2791598910092148,
+        "com": 4.6572292760473536e-7,
+        "angle": 0.05304586182019092
+      }
+    },
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.2440034883192455e-8,
+        "linear": 2.1542358837725164e-7,
+        "angular": 4.283878070448832e-7,
+        "energy": 0.0000014722301919789516,
+        "relativeTensor": 9.392155755080912e-8
+      },
+      "assembly": {
+        "linear": 0.4564100373820644,
+        "angular": 0.029463717185569487,
+        "energy": 0.22609666380017757,
+        "com": 0.026935258893843163,
+        "angle": 0.016780370075850676
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.039640809643750385,
+        "energy": 0.06315864976608054,
+        "com": 0.000003172134971886024,
+        "angle": 0.012883741599402415
+      }
+    },
+    {
+      "units": 1,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.3406189609177908e-8,
+        "linear": 2.4755668231600746e-7,
+        "angular": 7.839934385259832e-7,
+        "energy": 0.000001468793406900204,
+        "relativeTensor": 1.4177295674243063e-7
+      },
+      "assembly": {
+        "linear": 0.2960105868138056,
+        "angular": 0.02948065423974008,
+        "energy": 0.12988414100334467,
+        "com": 0.0167385561671385,
+        "angle": 0.016780146811397577
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.039589984565943453,
+        "energy": 0.0631345208448657,
+        "com": 0.0000029060342843116193,
+        "angle": 0.012880354170892812
+      }
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.4450976580524703e-8,
+        "linear": 2.682209014892578e-7,
+        "angular": 5.739515533669171e-7,
+        "energy": 7.828381320962308e-7,
+        "relativeTensor": 1.4600035099555103e-7
+      },
+      "assembly": {
+        "linear": 0.4566421317683552,
+        "angular": 0.028821770499689935,
+        "energy": 0.22610448990934628,
+        "com": 0.02694317151150393,
+        "angle": 0.01680250122399769
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.04053307306421949,
+        "energy": 0.06324958250560542,
+        "com": 0.000002572561701962013,
+        "angle": 0.01294692206664474
+      }
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.0601554061270214e-8,
+        "linear": 2.2152168672261396e-7,
+        "angular": 8.024038926264752e-7,
+        "energy": 9.65678491837707e-7,
+        "relativeTensor": 1.8237228714031945e-7
+      },
+      "assembly": {
+        "linear": 0.2961939642347808,
+        "angular": 0.028822724075633993,
+        "energy": 0.1210594961927356,
+        "com": 0.01672278810782682,
+        "angle": 0.01680244490244716
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.04053498346750039,
+        "energy": 0.06323207937287378,
+        "com": 0.0000020787540647605447,
+        "angle": 0.012946921108847436
+      }
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 6.960924332436328e-9,
+        "linear": 1.2644054553268208e-7,
+        "angular": 7.562389803131012e-7,
+        "energy": 9.003365484261394e-7,
+        "relativeTensor": 1.6024326971926754e-7
+      },
+      "assembly": {
+        "linear": 0.11459828072589034,
+        "angular": 0.007398606911098029,
+        "energy": 0.05739206282837017,
+        "com": 0.0067505299808772465,
+        "angle": 0.004273173280843944
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.009902096829971953,
+        "energy": 0.01486539956152555,
+        "com": 0.000013193258255379327,
+        "angle": 0.003188670607496455
+      }
+    },
+    {
+      "units": 1,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.335497188782607e-8,
+        "linear": 2.715120786173433e-7,
+        "angular": 6.015410916571529e-7,
+        "energy": 9.66206222585697e-7,
+        "relativeTensor": 1.56301333786645e-7
+      },
+      "assembly": {
+        "linear": 0.074446514274133,
+        "angular": 0.007400612768065793,
+        "energy": 0.030822994570652185,
+        "com": 0.004194622734861749,
+        "angle": 0.0042727631508156
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.009899240107946072,
+        "energy": 0.014946909420146426,
+        "com": 0.000011351627691857103,
+        "angle": 0.003192517697691762
+      }
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.5932056592662714e-8,
+        "linear": 2.85465805378694e-7,
+        "angular": 8.490521523313944e-7,
+        "energy": 0.000003033910623173597,
+        "relativeTensor": 1.1745827843391126e-7
+      },
+      "assembly": {
+        "linear": 1.8012559708647655,
+        "angular": 0.15766294936038877,
+        "energy": 1.1035823888602216,
+        "com": 0.10962723100058692,
+        "angle": 0.0573439122548179
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.17330206828441494,
+        "energy": 0.2791784014380845,
+        "com": 0.0000010117416398837808,
+        "angle": 0.05304608129012365
+      }
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 1,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.711897785295431e-8,
+        "linear": 3.259278758878147e-7,
+        "angular": 2.056423376079475e-7,
+        "energy": 7.689672614219489e-7,
+        "relativeTensor": 3.366043925325e-8
+      },
+      "assembly": {
+        "linear": 1.1610500536765607,
+        "angular": 0.10650338897338675,
+        "energy": 0.4732577347757285,
+        "com": 0.0660950572678272,
+        "angle": 0.06252917151519806
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.1733038118001656,
+        "energy": 0.27916757973299866,
+        "com": 0.000001263350763143253,
+        "angle": 0.05304647761782197
+      }
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.1562322445139601e-8,
+        "linear": 2.3899009713938836e-7,
+        "angular": 8.226693424421603e-7,
+        "energy": 0.0000025817341189338094,
+        "relativeTensor": 1.4347078365499865e-7
+      },
+      "assembly": {
+        "linear": 0.45641097387031465,
+        "angular": 0.029462043000529157,
+        "energy": 0.22608601256674632,
+        "com": 0.026935240955633596,
+        "angle": 0.016780637116247568
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.0396432305474045,
+        "energy": 0.06311803410479655,
+        "com": 0.0000017062701072880454,
+        "angle": 0.012883430800689707
+      }
+    },
+    {
+      "units": 100,
+      "hz": 60,
+      "substeps": 4,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.8626738489878194e-8,
+        "linear": 2.608260026825078e-7,
+        "angular": 4.137476133448271e-7,
+        "energy": 6.523386133494569e-7,
+        "relativeTensor": 7.136242200709105e-8
+      },
+      "assembly": {
+        "linear": 0.29600712753184943,
+        "angular": 0.029482770752708064,
+        "energy": 0.12987732825977005,
+        "com": 0.016738703797310326,
+        "angle": 0.016779979160739117
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.039589221104412646,
+        "energy": 0.06316159787513698,
+        "com": 0.000004555479455464771,
+        "angle": 0.012881125071248094
+      }
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.197470942109265e-8,
+        "linear": 9.53674328840748e-8,
+        "angular": 1.5065090155977017e-7,
+        "energy": 3.8739723251524083e-7,
+        "relativeTensor": 3.634663178665733e-8
+      },
+      "assembly": {
+        "linear": 0.45664201066888466,
+        "angular": 0.028826388305726904,
+        "energy": 0.22613214787761038,
+        "com": 0.02694345065455908,
+        "angle": 0.01680210491623481
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.040534569446319293,
+        "energy": 0.06320953573429478,
+        "com": 9.597847713305894e-7,
+        "angle": 0.012944380493253164
+      }
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 1,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 1.0858059774445103e-8,
+        "linear": 3.157223755789117e-7,
+        "angular": 2.350108564832939e-7,
+        "energy": 7.365054344177224e-8,
+        "relativeTensor": 5.765672508360202e-8
+      },
+      "assembly": {
+        "linear": 0.2961955125671382,
+        "angular": 0.02882179454255106,
+        "energy": 0.12106002686672568,
+        "com": 0.016722781608098106,
+        "angle": 0.016801856076155926
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.04053322574567697,
+        "energy": 0.06318517592905692,
+        "com": 0.0000034685879012898354,
+        "angle": 0.012942687546128886
+      }
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": false,
+      "initialErrors": {
+        "mass": 0,
+        "com": 2.0641280959010434e-8,
+        "linear": 1.2212990250563834e-7,
+        "angular": 4.292635352623312e-7,
+        "energy": 8.151463894989774e-7,
+        "relativeTensor": 1.1021929829958205e-7
+      },
+      "assembly": {
+        "linear": 0.11459964926165511,
+        "angular": 0.007399691798118236,
+        "energy": 0.05739719670740584,
+        "com": 0.006750712776174638,
+        "angle": 0.0042727597257138025
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.00989222134699443,
+        "energy": 0.014949126047980599,
+        "com": 0.00001516206811053664,
+        "angle": 0.0031897578091010337
+      }
+    },
+    {
+      "units": 100,
+      "hz": 240,
+      "substeps": 4,
+      "reverse": true,
+      "initialErrors": {
+        "mass": 0,
+        "com": 9.7693808498558e-9,
+        "linear": 3.248097678860353e-7,
+        "angular": 3.719596619852531e-7,
+        "energy": 1.5309978351751852e-7,
+        "relativeTensor": 9.582500685651062e-8
+      },
+      "assembly": {
+        "linear": 0.0744349320087362,
+        "angular": 0.007398539460205094,
+        "energy": 0.03081515497011722,
+        "com": 0.004193551576147429,
+        "angle": 0.00427241457538729
+      },
+      "compound": {
+        "linear": 0,
+        "angular": 0.009892946062738765,
+        "energy": 0.014949166074504916,
+        "com": 0.000007288488194074118,
+        "angle": 0.003190626535025489
+      }
+    }
+  ]
+}

@@ -88,3 +88,34 @@ External forces, articulated joints, damping, contacts, changing topology, respo
 Jacobians and work balance all need separate qualification; a torque-free reference
 is not sufficient to replace those paths. Preserve the canonical stable engine
 until the candidate has passed those checks.
+
+## Equivalent compound body comparison
+
+`compare-compound.ts` now replays all sixteen saved states and creates a single
+rigid body with the same measured mass, COM, inertia, linear momentum and angular
+velocity. Its collider shapes have zero mass; the existing published geometry
+package supplies checked principal inertia/frame through explicit body mass
+properties. This controls an observed native collider-mass aggregation discrepancy
+instead of silently accepting a different initial object. The failed aggregation
+setup and logs are preserved in `compare-compound-aggregation-mismatch.ts` and
+`compound-*-mismatch*.log`. That discrepancy is being isolated separately.
+
+All corrected initial physical quantities match within 1e-5 in stated SI units;
+exact discrepancies are recorded in `compound-comparison.json`. The articulation
+reproduces the previously saved momentum, energy and COM deviations to 1e-12.
+The independent reference uses sixteen subdivisions per native outer step.
+
+Across sixteen cases the compound's linear momentum is exactly unchanged, with
+maximum COM position error 1.517e-5 m. However, its angular-momentum-vector error
+reaches 0.173304 kg m²/s and energy error reaches 0.279179 J; maximum orientation
+error against the reference is 0.053047 radians. These are distinct maxima, not
+one simultaneous state. The existing native single-body gyroscopic update
+preserves angular-momentum **length** by rescaling its explicit update; it does
+not establish vector or energy conservation. Combining every fixed assembly into
+one ordinary rigid body therefore does not resolve the rotational issue.
+
+Both native paths need a consistent angular-momentum and attitude update. The
+additional articulated translation drift also needs COM transport. Contact
+impulses and response matrices must use compatible poses. This evidence does not
+justify swapping the integrator in isolation or disabling physical gyroscopic
+terms. All six TypeScript sources pass strict checking (`all-types-final.log`).
