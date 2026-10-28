@@ -1,0 +1,26 @@
+    Updating crates.io index
+    Updating git repository `https://github.com/absolutejs/parry`
+warning: spurious network error (3 tries remaining): failed to resolve address for github.com: Temporary failure in name resolution; class=Net (12)
+warning: spurious network error (2 tries remaining): failed to resolve address for github.com: Temporary failure in name resolution; class=Net (12)
+warning: spurious network error (1 try remaining): failed to resolve address for github.com: Temporary failure in name resolution; class=Net (12)
+error: failed to get `parry3d` as a dependency of package `hello-rapier-wasm-probe v0.21.0 (/home/alexkahn/alex/rapier-contact-release/.absolutejs/native-source/03f7677a18457b8e2cca4a6ec321d87049e2846737ae9e873b1c05f71e27a279/bindings/typescript/builds/hello-wasm)`
+
+Caused by:
+  failed to load source for dependency `parry3d`
+
+Caused by:
+  Unable to update https://github.com/absolutejs/parry?rev=dbd99a8dfce020da3698056471262435d56d3f69#dbd99a8d
+
+Caused by:
+  failed to clone into: /home/alexkahn/alex/rapier-contact-release/.cache/cargo/git/db/parry-102a6f4221e05864
+
+Caused by:
+  revision dbd99a8dfce020da3698056471262435d56d3f69 not found
+
+Caused by:
+  network failure seems to have happened
+  if a proxy or similar is necessary `net.git-fetch-with-cli` may help here
+  https://doc.rust-lang.org/cargo/reference/config.html#netgit-fetch-with-cli
+
+Caused by:
+  failed to resolve address for github.com: Temporary failure in name resolution; class=Net (12)

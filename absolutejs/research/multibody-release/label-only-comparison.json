@@ -1,0 +1,14 @@
+[
+  {
+    "file": "rapier.mjs",
+    "onlyPackageVersionAndReleaseIdentityChanged": true,
+    "beforeSha256": "a995db0b4db98cca5ebeae461bebbd4f2bc222045fafaa80c26ab2a06d0a4f56",
+    "afterSha256": "1923540894781b96f3df2b3dc144f7134b84bc5dbbe6abd55b967e6053a01020"
+  },
+  {
+    "file": "build-info.mjs",
+    "onlyPackageVersionAndReleaseIdentityChanged": true,
+    "beforeSha256": "cefdf452866479abe2e43320e0e40dcb68f823a633dad216d34c7bf61a70e8b5",
+    "afterSha256": "591e04402fac9118141ac0009d652ba4dc8d79ddb1fe2f6e888cc7aee51484ce"
+  }
+]

@@ -1,0 +1,70 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [23.58ms]
+(pass) invalid contact policy values fail before mutating native state [0.50ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [20.25ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [6.38ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [7.00ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [6.86ms]
+
+absolutejs/tests/dynamic-impact.test.ts:
+(pass) unequal moving spheres obey the analytic impact law across units, ordering and timesteps [253.00ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [917.36ms]
+(pass) live separation follows pose changes while cached distance stays fixed [828.16ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [825.09ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [1.29ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [0.88ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [0.92ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [1.95ms]
+(pass) prescribed position endpoint remains authoritative [2.01ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.73ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [5.69ms]
+(pass) current-body query composes noncommuting parent and child rotations [3.29ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.12ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [2.18ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [1547.34ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [2.71ms]
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [17.51ms]
+
+absolutejs/tests/multibody-writeback.test.ts:
+(pass) articulation link velocities expose current solved momentum at every step [214.37ms]
+(pass) fixed articulation velocities use final COM geometry after off-center impacts [131.25ms]
+(pass) a revolute articulation exposes COM velocity tangent to its current hinge [11.08ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [6.32ms]
+(pass) diagnostic identity imports independently of the physics runtime [15.01ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [8.36ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [10.10ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [10.40ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [8.73ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [42.23ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [3.34ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [989.00ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [808.73ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [2394.04ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [2593.65ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [6745.74ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0.3 [5471.63ms]
+
+ 40 pass
+ 0 fail
+ 57606 expect() calls
+Ran 40 tests across 12 files. [27.15s]

@@ -1,0 +1,41 @@
+{
+  "gpu": false,
+  "result": {
+    "buildInfo": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.8.0",
+      "qualifiedKernelRelease": "private-multibody-final-com-writeback",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=dbd99a8dfce020da3698056471262435d56d3f69#dbd99a8dfce020da3698056471262435d56d3f69",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "3a9f1a21f01b4868952cd997cf9b47d83f3e4fdd714d42f43b3cdd57912d6303",
+      "wasmBytes": 3293062,
+      "solverChanges": true
+    },
+    "multibodyMomentumError": 0,
+    "multibodyRigidVelocityError": 1.1794264061334446e-7,
+    "simplexMinimumDistanceCm": 0.0006346320733428001,
+    "kinematicPositionErrorM": 3.5762786865234375e-7,
+    "kinematicRotationErrorRad": 3.3717478808715265e-7,
+    "currentBodyPoseQuery": true,
+    "totalCcdMs": 20.699999999999996,
+    "totalToiMs": 17.899999999999988,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "contactPolicyControls": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}

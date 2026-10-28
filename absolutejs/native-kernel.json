@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "candidate-multibody-final-com",
+  "qualifiedKernelRelease": "0.8.1",
   "wasmSha256": "3a9f1a21f01b4868952cd997cf9b47d83f3e4fdd714d42f43b3cdd57912d6303",
   "wasmBytes": 3293062,
   "solverChanges": true

@@ -1,0 +1,5 @@
+{
+  "cases": 24,
+  "fullRecordedRowsIdentical": true,
+  "scope": "bounded compound controls including full final body poses/velocities and aggregate invariants"
+}
