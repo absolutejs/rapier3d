@@ -577,19 +577,23 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         let mut solver_vel1 = bodies.gather_vels(constraint.solver_vel1);
         let mut solver_vel2 = bodies.gather_vels(constraint.solver_vel2);
 
-        let num = constraint.num_contacts as usize;
-        for (info, normal_part) in self.infos[..num]
-            .iter()
-            .zip(constraint.normal_part[..num].iter_mut())
-        {
-            normal_part.solve_restitution(
-                info.restitution_seed,
-                &constraint.dir1,
-                &constraint.im1,
-                &constraint.im2,
-                &mut solver_vel1,
-                &mut solver_vel2,
-            );
+        // PRIVATE two-body diagnostic: test convergence within one contact chunk.
+        // Does not iterate across chunks, manifolds, or multibodies. Not release-ready.
+        for _ in 0..16 {
+            let num = constraint.num_contacts as usize;
+            for (info, normal_part) in self.infos[..num]
+                .iter()
+                .zip(constraint.normal_part[..num].iter_mut())
+            {
+                normal_part.solve_restitution(
+                    info.restitution_seed,
+                    &constraint.dir1,
+                    &constraint.im1,
+                    &constraint.im2,
+                    &mut solver_vel1,
+                    &mut solver_vel2,
+                );
+            }
         }
 
         bodies.scatter_vels(constraint.solver_vel1, solver_vel1);
