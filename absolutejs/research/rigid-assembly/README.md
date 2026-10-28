@@ -39,7 +39,11 @@ maximum origin error 7.86945e-7 m. The native build guard correctly rejected
 unqualified bytes before explicitly marking this manifest private/research.
 Native WASM SHA-256 is
 `4686ddcbc3804f6692e67a93a0a99eb54ea92babc4ad293a54010ef54b7c9ec5`
-(3,307,856 bytes). An independent build is still required.
+(3,307,856 bytes). An independent checkout/target build matches all 49
+shipped distribution files and packaged native bytes exactly. Raw compiler
+intermediates differ only in the `__wasm_bindgen_unstable` custom metadata;
+all executable/data sections match. The audit records both raw hashes and no
+source-input differences. Do not describe the raw intermediate files as equal.
 
 The game records an 80-case comparison in `docs/root-origin-2026-10-28`.
 Only eight local-COM articulation cases change; 72 other physical rows are exact.
