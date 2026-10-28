@@ -1,0 +1,32 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-work-restitution.test.ts:
+(pass) head-on material transfer e=0 hz=60 iterations=1 touching=false [34.97ms]
+(pass) head-on material transfer e=0 hz=60 iterations=1 touching=true [5.34ms]
+(pass) head-on material transfer e=0 hz=60 iterations=4 touching=false [7.56ms]
+(pass) head-on material transfer e=0 hz=60 iterations=4 touching=true [8.20ms]
+(pass) head-on material transfer e=0 hz=240 iterations=1 touching=false [13.87ms]
+(pass) head-on material transfer e=0 hz=240 iterations=1 touching=true [6.08ms]
+(pass) head-on material transfer e=0 hz=240 iterations=4 touching=false [10.80ms]
+(pass) head-on material transfer e=0 hz=240 iterations=4 touching=true [11.72ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=1 touching=false [4.32ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=1 touching=true [11.49ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=4 touching=false [2.87ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=4 touching=true [5.76ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=1 touching=false [6.13ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=1 touching=true [3.54ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=4 touching=false [5.28ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=4 touching=true [6.11ms]
+(pass) head-on material transfer e=1 hz=60 iterations=1 touching=false [3.00ms]
+(pass) head-on material transfer e=1 hz=60 iterations=1 touching=true [1.73ms]
+(pass) head-on material transfer e=1 hz=60 iterations=4 touching=false [1.57ms]
+(pass) head-on material transfer e=1 hz=60 iterations=4 touching=true [1.71ms]
+(pass) head-on material transfer e=1 hz=240 iterations=1 touching=false [4.87ms]
+(pass) head-on material transfer e=1 hz=240 iterations=1 touching=true [3.48ms]
+(pass) head-on material transfer e=1 hz=240 iterations=4 touching=false [3.89ms]
+(pass) head-on material transfer e=1 hz=240 iterations=4 touching=true [4.84ms]
+
+ 24 pass
+ 0 fail
+ 144 expect() calls
+Ran 24 tests across 1 file. [404.00ms]
