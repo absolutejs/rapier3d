@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-predictive-recycle-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 49,
+  "packagedNativeSha256": "f1539c74bb9192cf8f6dfaa95bb6654a605d326faa0bdd02939d798a455bc57c",
+  "packagedNativeBytes": 3357159,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "8f4b8d1ae42c324b69df1019c263eb0dcf117e93ad7d70aaf2f12411f79e256e",
+  "rawIndependentSha256": "b7ade756ebf6e43237bde89a6c69ae91b44f77e4d7b0f91eca3fe6fb746af440",
+  "sourceInputDifferences": [],
+  "primarySourceContentSha256": "41a29548f26642f7ec27328a368dc9343e6a2759ea867be82af887e575c85825",
+  "independentSourceContentSha256": "41a29548f26642f7ec27328a368dc9343e6a2759ea867be82af887e575c85825",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

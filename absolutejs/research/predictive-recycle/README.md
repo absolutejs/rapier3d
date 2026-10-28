@@ -1,3 +1,12 @@
+# Convex-contact fix qualified for 0.16.2 release preparation
+
+All package, game, native feature, browser, tree and terrain checks pass for
+the convex-only `.2` candidate. Independent builds match all 49 shipped files
+and packaged WASM; raw executable/data sections match and only unshipped
+wasm-bindgen custom metadata differs. The following records are chronological,
+including rejected broad candidates and interrupted research commands. Version
+0.16.2 release archive/API identity qualification and publication are pending.
+
 # Convex candidate pending; broad candidate rejected
 
 The broad `.1` candidate passes package checks but fails one of 844 game tests:
@@ -177,3 +186,13 @@ target directory and verified bindgen archive; byte comparison is pending.
 
 The game qualification branch checkpoints are `2179fbe1` for all 844 tests
 and `81301502` for 18 full-drop physical comparisons. Both are pushed.
+
+## Final release archive
+
+Public 0.16.2 passes all 227 package tests and the GPU-disabled browser. Its
+audited archive SHA-256 is `b5df5dd0a114e90b48c0b4422efd4ede49a6dd831d03f6d451587fefadd97694`.
+Strict comparison to qualified private `.2` permits only package identity,
+qualified-kernel identity and README updates; all other runtime/declaration
+bytes and the native payload are exact. Independent public API builds match
+all 49 shipped files. The exact archive is backed up in the game qualification
+checkout and its 53 installed files audit exactly. Publication is pending.
