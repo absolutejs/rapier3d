@@ -635,6 +635,11 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 };
             let pgs_budget = if adaptive_compression { group.num_pgs_iterations.max(256) }
                 else { group.num_pgs_iterations };
+            if adaptive_compression {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.begin_precise_normal_solve();
+                }
+            }
             for pgs_iter in 0..pgs_budget {
                 // Joint warm-starting is fused into the first biased pass: each claimed joint
                 // applies its warm impulse right before being solved. Soft-body constraints do
@@ -664,6 +669,12 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                             &vs.solver_bodies, &vs.generic_solver_vels))
                         .fold(0.0 as Real, Real::max);
                     if residual <= 1.0e-6 * params.length_unit { break; }
+                }
+            }
+
+            if adaptive_compression {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.end_precise_normal_solve();
                 }
             }
 
@@ -798,6 +809,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                     .zip(contacts.generic_velocity_constraints.iter_mut()) {
                     builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies,
                         unsafe { &*ctx.multibodies }, c, &mut contacts.generic_jacobians);
+                    c.begin_precise_normal_solve();
                 }
             }
             for _restitution_sweep in 0..restitution_sweeps {
@@ -890,6 +902,11 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                     .fold(0.0 as Real, Real::max);
                 if residual <= 1.0e-6 * params.length_unit { break; }
             }
+            }
+            if adaptive_generic {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.end_precise_normal_solve();
+                }
             }
         }
     }

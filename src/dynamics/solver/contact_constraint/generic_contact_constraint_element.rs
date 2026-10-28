@@ -380,6 +380,7 @@ impl ContactConstraintNormalPart<Real> {
     #[inline]
     pub fn generic_solve(
         &mut self,
+        precise_impulse: Option<&mut f64>,
         cfm_factor: Real,
         j_id: usize,
         jacobians: &DVector,
@@ -411,9 +412,21 @@ impl ContactConstraintNormalPart<Real> {
             solver_vels,
         ) + self.rhs;
 
-        let new_impulse = cfm_factor * (self.impulse - self.r * dvel).max(0.0);
-        let dlambda = new_impulse - self.impulse;
-        self.impulse = new_impulse;
+        let dlambda = if let Some(precise) = precise_impulse {
+            // Compute the increment before narrowing the accumulated impulse.
+            // Otherwise small corrections disappear when lambda is large.
+            let new_impulse = (cfm_factor as f64)
+                * (*precise - (self.r as f64) * (dvel as f64)).max(0.0);
+            let delta = (new_impulse - *precise) as Real;
+            *precise = new_impulse;
+            self.impulse = new_impulse as Real;
+            delta
+        } else {
+            let new_impulse = cfm_factor * (self.impulse - self.r * dvel).max(0.0);
+            let delta = new_impulse - self.impulse;
+            self.impulse = new_impulse;
+            delta
+        };
 
         solver_vel1.apply_impulse(
             j_id1,
@@ -510,6 +523,7 @@ impl GenericContactConstraint {
     #[inline]
     pub fn generic_solve_group(
         cfm_factor: Real,
+        mut precise_impulses: Option<&mut [f64]>,
         normal_parts: &mut [ContactConstraintNormalPart<Real>],
         tangent_parts: &mut [ContactConstraintTangentPart<Real>],
         jacobians: &DVector,
@@ -536,8 +550,9 @@ impl GenericContactConstraint {
         if solve_restitution {
             let mut nrm_j_id = normal_j_id(j_id, ndofs1, ndofs2);
 
-            for normal_part in &mut *normal_parts {
+            for (point, normal_part) in normal_parts.iter_mut().enumerate() {
                 normal_part.generic_solve(
+                    precise_impulses.as_deref_mut().map(|values| &mut values[point]),
                     cfm_factor,
                     nrm_j_id,
                     jacobians,
