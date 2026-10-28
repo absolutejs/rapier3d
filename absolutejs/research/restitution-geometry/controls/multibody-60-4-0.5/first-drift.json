@@ -1,0 +1,48 @@
+{
+  "fixture": {
+    "mode": "multibody",
+    "restitution": 0.5,
+    "offset": 0.15,
+    "angle": 0.37,
+    "hz": 60,
+    "units": 100,
+    "iterations": 4,
+    "ccd": false,
+    "contactFreeAfter": null,
+    "touchingStart": true,
+    "disableContactBias": true
+  },
+  "step": 0,
+  "initial": {
+    "linear": [
+      -18.646546936035158,
+      -7.232308959960938,
+      0
+    ],
+    "angular": [
+      0,
+      0,
+      2.999999757307495
+    ],
+    "energy": 40.000000553009336
+  },
+  "state": {
+    "linear": [
+      -18.676758422851563,
+      -7.24369468688965,
+      0
+    ],
+    "angular": [
+      0,
+      0,
+      2.906232528577855
+    ],
+    "energy": 26.7853764501212
+  },
+  "momentumError": 0.032285735446990003,
+  "angularError": 0.09376722872963983,
+  "beforeSha256": "e384911d529148ad72fe344e354040415fea936fe69dc4aba7e7b97889bd999c",
+  "afterSha256": "ba9c55651783780597ed19a7aaea0dc78ef9e0dfe5488afbad0486384e9e82f4",
+  "roundTrip": true,
+  "replayExact": true
+}

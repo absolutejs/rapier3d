@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "/home/alexkahn/alex/rapier-restitution-research/dist/rapier.mjs": "041a6eca76bc27eb71982dc4b2e4dd8913339b077160a7d119b6e571c8d3e93f",
+    "/home/alexkahn/alex/hello-world/scripts/probe-articulated-impact.ts": "dff9e9ac2151563bdd316423fcf8d9d8b4577b24f5e1d94ac089bcd2d720071c",
+    "scripts/probe-dynamic-impacts.ts": "8debc742d927eec73a604aae5dd19ab0840bb7d763ceb9ffa3f32f216c2636d2",
+    "src/tooling/principalAngularState.ts": "c6d2da570cddb82073c32c82bd1da71420e7bf0c1d965a488458b0de71a70671",
+    "/home/alexkahn/alex/hello-world/docs/articulated-drift-2026-10-27/restitution-qualified/multibody-60-4-0.json": "81c228384c7e4b92f2a5e95895dc252e07cce9074b47a8794b9e343b2e61dfd6"
+  },
+  "scope": "Stationary rigid compound versus fixed articulation, including off-center angular response; CPU only"
+}

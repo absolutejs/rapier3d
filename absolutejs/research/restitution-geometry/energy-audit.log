@@ -1,0 +1,90 @@
+[
+  {
+    "hz": 60,
+    "iterations": 1,
+    "restitution": 0.5,
+    "relativeNormalVelocity": -0.01148374483740762,
+    "effectiveInverseMass": 0.4101212134941618,
+    "impulse": 4.679987487890874,
+    "predictedEnergy": 26.665304648021667,
+    "measuredEnergy": 26.665304725901002,
+    "predictionError": 7.78793349809348e-08
+  },
+  {
+    "hz": 60,
+    "iterations": 1,
+    "restitution": 1,
+    "relativeNormalVelocity": -0.01148374483740762,
+    "effectiveInverseMass": 0.4101212134941618,
+    "impulse": 9.331974120279618,
+    "predictedEnergy": 39.97844188733134,
+    "measuredEnergy": 39.97844079359583,
+    "predictionError": 1.0937355128248782e-06
+  },
+  {
+    "hz": 60,
+    "iterations": 4,
+    "restitution": 0.5,
+    "relativeNormalVelocity": -0.007377715675656579,
+    "effectiveInverseMass": 0.4101206829162966,
+    "impulse": 4.6699817841189954,
+    "predictedEnergy": 26.66537099345723,
+    "measuredEnergy": 26.665370916814314,
+    "predictionError": 7.664291601372497e-08
+  },
+  {
+    "hz": 60,
+    "iterations": 4,
+    "restitution": 1,
+    "relativeNormalVelocity": -0.007377715675656579,
+    "effectiveInverseMass": 0.4101206829162966,
+    "impulse": 9.321974434836587,
+    "predictedEnergy": 39.97852545612635,
+    "measuredEnergy": 39.97852490450057,
+    "predictionError": 5.516257814974779e-07
+  },
+  {
+    "hz": 240,
+    "iterations": 1,
+    "restitution": 0.5,
+    "relativeNormalVelocity": -0.0028613812922029663,
+    "effectiveInverseMass": 0.409415589019775,
+    "impulse": 4.666993234675791,
+    "predictedEnergy": 26.673069974328584,
+    "measuredEnergy": 26.673071543381788,
+    "predictionError": 1.5690532038092897e-06
+  },
+  {
+    "hz": 240,
+    "iterations": 1,
+    "restitution": 1,
+    "relativeNormalVelocity": -0.0028613812922029663,
+    "effectiveInverseMass": 0.409415589019775,
+    "impulse": 9.32699752860545,
+    "predictedEnergy": 40.00915229858097,
+    "measuredEnergy": 40.009153402524724,
+    "predictionError": 1.1039437524118512e-06
+  },
+  {
+    "hz": 240,
+    "iterations": 4,
+    "restitution": 0.5,
+    "relativeNormalVelocity": -0.0017838432631731432,
+    "effectiveInverseMass": 0.40941556457269823,
+    "impulse": 4.66436162017962,
+    "predictedEnergy": 26.67307387197393,
+    "measuredEnergy": 26.6730740281374,
+    "predictionError": 1.561634697111458e-07
+  },
+  {
+    "hz": 240,
+    "iterations": 4,
+    "restitution": 1,
+    "relativeNormalVelocity": -0.0017838432631731432,
+    "effectiveInverseMass": 0.40941556457269823,
+    "impulse": 9.324366192368075,
+    "predictedEnergy": 40.009156992552235,
+    "measuredEnergy": 40.00915531497301,
+    "predictionError": 1.677579227532533e-06
+  }
+]
