@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "private-adaptive-coupled-restitution-unqualified",
-  "wasmSha256": "85714e33c03d99da758023b0f9c824a01c94b9c9369f7a54b0cb8d7f19f59990",
-  "wasmBytes": 3301889,
+  "qualifiedKernelRelease": "private-adaptive-normal-compression-unqualified",
+  "wasmSha256": "ce48b3b0eeabab21bc0bfc80a270c1ebf23021359d71de0c742c731bea13a13c",
+  "wasmBytes": 3303168,
   "solverChanges": true
 }
