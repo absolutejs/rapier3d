@@ -179,6 +179,29 @@ try {
    inertiaReconstructionError = Math.hypot(...actual.map((v,i)=>v-expected[i]))/Math.hypot(...expected);
    if(!Number.isFinite(inertiaReconstructionError)||inertiaReconstructionError>3e-6)throw Error('Browser compound inertia reconstruction failed');
   } finally {inertiaWorld.free();}
-  postMessage({inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  // Equivalent authored origins must not change physical assembly motion.
+  const originWorlds = [new R.World({x:0,y:0,z:0}), new R.World({x:0,y:0,z:0})];
+  let rootOriginError = 0;
+  try {
+   const pairs = originWorlds.map((world,index)=>{
+    const zero={x:0,y:0,z:0}, q={...zero,w:1}, offset={x:index*.7,y:-index*.3,z:index*.2};
+    world.timestep=1/120;world.numSolverIterations=4;
+    const a=world.createRigidBody(R.RigidBodyDesc.dynamic().setCanSleep(false).setTranslation(-offset.x,-offset.y,-offset.z).setAdditionalMassProperties(2,offset,{x:.4,y:.4,z:.4},q));
+    const b=world.createRigidBody(R.RigidBodyDesc.dynamic().setCanSleep(false).setTranslation(1,0,0).setAdditionalMassProperties(1,zero,{x:.2,y:.2,z:.2},q));
+    const joint=world.createMultibodyJoint(R.JointData.fixed({x:1+offset.x,y:offset.y,z:offset.z},q,zero,q),a,b,true);
+    if(!world.multibodyJoints.setGeneralizedDamping(joint.handle,new Float32Array(6)))throw Error('Origin fixture damping rejected');
+    world.step();a.addTorque({x:36,y:-24,z:48},true);world.step();a.resetTorques(true);
+    return [a,b];
+   });
+   for(let step=0;step<120;step++){
+    for(const world of originWorlds)world.step();
+    for(let i=0;i<2;i++){
+     const a=pairs[0][i].worldCom(),b=pairs[1][i].worldCom();
+     rootOriginError=Math.max(rootOriginError,Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z));
+    }
+   }
+   if(!Number.isFinite(rootOriginError)||rootOriginError>5e-5)throw Error('Floating-root origin changes browser motion');
+  }finally{for(const world of originWorlds)world.free();}
+  postMessage({rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

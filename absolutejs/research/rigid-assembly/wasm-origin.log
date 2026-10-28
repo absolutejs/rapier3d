@@ -1,0 +1,11 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/articulation-origin.test.ts:
+WASM_ORIGIN_MAXIMUM 0.000001425229077601911
+(pass) floating-root origins preserve physical motion for fixed and movable assemblies [215.62ms]
+(pass) offset-root assembly snapshots replay exactly through free flight [58.23ms]
+
+ 2 pass
+ 0 fail
+ 7595 expect() calls
+Ran 2 tests across 1 file. [534.00ms]

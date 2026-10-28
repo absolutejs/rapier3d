@@ -31,7 +31,23 @@ These comparisons establish coordinate covariance, not physical conservation.
 
 The five previous ordinary-body tests pass. All 542 excluded/rejected control
 states still match their original baseline exactly; see `free-controls-comparison.json`.
-No WASM, browser, game, constrained movable-joint or 2D qualification yet.
+Subsequent qualification adds 16 movable hinge/prismatic joint cases, all passing.
+The WASM package passes 195 tests (85,181 assertions), including eight origin
+covariance cases (maximum 1.42523e-6) and 120 exact snapshot replay steps.
+Strict declaration checks pass. GPU-disabled Chromium worker checks pass with
+maximum origin error 7.86945e-7 m. The native build guard correctly rejected
+unqualified bytes before explicitly marking this manifest private/research.
+Native WASM SHA-256 is
+`4686ddcbc3804f6692e67a93a0a99eb54ea92babc4ad293a54010ef54b7c9ec5`
+(3,307,856 bytes). An independent build is still required.
+
+The game records an 80-case comparison in `docs/root-origin-2026-10-28`.
+Only eight local-COM articulation cases change; 72 other physical rows are exact.
+The largest articulation angular-momentum error drops from 0.5974573 to
+0.08135878, and COM position error from 0.11963865 m to 0.01168200 m.
+Linear-momentum and energy maxima are unchanged; residual drift remains.
+All 32 captured snapshot pairs have verified hashes, restoration and exact replay.
+No 2D qualification or gameplay visual/performance claim is made.
 
 ## Reproduction and retained failures
 

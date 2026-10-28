@@ -13,6 +13,17 @@ fn fixture_config(
     tilted: bool,
     gravity: bool,
 ) -> (PhysicsWorld, [RigidBodyHandle; 2]) {
+    fixture_joint(offset, hz, substeps, scale, tilted, gravity, "fixed")
+}
+fn fixture_joint(
+    offset: Vector,
+    hz: usize,
+    substeps: usize,
+    scale: f32,
+    tilted: bool,
+    gravity: bool,
+    kind: &str,
+) -> (PhysicsWorld, [RigidBodyHandle; 2]) {
     let mut world = PhysicsWorld::new();
     world.gravity = if gravity {
         Vector::new(0.0, -9.81 * scale, 0.0)
@@ -52,19 +63,30 @@ fn fixture_config(
                 Vector::splat(0.2 * scale * scale),
             )),
     );
+    let anchor = child_center - center + offset;
+    let data: GenericJoint = match kind {
+        "fixed" => FixedJointBuilder::new()
+            .local_anchor1(anchor)
+            .build()
+            .into(),
+        "revolute" => RevoluteJointBuilder::new(Vector::Y)
+            .local_anchor1(anchor)
+            .build()
+            .into(),
+        "prismatic" => PrismaticJointBuilder::new(Vector::Y)
+            .local_anchor1(anchor)
+            .build()
+            .into(),
+        _ => panic!("unknown joint"),
+    };
     let joint = world
         .multibody_joints
-        .insert(
-            root,
-            child,
-            FixedJointBuilder::new().local_anchor1(child_center - center + offset),
-            true,
-        )
+        .insert(root, child, data, true)
         .unwrap();
     world.step();
     let (mb, _) = world.multibody_joints.get_mut(joint).unwrap();
     mb.damping_mut().fill(0.0);
-    mb.generalized_velocity_mut().copy_from_slice(&[
+    mb.generalized_velocity_mut().as_mut_slice()[..6].copy_from_slice(&[
         0.3 * scale,
         -0.2 * scale,
         0.1 * scale,
@@ -72,6 +94,9 @@ fn fixture_config(
         -0.7,
         0.9,
     ]);
+    if kind != "fixed" {
+        mb.generalized_velocity_mut()[6] = 0.35;
+    }
     // Generalized state is authoritative; body descriptor velocities are not used.
     (world, [root, child])
 }
@@ -158,4 +183,51 @@ fn root_origin_invariance_matrix() {
     }
     assert_eq!(cases, 48);
     println!("ORIGIN_MATRIX_SUMMARY cases={cases} position={maximum_position:e} velocity={maximum_velocity:e}");
+}
+
+#[test]
+fn movable_joint_root_origin_invariance() {
+    let mut cases = 0;
+    let mut maximum = 0.0_f32;
+    for kind in ["revolute", "prismatic"] {
+        for hz in [60, 240] {
+            for substeps in [1, 4] {
+                for gravity in [false, true] {
+                    let (mut base, a) =
+                        fixture_joint(Vector::ZERO, hz, substeps, 1.0, true, gravity, kind);
+                    let (mut shifted, b) = fixture_joint(
+                        Vector::new(-1.0, 0.2, 0.6),
+                        hz,
+                        substeps,
+                        1.0,
+                        true,
+                        gravity,
+                        kind,
+                    );
+                    let mut error = 0.0_f32;
+                    for _ in 0..hz {
+                        base.step();
+                        shifted.step();
+                        for i in 0..2 {
+                            error = error.max((com(&base, a[i]) - com(&shifted, b[i])).length());
+                            error = error.max(
+                                (base.bodies[a[i]].linvel() - shifted.bodies[b[i]].linvel())
+                                    .length(),
+                            );
+                            error = error.max(
+                                (base.bodies[a[i]].angvel() - shifted.bodies[b[i]].angvel())
+                                    .length(),
+                            );
+                        }
+                    }
+                    println!("MOVABLE_ORIGIN kind={kind} hz={hz} substeps={substeps} gravity={gravity} maximum={error:e}");
+                    assert!(error < 5e-5);
+                    maximum = maximum.max(error);
+                    cases += 1;
+                }
+            }
+        }
+    }
+    assert_eq!(cases, 16);
+    println!("MOVABLE_ORIGIN_SUMMARY cases={cases} maximum={maximum:e}");
 }
