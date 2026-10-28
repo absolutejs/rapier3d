@@ -30,3 +30,31 @@ test('articulation link velocities expose current solved momentum at every step'
   }finally{world.free();}
  }
 });
+
+test('fixed articulation velocities use final COM geometry after off-center impacts',()=>{
+ for(const hz of [60,240,960])for(const units of [1,100])for(const localOffset of [0,.07])for(const angle of [0,.37]){
+  const world=new R.World({x:0,y:0,z:0});
+  try{
+   world.timestep=1/hz;world.lengthUnit=units;world.numSolverIterations=4;
+   const c=Math.cos(angle),s=Math.sin(angle),q={x:0,y:0,z:Math.sin(angle/2),w:Math.cos(angle/2)};
+   const body=(x:number,y:number,speed:number)=>world.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation((x*c-y*s)*units,(x*s+y*c)*units,0).setRotation(q).setLinvel(speed*c*units,speed*s*units,0).setCanSleep(false).setCcdEnabled(true));
+   const a=body(-.65,0,0),b=body(0,0,0),incoming=body(.65,.15,-4);
+   world.createCollider(R.ColliderDesc.ball(.25*units).setTranslation(0,localOffset*units,0).setMass(2).setFriction(0).setRestitution(1),a);
+   world.createCollider(R.ColliderDesc.ball(.25*units).setTranslation(0,-localOffset*units,0).setMass(3).setFriction(0).setRestitution(1),b);
+   world.createCollider(R.ColliderDesc.ball(.25*units).setMass(5).setFriction(0).setRestitution(1),incoming);
+   const identity={x:0,y:0,z:0,w:1};
+   world.createMultibodyJoint(R.JointData.fixed({x:.65*units,y:0,z:0},identity,{x:0,y:0,z:0},identity),a,b,true).setContactsEnabled(false);
+   let maximumSpin=0;
+   for(let step=0;step<hz/4;step++){
+    world.step();
+    const ca=a.worldCom(),cb=b.worldCom(),va=a.linvel(),vb=b.linvel(),w=a.angvel(),wb=b.angvel();
+    const dx=cb.x-ca.x,dy=cb.y-ca.y,dz=cb.z-ca.z;
+    const error=Math.hypot(vb.x-va.x-w.y*dz+w.z*dy,vb.y-va.y-w.z*dx+w.x*dz,vb.z-va.z-w.x*dy+w.y*dx)/units;
+    expect(error).toBeLessThan(3e-5);
+    expect(Math.hypot(w.x-wb.x,w.y-wb.y,w.z-wb.z)).toBeLessThan(3e-5);
+    maximumSpin=Math.max(maximumSpin,Math.hypot(w.x,w.y,w.z));
+   }
+   expect(maximumSpin).toBeGreaterThan(.1);
+  }finally{world.free();}
+ }
+});

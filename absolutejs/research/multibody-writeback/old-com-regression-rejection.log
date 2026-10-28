@@ -1,0 +1,23 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/multibody-writeback.test.ts:
+(pass) articulation link velocities expose current solved momentum at every step [627.54ms]
+48 |    for(let step=0;step<hz/4;step++){
+49 |     world.step();
+50 |     const ca=a.worldCom(),cb=b.worldCom(),va=a.linvel(),vb=b.linvel(),w=a.angvel(),wb=b.angvel();
+51 |     const dx=cb.x-ca.x,dy=cb.y-ca.y,dz=cb.z-ca.z;
+52 |     const error=Math.hypot(vb.x-va.x-w.y*dz+w.z*dy,vb.y-va.y-w.z*dx+w.x*dz,vb.z-va.z-w.x*dy+w.y*dx)/units;
+53 |     expect(error).toBeLessThan(3e-5);
+                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.00003
+Received: 0.008233036692447359
+
+      at <anonymous> (/home/alexkahn/alex/rapier-multibody-research/absolutejs/tests/multibody-writeback.test.ts:53:19)
+(fail) fixed articulation velocities use final COM geometry after off-center impacts [3.43ms]
+
+ 1 pass
+ 1 fail
+ 3895 expect() calls
+Ran 2 tests across 1 file. [966.00ms]
