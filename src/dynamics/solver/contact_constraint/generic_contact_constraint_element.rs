@@ -337,26 +337,10 @@ impl ContactConstraintTangentPart<Real> {
     }
 }
 
-// Per-contact signed normal work and maximum absorbed work. f64 accumulation
-// avoids throwing away small corrections to an already large compression ledger.
-// This is a private restitution-law experiment, not a global energy correction.
-fn record_normal_work(velocity: Real, impulse: Real, effective_mass: Real, work: &mut f64, peak: &mut f64) {
-    if effective_mass <= 0.0 || impulse == 0.0 { return; }
-    let v = velocity as f64; let j = impulse as f64; let m = effective_mass as f64;
-    let vertex = -v * m;
-    if vertex >= j.min(0.0) && vertex <= j.max(0.0) {
-        *peak = (*peak).max(-(*work - 0.5 * m * v * v));
-    }
-    *work += v * j + 0.5 * j * j / m;
-    *peak = (*peak).max(-*work).max(0.0);
-}
-
 impl ContactConstraintNormalPart<Real> {
     #[inline]
     pub fn generic_warmstart(
         &mut self,
-        work: &mut f64,
-        peak: &mut f64,
         j_id: usize,
         jacobians: &DVector,
         dir1: Vector,
@@ -370,10 +354,6 @@ impl ContactConstraintNormalPart<Real> {
     ) {
         let j_id1 = j_id1(j_id, ndofs1, ndofs2);
         let j_id2 = j_id2(j_id, ndofs1, ndofs2);
-
-        let velocity = solver_vel1.dvel(j_id1, ndofs1, jacobians, dir1, self.torque_dir1, solver_vels)
-            + solver_vel2.dvel(j_id2, ndofs2, jacobians, -dir1, self.torque_dir2, solver_vels);
-        record_normal_work(velocity, self.impulse, self.r, work, peak);
 
         solver_vel1.apply_impulse(
             j_id1,
@@ -400,9 +380,6 @@ impl ContactConstraintNormalPart<Real> {
     #[inline]
     pub fn generic_solve(
         &mut self,
-        work: &mut f64,
-        peak: &mut f64,
-        work_restitution: Option<Real>,
         cfm_factor: Real,
         j_id: usize,
         jacobians: &DVector,
@@ -418,7 +395,7 @@ impl ContactConstraintNormalPart<Real> {
         let j_id1 = j_id1(j_id, ndofs1, ndofs2);
         let j_id2 = j_id2(j_id, ndofs1, ndofs2);
 
-        let velocity = solver_vel1.dvel(
+        let dvel = solver_vel1.dvel(
             j_id1,
             ndofs1,
             jacobians,
@@ -432,24 +409,11 @@ impl ContactConstraintNormalPart<Real> {
             -dir1,
             self.torque_dir2,
             solver_vels,
-        );
-        if let Some(coefficient) = work_restitution {
-            if self.r <= 0.0 { return; }
-            let v = velocity as f64; let m = self.r as f64;
-            let mut w = *work; let mut c = *peak;
-            // Include compression still required at the start of this rebound solve.
-            if v < 0.0 { w -= 0.5 * m * v * v; c = c.max(-w); }
-            let returned = w + c;
-            let available = ((coefficient as f64).powi(2) * c - returned).max(0.0);
-            let target = if v < 0.0 { (2.0 * available / m).sqrt() }
-                else { (v * v + 2.0 * available / m).sqrt() };
-            self.rhs = -(target as Real);
-        }
-        let dvel = velocity + self.rhs;
+        ) + self.rhs;
+
         let new_impulse = cfm_factor * (self.impulse - self.r * dvel).max(0.0);
         let dlambda = new_impulse - self.impulse;
         self.impulse = new_impulse;
-        record_normal_work(velocity, dlambda, self.r, work, peak);
 
         solver_vel1.apply_impulse(
             j_id1,
@@ -477,8 +441,6 @@ impl ContactConstraintNormalPart<Real> {
 impl GenericContactConstraint {
     #[inline]
     pub fn generic_warmstart_group(
-        normal_work: &mut [f64],
-        peak_compression_work: &mut [f64],
         normal_parts: &mut [ContactConstraintNormalPart<Real>],
         tangent_parts: &mut [ContactConstraintTangentPart<Real>],
         jacobians: &DVector,
@@ -502,9 +464,8 @@ impl GenericContactConstraint {
         {
             let mut nrm_j_id = normal_j_id(j_id, ndofs1, ndofs2);
 
-            for (point, normal_part) in normal_parts.iter_mut().enumerate() {
+            for normal_part in normal_parts {
                 normal_part.generic_warmstart(
-                    &mut normal_work[point], &mut peak_compression_work[point],
                     nrm_j_id,
                     jacobians,
                     dir1,
@@ -548,9 +509,6 @@ impl GenericContactConstraint {
 
     #[inline]
     pub fn generic_solve_group(
-        normal_work: &mut [f64],
-        peak_compression_work: &mut [f64],
-        work_restitution: Option<Real>,
         cfm_factor: Real,
         normal_parts: &mut [ContactConstraintNormalPart<Real>],
         tangent_parts: &mut [ContactConstraintTangentPart<Real>],
@@ -578,9 +536,8 @@ impl GenericContactConstraint {
         if solve_restitution {
             let mut nrm_j_id = normal_j_id(j_id, ndofs1, ndofs2);
 
-            for (point, normal_part) in normal_parts.iter_mut().enumerate() {
+            for normal_part in &mut *normal_parts {
                 normal_part.generic_solve(
-                    &mut normal_work[point], &mut peak_compression_work[point], work_restitution,
                     cfm_factor,
                     nrm_j_id,
                     jacobians,

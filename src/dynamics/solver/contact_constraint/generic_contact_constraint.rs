@@ -19,7 +19,6 @@ use parry::math::Vector;
 #[derive(Copy, Clone)]
 pub(crate) struct GenericContactConstraintBuilder {
     infos: [CoulombContactPointInfos<Real>; MAX_MANIFOLD_POINTS],
-    restitution_coefficient: Real,
     handle1: RigidBodyHandle,
     handle2: RigidBodyHandle,
 }
@@ -28,7 +27,6 @@ impl GenericContactConstraintBuilder {
     pub fn invalid() -> Self {
         Self {
             infos: [CoulombContactPointInfos::default(); MAX_MANIFOLD_POINTS],
-            restitution_coefficient: 0.0,
             handle1: RigidBodyHandle::invalid(),
             handle2: RigidBodyHandle::invalid(),
         }
@@ -46,9 +44,6 @@ impl GenericContactConstraintBuilder {
     ) {
         // TODO PERF: we haven’t tried to optimized this codepath yet (since it relies
         //            on multibodies which are already much slower than regular bodies).
-        out_builder.restitution_coefficient = manifold.data.restitution;
-        out_constraint.normal_work.fill(0.0);
-        out_constraint.peak_compression_work.fill(0.0);
         let handle1 = manifold
             .data
             .rigid_body1
@@ -637,7 +632,7 @@ impl GenericContactConstraintBuilder {
 
         if any_gated {
             constraint.cfm_factor = 1.0;
-            constraint.solve_internal(jacobians, bodies, generic_solver_vels, true, false, Some(self.restitution_coefficient));
+            constraint.solve(jacobians, bodies, generic_solver_vels, true, false);
         }
     }
 }
@@ -667,8 +662,6 @@ pub(crate) struct GenericContactConstraint {
     pub manifold_id: ContactRef,
     pub manifold_contact_id: [u8; MAX_MANIFOLD_POINTS],
     pub num_contacts: u8,
-    pub normal_work: [f64; MAX_MANIFOLD_POINTS],
-    pub peak_compression_work: [f64; MAX_MANIFOLD_POINTS],
     pub normal_part: [ContactConstraintNormalPart<Real>; MAX_MANIFOLD_POINTS],
     pub tangent_part: [ContactConstraintTangentPart<Real>; MAX_MANIFOLD_POINTS],
 }
@@ -692,8 +685,6 @@ impl GenericContactConstraint {
             manifold_id: ContactRef::PADDING,
             manifold_contact_id: [u8::MAX; MAX_MANIFOLD_POINTS],
             num_contacts: u8::MAX,
-            normal_work: [0.0; MAX_MANIFOLD_POINTS],
-            peak_compression_work: [0.0; MAX_MANIFOLD_POINTS],
             normal_part: [ContactConstraintNormalPart::zero(); MAX_MANIFOLD_POINTS],
             tangent_part: [ContactConstraintTangentPart::zero(); MAX_MANIFOLD_POINTS],
         }
@@ -724,8 +715,6 @@ impl GenericContactConstraint {
         let tangent_parts = &mut self.tangent_part[..self.num_contacts as usize];
         let normal_parts = &mut self.normal_part[..self.num_contacts as usize];
         Self::generic_warmstart_group(
-            &mut self.normal_work,
-            &mut self.peak_compression_work,
             normal_parts,
             tangent_parts,
             jacobians,
@@ -759,18 +748,6 @@ impl GenericContactConstraint {
         solve_restitution: bool,
         solve_friction: bool,
     ) {
-        self.solve_internal(jacobians, bodies, generic_solver_vels, solve_restitution, solve_friction, None);
-    }
-
-    fn solve_internal(
-        &mut self,
-        jacobians: &DVector,
-        bodies: &mut SolverBodies,
-        generic_solver_vels: &mut DVector,
-        solve_restitution: bool,
-        solve_friction: bool,
-        work_restitution: Option<Real>,
-    ) {
         let mut solver_vel1 = if self.solver_vel1 == u32::MAX {
             GenericRhs::Fixed
         } else if self.generic_constraint_mask & 0b01 == 0 {
@@ -790,9 +767,6 @@ impl GenericContactConstraint {
         let normal_parts = &mut self.normal_part[..self.num_contacts as usize];
         let tangent_parts = &mut self.tangent_part[..self.num_contacts as usize];
         Self::generic_solve_group(
-            &mut self.normal_work,
-            &mut self.peak_compression_work,
-            work_restitution,
             self.cfm_factor,
             normal_parts,
             tangent_parts,

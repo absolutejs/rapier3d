@@ -752,6 +752,14 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
          * the speculative `dist * inv_dt` slack would truncate the bounce.
          */
         if has_bouncy {
+            // Private convergence experiment: keep the prepare-time targets and
+            // response-refresh law. Revisit all contacts when generic contacts
+            // couple into the island. Ordinary-only worlds retain one sweep.
+            // This fixed diagnostic budget is not a qualified production policy.
+            let restitution_sweeps = if ctx.groups.len() == 1
+                && !unsafe { &*ctx.contact_constraints }.generic_velocity_constraints.is_empty()
+            { 16 } else { 1 };
+            for _restitution_sweep in 0..restitution_sweeps {
             for (_, color) in &ctx.color_ranges[group.colors.clone()] {
                 let mut done = 0;
                 while let Some(claimed) = sync.claim(
@@ -829,6 +837,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 sync.complete(stage, 1, 1);
             }
             stage = sync.sync(stage, 1);
+            }
         }
     }
 
