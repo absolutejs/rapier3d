@@ -1,0 +1,15 @@
+2 | import { readFileSync, writeFileSync } from 'node:fs';
+3 | const result=await Bun.build({entrypoints:['absolutejs/scripts/browser-worker-entry.ts'],target:'browser',format:'esm'});
+4 | if(!result.success||result.outputs.length!==1)throw Error('Worker build failed');
+5 | const worker=await result.outputs[0]!.text();
+6 | const simplexFixture=readFileSync(new URL('../tests/fixtures/simplex-floor-hull-before.bin',import.meta.url));
+7 | const server=Bun.serve({hostname:'127.0.0.1',port:0,fetch(req){return new URL(req.url).pathname==='/simplex-fixture.bin'?new Response(simplexFixture,{headers:{'Content-Type':'application/octet-stream'}}):new URL(req.url).pathname==='/worker.js'?new Response(worker,{headers:{'Content-Type':'text/javascript'}}):new Response('<!doctype html><title>CPU-only contact worker</title>',{headers:{'Content-Type':'text/html'}});}});
+                     ^
+EPERM: operation not permitted, listen
+ syscall: "listen",
+   errno: -1,
+    code: "EPERM"
+
+      at /home/alexkahn/alex/rapier-step-profiling/absolutejs/scripts/verify-browser.ts:7:18
+
+Bun v1.4.4+absolute.1 (Linux x64)

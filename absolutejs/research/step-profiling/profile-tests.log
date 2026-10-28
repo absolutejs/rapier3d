@@ -1,0 +1,19 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/step-profile.test.ts:
+(pass) bounded deterministic sampling measures every managed call and labels omitted native samples [97.73ms]
+(pass) sampling preserves exact native motion and borrowed profiler settings [139.58ms]
+(pass) captured native data and reports are owned and remain readable after the world is freed [2.70ms]
+(pass) World.step failures retain their exact thrown value and restore profiling [5.50ms]
+(pass) bad clocks do not stop physics and never become invented zero timings [5.49ms]
+(pass) finite duration sum overflow is explicit instead of serializing Infinity as a false measurement [3.96ms]
+(pass) native capture failure cannot change the successful physical step or escape as its failure [5.19ms]
+(pass) profiler setup/restore errors are counted while the underlying step still runs [4.83ms]
+(pass) sampling configuration is bounded and rejected before mutating the world [2.52ms]
+(pass) zero sample budget retains no native buffers and steps continue past the cap [88.52ms]
+(pass) event queue and hook arguments are forwarded without taking ownership [5.07ms]
+
+ 11 pass
+ 0 fail
+ 201 expect() calls
+Ran 11 tests across 1 file. [898.00ms]

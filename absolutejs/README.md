@@ -304,3 +304,50 @@ Residual fields are the maximum **terminal** projected normal-velocity error amo
 The added diagnostics exactly preserve physical result records across 548 paired collision/free-motion cases versus 0.10.0. Profiler-on/off snapshot parity and CCD aggregation are also tested. In the 20/1/20 kg fixture, the counters reveal 164 compression passes and 256 restitution sweeps, with a terminal restitution residual near 2.15e-6 m/s. A tiny physical error can therefore coexist with an exhausted iteration budget. Treat that as useful evidence, not as zero or automatic failure of the simulation.
 
 Unprofiled paired median costs at 1/8/32 islands were 0.65/2.49/7.09 ms versus 0.66/2.45/7.28 ms for 0.10.0 in the qualification run. These host-specific small samples do not establish a speedup or frame-rate guarantee. Query allocation occurs only when the caller requests observations.
+
+## Bounded managed-step profiling
+
+`createPhysicsStepProfiler(world, options)` borrows an initialized world. Call
+`profiler.step(eventQueue?, hooks?)` wherever you would explicitly call
+`world.step()`, then `profiler.snapshot()` to obtain an owned report. It creates no
+render loop, listeners, transport, or ownership of the world/event queue. This is
+suitable for workers and offline jobs as well as application-managed stepping.
+
+```ts
+const profiler = RAPIER.createPhysicsStepProfiler(world, {
+    sampleEvery: 32,
+    sampleStartStep: 0,
+    maxSamples: 16,
+});
+for (let step = 0; step < 960; step++) profiler.step();
+const report = { engine: RAPIER.buildInfo, physics: profiler.snapshot() };
+```
+
+Every managed call records wall time spent inside `World.step`. Selected calls
+also capture native phase timings, CCD substeps, convergence counters and world
+units/settings. Native timings are nested: do not add solver, assembly,
+resolution and CCD durations together. Native samples are observations of those
+selected calls, not estimates of unsampled solver work. The summary wall-time
+sum excludes profiler setup, native capture and report construction; it is not
+whole-job time or an FPS measurement.
+
+The default cadence and capacity are both 32. Sampling stops when capacity is
+reached; `samplesOmittedForBudget` counts later eligible calls. Use
+`sampleStartStep` to inspect a later window. Capacity is bounded to 256; zero
+keeps wall-time accounting without enabling native profiling. A failed selected
+call consumes a slot. There is no unbounded event queue or per-body duplication.
+
+Each selected call restores the previous native profiler setting, including when
+stepping throws. Unselected calls leave it alone. If profiling was already on,
+the caller retains fresh native observations; otherwise turning it back off
+invalidates native live queries, but the owned captured sample remains readable.
+Original step exceptions (including non-Error values) propagate unchanged.
+Clock and native-capture failures are counted instead of stopping a successful
+physical step; missing/invalid observations are null, never invented zero times.
+A custom `now` must return monotonic milliseconds and have no side effects.
+Reports remain usable after freeing the borrowed world. Always attach the actual
+build identity when storing or sending a report through your existing diagnostics
+system. Sampling has a cost: use explicit application policy and measure it.
+
+This API uses the unchanged qualified 0.11.0 native kernel. It does not change
+solver thresholds, contact policies or physical state serialization.

@@ -1,0 +1,46 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [35.47ms]
+(pass) invalid contact policy values fail before mutating native state [1.30ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [33.95ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [9.57ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [9.25ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [9.19ms]
+
+absolutejs/tests/dynamic-impact.test.ts:
+(pass) unequal moving spheres obey the analytic impact law across units, ordering and timesteps [407.95ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1080.62ms]
+(pass) live separation follows pose changes while cached distance stays fixed [1053.27ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [1021.76ms]
+
+absolutejs/tests/step-profile.test.ts:
+(pass) bounded deterministic sampling measures every managed call and labels omitted native samples [20.86ms]
+(pass) sampling preserves exact native motion and borrowed profiler settings [36.65ms]
+(pass) captured native data and reports are owned and remain readable after the world is freed [1.99ms]
+(pass) World.step failures retain their exact thrown value and restore profiling [1.88ms]
+(pass) bad clocks do not stop physics and never become invented zero timings [7.82ms]
+(pass) finite duration sum overflow is explicit instead of serializing Infinity as a false measurement [1.47ms]
+(pass) native capture failure cannot change the successful physical step or escape as its failure [3.76ms]
+(pass) profiler setup/restore errors are counted while the underlying step still runs [2.62ms]
+(pass) sampling configuration is bounded and rejected before mutating the world [0.93ms]
+(pass) zero sample budget retains no native buffers and steps continue past the cap [16.93ms]
+(pass) event queue and hook arguments are forwarded without taking ownership [2.38ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [1.75ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [0.67ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [0.83ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [1.68ms]
+(pass) prescribed position endpoint remains authoritative [0.64ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.29ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [4.55ms]
+(pass) current-body query composes noncommuting parent and child rotations [2.83ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.69ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [1.59ms]

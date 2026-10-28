@@ -5,3 +5,5 @@ export * from "./event_queue";
 export * from "./physics_hooks";
 export * from "./debug_render_pipeline";
 export * from "./query_pipeline";
+
+export * from "./step_profile";

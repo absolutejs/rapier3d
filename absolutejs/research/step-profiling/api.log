@@ -1,0 +1,18 @@
+$ bun absolutejs/scripts/build-api.ts
+4 | const root = process.cwd();
+5 | const generated = resolve('.absolutejs/api');
+6 | const bindgen = resolve('.cache/tools/wasm-bindgen-0.2.129-x86_64-unknown-linux-musl/wasm-bindgen');
+7 | const native = resolve('.cache/target/wasm32-unknown-unknown/release/rapier_wasm3d.wasm');
+8 | mkdirSync(generated,{recursive:true});
+9 | const compile=Bun.spawnSync([bindgen,'--target','web','--out-dir',generated,native],{stdout:'inherit',stderr:'inherit'});
+                      ^
+ENOENT: no such file or directory, posix_spawn '/home/alexkahn/alex/rapier-step-profiling/.cache/tools/wasm-bindgen-0.2.129-x86_64-unknown-linux-musl/wasm-bindgen'
+    path: "/home/alexkahn/alex/rapier-step-profiling/.cache/tools/wasm-bindgen-0.2.129-x86_64-unknown-linux-musl/wasm-bindgen",
+ syscall: "posix_spawn",
+   errno: -2,
+    code: "ENOENT"
+
+      at /home/alexkahn/alex/rapier-step-profiling/absolutejs/scripts/build-api.ts:9:19
+
+Bun v1.4.4+absolute.1 (Linux x64)
+error: script "build:api" exited with code 1

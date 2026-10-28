@@ -60,3 +60,12 @@ if (convergence) {
  const residual: number = convergence.maxRestitutionResidual;
  void [iterations,residual];
 }
+
+const recorder = R.createPhysicsStepProfiler(world, {sampleEvery: 32, maxSamples: 16});
+recorder.step();
+const profile: R.PhysicsStepProfile = recorder.snapshot();
+const sample: R.PhysicsStepSample | undefined = profile.samples[0];
+const options: R.PhysicsStepProfileOptions = {sampleStartStep: 8};
+// @ts-expect-error Cadence must be numeric.
+R.createPhysicsStepProfiler(world, {sampleEvery: '32'});
+void [sample, options];

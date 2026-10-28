@@ -141,6 +141,22 @@ try {
   }
   if(multibodyMomentumError>2e-4||multibodyRigidVelocityError>3e-5)throw Error('Articulated velocity writeback failed');
   if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
-  postMessage({buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const sampledWorld = new R.World({x:0,y:-9.81,z:0});
+  let boundedStepProfile;
+  try {
+   const body = sampledWorld.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(0,2,0));
+   sampledWorld.createCollider(R.ColliderDesc.ball(.25), body);
+   const control = R.World.restoreSnapshot(sampledWorld.takeSnapshot());
+   try {
+    const profiler = R.createPhysicsStepProfiler(sampledWorld,{sampleEvery:2,maxSamples:3});
+    for(let i=0;i<10;i++){profiler.step();control.step();}
+    boundedStepProfile=profiler.snapshot();
+    if(boundedStepProfile.completedSteps!==10||boundedStepProfile.samples.length!==3||boundedStepProfile.samplesOmittedForBudget!==2||boundedStepProfile.captureErrors||boundedStepProfile.timingErrors||sampledWorld.profilerEnabled)throw Error('Invalid browser step profile');
+    if(boundedStepProfile.samples.some(s=>s.captureStatus!=='captured'||!s.native))throw Error('Missing native browser sample');
+    const expected=control.takeSnapshot(),actual=sampledWorld.takeSnapshot();
+    if(expected.length!==actual.length||expected.some((v,i)=>v!==actual[i]))throw Error('Browser profiling changed physics');
+   }finally{control.free();}
+  }finally{sampledWorld.free();}
+  postMessage({boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
