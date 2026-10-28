@@ -1,0 +1,12 @@
+{
+  "status": "unqualified-private-experiment",
+  "identity": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "private-dynamic-impact-local-sweeps-16",
+    "wasmSha256": "262872baa26f283464bfb24fa7b0651ab8137839225e15d3c101708c74faa37a",
+    "wasmBytes": 3292711,
+    "solverChanges": true
+  },
+  "sourceCommit": "53f4132",
+  "guardRejectedChangedNative": true
+}
