@@ -19,6 +19,7 @@ use parry::math::Vector;
 #[derive(Copy, Clone)]
 pub(crate) struct GenericContactConstraintBuilder {
     infos: [CoulombContactPointInfos<Real>; MAX_MANIFOLD_POINTS],
+    restitution_rhs: [Real; MAX_MANIFOLD_POINTS],
     handle1: RigidBodyHandle,
     handle2: RigidBodyHandle,
 }
@@ -27,6 +28,7 @@ impl GenericContactConstraintBuilder {
     pub fn invalid() -> Self {
         Self {
             infos: [CoulombContactPointInfos::default(); MAX_MANIFOLD_POINTS],
+            restitution_rhs: [0.0; MAX_MANIFOLD_POINTS],
             handle1: RigidBodyHandle::invalid(),
             handle2: RigidBodyHandle::invalid(),
         }
@@ -365,8 +367,11 @@ impl GenericContactConstraintBuilder {
                 local_p2: local_point(multibody2.is_some(), solver_vel2, rb2, point2),
                 tangent_vel: manifold_point.tangent_velocity,
                 dist: dist - (point - point2).dot(force_dir1),
-                restitution_seed,
+                // Private timing experiment: consume the seed in the normal solve,
+                // with the same prepared geometry as its impulse response.
+                restitution_seed: 0.0,
             };
+            out_builder.restitution_rhs[k] = restitution_seed.min(0.0);
 
             out_builder.handle1 = handle1;
             out_builder.handle2 = handle2;
@@ -454,10 +459,10 @@ impl GenericContactConstraintBuilder {
         ];
 
         let dir1_na = constraint.dir1;
-        for ((info, normal_part), tangent_part) in all_infos
+        for (point_id, ((info, normal_part), tangent_part)) in all_infos
             .iter()
             .zip(normal_parts.iter_mut())
-            .zip(tangent_parts.iter_mut())
+            .zip(tangent_parts.iter_mut()).enumerate()
         {
             // Tangent velocity is equivalent to the first body's surface moving artificially.
             let p1 = pose1 * info.local_p1 + info.tangent_vel * solved_dt;
@@ -466,10 +471,9 @@ impl GenericContactConstraintBuilder {
 
             // Normal part.
             {
-                // NOTE: `info.restitution_seed` is deliberately NOT part of
-                // the substep rhs (see the coulomb kernel); it is applied once, after all
-                // substeps, by `Self::apply_restitution`.
-                let rhs_wo_bias = dist.max(0.0) * inv_dt;
+                // Private experiment: preserve the target through stabilization;
+                // separated/speculative contacts must be qualified independently.
+                let rhs_wo_bias = dist.max(0.0) * inv_dt + self.restitution_rhs[point_id];
                 // No slop deadzone on the bias (see the coulomb kernel).
                 let rhs_bias = (erp_inv_dt * dist).clamp(-params.max_corrective_velocity(), 0.0);
                 let new_rhs = rhs_wo_bias + rhs_bias;
