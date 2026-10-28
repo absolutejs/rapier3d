@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "private-root-transport-unqualified",
-  "wasmSha256": "6e3e1a6d2fc8dd0e60c83c36e2f3f2879856039afef151ed4d6a28c7eda8e580",
-  "wasmBytes": 3296852,
+  "qualifiedKernelRelease": "private-root-com-v2-unqualified",
+  "wasmSha256": "9ec6f201736eee091bc27d3407008889dbbcf7d4e818bc5a4b0f124ec3ef3c5e",
+  "wasmBytes": 3297148,
   "solverChanges": true
 }

@@ -17,3 +17,7 @@ Native SHA256 `6e3e1a6d2fc8dd0e60c83c36e2f3f2879856039afef151ed4d6a28c7eda8e580`
 ## Second experiment: explicit COM coordinates
 
 Keep the same scope gates, adding exclusion of generalized couplings. Compute COM velocity from the previous rigid state, net physical force times dt/mass, and the constraint-solved generalized increment after subtracting the native acceleration increment. Integrate COM semi-implicitly, rotate its root offset using the solved angular velocity, and reconstruct root position/velocity. This avoids assuming that the native semi-implicit Coriolis contribution equals a first-order centripetal term in nonprincipal rotation. It is still an experiment: force/torque response, contact coupling, angular momentum and energy require validation.
+
+## Second experiment result
+
+V2 WASM SHA256 `9ec6f201736eee091bc27d3407008889dbbcf7d4e818bc5a4b0f124ec3ef3c5e`, 3,297,148 bytes. Native and API build logs are retained. Diversity/default/zero controls complete; compound and excluded local-COM controls and 32 default cases remain exact. Forty identical captured-load controls improve linear momentum substantially. The energy oracle now distinguishes normal constant-force semi-implicit COM policy from extra drift, preserving raw metrics. Forty-eight impact runs still expose momentum error and energy gain; this experiment remains unqualified. Full measured evidence: hello-world/docs/root-com-integration-2026-10-28. Source currently subtracts old velocity then native increment separately; possible floating-point cancellation is not yet changed.
