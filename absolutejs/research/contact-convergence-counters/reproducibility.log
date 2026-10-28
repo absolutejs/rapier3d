@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-convergence-counters-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 48,
+  "packagedNativeSha256": "352f0e9ff982bd9486e3771bf65fab1944f81ca53f7a5f5d43bee56acdaff6a0",
+  "packagedNativeBytes": 3298167,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "f66348f3c706b860ec35b36ceeb534936ed685b1403914aefe719091645e89e6",
+  "rawIndependentSha256": "0d0135b958d00914150a093245644fc6c2a6107ae917fcd2ffccc41e546db10a",
+  "sourceInputDifferences": [
+    "README.md"
+  ],
+  "primarySourceContentSha256": "3562af0336a4030802a2666a95dc2c501263cbacb141e5cad89a2b3cd49a28fe",
+  "independentSourceContentSha256": "08e2e42547df681c60962a679fcceba98ea89209837d67273d2a950930b517e1",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

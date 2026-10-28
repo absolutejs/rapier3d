@@ -1,0 +1,276 @@
+[
+  {
+    "id": "@absolutejs/rapier3d@0.11.0",
+    "name": "@absolutejs/rapier3d",
+    "version": "0.11.0",
+    "size": 1799065,
+    "unpackedSize": 5157391,
+    "shasum": "72405fdcfd09598975738011de88931d0b8988d8",
+    "integrity": "sha512-VCGHG+j0mEkToX+3qf7EBD5nduOOssWe3z2TxuTH1vabSpCnhvKtQEzTJXItFCxO8X4vKe53HrnvUVx1gm/iOw==",
+    "filename": "absolutejs-rapier3d-0.11.0.tgz",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 11347,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 21088,
+        "mode": 420
+      },
+      {
+        "path": "absolutejs/README.md",
+        "size": 21088,
+        "mode": 420
+      },
+      {
+        "path": "dist/build-info.mjs",
+        "size": 564,
+        "mode": 420
+      },
+      {
+        "path": "dist/provenance.json",
+        "size": 606,
+        "mode": 420
+      },
+      {
+        "path": "dist/rapier.mjs",
+        "size": 4633340,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/build-info.d.ts",
+        "size": 915,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/coarena.d.ts",
+        "size": 372,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/control/character_controller.d.ts",
+        "size": 8310,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/control/index.d.ts",
+        "size": 121,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/control/pid_controller.d.ts",
+        "size": 1801,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/control/ray_cast_vehicle_controller.d.ts",
+        "size": 10774,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/ccd_solver.d.ts",
+        "size": 436,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/coefficient_combine_rule.d.ts",
+        "size": 300,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/impulse_joint_set.d.ts",
+        "size": 3089,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/impulse_joint.d.ts",
+        "size": 15532,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/index.d.ts",
+        "size": 420,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/integration_parameters.d.ts",
+        "size": 5218,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/island_manager.d.ts",
+        "size": 827,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/multibody_joint_set.d.ts",
+        "size": 3758,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/multibody_joint.d.ts",
+        "size": 1484,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/rigid_body_set.d.ts",
+        "size": 3544,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/rigid_body.d.ts",
+        "size": 36601,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/soft_body_set.d.ts",
+        "size": 4683,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/dynamics/soft_body.d.ts",
+        "size": 41462,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/exports.d.ts",
+        "size": 337,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/broad_phase.d.ts",
+        "size": 12504,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/collider_set.d.ts",
+        "size": 4065,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/collider.d.ts",
+        "size": 45760,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/contact.d.ts",
+        "size": 1205,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/feature.d.ts",
+        "size": 96,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/index.d.ts",
+        "size": 311,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/interaction_groups.d.ts",
+        "size": 768,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/narrow_phase.d.ts",
+        "size": 7664,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/point.d.ts",
+        "size": 2032,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/ray.d.ts",
+        "size": 3624,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/shape.d.ts",
+        "size": 23398,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/geometry/toi.d.ts",
+        "size": 2646,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/init.d.ts",
+        "size": 212,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/math.d.ts",
+        "size": 2454,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/debug_render_pipeline.d.ts",
+        "size": 1807,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/event_queue.d.ts",
+        "size": 4220,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/index.d.ts",
+        "size": 242,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/physics_hooks.d.ts",
+        "size": 2025,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/physics_pipeline.d.ts",
+        "size": 873,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/query_pipeline.d.ts",
+        "size": 1108,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/serialization_pipeline.d.ts",
+        "size": 1959,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/pipeline/world.d.ts",
+        "size": 37054,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/rapier_wasm3d.d.ts",
+        "size": 172209,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/rapier.d.ts",
+        "size": 87,
+        "mode": 420
+      },
+      {
+        "path": "dist/types/raw.d.ts",
+        "size": 36,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 1015,
+        "mode": 420
+      }
+    ],
+    "entryCount": 52,
+    "bundled": []
+  }
+]

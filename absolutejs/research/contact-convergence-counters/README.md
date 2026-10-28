@@ -17,3 +17,11 @@ Two failed test assumptions are retained: the 20/1/20 kg fixture actually reache
 Version 0.11.0 metadata is prepared. Independent build, final archive and registry verification remain required before adoption.
 
 Final 0.11.0 package tests pass: 176 tests / 77,033 assertions, with declaration contracts passing. No native changes were needed after the initial diagnostics build; the failing cases were incorrect test assumptions about which phases execute or reach tolerance. The original logs and the CCD test sources are preserved.
+
+## Final release qualification
+
+Independent offline build completed in 6m27s with two Cargo jobs and a separate target directory. Packaged native bytes and all 48 distribution files match exactly; raw executable/data sections also match, with only unshipped wasm-bindgen custom metadata differing. Source manifests differ only in README content. Final native build input/flag checks pass.
+
+Final 0.11.0 browser worker passes with GPU disabled. The audited archive `.absolutejs/pack/absolutejs-rapier3d-0.11.0.tgz` has SHA256 `92339dc5d2f3d36b0a14d291ce6871164b2650fe8ceaffe7b8800021b814568e`, SHA1 `72405fdcfd09598975738011de88931d0b8988d8`. Every distribution byte, native payload, export, file allowlist and canonical README is verified.
+
+Prepared game inspection integration is backed up separately on `research/convergence-observations` at 021c943, with six focused tests / 58 assertions passing against the explicit candidate. Canonical game source remains on published 0.10.0 until registry verification, installed-byte audit and adoption checks complete. Publication and adoption are not asserted by this qualification record.
