@@ -100,7 +100,7 @@ fn main() {
                         &mut m,
                     )
                     .unwrap();
-                rows.push(json!({"state":state,"pose":pose,"seeded":seeded,"triangleId":triangle_id,"triangle":[triangle.a.to_array(),triangle.b.to_array(),triangle.c.to_array()],"relativeTranslation":pos12.translation.to_array(),"relativeRotation":pos12.rotation.to_array(),"cached":summary(cached),"computed":summary(&m),"singleContact":fresh.as_ref().map(|c|json!({"distance":c.dist,"normal1":c.normal1.to_array(),"point1":c.point1.to_array(),"point2":c.point2.to_array()}))}));
+                rows.push(json!({"state":state,"pose":pose,"seeded":seeded,"heightfield":a.shape().as_heightfield().unwrap(),"convexShape":b.shape().as_convex_polyhedron().unwrap(),"prediction":world.integration_parameters.prediction_distance(),"triangleId":triangle_id,"triangle":[triangle.a.to_array(),triangle.b.to_array(),triangle.c.to_array()],"relativeTranslation":pos12.translation.to_array(),"relativeRotation":pos12.rotation.to_array(),"cached":summary(cached),"computed":summary(&m),"singleContact":fresh.as_ref().map(|c|json!({"distance":c.dist,"normal1":c.normal1.to_array(),"point1":c.point1.to_array(),"point2":c.point2.to_array()}))}));
             }
         }
     }
