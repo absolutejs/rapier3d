@@ -121,24 +121,58 @@ impl VelocitySolver {
         }
     }
 
+    #[cfg(feature = "dim3")]
+    pub(super) fn prepare_free_assemblies(&mut self, isolated: bool, bodies: &RigidBodySet, multibodies: &MultibodyJointSet) {
+        self.free_assemblies.clear();
+        self.free_assembly_counts = [0; 4];
+        for link in &self.multibody_roots {
+            let state = if isolated {
+                multibodies.get_multibody(link.multibody).and_then(|mb| mb.free_assembly_state(bodies))
+            } else { None };
+            self.free_assemblies.push(state);
+        }
+    }
+
     /// The multibody part of `integrate_positions`, used by the staged solver
     /// (regular solver bodies are integrated in parallel by the workers).
     pub(super) fn integrate_multibody_positions(
         &mut self,
         params: &IntegrationParameters,
+        base_params: &IntegrationParameters,
         is_last_substep: bool,
         bodies: &mut RigidBodySet,
         multibodies: &mut MultibodyJointSet,
     ) {
-        for link in &self.multibody_roots {
+        for (assembly_index, link) in self.multibody_roots.iter().enumerate() {
             let multibody = multibodies
                 .get_multibody_mut_internal(link.multibody)
                 .unwrap();
-            let solver_vels = self
-                .generic_solver_vels
-                .rows(multibody.solver_id as usize, multibody.ndofs());
-            multibody.velocities.copy_from(&solver_vels);
-            multibody.integrate(params.dt, bodies);
+            let mut advanced = false;
+            #[cfg(feature = "dim3")]
+            if let Some(state) = &mut self.free_assemblies[assembly_index] {
+                use crate::dynamics::rigid_midpoint::MidpointError;
+                let maximum_speed = core::f64::consts::FRAC_PI_4 * base_params.inv_dt() as f64;
+                match state.advance(params.dt as f64, maximum_speed * params.dt as f64, maximum_speed) {
+                    Ok(step) => {
+                        multibody.apply_free_assembly_step(params.dt, step);
+                        self.generic_solver_vels.rows_mut(multibody.solver_id as usize, multibody.ndofs())
+                            .copy_from(&multibody.velocities);
+                        self.free_assembly_counts[0] += 1;
+                        advanced = true;
+                    }
+                    Err(reason) => {
+                        let index = match reason { MidpointError::NonPhysicalInertia => 1, MidpointError::RotationLimit => 2, _ => 3 };
+                        self.free_assembly_counts[index] += 1;
+                        // Never re-enter after a rejection during this island solve.
+                        self.free_assemblies[assembly_index] = None;
+                    }
+                }
+            }
+            if !advanced {
+                let solver_vels = self.generic_solver_vels.rows(multibody.solver_id as usize, multibody.ndofs());
+                multibody.velocities.copy_from(&solver_vels);
+                multibody.integrate(params.dt, bodies);
+            }
             multibody.forward_kinematics(bodies, false);
             multibody.update_rigid_bodies_internal(bodies, !is_last_substep, true, false);
 

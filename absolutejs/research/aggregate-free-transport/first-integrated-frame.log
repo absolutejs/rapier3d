@@ -1,0 +1,35 @@
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d)
+error[E0107]: missing generics for struct `rigid_body_components::RigidBodyVelocity`
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_assembly.rs:24:19
+    |
+ 24 |     pub velocity: RigidBodyVelocity,
+    |                   ^^^^^^^^^^^^^^^^^ expected 1 generic argument
+    |
+note: struct defined here, with 1 generic parameter: `T`
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_body_components.rs:605:12
+    |
+605 | pub struct RigidBodyVelocity<T: ScalarType> {
+    |            ^^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+    |
+ 24 |     pub velocity: RigidBodyVelocity<T>,
+    |                                    +++
+
+error[E0107]: missing generics for struct `rigid_body_components::RigidBodyVelocity`
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_assembly.rs:31:19
+    |
+ 31 |         velocity: RigidBodyVelocity,
+    |                   ^^^^^^^^^^^^^^^^^ expected 1 generic argument
+    |
+note: struct defined here, with 1 generic parameter: `T`
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_body_components.rs:605:12
+    |
+605 | pub struct RigidBodyVelocity<T: ScalarType> {
+    |            ^^^^^^^^^^^^^^^^^ -
+help: add missing generic argument
+    |
+ 31 |         velocity: RigidBodyVelocity<T>,
+    |                                    +++
+
+For more information about this error, try `rustc --explain E0107`.
+error: could not compile `rapier3d` (lib) due to 2 previous errors

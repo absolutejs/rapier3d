@@ -1291,6 +1291,51 @@ impl Multibody {
         self.velocities.rows_mut(0, self.ndofs)
     }
 
+    /// Admits only an unforced floating rigid assembly; global contact/joint
+    /// isolation is checked by the staged solver before calling this method.
+    #[cfg(feature = "dim3")]
+    pub(crate) fn free_assembly_state(&self, bodies: &RigidBodySet) -> Option<crate::dynamics::rigid_assembly::FreeAssemblyState> {
+        use parry::mass_properties::MassProperties;
+        if !self.root_is_dynamic || self.ndofs != SPATIAL_DIM || self.links.len() < 2
+            || self.links[0].joint.ndofs() != SPATIAL_DIM
+            || self.damping.iter().any(|v| *v != 0.0)
+            || self.armature.iter().any(|v| *v != 0.0)
+            || self.frictions.iter().any(|v| *v != 0.0)
+            || !self.couplings.is_empty() { return None; }
+        let mut relative = vec![Pose::IDENTITY; self.links.len()];
+        let mut props = Vec::with_capacity(self.links.len());
+        for (i, link) in self.links.iter().enumerate() {
+            let rb = &bodies[link.rigid_body];
+            if !rb.is_dynamic() || rb.is_sleeping() || !rb.locked_axes().is_empty()
+                || rb.is_fast_rotation_allowed() || !rb.gyroscopic_forces_enabled()
+                || rb.linear_damping() != 0.0 || rb.angular_damping() != 0.0
+                || rb.forces.force != Vector::ZERO || rb.forces.torque != AngVector::ZERO
+                || link.joint.kinematic || (i != 0 && link.joint.ndofs() != 0)
+                || link.joint.spring_stiffness.iter().any(|v| *v != 0.0)
+                || !link.joint.data.motor_axes.is_empty() || !link.joint.data.limit_axes.is_empty()
+                || !rb.mass().is_finite() || rb.mass() <= 0.0 { return None; }
+            if i != 0 { relative[i] = relative[link.parent_internal_id] * link.joint.body_to_parent(); }
+            props.push(rb.mprops.local_mprops.transform_by(&relative[i]));
+        }
+        let aggregate: MassProperties = props.into_iter().sum();
+        let root = &bodies[self.links[0].rigid_body];
+        crate::dynamics::rigid_assembly::FreeAssemblyState::new(aggregate, root.mprops.local_mprops.local_com,
+            self.links[0].local_to_world, RigidBodyVelocity {
+                linvel: Vector::from_slice(&self.velocities.as_slice()[0..DIM]),
+                angvel: AngVector::from_slice(&self.velocities.as_slice()[DIM..SPATIAL_DIM]),
+            })
+    }
+
+    #[cfg(feature = "dim3")]
+    pub(crate) fn apply_free_assembly_step(&mut self, dt: Real, step: crate::dynamics::rigid_assembly::FreeAssemblyStep) {
+        self.links[0].joint.set_free_pos(step.pose);
+        for i in 0..DIM {
+            self.velocities[i] = step.velocity.linvel[i];
+            self.velocities[DIM+i] = step.velocity.angvel[i];
+            self.links[0].joint.coords[DIM+i] += dt * step.velocity.angvel[i];
+        }
+    }
+
     #[inline]
     pub(crate) fn integrate(&mut self, dt: Real, bodies: &RigidBodySet) {
         // The free root's linear generalized velocity is its center-of-mass

@@ -33,3 +33,31 @@ state. Admission starts with force-free, all-fixed, floating assemblies with no
 contacts, external joints, locks, damping, armature, friction, springs or couplings.
 Unsupported paths must retain their previous physical results. Treat the remaining
 strict contact covariance bound and thin-moment storage as separate limitations.
+
+## First native integration checkpoint
+
+The private native path is now wired for explicitly isolated force-free rigid
+assemblies. It caches aggregate mass properties and the actual incoming COM/
+angular state once per island solve. It applies the matched free rotation,
+advances aggregate COM, reconstructs root pose/velocity and writes both native
+generalized storage and link states. Native free-flight acceleration increments
+are not applied twice. Rejections return to the existing path and remain rejected
+for the rest of that island solve. Ordinary-body observations are unchanged;
+separate native-only assembly counts identify accepted/nonphysical/cap/other
+attempts. These observations are not yet exposed in the TypeScript API.
+
+The first actual-engine matrix covers 36 one-second cases: three scales, three
+roots, 60/240 Hz and one/four substeps. All 13,500 substeps are admitted with no
+rejections. Maximum relative linear-momentum, angular-momentum and energy drift
+are respectively 6.288e-6, 1.739e-6 and 2.564e-6; maximum COM error divided by
+scale is 3.235e-6. The independent physical measurement sums actual per-link
+linear/spin energy and orbital/spin angular momentum, including local COM and
+principal-frame rotations. It initializes authoritative generalized velocities;
+it does not assume body descriptor velocities initialize an articulation.
+
+These are early candidate results, not a release. Excluded-path comparison,
+independent trajectory convergence, root-order equivalence, snapshots, two-worker
+execution, thin-body admission and performance costs remain to be qualified.
+No WASM build or game adoption has been performed for this experiment. The first
+compile error (an omitted scalar type parameter) is retained. Candidate source
+is isolated from the canonical published 0.14.1 game/package delivery.

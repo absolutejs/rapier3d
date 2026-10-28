@@ -56,3 +56,5 @@ mod soft_body;
 
 #[cfg(feature = "dim3")]
 mod rigid_midpoint;
+#[cfg(feature = "dim3")]
+mod rigid_assembly;

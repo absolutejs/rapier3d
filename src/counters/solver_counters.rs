@@ -19,6 +19,8 @@ pub struct ContactConvergenceCounters {
 /// Performance counters related to constraints resolution.
 #[derive(Default, Clone, Copy, Debug)]
 pub struct SolverCounters {
+    /// Private fixed-assembly free steps: accepted / nonphysical / cap / other.
+    pub free_assembly_counts: [usize; 4],
     /// Free rotation: accepted / nonphysical / cap / invalid or failed solves.
     /// Runtime-only observations, summed across CCD passes when counters enabled.
     pub midpoint_counts: [usize; 4],
@@ -52,6 +54,7 @@ impl SolverCounters {
     /// Creates a new counter initialized to zero.
     pub fn new() -> Self {
         SolverCounters {
+            free_assembly_counts: [0; 4],
             midpoint_counts: [0; 4],
             midpoint_max_iterations: 0,
             midpoint_max_residual: 0.0,
@@ -69,6 +72,7 @@ impl SolverCounters {
 
     /// Reset all the counters to zero.
     pub fn reset(&mut self) {
+        self.free_assembly_counts = [0; 4];
         self.midpoint_counts = [0; 4];
         self.midpoint_max_iterations = 0;
         self.midpoint_max_residual = 0.0;

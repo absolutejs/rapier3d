@@ -85,7 +85,12 @@ fn templates(scale: f32) -> Vec<(Pose, MassProperties)> {
         })
         .collect()
 }
-fn aggregate(scale: f32, root: usize, shift: f32, tilted: bool) -> (MassProperties, Pose) {
+fn fixture(
+    scale: f32,
+    root: usize,
+    shift: f32,
+    tilted: bool,
+) -> (PhysicsWorld, Vec<RigidBodyHandle>, MultibodyJointHandle) {
     let authored = templates(scale);
     let mut world = PhysicsWorld::new();
     world.gravity = Vector::ZERO;
@@ -120,7 +125,12 @@ fn aggregate(scale: f32, root: usize, shift: f32, tilted: bool) -> (MassProperti
         }
     }
     world.step();
-    let (mb, _) = world.multibody_joints.get(handle.unwrap()).unwrap();
+    (world, bodies, handle.unwrap())
+}
+fn aggregate(scale: f32, root: usize, shift: f32, tilted: bool) -> (MassProperties, Pose) {
+    let authored = templates(scale);
+    let (world, _, handle) = fixture(scale, root, shift, tilted);
+    let (mb, _) = world.multibody_joints.get(handle).unwrap();
     let mut relative = vec![Pose::IDENTITY; mb.num_links()];
     let mut props = Vec::new();
     for link in mb.links() {
@@ -185,4 +195,117 @@ fn authored_aggregate_avoids_world_translation_and_orientation_roundtrips() {
     }
     assert_eq!(cases, 36);
     println!("AGGREGATE_FRAME_SUMMARY cases={cases} relative_tensor={max_tensor:e} scaled_center={max_center:e}");
+}
+
+fn norm(v: V) -> f64 {
+    v.iter().map(|x| x * x).sum::<f64>().sqrt()
+}
+fn difference(a: V, b: V) -> V {
+    core::array::from_fn(|i| a[i] - b[i])
+}
+fn center_of(body: &RigidBody) -> V {
+    let offset = rotate(
+        *body.rotation(),
+        vec(body.mass_properties().local_mprops.local_com),
+    );
+    core::array::from_fn(|i| body.translation()[i] as f64 + offset[i])
+}
+fn quantities(
+    world: &PhysicsWorld,
+    bodies: &[RigidBodyHandle],
+    initial: Option<(V, V, V)>,
+) -> (f64, V, V, V, f64) {
+    let mass: f64 = bodies.iter().map(|h| world.bodies[*h].mass() as f64).sum();
+    let mut center = [0.0; 3];
+    for h in bodies {
+        let rb = &world.bodies[*h];
+        let c = center_of(rb);
+        for i in 0..3 {
+            center[i] += rb.mass() as f64 * c[i] / mass;
+        }
+    }
+    let mut momentum = [0.0; 3];
+    let mut angular = [0.0; 3];
+    let mut energy = 0.0;
+    for h in bodies {
+        let rb = &world.bodies[*h];
+        let m = rb.mass() as f64;
+        let c = center_of(rb);
+        let (v, w) = if let Some((v, w, root_center)) = initial {
+            let shift = cross(w, difference(c, root_center));
+            (core::array::from_fn(|i| v[i] + shift[i]), w)
+        } else {
+            (vec(rb.linvel()), vec(rb.angvel()))
+        };
+        let (_, _, j) = oracle(&[(*rb.position(), rb.mass_properties().local_mprops)]);
+        let spin: V = core::array::from_fn(|i| (0..3).map(|k| j[i * 3 + k] * w[k]).sum());
+        let p = v.map(|x| x * m);
+        let orbital = cross(difference(c, center), p);
+        for i in 0..3 {
+            momentum[i] += p[i];
+            angular[i] += spin[i] + orbital[i];
+            energy += 0.5 * (m * v[i] * v[i] + w[i] * spin[i]);
+        }
+    }
+    (mass, center, momentum, angular, energy)
+}
+#[test]
+fn actual_free_assembly_conservation_matrix() {
+    let mut maxima = [0.0_f64; 4];
+    let mut cases = 0;
+    for scale in [0.01, 1.0, 100.0] {
+        for root in 0..3 {
+            for hz in [60, 240] {
+                for substeps in [1, 4] {
+                    let (mut world, bodies, handle) = fixture(scale, root, 0.0, true);
+                    world.integration_parameters.dt = 1.0 / hz as f32;
+                    world.integration_parameters.num_solver_iterations = substeps;
+                    world.physics_pipeline.counters.enable();
+                    let center = center_of(&world.bodies[bodies[root]]);
+                    let root_v = Vector::new(0.3, -0.2, 0.1) * scale;
+                    let omega = Vector::new(2.0, -3.0, 4.0);
+                    let (mb, _) = world.multibody_joints.get_mut(handle).unwrap();
+                    mb.damping_mut().fill(0.0);
+                    mb.generalized_velocity_mut().as_mut_slice()[..3]
+                        .copy_from_slice(&root_v.to_array());
+                    mb.generalized_velocity_mut().as_mut_slice()[3..6]
+                        .copy_from_slice(&omega.to_array());
+                    let (mass, c0, p0, l0, e0) =
+                        quantities(&world, &bodies, Some((vec(root_v), vec(omega), center)));
+                    let mut errors = [0.0_f64; 4];
+                    let mut counts = [0usize; 4];
+                    for step in 1..=hz {
+                        world.step();
+                        let (_, c, p, l, e) = quantities(&world, &bodies, None);
+                        let expected: V = core::array::from_fn(|i| {
+                            c0[i]
+                                + p0[i] / mass
+                                    * (step as f64 * world.integration_parameters.dt as f64)
+                        });
+                        let values = [
+                            norm(difference(p, p0)) / norm(p0),
+                            norm(difference(l, l0)) / norm(l0),
+                            (e / e0 - 1.0).abs(),
+                            norm(difference(c, expected)) / scale as f64,
+                        ];
+                        for i in 0..4 {
+                            assert!(values[i].is_finite());
+                            errors[i] = errors[i].max(values[i]);
+                            counts[i] +=
+                                world.physics_pipeline.counters.solver.free_assembly_counts[i];
+                        }
+                    }
+                    println!("AGGREGATE_FREE root={root} scale={scale} hz={hz} substeps={substeps} errors={errors:?} counts={counts:?}");
+                    assert_eq!(counts, [hz * substeps, 0, 0, 0]);
+                    assert!(errors.iter().all(|x| *x < 1e-4));
+                    for i in 0..4 {
+                        maxima[i] = maxima[i].max(errors[i]);
+                    }
+                    cases += 1;
+                }
+            }
+        }
+    }
+    assert_eq!(cases, 36);
+    println!("AGGREGATE_FREE_SUMMARY cases={cases} errors={maxima:?}");
 }

@@ -23,7 +23,7 @@ pub struct MidpointStep {
     /// Euclidean residual of the angular-velocity equation, in radians/second.
     pub residual: f64,
 }
-fn cross(a: Vector, b: Vector) -> Vector {
+pub(crate) fn cross(a: Vector, b: Vector) -> Vector {
     [
         a[1] * b[2] - a[2] * b[1],
         a[2] * b[0] - a[0] * b[2],
@@ -186,7 +186,7 @@ pub struct RigidRotationStep {
     /// Euclidean residual of the angular-velocity equation, in radians/second.
     pub residual: f64,
 }
-fn normalized(mut q: [f64; 4]) -> Result<[f64; 4], MidpointError> {
+pub(crate) fn normalized(mut q: [f64; 4]) -> Result<[f64; 4], MidpointError> {
     let length = num_traits::Float::sqrt(q.iter().map(|x| x * x).sum::<f64>());
     if !length.is_finite() || length == 0.0 {
         return Err(MidpointError::InvalidInput);
@@ -207,7 +207,7 @@ fn multiply(a: [f64; 4], b: [f64; 4]) -> [f64; 4] {
         a[3] * b[3] - a[0] * b[0] - a[1] * b[1] - a[2] * b[2],
     ]
 }
-fn rotate(q: [f64; 4], v: Vector) -> Vector {
+pub(crate) fn rotate(q: [f64; 4], v: Vector) -> Vector {
     let u = [q[0], q[1], q[2]];
     let twice = cross(u, v).map(|x| 2.0 * x);
     let second = cross(u, twice);

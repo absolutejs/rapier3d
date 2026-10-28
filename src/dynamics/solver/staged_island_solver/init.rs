@@ -617,6 +617,14 @@ impl StagedIslandSolver {
          */
         self.sync = StageSync::new(num_workers);
 
+        #[cfg(feature = "dim3")]
+        self.velocity_solver.prepare_free_assemblies(
+            graph.len() == 0 && joint_indices.is_empty() && self.soft_constraints.is_empty()
+                && { #[cfg(feature = "fem")] { self.soft_fem.is_empty() }
+                     #[cfg(not(feature = "fem"))] { true } },
+            bodies, multibodies,
+        );
+
         let ctx = SharedCtx {
             sync: &self.sync,
             contact_convergence: counters.enabled.then_some(&mut counters.solver.contact_convergence as *mut _),
@@ -694,6 +702,9 @@ impl StagedIslandSolver {
         #[cfg(feature = "dim3")]
         if counters.enabled {
             // All workers have joined; reduce per-slot data without shared writes.
+            for (total, count) in counters.solver.free_assembly_counts.iter_mut().zip(self.velocity_solver.free_assembly_counts) {
+                *total = total.saturating_add(count);
+            }
             for gyro in &self.velocity_solver.solver_gyro {
                 counters.solver.midpoint_max_iterations = counters.solver.midpoint_max_iterations.max(gyro.midpoint_max_iterations);
                 counters.solver.midpoint_max_residual = counters.solver.midpoint_max_residual.max(gyro.midpoint_max_residual);

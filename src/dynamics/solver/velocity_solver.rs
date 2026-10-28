@@ -60,6 +60,10 @@ pub(crate) struct VelocitySolver {
     /// gyro-free scenes (the common case) skip the pass entirely.
     #[cfg(feature = "dim3")]
     pub solver_gyro: Vec<GyroParams>,
+    #[cfg(feature = "dim3")]
+    pub free_assemblies: Vec<Option<crate::dynamics::rigid_assembly::FreeAssemblyState>>,
+    #[cfg(feature = "dim3")]
+    pub free_assembly_counts: [usize; 4],
 }
 
 impl VelocitySolver {
@@ -72,6 +76,10 @@ impl VelocitySolver {
             multibody_roots: Vec::new(),
             #[cfg(feature = "dim3")]
             solver_gyro: Vec::new(),
+            #[cfg(feature = "dim3")]
+            free_assemblies: Vec::new(),
+            #[cfg(feature = "dim3")]
+            free_assembly_counts: [0; 4],
         }
     }
 }

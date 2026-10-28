@@ -1,0 +1,154 @@
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d)
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-aggregate-free-transport-research v0.0.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/research/aggregate-free-transport)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.30s
+     Running tests/aggregate_frame.rs (.cache/aggregate-target/debug/deps/aggregate_frame-c4ad9aae62c31577)
+
+running 2 tests
+test actual_free_assembly_conservation_matrix ... AGGREGATE_FREE root=0 scale=0.01 hz=60 substeps=1 errors=[8.800667861508319e-7, 5.909985935222413e-7, 4.572269941549578e-7, 1.474108024113618e-6] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=0.01 hz=60 substeps=4 errors=[6.11800344509302e-7, 4.5297511546797563e-7, 5.552142858800124e-7, 1.0507581377948346e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=0.01 hz=240 substeps=1 errors=[5.215501849929168e-7, 1.7168651199849335e-6, 8.417868906374082e-7, 1.0358953696063938e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=0.01 hz=240 substeps=4 errors=[7.27485792544696e-7, 1.1245256328531892e-6, 7.162472617228133e-7, 1.1249768225407209e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=0.01 hz=60 substeps=1 errors=[6.252267097449937e-7, 8.346936364136078e-7, 7.885407340424422e-7, 1.1093908284137137e-6] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=0.01 hz=60 substeps=4 errors=[9.143382209263586e-7, 7.978579647007853e-7, 1.0159499106432435e-6, 1.6280609465010028e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=0.01 hz=240 substeps=1 errors=[1.231258473597957e-6, 1.3851917744418544e-6, 1.8448228213951978e-6, 2.3816434996401643e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=0.01 hz=240 substeps=4 errors=[1.1211722658389474e-6, 1.2475124768816858e-6, 1.503523477275337e-6, 2.5909920166646614e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=0.01 hz=60 substeps=1 errors=[1.6349330495151207e-6, 6.089295631389619e-7, 8.242665814339745e-7, 7.009213704238068e-7] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=0.01 hz=60 substeps=4 errors=[1.0842652386071022e-6, 6.608218663615703e-7, 8.533405710942077e-7, 3.597592044643515e-7] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=0.01 hz=240 substeps=1 errors=[4.27500777755276e-6, 1.6891336522036074e-6, 2.56330243386671e-6, 1.7740647651980787e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=0.01 hz=240 substeps=4 errors=[6.28716369049705e-6, 1.4842291034674848e-6, 1.7845206154998294e-6, 3.046701851717959e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=1 hz=60 substeps=1 errors=[7.89684557665123e-7, 4.4661678929314133e-7, 8.125649366697019e-7, 1.2137978111230958e-6] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=1 hz=60 substeps=4 errors=[8.889274972698906e-7, 4.200119167309286e-7, 9.123790922771491e-7, 1.5362563912260078e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=1 hz=240 substeps=1 errors=[7.071852602859973e-7, 1.6179142869719635e-6, 9.059631362884346e-7, 8.309511695768582e-7] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=1 hz=240 substeps=4 errors=[7.681013567717358e-7, 8.494852758873372e-7, 9.750228677773976e-7, 1.375686341437604e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=1 hz=60 substeps=1 errors=[5.484197560409804e-7, 6.260123429178764e-7, 4.83224727343412e-7, 4.3573046360500486e-7] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=1 hz=60 substeps=4 errors=[9.583015466159364e-7, 7.766936884030151e-7, 9.213545522079869e-7, 1.3310672071583274e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=1 hz=240 substeps=1 errors=[1.2545134725007296e-6, 1.4979710008638001e-6, 1.8921426081508486e-6, 1.5024128813626782e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=1 hz=240 substeps=4 errors=[1.1459318796938873e-6, 9.989452094756696e-7, 1.6919300720452668e-6, 1.2891601669598808e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=1 hz=60 substeps=1 errors=[1.6581980794256436e-6, 6.241827634261845e-7, 9.712450417254104e-7, 6.951383021217898e-7] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=1 hz=60 substeps=4 errors=[1.3599782814338039e-6, 4.842049584264272e-7, 7.972230691155602e-7, 4.90147321107627e-7] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=1 hz=240 substeps=1 errors=[2.7452897817819523e-6, 1.344844076706435e-6, 2.2379926853943743e-6, 9.018872897594195e-7] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=1 hz=240 substeps=4 errors=[4.877004125506796e-6, 1.4927650305587056e-6, 1.997041326085025e-6, 2.5583533362403457e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=100 hz=60 substeps=1 errors=[6.773889559160756e-7, 7.139194457866418e-7, 3.0497852465671826e-7, 9.196059684212252e-7] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=100 hz=60 substeps=4 errors=[7.34261453234394e-7, 6.016214636408168e-7, 8.751717501809253e-7, 1.2587495490198013e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=100 hz=240 substeps=1 errors=[7.80517945266667e-7, 1.738670840289921e-6, 9.146900905587785e-7, 1.2055321171619337e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=0 scale=100 hz=240 substeps=4 errors=[6.260066902073184e-7, 1.0333199690531363e-6, 8.460204963256501e-7, 1.0971979554730102e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=100 hz=60 substeps=1 errors=[6.932554174984562e-7, 9.237551757216244e-7, 8.81633746008248e-7, 8.950173425331438e-7] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=100 hz=60 substeps=4 errors=[9.153364513613209e-7, 8.569366203736082e-7, 9.65705544642148e-7, 1.3812369678351541e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=100 hz=240 substeps=1 errors=[1.6088933868932074e-6, 1.5934415501016488e-6, 2.0635261359647217e-6, 3.2345113992529974e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=1 scale=100 hz=240 substeps=4 errors=[1.422976817760387e-6, 1.3170054728865784e-6, 1.741377329000926e-6, 1.4279827326602547e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=100 hz=60 substeps=1 errors=[8.446143888994079e-7, 4.6756893471143996e-7, 6.603832132245913e-7, 2.2761040807729613e-7] counts=[60, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=100 hz=60 substeps=4 errors=[1.4976931031382207e-6, 7.322396332336094e-7, 8.2123895639441e-7, 4.393618644597281e-7] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=100 hz=240 substeps=1 errors=[3.246312882986143e-6, 1.6181127748472972e-6, 2.5107845180727395e-6, 1.4699309613898398e-6] counts=[240, 0, 0, 0]
+AGGREGATE_FREE root=2 scale=100 hz=240 substeps=4 errors=[3.563526405857676e-6, 1.0830287891688179e-6, 1.5270706641423715e-6, 1.414807144541664e-6] counts=[960, 0, 0, 0]
+AGGREGATE_FREE_SUMMARY cases=36 errors=[6.28716369049705e-6, 1.738670840289921e-6, 2.56330243386671e-6, 3.2345113992529974e-6]
+ok
+test authored_aggregate_avoids_world_translation_and_orientation_roundtrips ... AGGREGATE_FRAME root=0 scale=0.001 shift=0 tilted=false tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=0 scale=0.001 shift=0 tilted=true tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=0 scale=0.001 shift=1000000 tilted=false tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=0 scale=0.001 shift=1000000 tilted=true tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=0 tilted=false tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=0 tilted=true tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=1000000 tilted=false tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=1000000 tilted=true tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=0 tilted=false tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=0 tilted=true tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=1000000 tilted=false tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=1000000 tilted=true tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=0 scale=1 shift=0 tilted=false tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=0 scale=1 shift=0 tilted=true tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=0 scale=1 shift=1000000 tilted=false tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=0 scale=1 shift=1000000 tilted=true tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=1 scale=1 shift=0 tilted=false tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=1 scale=1 shift=0 tilted=true tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=1 scale=1 shift=1000000 tilted=false tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=1 scale=1 shift=1000000 tilted=true tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=2 scale=1 shift=0 tilted=false tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=2 scale=1 shift=0 tilted=true tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=2 scale=1 shift=1000000 tilted=false tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=2 scale=1 shift=1000000 tilted=true tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=0 tilted=false tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=0 tilted=true tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=1000000 tilted=false tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=1000000 tilted=true tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=0 tilted=false tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=0 tilted=true tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=1000000 tilted=false tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=1000000 tilted=true tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=0 tilted=false tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=0 tilted=true tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=1000000 tilted=false tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=1000000 tilted=true tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME_SUMMARY cases=36 relative_tensor=2.1187842882492327e-7 scaled_center=1.0643280919480373e-7
+ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 13.90s
+
