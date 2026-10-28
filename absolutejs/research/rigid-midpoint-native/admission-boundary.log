@@ -1,0 +1,42 @@
+   Compiling absolutejs-rigid-midpoint-reference v0.0.0 (/home/alexkahn/alex/rapier-midpoint-research/absolutejs/research/rigid-midpoint-native)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.79s
+     Running unittests src/lib.rs (.cache/reference-target/debug/deps/absolutejs_rigid_midpoint_reference-241b626c2657bdbd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/invariants.rs (.cache/reference-target/debug/deps/invariants-2f07326ee09b3dfc)
+
+running 12 tests
+test admission_checks_actual_rotation_in_both_time_directions ... ok
+test admission_rejects_nonphysical_stored_moments_without_clamping ... ok
+test invalid_or_unrepresentable_states_return_no_partial_pose ... ok
+test principal_axis_rotation_uses_matching_cayley_angle ... ok
+ANGLE_CAP_CASE moments=[1.0000000000000002, 1.0, 1.5070022372528486e-16] omega=[0.2914213199191519, 0.910488562621835, 0.2934010763978279] dt=7.853981633974483e-1 angle=7.934590787351301e-1
+test native_step_is_reversible ... ok
+test physically_valid_thin_body_moments_do_not_make_the_newton_system_artificially_singular ... ok
+ANGLE_CAP_CASE moments=[1.0000000000000002, 1.0, 1.6213137901289444e-16] omega=[0.3459952607714401, -0.7201818195861761, -0.6013529963850245] dt=7.853981633974483e-1 angle=8.006995647247565e-1
+exactly representable physical admission cases=3072
+test representable_physical_covariances_qualify_the_admission_boundary ... ok
+12 independent trajectories at 60/120/240 Hz: max angle 1.182034690115977e-2; all error ratios 3.7..4.3
+test native_trajectory_converges_at_second_order_to_independent_refined_rk4 ... ok
+ANGLE_CAP_CASE moments=[1.0, 1.0000000000000002, 1.7379957801174882e-16] omega=[-0.6159636221029535, -0.5311087684160671, -0.5818180921537058] dt=7.853981633974483e-1 angle=7.924065157852355e-1
+f32 stored 2400-step tilted body/frame: relative energy 2.8066086343869756e-6, world momentum 1.459975428098932e-6
+test tilted_principal_frames_conserve_invariants_after_f32_storage_rounding ... ok
+ANGLE_CAP_CASE moments=[1e20, 1.0000000000000005e20, 38684.37161889966] omega=[-0.6976017861687813, 0.6842767910985994, 0.21240767664547766] dt=7.853981633974483e-1 angle=7.862001068661295e-1
+physical stress cases=4500, Newton max=4, relative energy=2.7755575615628914e-14, momentum=9.107332851426078e-14, full-step angle-cap exceedances=4
+stored-inertia audit: nonphysical=1110, max Euler coefficient=1.781754234608926e0, physical cap exceedances=0
+test physical_inertia_stress_matrix_preserves_invariants_with_bounded_iterations ... ok
+test principal_frame_roundtrips_preserve_native_f32_zero_torque_velocities ... ok
+12 cases / 28800 steps: relative energy 1.3988810110276972e-14, world momentum 1.4893506908996652e-14, Newton iterations 2
+test matched_native_midpoint_conserves_energy_and_world_vector ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+   Doc-tests absolutejs_rigid_midpoint_reference
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -236,6 +236,9 @@ fn physical_inertia_stress_matrix_preserves_invariants_with_bounded_iterations()
     let mut maximum_energy = 0.0_f64;
     let mut maximum_momentum = 0.0_f64;
     let mut cap_exceedances = 0;
+    let mut nonphysical_stored = 0;
+    let mut physical_cap_exceedances = 0;
+    let mut maximum_coefficient = 0.0_f64;
     let mut cases = 0;
     for _ in 0..500 {
         let covariance = [
@@ -257,6 +260,19 @@ fn physical_inertia_stress_matrix_preserves_invariants_with_bounded_iterations()
             for dt in [0.001, 0.1, core::f64::consts::FRAC_PI_4] {
                 let moments = principal.map(|i| i * scale);
                 let inverse = moments.map(|i| 1.0 / i);
+                // Audit the actual values consumed by the inverse-moment API.
+                // Positive covariance does not ensure independently rounded
+                // principal moments still describe a physical inertia tensor.
+                let stored = inverse.map(|i| 1.0 / i);
+                let coefficients: V = core::array::from_fn(|i| {
+                    (stored[(i + 1) % 3] - stored[(i + 2) % 3]) * inverse[i]
+                });
+                let coefficient = coefficients.iter().fold(0.0_f64, |a, x| a.max(x.abs()));
+                maximum_coefficient = maximum_coefficient.max(coefficient);
+                let physical = coefficient <= 1.0;
+                if !physical {
+                    nonphysical_stored += 1;
+                }
                 let initial: V = core::array::from_fn(|i| moments[i] * omega[i]);
                 let e0 = energy(initial, inverse);
                 let step = midpoint_step(initial, inverse, dt).unwrap();
@@ -270,6 +286,9 @@ fn physical_inertia_stress_matrix_preserves_invariants_with_bounded_iterations()
                 let angle = 2.0 * norm([q[0], q[1], q[2]]).atan2(q[3].abs());
                 if angle > core::f64::consts::FRAC_PI_4 {
                     cap_exceedances += 1;
+                    if physical {
+                        physical_cap_exceedances += 1;
+                    }
                     println!("ANGLE_CAP_CASE moments={moments:?} omega={omega:?} dt={dt:e} angle={angle:e}");
                 }
                 cases += 1;
@@ -277,8 +296,86 @@ fn physical_inertia_stress_matrix_preserves_invariants_with_bounded_iterations()
         }
     }
     println!("physical stress cases={cases}, Newton max={maximum_iterations}, relative energy={maximum_energy:e}, momentum={maximum_momentum:e}, full-step angle-cap exceedances={cap_exceedances}");
+    println!("stored-inertia audit: nonphysical={nonphysical_stored}, max Euler coefficient={maximum_coefficient:e}, physical cap exceedances={physical_cap_exceedances}");
+    assert_eq!(physical_cap_exceedances, 0);
+    assert!(nonphysical_stored > 0);
     assert_eq!(cases, 4500);
     assert!(maximum_iterations <= 8);
     assert!(maximum_energy < 1e-10);
     assert!(maximum_momentum < 1e-10);
+}
+
+#[test]
+fn admission_rejects_nonphysical_stored_moments_without_clamping() {
+    use absolutejs_rigid_midpoint_reference::midpoint::bounded_midpoint_step;
+    for scale in [2.0_f64.powi(-60), 1.0, 2.0_f64.powi(60)] {
+        // Saved cap counterexample: rounding makes |I1-I2| exceed I3.
+        let moments = [
+            1.0000000000000002 * scale,
+            scale,
+            1.5070022372528486e-16 * scale,
+        ];
+        let j = moments.map(|i| i * 0.5);
+        assert_eq!(
+            bounded_midpoint_step(j, moments, 0.1, 0.5).unwrap_err(),
+            MidpointError::NonPhysicalInertia
+        );
+    }
+    // Tiny but truly physical moments remain supported, with no ratio cutoff.
+    assert!(bounded_midpoint_step([1e-30, 1., 1.], [1e-30, 1., 1.], 0.01, 0.5).is_ok());
+}
+
+#[test]
+fn admission_checks_actual_rotation_in_both_time_directions() {
+    use absolutejs_rigid_midpoint_reference::midpoint::bounded_midpoint_step;
+    let cap = core::f64::consts::FRAC_PI_4;
+    for sign in [-1.0, 1.0] {
+        assert_eq!(
+            bounded_midpoint_step([2., 0., 0.], [1.; 3], sign, cap).unwrap_err(),
+            MidpointError::RotationLimit
+        );
+        let step = bounded_midpoint_step([0.5, 0., 0.], [1.; 3], sign, cap).unwrap();
+        assert_eq!(step.momentum, [0.5, 0., 0.]);
+        assert_eq!(step.iterations, 0);
+    }
+    for cap in [0.0, -1.0, f64::NAN, f64::INFINITY, core::f64::consts::PI] {
+        assert_eq!(
+            bounded_midpoint_step([1.; 3], [1.; 3], 0.1, cap).unwrap_err(),
+            MidpointError::InvalidInput
+        );
+    }
+}
+
+#[test]
+fn representable_physical_covariances_qualify_the_admission_boundary() {
+    use absolutejs_rigid_midpoint_reference::midpoint::bounded_midpoint_step;
+    let mut count = 0;
+    for a in [1.0, 2.0, 8.0, 128.0] {
+        for b in [1.0, 4.0, 32.0, 256.0] {
+            for c in [1.0, 16.0, 64.0, 512.0] {
+                for scale in [2.0_f64.powi(-60), 1.0, 2.0_f64.powi(60)] {
+                    let moments = [(b + c) * scale, (a + c) * scale, (a + b) * scale];
+                    for omega in [[1., 0., 0.], [0., 1., 0.], [0., 0., 1.], [0.36, -0.48, 0.8]] {
+                        let j = core::array::from_fn(|i| moments[i] * omega[i]);
+                        for dt in [-0.5, -0.01, 0.01, 0.5] {
+                            let step =
+                                bounded_midpoint_step(j, moments, dt, core::f64::consts::FRAC_PI_4)
+                                    .unwrap();
+                            let inv = moments.map(|i| 1.0 / i);
+                            assert!(
+                                (energy(step.momentum, inv) / energy(j, inv) - 1.0).abs() < 1e-12
+                            );
+                            let world = rotate(step.rotation_increment, step.momentum);
+                            assert!(
+                                norm(core::array::from_fn(|i| world[i] - j[i])) / norm(j) < 1e-12
+                            );
+                            count += 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    assert_eq!(count, 3072);
+    println!("exactly representable physical admission cases={count}");
 }

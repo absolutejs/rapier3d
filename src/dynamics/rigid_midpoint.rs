@@ -11,6 +11,8 @@ pub enum MidpointError {
     NonFinite,
     SingularJacobian,
     IterationBudget,
+    NonPhysicalInertia,
+    RotationLimit,
 }
 #[derive(Clone, Copy, Debug)]
 pub struct MidpointStep {
@@ -85,11 +87,29 @@ pub fn midpoint_step(
     {
         return Err(MidpointError::InvalidInput);
     }
+    midpoint_step_principal(momentum, inverse.map(|i| 1.0 / i), dt)
+}
+
+/// Principal-moment entry point avoids reconstructing moments from rounded
+/// reciprocals. Positive moments need not form a physical inertia tensor;
+/// admission to a physical engine must separately enforce that requirement.
+pub fn midpoint_step_principal(
+    momentum: Vector,
+    principal: Vector,
+    dt: f64,
+) -> Result<MidpointStep, MidpointError> {
+    if !dt.is_finite()
+        || dt == 0.0
+        || !momentum.iter().all(|x| x.is_finite())
+        || !principal.iter().all(|x| x.is_finite() && *x > 0.0)
+    {
+        return Err(MidpointError::InvalidInput);
+    }
+    let inverse = principal.map(|i| 1.0 / i);
     // Precondition in angular velocity rather than momentum. For physical
     // inertia, |I_j-I_k| <= I_i bounds each Euler coefficient by one, even
     // when one moment is tiny. A momentum Jacobian instead contains ratios
     // of principal moments that can spuriously trip a singularity threshold.
-    let principal = inverse.map(|i| 1.0 / i);
     let initial: Vector = core::array::from_fn(|i| momentum[i] * inverse[i]);
     let coefficients = [
         (principal[1] - principal[2]) * inverse[0],
@@ -216,7 +236,7 @@ pub fn rigid_rotation_step(
     let omega = rotate(conjugate(principal_rotation), angular_velocity);
     let inverse = principal.map(|i| 1.0 / i);
     let j = core::array::from_fn(|i| principal[i] * omega[i]);
-    let result = midpoint_step(j, inverse, dt)?;
+    let result = midpoint_step_principal(j, principal, dt)?;
     let next_principal_rotation =
         normalized(multiply(principal_rotation, result.rotation_increment))?;
     let next_omega = core::array::from_fn(|i| result.momentum[i] * inverse[i]);
@@ -234,4 +254,38 @@ pub fn rigid_rotation_step(
         iterations: result.iterations,
         residual: result.residual,
     })
+}
+
+/// Admission boundary for a private, torque-free engine experiment.
+/// Rejects nonphysical stored inertia and an excessive ACTUAL Cayley angle.
+/// It never rescales velocity or returns a partially updated state. The caller
+/// must decide how rejected cases participate in the full constrained solver.
+pub fn bounded_midpoint_step(
+    momentum: Vector,
+    principal: Vector,
+    dt: f64,
+    maximum_angle: f64,
+) -> Result<MidpointStep, MidpointError> {
+    if !maximum_angle.is_finite()
+        || maximum_angle <= 0.0
+        || maximum_angle >= core::f64::consts::PI
+        || !principal.iter().all(|x| x.is_finite() && *x > 0.0)
+    {
+        return Err(MidpointError::InvalidInput);
+    }
+    // Subtraction avoids overflow in I_j + I_k. No relative tolerance is
+    // allowed here: an epsilon-sized absolute discrepancy can exceed the
+    // smallest moment of a very thin body by orders of magnitude.
+    for i in 0..3 {
+        if (principal[(i + 1) % 3] - principal[(i + 2) % 3]).abs() > principal[i] {
+            return Err(MidpointError::NonPhysicalInertia);
+        }
+    }
+    let result = midpoint_step_principal(momentum, principal, dt)?;
+    let q = result.rotation_increment;
+    let angle = 2.0 * num_traits::Float::atan2(norm([q[0], q[1], q[2]]), q[3].abs());
+    if angle > maximum_angle {
+        return Err(MidpointError::RotationLimit);
+    }
+    Ok(result)
 }

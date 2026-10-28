@@ -38,9 +38,8 @@ cargo test --locked --offline --manifest-path absolutejs/research/rigid-midpoint
 Use two compile jobs and durable isolated target/shared Cargo cache as in existing
 native qualification. No browser GPU workload is involved.
 
-Next: improve conditioning across thin-body inertia ratios, qualify bounded
-nonlinear failures and native float conversions, then investigate integration
-ordering. The current contact solver solves velocities, integrates positions and
+Next: qualify the admission boundary against native float conversions and
+investigate integration ordering. The current contact solver solves velocities, integrates positions and
 performs later constraint passes using prepared responses. Inserting a free
 rotation update into that flow without compatible contact/joint response handling
 would not establish coupled conservation. No production integration or full-game
@@ -70,3 +69,62 @@ The exact input cases are printed in `conditioned-stress-final.log`. Cap policy,
 locked axes, external torque, damping and constrained bodies require explicit
 admission/handling. These arithmetic results still do not qualify an installed
 engine change.
+
+## Stored-inertia correction and explicit admission boundary
+
+The earlier description of all 4,500 inputs as physical was too broad. Their
+source covariance is positive, but independently rounded principal moments (and
+reconstruction from reciprocals) can violate the physical triangle inequality.
+The audit in `stored-inertia-audit.log` identifies 1,110 such stored inputs; the
+largest absolute Euler coefficient is 1.781754 instead of at most one. All four
+observed cap exceedances are in this group. No cap exceedance was observed among
+the remaining inputs; this is a sampled result, not a proof that a cap check is
+unnecessary. The original stress cases and failed classifications are retained.
+
+The new principal-moment entry point removes the unnecessary inverse-to-moment
+round trip. The rigid-frame wrapper uses it directly. The separate
+`bounded_midpoint_step` admission boundary rejects nonphysical stored moments,
+invalid angle limits, nonlinear failures and an excessive actual Cayley angle.
+It returns no partially updated state and never clamps momentum or energy.
+It is not yet wired into the native engine. Very thin tensors whose independently
+rounded moments are nonphysical need a deliberate upstream representation policy;
+adding a relative tolerance here would hide a potentially large Euler error.
+
+Twelve tests pass (`admission-boundary.log`). A separate matrix contains 3,072
+exactly representable physical covariance cases, both time directions, three
+power-of-two scales, principal-axis and off-axis motion. Accepted states retain
+energy and full world momentum to relative 1e-12. Rejected inputs, actual cap
+violations and tiny-but-physical moments have explicit tests. An initial test
+incorrectly assumed decimal rescaling preserves a particular triangle violation;
+`decimal-rescaling-fixture-failure.log` records that failure. Power-of-two scaling
+preserves the intended binary fixture instead.
+
+### Native integration obligations
+
+Source audit at the current 0.13.0 base:
+
+- `worker.rs` applies gyroscopic correction during each velocity-increment stage,
+  before contact and joint solves. Pose integration follows compression passes;
+  relaxation/restitution passes follow integration. Changing this ordering for a
+  constrained body requires compatible response Jacobians, not only a better free
+  rotation update.
+- The existing ordinary-body `integrate_linearized` already uses a Cayley
+  quaternion. The defect is not simply a missing Cayley formula.
+- The existing angular speed cap uses the full outer timestep even when an island
+  takes more substeps. Candidate admission must preserve that full-step policy;
+  applying a full-step angle allowance independently to each substep is wrong.
+- Gyroscopic parameters are per solver slot. Any candidate observations must be
+  accumulated in independently claimed slots and reduced after the stage barrier;
+  copying the restricted single-worker contact-counter writes would introduce a
+  race on parallel islands.
+- A first isolated-body experiment must explicitly exclude contacts, impulse
+  joints, multibodies, soft/FEM bodies, locked angular axes, nonzero angular
+  damping and external torque. Gravity alone does not invalidate free angular
+  motion. Kinematic prescribed motion must retain its own path.
+- Rejecting a candidate requires an explicit, observable engine policy. If a
+  comparison uses the existing correction on rejection, it must use the original
+  pre-cap velocity and original ordering. Correcting an already capped candidate
+  is not an equivalent control.
+
+These obligations are next work, not implemented solver behavior. The game remains
+on published 0.13.0; no private candidate is installed or released.
