@@ -54,3 +54,10 @@ prescribed world COM/angular velocity for three root choices. A further focused
 root-coupling test passes: original-root couplings survive with their indices and
 coefficients intact. Two-worker execution and three existing upstream coupling
 lifecycle tests are being qualified together before any WASM promotion.
+
+The bounded two-worker native run passes all 13 research tests plus three existing
+upstream coupling-topology tests. The environment limits the global Rayon pool
+to two workers; original fixture worlds explicitly configure two-worker pools.
+New SDK tests are prepared for partial-chain conservation, 120 exact replay steps,
+original-root damping retention and prescribed fixed-to-dynamic activation. They
+remain pending the new WASM build; these source tests are not yet passing claims.
