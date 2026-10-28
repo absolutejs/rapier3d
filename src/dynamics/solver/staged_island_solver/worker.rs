@@ -596,6 +596,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                         .iter()
                         .zip(contacts.generic_velocity_constraints.iter_mut())
                     {
+                        builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies, multibodies, c, &mut contacts.generic_jacobians);
                         builder.update(params, solved_dt, &vs.solver_bodies, multibodies, c);
                         c.warmstart(
                             &contacts.generic_jacobians,
@@ -727,9 +728,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
             /*
              * Stages: solve without bias.
              */
-            // Private stage-ablation experiment, never a shipping default.
-            // Preserve the loop and stage ordering but execute no stabilization passes.
-            for stab_iter in 0..0 {
+            for stab_iter in 0..params.num_internal_stabilization_iterations {
                 stage = unsafe {
                     solve_pass(
                         ctx,
@@ -818,6 +817,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                         .iter()
                         .zip(contacts.generic_velocity_constraints.iter_mut())
                     {
+                        builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies, unsafe { &*ctx.multibodies }, c, &mut contacts.generic_jacobians);
                         builder.apply_restitution(
                             c,
                             &contacts.generic_jacobians,

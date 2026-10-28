@@ -155,9 +155,10 @@ impl VelocitySolver {
             multibody.forward_kinematics(bodies, false);
             multibody.update_rigid_bodies_internal(bodies, !is_last_substep, true, false);
 
+            // Contact response may be evaluated after the final integration too.
+            multibody.update_velocities(bodies);
+            multibody.update_mass_matrix(params.dt, bodies);
             if !is_last_substep {
-                multibody.update_velocities(bodies);
-                multibody.update_mass_matrix(params.dt, bodies);
                 multibody.update_acceleration(params.dt, bodies);
 
                 let mut solver_vels_incr = self

@@ -19,7 +19,6 @@ use parry::math::Vector;
 #[derive(Copy, Clone)]
 pub(crate) struct GenericContactConstraintBuilder {
     infos: [CoulombContactPointInfos<Real>; MAX_MANIFOLD_POINTS],
-    restitution_rhs: [Real; MAX_MANIFOLD_POINTS],
     handle1: RigidBodyHandle,
     handle2: RigidBodyHandle,
 }
@@ -28,7 +27,6 @@ impl GenericContactConstraintBuilder {
     pub fn invalid() -> Self {
         Self {
             infos: [CoulombContactPointInfos::default(); MAX_MANIFOLD_POINTS],
-            restitution_rhs: [0.0; MAX_MANIFOLD_POINTS],
             handle1: RigidBodyHandle::invalid(),
             handle2: RigidBodyHandle::invalid(),
         }
@@ -367,11 +365,8 @@ impl GenericContactConstraintBuilder {
                 local_p2: local_point(multibody2.is_some(), solver_vel2, rb2, point2),
                 tangent_vel: manifold_point.tangent_velocity,
                 dist: dist - (point - point2).dot(force_dir1),
-                // Private timing experiment: consume the seed in the normal solve,
-                // with the same prepared geometry as its impulse response.
-                restitution_seed: 0.0,
+                restitution_seed,
             };
-            out_builder.restitution_rhs[k] = restitution_seed.min(0.0);
 
             out_builder.handle1 = handle1;
             out_builder.handle2 = handle2;
@@ -394,6 +389,101 @@ impl GenericContactConstraintBuilder {
         out_constraint.ndofs1 = ndofs1;
         out_constraint.ndofs2 = ndofs2;
         out_constraint.generic_constraint_mask = generic_constraint_mask;
+    }
+
+    /// Refresh the geometric rows and inverse-mass responses without banking impulses
+    /// or changing contact identity. Uses the existing fixed-size Jacobian buffer.
+    /// Private research: ordinary-only contacts and soft-frame response are unchanged.
+    pub fn refresh_response(
+        &self,
+        rigid_bodies: &RigidBodySet,
+        bodies: &SolverBodies,
+        multibodies: &MultibodyJointSet,
+        constraint: &mut GenericContactConstraint,
+        jacobians: &mut DVector,
+    ) {
+        let rb1 = rigid_bodies.get(self.handle1).unwrap_or(&rigid_bodies.default_fixed);
+        let rb2 = rigid_bodies.get(self.handle2).unwrap_or(&rigid_bodies.default_fixed);
+        if rb1.is_soft_frame() || rb2.is_soft_frame() {
+            return;
+        }
+        let side = |handle: RigidBodyHandle, solver_id: u32, ndofs: usize| {
+            let rb = rigid_bodies.get(handle).unwrap_or(&rigid_bodies.default_fixed);
+            let mb = if solver_id != u32::MAX && ndofs != 0 {
+                multibodies.rigid_body_link(handle)
+                    .map(|m| (&multibodies[m.multibody], m.id))
+            } else { None };
+            let anchor_pose = if solver_id == u32::MAX {
+                crate::math::Pose::IDENTITY
+            } else if let Some((m, link)) = mb {
+                m.link(link).unwrap().local_to_world
+            } else {
+                bodies.get_pose(solver_id).pose()
+            };
+            let mut body_pose = anchor_pose;
+            if solver_id == u32::MAX {
+                body_pose = rb.pos.position;
+            } else if mb.is_none() {
+                body_pose.translation -= body_pose.rotation * rb.mprops.local_mprops.local_com;
+            }
+            // Construct only the value mass data: no cloning of optional boxed extras.
+            let mut props = crate::dynamics::RigidBodyMassProps {
+                local_mprops: rb.mprops.local_mprops,
+                flags: rb.mprops.flags,
+                ..Default::default()
+            };
+            props.update_world_mass_properties(rb.body_type, &body_pose);
+            let com = if solver_id != u32::MAX && mb.is_none() {
+                anchor_pose.translation
+            } else { props.world_com };
+            if solver_id == u32::MAX {
+                props.effective_inv_mass = Vector::ZERO;
+                props.effective_world_inv_inertia = Default::default();
+            }
+            (anchor_pose, com, props.effective_inv_mass, props.effective_world_inv_inertia, mb)
+        };
+        let (pose1, com1, im1, ii1, mb1) = side(self.handle1, constraint.solver_vel1, constraint.ndofs1);
+        let (pose2, com2, im2, ii2, mb2) = side(self.handle2, constraint.solver_vel2, constraint.ndofs2);
+        constraint.im1 = im1;
+        constraint.im2 = im2;
+        #[cfg(feature = "dim3")]
+        let directions = [constraint.dir1, constraint.tangent1, constraint.dir1.gcross(constraint.tangent1)];
+        #[cfg(feature = "dim2")]
+        let directions = [constraint.dir1, constraint.dir1.orthonormal_basis()[0]];
+        let mut j_id = constraint.j_id;
+        let end = j_id + constraint.num_contacts as usize * (constraint.ndofs1 + constraint.ndofs2) * 2 * DIM;
+        assert!(end <= jacobians.nrows(), "Contact response refresh must not grow worker buffers");
+        for k in 0..constraint.num_contacts as usize {
+            let info = &self.infos[k];
+            // A shared current-space point keeps equal/opposite impulses colocated.
+            // Surface motion belongs to the RHS, not the geometric application point.
+            let point = (pose1 * info.local_p1 + pose2 * info.local_p2) * 0.5;
+            let arm1 = point - com1;
+            let arm2 = point - com2;
+            for (axis, dir) in directions.iter().enumerate() {
+                let torque1 = arm1.gcross(*dir);
+                let torque2 = arm2.gcross(-*dir);
+                let it1 = ii1.transform_vector(torque1);
+                let it2 = ii2.transform_vector(torque2);
+                let response1 = if let Some((m, link)) = mb1 {
+                    m.fill_jacobians(link, *dir, torque1, &mut j_id, jacobians).0
+                } else { dir.dot(im1 * *dir) + it1.gdot(torque1) };
+                let response2 = if let Some((m, link)) = mb2 {
+                    m.fill_jacobians(link, -*dir, torque2, &mut j_id, jacobians).0
+                } else { dir.dot(im2 * *dir) + it2.gdot(torque2) };
+                let r = crate::utils::inv(response1 + response2);
+                if axis == 0 {
+                    let n = &mut constraint.normal_part[k];
+                    n.torque_dir1 = torque1; n.torque_dir2 = torque2;
+                    n.ii_torque_dir1 = it1; n.ii_torque_dir2 = it2; n.r = r;
+                } else {
+                    let t = &mut constraint.tangent_part[k]; let a = axis - 1;
+                    t.torque_dir1[a] = torque1; t.torque_dir2[a] = torque2;
+                    t.ii_torque_dir1[a] = it1; t.ii_torque_dir2[a] = it2; t.r[a] = r;
+                }
+            }
+        }
+        assert_eq!(j_id, end, "Contact response refresh changed row layout");
     }
 
     pub fn update(
@@ -459,10 +549,10 @@ impl GenericContactConstraintBuilder {
         ];
 
         let dir1_na = constraint.dir1;
-        for (point_id, ((info, normal_part), tangent_part)) in all_infos
+        for ((info, normal_part), tangent_part) in all_infos
             .iter()
             .zip(normal_parts.iter_mut())
-            .zip(tangent_parts.iter_mut()).enumerate()
+            .zip(tangent_parts.iter_mut())
         {
             // Tangent velocity is equivalent to the first body's surface moving artificially.
             let p1 = pose1 * info.local_p1 + info.tangent_vel * solved_dt;
@@ -471,9 +561,10 @@ impl GenericContactConstraintBuilder {
 
             // Normal part.
             {
-                // Private experiment: preserve the target through stabilization;
-                // separated/speculative contacts must be qualified independently.
-                let rhs_wo_bias = dist.max(0.0) * inv_dt + self.restitution_rhs[point_id];
+                // NOTE: `info.restitution_seed` is deliberately NOT part of
+                // the substep rhs (see the coulomb kernel); it is applied once, after all
+                // substeps, by `Self::apply_restitution`.
+                let rhs_wo_bias = dist.max(0.0) * inv_dt;
                 // No slop deadzone on the bias (see the coulomb kernel).
                 let rhs_bias = (erp_inv_dt * dist).clamp(-params.max_corrective_velocity(), 0.0);
                 let new_rhs = rhs_wo_bias + rhs_bias;

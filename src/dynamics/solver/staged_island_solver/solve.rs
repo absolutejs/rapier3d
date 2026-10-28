@@ -339,8 +339,9 @@ pub(super) unsafe fn solve_pass(
         if has_generic_contacts {
             let contacts = unsafe { &mut *ctx.contact_constraints };
             let vs = unsafe { &mut *ctx.velocity_solver };
-            let jac = &contacts.generic_jacobians;
-            for c in contacts.generic_velocity_constraints.iter_mut() {
+            for (builder, c) in contacts.generic_velocity_constraints_builder.iter().zip(contacts.generic_velocity_constraints.iter_mut()) {
+                builder.refresh_response(unsafe { &*ctx.bodies }, &vs.solver_bodies, unsafe { &*ctx.multibodies }, c, &mut contacts.generic_jacobians);
+                let jac = &contacts.generic_jacobians;
                 if wo_bias {
                     c.remove_cfm_and_bias_from_rhs();
                 }
