@@ -1,0 +1,19 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-convergence-counters.test.ts:
+(pass) convergence observations are opt-in, fresh, owned, and absent after restore [45.28ms]
+(pass) profiling does not alter physical state across coupled impacts [50.73ms]
+(pass) coupled impact reports actual iterations and converged projected residuals [5.50ms]
+(pass) large mass ratio explicitly reports exhausted budgets [9.02ms]
+(pass) configured compression minimum is measured even above the default adaptive cap [3.41ms]
+(pass) substeps aggregate phases and a new empty step resets observations [4.40ms]
+(pass) ordinary contacts expose no eligible adaptive solves [3.28ms]
+(pass) friction excludes adaptive compression while eligible restitution is still measured [5.71ms]
+(pass) terminal restitution residual agrees with exposed physical velocities near float precision [5.44ms]
+(pass) CCD reports only eligible adaptive phases without changing motion [8.90ms]
+(pass) adaptive observations aggregate contacts before and after a later CCD impact [4.76ms]
+
+ 11 pass
+ 0 fail
+ 124 expect() calls
+Ran 11 tests across 1 file. [453.00ms]

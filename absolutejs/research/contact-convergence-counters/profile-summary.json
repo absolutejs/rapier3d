@@ -1,0 +1,44 @@
+[
+  {
+    "islands": 1,
+    "observations": {
+      "compressionSolves": 1,
+      "compressionIterations": 164,
+      "compressionLimitHits": 0,
+      "maxCompressionResidual": 9.198627139994642e-07,
+      "restitutionSolves": 1,
+      "restitutionIterations": 256,
+      "restitutionLimitHits": 1,
+      "maxRestitutionResidual": 2.1457672119140625e-06
+    },
+    "exactVelocityParityAcrossBothEnginesAndAllTrials": true
+  },
+  {
+    "islands": 8,
+    "observations": {
+      "compressionSolves": 1,
+      "compressionIterations": 164,
+      "compressionLimitHits": 0,
+      "maxCompressionResidual": 9.198627139994642e-07,
+      "restitutionSolves": 1,
+      "restitutionIterations": 256,
+      "restitutionLimitHits": 1,
+      "maxRestitutionResidual": 2.1457672119140625e-06
+    },
+    "exactVelocityParityAcrossBothEnginesAndAllTrials": true
+  },
+  {
+    "islands": 32,
+    "observations": {
+      "compressionSolves": 1,
+      "compressionIterations": 164,
+      "compressionLimitHits": 0,
+      "maxCompressionResidual": 9.198627139994642e-07,
+      "restitutionSolves": 1,
+      "restitutionIterations": 256,
+      "restitutionLimitHits": 1,
+      "maxRestitutionResidual": 2.1457672119140625e-06
+    },
+    "exactVelocityParityAcrossBothEnginesAndAllTrials": true
+  }
+]

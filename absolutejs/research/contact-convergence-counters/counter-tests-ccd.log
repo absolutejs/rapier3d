@@ -1,0 +1,31 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-convergence-counters.test.ts:
+(pass) convergence observations are opt-in, fresh, owned, and absent after restore [44.26ms]
+(pass) profiling does not alter physical state across coupled impacts [55.55ms]
+(pass) coupled impact reports actual iterations and converged projected residuals [7.61ms]
+(pass) large mass ratio explicitly reports exhausted budgets [6.04ms]
+(pass) configured compression minimum is measured even above the default adaptive cap [5.64ms]
+(pass) substeps aggregate phases and a new empty step resets observations [12.94ms]
+(pass) ordinary contacts expose no eligible adaptive solves [2.56ms]
+(pass) friction excludes adaptive compression while eligible restitution is still measured [10.69ms]
+(pass) terminal restitution residual agrees with exposed physical velocities near float precision [3.15ms]
+241 |     plain.step();
+242 |     expect(w.takeSnapshot()).toEqual(plain.takeSnapshot());
+243 |     const passes = w.ccdSubsteps()!;
+244 |     const s = w.contactConvergence()!;
+245 |     expect(passes).toBeGreaterThan(1);
+246 |     expect(s.compressionSolves).toBeGreaterThan(1);
+                                      ^
+error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 1
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-diagnostics/absolutejs/tests/contact-convergence-counters.test.ts:246:33)
+(fail) CCD passes contribute to one completed-step observation without changing motion [31.93ms]
+
+ 9 pass
+ 1 fail
+ 114 expect() calls
+Ran 10 tests across 1 file. [716.00ms]

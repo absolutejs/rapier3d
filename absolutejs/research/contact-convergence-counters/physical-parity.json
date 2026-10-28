@@ -1,0 +1,47 @@
+{
+  "comparisons": [
+    {
+      "label": "coupled-pgs1",
+      "cases": 24,
+      "exactResultBytes": true,
+      "sha256": "ba99207052121143664878c5bfd023e2a8303ac6b372cc0ff5d5e8aaba344951"
+    },
+    {
+      "label": "coupled-pgs4",
+      "cases": 24,
+      "exactResultBytes": true,
+      "sha256": "6bec35c53a3b00efd6b8245751f9f2b572421992a8e3927d9d3988b38f457e53"
+    },
+    {
+      "label": "coupled-pgs16",
+      "cases": 24,
+      "exactResultBytes": true,
+      "sha256": "cbb979c3dbe0efb15afe05baa0c85a96a96b1d67892f75458a54741b45a62938"
+    },
+    {
+      "label": "mass-60-1",
+      "cases": 162,
+      "exactResultBytes": true,
+      "sha256": "a36ebcc2138bc3407fdbcb634f3749b19d61eafb53a5b74b60a1d2ba92aae58e"
+    },
+    {
+      "label": "mass-60-4",
+      "cases": 162,
+      "exactResultBytes": true,
+      "sha256": "e05342fb37692a556f9ee311075a691d5a8f3f0448a4d95054b2412fb853a71a"
+    },
+    {
+      "label": "free-flight",
+      "cases": 80,
+      "exactResultBytes": true,
+      "sha256": "71ab87ccdd89d663c4fbd47415c285b886300ed38921c4c3a637a7a7bbf66add"
+    },
+    {
+      "label": "isolated/friction",
+      "cases": 72,
+      "exactResultBytes": true
+    }
+  ],
+  "totalPairedCases": 548,
+  "scope": "Exact result-record parity with profiling disabled; separate package tests qualify opt-in observations and snapshot nonmutation."
+}

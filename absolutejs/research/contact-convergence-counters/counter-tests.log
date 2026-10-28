@@ -1,0 +1,29 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/contact-convergence-counters.test.ts:
+(pass) convergence observations are opt-in, fresh, owned, and absent after restore [68.33ms]
+(pass) profiling does not alter physical state across coupled impacts [36.86ms]
+108 |     expect(s.compressionIterations).toBeLessThanOrEqual(256);
+109 |     expect(s.restitutionSolves).toBe(1);
+110 |     expect(s.restitutionIterations).toBeGreaterThan(1);
+111 |     expect(s.restitutionIterations).toBeLessThanOrEqual(256);
+112 |     expect(s.compressionLimitHits).toBe(0);
+113 |     expect(s.restitutionLimitHits).toBe(0);
+                                         ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-diagnostics/absolutejs/tests/contact-convergence-counters.test.ts:113:36)
+(fail) coupled impact reports actual iterations and converged projected residuals [9.01ms]
+(pass) large mass ratio explicitly reports exhausted budgets [6.11ms]
+(pass) configured compression minimum is measured even above the default adaptive cap [6.00ms]
+(pass) substeps aggregate phases and a new empty step resets observations [11.15ms]
+(pass) ordinary contacts expose no eligible adaptive solves [7.24ms]
+(pass) friction excludes adaptive compression while eligible restitution is still measured [5.13ms]
+
+ 7 pass
+ 1 fail
+ 102 expect() calls
+Ran 8 tests across 1 file. [576.00ms]

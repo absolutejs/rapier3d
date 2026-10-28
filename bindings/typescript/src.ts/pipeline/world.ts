@@ -81,10 +81,12 @@ export interface ContactConvergenceStats {
     compressionSolves: number;
     compressionIterations: number;
     compressionLimitHits: number;
+    /** Maximum terminal residual across eligible compression phases. */
     maxCompressionResidual: number;
     restitutionSolves: number;
     restitutionIterations: number;
     restitutionLimitHits: number;
+    /** Maximum terminal residual across eligible restitution phases. */
     maxRestitutionResidual: number;
 }
 

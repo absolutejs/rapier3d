@@ -20,6 +20,8 @@ try {
  for(const restitution of [0,.5,1])for(const reverse of [false,true]){
   const impact=new R.World({x:0,y:0,z:0});
   try{
+   if(impact.contactConvergence()!==null)throw Error('Fresh convergence data must be unavailable');
+   impact.profilerEnabled=true;
    impact.timestep=1/60;impact.numSolverIterations=1;
    impact.integrationParameters.numInternalPgsIterations=1;
    impact.integrationParameters.contact_natural_frequency=0;
@@ -38,6 +40,16 @@ try {
    if(!impact.multibodyJoints.setGeneralizedDamping(joint.handle,damping.fill(0)))throw Error('Coupled damping setup failed');
    for(let step=0;step<15;step++){
     impact.step();const velocity=bodies.map(b=>b.linvel().x);
+    const convergence=impact.contactConvergence();
+    if(!convergence||Object.values(convergence).some(v=>!Number.isFinite(v)||v<0))throw Error('Missing or invalid convergence counters');
+    if(step===0){
+     if(convergence.compressionSolves<1||convergence.compressionIterations<1)throw Error('Expected measured adaptive compression');
+     if(restitution>0&&(convergence.restitutionSolves<1||convergence.restitutionIterations<1))throw Error('Expected measured adaptive restitution');
+     const snapshot=impact.takeSnapshot();convergence.compressionIterations=-1;
+     if(impact.contactConvergence()!.compressionIterations<0)throw Error('Convergence result aliases native state');
+     const restored=R.World.restoreSnapshot(snapshot);
+     try{if(restored.contactConvergence()!==null)throw Error('Restored profiling data must be unavailable');}finally{restored.free();}
+    }
     const error=Math.max(...velocity.map((v,i)=>Math.abs(v-[0,0,-4*restitution,4*restitution][i]!)));
     const energy=velocity.reduce((sum,v,i)=>sum+.5*specs[i]![1]!*v*v,0);
     coupledMaximumVelocityError=Math.max(coupledMaximumVelocityError,error);
@@ -129,6 +141,6 @@ try {
   }
   if(multibodyMomentumError>2e-4||multibodyRigidVelocityError>3e-5)throw Error('Articulated velocity writeback failed');
   if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
-  postMessage({buildInfo,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
