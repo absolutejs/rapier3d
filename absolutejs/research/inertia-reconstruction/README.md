@@ -60,3 +60,23 @@ or a universal setup-cost claim. No heavy compilation ran during measurement.
 Prepared release metadata is 0.13.0 while package.json remains private until
 independent build qualification. Publication, archive and game adoption are
 still pending. The native fix does not resolve angular integration drift.
+
+## Completed release qualification
+
+Two independent native builds have identical raw WASM, packaged WASM and all 49
+distribution files, with identical native source inputs. Both use separate target
+directories. The release-version suite passes 189 tests / 77,522 assertions;
+release-version GPU-disabled browser worker checks and declarations pass.
+
+The game's existing 80-case rigid-transport matrix is recorded at game commit
+b55cde6. All 40 articulated results match 0.12.0 exactly; 8 compound results also
+match. The other 32 compound results change with corrected mass properties.
+Worst compound energy error improves, while individual cases can increase by
+2.54e-6 J. All 40 first-departure captures per version restore/replay exactly.
+The full comparison is retained, including the unresolved articulated drift.
+
+The final audited @absolutejs/rapier3d@0.13.0 archive SHA256 is
+`8d2fb40fb23b89863573cbc5272c415eb0f90bbe83adb10e2e90a2d8fa581705`.
+All exports, archive paths, distribution files and embedded native bytes match.
+The package is now publishable; npm confirmation, registry verification and game
+adoption remain pending. Source/records must be pushed before publication.

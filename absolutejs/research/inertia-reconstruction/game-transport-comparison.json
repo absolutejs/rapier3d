@@ -1,0 +1,63 @@
+{
+  "cases": 80,
+  "exactPhysicalRows": 48,
+  "byMode": {
+    "compound": {
+      "cases": 40,
+      "exactPhysicalRows": 8,
+      "metrics": {
+        "maxMomentumError": {
+          "baselineMaximum": 0,
+          "candidateMaximum": 0,
+          "largestCaseIncrease": 0
+        },
+        "maxAngularError": {
+          "baselineMaximum": 0.007522622697219575,
+          "candidateMaximum": 0.00752188028490191,
+          "largestCaseIncrease": 2.9780608267235384e-06
+        },
+        "maxEnergyError": {
+          "baselineMaximum": 0.0001876050556095521,
+          "candidateMaximum": 0.00017798882082331602,
+          "largestCaseIncrease": 2.538979371635719e-06
+        },
+        "maxComError": {
+          "baselineMaximum": 1.1944366679313958e-05,
+          "candidateMaximum": 1.1815850527258838e-05,
+          "largestCaseIncrease": 1.2070075458197367e-06
+        }
+      }
+    },
+    "multibody": {
+      "cases": 40,
+      "exactPhysicalRows": 40,
+      "metrics": {
+        "maxMomentumError": {
+          "baselineMaximum": 0.11343068901827687,
+          "candidateMaximum": 0.11343068901827687,
+          "largestCaseIncrease": 0.0
+        },
+        "maxAngularError": {
+          "baselineMaximum": 0.5974573201627641,
+          "candidateMaximum": 0.5974573201627641,
+          "largestCaseIncrease": 0.0
+        },
+        "maxEnergyError": {
+          "baselineMaximum": 0.21904851707820683,
+          "candidateMaximum": 0.21904851707820683,
+          "largestCaseIncrease": 0.0
+        },
+        "maxComError": {
+          "baselineMaximum": 0.11963864595561957,
+          "candidateMaximum": 0.11963864595561957,
+          "largestCaseIncrease": 0.0
+        }
+      }
+    }
+  },
+  "verifiedReplayCaptures": {
+    "baseline": 40,
+    "candidate": 40
+  },
+  "sourceSha256": "b1664fa485393a00185a3c0bb81e88341c218ce5aac18260f198be97cf1ec538"
+}
