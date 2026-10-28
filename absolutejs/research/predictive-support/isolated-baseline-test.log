@@ -1,0 +1,22 @@
+   Compiling absolutejs-predictive-support-research v0.0.0 (/home/alexkahn/alex/rapier-predictive-support-release/absolutejs/research/predictive-support)
+    Finished `release` profile [optimized] target(s) in 1.19s
+     Running baseline-support.rs (.cache/research-target/release/deps/baseline_support-0399a83cbe45a44d)
+
+running 1 test
+test approaching_tilted_patch_retains_its_future_support_extent ... FAILED
+
+failures:
+
+---- approaching_tilted_patch_retains_its_future_support_extent stdout ----
+
+thread 'approaching_tilted_patch_retains_its_future_support_extent' (46) panicked at baseline-support.rs:20:2:
+future x support lost: [0, 3, 4]
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    approaching_tilted_patch_retains_its_future_support_extent
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--test baseline-support`

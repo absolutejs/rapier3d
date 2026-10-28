@@ -1,0 +1,15 @@
+[workspace]
+[package]
+name = "absolutejs-predictive-support-research"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[dependencies]
+parry3d = {git="https://github.com/absolutejs/parry", rev="c566aabd77be8ac7a427c2b704860c47e34657b9", default-features=false, features=["required-features","std","alloc"]}
+[[test]]
+name="predictive-support"
+path="support.rs"
+
+[[test]]
+name="baseline-support"
+path="baseline-support.rs"

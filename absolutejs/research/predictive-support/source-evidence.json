@@ -1,0 +1,10 @@
+{
+  "base": "b113d146ce9b9cc4a8a322cb40e9aa241a8bd9b2",
+  "parry": "c566aabd77be8ac7a427c2b704860c47e34657b9",
+  "baselineReducerExact": true,
+  "baselineReducerSha256": "896b5641a72a5ca0554859e37a8993c7262f8f877186e4ae6bdc700651a5e0ba",
+  "productionChanges": {
+    "src/geometry/manifold_reduction.rs": "e62cfdc69156b326e9ef8d7469f393de64dd3f98b47ab125988c6ece5373c5b5",
+    "src/geometry/narrow_phase/pair_update.rs": "3a471863e81148157bb1f8c3c599e478f7c5ea3d80fa80e6af09c524555bb2e2"
+  }
+}
