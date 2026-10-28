@@ -1,0 +1,15 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [5.98ms]
+(pass) diagnostic identity imports independently of the physics runtime [21.05ms]
+
+absolutejs/tests/articulation-origin.test.ts:
+WASM_ORIGIN_MAXIMUM 0.000001425229077601911
+(pass) floating-root origins preserve physical motion for fixed and movable assemblies [292.23ms]
+(pass) offset-root assembly snapshots replay exactly through free flight [66.71ms]
+
+ 4 pass
+ 0 fail
+ 7612 expect() calls
+Ran 4 tests across 2 files. [719.00ms]

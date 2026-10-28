@@ -1,0 +1,9 @@
+{
+  "builtSourceContentSha256": "b24852b9173cf159446e3f8ff38d2ca9f1af1ad3beed3bfb5bbe5ed451f23528",
+  "releaseSourceContentSha256": "3ef18f3e7448e92ca8b32451e1c6cd06c01d455814caab6ad041f73f4055eb97",
+  "differences": [
+    "README.md"
+  ],
+  "allNativeCodeAndDependencyInputsIdentical": true,
+  "packagedNativeSha256": "4686ddcbc3804f6692e67a93a0a99eb54ea92babc4ad293a54010ef54b7c9ec5"
+}

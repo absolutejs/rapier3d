@@ -1,0 +1,24 @@
+{
+  "scope": "game-qualified private archive versus public release archive",
+  "files": 53,
+  "changedFiles": [
+    "README.md",
+    "absolutejs/README.md",
+    "dist/build-info.mjs",
+    "dist/provenance.json",
+    "dist/rapier.mjs",
+    "package.json"
+  ],
+  "runtimeDifferenceOnly": [
+    "packageVersion",
+    "qualifiedKernelRelease"
+  ],
+  "allOtherRuntimeAndDeclarationBytesIdentical": true,
+  "documentationChanges": [
+    "README.md",
+    "absolutejs/README.md"
+  ],
+  "candidateSha256": "2e66af97b0002f5f41b1afb22e8ae02305f59bcb66eb2a06f4c559defa2abeed",
+  "releaseSha256": "25404d2f81d5645905e9c635993cabca36cb2ffd6a7c271f116d0b59c013cd91",
+  "auditSourceSha256": "435f4637239dc9f598e6b1fa9be7229891a34434afd95beba41c099a6a3c860c"
+}

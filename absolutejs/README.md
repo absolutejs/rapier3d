@@ -410,7 +410,7 @@ These are fixture measurements, not game-wide guarantees or hardware FPS.
 Admission, numerical/storage limits, actual-engine tests, failed assumptions and
 cost records are preserved in `absolutejs/research/rigid-midpoint-engine`.
 
-### Floating-root center-of-mass coordinates
+### Floating-root center-of-mass coordinates (0.14.1)
 
 Articulation root linear velocity is measured at its center of mass. For an
 object whose authored origin differs from its mass center, time integration

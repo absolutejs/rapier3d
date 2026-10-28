@@ -409,3 +409,15 @@ cost is approximately 0.7 microseconds per body/substep (2.9x batch ratio).
 These are fixture measurements, not game-wide guarantees or hardware FPS.
 Admission, numerical/storage limits, actual-engine tests, failed assumptions and
 cost records are preserved in `absolutejs/research/rigid-midpoint-engine`.
+
+### Floating-root center-of-mass coordinates (0.14.1)
+
+Articulation root linear velocity is measured at its center of mass. For an
+object whose authored origin differs from its mass center, time integration
+must rotate the local COM offset while advancing that physical center. The root
+origin update includes `R_old * localCom - R_new * localCom`; otherwise moving
+an object's modeling origin changes its physical trajectory. Fixed roots and
+zero-offset roots retain their existing arithmetic. This correction does not
+replace the articulation's angular integrator or eliminate remaining aggregate
+momentum/energy drift. Coordinate-covariance, movable-joint and snapshot replay
+regressions are recorded in `absolutejs/research/rigid-assembly`.

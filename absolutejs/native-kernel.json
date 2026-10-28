@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "UNQUALIFIED-private-root-origin",
+  "qualifiedKernelRelease": "0.14.1",
   "wasmSha256": "4686ddcbc3804f6692e67a93a0a99eb54ea92babc4ad293a54010ef54b7c9ec5",
   "wasmBytes": 3307856,
-  "solverChanges": true,
-  "researchOnly": true
+  "solverChanges": true
 }

@@ -68,3 +68,25 @@ CSV ignore rule. The recovered 3 KiB fixture matches the previously committed
 SHA-256 receipt exactly and is now explicitly tracked. The source generator and
 reference-source hashes remain available; no test results were fabricated to
 replace missing input.
+
+## Release preparation
+
+Version 0.14.1 is prepared; publication is not yet verified. Eight native tests
+pass with two Rayon workers, including all origin cases and the previous five
+rotation/control tests. The full isolated game suite passes 841 tests and
+7,408,721 assertions; app and physics-tool types and dependency resolution pass.
+That run uses the preserved private archive in the game qualification branch
+`research/root-origin-qualification` at `3b39252`.
+
+The public archive audit checks all 53 files and embedded native bytes.
+`release-equivalence.json` proves its runtime differs from the game-qualified
+archive only in package/release identity strings; the manifest's private flag
+is removed and two README files document the fix. Four final identity/origin
+tests pass with 7,612 assertions. No fresh full suite on registry installation
+is claimed. Final native code/dependency inputs exactly match the independent
+build inputs; only README content differs, as recorded by the source audit.
+
+The independently rebuilt packaged engine is byte-identical. Raw compiler
+intermediate metadata differs, as explained above; do not collapse that
+distinction in release claims. The canonical game stays on registry 0.14.0 until
+publication, installed-file verification and adoption checks complete.
