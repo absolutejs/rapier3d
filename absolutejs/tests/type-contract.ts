@@ -80,3 +80,7 @@ if (sample?.native) {
  const capturedRotation: R.FreeRotationStats = sample.native.freeRotation;
  void capturedRotation;
 }
+
+const assemblyStats: R.FreeAssemblyStats | null = world.freeAssemblyStats();
+if (assemblyStats) { const accepted: number = assemblyStats.acceptedSteps; void accepted; }
+if (sample?.native) { const capturedAssembly: R.FreeAssemblyStats = sample.native.freeAssembly; void capturedAssembly; }

@@ -105,6 +105,11 @@ fn fixture_kind(
 ) -> (PhysicsWorld, Vec<RigidBodyHandle>, MultibodyJointHandle) {
     let authored = templates(scale);
     let mut world = PhysicsWorld::new();
+    #[cfg(feature = "parallel")]
+    {
+        world.configure_thread_pool(2).unwrap();
+        assert_eq!(world.num_threads(), Some(2));
+    }
     world.gravity = Vector::ZERO;
     let world_pose = Pose::from_parts(
         Vector::new(shift, -shift, shift),
@@ -755,7 +760,9 @@ fn changing_uniform_gravity_rebuilds_cached_acceleration() {
                 _ => Vector::ZERO,
             };
             let gravity_scale = [1.0, 0.0, -0.5, 2.0][(step / 6) % 4];
-            for body in &bodies { world.bodies[*body].set_gravity_scale(gravity_scale, true); }
+            for body in &bodies {
+                world.bodies[*body].set_gravity_scale(gravity_scale, true);
+            }
             let acceleration = vec(world.gravity * gravity_scale);
             for _ in 0..4 {
                 for i in 0..3 {
@@ -772,9 +779,15 @@ fn changing_uniform_gravity_rebuilds_cached_acceleration() {
                 norm(difference(angular, initial_l)) / norm(initial_l),
                 (spin / initial_spin - 1.0).abs(),
             ];
-            for i in 0..4 { assert!(errors[i].is_finite()); maxima[i] = maxima[i].max(errors[i]); }
+            for i in 0..4 {
+                assert!(errors[i].is_finite());
+                maxima[i] = maxima[i].max(errors[i]);
+            }
             #[cfg(feature = "candidate")]
-            { assert_eq!(assembly_counts(&world), [4, 0, 0, 0]); assert!(errors.iter().all(|x| *x < 1e-4)); }
+            {
+                assert_eq!(assembly_counts(&world), [4, 0, 0, 0]);
+                assert!(errors.iter().all(|x| *x < 1e-4));
+            }
         }
         println!("AGGREGATE_GRAVITY_SWITCH root={root} errors={maxima:?}");
     }
@@ -791,13 +804,20 @@ fn separating_all_links_preserves_instantaneous_motion() {
         mb.damping_mut().fill(0.0);
         mb.generalized_velocity_mut().as_mut_slice()[..6]
             .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
-        for _ in 0..24 { world.step(); }
-        let before: Vec<_> = bodies.iter().map(|h| {
-            let rb = &world.bodies[*h];
-            (*rb.position(), rb.linvel(), rb.angvel())
-        }).collect();
+        for _ in 0..24 {
+            world.step();
+        }
+        let before: Vec<_> = bodies
+            .iter()
+            .map(|h| {
+                let rb = &world.bodies[*h];
+                (*rb.position(), rb.linvel(), rb.angvel())
+            })
+            .collect();
         let (mass, c0, p0, l0, e0) = quantities(&world, &bodies, None);
-        world.multibody_joints.remove_joints_attached_to_rigid_body(bodies[root]);
+        world
+            .multibody_joints
+            .remove_joints_attached_to_rigid_body(bodies[root]);
         for (i, h) in bodies.iter().enumerate() {
             assert!(world.multibody_joints.rigid_body_link(*h).is_none());
             let rb = &world.bodies[*h];
@@ -810,10 +830,16 @@ fn separating_all_links_preserves_instantaneous_motion() {
             let (_, c, p, l, e) = quantities(&world, &bodies, None);
             let t = step as f64 * world.integration_parameters.dt as f64;
             let expected: V = core::array::from_fn(|i| c0[i] + p0[i] / mass * t);
-            let errors = [norm(difference(p, p0)) / norm(p0),
-                norm(difference(l, l0)) / norm(l0), (e / e0 - 1.0).abs(),
-                norm(difference(c, expected))];
-            for i in 0..4 { assert!(errors[i].is_finite()); maxima[i] = maxima[i].max(errors[i]); }
+            let errors = [
+                norm(difference(p, p0)) / norm(p0),
+                norm(difference(l, l0)) / norm(l0),
+                (e / e0 - 1.0).abs(),
+                norm(difference(c, expected)),
+            ];
+            for i in 0..4 {
+                assert!(errors[i].is_finite());
+                maxima[i] = maxima[i].max(errors[i]);
+            }
             assert!(errors.iter().all(|x| *x < 1e-4));
         }
         println!("AGGREGATE_DETACH root={root} errors={maxima:?}");

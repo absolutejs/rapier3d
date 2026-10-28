@@ -1,4 +1,4 @@
-import type {World, ContactConvergenceStats, FreeRotationStats} from "./world";
+import type {World, ContactConvergenceStats, FreeRotationStats, FreeAssemblyStats} from "./world";
 import type {EventQueue} from "./event_queue";
 import type {PhysicsHooks} from "./physics_hooks";
 
@@ -24,6 +24,7 @@ export interface PhysicsStepSample {
         };
         convergence: ContactConvergenceStats;
         freeRotation: FreeRotationStats;
+        freeAssembly: FreeAssemblyStats;
     } | null;
 }
 
@@ -105,8 +106,9 @@ export function createPhysicsStepProfiler(
     const capture = (): NonNullable<PhysicsStepSample["native"]> => {
         const ccdSubsteps = world.ccdSubsteps(),
             convergence = world.contactConvergence(),
-            freeRotation = world.freeRotationStats();
-        if (ccdSubsteps === null || convergence === null || freeRotation === null)
+            freeRotation = world.freeRotationStats(),
+            freeAssembly = world.freeAssemblyStats();
+        if (ccdSubsteps === null || convergence === null || freeRotation === null || freeAssembly === null)
             throw new Error("No completed profiled step");
         const timings = {
             stepMs: world.timingStep(),
@@ -118,6 +120,9 @@ export function createPhysicsStepProfiler(
         };
         if (
             Object.values(timings).some(
+                (value) => !Number.isFinite(value) || value < 0,
+            ) ||
+            Object.values(freeAssembly).some(
                 (value) => !Number.isFinite(value) || value < 0,
             ) ||
             Object.values(freeRotation).some(
@@ -136,6 +141,7 @@ export function createPhysicsStepProfiler(
             timings,
             convergence,
             freeRotation,
+            freeAssembly,
         };
     };
     return {
@@ -249,6 +255,7 @@ export function createPhysicsStepProfiler(
                               timings: {...sample.native.timings},
                               convergence: {...sample.native.convergence},
                               freeRotation: {...sample.native.freeRotation},
+                              freeAssembly: {...sample.native.freeAssembly},
                           }
                         : null,
                 })),

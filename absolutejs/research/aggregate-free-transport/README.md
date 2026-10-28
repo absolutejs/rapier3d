@@ -124,3 +124,25 @@ kick-then-drift convention; this is not exact continuous falling position or
 a second-order linear integrator. Spin and angular momentum are measured about
 the moving aggregate COM. Source remains private and has not been adopted by
 the game or released to npm.
+
+The complete single-worker run now passes nine tests. All 386 excluded/rejected
+physical state records remain byte-identical to published 0.14.1, including
+differential gravity. All five measured errors improve in every one of the
+72 falling cases; `compare-gravity.py` verifies this against the retained
+baseline. Three changing-gravity cases also improve every measured error,
+covering direction changes, zero gravity and zero/negative gravity scales.
+Their maximum COM-velocity error is 2.721e-6 m/s and position error 5.151e-7 m.
+
+Detaching every joint after 24 moving frames preserves each link's pose and
+velocities exactly at the removal boundary. After 120 independent-body frames,
+relative linear-momentum error is zero, maximum relative angular-momentum error
+is 1.731e-5, relative energy error 8.523e-8, and aggregate COM-position error
+1.088e-5 m. Assembly admission counts remain zero after separation. This tests
+complete detachment; partial subtrees, contacts during fracture and fracture
+energy/material models remain unqualified.
+
+The same nine native tests also pass with an explicitly configured two-worker
+thread pool (79.53 seconds). The fixture verifies that it actually configured
+two workers. This is correctness coverage, not a parallel speedup benchmark.
+The TypeScript assembly observation API and bounded profile integration are
+now implemented but remain pending the new WASM build and package tests.

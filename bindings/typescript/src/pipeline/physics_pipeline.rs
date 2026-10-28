@@ -64,6 +64,12 @@ impl RawPhysicsPipeline {
             c.midpoint_max_iterations as f64, c.midpoint_max_residual])
     }
 
+    // Attempt counts only; unsupported assemblies are not attempted.
+    pub fn free_assembly_candidate(&self) -> Option<Vec<f64>> {
+        if !self.1 || !self.0.counters.enabled() { return None; }
+        Some(self.0.counters.solver.free_assembly_counts.iter().map(|v| *v as f64).collect())
+    }
+
     pub fn timing_step(&self) -> f64 {
         self.0.counters.step_time_ms()
     }

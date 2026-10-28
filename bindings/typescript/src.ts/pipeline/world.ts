@@ -105,6 +105,18 @@ export interface FreeRotationStats {
     maxResidualRadiansPerSecond: number;
 }
 
+/** Isolated fixed-assembly attempts under uniform gravity. Counts include
+ * solver substeps and CCD passes. Unsupported topology, loads, damping or
+ * invalid aggregate construction are excluded before any attempt and therefore
+ * are not rejection counts. Zero attempts does not establish conservation.
+ */
+export interface FreeAssemblyStats {
+    acceptedSteps: number;
+    nonphysicalInertiaRejections: number;
+    rotationLimitRejections: number;
+    invalidOrFailedSolves: number;
+}
+
 /**
  * The physics world.
  *
@@ -1411,6 +1423,19 @@ export class World {
      */
     public ccdSubsteps(): number | null {
         return this.physicsPipeline.raw.ccd_substeps() ?? null;
+    }
+
+    /** Owned assembly observations from the last completed profiled step.
+     * Null before a profiled step, after restoration or a profiling toggle,
+     * and while profiling is disabled. Reading does not alter physics.
+     */
+    public freeAssemblyStats(): FreeAssemblyStats | null {
+        const values = this.physicsPipeline.raw.free_assembly_candidate();
+        if (values == null) return null;
+        return {
+            acceptedSteps: values[0], nonphysicalInertiaRejections: values[1],
+            rotationLimitRejections: values[2], invalidOrFailedSolves: values[3],
+        };
     }
 
     /** Owned isolated-body rotation observations from the last completed profiled
