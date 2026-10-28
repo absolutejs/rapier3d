@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-10-28T18:09:08.334647+00:00",
+  "scope": "Linux memory and filesystem headroom; not Windows/GPU health",
+  "memory": {
+    "MemTotal": "22547236 kB",
+    "MemAvailable": "18644528 kB",
+    "SwapTotal": "33554432 kB",
+    "SwapFree": "30639344 kB"
+  },
+  "filesystemAvailableBytes": 342775242752,
+  "nativeBuildJobs": 2,
+  "nativeGpuUsed": false
+}

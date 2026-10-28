@@ -47,3 +47,11 @@ both joint types at 1/8/32/64 assemblies, and two handle-reuse cases retain
 generational identity. Every case checks immediate snapshot identity and eight
 exact post-step snapshots. Feature-variant, no-std, WASM/browser, cost and full
 game qualification are still pending. No public package release is prepared.
+
+The enhanced-determinism variant also passes both native tests, retaining its
+existing insertion-order semantics. The allocation-enabled no-std check passes.
+All 19 broader assembly/topology tests pass; the existing comparator verifies
+386 exclusion-control state records and 127 assembly measurements remain exact
+against the retained baseline. `build-pressure-check.json` records Linux memory
+and filesystem headroom for the bounded two-job build; it is not a Windows/GPU
+health measurement. WASM/browser and cost qualification are now in progress.
