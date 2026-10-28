@@ -1,0 +1,13 @@
+{
+  "scope": "Independent RK4 reference for native stored aggregate moments; actual f32 timestep duration; 7680 versus 15360 steps",
+  "cases": 9,
+  "maximumRefinementAngle": 5.205484026058543e-14,
+  "maximumRefinementMomentum": 1.628019417877017e-13,
+  "hashes": {
+    "/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/research/aggregate-free-transport/generate-reference.ts": "9d6b845cdcdae1d6259f31cf4955a01b7c3adf96a398d1ceee631be58387968b",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/rk4.ts": "573568b3353247679c1459ba3e53051d7a2c39d8598ecfdbae6341292e907805",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/reference.ts": "b310a75c81e8168f9f583843b67ab19379db97028810233034052652147d9788",
+    "/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/research/aggregate-free-transport/trajectory-inputs.log": "d54d7e3bf533a7fd89b77928d548250bdc23a3bcd45ea98c2d520af90199e1d4"
+  },
+  "fixtureSha256": "42de07396e766155eb1fca6541b668492d168ac73799739cd4cb14e647d00fb4"
+}

@@ -1,0 +1,81 @@
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-aggregate-free-transport-research v0.0.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/research/aggregate-free-transport)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.26s
+     Running tests/aggregate_frame.rs (.cache/aggregate-target/debug/deps/aggregate_frame-810cfe430c87a5b4)
+
+running 1 test
+test record_trajectory_inputs ... AGGREGATE_TRAJECTORY_INPUT root=0 principal=[1.8799509, 3.4771795, 5.0659804] frame=[0.21882908, 0.40331414, 0.6495451, -0.6062531] rotation=[0.20417069, -0.03687714, 0.36379364, 0.9080796] omega=[2.0, -3.0, 4.0]
+AGGREGATE_TRAJECTORY_INPUT root=1 principal=[1.8799505, 3.4771788, 5.065979] frame=[0.79954827, 0.51864284, -0.2097848, 0.21845469] rotation=[0.05307719, -0.16864207, 0.50583184, 0.8443203] omega=[2.0, -3.0, 4.0]
+AGGREGATE_TRAJECTORY_INPUT root=2 principal=[1.8799508, 3.4771788, 5.065979] frame=[0.40771985, 0.34097114, 0.6390832, -0.555946] rotation=[0.32846013, -0.15673774, 0.43579715, 0.8231816] omega=[2.0, -3.0, 4.0]
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 4 filtered out; finished in 0.03s
+

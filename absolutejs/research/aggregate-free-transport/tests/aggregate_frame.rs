@@ -1,4 +1,7 @@
-//! Authored-frame aggregation audit before any solver integration is changed.
+#[allow(dead_code)]
+#[path = "../../../../src/dynamics/rigid_midpoint.rs"]
+mod arithmetic_reference;
+// Authored-frame aggregation and actual native integration qualification.
 use rapier3d::prelude::*;
 type V = [f64; 3];
 fn cross(a: V, b: V) -> V {
@@ -519,6 +522,113 @@ fn equivalent_root_choices_preserve_physical_trajectories() {
             println!("AGGREGATE_ROOT_ORDER hz={hz} substeps={substeps} errors={errors:?}");
             #[cfg(feature = "candidate")]
             assert!(errors.iter().all(|x| *x < 5e-5));
+        }
+    }
+}
+
+#[test]
+fn record_trajectory_inputs() {
+    for root in 0..3 {
+        let (aggregate, _) = aggregate(1.0, root, 0.0, true);
+        let (world, bodies, _) = fixture(1.0, root, 0.0, true);
+        println!("AGGREGATE_TRAJECTORY_INPUT root={root} principal={:?} frame={:?} rotation={:?} omega={:?}",
+            aggregate.principal_inertia().to_array(), aggregate.principal_inertia_local_frame.to_array(),
+            world.bodies[bodies[root]].rotation().to_array(), [2.0_f32,-3.0,4.0]);
+    }
+}
+
+fn quaternion_distance(mut a: [f64; 4], mut b: [f64; 4]) -> f64 {
+    let na = a.iter().map(|x| x * x).sum::<f64>().sqrt();
+    let nb = b.iter().map(|x| x * x).sum::<f64>().sqrt();
+    for i in 0..4 {
+        a[i] /= na;
+        b[i] /= nb;
+    }
+    let minus = (0..4).map(|i| (a[i] - b[i]).powi(2)).sum::<f64>();
+    let plus = (0..4).map(|i| (a[i] + b[i]).powi(2)).sum::<f64>();
+    4.0 * (0.5 * minus.min(plus).sqrt()).min(1.0).asin()
+}
+#[test]
+fn aggregate_trajectory_converges_to_independently_refined_rk4() {
+    let mut rows = Vec::new();
+    for line in include_str!("../trajectory-reference.txt").lines() {
+        let values: Vec<f64> = line.split(',').map(|x| x.parse().unwrap()).collect();
+        assert_eq!(values.len(), 20);
+        let root = values[0] as usize;
+        let hz = values[1] as usize;
+        let principal: V = values[2..5].try_into().unwrap();
+        let frame: [f64; 4] = values[5..9].try_into().unwrap();
+        let initial: [f64; 4] = values[9..13].try_into().unwrap();
+        let initial_omega: V = values[13..16].try_into().unwrap();
+        let expected: [f64; 4] = values[16..20].try_into().unwrap();
+        let (props, _) = aggregate(1.0, root, 0.0, true);
+        assert_eq!(
+            principal,
+            props.principal_inertia().to_array().map(|x| x as f64)
+        );
+        assert_eq!(
+            frame,
+            props
+                .principal_inertia_local_frame
+                .to_array()
+                .map(|x| x as f64)
+        );
+        let (mut world, bodies, handle) = fixture(1.0, root, 0.0, true);
+        assert_eq!(
+            initial,
+            world.bodies[bodies[root]]
+                .rotation()
+                .to_array()
+                .map(|x| x as f64)
+        );
+        world.integration_parameters.dt = 1.0 / hz as f32;
+        world.integration_parameters.num_solver_iterations = 1;
+        world.physics_pipeline.counters.enable();
+        let (mb, _) = world.multibody_joints.get_mut(handle).unwrap();
+        mb.damping_mut().fill(0.0);
+        mb.generalized_velocity_mut().fill(0.0);
+        mb.generalized_velocity_mut().as_mut_slice()[3..6]
+            .copy_from_slice(&initial_omega.map(|x| x as f32));
+        let mut q = initial;
+        let mut omega = initial_omega;
+        let mut accepted = 0;
+        for _ in 0..hz {
+            let next = arithmetic_reference::rigid_rotation_step(
+                q,
+                frame,
+                principal,
+                omega,
+                world.integration_parameters.dt as f64,
+            )
+            .unwrap();
+            q = next.rotation;
+            omega = next.angular_velocity;
+            world.step();
+            accepted += assembly_counts(&world)[0];
+        }
+        let actual = world.bodies[bodies[root]]
+            .rotation()
+            .to_array()
+            .map(|x| x as f64);
+        let reference_error = quaternion_distance(q, expected);
+        let native_error = quaternion_distance(actual, expected);
+        let roundoff = quaternion_distance(actual, q);
+        println!("AGGREGATE_TRAJECTORY root={root} hz={hz} reference_error={reference_error:e} native_error={native_error:e} storage_difference={roundoff:e} accepted={accepted}");
+        #[cfg(feature = "candidate")]
+        {
+            assert_eq!(accepted, hz);
+            assert!(roundoff < 1e-5);
+        }
+        rows.push((root, hz, reference_error, native_error));
+    }
+    assert_eq!(rows.len(), 9);
+    for root in 0..3 {
+        let errors: Vec<_> = rows.iter().filter(|r| r.0 == root).collect();
+        assert_eq!(errors.len(), 3);
+        for pair in errors.windows(2) {
+            assert!(pair[1].2 < pair[0].2 * 0.3);
+            #[cfg(feature = "candidate")]
+            assert!(pair[1].3 < pair[0].3 * 0.35 + 1e-5);
         }
     }
 }

@@ -89,3 +89,20 @@ expanded comparison adds aggregate mass overflow. The native square root now
 uses num-traits for no-std compatibility, but a complete no-std build has not yet
 been qualified. Uniform gravity is currently excluded: admitting free fall is
 a separate next step, with explicit force semantics and discrete work checks.
+
+## Independent trajectory check
+
+Nine root/rate fixtures compare the native engine with independently refined
+RK4 trajectories (7,680 versus 15,360 reference steps). Reference refinement
+changes attitude by at most 5.206e-14 rad and momentum by 1.629e-13. The generator
+records source/input hashes, reconstructs exact f32 values from Rust's printed
+inputs, uses the actual float32 timestep duration, and commits its small text
+fixture so a fresh checkout does not depend on an ignored CSV.
+
+Both double-precision matched integration and native motion show second-order
+trajectory convergence at 60/120/240 Hz. Native attitude error versus RK4 falls
+from about 0.003782 rad to 0.000947 rad to 0.000234 rad over one second. Native
+versus matching double-precision integration differs by at most 3.984e-6 rad;
+that storage difference is not the total physical trajectory error. This check
+uses the native stored aggregate tensor, whose reconstruction error is measured
+separately above. It does not prove arbitrary-contact trajectory accuracy.
