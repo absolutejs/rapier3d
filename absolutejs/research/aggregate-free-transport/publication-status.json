@@ -1,9 +1,6 @@
 {
   "package": "@absolutejs/rapier3d",
   "version": "0.15.0",
-  "status": "npm accepted; registry processing",
-  "publishExitCode": 0,
-  "sourceCommit": "b31797afa0f7b64aaeb4e8375647de9132ac16b6",
-  "archiveSha256": "b91b5369ffae9d54169318627750a6549a810f3bb513225905ed4146054869f2",
-  "recovery": "Do not republish while registry processes the accepted version. Verify distribution integrity, then adopt the registry version."
+  "status": "registry publication verified",
+  "receipt": "publication-verified.json"
 }

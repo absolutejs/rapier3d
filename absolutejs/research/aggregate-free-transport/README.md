@@ -216,3 +216,16 @@ Release archive SHA-256:
 The canonical game still uses published 0.14.1 until registry publication and
 exact installed-file verification complete. Publication authorization, tagging
 and registry adoption are separate remaining delivery steps.
+
+## Published and adopted
+
+Registry metadata now verifies 0.15.0 with the audited shasum and integrity.
+Repeated E404 verification attempts and the first successful fresh version query
+are retained; publication was not repeated. Canonical game adoption is committed
+at `423e0f3`: all 53 installed files match, nine focused tests/100 assertions pass,
+and actual worker bundling plus frozen offline reinstall pass. Source/runtime
+equivalence connects this registry install to the 843-test qualification.
+
+A separate inherited partial-split defect is reproduced on both 0.14.1 and 0.15.0
+in `research/assembly-split-continuity`. Its corrections remain separate; this
+release does not claim partial-subtree fracture continuity.

@@ -1,0 +1,8 @@
+npm error code E404
+npm error 404 No match found for version 0.15.0
+npm error 404
+npm error 404  '@absolutejs/rapier3d@0.15.0' is not in this registry.
+npm error 404
+npm error 404 Note that you can also install from a
+npm error 404 tarball, folder, http url, or git url.
+npm error A complete log of this run can be found in: /home/alexkahn/alex/rapier-aggregate-transport-research/.cache/npm/_logs/2026-10-28T16_17_19_580Z-debug-0.log
