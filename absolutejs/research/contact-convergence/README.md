@@ -23,3 +23,7 @@ The independent build completed offline with two Cargo jobs and a separate targe
 Final 0.10.0 API passes all 165 tests / 76,909 assertions and declaration contracts. GPU-disabled browser-worker qualification passes under the final identity. All 72 new unequal-mass regressions fail against published 0.9.0 as expected, confirming the regression fixtures expose the prior defect. Native build input/flag tests also pass.
 
 The exact audited npm archive is `.absolutejs/pack/absolutejs-rapier3d-0.10.0.tgz`, SHA256 `f0c5cd8904f08d3d87d9e1c6c14879fff3ab3ec3e8465b0dbd848be35a14f669`, SHA1 `59ad174b348ef8c37e3b86dbe16d2c82a4e7b7c8`. The archive audit verifies every distribution byte, embedded native payload, file allowlist, package exports and canonical README. Publication and installed game adoption are still separate gates.
+
+## Publication
+
+npm accepted browser confirmation for 0.10.0. The first two registry queries returned E404 during propagation; the third verifies SHA1 and integrity exactly against the audited archive. No duplicate release was published. `registry-verified.json` and `publication-state.json` record this completed gate. The game installed the registry release and is completing its installed-file audit and focused tests; those records live in `hello-world/docs/rapier-0.10.0-adoption-2026-10-28/`.
