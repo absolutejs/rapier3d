@@ -181,3 +181,10 @@ builds retain 49 identical distribution files and the identical native payload;
 no native rebuild or solver change is hidden in promotion. The public archive is
 also backed up in the game's qualification branch. Publication and canonical
 registry adoption are still pending; no published-release claim is made here.
+
+Publication is now verified: npm accepted 0.16.0 with exit code zero; the first
+metadata queries returned E404 while processing. A later fresh registry query
+returned 200, and the downloaded tarball matches the audited SHA-256, SHA-1 and
+SHA-512 integrity exactly. `publication-verified.json` records the receipt and
+qualified source `c19e57e`; the earlier pending notes are historical. Canonical
+game registry adoption is the next delivery step.
