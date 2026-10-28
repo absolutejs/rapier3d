@@ -52,6 +52,34 @@ export class MultibodyJointSet {
         }
     }
 
+    /** Returns an owned copy of articulation-wide damping, or undefined for a stale handle. */
+    public generalizedDamping(handle: MultibodyJointHandle): Float32Array | undefined {
+        return this.raw.generalizedDamping(handle);
+    }
+
+    /**
+     * Sets generalized damping for the entire articulation containing this joint,
+     * including its free root. Body damping setters do not change this vector.
+     * Entries follow native generalized-coordinate order; topology changes may
+     * change its length and meaning. Read it again after changing joints.
+     * Returns false without mutation for a removed handle, wrong length,
+     * negative/nonfinite values, or values that overflow native float precision.
+     * This does not wake sleeping bodies; callers must wake the affected bodies.
+     */
+    public setGeneralizedDamping(handle: MultibodyJointHandle, values: ArrayLike<number>): boolean {
+        if (!Number.isSafeInteger(values.length) || values.length < 0) return false;
+        const current = this.generalizedDamping(handle);
+        if (!current || values.length !== current.length) return false;
+        const copy = new Float32Array(values.length);
+        for (let i = 0; i < values.length; i++) {
+            const value = values[i];
+            if (typeof value !== "number" || !Number.isFinite(value) || value < 0) return false;
+            copy[i] = value;
+            if (!Number.isFinite(copy[i])) return false;
+        }
+        return this.raw.setGeneralizedDamping(handle, copy);
+    }
+
     /**
      * Creates a new joint and return its integer handle.
      *

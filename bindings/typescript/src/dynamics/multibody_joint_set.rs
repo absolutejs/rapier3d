@@ -57,6 +57,21 @@ impl RawMultibodyJointSet {
         self.0.remove(handle, wakeUp);
     }
 
+    /// Copies damping for the entire articulation containing this joint, including its free root.
+    pub fn generalizedDamping(&self, handle: FlatHandle) -> Option<Vec<f32>> {
+        self.0.get(utils::multibody_joint_handle(handle))
+            .map(|(body, _)| body.damping().as_slice().to_vec())
+    }
+
+    /// Transactional update: malformed input or a stale handle leaves the articulation unchanged.
+    pub fn setGeneralizedDamping(&mut self, handle: FlatHandle, values: Vec<f32>) -> bool {
+        if values.iter().any(|v| !v.is_finite() || *v < 0.0) { return false; }
+        let Some((body, _)) = self.0.get_mut(utils::multibody_joint_handle(handle)) else { return false; };
+        if values.len() != body.damping().len() { return false; }
+        body.damping_mut().as_mut_slice().copy_from_slice(&values);
+        true
+    }
+
     pub fn contains(&self, handle: FlatHandle) -> bool {
         self.0.get(utils::multibody_joint_handle(handle)).is_some()
     }
