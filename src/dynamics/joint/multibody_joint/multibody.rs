@@ -1292,10 +1292,28 @@ impl Multibody {
     }
 
     #[inline]
-    pub(crate) fn integrate(&mut self, dt: Real) {
+    pub(crate) fn integrate(&mut self, dt: Real, bodies: &RigidBodySet) {
+        // The free root's linear generalized velocity is its center-of-mass
+        // velocity (the root Jacobian is the identity). Joint coordinates,
+        // however, locate the body origin. Preserve the COM displacement when
+        // rotating an authored body whose origin is not its local mass center.
+        let root_com = if self.root_is_dynamic {
+            bodies[self.links[0].rigid_body].mprops.local_mprops.local_com
+        } else {
+            Vector::ZERO
+        };
+        let old_rotation = self.links[0].joint.joint_rot;
         for rb in self.links.iter_mut() {
             rb.joint
                 .integrate(dt, &self.velocities.as_slice()[rb.assembly_id..])
+        }
+        // Keep the zero-offset and fixed-root paths bit-for-bit unchanged.
+        if root_com != Vector::ZERO {
+            let root = &mut self.links[0].joint;
+            let shift = old_rotation * root_com - root.joint_rot * root_com;
+            for i in 0..DIM {
+                root.coords[i] += shift[i];
+            }
         }
     }
 

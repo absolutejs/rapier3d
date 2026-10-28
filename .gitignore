@@ -32,3 +32,6 @@ venv/
 # Reproducible AbsoluteJS native builds and selected durable evidence.
 .cache/
 .absolutejs/
+
+# Required immutable input for native trajectory regression harnesses.
+!absolutejs/research/rigid-midpoint-native/rotation-fixtures.csv

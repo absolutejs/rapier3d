@@ -1,0 +1,91 @@
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d)
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Compiling absolutejs-midpoint-engine-research v0.0.0 (/home/alexkahn/alex/rapier-rigid-assembly-research/absolutejs/research/rigid-midpoint-engine)
+warning: `rapier3d` (lib) generated 10 warnings
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.72s
+     Running tests/assembly_coordinates.rs (.cache/engine-target/debug/deps/assembly_coordinates-edf4d89d06dcd75a)
+
+running 1 test
+ORIGIN_FIRST hz=60 offset=Vec3(0.5, -0.4, 0.3) com_error=1.20137e-7 angular_error=0e0
+ORIGIN_SUMMARY hz=60 offset=Vec3(0.5, -0.4, 0.3) com_error=6.572261e-7 angular_error=2.1542358e-7
+ORIGIN_FIRST hz=60 offset=Vec3(-1.0, 0.2, 0.6) com_error=2.9802322e-8 angular_error=0e0
+ORIGIN_SUMMARY hz=60 offset=Vec3(-1.0, 0.2, 0.6) com_error=3.283807e-7 angular_error=2.1542358e-7
+ORIGIN_FIRST hz=120 offset=Vec3(0.5, -0.4, 0.3) com_error=1.2036782e-7 angular_error=0e0
+ORIGIN_SUMMARY hz=120 offset=Vec3(0.5, -0.4, 0.3) com_error=7.0691493e-7 angular_error=1.3411045e-7
+ORIGIN_FIRST hz=120 offset=Vec3(-1.0, 0.2, 0.6) com_error=7.920076e-8 angular_error=0e0
+ORIGIN_SUMMARY hz=120 offset=Vec3(-1.0, 0.2, 0.6) com_error=1.5200828e-7 angular_error=2.8115454e-7
+ORIGIN_FIRST hz=240 offset=Vec3(0.5, -0.4, 0.3) com_error=7.4877406e-8 angular_error=0e0
+ORIGIN_SUMMARY hz=240 offset=Vec3(0.5, -0.4, 0.3) com_error=7.715939e-7 angular_error=1.2287812e-7
+ORIGIN_FIRST hz=240 offset=Vec3(-1.0, 0.2, 0.6) com_error=7.450581e-9 angular_error=0e0
+ORIGIN_SUMMARY hz=240 offset=Vec3(-1.0, 0.2, 0.6) com_error=4.1362887e-7 angular_error=2.9802322e-8
+test record_root_origin_covariance ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.65s
+

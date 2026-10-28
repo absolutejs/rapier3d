@@ -1,0 +1,140 @@
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-midpoint-engine-research v0.0.0 (/home/alexkahn/alex/rapier-rigid-assembly-research/absolutejs/research/rigid-midpoint-engine)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.92s
+     Running tests/assembly_coordinates.rs (.cache/engine-target/debug/deps/assembly_coordinates-edf4d89d06dcd75a)
+
+running 2 tests
+test record_root_origin_covariance ... ORIGIN_FIRST hz=60 offset=Vec3(0.5, -0.4, 0.3) com_error=1.20137e-7 angular_error=0e0
+ORIGIN_SUMMARY hz=60 offset=Vec3(0.5, -0.4, 0.3) com_error=6.572261e-7 angular_error=2.1542358e-7
+ORIGIN_FIRST hz=60 offset=Vec3(-1.0, 0.2, 0.6) com_error=2.9802322e-8 angular_error=0e0
+ORIGIN_SUMMARY hz=60 offset=Vec3(-1.0, 0.2, 0.6) com_error=3.283807e-7 angular_error=2.1542358e-7
+ORIGIN_FIRST hz=120 offset=Vec3(0.5, -0.4, 0.3) com_error=1.2036782e-7 angular_error=0e0
+ORIGIN_SUMMARY hz=120 offset=Vec3(0.5, -0.4, 0.3) com_error=7.0691493e-7 angular_error=1.3411045e-7
+ORIGIN_FIRST hz=120 offset=Vec3(-1.0, 0.2, 0.6) com_error=7.920076e-8 angular_error=0e0
+ORIGIN_SUMMARY hz=120 offset=Vec3(-1.0, 0.2, 0.6) com_error=1.5200828e-7 angular_error=2.8115454e-7
+ORIGIN_FIRST hz=240 offset=Vec3(0.5, -0.4, 0.3) com_error=7.4877406e-8 angular_error=0e0
+ORIGIN_SUMMARY hz=240 offset=Vec3(0.5, -0.4, 0.3) com_error=7.715939e-7 angular_error=1.2287812e-7
+ORIGIN_FIRST hz=240 offset=Vec3(-1.0, 0.2, 0.6) com_error=7.450581e-9 angular_error=0e0
+ORIGIN_SUMMARY hz=240 offset=Vec3(-1.0, 0.2, 0.6) com_error=4.1362887e-7 angular_error=2.9802322e-8
+ok
+test root_origin_invariance_matrix ... ORIGIN_MATRIX hz=60 substeps=1 scale=0.01 tilted=false gravity=false position=6.146905e-7 velocity=5.4504255e-7
+ORIGIN_MATRIX hz=60 substeps=1 scale=0.01 tilted=false gravity=true position=1.5639566e-6 velocity=2.728791e-6
+ORIGIN_MATRIX hz=60 substeps=1 scale=0.01 tilted=true gravity=false position=5.900546e-7 velocity=7.6798824e-7
+ORIGIN_MATRIX hz=60 substeps=1 scale=0.01 tilted=true gravity=true position=7.5058546e-7 velocity=2.3634318e-6
+ORIGIN_MATRIX hz=60 substeps=1 scale=1 tilted=false gravity=false position=4.80548e-7 velocity=6.5632804e-7
+ORIGIN_MATRIX hz=60 substeps=1 scale=1 tilted=false gravity=true position=7.633119e-7 velocity=1.0612305e-6
+ORIGIN_MATRIX hz=60 substeps=1 scale=1 tilted=true gravity=false position=3.8165595e-7 velocity=5.1360394e-7
+ORIGIN_MATRIX hz=60 substeps=1 scale=1 tilted=true gravity=true position=9.96597e-7 velocity=1.0925712e-6
+ORIGIN_MATRIX hz=60 substeps=1 scale=100 tilted=false gravity=false position=3.5785033e-7 velocity=6.950709e-7
+ORIGIN_MATRIX hz=60 substeps=1 scale=100 tilted=false gravity=true position=1.5429496e-6 velocity=1.942876e-6
+ORIGIN_MATRIX hz=60 substeps=1 scale=100 tilted=true gravity=false position=5.384672e-7 velocity=7.280477e-7
+ORIGIN_MATRIX hz=60 substeps=1 scale=100 tilted=true gravity=true position=7.8014983e-7 velocity=1.3389533e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=0.01 tilted=false gravity=false position=4.1909516e-7 velocity=7.303612e-7
+ORIGIN_MATRIX hz=60 substeps=4 scale=0.01 tilted=false gravity=true position=4.1650014e-7 velocity=1.6304796e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=0.01 tilted=true gravity=false position=5.900546e-7 velocity=8.202118e-7
+ORIGIN_MATRIX hz=60 substeps=4 scale=0.01 tilted=true gravity=true position=3.0258132e-6 velocity=1.0073794e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=1 tilted=false gravity=false position=5.4952767e-7 velocity=4.3084717e-7
+ORIGIN_MATRIX hz=60 substeps=4 scale=1 tilted=false gravity=true position=1.0925712e-6 velocity=2.927462e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=1 tilted=true gravity=false position=5.2302863e-7 velocity=6.107659e-7
+ORIGIN_MATRIX hz=60 substeps=4 scale=1 tilted=true gravity=true position=1.0026101e-6 velocity=1.1801118e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=100 tilted=false gravity=false position=6.082618e-7 velocity=6.0194907e-7
+ORIGIN_MATRIX hz=60 substeps=4 scale=100 tilted=false gravity=true position=9.918213e-7 velocity=1.2628896e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=100 tilted=true gravity=false position=9.099473e-7 velocity=1.0669224e-6
+ORIGIN_MATRIX hz=60 substeps=4 scale=100 tilted=true gravity=true position=1.951383e-6 velocity=1.5802242e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=0.01 tilted=false gravity=false position=4.1909516e-7 velocity=7.4505806e-7
+ORIGIN_MATRIX hz=240 substeps=1 scale=0.01 tilted=false gravity=true position=1.5274827e-6 velocity=1.0880941e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=0.01 tilted=true gravity=false position=6.506773e-7 velocity=8.4109564e-7
+ORIGIN_MATRIX hz=240 substeps=1 scale=0.01 tilted=true gravity=true position=3.0031374e-6 velocity=1.4246496e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=1 tilted=false gravity=false position=5.4952767e-7 velocity=4.5783196e-7
+ORIGIN_MATRIX hz=240 substeps=1 scale=1 tilted=false gravity=true position=1.4551348e-6 velocity=2.2104002e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=1 tilted=true gravity=false position=6.963802e-7 velocity=6.3640346e-7
+ORIGIN_MATRIX hz=240 substeps=1 scale=1 tilted=true gravity=true position=1.021246e-6 velocity=1.4305115e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=100 tilted=false gravity=false position=6.302914e-7 velocity=7.377273e-7
+ORIGIN_MATRIX hz=240 substeps=1 scale=100 tilted=false gravity=true position=1.0235907e-6 velocity=1.3520668e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=100 tilted=true gravity=false position=9.65239e-7 velocity=1.0669224e-6
+ORIGIN_MATRIX hz=240 substeps=1 scale=100 tilted=true gravity=true position=2.2020586e-6 velocity=1.2302029e-6
+ORIGIN_MATRIX hz=240 substeps=4 scale=0.01 tilted=false gravity=false position=1.2525877e-6 velocity=6.0580726e-7
+ORIGIN_MATRIX hz=240 substeps=4 scale=0.01 tilted=false gravity=true position=1.8672961e-6 velocity=1.7890123e-6
+ORIGIN_MATRIX hz=240 substeps=4 scale=0.01 tilted=true gravity=false position=1.0284817e-6 velocity=5.1486643e-7
+ORIGIN_MATRIX hz=240 substeps=4 scale=0.01 tilted=true gravity=true position=3.7811074e-6 velocity=1.1175871e-6
+ORIGIN_MATRIX hz=240 substeps=4 scale=1 tilted=false gravity=false position=1.1281666e-6 velocity=6.078505e-7
+ORIGIN_MATRIX hz=240 substeps=4 scale=1 tilted=false gravity=true position=2.8734137e-6 velocity=1.1449679e-6
+ORIGIN_MATRIX hz=240 substeps=4 scale=1 tilted=true gravity=false position=9.060347e-7 velocity=5.623091e-7
+ORIGIN_MATRIX hz=240 substeps=4 scale=1 tilted=true gravity=true position=1.2287812e-6 velocity=1.2054294e-6
+ORIGIN_MATRIX hz=240 substeps=4 scale=100 tilted=false gravity=false position=8.773804e-7 velocity=8.0017765e-7
+ORIGIN_MATRIX hz=240 substeps=4 scale=100 tilted=false gravity=true position=2.1530452e-6 velocity=1.8951023e-6
+ORIGIN_MATRIX hz=240 substeps=4 scale=100 tilted=true gravity=false position=7.1493776e-7 velocity=5.354183e-7
+ORIGIN_MATRIX hz=240 substeps=4 scale=100 tilted=true gravity=true position=2.4910487e-6 velocity=1.2396299e-6
+ORIGIN_MATRIX_SUMMARY cases=48 position=3.7811074e-6 velocity=2.927462e-6
+ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 24.32s
+
