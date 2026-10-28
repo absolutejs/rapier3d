@@ -17,3 +17,11 @@ The next isolated hypothesis repeats the entire color/overflow/generic restituti
 Private graph-wide sixteen-sweep artifact `08ca14d345365fed5b29d8e572d0e03a7e15eb3efb8462da5f3fa85b98641421` preserves head-on analytic controls and removes positive box energy gain in the 108-case comparison. In simultaneous elastic sphere controls, it recovers the connected-constraint solution within 1.53e-7 m/s and retains 14 J. Frictionless three-box energy stays within 6.36e-6 J of 14 J. Frictional angular error and order dependence remain.
 
 The new simultaneous-impact package regression fails on stable 0.8.0 and passes on the private candidate across timesteps/length units/insertion order. All 38 package tests pass (48,446 assertions). A complete game run is in progress in a separate checkout. Fixed-joint assemblies, performance cost and broader coupled constraints remain qualification gates. No public version or production policy is changed.
+
+## Full game and assembly gates
+
+The graph-wide candidate passes all 828 game tests, 7,408,613 assertions, with unchanged source; both isolated game type checks pass. The fixed-joint gate exposes a pre-existing coupling defect: equivalent compound spheres retain 20 J and exchange velocities, while the jointed assembly finishes at about 5.00–11.57 J in both stable and contact-only global candidates. Jointed bodies can disagree by up to 5 m/s immediately after impact. This keeps machinery qualification open.
+
+The sequential first-impact benchmark alternates engine order on identical snapshots and verifies every intended pair has solver contacts. At 2/16/64 bodies, baseline medians are 0.279/0.417/1.193 ms and global-candidate medians 0.344/0.452/1.368 ms on this run. This is CPU step cost, not FPS; snapshot restore is excluded, and the 32 independent pairs do not establish dense-island scaling. The initial benchmark overlapped a type-check process and is explicitly unqualified.
+
+Next private experiment: solve rigid/generic joint velocity constraints without bias or warm-start inside each global restitution sweep. Particle attachments/soft-body coupling and broad mechanism calibration are not covered by this narrowly scoped experiment.

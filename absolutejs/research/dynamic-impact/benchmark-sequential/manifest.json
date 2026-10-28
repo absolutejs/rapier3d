@@ -1,0 +1,15 @@
+{
+  "identities": [
+    {
+      "path": "/home/alexkahn/alex/rapier-contact-release/dist/rapier.mjs",
+      "sha256": "09a2cce7ea6a9d7203f73400a7b5095980ccd77067330bce05773e8f0c388021"
+    },
+    {
+      "path": "/home/alexkahn/alex/rapier-impact-research/dist/rapier.mjs",
+      "sha256": "e0e8d946eb19140a44e41db1540cacb87f8d68d1970a35968237af359b08e4d9"
+    }
+  ],
+  "samples": 60,
+  "warmups": 10,
+  "scope": "CPU first-impact world.step only; restoration excluded; same snapshot; alternated engine order; no FPS inference"
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "solverPairs": [
+      1,
+      1
+    ],
+    "bodies": 2,
+    "independentPairs": 1,
+    "inputSha256": "24b8629e2f20d107694ba0a929835be3519d96b3af1585a2d2da57132f2c4fdc",
+    "baselineMedianMs": 0.30158700000004046,
+    "candidateMedianMs": 0.2940479999999752
+  },
+  {
+    "solverPairs": [
+      8,
+      8
+    ],
+    "bodies": 16,
+    "independentPairs": 8,
+    "inputSha256": "5ac32ee5ab93f6720d557145f4c12e594eb6cae26c0e45135717eee3a5f1e33a",
+    "baselineMedianMs": 0.4536009999999351,
+    "candidateMedianMs": 0.517778999999905
+  },
+  {
+    "solverPairs": [
+      32,
+      32
+    ],
+    "bodies": 64,
+    "independentPairs": 32,
+    "inputSha256": "46b724af23a4ba4f2433c778068090107eeaf170439bef2e6537569a1729ba48",
+    "baselineMedianMs": 1.066233000000011,
+    "candidateMedianMs": 1.221958000000086
+  }
+]

@@ -1,0 +1,4 @@
+{
+  "qualified": false,
+  "reason": "A TypeScript qualification command was started before this benchmark session was confirmed finished; retain but do not use for timing conclusions."
+}
