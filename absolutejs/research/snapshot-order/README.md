@@ -97,3 +97,10 @@ The game branch retains both exact archives, scripts, logs and binary captures.
 These completed gates qualify patch release 0.16.1. Promotion must change only
 package identity and documentation; the native bytes remain those independently
 rebuilt above. Registry publication and canonical game adoption remain pending.
+
+## Publication verified
+
+Source `876391b` is published as 0.16.1. After npm accepted the archive, six
+checks retained its transient registry 404 responses without republishing. The
+seventh check returned 200 and verified downloaded SHA-256, SHA-1 and SHA-512
+against the audited archive. `publication-verified.json` is the final receipt.
