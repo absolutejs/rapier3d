@@ -80,3 +80,18 @@ The final audited @absolutejs/rapier3d@0.13.0 archive SHA256 is
 All exports, archive paths, distribution files and embedded native bytes match.
 The package is now publishable; npm confirmation, registry verification and game
 adoption remain pending. Source/records must be pushed before publication.
+
+## Publication accepted
+
+npm accepted @absolutejs/rapier3d@0.13.0 after its browser confirmation. The first
+online registry read returned E404 while npm was processing the release; that
+response is retained as registry-initial.*. Do not treat CLI acceptance alone as
+registry/archive verification or as completed game adoption.
+
+## Registry verified
+
+After two transient E404 responses during npm processing, the online registry
+returns 0.13.0 with SHA1 and integrity exactly matching the audited archive.
+All 53 files in the game's registry installation match that archive byte for
+byte. The game's frozen offline install passes; its full-suite adoption check
+is recorded separately in the game repository. No republish was attempted.

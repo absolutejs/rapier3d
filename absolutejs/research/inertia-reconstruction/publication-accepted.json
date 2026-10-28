@@ -1,0 +1,10 @@
+{
+  "package": "@absolutejs/rapier3d",
+  "version": "0.13.0",
+  "publishExitCode": 0,
+  "observedOutput": "+ @absolutejs/rapier3d@0.13.0",
+  "npmNotice": "Your package is being processed and may take a few minutes to become available.",
+  "recordedAt": "2026-10-28T11:17:47.354082+00:00",
+  "sourceCommit": "222699768d528036991363abe56a467c87c070ff",
+  "tarballSha256": "8d2fb40fb23b89863573cbc5272c415eb0f90bbe83adb10e2e90a2d8fa581705"
+}

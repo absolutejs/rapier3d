@@ -1,0 +1,20 @@
+{
+  "version": "0.13.0",
+  "dist": {
+    "shasum": "274282fccf6cc3f3806d6ace08d7cbff945d668e",
+    "tarball": "https://registry.npmjs.org/@absolutejs/rapier3d/-/rapier3d-0.13.0.tgz",
+    "fileCount": 53,
+    "integrity": "sha512-n+6GEfy6CFSNz+jBWh7AXwSb0sOPgxySOYByboV56Alo8t26gr51jqClkyhMIhieE/kMLvLVCLGl0O+EgLdX2g==",
+    "signatures": [
+      {
+        "sig": "MEYCIQDywONlv2w6uOU3rcX6+SMQgweLyrs9ZNzTsi+hBkd9xAIhAJEwxwKuctIAgc1+/Z4oknKdRthQV/LS0cGDAk25HJIw",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+        "sig": "MEUCIQC4oD6bVWUyKNKbxy4rtsqoKIdFCremsbQNARJAk2W6xgIgZwyd7P8qg6/AlUd/GS284GxWVHpOO5P+rt+xxoQxSS0="
+      }
+    ],
+    "unpackedSize": 5171468
+  }
+}
