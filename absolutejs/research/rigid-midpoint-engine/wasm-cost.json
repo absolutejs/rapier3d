@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "scope": "CPU Bun WASM synthetic free bodies; not FPS",
+  "bodies": 32,
+  "steps": 120,
+  "warmupPairs": 3,
+  "pairs": 12,
+  "bun": "1.4.4+absolute.1",
+  "baseline": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.13.0",
+    "qualifiedKernelRelease": "0.13.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "a6f06627b5b95ff15b87fbe45bf8dfd19eeb78b4f949a912e3fed5805fbcc62b",
+    "wasmBytes": 3298974,
+    "solverChanges": true
+  },
+  "candidate": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.13.0-midpoint-research.0",
+    "qualifiedKernelRelease": "unqualified-midpoint-research",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "0923de1a2b4be66faf2a17e602c566b227457cd511ef4ea6bab799c9d227af6c",
+    "wasmBytes": 3307201,
+    "solverChanges": true
+  },
+  "baselineApiSha256": "2d8f16e18989f879bb732fc242c57aae58cb642e0bf1b6d395816c025537ee86",
+  "candidateApiSha256": "5c84fe065823cbd8aeb449d6fb86b0a4cb6a5e95a2520bd1074678299e16a3de",
+  "baselineMedianMs": 6.4941219999999475,
+  "candidateMedianMs": 17.820731999999964,
+  "medianPairedRatio": 2.90974478449856,
+  "medianPairedAdditionalMicrosecondsPerBodySubstep": 0.6994086263020857,
+  "samples": [
+    {
+      "pair": 0,
+      "baselineMs": 6.52565299999992,
+      "candidateMs": 16.369717000000037,
+      "order": "baseline-first"
+    },
+    {
+      "pair": 1,
+      "baselineMs": 6.83954899999992,
+      "candidateMs": 16.06997100000001,
+      "order": "candidate-first"
+    },
+    {
+      "pair": 2,
+      "baselineMs": 15.11315599999989,
+      "candidateMs": 44.53884800000003,
+      "order": "baseline-first"
+    },
+    {
+      "pair": 3,
+      "baselineMs": 7.096461999999974,
+      "candidateMs": 22.39872600000001,
+      "order": "candidate-first"
+    },
+    {
+      "pair": 4,
+      "baselineMs": 7.687637999999993,
+      "candidateMs": 24.948203000000035,
+      "order": "baseline-first"
+    },
+    {
+      "pair": 5,
+      "baselineMs": 9.450544000000036,
+      "candidateMs": 19.808697000000052,
+      "order": "candidate-first"
+    },
+    {
+      "pair": 6,
+      "baselineMs": 6.159337999999934,
+      "candidateMs": 17.28701799999999,
+      "order": "baseline-first"
+    },
+    {
+      "pair": 7,
+      "baselineMs": 5.5292069999999285,
+      "candidateMs": 18.399755000000027,
+      "order": "candidate-first"
+    },
+    {
+      "pair": 8,
+      "baselineMs": 5.121524000000022,
+      "candidateMs": 14.900236999999947,
+      "order": "baseline-first"
+    },
+    {
+      "pair": 9,
+      "baselineMs": 5.508878999999979,
+      "candidateMs": 18.35444599999994,
+      "order": "candidate-first"
+    },
+    {
+      "pair": 10,
+      "baselineMs": 6.462590999999975,
+      "candidateMs": 13.436788999999976,
+      "order": "baseline-first"
+    },
+    {
+      "pair": 11,
+      "baselineMs": 5.034437000000025,
+      "candidateMs": 14.650981999999999,
+      "order": "candidate-first"
+    }
+  ]
+}

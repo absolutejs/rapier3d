@@ -375,3 +375,37 @@ This calculation runs when mass properties are recomputed. It is not a render
 optimization: recompute after geometry/mass changes, not unnecessarily every
 frame. Qualification records, measured cost and limits are retained under
 `absolutejs/research/inertia-reconstruction/`.
+
+
+## Matched isolated-body rotation and observations (0.14)
+
+An isolated, awake dynamic body with gyroscopic forces enabled now uses a
+bounded implicit midpoint angular update with its matching Cayley attitude.
+This substantially reduces free-flight angular energy and world-momentum drift.
+The path requires physical stored inertia, unlocked angular axes, zero external
+torque and angular damping, and ordinary rotation limits. Contact-connected,
+jointed, articulated, soft/FEM and fast-rotation bodies retain their existing
+solver path. This does not correct coupled angular/contact integration or the
+remaining articulated COM-transport defect.
+
+A rejected update does not partially mutate state. Nonphysical stored moments,
+rotation limits and failed/invalid solves are observed explicitly; the existing
+correction/cap ordering applies for the rest of that island solve. The next solve
+re-evaluates eligibility. No energy or momentum clamp is introduced.
+
+With `world.profilerEnabled = true`, `world.freeRotationStats()` returns owned
+counts (`acceptedSteps`, `nonphysicalInertiaRejections`, `rotationLimitRejections`,
+`invalidOrFailedSolves`), maximum Newton updates, and maximum accepted residual
+in radians/second. It returns null before a completed profiled step, after
+restoration, while profiling is disabled or after toggling it. Counts include
+solver substeps and CCD passes; zero acceptance does not establish conservation.
+The bounded `createPhysicsStepProfiler` includes these observations as each
+sample's `native.freeRotation`, with the same sample and ownership limits.
+
+The 96-case native matrix reduces worst relative angular-energy drift from
+3.2% to 0.00026%; 542 excluded/rejected control states match the previous release
+exactly. On a synthetic 32-body CPU/WASM workload the median paired additional
+cost is approximately 0.7 microseconds per body/substep (2.9x batch ratio).
+These are fixture measurements, not game-wide guarantees or hardware FPS.
+Admission, numerical/storage limits, actual-engine tests, failed assumptions and
+cost records are preserved in `absolutejs/research/rigid-midpoint-engine`.

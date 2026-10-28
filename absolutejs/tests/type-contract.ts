@@ -69,3 +69,14 @@ const options: R.PhysicsStepProfileOptions = {sampleStartStep: 8};
 // @ts-expect-error Cadence must be numeric.
 R.createPhysicsStepProfiler(world, {sampleEvery: '32'});
 void [sample, options];
+
+const rotationStats: R.FreeRotationStats | null = world.freeRotationStats();
+if (rotationStats) {
+ const accepted: number = rotationStats.acceptedSteps;
+ const residual: number = rotationStats.maxResidualRadiansPerSecond;
+ void [accepted, residual];
+}
+if (sample?.native) {
+ const capturedRotation: R.FreeRotationStats = sample.native.freeRotation;
+ void capturedRotation;
+}

@@ -90,6 +90,21 @@ export interface ContactConvergenceStats {
     maxRestitutionResidual: number;
 }
 
+/** Observations of isolated free-body rotation during a completed profiled step.
+ * Counts include solver substeps and CCD passes. Zero accepted steps means no
+ * admitted solve, not proof of conservation. Rejections use the existing solver
+ * path for the rest of that island solve; constrained bodies are not attempted.
+ */
+export interface FreeRotationStats {
+    acceptedSteps: number;
+    nonphysicalInertiaRejections: number;
+    rotationLimitRejections: number;
+    invalidOrFailedSolves: number;
+    maxNewtonIterations: number;
+    /** Maximum accepted angular-velocity equation residual in radians/second. */
+    maxResidualRadiansPerSecond: number;
+}
+
 /**
  * The physics world.
  *
@@ -1396,6 +1411,21 @@ export class World {
      */
     public ccdSubsteps(): number | null {
         return this.physicsPipeline.raw.ccd_substeps() ?? null;
+    }
+
+    /** Owned isolated-body rotation observations from the last completed profiled
+     * step; null before that step, after toggling profiling, when disabled, or
+     * after restoration. Zero accepted steps does not establish conservation.
+     * Reading or modifying the result never changes simulation.
+     */
+    public freeRotationStats(): FreeRotationStats | null {
+        const values = this.physicsPipeline.raw.free_rotation_candidate();
+        if (values == null) return null;
+        return {
+            acceptedSteps: values[0], nonphysicalInertiaRejections: values[1],
+            rotationLimitRejections: values[2], invalidOrFailedSolves: values[3],
+            maxNewtonIterations: values[4], maxResidualRadiansPerSecond: values[5],
+        };
     }
 
     /** Owned observations from the last completed profiled step; null before

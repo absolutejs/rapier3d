@@ -1,0 +1,154 @@
+{
+  "gpu": false,
+  "result": {
+    "inertiaReconstructionError": 1.5608561790905355e-7,
+    "boundedStepProfile": {
+      "sampleEvery": 2,
+      "sampleStartStep": 0,
+      "maxSamples": 3,
+      "attemptedSteps": 10,
+      "completedSteps": 10,
+      "failedSteps": 0,
+      "timedSteps": 10,
+      "totalWallTimeMs": 0.4000000059604645,
+      "maxWallTimeMs": 0.10000002384185791,
+      "slowestStep": 7,
+      "timingErrors": 0,
+      "captureErrors": 0,
+      "samplesOmittedForBudget": 2,
+      "samples": [
+        {
+          "step": 0,
+          "outcome": "completed",
+          "wallTimeMs": 0.09999999403953552,
+          "captureStatus": "captured",
+          "native": {
+            "lengthUnit": 1,
+            "timestep": 0.01666666753590107,
+            "solverIterations": 4,
+            "ccdSubsteps": 0,
+            "timings": {
+              "stepMs": 0.1,
+              "collisionDetectionMs": 0,
+              "solverMs": 0,
+              "assemblyMs": 0,
+              "resolutionMs": 0,
+              "ccdMs": 0
+            },
+            "convergence": {
+              "compressionSolves": 0,
+              "compressionIterations": 0,
+              "compressionLimitHits": 0,
+              "maxCompressionResidual": 0,
+              "restitutionSolves": 0,
+              "restitutionIterations": 0,
+              "restitutionLimitHits": 0,
+              "maxRestitutionResidual": 0
+            }
+          }
+        },
+        {
+          "step": 2,
+          "outcome": "completed",
+          "wallTimeMs": 0,
+          "captureStatus": "captured",
+          "native": {
+            "lengthUnit": 1,
+            "timestep": 0.01666666753590107,
+            "solverIterations": 4,
+            "ccdSubsteps": 0,
+            "timings": {
+              "stepMs": 0,
+              "collisionDetectionMs": 0,
+              "solverMs": 0,
+              "assemblyMs": 0,
+              "resolutionMs": 0,
+              "ccdMs": 0
+            },
+            "convergence": {
+              "compressionSolves": 0,
+              "compressionIterations": 0,
+              "compressionLimitHits": 0,
+              "maxCompressionResidual": 0,
+              "restitutionSolves": 0,
+              "restitutionIterations": 0,
+              "restitutionLimitHits": 0,
+              "maxRestitutionResidual": 0
+            }
+          }
+        },
+        {
+          "step": 4,
+          "outcome": "completed",
+          "wallTimeMs": 0,
+          "captureStatus": "captured",
+          "native": {
+            "lengthUnit": 1,
+            "timestep": 0.01666666753590107,
+            "solverIterations": 4,
+            "ccdSubsteps": 0,
+            "timings": {
+              "stepMs": 0,
+              "collisionDetectionMs": 0,
+              "solverMs": 0,
+              "assemblyMs": 0,
+              "resolutionMs": 0,
+              "ccdMs": 0
+            },
+            "convergence": {
+              "compressionSolves": 0,
+              "compressionIterations": 0,
+              "compressionLimitHits": 0,
+              "maxCompressionResidual": 0,
+              "restitutionSolves": 0,
+              "restitutionIterations": 0,
+              "restitutionLimitHits": 0,
+              "maxRestitutionResidual": 0
+            }
+          }
+        }
+      ]
+    },
+    "buildInfo": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.13.0-midpoint-research.0",
+      "qualifiedKernelRelease": "unqualified-midpoint-research",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "0923de1a2b4be66faf2a17e602c566b227457cd511ef4ea6bab799c9d227af6c",
+      "wasmBytes": 3307201,
+      "solverChanges": true
+    },
+    "contactConvergenceControls": true,
+    "coupledCases": 6,
+    "coupledMaximumEnergyError": 0.00017166134671242617,
+    "coupledMaximumVelocityError": 0.0000021457672119140625,
+    "generalizedDampingControls": true,
+    "multibodyMomentumError": 0,
+    "multibodyRigidVelocityError": 1.1501528826470645e-7,
+    "simplexMinimumDistanceCm": 0.0006346320733428001,
+    "kinematicPositionErrorM": 3.5762786865234375e-7,
+    "kinematicRotationErrorRad": 3.3717478808715265e-7,
+    "currentBodyPoseQuery": true,
+    "totalCcdMs": 7.699999999999993,
+    "totalToiMs": 6.699999999999995,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "contactPolicyControls": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}

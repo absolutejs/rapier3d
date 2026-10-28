@@ -154,6 +154,10 @@ try {
     boundedStepProfile=profiler.snapshot();
     if(boundedStepProfile.completedSteps!==10||boundedStepProfile.samples.length!==3||boundedStepProfile.samplesOmittedForBudget!==2||boundedStepProfile.captureErrors||boundedStepProfile.timingErrors||sampledWorld.profilerEnabled)throw Error('Invalid browser step profile');
     if(boundedStepProfile.samples.some(s=>s.captureStatus!=='captured'||!s.native))throw Error('Missing native browser sample');
+    if(boundedStepProfile.samples.some(s=>s.native?.freeRotation.acceptedSteps!==sampledWorld.numSolverIterations))throw Error('Missing browser free rotation observations');
+    const ownedProfile=profiler.snapshot();
+    ownedProfile.samples[0]!.native!.freeRotation.acceptedSteps=-1;
+    if(profiler.snapshot().samples[0]!.native!.freeRotation.acceptedSteps<0)throw Error('Browser free rotation observations are not owned');
     const expected=control.takeSnapshot(),actual=sampledWorld.takeSnapshot();
     if(expected.length!==actual.length||expected.some((v,i)=>v!==actual[i]))throw Error('Browser profiling changed physics');
    }finally{control.free();}

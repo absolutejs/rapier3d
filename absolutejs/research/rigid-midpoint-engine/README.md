@@ -85,3 +85,55 @@ manifest. Parallel tests use `RAYON_NUM_THREADS=2` and `--test-threads=1`.
 The WebAssembly build and package regression work are separate from these native
 CPU results. A release still requires qualified WASM/API identity, package and
 browser tests, game controls, independent builds and published-version adoption.
+
+## WebAssembly and trajectory follow-up
+
+The optimized WebAssembly build completed in 5m39s with two jobs. The stable
+identity guard correctly refused it before a research-only manifest was set.
+The private API reports `unqualified-midpoint-research` and package
+`0.13.0-midpoint-research.0`; `private: true` remains set. Native SHA256 is
+`0923de1a2b4be66faf2a17e602c566b227457cd511ef4ea6bab799c9d227af6c`
+(3,307,201 bytes). No stable release identity is reused.
+
+All 189 existing package tests pass (77,522 assertions). Three separate WASM
+observation tests pass (259 assertions), including owned storage, freshness,
+restoration, rejection retained across substeps and exact snapshot bytes with
+profiling on/off during changing eligibility. The bounded Chromium worker check
+passes with `--disable-gpu`.
+
+The actual-engine trajectory test compares 12 cases at 60/120/240 Hz with the
+independently refined RK4 fixtures. Its first version incorrectly required a
+fourfold observed error decrease even below the f32 roundoff floor: a 9.89e-7 rad
+error became 4.41e-7 rather than one quarter. That failure is preserved in
+`native-trajectory-roundoff-floor.log`. The corrected test separates the two
+questions: the f64 midpoint trajectory retains second-order convergence toward
+RK4, and each native attitude remains within 2e-6 radians of that matching f64
+trajectory. All five native tests pass in serial and two-worker builds. The
+largest coarse-step error to RK4 is 0.01181999 rad; the 2e-6 bound is specifically
+native-versus-matched-midpoint, not native-versus-exact-flow.
+
+## CPU cost
+
+`benchmark-wasm.ts` runs 12 alternating pairs after three warmup pairs, with 32
+free bodies, 120 steps per batch and four substeps. Baseline median is 6.494 ms
+per batch; candidate median is 17.821 ms. Median paired ratio is 2.91 and paired
+additional cost is 0.699 microseconds per body/substep. These are CPU Bun/WASM
+results, not browser FPS or a guarantee for other machines/scenes. No heavy build
+or test ran concurrently with this measurement. The baseline is the installed
+published 0.13.0 game package; both module hashes and identities are recorded.
+This cost must remain visible when choosing active-body simulation budgets.
+
+## Release-candidate SDK preparation
+
+The 0.14.0 candidate adds named owned `world.freeRotationStats()` observations
+and deep-owned `native.freeRotation` records in the existing bounded profiler.
+All 193 package tests pass (77,586 assertions), including sampler ownership,
+freshness, eligibility changes and exact snapshot parity. Strict declaration
+checks pass. The GPU-disabled browser verifies the named records and their
+ownership as part of its existing actual-worker regression.
+
+A final source/documentation rebuild takes 3m44s and produces exactly the same
+3,307,201 native bytes as the private archive that passed all 840 game tests.
+The public statistics integration changes API code, not that native kernel.
+Source manifests and both build identities are retained. Independent source
+reproduction and final archive qualification remain required before publishing.

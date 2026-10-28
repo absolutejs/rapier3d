@@ -1,0 +1,11 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/research/rigid-midpoint-engine/wasm-candidate.test.ts:
+(pass) private native observations have owned storage and profiled-step freshness [27.19ms]
+(pass) private nonphysical inertia rejection is explicit and retained across substeps [13.41ms]
+(pass) native observations do not alter snapshot bytes through changing eligibility [35.81ms]
+
+ 3 pass
+ 0 fail
+ 259 expect() calls
+Ran 3 tests across 1 file. [303.00ms]

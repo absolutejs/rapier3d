@@ -1,4 +1,4 @@
-import type {World, ContactConvergenceStats} from "./world";
+import type {World, ContactConvergenceStats, FreeRotationStats} from "./world";
 import type {EventQueue} from "./event_queue";
 import type {PhysicsHooks} from "./physics_hooks";
 
@@ -23,6 +23,7 @@ export interface PhysicsStepSample {
             ccdMs: number;
         };
         convergence: ContactConvergenceStats;
+        freeRotation: FreeRotationStats;
     } | null;
 }
 
@@ -103,8 +104,9 @@ export function createPhysicsStepProfiler(
     };
     const capture = (): NonNullable<PhysicsStepSample["native"]> => {
         const ccdSubsteps = world.ccdSubsteps(),
-            convergence = world.contactConvergence();
-        if (ccdSubsteps === null || convergence === null)
+            convergence = world.contactConvergence(),
+            freeRotation = world.freeRotationStats();
+        if (ccdSubsteps === null || convergence === null || freeRotation === null)
             throw new Error("No completed profiled step");
         const timings = {
             stepMs: world.timingStep(),
@@ -116,6 +118,9 @@ export function createPhysicsStepProfiler(
         };
         if (
             Object.values(timings).some(
+                (value) => !Number.isFinite(value) || value < 0,
+            ) ||
+            Object.values(freeRotation).some(
                 (value) => !Number.isFinite(value) || value < 0,
             ) ||
             Object.values(convergence).some(
@@ -130,6 +135,7 @@ export function createPhysicsStepProfiler(
             ccdSubsteps,
             timings,
             convergence,
+            freeRotation,
         };
     };
     return {
@@ -242,6 +248,7 @@ export function createPhysicsStepProfiler(
                               ...sample.native,
                               timings: {...sample.native.timings},
                               convergence: {...sample.native.convergence},
+                              freeRotation: {...sample.native.freeRotation},
                           }
                         : null,
                 })),

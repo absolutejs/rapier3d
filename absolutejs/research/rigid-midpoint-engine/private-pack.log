@@ -1,0 +1,63 @@
+bun pack v1.4.4+absolute.1 (38afee6c8)
+
+packed 1.1KB package.json
+packed 11.35KB LICENSE
+packed 25.1KB README.md
+packed 25.1KB absolutejs/README.md
+packed 0.61KB dist/build-info.mjs
+packed 0.65KB dist/provenance.json
+packed 4.65MB dist/rapier.mjs
+packed 0.92KB dist/types/build-info.d.ts
+packed 372B dist/types/coarena.d.ts
+packed 8.31KB dist/types/control/character_controller.d.ts
+packed 121B dist/types/control/index.d.ts
+packed 1.80KB dist/types/control/pid_controller.d.ts
+packed 10.77KB dist/types/control/ray_cast_vehicle_controller.d.ts
+packed 436B dist/types/dynamics/ccd_solver.d.ts
+packed 300B dist/types/dynamics/coefficient_combine_rule.d.ts
+packed 15.53KB dist/types/dynamics/impulse_joint.d.ts
+packed 3.1KB dist/types/dynamics/impulse_joint_set.d.ts
+packed 420B dist/types/dynamics/index.d.ts
+packed 5.22KB dist/types/dynamics/integration_parameters.d.ts
+packed 0.83KB dist/types/dynamics/island_manager.d.ts
+packed 1.48KB dist/types/dynamics/multibody_joint.d.ts
+packed 3.76KB dist/types/dynamics/multibody_joint_set.d.ts
+packed 36.60KB dist/types/dynamics/rigid_body.d.ts
+packed 3.54KB dist/types/dynamics/rigid_body_set.d.ts
+packed 41.46KB dist/types/dynamics/soft_body.d.ts
+packed 4.68KB dist/types/dynamics/soft_body_set.d.ts
+packed 337B dist/types/exports.d.ts
+packed 12.50KB dist/types/geometry/broad_phase.d.ts
+packed 45.76KB dist/types/geometry/collider.d.ts
+packed 4.1KB dist/types/geometry/collider_set.d.ts
+packed 1.21KB dist/types/geometry/contact.d.ts
+packed 96B dist/types/geometry/feature.d.ts
+packed 311B dist/types/geometry/index.d.ts
+packed 0.77KB dist/types/geometry/interaction_groups.d.ts
+packed 7.66KB dist/types/geometry/narrow_phase.d.ts
+packed 2.0KB dist/types/geometry/point.d.ts
+packed 3.62KB dist/types/geometry/ray.d.ts
+packed 23.40KB dist/types/geometry/shape.d.ts
+packed 2.65KB dist/types/geometry/toi.d.ts
+packed 212B dist/types/init.d.ts
+packed 2.45KB dist/types/math.d.ts
+packed 1.81KB dist/types/pipeline/debug_render_pipeline.d.ts
+packed 4.22KB dist/types/pipeline/event_queue.d.ts
+packed 274B dist/types/pipeline/index.d.ts
+packed 2.0KB dist/types/pipeline/physics_hooks.d.ts
+packed 0.87KB dist/types/pipeline/physics_pipeline.d.ts
+packed 1.11KB dist/types/pipeline/query_pipeline.d.ts
+packed 1.96KB dist/types/pipeline/serialization_pipeline.d.ts
+packed 2.67KB dist/types/pipeline/step_profile.d.ts
+packed 37.1KB dist/types/pipeline/world.d.ts
+packed 87B dist/types/rapier.d.ts
+packed 172.35KB dist/types/rapier_wasm3d.d.ts
+packed 36B dist/types/raw.d.ts
+
+/home/alexkahn/alex/rapier-midpoint-research/.absolutejs/pack/absolutejs-rapier3d-0.13.0-midpoint-research.0.tgz
+
+Total files: 53
+Shasum: 6b5294409d0ebb063b1ddb48f6bcb8096925e3a3
+Integrity: sha512-tFYJY3KcSmDhb[...]E3BAnFsM59ynA==
+Unpacked size: 5.18MB
+Packed size: 1.82MB

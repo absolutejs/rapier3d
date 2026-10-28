@@ -1,8 +1,10 @@
 # Native matched midpoint candidate — 2026-10-28
 
-Private research based on published 0.13.0. `src/dynamics/rigid_midpoint.rs` is
-compiled directly by this no-std harness but is **not wired into the engine**.
-The game remains on the published, independently qualified 0.13.0 package.
+Arithmetic research based on published 0.13.0. This no-std harness compiles
+`src/dynamics/rigid_midpoint.rs` directly. The initial unwired phase below is
+historical: the isolated-body engine integration is now qualified separately in
+`../rigid-midpoint-engine`. The playable game remains on published 0.13.0 during
+release preparation.
 
 The torque-free update solves body-frame momentum by implicit midpoint, then
 returns the matching Cayley rotation. It preserves the complete world angular
@@ -147,3 +149,11 @@ The admission boundary detects this rather than introducing a hidden correction.
 A production choice needs either a physically consistent representation or an
 explicit qualified policy for those cases. The matrix does not exercise contacts,
 external torque, damping, native SIMD/parallel scheduling or actual engine state.
+
+
+The later inverse-storage audit follows the actual Parry representation: f32
+inverse storage followed by f32 reconstruction rejects 283 of these 1,500 thin
+inputs, versus 260 before reciprocal storage. Widening only the reconstruction to
+f64 rejects 364, so it is not a repair. `inverse-storage-audit.log` records all
+three counts. Subsequent native integration and SDK qualification supersede the
+historical statements above about this module not being wired.

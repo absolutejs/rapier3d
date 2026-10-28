@@ -20,7 +20,7 @@ pub(crate) struct GyroParams {
     /// the world rotation, so bodies with tilted principal axes are handled correctly.
     pub principal_frame: Rotation,
     pub enabled: bool,
-    // Private matched-rotation experiment. Each worker owns claimed slots.
+    // Matched free rotation. Each worker owns claimed slots.
     pub midpoint_eligible: bool,
     pub midpoint_rotation: Option<Rotation>,
     // Accepted / nonphysical / cap / other numerical rejection counts.

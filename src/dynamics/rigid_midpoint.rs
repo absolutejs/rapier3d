@@ -1,6 +1,6 @@
-//! Private candidate for torque-free principal-frame momentum integration.
+//! Matched torque-free principal-frame momentum integration.
 //!
-//! This module is not yet wired into the engine. A matching Cayley attitude
+//! Used by the admitted isolated-body solver path. A matching Cayley attitude
 //! increment is part of the result; applying only the momentum update does not
 //! preserve the world-space angular-momentum vector. No conservation clamp is used.
 
@@ -235,7 +235,7 @@ pub fn rigid_rotation_step(
     )
 }
 
-/// Private native experiment boundary; accepts only a physical stored tensor and
+/// Native admission boundary; accepts only a physical stored tensor and
 /// a matched attitude increment within the caller's substep rotation allowance.
 pub fn bounded_rigid_rotation_step(
     rotation: [f64; 4],
@@ -297,7 +297,7 @@ fn rigid_rotation_step_inner(
     })
 }
 
-/// Admission boundary for a private, torque-free engine experiment.
+/// Admission boundary for torque-free engine integration.
 /// Rejects nonphysical stored inertia and an excessive ACTUAL Cayley angle.
 /// It never rescales velocity or returns a partially updated state. The caller
 /// must decide how rejected cases participate in the full constrained solver.

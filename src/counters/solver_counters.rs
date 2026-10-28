@@ -19,10 +19,10 @@ pub struct ContactConvergenceCounters {
 /// Performance counters related to constraints resolution.
 #[derive(Default, Clone, Copy, Debug)]
 pub struct SolverCounters {
-    /// Private experiment: accepted / nonphysical / cap / numerical rejections.
+    /// Free rotation: accepted / nonphysical / cap / invalid or failed solves.
     /// Runtime-only observations, summed across CCD passes when counters enabled.
     pub midpoint_counts: [usize; 4],
-    /// Maximum Newton updates among accepted private rotation solves.
+    /// Maximum Newton updates among accepted free-rotation solves.
     pub midpoint_max_iterations: usize,
     /// Maximum accepted angular-velocity residual, in radians/second.
     pub midpoint_max_residual: f64,

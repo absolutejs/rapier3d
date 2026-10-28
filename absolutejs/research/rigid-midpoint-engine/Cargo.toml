@@ -5,6 +5,7 @@ version = "0.0.0"
 edition = "2021"
 publish = false
 [dependencies]
+num-traits = { version = "=0.2.19", default-features = false, features = ["libm"] }
 rapier3d = { path = "../../../crates/rapier3d", features = ["profiler"] }
 [features]
 default = ["candidate"]

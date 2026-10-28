@@ -1,7 +1,7 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.13.0-midpoint-research.0",
-  "description": "Rapier 3D with corrected contact witnesses, rotation precision and solver diagnostics",
+  "version": "0.14.0",
+  "description": "Rapier 3D with matched free-body rotation, corrected contact witnesses and solver diagnostics",
   "type": "module",
   "license": "Apache-2.0",
   "repository": {
