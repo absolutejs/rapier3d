@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "npmPublishAccepted": true,
+  "registryVersionVerified": "0.14.0",
+  "registryShasumAndIntegrityMatchAuditedArchive": true,
+  "sourceCommit": "c9342fed5c8d9c75f5b03bb750d95988601023ec",
+  "archiveSha256": "b86bdeb022b3b02cd0b3b586cc4c420fee56789dc89e37eca2ed846506d239bd",
+  "registry": {
+    "version": "0.14.0",
+    "dist": {
+      "shasum": "26240bd76f5e7cc5e498be87fcaf607348c91cdc",
+      "tarball": "https://registry.npmjs.org/@absolutejs/rapier3d/-/rapier3d-0.14.0.tgz",
+      "fileCount": 53,
+      "integrity": "sha512-5mDv9ThFTIvGA5q9qffVliSv5vXLxzHoCVNmFWnQc8Wr9nXlkodTK5X2JKsz9iKUTJJR61umeZgnsneaXNbdmw==",
+      "signatures": [
+        {
+          "sig": "MEUCIQClMHogzJajXJc1FGjiGF/rhLtA//1EkZC0ueVtr6DNWwIgRzqIuqxYVaI3nzV0TODZw7Kv9Ft7OGFaYvMZ3wnaNBQ=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        },
+        {
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+          "sig": "MEQCIBCk4+pFeV9UdQ89VXuIU0uAmWH/DRD0/p3oncJvSylJAiB2WdRw1d5znBXh/vA7Z0jq8coWUNkY84fmIur42sGCxQ=="
+        }
+      ],
+      "unpackedSize": 5188673
+    }
+  }
+}

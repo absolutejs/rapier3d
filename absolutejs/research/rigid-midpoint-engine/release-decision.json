@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "release": "0.14.0",
-  "status": "qualified-for-publication; registry confirmation pending",
+  "status": "published; registry archive integrity verified",
   "nativeSha256": "0923de1a2b4be66faf2a17e602c566b227457cd511ef4ea6bab799c9d227af6c",
   "nativeBytes": 3307201,
   "independentNativeBuildsByteIdentical": true,
@@ -70,5 +70,6 @@
     "Nonphysical stored inertia rejected, not repaired",
     "Synthetic CPU cost increased about 0.7 microseconds/body/substep; not FPS",
     "Native WSL GPU benchmarking not performed"
-  ]
+  ],
+  "publicationReceipt": "publication-verified.json"
 }

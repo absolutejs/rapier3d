@@ -1,9 +1,10 @@
 # Private native matched-rotation experiment — 2026-10-28
 
-This research branch wires the previously isolated midpoint/Cayley arithmetic
-into actual native ordinary-body free-flight integration. It is **not released**,
-not installed in the game, and does not fix coupled contact/joint rotation.
-The game remains on published 0.13.0.
+This record follows midpoint/Cayley arithmetic into native ordinary-body
+free-flight integration. Version **0.14.0 is now published**, with registry archive
+integrity verified. Historical candidates below used private manifests; final
+source and archive are public. This does not fix coupled contact/joint rotation.
+Canonical game adoption is recorded in the game repository.
 
 ## Admission and integration
 
@@ -154,3 +155,9 @@ offline inspection reports owned observations without stepping. Source and exact
 candidate archive are backed up on the game's qualification branch. See
 `release-decision.json` for its commit and the precise release scope/limitations.
 Publishing and canonical game adoption still require registry verification.
+
+
+The first registry read returned E404 while npm processed the accepted release.
+The next read verified version 0.14.0 and exact SHA1/SHA512 archive identity.
+`publication-verified.json` records the successful verification; no authentication
+challenge or credential is retained in the repository.
