@@ -1,0 +1,22 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/simultaneous-impact.test.ts:
+19 |    // v_after = 2 * center-of-mass velocity - v_before; V_com = -0.6 m/s.
+20 |    const expected=[-3.2,.8,-1.2];
+21 |    let energy=0,momentum=0;
+22 |    for(let i=0;i<3;i++){
+23 |     const v=bodies[i]!.linvel();const x=v.x/units;
+24 |     expect(Math.abs(x-expected[i]!)).toBeLessThan(2e-5);
+                                          ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.00002
+Received: 1.4874991893768312
+
+      at <anonymous> (/home/alexkahn/alex/rapier-impact-research/absolutejs/tests/simultaneous-impact.test.ts:24:38)
+(fail) simultaneous elastic contacts converge to the connected three-body solution [40.87ms]
+
+ 0 pass
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [350.00ms]

@@ -1,0 +1,1213 @@
+{
+  "scope": "bounded two-body numerical measurements; no release acceptance or FPS claim",
+  "baseline": {
+    "head-on": {
+      "velocityError": {
+        "maximum": 1.873288835163578e-07,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 240,
+          "units": 1,
+          "reverse": false,
+          "restitution": 0
+        }
+      },
+      "maxEnergyGain": {
+        "maximum": 1.4822824407900725e-06,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 60,
+          "units": 100,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxLinearError": {
+        "maximum": 7.152557373046875e-07,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 240,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxAngularError": {
+        "maximum": 0,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 60,
+          "units": 1,
+          "reverse": false,
+          "restitution": 0
+        }
+      }
+    },
+    "oblique": {
+      "velocityError": {
+        "maximum": 0.029371247480779218,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 240,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxEnergyGain": {
+        "maximum": 6.214983692132137e-07,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 240,
+          "units": 100,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxLinearError": {
+        "maximum": 3.3027436552344467e-06,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 960,
+          "units": 100,
+          "reverse": false,
+          "restitution": 0
+        }
+      },
+      "maxAngularError": {
+        "maximum": 0.1618158669196701,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 60,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      }
+    },
+    "box-friction": {
+      "maxEnergyGain": {
+        "maximum": 3.9913486124150523,
+        "fixture": {
+          "shape": "box-friction",
+          "hz": 960,
+          "units": 100,
+          "reverse": true,
+          "restitution": 1
+        }
+      },
+      "maxLinearError": {
+        "maximum": 2.03133888633031e-06,
+        "fixture": {
+          "shape": "box-friction",
+          "hz": 960,
+          "units": 100,
+          "reverse": true,
+          "restitution": 1
+        }
+      },
+      "maxAngularError": {
+        "maximum": 0.07895491198492367,
+        "fixture": {
+          "shape": "box-friction",
+          "hz": 60,
+          "units": 100,
+          "reverse": false,
+          "restitution": 1
+        }
+      }
+    }
+  },
+  "candidate": {
+    "head-on": {
+      "velocityError": {
+        "maximum": 1.873288835163578e-07,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 240,
+          "units": 1,
+          "reverse": false,
+          "restitution": 0
+        }
+      },
+      "maxEnergyGain": {
+        "maximum": 1.4822824407900725e-06,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 960,
+          "units": 100,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxLinearError": {
+        "maximum": 7.152557373046875e-07,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 240,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxAngularError": {
+        "maximum": 0,
+        "fixture": {
+          "shape": "head-on",
+          "hz": 60,
+          "units": 1,
+          "reverse": false,
+          "restitution": 0
+        }
+      }
+    },
+    "oblique": {
+      "velocityError": {
+        "maximum": 0.029371247480779218,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 240,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxEnergyGain": {
+        "maximum": 2.5123159410611606e-06,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 960,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      },
+      "maxLinearError": {
+        "maximum": 3.3027436552344467e-06,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 960,
+          "units": 100,
+          "reverse": false,
+          "restitution": 0
+        }
+      },
+      "maxAngularError": {
+        "maximum": 0.1618160486950746,
+        "fixture": {
+          "shape": "oblique",
+          "hz": 60,
+          "units": 1,
+          "reverse": false,
+          "restitution": 1
+        }
+      }
+    },
+    "box-friction": {
+      "maxEnergyGain": {
+        "maximum": 0,
+        "fixture": {
+          "shape": "box-friction",
+          "hz": 60,
+          "units": 1,
+          "reverse": false,
+          "restitution": 0
+        }
+      },
+      "maxLinearError": {
+        "maximum": 2.8611787717343017e-06,
+        "fixture": {
+          "shape": "box-friction",
+          "hz": 960,
+          "units": 1,
+          "reverse": false,
+          "restitution": 0.5
+        }
+      },
+      "maxAngularError": {
+        "maximum": 0.06881800251094193,
+        "fixture": {
+          "shape": "box-friction",
+          "hz": 60,
+          "units": 100,
+          "reverse": false,
+          "restitution": 1
+        }
+      }
+    }
+  },
+  "changes": [
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -1.4822824407900725e-06,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -1.4822824407900725e-06,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -1.4822824407900725e-06,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -1.4822824407900725e-06,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "head-on",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -3.148964324850567e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 3.614438899290917e-07,
+      "angularErrorDelta": 1.8177540450636798e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -3.148964324850567e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 3.614438899290917e-07,
+      "angularErrorDelta": 1.8177540450636798e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -8.980972943106735e-08
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 7.940374935344607e-08
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -8.980972943106735e-08
+    },
+    {
+      "shape": "oblique",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 7.940374935344607e-08
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 5.215526055479813e-08
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 5.215526055479813e-08
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -1.535724032386554e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 2.5123159410611606e-06,
+      "angularErrorDelta": -1.362826953510421e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -1.535724032386554e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 2.5123159410611606e-06,
+      "angularErrorDelta": -1.362826953510421e-07
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "oblique",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": 0.0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0049012297453106465
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -1.0650864077903783,
+      "angularErrorDelta": -0.010136968693416418
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.004900630261095405
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -1.0650983099232896,
+      "angularErrorDelta": -0.010136552715461877
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.004899912148759504
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -1.0650930371941918,
+      "angularErrorDelta": -0.010136909473981742
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0049001772436442215
+    },
+    {
+      "shape": "box-friction",
+      "hz": 60,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -1.065090601390434,
+      "angularErrorDelta": -0.010137254682949529
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0011767025708470848
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -1.003512200032862,
+      "angularErrorDelta": -0.0024977316778277484
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0011774546004456217
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -1.003513657001971,
+      "angularErrorDelta": -0.0024981773338774646
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.001216705501914708
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -1.0584573012242728,
+      "angularErrorDelta": -0.0025138993522137547
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0012165879318084601
+    },
+    {
+      "shape": "box-friction",
+      "hz": 240,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -1.058448558223608,
+      "angularErrorDelta": -0.002514833363264607
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0002240645768167666
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 1,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -3.990387298169466,
+      "angularErrorDelta": -0.0002720025324793136
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.00022438588350552017
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 1,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -3.990386840468503,
+      "angularErrorDelta": -0.0002740735198082118
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.00018495614548876254
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 100,
+      "reverse": false,
+      "restitution": 1,
+      "energyGainDelta": -3.9913429159993257,
+      "angularErrorDelta": -0.00027064178712970805
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0,
+      "energyGainDelta": 0,
+      "angularErrorDelta": 0.0
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 0.5,
+      "energyGainDelta": 0,
+      "angularErrorDelta": -0.0001870153233344612
+    },
+    {
+      "shape": "box-friction",
+      "hz": 960,
+      "units": 100,
+      "reverse": true,
+      "restitution": 1,
+      "energyGainDelta": -3.9913486124150523,
+      "angularErrorDelta": -0.0002672418970018622
+    }
+  ]
+}

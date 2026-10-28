@@ -1,0 +1,68 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/simultaneous-impact.test.ts:
+(pass) simultaneous elastic contacts converge to the connected three-body solution [198.32ms]
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [6.22ms]
+(pass) invalid contact policy values fail before mutating native state [0.72ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [15.52ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [16.31ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [17.99ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [17.03ms]
+
+absolutejs/tests/dynamic-impact.test.ts:
+(pass) unequal moving spheres obey the analytic impact law across units, ordering and timesteps [368.79ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [1212.36ms]
+(pass) live separation follows pose changes while cached distance stays fixed [989.18ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [1025.58ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [1.98ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [0.58ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [1.24ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [2.27ms]
+(pass) prescribed position endpoint remains authoritative [0.90ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.63ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [3.32ms]
+(pass) current-body query composes noncommuting parent and child rotations [2.32ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [2.37ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [2.23ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [2175.79ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [1.39ms]
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [20.83ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [8.81ms]
+(pass) diagnostic identity imports independently of the physics runtime [18.08ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [11.06ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [8.65ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [10.65ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [12.59ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [72.78ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [2.61ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [1313.27ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [993.09ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [3108.60ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [3327.07ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [6265.00ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0.3 [7093.99ms]
+
+ 38 pass
+ 0 fail
+ 48446 expect() calls
+Ran 38 tests across 12 files. [31.82s]

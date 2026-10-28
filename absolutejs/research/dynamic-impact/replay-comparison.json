@@ -1,0 +1,7 @@
+{
+  "sameDecodedBefore": true,
+  "sameAfterBodyPosesAndMasses": true,
+  "sameAfterSolverContactGeometry": true,
+  "differentAfterVelocities": true,
+  "scope": "Exact identical pre-step state replay under stable and local-sweep kernels; explicit native source change is restitution sweep count"
+}
