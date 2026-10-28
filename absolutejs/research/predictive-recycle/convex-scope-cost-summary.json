@@ -1,0 +1,23 @@
+[
+  {
+    "scene": "stationary-prediction-32",
+    "medianPairedRatio": 0.9916548336864185,
+    "baselineMedianMs": 74.5898645000002,
+    "candidateMedianMs": 78.31341350000048,
+    "physicalExact": true
+  },
+  {
+    "scene": "resting-stack-16",
+    "medianPairedRatio": 0.9877762716522107,
+    "baselineMedianMs": 30.515929499999856,
+    "candidateMedianMs": 29.36606350000011,
+    "physicalExact": false
+  },
+  {
+    "scene": "falling-grid-32",
+    "medianPairedRatio": 1.0468461653037568,
+    "baselineMedianMs": 43.271312999999736,
+    "candidateMedianMs": 44.379731999999876,
+    "physicalExact": true
+  }
+]

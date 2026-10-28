@@ -1,6 +1,6 @@
-# Release blocked by terrain regression
+# Convex candidate pending; broad candidate rejected
 
-The optimized candidate passes package checks but fails one of 844 game tests:
+The broad `.1` candidate passes package checks but fails one of 844 game tests:
 generated terrain rejects variant 0 at all three simulation rates. Canonical game
 stays on published 0.16.1. Independent/release qualification is postponed.
 All 18 flat-floor drop cases pass, with substantial improvement in the targeted
@@ -142,3 +142,28 @@ is rejected. Next qualification will restrict the new predictive reuse rule
 to two convex shapes, retaining existing composite contact behavior while the
 separate composite interaction is reduced. This scope is explicit, not a claim
 that triangle-mesh predictive contacts are solved. No gate will be relaxed.
+
+## Convex-only candidate `.2`
+
+Source `bd780bb` restricts the predictive-refresh admission change to pairs
+where both shapes report convex. Composite pairs retain the original recycle
+predicate, including original drift/rotation/change/hook guards. Exact-pose
+reuse remains for convex pairs. Two native regression tests pass: 32 exact
+onset replay states plus 1/8/16-box resting stacks. New WASM build, exact
+terrain parity, package/browser/cost and full-game qualification are pending.
+The broad `.1` candidate remains rejected, and no new release is authorized
+by these partial results.
+
+The `.2` WASM SHA is `f1539c74bb9192cf8f6dfaa95bb6654a605d326faa0bdd02939d798a455bc57c`
+(3,357,159 bytes), prepared-source snapshot `41a29548f26642f7ec27328a368dc9343e6a2759ea867be82af887e575c85825`.
+All 227 package tests and the GPU-disabled browser pass. Its 53-file archive
+is audited and installed exactly in the qualification game. All four generated/
+excavated terrain cases match published 0.16.1 in every drop and attempt field
+except elapsed time (491 poses). The full game suite is running.
+
+Bounded CPU median paired ratios versus 0.16.1 are 0.992/0.988/1.047 for
+stationary predictions/resting stack/falling grid. All original stability
+bounds pass. All three physical records exactly match private `.1`; the
+resting-stack trajectory differs from published 0.16.1 as recorded earlier.
+The short terrain comparison overlapped this benchmark's start; retained
+paired samples are limited CPU evidence, not a hardware FPS or speed claim.
