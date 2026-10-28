@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.16.2-heightfield-frame-research.0",
+  "version": "0.16.2-certified-normal-research.0",
   "description": "Rapier 3D with matched free-body rotation, corrected contact witnesses and solver diagnostics",
   "type": "module",
   "license": "Apache-2.0",

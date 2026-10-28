@@ -11,7 +11,7 @@ path = "../../src/lib.rs"
 crate-type = ["cdylib", "rlib"]
 [dependencies]
 rapier3d = { version = "=0.36.0", features = ["serde-serialize", "debug-render", "profiler", "fem"] }
-parry3d = { version = "=0.31.1", git = "https://github.com/absolutejs/parry", rev = "3ab3ba63460ec559e40e0801bea52e48e6dc00d1", default-features = false, features = ["required-features"] }
+parry3d = { version = "=0.31.1", git = "https://github.com/absolutejs/parry", rev = "a26d29faba84418392217dc9f74a0183b57446de", default-features = false, features = ["required-features"] }
 ref-cast = "1"
 wasm-bindgen = "0.2.109"
 js-sys = "0.3"

@@ -1,13 +1,11 @@
-# Private heightfield-frame research candidate
+# Private certified-normal research candidate
 
-This archive is not a published or release-qualified engine. It pins Parry
-research revision 3ab3ba63460ec559e40e0801bea52e48e6dc00d1 for bounded
-physical qualification of explicit triangle-local heightfield contact frames.
-Focused native tests pass; broader physical behavior, contact-frame API
-integration, performance and independent-build qualification remain pending.
-The production game must keep using the public registry release.
+This archive is not published or release-qualified. It pins Parry a26d29faba84418392217dc9f74a0183b57446de
+to retain the support direction used to classify stalled GJK queries. It does
+not include persistent triangle contact frames. Native fixture and library tests
+pass; whole-engine and game qualification remain pending.
 
-The inherited public-engine documentation follows for context.
+Inherited public-engine documentation follows for context.
 
 # AbsoluteJS Rapier 3D
 
