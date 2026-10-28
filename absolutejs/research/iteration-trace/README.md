@@ -18,3 +18,19 @@ so do stored/precise impulses keep changing? A repeated residual alone does not
 justify early stopping: cached impulses affect subsequent steps. No proposed
 optimization is qualified yet. Exact profiled/unprofiled physical controls and
 native build identity are required before interpreting trace results.
+
+## Research basis and controls
+
+Erin Catto's Solver2D notes (2024-02-05, reviewed 2026-10-28) describe carrying
+accumulated impulses into later steps and clamping accumulated rather than just
+incremental impulses. This motivates checking impulse state as well as velocities;
+it does not establish an early-stopping criterion for this Rapier implementation.
+Source: https://box2d.org/posts/2024/02/solver2d/
+
+The probe generates common snapshots with published 0.12.0 for four side masses,
+two friction settings and both insertion orders. Thirty steps per case compare
+published, private unprofiled and private profiled snapshot bytes (480 paired
+steps). Trace query ownership and nonmutation are checked. This establishes only
+instrumentation parity, not physical correctness for every generated mass case.
+The trace has substantial diagnostic overhead, including scratch state copies.
+No timing result from this kernel should be treated as normal physics cost.
