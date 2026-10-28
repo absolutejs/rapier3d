@@ -421,3 +421,25 @@ zero-offset roots retain their existing arithmetic. This correction does not
 replace the articulation's angular integrator or eliminate remaining aggregate
 momentum/energy drift. Coordinate-covariance, movable-joint and snapshot replay
 regressions are recorded in `absolutejs/research/rigid-assembly`.
+
+## Private fixed-assembly integration experiment
+
+This research checkout additionally admits isolated floating assemblies made only
+of fixed links, with gyroscopic forces enabled, no damping/armature/friction,
+no locks or fast rotation, and no external loads except uniform gravity shared
+by every link. Contacts, external joints, movable links, differing gravity
+scales and unsupported states retain their existing path. Aggregate inertia is
+assembled in authored local frames, then a matched angular update advances the
+assembly about its total center of mass. Linear gravity uses the existing
+semi-implicit kick-then-drift convention. This is not a contact or fracture model.
+
+`world.freeAssemblyStats()` reports owned attempt counts after a completed
+profiled step, with the same freshness rules as `freeRotationStats()`. The bounded
+profiler records a deep-owned `native.freeAssembly` object. Counters distinguish
+accepted steps, nonphysical-inertia rejections, rotation-limit rejections, and
+invalid/failed solves. Unsupported assemblies and invalid aggregate construction
+are excluded before an attempt; these exclusions do not increment rejection
+counts. Zero counts do not prove conservation. Counts include solver substeps
+and CCD passes. This API and kernel remain private pending WASM, replay, build
+reproducibility, cost and game qualification; see
+`absolutejs/research/aggregate-free-transport/README.md` for evidence and limits.

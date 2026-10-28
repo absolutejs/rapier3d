@@ -181,7 +181,7 @@ try {
   } finally {inertiaWorld.free();}
   // Equivalent authored origins must not change physical assembly motion.
   const originWorlds = [new R.World({x:0,y:0,z:0}), new R.World({x:0,y:0,z:0})];
-  let rootOriginError = 0;
+  let rootOriginError = 0, assemblyAcceptedSteps = 0;
   try {
    const pairs = originWorlds.map((world,index)=>{
     const zero={x:0,y:0,z:0}, q={...zero,w:1}, offset={x:index*.7,y:-index*.3,z:index*.2};
@@ -191,10 +191,19 @@ try {
     const joint=world.createMultibodyJoint(R.JointData.fixed({x:1+offset.x,y:offset.y,z:offset.z},q,zero,q),a,b,true);
     if(!world.multibodyJoints.setGeneralizedDamping(joint.handle,new Float32Array(6)))throw Error('Origin fixture damping rejected');
     world.step();a.addTorque({x:36,y:-24,z:48},true);world.step();a.resetTorques(true);
+    world.profilerEnabled=true;
+    if(world.freeAssemblyStats()!==null)throw Error('Assembly counters must be stale before a profiled step');
     return [a,b];
    });
    for(let step=0;step<120;step++){
-    for(const world of originWorlds)world.step();
+    for(const world of originWorlds){
+     world.step();
+     const stats=world.freeAssemblyStats();
+     if(stats?.acceptedSteps!==4||stats.nonphysicalInertiaRejections!==0||stats.rotationLimitRejections!==0||stats.invalidOrFailedSolves!==0)throw Error('Missing browser assembly observations');
+     assemblyAcceptedSteps+=stats.acceptedSteps;
+     stats.acceptedSteps=-1;
+     if(world.freeAssemblyStats()?.acceptedSteps!==4)throw Error('Assembly observations are not owned');
+    }
     for(let i=0;i<2;i++){
      const a=pairs[0][i].worldCom(),b=pairs[1][i].worldCom();
      rootOriginError=Math.max(rootOriginError,Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z));
@@ -202,6 +211,6 @@ try {
    }
    if(!Number.isFinite(rootOriginError)||rootOriginError>5e-5)throw Error('Floating-root origin changes browser motion');
   }finally{for(const world of originWorlds)world.free();}
-  postMessage({rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
