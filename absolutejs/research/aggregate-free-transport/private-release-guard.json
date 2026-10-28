@@ -1,0 +1,5 @@
+{
+  "defaultReleaseAuditRejectsPrivateArchive": true,
+  "exitCode": 1,
+  "diagnostic": "Traceback (most recent call last):\n  File \"/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/scripts/audit-pack.py\", line 22, in <module>\n    assert manifest.get('private',False) == args.research, 'Archive privacy does not match requested audit mode'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Archive privacy does not match requested audit mode\n"
+}

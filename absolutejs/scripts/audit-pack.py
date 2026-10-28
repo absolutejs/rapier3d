@@ -4,6 +4,7 @@ from pathlib import Path
 parser=argparse.ArgumentParser()
 parser.add_argument('receipt',type=Path)
 parser.add_argument('output',type=Path)
+parser.add_argument('--research',action='store_true',help='Audit an explicitly private research archive; never release qualification')
 args=parser.parse_args()
 root=Path(__file__).resolve().parents[2]
 receipts=json.loads(args.receipt.read_text())
@@ -17,9 +18,13 @@ integrity='sha512-'+base64.b64encode(hashlib.sha512(payload).digest()).decode()
 assert integrity==pack['integrity']
 expected={str(p.relative_to(root/'dist')):p.read_bytes() for p in (root/'dist').rglob('*') if p.is_file()}
 manifest=json.loads((root/'package.json').read_text())
-assert manifest['name']=='@absolutejs/rapier3d' and not manifest.get('private',False)
+assert manifest['name']=='@absolutejs/rapier3d'
+assert manifest.get('private',False) == args.research, 'Archive privacy does not match requested audit mode'
 native=(root/'.absolutejs/api/rapier_wasm3d_bg.wasm').read_bytes()
 qualification=json.loads((root/'absolutejs/native-kernel.json').read_text())
+assert qualification.get('researchOnly',False) == args.research, 'Kernel qualification does not match requested audit mode'
+if args.research:
+    assert '-research.' in manifest['version'] and qualification['qualifiedKernelRelease'].startswith('unqualified-')
 assert hashlib.sha256(native).hexdigest()==qualification['wasmSha256']
 assert len(native)==qualification['wasmBytes']
 with tarfile.open(archive) as tar:
@@ -33,7 +38,7 @@ with tarfile.open(archive) as tar:
         assert tar.extractfile(files['package/dist/'+name]).read()==data,name
     pkg=json.load(tar.extractfile('package/package.json'))
     assert pkg['name']==manifest['name'] and pkg['version']==manifest['version']
-    assert not pkg.get('private',False)
+    assert pkg.get('private',False) == args.research
     assert pkg['exports']==manifest['exports']
     assert pkg['exports']['./build-info']['import']=='./dist/build-info.mjs'
     assert len(expected['build-info.mjs'])<2048
@@ -44,6 +49,6 @@ with tarfile.open(archive) as tar:
     assert provenance['wasmSha256']==qualification['wasmSha256']
     assert provenance['wasmBytes']==len(native)
     assert provenance['packageVersion']==pkg['version']
-result={'name':pkg['name'],'version':pkg['version'],'distributionFiles':len(expected),'tarballSha256':hashlib.sha256(payload).hexdigest(),'shasum':pack['shasum'],'integrity':integrity,'embeddedNativeVerified':True,'allDistributionBytesVerified':True,'provenance':provenance}
+result={'auditScope':'private-research' if args.research else 'release','name':pkg['name'],'version':pkg['version'],'distributionFiles':len(expected),'tarballSha256':hashlib.sha256(payload).hexdigest(),'shasum':pack['shasum'],'integrity':integrity,'embeddedNativeVerified':True,'allDistributionBytesVerified':True,'provenance':provenance}
 args.output.write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))

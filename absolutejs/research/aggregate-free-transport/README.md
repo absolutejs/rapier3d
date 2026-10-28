@@ -178,3 +178,17 @@ is verified admitted before timing. Median baseline/candidate batches are
 gameplay guarantees; full samples, engine identities and API hashes are retained.
 Independent rebuild, actual game integration and remaining physics-domain
 qualification are still pending.
+
+The independent checkout at `23e08f1` rebuilt successfully with its own Cargo
+target directory. All 49 distribution files and the packaged WASM are identical.
+Raw compiler intermediates differ only in wasm-bindgen custom metadata; their
+executable/data sections are identical. Source manifests differ only in README
+bytes copied during API packaging. `independent-build-audit.json` records all
+hashes and the exact distinction.
+
+The exact private archive is audited and installed in the isolated game branch
+`research/aggregate-transport-qualification` (initial setup `dbd7c83`). All 53
+installed files match it. The default release auditor intentionally rejects a
+private archive; an explicit `--research` mode requires both a private manifest
+and unqualified research kernel and records its scope. It does not weaken the
+default release guard. Game qualification is in progress.

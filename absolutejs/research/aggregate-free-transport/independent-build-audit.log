@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-aggregate-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 49,
+  "packagedNativeSha256": "10892b275313607d9983431590c4b1bce07945cf90d2b1c9340173373da3273c",
+  "packagedNativeBytes": 3317524,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "8d2b7c14bcbe2ca8685e8f757a6145be35c81547cb55702a9105be0749908b1e",
+  "rawIndependentSha256": "3e6ff9cbc33b57e57729d9cf063763738502cf99bdddb7913241591d825960f9",
+  "sourceInputDifferences": [
+    "README.md"
+  ],
+  "primarySourceContentSha256": "bbaf4676fe7f31ef01c11965cfed52581ddcccb0d11af16b7197caa64d13bb75",
+  "independentSourceContentSha256": "eac5810323aab4c4bfa77e51f9e9055088185ddbb29ce5cda11aa6b501a1e457",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}
