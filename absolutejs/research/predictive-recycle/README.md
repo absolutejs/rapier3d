@@ -54,3 +54,22 @@ A browser/SDK regression is prepared from the exact same snapshots. The browser
 will verify both fixture hashes, eight complete replay states each, and read-only
 current-pose queries. WASM compilation, broader tests and cost qualification are
 pending. The package remains private and unqualified for release.
+
+## First WASM candidate and cost
+
+Private candidate `.0` builds native SHA-256
+`4bde097f1459a254eb5903cb487be94fb8ccf4b07346dcb042f74c62f3effdf8`
+(3,357,140 bytes). All 227 package tests pass (86,823 assertions), and the
+GPU-disabled browser verifies two captured predictive-pair fixtures with eight
+exact replays each. The first qualification-guard rejection is retained before
+updating the explicitly private hash manifest.
+
+The paired cost probe passes physical-repeat and stability bounds. Median paired
+ratios are 1.137 for 32 motionless predictive pairs, 0.964 for an active 16-box
+resting stack, and 1.062 for 32 falling boxes. Smaller/noisy differences are not
+a general speed claim. The motionless-pair result motivates an exact-geometry
+fast path: no change in relative pose or either world rotation means the cached
+features and frozen normal/arms are unchanged. Moving predictive pairs must
+still refresh. `.0` is preserved as an audited private archive, not published
+or adopted. Its first pack attempt lacked the destination directory; the
+corrected pack and audit pass. New-source qualification will be separate.
