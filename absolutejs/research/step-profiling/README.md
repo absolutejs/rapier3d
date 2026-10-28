@@ -32,3 +32,22 @@ Rapier API; the game supplies sampling policy and existing diagnostic transport.
 Do not duplicate the full sample array per body or label lab jobs as all gameplay.
 
 Release archive, registry and game adoption are not yet verified by this record.
+
+## Release qualification
+
+Final 0.12.0 suite: 187 tests / 77,234 assertions, all passing. Declaration
+contracts pass. GPU-disabled browser-worker checks pass. All 49 distribution
+files and packaged native bytes match a separate API build using the independent
+0.11.0 native artifact. No new native compilation was necessary. Archive audit
+verifies file allowlist, exports, README identity and every distribution byte.
+
+Twenty alternating measured pairs after four warmups compare a 512-step coupled
+fixture loop including sampler overhead. Baseline median 14.771295 ms; sampled
+median 15.511888 ms (16 captures, cadence 32). All paired final native snapshots
+match exactly. This small CPU workload is not a universal overhead estimate or
+browser FPS test; raw paired observations and source are retained.
+
+Initial npm pack could not write the default cache under sandbox permissions;
+retry used this worktree's .cache/npm. The tarball SHA256 is
+d2fb721bd99699beac726f1fd82539b04f45034e00cf70418947dfd77de457cb.
+Publication and game adoption still require registry and installed-byte checks.
