@@ -24,3 +24,10 @@ qualified. Next preserve body COM/angular velocity at this root-type transition,
 then check partial splits, fixed/kinematic-to-dynamic transitions, nonzero local
 COM, gravity, snapshots and unaffected controls. A physical fracture-energy model
 and policy for inherited nonzero root damping/armature are separate questions.
+
+The first private correction copies the released body's existing velocity into
+new free-root generalized coordinates. The strict reproduction now passes:
+maximum relative linear momentum 1.532e-7, angular momentum 2.924e-7, energy
+1.643e-7, and COM position error 3.896e-7 m over 24 steps. Both resulting
+assemblies report eight admitted substeps per frame. This is one fixture, not
+release qualification; broader transition/gravity/scale and replay checks remain.

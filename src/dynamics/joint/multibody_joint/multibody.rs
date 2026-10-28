@@ -1396,6 +1396,10 @@ impl Multibody {
                     self.ndofs += SPATIAL_DIM;
 
                     self.velocities = self.velocities.clone().insert_rows(0, SPATIAL_DIM, 0.0);
+                    // A released subtree already has physical motion. Free-root
+                    // coordinates store world COM linear/angular velocity, so
+                    // preserve that body's state instead of stopping the new root.
+                    self.velocities.rows_mut(0, SPATIAL_DIM).copy_from(rb.vels.as_vector());
                     self.damping = self.damping.clone().insert_rows(0, SPATIAL_DIM, 0.0);
                     self.armature = self.armature.clone().insert_rows(0, SPATIAL_DIM, 0.0);
                     self.frictions = self.frictions.clone().insert_rows(0, SPATIAL_DIM, 0.0);
