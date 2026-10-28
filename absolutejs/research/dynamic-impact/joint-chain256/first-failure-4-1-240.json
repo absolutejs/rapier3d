@@ -1,0 +1,18 @@
+{
+  "fixture": {
+    "mode": "impulse",
+    "stationary": false,
+    "count": 4,
+    "reverse": true,
+    "hz": 240
+  },
+  "step": 9,
+  "mismatch": 0.9875496625900269,
+  "momentum": 8.344650268554688e-7,
+  "expectedMomentum": 0,
+  "energy": 16.73142006851419,
+  "beforeSha256": "eb9696258b29e7b09b63fcc736db46f183b17c8d95d4cb84719e0bcb5110ee86",
+  "afterSha256": "e48639f142de19c175fed3efdcf690ca3a2b9745a93c2cfb0088242cc75c75ed",
+  "roundTrip": true,
+  "exact": true
+}

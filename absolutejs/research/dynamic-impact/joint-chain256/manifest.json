@@ -1,0 +1,10 @@
+{
+  "hashes": {
+    "api": "d17076ebe731a750b7ddbbb24df1f711a6b8c8d163c75912f680a9cc10cbb1bb",
+    "probe": "f8cb04a84133657f7d196b216b480be1b3ca0c289d4535cd4c5bfce602c7f203"
+  },
+  "api": "/home/alexkahn/alex/rapier-impact-research/dist/rapier.mjs",
+  "mode": "impulse",
+  "stationary": false,
+  "scope": "CPU-only collinear fixed-joint chains; independent equal-mass elastic oracle"
+}
