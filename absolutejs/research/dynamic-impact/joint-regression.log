@@ -1,0 +1,9 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/linked-impact.test.ts:
+(pass) a fixed assembly transfers elastic impact as a single rigid mass [216.17ms]
+
+ 1 pass
+ 0 fail
+ 144 expect() calls
+Ran 1 test across 1 file. [439.00ms]

@@ -25,3 +25,11 @@ The graph-wide candidate passes all 828 game tests, 7,408,613 assertions, with u
 The sequential first-impact benchmark alternates engine order on identical snapshots and verifies every intended pair has solver contacts. At 2/16/64 bodies, baseline medians are 0.279/0.417/1.193 ms and global-candidate medians 0.344/0.452/1.368 ms on this run. This is CPU step cost, not FPS; snapshot restore is excluded, and the 32 independent pairs do not establish dense-island scaling. The initial benchmark overlapped a type-check process and is explicitly unqualified.
 
 Next private experiment: solve rigid/generic joint velocity constraints without bias or warm-start inside each global restitution sweep. Particle attachments/soft-body coupling and broad mechanism calibration are not covered by this narrowly scoped experiment.
+
+## Coupled joint result and scaling failure
+
+Private joint-coupled artifact `1a1a9733f6e4c53265a68d1627972e0c1331f9099dea3cde8fd7c5af8be6ebfe` (3,294,200 bytes; native source befa19c) passes 39 package tests / 48,590 assertions. The 12 compound/fixed-joint controls recover 20 J to within 6.2e-6 J and fixed-joint final speeds to within 4.8e-7 m/s. The new 12-configuration regression also reverses insertion order and fails stable 0.8.0. The two-body matrix retains the earlier box energy-gain fix; oblique angular error remains.
+
+A new independent equal-mass chain oracle blocks release: collinear assemblies with 2/4/8/16 one-kilogram linked bodies hit an equally massive incoming sphere at opposite 2 m/s. Ideal rebound is -2 m/s for every assembly body and +2 m/s for the incoming sphere. Sixteen coupled sweeps work for two pieces, but sixteen-piece assemblies retain only 0.35–1.64 J of the initial 64 J. Final velocity error reaches 1.85 m/s. Creation-order reversal agrees for these fixtures. This is inadequate convergence, not a qualifying result for machinery. `joint-chain16` and `stable-chain` preserve every case, input hashes and completion receipts. No public adoption is authorized by these measurements.
+
+Next research control: increase only the private restitution sweep count to determine whether the long-chain defect converges at all. A high fixed iteration budget is a diagnostic control, not a production performance solution. Soft attachment/cluster coupling remains unqualified.

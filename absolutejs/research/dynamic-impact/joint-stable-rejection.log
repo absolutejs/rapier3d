@@ -1,0 +1,22 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/linked-impact.test.ts:
+24 |    }
+25 |    // Equal 5 kg assemblies exchange velocities in a lossless collinear impact.
+26 |    const expected=[-2,-2,2];let energy=0,momentum=0;
+27 |    for(let i=0;i<3;i++) {
+28 |     const v=bodies[i]!.linvel(),x=v.x/units;
+29 |     expect(Math.abs(x-expected[i]!)).toBeLessThan(2e-5);
+                                          ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.00002
+Received: 0.4843761920928955
+
+      at <anonymous> (/home/alexkahn/alex/rapier-impact-research/absolutejs/tests/linked-impact.test.ts:29:38)
+(fail) a fixed assembly transfers elastic impact as a single rigid mass [39.65ms]
+
+ 0 pass
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [300.00ms]

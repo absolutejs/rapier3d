@@ -1,0 +1,530 @@
+[
+  {
+    "mode": "compound",
+    "hz": 60,
+    "units": 1,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "velocities": [
+      -2,
+      2
+    ],
+    "expected": [
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 0,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 0
+  },
+  {
+    "mode": "compound",
+    "hz": 60,
+    "units": 100,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "velocities": [
+      -2,
+      2
+    ],
+    "expected": [
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 0,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 0
+  },
+  {
+    "mode": "compound",
+    "hz": 240,
+    "units": 1,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20.000004768371866
+    },
+    "velocities": [
+      -2.000000238418579,
+      2.000000238418579
+    ],
+    "expected": [
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 2.384185791015625e-7,
+    "maximumEnergyGain": 0.000004768371866248344,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 0
+  },
+  {
+    "mode": "compound",
+    "hz": 240,
+    "units": 100,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "velocities": [
+      -2,
+      2
+    ],
+    "expected": [
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 0,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 0
+  },
+  {
+    "mode": "compound",
+    "hz": 960,
+    "units": 1,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "velocities": [
+      -2,
+      2
+    ],
+    "expected": [
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 0,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 0
+  },
+  {
+    "mode": "compound",
+    "hz": 960,
+    "units": 100,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "velocities": [
+      -2,
+      2
+    ],
+    "expected": [
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 0,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 0
+  },
+  {
+    "mode": "fixed-joint",
+    "hz": 60,
+    "units": 1,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        -0.000002384185791015625,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20.000000000000284
+    },
+    "velocities": [
+      -2.000000238418579,
+      -2.000000238418579,
+      1.999999761581421
+    ],
+    "expected": [
+      -2,
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 2.384185791015625e-7,
+    "maximumEnergyGain": 2.384186998938276e-7,
+    "maximumJointVelocityMismatch": 2.384185791015625e-7,
+    "maximumJointPositionError": 2.443790435568971e-7
+  },
+  {
+    "mode": "fixed-joint",
+    "hz": 60,
+    "units": 100,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0.0000015258789058947286,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 19.99999694824242
+    },
+    "velocities": [
+      -1.9999996948242187,
+      -1.9999996948242187,
+      2
+    ],
+    "expected": [
+      -2,
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 3.051757813121725e-7,
+    "maximumEnergyGain": 1.1723955140041653e-13,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 3.1471252437409447e-7
+  },
+  {
+    "mode": "fixed-joint",
+    "hz": 240,
+    "units": 1,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        -0.000002384185791015625,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 19.999995231628986
+    },
+    "velocities": [
+      -2,
+      -2,
+      1.9999995231628418
+    ],
+    "expected": [
+      -2,
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 4.76837158203125e-7,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 2.5928020475074476e-7
+  },
+  {
+    "mode": "fixed-joint",
+    "hz": 240,
+    "units": 100,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        -0.0000015258789058947286,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 19.99999694824242
+    },
+    "velocities": [
+      -2,
+      -2,
+      1.9999996948242187
+    ],
+    "expected": [
+      -2,
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 3.051757813121725e-7,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0,
+    "maximumJointPositionError": 7.629394538355427e-8
+  },
+  {
+    "mode": "fixed-joint",
+    "hz": 960,
+    "units": 1,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        -5.960464477539062e-7,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 19.999994039535984
+    },
+    "velocities": [
+      -1.999999761581421,
+      -1.999999761581421,
+      1.9999996423721313
+    ],
+    "expected": [
+      -2,
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 3.5762786865234375e-7,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0.0000011920928955078125,
+    "maximumJointPositionError": 8.046627042457288e-8
+  },
+  {
+    "mode": "fixed-joint",
+    "hz": 960,
+    "units": 100,
+    "before": {
+      "linear": [
+        0,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 20
+    },
+    "after": {
+      "linear": [
+        0.0000015258789058947286,
+        0,
+        0
+      ],
+      "angular": [
+        0,
+        0,
+        0
+      ],
+      "energy": 19.99999389648496
+    },
+    "velocities": [
+      -1.9999995422363281,
+      -1.9999995422363281,
+      1.9999998474121095
+    ],
+    "expected": [
+      -2,
+      -2,
+      2
+    ],
+    "maxFinalVelocityError": 4.5776367185723643e-7,
+    "maximumEnergyGain": 0,
+    "maximumJointVelocityMismatch": 0.000001220703125,
+    "maximumJointPositionError": 1.0490417479136482e-7
+  }
+]
