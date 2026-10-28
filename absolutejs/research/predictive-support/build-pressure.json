@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-28T23:16:22.029060+00:00",
+  "memory": {
+    "MemTotal": "22547236 kB",
+    "MemAvailable": "17589328 kB",
+    "SwapFree": "30189216 kB"
+  },
+  "filesystemAvailableBytes": 322436845568,
+  "cargoJobs": 1,
+  "scope": "Point-in-time Linux build pressure; not peak memory, a crash diagnosis, Windows/GPU health, or FPS"
+}

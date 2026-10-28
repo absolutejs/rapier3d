@@ -57,5 +57,8 @@ hardware FPS, universal performance or speedup claims; see complete samples.
 No new allocation is introduced by the production correction.
 
 Three native engine tests pass for scaled/reordered approaching support,
-nonapproaching exclusion and exact replay. Existing native controls, two-worker
-and no-std checks are in progress; independent rebuilt bytes are still pending.
+nonapproaching exclusion and exact replay. Both prior native controls pass. The
+two-worker build passes all five tests (two prior controls plus three support
+regressions), and the allocation-enabled no-std check passes. Compilation used
+one Cargo job. The recorded resource snapshot is a point-in-time observation,
+not peak usage or a crash diagnosis. Independent rebuilt bytes are still pending.
