@@ -167,3 +167,13 @@ bounds pass. All three physical records exactly match private `.1`; the
 resting-stack trajectory differs from published 0.16.1 as recorded earlier.
 The short terrain comparison overlapped this benchmark's start; retained
 paired samples are limited CPU evidence, not a hardware FPS or speed claim.
+
+Final-source two-worker tests pass on the one-compiler-job retry (two native
+tests, including exact captured replays and resting stacks). The first compile
+ended with SIGTERM/143 before any test result; its log and memory/disk readings
+are retained, with no asserted cause. The isolated allocation-enabled no-std
+check also passes. An independent checkout at `281dfe7` now builds with its own
+target directory and verified bindgen archive; byte comparison is pending.
+
+The game qualification branch checkpoints are `2179fbe1` for all 844 tests
+and `81301502` for 18 full-drop physical comparisons. Both are pushed.

@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-28T20:08:01.328120+00:00",
+  "parallelTestExitCode": 143,
+  "signalInterpretation": "SIGTERM; cause not established, not a test result",
+  "memory": {
+    "MemTotal": "22547236 kB",
+    "MemAvailable": "18472436 kB",
+    "SwapTotal": "33554432 kB",
+    "SwapFree": "30517796 kB"
+  },
+  "diskFreeBytes": 336361152512
+}
