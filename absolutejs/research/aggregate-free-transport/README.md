@@ -192,3 +192,27 @@ installed files match it. The default release auditor intentionally rejects a
 private archive; an explicit `--research` mode requires both a private manifest
 and unqualified research kernel and records its scope. It does not weaken the
 default release guard. Game qualification is in progress.
+
+## Release 0.15.0 qualification (publication pending)
+
+The isolated game qualification is pushed at `e050052`: 843 tests, zero failures,
+7,408,733 assertions; application/physics-tool type checks and actual worker
+bundling pass. All 80 transport cases meet predeclared absolute bounds, all
+40 compound physical controls remain exact, and every measured error improves
+in the 32 rotating-articulation cases. An explicit forced-capture probe saves
+80 byte-exact restoration/replay pairs without changing any physical result.
+
+Release 0.15.0 uses the identical qualified native kernel. Exact archive
+comparison proves that runtime differences from the game-qualified private
+archive are only packageVersion and qualifiedKernelRelease labels; all other
+runtime/declaration bytes are identical. Both independently compiled native
+outputs also produce identical release distributions. Release identity tests
+pass (2 tests/17 assertions), as do focused assembly observation tests
+(3 tests/45 assertions). The final source-input audit permits only README
+changes from the immutable built native snapshot.
+
+Release archive SHA-256:
+`b91b5369ffae9d54169318627750a6549a810f3bb513225905ed4146054869f2`.
+The canonical game still uses published 0.14.1 until registry publication and
+exact installed-file verification complete. Publication authorization, tagging
+and registry adoption are separate remaining delivery steps.

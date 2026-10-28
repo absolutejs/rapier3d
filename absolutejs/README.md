@@ -422,9 +422,9 @@ replace the articulation's angular integrator or eliminate remaining aggregate
 momentum/energy drift. Coordinate-covariance, movable-joint and snapshot replay
 regressions are recorded in `absolutejs/research/rigid-assembly`.
 
-## Private fixed-assembly integration experiment
+## Isolated fixed-assembly integration and observations (0.15)
 
-This research checkout additionally admits isolated floating assemblies made only
+The solver additionally admits isolated floating assemblies made only
 of fixed links, with gyroscopic forces enabled, no damping/armature/friction,
 no locks or fast rotation, and no external loads except uniform gravity shared
 by every link. Contacts, external joints, movable links, differing gravity
@@ -440,6 +440,10 @@ accepted steps, nonphysical-inertia rejections, rotation-limit rejections, and
 invalid/failed solves. Unsupported assemblies and invalid aggregate construction
 are excluded before an attempt; these exclusions do not increment rejection
 counts. Zero counts do not prove conservation. Counts include solver substeps
-and CCD passes. This API and kernel remain private pending WASM, replay, build
-reproducibility, cost and game qualification; see
+and CCD passes. Qualification includes 198 package tests, 843 game tests, GPU-disabled browser
+checks, 80 byte-exact snapshot replays and matching independent distribution
+builds. The synthetic 16-assembly falling benchmark measured about 0.95 additional
+microseconds per assembly/substep (median paired batch ratio 1.12); this is not
+a hardware FPS result. Contact coupling, partial-subtree fracture and extreme
+thin-moment storage remain separate work. See
 `absolutejs/research/aggregate-free-transport/README.md` for evidence and limits.

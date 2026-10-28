@@ -1,0 +1,11 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/free-assembly-stats.test.ts:
+(pass) assembly observations are fresh, owned and absent after restore [24.54ms]
+(pass) bounded assembly profiles own samples across excluded loads and detachment [9.43ms]
+(pass) assembly observation sampling preserves exact snapshot trajectories [29.08ms]
+
+ 3 pass
+ 0 fail
+ 45 expect() calls
+Ran 3 tests across 1 file. [257.00ms]

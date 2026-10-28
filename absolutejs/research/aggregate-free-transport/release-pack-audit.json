@@ -1,0 +1,27 @@
+{
+  "auditScope": "release",
+  "name": "@absolutejs/rapier3d",
+  "version": "0.15.0",
+  "distributionFiles": 49,
+  "tarballSha256": "b91b5369ffae9d54169318627750a6549a810f3bb513225905ed4146054869f2",
+  "shasum": "a63f1725b70c3c0a38fc95073350598a2f54625e",
+  "integrity": "sha512-K4hPMsDzUBp9KwIWSoPugTpiwvqY0nZNqVzWWNY/+WOMjizwAbthXQACCOPm+4vJ8FJdPK+//8s3H2tUbeO1LQ==",
+  "embeddedNativeVerified": true,
+  "allDistributionBytesVerified": true,
+  "provenance": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.15.0",
+    "qualifiedKernelRelease": "0.15.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "10892b275313607d9983431590c4b1bce07945cf90d2b1c9340173373da3273c",
+    "wasmBytes": 3317524,
+    "solverChanges": true
+  }
+}

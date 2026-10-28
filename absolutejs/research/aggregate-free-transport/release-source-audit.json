@@ -1,0 +1,8 @@
+{
+  "nativeInputsMatchBuiltSnapshot": true,
+  "allowedInputDifferences": [
+    "README.md"
+  ],
+  "sourceContentSha256": "bbaf4676fe7f31ef01c11965cfed52581ddcccb0d11af16b7197caa64d13bb75",
+  "sourceManifestSha256": "7c1592c9eae1d8de783ee48a084b54162bf97d46c36d6013f5465e0457b5e78f"
+}
