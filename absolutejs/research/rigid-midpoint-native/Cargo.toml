@@ -1,0 +1,8 @@
+[workspace]
+[package]
+name = "absolutejs-rigid-midpoint-reference"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[dependencies]
+num-traits = { version = "=0.2.19", default-features = false, features = ["libm"] }

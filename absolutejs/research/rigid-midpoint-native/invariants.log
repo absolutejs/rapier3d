@@ -1,0 +1,29 @@
+     Locking 3 packages to latest compatible versions
+   Compiling autocfg v1.5.1
+   Compiling libm v0.2.16
+   Compiling num-traits v0.2.19
+   Compiling absolutejs-rigid-midpoint-reference v0.0.0 (/home/alexkahn/alex/rapier-midpoint-research/absolutejs/research/rigid-midpoint-native)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.61s
+     Running unittests src/lib.rs (.cache/reference-target/debug/deps/absolutejs_rigid_midpoint_reference-241b626c2657bdbd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/invariants.rs (.cache/reference-target/debug/deps/invariants-2f07326ee09b3dfc)
+
+running 4 tests
+test invalid_or_unrepresentable_states_return_no_partial_pose ... ok
+test principal_axis_rotation_uses_matching_cayley_angle ... ok
+test native_step_is_reversible ... ok
+12 cases / 28800 steps: relative energy 7.105427357601002e-15, world momentum 1.4893506908996652e-14, Newton iterations 2
+test matched_native_midpoint_conserves_energy_and_world_vector ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+   Doc-tests absolutejs_rigid_midpoint_reference
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

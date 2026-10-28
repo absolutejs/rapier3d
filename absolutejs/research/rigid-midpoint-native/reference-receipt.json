@@ -1,0 +1,12 @@
+{
+  "scope": "Independent double RK4, one second, principal-frame diagonal inertia, identity initial attitude. 7680 versus 15360 steps per second.",
+  "cases": 12,
+  "maximumRefinementAngle": 3.2535248198223324e-14,
+  "maximumRefinementMomentum": 1.2980026621393888e-13,
+  "hashes": {
+    "/home/alexkahn/alex/rapier-midpoint-research/absolutejs/research/rigid-midpoint-native/generate-reference.ts": "2cf7f844b3862f71ca85bd384305ec9a043827f99bcdac8956a1d1c561f6bf62",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/rk4.ts": "573568b3353247679c1459ba3e53051d7a2c39d8598ecfdbae6341292e907805",
+    "/home/alexkahn/alex/rapier-rigid-reference/absolutejs/research/rigid-midpoint/reference.ts": "b310a75c81e8168f9f583843b67ab19379db97028810233034052652147d9788"
+  },
+  "fixtureSha256": "ac7077f4af255cfa12729a1e3df1ac3bbc14397cf3543d434443d2fc7d609b13"
+}
