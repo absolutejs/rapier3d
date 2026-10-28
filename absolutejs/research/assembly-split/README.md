@@ -151,3 +151,14 @@ capture leaves both worlds unchanged. The observed median paired time ratio is
 0.885; this short host-specific run does not establish a general speedup or FPS
 claim. Independent builds, two-worker native checks and full game qualification
 are still pending.
+
+## Independent and parallel qualification
+
+The two-worker run passes all 19 native tests; the allocation-enabled no-std
+check passes. The independent checkout `~/alex/rapier-split-independent` at
+`f09b691` rebuilds with its own target directory and the same bounded two-job
+toolchain. All 49 distribution files, packaged native payload and raw native
+intermediate match exactly. Both source manifests have content SHA-256
+`665228b558fffba69fbe6a86f1a75e30cbfdfc871db0f68700adab872b5ed0cf`
+with no input differences. See `independent-build-audit.json` and the retained
+build log. Full game qualification is now running against the audited archive.
