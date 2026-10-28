@@ -85,3 +85,8 @@ npm accepted 0.16.3, then returned 404 during propagation. The fourth registry
 check verifies metadata and downloaded SHA-256/SHA-1/SHA-512 against the audited
 archive. No republish occurred. See publication-verified.json. Canonical game
 adoption is the remaining delivery step.
+
+Canonical game adoption is complete and remotely verified at 1826c324. It uses
+the registry version, all 53 installed files match, focused checks and worker
+bundling pass, and 1,436 compared source files match the 844-test qualification.
+No authentication or publication remains pending for 0.16.3.

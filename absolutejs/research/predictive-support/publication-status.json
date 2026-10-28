@@ -8,5 +8,8 @@
   "archiveSha256": "bed2618729b0e70fec71a6c926846d053e4f001309b2636e9c3c80780a2f9863",
   "gameArchiveBackup": "5de352830cd6d003fbeec8f2fee5242c6cbec5bc",
   "npmCommandExitCode": 0,
-  "registryMatchesAuditedArchive": true
+  "registryMatchesAuditedArchive": true,
+  "canonicalGameAdopted": true,
+  "canonicalGameCommit": "1826c324adc0ad67d822df415df81a972bf9c8b6",
+  "adoptionInstalledFilesVerified": 53
 }
