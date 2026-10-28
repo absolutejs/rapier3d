@@ -1049,6 +1049,10 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                     .generic_solver_vels
                     .rows(multibody.solver_id as usize, multibody.ndofs());
                 multibody.velocities.copy_from(&solver_vels);
+                // Restitution changes generalized velocities after the final
+                // integration pass. Expose that same solved state on each link
+                // instead of leaving public rigid-body velocities one pass stale.
+                multibody.update_velocities(unsafe { &mut *ctx.bodies });
             }
         }
         // No sync after the multibody-velocity writeback: nothing follows, and

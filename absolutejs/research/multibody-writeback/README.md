@@ -1,0 +1,5 @@
+# Private multibody velocity writeback investigation
+
+Based on published 0.8.0, independently of experimental restitution convergence changes. A stationary fixed articulation struck by an equally massive body reaches the correct final velocities, but body-reported momentum during impact disagrees with the isolated-system oracle. The final solver stage copies generalized velocities after restitution without refreshing linked rigid-body velocities. This experiment adds that refresh using the existing native update method. It changes no sweep count, contact law, or native initialization policy.
+
+The parent research branch `research/dynamic-impact` at cfc484e preserves exact stable before/after snapshots and replay receipts. This checkout is private. It requires independent analytic controls, rotated/off-center geometry checks, snapshot behavior, broad tests and cost qualification before any release decision. In particular, final-pose COM transforms during angular motion must be checked; a passing collinear test is insufficient.
