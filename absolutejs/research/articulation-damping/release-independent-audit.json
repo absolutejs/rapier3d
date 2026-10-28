@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-damping-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 48,
+  "packagedNativeSha256": "f4e4606942e43e6af0ed2bed313005f9f4b89b0f716f569818e81742f77926ae",
+  "packagedNativeBytes": 3294044,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "68937088c2d5b3a537446cb7cb333849523f29184f2cde373c0f727c8ccacb1a",
+  "rawIndependentSha256": "e9a653e304647e4a9384c51cdeb610115150d53df05beeed4c1f6f98e740eea7",
+  "primarySections": [
+    {
+      "kind": 1,
+      "name": null,
+      "bytes": 2660,
+      "sha256": "a62868b7048b413998fb7c08f8e17f50630edc5a79842f851b5873e701d9b3f2"
+    },
+    {
+      "kind": 2,
+      "name": null,
+      "bytes": 2139,
+      "sha256": "1665fc0cd62162b3b5e33f8a975168ed9c2cffb7b34691ad6cf91174ecff6504"
+    },
+    {
+      "kind": 3,
+      "name": null,
+      "bytes": 5419,
+      "sha256": "1cead64f33e3656f5fbebea9f94d9856d492b0b1e2c5937163d7569be905c8b7"
+    },
+    {
+      "kind": 4,
+      "name": null,
+      "bytes": 7,
+      "sha256": "4fd49b672206ee7148652e8c824697dc14aec8076703f9af77b3e5d7e3317a9b"
+    },
+    {
+      "kind": 5,
+      "name": null,
+      "bytes": 3,
+      "sha256": "e3c4e8c4be74ea7897d60436685f5014a88654a4f415f7e08b959984bf15f5d0"
+    },
+    {
+      "kind": 6,
+      "name": null,
+      "bytes": 41,
+      "sha256": "f7712cf4b12244b5df17524c2bcdf98f97546239f0d4f7969c495b824b419bd5"
+    },
+    {
+      "kind": 7,
+      "name": null,
+      "bytes": 194470,
+      "sha256": "0b3d4f30fa56c4953d016a8447ca0666ec8fcf5ce7f6c621b81db723357f29a5"
+    },
+    {
+      "kind": 9,
+      "name": null,
+      "bytes": 2444,
+      "sha256": "508b46e2f62fd2acaae2591da34a731db9e1192448b55eab9669d8138d8ff99e"
+    },
+    {
+      "kind": 10,
+      "name": null,
+      "bytes": 3444686,
+      "sha256": "b93b023c5fe063aa853484e8942cdab369b05424a3641b99eecc7d6e66e96cd9"
+    },
+    {
+      "kind": 11,
+      "name": null,
+      "bytes": 96299,
+      "sha256": "f7b0384305a24df0d00da9e4e9ca77654d752a9ae42775164d33b2ccc67c9477"
+    },
+    {
+      "kind": 0,
+      "name": "__wasm_bindgen_unstable",
+      "bytes": 385847,
+      "sha256": "680ad40e07e526c2a54b8cebe25ef5fb6bd85ffb233371c6880c806f3ad779be"
+    }
+  ],
+  "independentSections": [
+    {
+      "kind": 1,
+      "name": null,
+      "bytes": 2660,
+      "sha256": "a62868b7048b413998fb7c08f8e17f50630edc5a79842f851b5873e701d9b3f2"
+    },
+    {
+      "kind": 2,
+      "name": null,
+      "bytes": 2139,
+      "sha256": "1665fc0cd62162b3b5e33f8a975168ed9c2cffb7b34691ad6cf91174ecff6504"
+    },
+    {
+      "kind": 3,
+      "name": null,
+      "bytes": 5419,
+      "sha256": "1cead64f33e3656f5fbebea9f94d9856d492b0b1e2c5937163d7569be905c8b7"
+    },
+    {
+      "kind": 4,
+      "name": null,
+      "bytes": 7,
+      "sha256": "4fd49b672206ee7148652e8c824697dc14aec8076703f9af77b3e5d7e3317a9b"
+    },
+    {
+      "kind": 5,
+      "name": null,
+      "bytes": 3,
+      "sha256": "e3c4e8c4be74ea7897d60436685f5014a88654a4f415f7e08b959984bf15f5d0"
+    },
+    {
+      "kind": 6,
+      "name": null,
+      "bytes": 41,
+      "sha256": "f7712cf4b12244b5df17524c2bcdf98f97546239f0d4f7969c495b824b419bd5"
+    },
+    {
+      "kind": 7,
+      "name": null,
+      "bytes": 194470,
+      "sha256": "0b3d4f30fa56c4953d016a8447ca0666ec8fcf5ce7f6c621b81db723357f29a5"
+    },
+    {
+      "kind": 9,
+      "name": null,
+      "bytes": 2444,
+      "sha256": "508b46e2f62fd2acaae2591da34a731db9e1192448b55eab9669d8138d8ff99e"
+    },
+    {
+      "kind": 10,
+      "name": null,
+      "bytes": 3444686,
+      "sha256": "b93b023c5fe063aa853484e8942cdab369b05424a3641b99eecc7d6e66e96cd9"
+    },
+    {
+      "kind": 11,
+      "name": null,
+      "bytes": 96299,
+      "sha256": "f7b0384305a24df0d00da9e4e9ca77654d752a9ae42775164d33b2ccc67c9477"
+    },
+    {
+      "kind": 0,
+      "name": "__wasm_bindgen_unstable",
+      "bytes": 385847,
+      "sha256": "5baef126ec3f0ab10b34fafd75d81f296d4a17e18745278742a49917e1897f06"
+    }
+  ],
+  "sourceInputDifferences": [
+    "README.md"
+  ],
+  "primarySourceContentSha256": "9141cc4374a206140f6594a25aebacb38294f5831cf199236082e120c3e1c1a2",
+  "independentSourceContentSha256": "e605ef1e2b5aeb7186525eb77d7d58619ae904d5b392552494ba6256af46135a",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

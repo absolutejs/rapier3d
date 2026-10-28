@@ -1,6 +1,6 @@
 # Explicit articulation damping controls
 
-Private additive API candidate based on published 0.8.1. No contact, integration, or default damping policy is changed. Native `MultibodyJoint::default_damping` sets free angular DOFs to 0.1, including a floating root. This is distinct from rigid-body damping and is not scaled by lengthUnit. The existing JavaScript API cannot inspect or change it.
+Additive 0.9.0 release based on published 0.8.1. No contact, integration, or default damping policy is changed. Native `MultibodyJoint::default_damping` sets free angular DOFs to 0.1, including a floating root. This is distinct from rigid-body damping and is not scaled by lengthUnit. The existing JavaScript API cannot inspect or change it.
 
 Expose owned generalized-damping copies and transactional setters on MultibodyJointSet, addressing the whole articulation selected by a live joint handle. Reject nonfinite/negative values, wrong vector lengths, and stale handles. Callers explicitly wake bodies and must re-read after topology changes. Native validation is retained even when callers bypass the TypeScript wrapper.
 
@@ -12,4 +12,12 @@ Native wrapper build SHA256 `f4e4606942e43e6af0ed2bed313005f9f4b89b0f716f569818e
 
 All 45 package tests pass (57,649 assertions), including ownership, native-bypass validation, snapshot parity, topology and measured angular decay. The GPU-disabled browser worker passes the damping controls and all existing physics checks. The game probe's 32 default-policy cases exactly equal published 0.8.1 results. All 32 zero-policy cases verify generalized damping remains zero after each step; the hidden damping explains unit-dependent decay but does not remove the remaining integration drift.
 
-Independent game-side planar root-Euler predictions explain all eight captured undamped failures within 1.28e-6 kg m/s momentum and 1.25e-7 m COM position. This API exposes a missing experimental control; it is not an integration correction. Independent native-build and release qualification are still pending.
+Independent game-side planar root-Euler predictions explain all eight captured undamped failures within 1.28e-6 kg m/s momentum and 1.25e-7 m COM position. This API exposes a missing experimental control; it is not an integration correction. Independent native-build and archive qualification are recorded below.
+
+## Release qualification
+
+Two independent native builds with separate target directories produce identical packaged WASM and all 48 distribution files. Raw executable/data sections match; only unshipped wasm-bindgen custom metadata differs. Native source manifests differ only in README content. `release-independent-audit.json` verifies the final 0.9.0 distribution as well.
+
+The final release passes all 45 package tests / 57,649 assertions. Declaration type contracts pass. `release-metadata-audit.json` proves the final module/declaration bytes differ from the 64-case tested candidate only in package/release labels. Game tool typechecks pass. No game solver policy or installed dependency changes are included in this package-source commit.
+
+Exact audited archive: `.absolutejs/pack/absolutejs-rapier3d-0.9.0.tgz`, SHA256 `eea57d50d71d84f9734144404c6d345e52390ba1093a5eafc5c29824c0a9de2b`, SHA1 `933c274ed6186607f4e63416bda07db8966a0e85`. `pack-audit.json` checks all distribution bytes, embedded native payload, package exports, file allowlist and registry integrity. Publication and game adoption must be recorded separately after registry verification.

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-damping-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 48,
+  "packagedNativeSha256": "f4e4606942e43e6af0ed2bed313005f9f4b89b0f716f569818e81742f77926ae",
+  "packagedNativeBytes": 3294044,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "68937088c2d5b3a537446cb7cb333849523f29184f2cde373c0f727c8ccacb1a",
+  "rawIndependentSha256": "e9a653e304647e4a9384c51cdeb610115150d53df05beeed4c1f6f98e740eea7",
+  "sourceInputDifferences": [
+    "README.md"
+  ],
+  "primarySourceContentSha256": "9141cc4374a206140f6594a25aebacb38294f5831cf199236082e120c3e1c1a2",
+  "independentSourceContentSha256": "e605ef1e2b5aeb7186525eb77d7d58619ae904d5b392552494ba6256af46135a",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

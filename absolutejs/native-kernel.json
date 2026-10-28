@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "private-articulation-damping-candidate",
+  "qualifiedKernelRelease": "0.9.0",
   "wasmSha256": "f4e4606942e43e6af0ed2bed313005f9f4b89b0f716f569818e81742f77926ae",
   "wasmBytes": 3294044,
   "solverChanges": false

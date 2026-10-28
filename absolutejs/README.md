@@ -266,8 +266,11 @@ results are recorded in `absolutejs/research/simplex-gyro/`.
 `world.multibodyJoints.generalizedDamping(jointHandle)` returns an owned
 `Float32Array` for the entire articulation containing that joint, including its
 floating root. A removed joint returns `undefined`. These coefficients are
-separate from rigid-body damping: native free angular generalized coordinates
+raw native coefficients, separate from rigid-body damping: native free angular generalized coordinates
 default to `0.1` even when `RigidBody.setAngularDamping(0)` is used.
+They are not dimensionless decay rates: angular coefficients act against inertia
+in native world units. The same numeric coefficient need not produce the same
+decay after changing the world length scale.
 
 `setGeneralizedDamping(jointHandle, values)` returns `true` on success. It rejects
 wrong lengths, negative/nonfinite values, native float overflow and removed
