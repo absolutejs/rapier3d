@@ -1,0 +1,15 @@
+{
+  "hashes": {
+    "/home/alexkahn/alex/rapier-multibody-research/absolutejs/research/multibody-writeback/benchmark-writeback.ts": "448a164a3d21eb0363480da85838700fafa0bd9baabd24bda348e20c234cded0",
+    "/home/alexkahn/alex/rapier-multibody-research/.absolutejs/published-0.8.0/rapier.mjs": "09a2cce7ea6a9d7203f73400a7b5095980ccd77067330bce05773e8f0c388021",
+    "/home/alexkahn/alex/rapier-multibody-research/dist/rapier.mjs": "a995db0b4db98cca5ebeae461bebbd4f2bc222045fafaa80c26ab2a06d0a4f56",
+    "/home/alexkahn/alex/rapier-impact-research/absolutejs/research/dynamic-impact/stable-multibody-captured/first-failure-2-0-60-before.bin": "a2482cb3432db06fd4e80e06dd6d440323cc593cb0a16274823a03056bd7da85",
+    "/home/alexkahn/alex/rapier-impact-research/absolutejs/research/dynamic-impact/stable-multibody-captured/first-failure-4-0-60-before.bin": "da13e83f6f4ec93f7df683178a7752a9f5acfffd5397a452829d91686840dead",
+    "/home/alexkahn/alex/rapier-impact-research/absolutejs/research/dynamic-impact/stable-multibody-captured/first-failure-8-0-60-before.bin": "aa59f72a057e6e6316330ee33ceaf7d52909b41d732973a4e558dee939232642",
+    "/home/alexkahn/alex/rapier-impact-research/absolutejs/research/dynamic-impact/stable-multibody-captured/first-failure-16-0-60-before.bin": "ddaa4b858efbcb0bc6bc5322c5051ba7c45ebf0cd76669eb08d9e0e771faeb0e"
+  },
+  "bun": "1.4.4+absolute.1",
+  "scope": "sequential CPU step timing, identical captured articulated-impact snapshots, restore excluded, not FPS",
+  "warmups": 10,
+  "samples": 60
+}

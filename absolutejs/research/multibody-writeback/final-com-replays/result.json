@@ -1,0 +1,196 @@
+{
+  "engine": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.8.0",
+    "qualifiedKernelRelease": "private-multibody-final-com-writeback",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=dbd99a8dfce020da3698056471262435d56d3f69#dbd99a8dfce020da3698056471262435d56d3f69",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "3a9f1a21f01b4868952cd997cf9b47d83f3e4fdd714d42f43b3cdd57912d6303",
+    "wasmBytes": 3293062,
+    "solverChanges": true
+  },
+  "rows": [
+    {
+      "count": 2,
+      "reverse": false,
+      "hz": 60,
+      "inputSha256": "a2482cb3432db06fd4e80e06dd6d440323cc593cb0a16274823a03056bd7da85",
+      "afterSha256": "12de11a4a5ea86955c09fc09f9dd03dbc91f4d162d111013ce4ae0e9ded4828d",
+      "momentum": -8.000000238418579,
+      "error": 2.384185791015625e-7,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 2,
+      "reverse": false,
+      "hz": 240,
+      "inputSha256": "561c6cdeda05a6de61e4c22a1a8a3dfd2bb6dbf691b2b1e16a6b43ac0e26bfb2",
+      "afterSha256": "836f33c67df3f700e7dafc9eb1671369a41747d7620e5baf843c81618b92d17c",
+      "momentum": -8,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 2,
+      "reverse": true,
+      "hz": 60,
+      "inputSha256": "dd029d7492ba2d65f48eccb17b0b4e8fbbba121e8031c6f82c90bc56a5448d91",
+      "afterSha256": "065e0690430aaf4b9b20007553dfccb32a6c75fac6ffa23152e98653eb89fc60",
+      "momentum": -8.000000238418579,
+      "error": 2.384185791015625e-7,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 2,
+      "reverse": true,
+      "hz": 240,
+      "inputSha256": "edf91c55f4170a6bb2376b65ef7f47fe1ef0d9a93d760e5fe1dd73993ce30396",
+      "afterSha256": "6f50d0bcb0afe81db3ee9108e9c5f22576fff1f1682be4fa7566be203a963a68",
+      "momentum": -8,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 4,
+      "reverse": false,
+      "hz": 60,
+      "inputSha256": "da13e83f6f4ec93f7df683178a7752a9f5acfffd5397a452829d91686840dead",
+      "afterSha256": "2898365282b938640ec675dcf6d63c92cc9e011e1649fe357b590a1c21b195ed",
+      "momentum": -16.000000476837158,
+      "error": 4.76837158203125e-7,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 4,
+      "reverse": false,
+      "hz": 240,
+      "inputSha256": "9873b032b8a2d3a2a3f192c85df26b3910b7340a9bde1d3c07bf0e07f2281486",
+      "afterSha256": "a5bebc83e5b477753891015a69643ea49671e40e42a6ecdf8ec1da57a2901662",
+      "momentum": -16,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 4,
+      "reverse": true,
+      "hz": 60,
+      "inputSha256": "9c564b769e48ea7f3a45209366022845089d3b392aa1239e381aee2d2d1593be",
+      "afterSha256": "76cc86ac421f67e99ec324fccda4921cb92cd00996ad7176a91ddff14490afee",
+      "momentum": -16.000000476837158,
+      "error": 4.76837158203125e-7,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 4,
+      "reverse": true,
+      "hz": 240,
+      "inputSha256": "ec20575151e826367b2922cf596fcde4c3b2baceb02c814e024beb071a3fe63a",
+      "afterSha256": "19ebf412331b6cca0579f4c09f82c83a676d5b9e6e3db9c544e29afa37989c7b",
+      "momentum": -16,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 8,
+      "reverse": false,
+      "hz": 60,
+      "inputSha256": "aa59f72a057e6e6316330ee33ceaf7d52909b41d732973a4e558dee939232642",
+      "afterSha256": "4c4d49a42acda8f9150cfade6508f9badfdafed82f81b532b99013761e838141",
+      "momentum": -32,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 8,
+      "reverse": false,
+      "hz": 240,
+      "inputSha256": "8fe481e74dac27129ad061bbcb60b795251f67adf01a0d262a560b89f32f89bc",
+      "afterSha256": "22175e4e066c0a2d4db4d9587bec78b92c8248ad2a2764b198829564412f79fe",
+      "momentum": -32.000000953674316,
+      "error": 9.5367431640625e-7,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 8,
+      "reverse": true,
+      "hz": 60,
+      "inputSha256": "de5a87b7ec6817a09fdcaa376a6c7ea9f38bb3cb95d015c8cf42548b638d9375",
+      "afterSha256": "12f76e84b2e04fd1c403b76befc7de38d76c6b65373e280e1392095ef85975bd",
+      "momentum": -32,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 8,
+      "reverse": true,
+      "hz": 240,
+      "inputSha256": "5c1184b63fbba141a506d7996b5d89dd930e081d46644fd5344e9e91f3828930",
+      "afterSha256": "6294b3758973053c2512be8a997722194c1c46282854b5747f57f6ba3dd69567",
+      "momentum": -32.000000953674316,
+      "error": 9.5367431640625e-7,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 16,
+      "reverse": false,
+      "hz": 60,
+      "inputSha256": "ddaa4b858efbcb0bc6bc5322c5051ba7c45ebf0cd76669eb08d9e0e771faeb0e",
+      "afterSha256": "306349d12995abb30c2512e40166aecf3b0137a1ce4710c6f6d79cfa0ed9a5e1",
+      "momentum": -63.99999809265137,
+      "error": 0.0000019073486328125,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 16,
+      "reverse": false,
+      "hz": 240,
+      "inputSha256": "a8f07cd6a79dffbf983c259f9a84658126b5039bed580ec02ae19fd9e0507693",
+      "afterSha256": "60a8f35a2446bcfb3bad280c0a6e37f32a5910b75808df6ad22fafb754003900",
+      "momentum": -64,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 16,
+      "reverse": true,
+      "hz": 60,
+      "inputSha256": "09a50e3d3cde8a702837b4e9f7cbb2521e2ec910bd604c6b2e597fe51c2bdbdb",
+      "afterSha256": "9648d65e92260ef9619ef06466c39e713709ddd209e2e4249d2ed5c5b351f7ac",
+      "momentum": -63.99999809265137,
+      "error": 0.0000019073486328125,
+      "roundTrip": true,
+      "repeatExact": true
+    },
+    {
+      "count": 16,
+      "reverse": true,
+      "hz": 240,
+      "inputSha256": "41714f15748c5b9b4abb4b71cb8086abd37a8fd4750c6bda35611c3ca31bef17",
+      "afterSha256": "9133fbf39d6050a9befe8c7219c7f2bdeb40341af61b77143aafda3564e72f4d",
+      "momentum": -64,
+      "error": 0,
+      "roundTrip": true,
+      "repeatExact": true
+    }
+  ]
+}
