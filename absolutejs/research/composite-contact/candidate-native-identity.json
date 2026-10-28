@@ -1,0 +1,12 @@
+{
+  "scope": "Private test artifact identity, not release qualification",
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "unqualified-heightfield-frame-research",
+    "wasmSha256": "ed1b77aab9eccbcc7e98502d80598ceb98158460809cf14d87bdfc47a032ce1a",
+    "wasmBytes": 3359762,
+    "solverChanges": true,
+    "researchOnly": true
+  },
+  "parryRevision": "3ab3ba63460ec559e40e0801bea52e48e6dc00d1"
+}

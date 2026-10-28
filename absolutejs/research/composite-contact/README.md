@@ -80,3 +80,15 @@ no binary was built from them. Both engine and binding manifests now pin the
 same exact research revision, and the corrected immutable source workspace
 passes offline `--locked` fetch. The canonical source lock changes only Parry's
 revision; no registry dependency upgrades are intended.
+
+The one-job private WASM build completes in 6m38s. All 227 package tests pass
+(86,823 assertions). The audited private archive is
+`0.16.2-heightfield-frame-research.0`, SHA256
+`ee676704ffcf6f7afbb9a8ab909a777c243e9d04c122185695bfd67f2088d9b0`;
+its embedded WASM is `ed1b77aab9eccbcc7e98502d80598ceb98158460809cf14d87bdfc47a032ce1a`
+(3,359,762 bytes). It remains explicitly private and unqualified for release.
+Exact game pre-failure snapshot restoration preserves the old bytes; one-step
+replays are exact with each engine. The geometric penetration changes from
+319.682655 mm to 0.000113889 mm under the candidate. Both originally problematic
+whole-tree fixtures pass their unchanged settling checks. Broader comparison
+and diagnostic-frame integration remain pending.

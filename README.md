@@ -1,3 +1,14 @@
+# Private heightfield-frame research candidate
+
+This archive is not a published or release-qualified engine. It pins Parry
+research revision 3ab3ba63460ec559e40e0801bea52e48e6dc00d1 for bounded
+physical qualification of explicit triangle-local heightfield contact frames.
+Focused native tests pass; broader physical behavior, contact-frame API
+integration, performance and independent-build qualification remain pending.
+The production game must keep using the public registry release.
+
+The inherited public-engine documentation follows for context.
+
 # AbsoluteJS Rapier 3D
 
 A focused distribution of Rapier 0.21.0 / engine 0.36.0 with solver-contact
