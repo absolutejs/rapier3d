@@ -1,5 +1,5 @@
 import { chromium } from 'playwright';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 const result=await Bun.build({entrypoints:['absolutejs/scripts/browser-worker-entry.ts'],target:'browser',format:'esm'});
 if(!result.success||result.outputs.length!==1)throw Error('Worker build failed');
 const worker=await result.outputs[0]!.text();
@@ -16,6 +16,7 @@ try {
   w.onmessage=e=>{clearTimeout(timer);w.terminate();resolve(e.data);};
   w.onerror=e=>{clearTimeout(timer);w.terminate();reject(Error(e.message));};
  }));
+ mkdirSync('.absolutejs/logs',{recursive:true});
  writeFileSync('.absolutejs/logs/browser-result.json',JSON.stringify({gpu:false,result},null,2)+'\n');
  if(!(result as {passed:boolean}).passed)throw Error(JSON.stringify(result));
  console.log(result);

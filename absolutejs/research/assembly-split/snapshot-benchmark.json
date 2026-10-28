@@ -1,0 +1,199 @@
+{
+  "scope": "CPU snapshot capture only; no rendering, restoration, transport or FPS claim",
+  "bodies": 128,
+  "snapshotsPerMeasurement": 200,
+  "pairs": [
+    {
+      "round": 0,
+      "order": [
+        0,
+        1
+      ],
+      "baseline": {
+        "milliseconds": 20.63894099999999,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 20.161481999999978,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 1,
+      "order": [
+        1,
+        0
+      ],
+      "baseline": {
+        "milliseconds": 17.559829999999977,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 14.82271499999996,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 2,
+      "order": [
+        0,
+        1
+      ],
+      "baseline": {
+        "milliseconds": 10.190856999999994,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 13.007872000000077,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 3,
+      "order": [
+        1,
+        0
+      ],
+      "baseline": {
+        "milliseconds": 15.368901999999935,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 9.564419000000044,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 4,
+      "order": [
+        0,
+        1
+      ],
+      "baseline": {
+        "milliseconds": 10.63592200000005,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 10.024465999999961,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 5,
+      "order": [
+        1,
+        0
+      ],
+      "baseline": {
+        "milliseconds": 15.540980999999988,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 9.649892000000023,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 6,
+      "order": [
+        0,
+        1
+      ],
+      "baseline": {
+        "milliseconds": 8.781877000000009,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 9.527773000000025,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 7,
+      "order": [
+        1,
+        0
+      ],
+      "baseline": {
+        "milliseconds": 13.426822000000016,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 12.031750999999986,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 8,
+      "order": [
+        0,
+        1
+      ],
+      "baseline": {
+        "milliseconds": 8.958803999999986,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 7.832891000000018,
+        "bytesPerSnapshot": 63234
+      }
+    },
+    {
+      "round": 9,
+      "order": [
+        1,
+        0
+      ],
+      "baseline": {
+        "milliseconds": 14.141129999999976,
+        "bytesPerSnapshot": 63189
+      },
+      "candidate": {
+        "milliseconds": 11.023987000000034,
+        "bytesPerSnapshot": 63234
+      }
+    }
+  ],
+  "medianPairedRatio": 0.8852107447187088,
+  "worldUnchanged": [
+    true,
+    true
+  ],
+  "engines": [
+    {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.15.0",
+      "qualifiedKernelRelease": "0.15.0",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "10892b275313607d9983431590c4b1bce07945cf90d2b1c9340173373da3273c",
+      "wasmBytes": 3317524,
+      "solverChanges": true,
+      "apiSha256": "dea9fdd3e01f07ee53c750ef600a6acc3f6f58de30e6cd20113601fe90ec72cb"
+    },
+    {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.15.0-split-research.0",
+      "qualifiedKernelRelease": "unqualified-assembly-split-research",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "fb44e31fd971a0577889408a95266ab1e61d9293a1f6657647ca51417b93c83d",
+      "wasmBytes": 3324606,
+      "solverChanges": true,
+      "apiSha256": "fff8b9dadd94f08ce049ce94147bde8de3d52882d653fc1765df6b1982f89799"
+    }
+  ],
+  "scriptSha256": "49d0c0c0de3cd782104044f4bbb2264c3617b3b15f940542c49d595b85c1e375"
+}

@@ -125,3 +125,29 @@ comparison script accepts explicit input/output paths so earlier receipts remain
 intact. `snapshot-unaffected-comparison.json` confirms all 386 exclusion-control
 state records and all 127 existing assembly measurements are exactly unchanged
 from the retained 0.15.0 native baseline.
+
+## Private WASM qualification
+
+The corrected native build completed; the qualification guard intentionally
+rejected its changed bytes until the explicitly private research manifest was
+updated. The candidate WASM is 3,324,606 bytes, SHA-256
+`fb44e31fd971a0577889408a95266ab1e61d9293a1f6657647ca51417b93c83d`.
+All 207 package tests pass (86,667 assertions), including 120 exact post-cut
+replays and 120 exact ordinary-body comparisons with/without an unrelated
+assembly. Public declaration checks pass. The GPU-disabled browser worker passes
+including 32 exact post-cut replays. Its first invocation failed while writing
+evidence because a fresh checkout lacked the output directory; the verifier now
+creates it, and the rerun and JSON receipt are retained.
+
+The private archive audit verifies every distribution byte and embedded WASM;
+archive SHA-256 is
+`f4716656e4537569f3fd624154280dc827b4a37563287519597d6d5008f7caca`.
+It is copied into the isolated game qualification checkout with an installed
+53-file audit. Canonical game dependencies remain unchanged pending release.
+
+The bounded CPU snapshot benchmark uses ten alternating pairs, each capturing
+200 snapshots of 128 bodies. The envelope adds 45 bytes (63,189 to 63,234), and
+capture leaves both worlds unchanged. The observed median paired time ratio is
+0.885; this short host-specific run does not establish a general speedup or FPS
+claim. Independent builds, two-worker native checks and full game qualification
+are still pending.

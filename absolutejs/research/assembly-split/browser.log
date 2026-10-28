@@ -1,0 +1,16 @@
+14 |   const w=new Worker('/worker.js',{type:'module'});
+15 |   const timer=setTimeout(()=>{w.terminate();reject(Error('Worker exceeded 20s budget'));},20000);
+16 |   w.onmessage=e=>{clearTimeout(timer);w.terminate();resolve(e.data);};
+17 |   w.onerror=e=>{clearTimeout(timer);w.terminate();reject(Error(e.message));};
+18 |  }));
+19 |  writeFileSync('.absolutejs/logs/browser-result.json',JSON.stringify({gpu:false,result},null,2)+'\n');
+      ^
+ENOENT: no such file or directory, open '.absolutejs/logs/browser-result.json'
+    path: ".absolutejs/logs/browser-result.json",
+ syscall: "open",
+   errno: -2,
+    code: "ENOENT"
+
+      at /home/alexkahn/alex/rapier-assembly-split-research/absolutejs/scripts/verify-browser.ts:19:2
+
+Bun v1.4.4+absolute.1 (Linux x64)
