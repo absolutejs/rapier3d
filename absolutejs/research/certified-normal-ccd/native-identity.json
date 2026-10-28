@@ -1,0 +1,11 @@
+{
+  "scope": "Private qualification identity, not release approval",
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "unqualified-certified-normal-ccd-research",
+    "wasmSha256": "f1647222e95658684edf3641ceaa65db23a13946f04e44abbdbfb00fd19c92be",
+    "wasmBytes": 3358231,
+    "solverChanges": true,
+    "researchOnly": true
+  }
+}
