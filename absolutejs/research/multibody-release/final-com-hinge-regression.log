@@ -1,0 +1,11 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/multibody-writeback.test.ts:
+(pass) articulation link velocities expose current solved momentum at every step [547.56ms]
+(pass) fixed articulation velocities use final COM geometry after off-center impacts [236.88ms]
+(pass) a revolute articulation exposes COM velocity tangent to its current hinge [19.63ms]
+
+ 3 pass
+ 0 fail
+ 9256 expect() calls
+Ran 3 tests across 1 file. [1062.00ms]

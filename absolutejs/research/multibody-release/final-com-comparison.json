@@ -1,0 +1,571 @@
+{
+  "scope": "bounded audit, not release acceptance",
+  "summary": {
+    "compound": {
+      "maxMomentumError": {
+        "baseline": 3.209808353861871e-06,
+        "candidate": 3.209808353861871e-06
+      },
+      "maxAngularError": {
+        "baseline": 0.1866564954864125,
+        "candidate": 0.1866564954864125
+      },
+      "maxEnergyGain": {
+        "baseline": 1.0582760296529159e-05,
+        "candidate": 1.0582760296529159e-05
+      },
+      "maxRigidVelocityError": {
+        "baseline": 0,
+        "candidate": 0
+      }
+    },
+    "multibody": {
+      "maxMomentumError": {
+        "baseline": 20.000002767673166,
+        "candidate": 0.060014932160949386
+      },
+      "maxAngularError": {
+        "baseline": 0.20138114580872113,
+        "candidate": 0.20161811383251838
+      },
+      "maxEnergyGain": {
+        "baseline": 0.2757730460465737,
+        "candidate": 0.27668226060806944
+      },
+      "maxRigidVelocityError": {
+        "baseline": 0.015682634702971175,
+        "candidate": 2.792513726589249e-07
+      }
+    }
+  },
+  "changes": [
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": 0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "compound",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": 0.0,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.979451894760132,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.979450225830078,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.984486103057861,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.984477233886718,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.993886947631836,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.993869018554687,
+      "maxAngularErrorDelta": 0,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.97944629032328,
+      "maxAngularErrorDelta": 1.880096022798466e-10,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 6.646203093159027e-10
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.979444537103648,
+      "maxAngularErrorDelta": 2.8421706889305166e-14,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 1.4469818934611096e-13
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.984483304424916,
+      "maxAngularErrorDelta": -6.608047245549068e-11,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 1.0029888205225715e-10
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.984481072853951,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 0.0
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": -19.999997887673064,
+      "maxAngularErrorDelta": 3.774402898516424e-11,
+      "maxEnergyGainDelta": 0,
+      "maxRigidVelocityErrorDelta": 4.144238877586806e-10
+    },
+    {
+      "mode": "multibody",
+      "offset": 0,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": -20.000001328161886,
+      "maxAngularErrorDelta": 0.0,
+      "maxEnergyGainDelta": 0.0,
+      "maxRigidVelocityErrorDelta": 3.4657955437957446e-13
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": -8.65960942473894,
+      "maxAngularErrorDelta": -0.00043734588591970436,
+      "maxEnergyGainDelta": 0.0081009962979266,
+      "maxRigidVelocityErrorDelta": -0.015559021878674039
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": -8.659189919621324,
+      "maxAngularErrorDelta": 0.00023696802379724602,
+      "maxEnergyGainDelta": 0.0009059791538064133,
+      "maxRigidVelocityErrorDelta": -0.015682422961785576
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.082223209608486,
+      "maxAngularErrorDelta": -0.00021546884640288866,
+      "maxEnergyGainDelta": 0.0017512176812743974,
+      "maxRigidVelocityErrorDelta": -0.003696666155534564
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.082121690824026,
+      "maxAngularErrorDelta": 1.4482603420074014e-05,
+      "maxEnergyGainDelta": 4.3424998750651866e-05,
+      "maxRigidVelocityErrorDelta": -0.003704030176892334
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": -14.528282438144224,
+      "maxAngularErrorDelta": 5.7227974479268084e-05,
+      "maxEnergyGainDelta": 0.00041646739021672374,
+      "maxRigidVelocityErrorDelta": -0.0008880162583116327
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": -14.511746349028911,
+      "maxAngularErrorDelta": 1.5156017787454346e-06,
+      "maxEnergyGainDelta": 2.0130410192109593e-06,
+      "maxRigidVelocityErrorDelta": -0.0008885368505943647
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 1,
+      "maxMomentumErrorDelta": -8.659601907497732,
+      "maxAngularErrorDelta": -0.0004369130546959532,
+      "maxEnergyGainDelta": 0.008103617253084394,
+      "maxRigidVelocityErrorDelta": -0.015559003447040462
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 60,
+      "units": 100,
+      "maxMomentumErrorDelta": -8.65918575626159,
+      "maxAngularErrorDelta": 0.00023595102080431474,
+      "maxEnergyGainDelta": 0.0009092145614957303,
+      "maxRigidVelocityErrorDelta": -0.015682359768409156
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 1,
+      "maxMomentumErrorDelta": -9.082216469067582,
+      "maxAngularErrorDelta": -0.00021489841069222138,
+      "maxEnergyGainDelta": 0.0017608687538910317,
+      "maxRigidVelocityErrorDelta": -0.003696755915163083
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 240,
+      "units": 100,
+      "maxMomentumErrorDelta": -9.082127926402407,
+      "maxAngularErrorDelta": 1.3421094675614142e-05,
+      "maxEnergyGainDelta": 4.56792236604997e-05,
+      "maxRigidVelocityErrorDelta": -0.0037039650821233043
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 1,
+      "maxMomentumErrorDelta": -14.522690210276627,
+      "maxAngularErrorDelta": 5.6551451991460056e-05,
+      "maxEnergyGainDelta": 0.00041382498985598204,
+      "maxRigidVelocityErrorDelta": -0.0008879739086306718
+    },
+    {
+      "mode": "multibody",
+      "offset": 0.15,
+      "angle": 0.37,
+      "hz": 960,
+      "units": 100,
+      "maxMomentumErrorDelta": -14.505737997508845,
+      "maxAngularErrorDelta": 5.948435992664258e-07,
+      "maxEnergyGainDelta": 1.5960830026529038e-06,
+      "maxRigidVelocityErrorDelta": -0.0008885269705988395
+    }
+  ]
+}

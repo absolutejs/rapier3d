@@ -63,7 +63,29 @@ try {
    kinematicRotationErrorRad=2*Math.acos(Math.min(1,alignment));
    if(kinematicPositionErrorM>3e-6||kinematicRotationErrorRad>2e-6)throw Error('Prescribed kinematic path drifted');
   }finally{pathWorld.free();}
+  let multibodyMomentumError=0,multibodyRigidVelocityError=0;
+  for(const offset of [0,.15]){
+   const assembly=new R.World({x:0,y:0,z:0});
+   try{
+    assembly.timestep=1/60;
+    const masses=[2,3,5],bs=[];
+    for(let i=0;i<3;i++){
+     const rb=assembly.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(i*.65,i===2?offset:0,0).setLinvel(i===2?-4:0,0,0).setCanSleep(false).setCcdEnabled(true));
+     assembly.createCollider(R.ColliderDesc.ball(.25).setMass(masses[i]).setFriction(0).setRestitution(1),rb);bs.push(rb);
+    }
+    const q={x:0,y:0,z:0,w:1};
+    assembly.createMultibodyJoint(R.JointData.fixed({x:.65,y:0,z:0},q,{x:0,y:0,z:0},q),bs[0],bs[1],true).setContactsEnabled(false);
+    for(let i=0;i<30;i++){
+     assembly.step();
+     if(offset===0)multibodyMomentumError=Math.max(multibodyMomentumError,Math.abs(bs.reduce((p,b,i)=>p+masses[i]*b.linvel().x,0)+20));
+     const ca=bs[0].worldCom(),cb=bs[1].worldCom(),va=bs[0].linvel(),vb=bs[1].linvel(),w=bs[0].angvel();
+     const dx=cb.x-ca.x,dy=cb.y-ca.y,dz=cb.z-ca.z;
+     multibodyRigidVelocityError=Math.max(multibodyRigidVelocityError,Math.hypot(vb.x-va.x-w.y*dz+w.z*dy,vb.y-va.y-w.z*dx+w.x*dz,vb.z-va.z-w.x*dy+w.y*dx));
+    }
+   }finally{assembly.free();}
+  }
+  if(multibodyMomentumError>2e-4||multibodyRigidVelocityError>3e-5)throw Error('Articulated velocity writeback failed');
   if(buildInfo.wasmSha256!==R.buildInfo.wasmSha256||!Object.isFrozen(buildInfo))throw Error('Browser build identity mismatch');
-  postMessage({buildInfo,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({buildInfo,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

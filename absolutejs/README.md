@@ -36,6 +36,13 @@ corrects previous-simplex witness preservation and reduces force-free rotation
 roundoff, as described below. Contact and CCD policy defaults remain unchanged.
 Runtime motion still needs independent geometric and energy checks.
 
+Version 0.8.1 refreshes articulated link velocities after final solver impulses
+and uses the integrated link geometry for center-of-mass velocity offsets.
+This fixes stale `linvel()`/`angvel()` state and inconsistent velocities on rotating
+fixed assemblies. It does not change the restitution iteration budget or provide
+a general energy-conservation guarantee for off-center articulated impacts.
+
+
 The ESM package includes WASM initialization and requires no separate asset URL.
 Concurrent `init()` calls share initialization. The package targets 3D f32
 web/Node/Bun; it does not claim a 2D, f64, CommonJS or SIMD distribution.

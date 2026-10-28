@@ -733,6 +733,20 @@ impl Multibody {
     /// Computes the constant terms of the dynamics.
     #[profiling::function]
     pub(crate) fn update_velocities(&mut self, bodies: &mut RigidBodySet) {
+        self.update_velocities_with_com_source(bodies, false);
+    }
+
+    /// Refresh public link velocities after final integration/restitution without
+    /// mutating body poses or mass properties still used by the CCD pipeline.
+    pub(crate) fn update_final_velocities(&mut self, bodies: &mut RigidBodySet) {
+        self.update_velocities_with_com_source(bodies, true);
+    }
+
+    fn update_velocities_with_com_source(
+        &mut self,
+        bodies: &mut RigidBodySet,
+        final_link_poses: bool,
+    ) {
         /*
          * Compute velocities.
          * NOTE: this is needed for kinematic bodies too.
@@ -757,7 +771,15 @@ impl Multibody {
                 &(parent_link.local_to_world.rotation * link.joint.data.local_frame1.rotation),
             );
             let mut new_rb_vels = parent_rb.vels + link.joint_velocity;
-            let shift = rb.mprops.world_com - parent_rb.mprops.world_com;
+            let shift = if final_link_poses {
+                // The final substep deliberately leaves cached world mass
+                // properties at the previous pose. Link transforms are current.
+                let child_com = link.local_to_world * rb.mprops.local_mprops.local_com;
+                let parent_com = parent_link.local_to_world * parent_rb.mprops.local_mprops.local_com;
+                child_com - parent_com
+            } else {
+                rb.mprops.world_com - parent_rb.mprops.world_com
+            };
             new_rb_vels.linvel += parent_rb.vels.angvel.gcross(shift);
             new_rb_vels.linvel += link.joint_velocity.angvel.gcross(link.shift23);
 
