@@ -1052,7 +1052,7 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 // Restitution changes generalized velocities after the final
                 // integration pass. Expose that same solved state on each link
                 // instead of leaving public rigid-body velocities one pass stale.
-                multibody.update_velocities(unsafe { &mut *ctx.bodies });
+                multibody.update_final_velocities(unsafe { &mut *ctx.bodies });
             }
         }
         // No sync after the multibody-velocity writeback: nothing follows, and
