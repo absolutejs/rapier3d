@@ -1,0 +1,7 @@
+{
+  "version": "0.10.0",
+  "integrityMatchesAuditedArchive": true,
+  "shasum": "59ad174b348ef8c37e3b86dbe16d2c82a4e7b7c8",
+  "integrity": "sha512-tQ3//G2t5cuYgaCacugQJ5ZmrLeM6LZkWDhru+fKsa0jLmwprn8BFAu/4YlWPrx2HXpUO/UFPp1bb22vRd4xnw==",
+  "tarball": "https://registry.npmjs.org/@absolutejs/rapier3d/-/rapier3d-0.10.0.tgz"
+}
