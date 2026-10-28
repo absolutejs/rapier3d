@@ -21,3 +21,7 @@ Two independent native builds with separate target directories produce identical
 The final release passes all 45 package tests / 57,649 assertions. Declaration type contracts pass. `release-metadata-audit.json` proves the final module/declaration bytes differ from the 64-case tested candidate only in package/release labels. Game tool typechecks pass. No game solver policy or installed dependency changes are included in this package-source commit.
 
 Exact audited archive: `.absolutejs/pack/absolutejs-rapier3d-0.9.0.tgz`, SHA256 `eea57d50d71d84f9734144404c6d345e52390ba1093a5eafc5c29824c0a9de2b`, SHA1 `933c274ed6186607f4e63416bda07db8966a0e85`. `pack-audit.json` checks all distribution bytes, embedded native payload, package exports, file allowlist and registry integrity. Publication and game adoption must be recorded separately after registry verification.
+
+## Publication
+
+npm accepted the required browser confirmation and published 0.9.0. Registry propagation took several minutes; subsequent integrity and SHA1 checks match the audited archive exactly. `publication.json` and `registry-verified.json` record verification. The game has installed the registry release and is completing its installed-byte audit and focused regression checks; final adoption evidence lives in its docs folder.

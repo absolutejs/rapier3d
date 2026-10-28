@@ -1,0 +1,9 @@
+{
+  "status": "published-and-registry-verified",
+  "version": "0.9.0",
+  "sourceCommit": "3ffbb7b2fa03047fceb811b83bb4b220abc991b6",
+  "confirmedUtc": "2026-10-28T03:29:03.522746+00:00",
+  "tarballSha256": "eea57d50d71d84f9734144404c6d345e52390ba1093a5eafc5c29824c0a9de2b",
+  "integrity": "sha512-MlWJYJdkZdBWLX65yFE/ANoBeW/zYhCW2WBiOyVrKI/yjRjK2cTVQiQUI/yvOw00P7TAvTz9CY+fs5uZEcMp6A==",
+  "registryPropagation": "First two queries after successful npm publish returned E404; third query matched the audited archive. No duplicate publish attempted."
+}
