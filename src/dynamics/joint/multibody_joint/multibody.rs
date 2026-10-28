@@ -1291,6 +1291,53 @@ impl Multibody {
         self.velocities.rows_mut(0, self.ndofs)
     }
 
+    /// PRIVATE EXPERIMENT: finite root-to-COM transport for an undamped rigid cluster.
+    /// No hinges, locked bodies, armatures, springs, or root-local COM offsets.
+    #[cfg(feature = "dim3")]
+    pub(crate) fn rigid_root_transport_input(&self, bodies: &RigidBodySet) -> Option<(Vector, Vector)> {
+        if !self.root_is_dynamic || self.ndofs != SPATIAL_DIM || self.links.len() < 2
+            || self.links[0].joint.ndofs() != SPATIAL_DIM
+            || self.damping.iter().any(|v| *v != 0.0)
+            || self.armature.iter().any(|v| *v != 0.0)
+            || self.frictions.iter().any(|v| *v != 0.0)
+        { return None; }
+        let root = &bodies[self.links[0].rigid_body];
+        if root.mprops.local_mprops.local_com != Vector::ZERO { return None; }
+        let mut mass = 0.0;
+        let mut weighted = Vector::ZERO;
+        for (i, link) in self.links.iter().enumerate() {
+            let rb = &bodies[link.rigid_body];
+            if !rb.is_dynamic() || !rb.locked_axes().is_empty() || link.joint.kinematic
+                || (i != 0 && link.joint.ndofs() != 0)
+                || link.joint.spring_stiffness.iter().any(|v| *v != 0.0)
+            { return None; }
+            let m = rb.mass();
+            if !m.is_finite() || m <= 0.0 { return None; }
+            mass += m;
+            weighted += (link.local_to_world * rb.mprops.local_mprops.local_com) * m;
+        }
+        if !mass.is_finite() || !weighted.is_finite() { return None; }
+        let root_com = self.links[0].local_to_world * root.mprops.local_mprops.local_com;
+        let offset = root_com - weighted / mass;
+        let omega = Vector::from_slice(&self.velocities.as_slice()[DIM..SPATIAL_DIM]);
+        Some((offset, omega))
+    }
+
+    #[cfg(feature = "dim3")]
+    pub(crate) fn finish_rigid_root_transport(&mut self, dt: Real, offset: Vector, old_omega: Vector) {
+        use crate::utils::RotationOps;
+        let omega = Vector::from_slice(&self.velocities.as_slice()[DIM..SPATIAL_DIM]);
+        let rotated = crate::math::Rotation::from_scaled_axis(omega * dt) * offset;
+        let centripetal = old_omega.gcross(old_omega.gcross(offset));
+        // Replace the first-order coordinate transport, not a measured energy or momentum error.
+        let position_delta = rotated - offset - omega.gcross(offset) * dt - centripetal * (dt * dt);
+        let velocity_delta = omega.gcross(rotated - offset) - centripetal * dt;
+        for i in 0..DIM {
+            self.links[0].joint.coords[i] += position_delta[i];
+            self.velocities[i] += velocity_delta[i];
+        }
+    }
+
     #[inline]
     pub(crate) fn integrate(&mut self, dt: Real) {
         for rb in self.links.iter_mut() {
