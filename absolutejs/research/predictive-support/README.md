@@ -78,3 +78,10 @@ Public archive SHA-256:
 `bed2618729b0e70fec71a6c926846d053e4f001309b2636e9c3c80780a2f9863`.
 Publication and canonical game adoption are still pending; do not infer registry
 availability from the completed archive qualification.
+
+## Publication verified
+
+npm accepted 0.16.3, then returned 404 during propagation. The fourth registry
+check verifies metadata and downloaded SHA-256/SHA-1/SHA-512 against the audited
+archive. No republish occurred. See publication-verified.json. Canonical game
+adoption is the remaining delivery step.
