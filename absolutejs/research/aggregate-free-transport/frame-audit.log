@@ -1,0 +1,164 @@
+     Locking 78 packages to latest compatible versions
+   Compiling autocfg v1.5.1
+   Compiling libm v0.2.16
+   Compiling proc-macro2 v1.0.107
+   Compiling num-traits v0.2.19
+   Compiling unicode-ident v1.0.27
+   Compiling quote v1.0.47
+   Compiling syn v2.0.119
+   Compiling bytemuck v1.25.2
+   Compiling safe_arch v1.2.0
+   Compiling approx v0.5.1
+   Compiling matrixmultiply v0.3.11
+   Compiling wide v1.7.1
+   Compiling num-complex v0.4.6
+   Compiling num-integer v0.1.47
+   Compiling syn v3.0.9
+   Compiling rawpointer v0.2.1
+   Compiling heapless v0.8.0
+   Compiling byteorder v1.5.0
+   Compiling hash32 v0.3.1
+   Compiling num-rational v0.4.2
+   Compiling nalgebra-macros v0.3.0
+   Compiling simba v0.10.2
+   Compiling glam v0.33.12
+   Compiling typenum v1.20.1
+   Compiling thiserror v2.0.21
+   Compiling stable_deref_trait v1.2.1
+   Compiling nalgebra v0.35.0
+   Compiling thiserror-impl v2.0.21
+   Compiling smallvec v1.16.4
+   Compiling foldhash v0.2.0
+   Compiling log v0.4.34
+   Compiling ena v0.14.4
+   Compiling hashbrown v0.17.1
+   Compiling rstar v0.13.0
+   Compiling num-derive v0.5.1
+   Compiling profiling-procmacros v1.0.18
+   Compiling ordered-float v5.5.0
+   Compiling arrayvec v0.7.8
+   Compiling downcast-rs v2.0.2
+   Compiling bitflags v2.13.2
+   Compiling slab v0.4.12
+   Compiling static_assertions v1.1.0
+   Compiling either v1.19.0
+   Compiling profiling v1.0.18
+   Compiling web-time v1.1.0
+   Compiling glamx v0.3.1
+   Compiling parry3d v0.31.1 (https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd)
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d)
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-aggregate-free-transport-research v0.0.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/research/aggregate-free-transport)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 05s
+     Running tests/aggregate_frame.rs (.cache/aggregate-target/debug/deps/aggregate_frame-c4ad9aae62c31577)
+
+running 1 test
+test authored_aggregate_avoids_world_translation_and_orientation_roundtrips ... AGGREGATE_FRAME root=0 scale=0.001 shift=0 tilted=false tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=0 scale=0.001 shift=0 tilted=true tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=0 scale=0.001 shift=1000000 tilted=false tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=0 scale=0.001 shift=1000000 tilted=true tensor=7.681272343617525e-8 center=6.989974784536305e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=0 tilted=false tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=0 tilted=true tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=1000000 tilted=false tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=1 scale=0.001 shift=1000000 tilted=true tensor=8.563471866037522e-8 center=2.0122388578729396e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=0 tilted=false tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=0 tilted=true tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=1000000 tilted=false tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=2 scale=0.001 shift=1000000 tilted=true tensor=9.781650637181303e-8 center=4.464097562346889e-8
+AGGREGATE_FRAME root=0 scale=1 shift=0 tilted=false tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=0 scale=1 shift=0 tilted=true tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=0 scale=1 shift=1000000 tilted=false tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=0 scale=1 shift=1000000 tilted=true tensor=2.1187842882492327e-7 center=1.0643280919480373e-7
+AGGREGATE_FRAME root=1 scale=1 shift=0 tilted=false tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=1 scale=1 shift=0 tilted=true tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=1 scale=1 shift=1000000 tilted=false tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=1 scale=1 shift=1000000 tilted=true tensor=1.45092556506164e-7 center=4.868302199987512e-8
+AGGREGATE_FRAME root=2 scale=1 shift=0 tilted=false tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=2 scale=1 shift=0 tilted=true tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=2 scale=1 shift=1000000 tilted=false tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=2 scale=1 shift=1000000 tilted=true tensor=8.265160150395612e-8 center=4.1699797248965325e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=0 tilted=false tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=0 tilted=true tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=1000000 tilted=false tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=0 scale=1000 shift=1000000 tilted=true tensor=6.240043925322472e-8 center=8.022011086655531e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=0 tilted=false tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=0 tilted=true tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=1000000 tilted=false tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=1 scale=1000 shift=1000000 tilted=true tensor=1.0016173746367211e-7 center=5.398364129395424e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=0 tilted=false tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=0 tilted=true tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=1000000 tilted=false tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME root=2 scale=1000 shift=1000000 tilted=true tensor=1.397990034518972e-7 center=3.938972461440207e-8
+AGGREGATE_FRAME_SUMMARY cases=36 relative_tensor=2.1187842882492327e-7 scaled_center=1.0643280919480373e-7
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
