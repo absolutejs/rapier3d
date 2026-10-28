@@ -4,7 +4,7 @@ use core::fmt::{Display, Formatter, Result};
 
 /// Observations of the restricted adaptive contact paths, summed over CCD passes.
 /// Runtime-only profiling data; never serialized with the physical world.
-#[derive(Default, Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug)]
 pub struct ContactConvergenceCounters {
     pub compression_solves: usize,
     pub compression_iterations: usize,
@@ -14,6 +14,19 @@ pub struct ContactConvergenceCounters {
     pub restitution_iterations: usize,
     pub restitution_limit_hits: usize,
     pub max_restitution_residual: Real,
+    /// Private research trace, bounded across the entire profiled step.
+    pub restitution_trace: [[f64; 8]; 256],
+    pub restitution_trace_len: usize,
+    pub restitution_trace_dropped: usize,
+}
+
+impl Default for ContactConvergenceCounters {
+    fn default() -> Self {
+        Self { compression_solves: 0, compression_iterations: 0, compression_limit_hits: 0,
+            max_compression_residual: 0.0, restitution_solves: 0, restitution_iterations: 0,
+            restitution_limit_hits: 0, max_restitution_residual: 0.0,
+            restitution_trace: [[0.0; 8]; 256], restitution_trace_len: 0, restitution_trace_dropped: 0 }
+    }
 }
 
 /// Performance counters related to constraints resolution.

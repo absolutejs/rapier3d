@@ -3,6 +3,7 @@
 //! writeback stages.
 
 use core::sync::atomic::Ordering;
+use crate::alloc_prelude::*;
 
 #[cfg(feature = "dim3")]
 use crate::dynamics::rigid_body::gyroscopic_corrected_angvel;
@@ -20,6 +21,34 @@ use parry::math::SIMD_WIDTH;
 
 use super::solve::solve_pass;
 use super::{BODY_BATCH, SharedCtx, chunk_at, stage_batch};
+
+// Private read-only reduction of all solver velocities and normal accumulators.
+// Called only on the existing single-worker adaptive profiling path.
+unsafe fn trace_state(ctx: &SharedCtx) -> (Vec<f64>, Vec<f64>, Vec<f64>) {
+    let vs = unsafe { &*ctx.velocity_solver };
+    let contacts = unsafe { &*ctx.contact_constraints };
+    let mut velocity = Vec::new();
+    for v in &vs.solver_bodies.vels {
+        for k in 0..crate::math::DIM { velocity.push(v.linear[k] as f64); }
+        #[cfg(feature = "dim3")]
+        for k in 0..3 { velocity.push(v.angular[k] as f64); }
+        #[cfg(feature = "dim2")]
+        velocity.push(v.angular as f64);
+    }
+    velocity.extend(vs.generic_solver_vels.iter().map(|v| *v as f64));
+    let mut precise = Vec::new();
+    let mut stored = Vec::new();
+    for c in &contacts.generic_velocity_constraints {
+        for point in 0..c.num_contacts as usize {
+            precise.push(c.normal_impulses64[point]);
+            stored.push(c.normal_part[point].impulse as f64);
+        }
+    }
+    (velocity, precise, stored)
+}
+fn trace_max_delta(a: &[f64], b: &[f64]) -> f64 {
+    a.iter().zip(b).map(|(x,y)| (x-y).abs()).fold(0.0, f64::max)
+}
 
 /// Per-full-step angular rotation cap (0.25π ≈ 45°): bodies without
 /// `allow_fast_rotation` get their angular velocity clamped each substep so the full-step
@@ -819,6 +848,9 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                     c.begin_precise_normal_solve();
                 }
             }
+            let mut trace_previous = if adaptive_generic && ctx.contact_convergence.is_some() {
+                Some(unsafe { trace_state(ctx) })
+            } else { None };
             let mut restitution_iterations = 0usize;
             let mut restitution_residual: Real = 0.0;
             for _restitution_sweep in 0..restitution_sweeps {
@@ -908,6 +940,20 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                     .fold(0.0 as Real, Real::max);
                 restitution_iterations = _restitution_sweep + 1;
                 restitution_residual = residual;
+                if let Some(previous) = trace_previous.as_mut() {
+                    let current = unsafe { trace_state(ctx) };
+                    let stats = unsafe { &mut *ctx.contact_convergence.unwrap() };
+                    if stats.restitution_trace_len < 256 {
+                        stats.restitution_trace[stats.restitution_trace_len] = [
+                            (stats.restitution_solves + 1) as f64, restitution_iterations as f64,
+                            residual as f64, trace_max_delta(&previous.0, &current.0),
+                            trace_max_delta(&previous.1, &current.1), trace_max_delta(&previous.2, &current.2),
+                            current.0.iter().map(|v| v.abs()).fold(0.0, f64::max), current.1.iter().sum() ];
+                        stats.restitution_trace_len += 1;
+                    } else { stats.restitution_trace_dropped += 1; }
+                    *previous = current;
+                }
+
                 if residual <= 1.0e-6 * params.length_unit { break; }
             }
             }

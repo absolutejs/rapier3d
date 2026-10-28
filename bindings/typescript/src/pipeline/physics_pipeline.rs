@@ -54,6 +54,15 @@ impl RawPhysicsPipeline {
             c.restitution_limit_hits as f64, c.max_restitution_residual as f64])
     }
 
+    // Research only, bounded read-only trace; unavailable before completed profiled step.
+    pub fn restitution_trace(&self) -> Option<Vec<f64>> {
+        if !self.1 || !self.0.counters.enabled() { return None; }
+        let c = &self.0.counters.solver.contact_convergence;
+        let mut values = vec![c.restitution_trace_len as f64, c.restitution_trace_dropped as f64];
+        for row in &c.restitution_trace[..c.restitution_trace_len] { values.extend_from_slice(row); }
+        Some(values)
+    }
+
     pub fn timing_step(&self) -> f64 {
         self.0.counters.step_time_ms()
     }
