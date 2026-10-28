@@ -211,6 +211,37 @@ try {
    }
    if(!Number.isFinite(rootOriginError)||rootOriginError>5e-5)throw Error('Floating-root origin changes browser motion');
   }finally{for(const world of originWorlds)world.free();}
-  postMessage({assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const splitWorld=new R.World({x:0,y:0,z:0});
+  let splitReplay:R.World|undefined,splitMaximumMomentumError=0,splitExactReplaySteps=0;
+  try {
+   splitWorld.timestep=1/120;splitWorld.numSolverIterations=4;
+   splitWorld.integrationParameters.maxCcdSubsteps=0;
+   const q={x:0,y:0,z:0,w:1};
+   const bodies=Array.from({length:4},(_,i)=>{
+    const m=i+1;
+    return splitWorld.createRigidBody(R.RigidBodyDesc.dynamic().setCanSleep(false).setTranslation(i,0,0)
+     .setAdditionalMassProperties(m,{x:.1*m,y:.05*m,z:-.02*m},{x:.2*m,y:.2*m,z:.2*m},q));
+   });
+   const joints=bodies.slice(1).map((b,i)=>splitWorld.createMultibodyJoint(R.JointData.fixed({x:1,y:0,z:0},q,{x:0,y:0,z:0},q),bodies[i],b,true));
+   if(!splitWorld.multibodyJoints.setGeneralizedDamping(joints[0].handle,new Float32Array(6)))throw Error('Split fixture damping failed');
+   splitWorld.step();bodies[0].addForce({x:30,y:-20,z:10},true);bodies[0].addTorque({x:120,y:-80,z:160},true);
+   splitWorld.step();bodies[0].resetForces(true);bodies[0].resetTorques(true);
+   for(let i=0;i<24;i++)splitWorld.step();
+   const momentum=()=>bodies.reduce((sum,b)=>{const v=b.linvel(),m=b.mass();return {x:sum.x+m*v.x,y:sum.y+m*v.y,z:sum.z+m*v.z};},{x:0,y:0,z:0});
+   const initial=momentum();
+   if(Math.hypot(initial.x,initial.y,initial.z)<.01)throw Error('Split fixture has no motion');
+   splitWorld.removeMultibodyJoint(joints[1],true);
+   splitReplay=R.World.restoreSnapshot(splitWorld.takeSnapshot());splitWorld.profilerEnabled=true;
+   for(let i=0;i<32;i++){
+    splitWorld.step();splitReplay.step();
+    const a=splitWorld.takeSnapshot(),b=splitReplay.takeSnapshot();
+    if(a.length!==b.length||a.some((v,index)=>v!==b[index]))throw Error('Browser partial split replay diverged');
+    splitExactReplaySteps++;
+    const p=momentum();splitMaximumMomentumError=Math.max(splitMaximumMomentumError,Math.hypot(p.x-initial.x,p.y-initial.y,p.z-initial.z));
+    if(splitWorld.freeAssemblyStats()?.acceptedSteps!==8)throw Error('Released assemblies did not integrate');
+   }
+   if(!Number.isFinite(splitMaximumMomentumError)||splitMaximumMomentumError>1e-4)throw Error('Partial split lost browser momentum');
+  }finally{splitReplay?.free();splitWorld.free();}
+  postMessage({splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

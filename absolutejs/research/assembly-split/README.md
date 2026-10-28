@@ -61,3 +61,9 @@ to two workers; original fixture worlds explicitly configure two-worker pools.
 New SDK tests are prepared for partial-chain conservation, 120 exact replay steps,
 original-root damping retention and prescribed fixed-to-dynamic activation. They
 remain pending the new WASM build; these source tests are not yet passing claims.
+
+The allocation-enabled no-std check also passes (57.76 seconds). The bounded
+browser worker now includes a prepared partial-split momentum and 32-step exact
+replay check. Both the SDK and browser additions await the new private WASM
+build; the production correction remains 13 added/three removed lines in one
+native source file, including explanatory comments.
