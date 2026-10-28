@@ -1,0 +1,75 @@
+{
+  "scope": "supplementary contact-origin investigation, not part of package/game test counts",
+  "cases": [
+    {
+      "hz": 60,
+      "substeps": 1,
+      "baseline": {
+        "contacts": 76,
+        "position": 1.164442,
+        "velocity": 3.8117025
+      },
+      "candidate": {
+        "contacts": 76,
+        "position": 1.0409503e-06,
+        "velocity": 1.4338282e-06
+      },
+      "withinProposedStrictVelocityTolerance": true
+    },
+    {
+      "hz": 60,
+      "substeps": 4,
+      "baseline": {
+        "contacts": 74,
+        "position": 1.1307459,
+        "velocity": 3.812819
+      },
+      "candidate": {
+        "contacts": 74,
+        "position": 9.12547e-06,
+        "velocity": 4.5538654e-06
+      },
+      "withinProposedStrictVelocityTolerance": true
+    },
+    {
+      "hz": 240,
+      "substeps": 1,
+      "baseline": {
+        "contacts": 305,
+        "position": 1.1702383,
+        "velocity": 3.7754679
+      },
+      "candidate": {
+        "contacts": 305,
+        "position": 1.4672564e-05,
+        "velocity": 0.00064373115
+      },
+      "withinProposedStrictVelocityTolerance": false
+    },
+    {
+      "hz": 240,
+      "substeps": 4,
+      "baseline": {
+        "contacts": 294,
+        "position": 1.1284755,
+        "velocity": 3.8128312
+      },
+      "candidate": {
+        "contacts": 294,
+        "position": 8.467194e-06,
+        "velocity": 8.6090995e-06
+      },
+      "withinProposedStrictVelocityTolerance": true
+    }
+  ],
+  "allPositionAndVelocityErrorsImprove": true,
+  "strictVelocityToleranceStillFails": true,
+  "baselineSource": "62d4186e584f7bebb45fa32754a52123daa3e603",
+  "candidateReleaseSource": "88794a23216dae825c1ce76baad9330bba265d71",
+  "fixtureSha256": "00374b2d21825c752d923fd0646bc71d14c35120caf4a531d77c0af5ac2dd4dd",
+  "limitations": [
+    "The 0.0005 m/s strict covariance criterion is not satisfied in the 240 Hz / one-substep case.",
+    "Observation mode verifies finite states and active contacts, not that strict acceptance bound.",
+    "Residual error cause is not established by this comparison."
+  ]
+}

@@ -1,0 +1,12 @@
+[workspace]
+[package]
+name = "absolutejs-root-origin-candidate"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[dependencies]
+num-traits = { version = "=0.2.19", default-features = false, features = ["libm"] }
+rapier3d = { path = "../../../../crates/rapier3d", features = ["profiler"] }
+[[test]]
+name = "assembly_coordinates"
+path = "../contact-origin.rs"

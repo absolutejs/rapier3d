@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-28T14:17:35.205565+00:00",
+  "version": "0.14.1",
+  "registry": {
+    "version": "0.14.1",
+    "dist.shasum": "2537d67d3b929a44dbbb855a6500c19cc8402fc0",
+    "dist.integrity": "sha512-P+Gffg9cVBn8URuCxDl4Icvq4+XEKt/fNo3hW3/YDHBifRiN1n+wKF0dXWGfc9riGqckvOZzsZENFBe1qGE6Cw=="
+  },
+  "qualifiedArchiveSha256": "25404d2f81d5645905e9c635993cabca36cb2ffd6a7c271f116d0b59c013cd91",
+  "source": "88794a23216dae825c1ce76baad9330bba265d71",
+  "published": true
+}
