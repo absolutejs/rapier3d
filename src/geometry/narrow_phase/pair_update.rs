@@ -155,7 +155,12 @@ pub(super) fn process_pair(
                 let unchanged_geometry = pos12 == state.pos12
                     && co1.pos.rotation == state.rot1
                     && co2.pos.rotation == state.rot2;
-                let supported_or_empty = unchanged_geometry || pair.rigid().is_some_and(|rigid| {
+                // The rule is qualified for convex feature pairs. Composite
+                // shapes rebuild and cluster per-subshape manifolds; refreshing
+                // their predictive set changes support selection and requires
+                // separate qualification (captured terrain regression).
+                let convex_pair = co1.shape.is_convex() && co2.shape.is_convex();
+                let supported_or_empty = !convex_pair || unchanged_geometry || pair.rigid().is_some_and(|rigid| {
                     !rigid.has_any_active_contact()
                         || rigid.solver_manifolds().iter().any(|manifold| {
                             manifold
