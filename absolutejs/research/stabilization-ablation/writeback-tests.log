@@ -1,0 +1,24 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/multibody-writeback.test.ts:
+23 |     }
+24 |     expect(Math.hypot(px+20*c,py+20*s,pz)).toBeLessThan(2e-4);
+25 |    }
+26 |    for(let i=0;i<3;i++){
+27 |     const v=bodies[i]!.linvel(),speed=i===2?0:-4;
+28 |     expect(Math.hypot(v.x/units-speed*c,v.y/units-speed*s,v.z/units)).toBeLessThan(3e-4);
+                                                                           ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.0003
+Received: 1.8978900909423828
+
+      at <anonymous> (/home/alexkahn/alex/rapier-root-transport-research/absolutejs/tests/multibody-writeback.test.ts:28:71)
+(fail) articulation link velocities expose current solved momentum at every step [49.88ms]
+(pass) fixed articulation velocities use final COM geometry after off-center impacts [334.21ms]
+(pass) a revolute articulation exposes COM velocity tangent to its current hinge [25.16ms]
+
+ 2 pass
+ 1 fail
+ 5384 expect() calls
+Ran 3 tests across 1 file. [708.00ms]

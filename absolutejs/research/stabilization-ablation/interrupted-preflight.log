@@ -1,0 +1,13 @@
+$ bash absolutejs/scripts/build-native.sh
+   Compiling libm v0.2.16
+   Compiling serde_core v1.0.229
+   Compiling num-traits v0.2.19
+   Compiling serde v1.0.229
+   Compiling approx v0.5.1
+   Compiling wasm-bindgen-shared v0.2.129
+   Compiling bytemuck v1.25.2
+   Compiling wide v1.7.1
+   Compiling num-complex v0.4.6
+   Compiling matrixmultiply v0.3.11
+   Compiling num-integer v0.1.47
+   Compiling slab v0.4.12
