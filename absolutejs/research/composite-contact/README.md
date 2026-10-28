@@ -14,3 +14,13 @@ contact features and test a mechanism before changing the engine.
 
 Use offline Cargo, checkout-local targets, at most two compiler jobs and no
 native GPU. Preserve failed hypotheses, exact source and bounded receipts.
+
+## Unchanged native baseline
+
+The 12 native controls complete using published 0.16.2 production source.
+Default proxy clearance minima are -17.683/-5.217/-20.964 mm at
+480/960/1920 Hz; the last stops at the original -20 mm threshold. More
+iterations passes all three rates, but disabling clustering can regress the
+960 Hz case to -22.260 mm. These observations do not justify disabling
+clustering or changing the game's solver budgets. WASM replay is being
+measured independently; native f32 execution is not browser-byte parity.
