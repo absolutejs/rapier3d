@@ -20,6 +20,13 @@ pub(crate) struct GyroParams {
     /// the world rotation, so bodies with tilted principal axes are handled correctly.
     pub principal_frame: Rotation,
     pub enabled: bool,
+    // Private matched-rotation experiment. Each worker owns claimed slots.
+    pub midpoint_eligible: bool,
+    pub midpoint_rotation: Option<Rotation>,
+    // Accepted / nonphysical / cap / other numerical rejection counts.
+    pub midpoint_counts: [usize; 4],
+    pub midpoint_max_iterations: usize,
+    pub midpoint_max_residual: f64,
 }
 
 #[cfg(feature = "dim3")]
@@ -30,6 +37,11 @@ impl Default for GyroParams {
             inv_principal_inertia: AngVector::ZERO,
             principal_frame: Rotation::IDENTITY,
             enabled: false,
+            midpoint_eligible: false,
+            midpoint_rotation: None,
+            midpoint_counts: [0; 4],
+            midpoint_max_iterations: 0,
+            midpoint_max_residual: 0.0,
         }
     }
 }

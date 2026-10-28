@@ -54,6 +54,16 @@ impl RawPhysicsPipeline {
             c.restitution_limit_hits as f64, c.max_restitution_residual as f64])
     }
 
+    // Private candidate observations, owned and valid only after a profiled step.
+    // accepted / nonphysical / cap / numerical / max Newton / max residual rad/s.
+    pub fn free_rotation_candidate(&self) -> Option<Vec<f64>> {
+        if !self.1 || !self.0.counters.enabled() { return None; }
+        let c = &self.0.counters.solver;
+        Some(vec![c.midpoint_counts[0] as f64, c.midpoint_counts[1] as f64,
+            c.midpoint_counts[2] as f64, c.midpoint_counts[3] as f64,
+            c.midpoint_max_iterations as f64, c.midpoint_max_residual])
+    }
+
     pub fn timing_step(&self) -> f64 {
         self.0.counters.step_time_ms()
     }

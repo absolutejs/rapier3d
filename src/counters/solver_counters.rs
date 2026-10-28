@@ -19,6 +19,13 @@ pub struct ContactConvergenceCounters {
 /// Performance counters related to constraints resolution.
 #[derive(Default, Clone, Copy, Debug)]
 pub struct SolverCounters {
+    /// Private experiment: accepted / nonphysical / cap / numerical rejections.
+    /// Runtime-only observations, summed across CCD passes when counters enabled.
+    pub midpoint_counts: [usize; 4],
+    /// Maximum Newton updates among accepted private rotation solves.
+    pub midpoint_max_iterations: usize,
+    /// Maximum accepted angular-velocity residual, in radians/second.
+    pub midpoint_max_residual: f64,
     /// Opt-in observations; zero counts mean no eligible adaptive solve.
     pub contact_convergence: ContactConvergenceCounters,
     /// Number of contact manifolds and impulse joints handed to the constraints solver (summed
@@ -45,6 +52,9 @@ impl SolverCounters {
     /// Creates a new counter initialized to zero.
     pub fn new() -> Self {
         SolverCounters {
+            midpoint_counts: [0; 4],
+            midpoint_max_iterations: 0,
+            midpoint_max_residual: 0.0,
             contact_convergence: ContactConvergenceCounters::default(),
             nconstraints: 0,
             ncontacts: 0,
@@ -59,6 +69,9 @@ impl SolverCounters {
 
     /// Reset all the counters to zero.
     pub fn reset(&mut self) {
+        self.midpoint_counts = [0; 4];
+        self.midpoint_max_iterations = 0;
+        self.midpoint_max_residual = 0.0;
         self.contact_convergence = ContactConvergenceCounters::default();
         self.nconstraints = 0;
         self.ncontacts = 0;

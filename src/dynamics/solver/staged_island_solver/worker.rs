@@ -88,6 +88,11 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                         gyro.inv_principal_inertia = rb.mprops.local_mprops.inv_principal_inertia;
                         gyro.principal_frame = rb.mprops.local_mprops.principal_inertia_local_frame;
                         gyro.enabled = true;
+                        gyro.midpoint_eligible = ctx.midpoint_isolated
+                            && !rb.locked_axes().intersects(crate::dynamics::LockedAxes::ROTATION_LOCKED)
+                            && rb.angular_damping() == 0.0
+                            && rb.forces.torque == crate::math::AngVector::ZERO
+                            && vs.solver_bodies.flags[i] & SOLVER_BODY_ALLOW_FAST_ROTATION == 0;
                         // SAFETY: shared atomic; claimed slots make the writes disjoint.
                         unsafe { &*ctx.any_gyroscopic }.store(true, Ordering::Relaxed);
                     } else {
@@ -297,6 +302,51 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                         if has_gyroscopic {
                             let gyro = vs.solver_gyro[i];
                             if gyro.enabled {
+                                if gyro.midpoint_eligible {
+                                    use crate::dynamics::rigid_midpoint::{bounded_rigid_rotation_step, MidpointError};
+                                    let angular = vs.solver_bodies.vels[i].angular;
+                                    let cap_speed = MAX_ROTATION * ctx.base_params.inv_dt();
+                                    let result = if angular.length() > cap_speed {
+                                        Err(MidpointError::RotationLimit)
+                                    } else {
+                                        bounded_rigid_rotation_step(
+                                            vs.solver_bodies.poses[i].rotation.to_array().map(|v| v as f64),
+                                            gyro.principal_frame.to_array().map(|v| v as f64),
+                                            gyro.principal_inertia.to_array().map(|v| v as f64),
+                                            angular.to_array().map(|v| v as f64), params.dt as f64,
+                                            (MAX_ROTATION * params.dt * ctx.base_params.inv_dt()) as f64,
+                                        )
+                                    };
+                                    let result = result.and_then(|step| {
+                                        let next = crate::math::AngVector::from_array(step.angular_velocity.map(|v| v as Real));
+                                        if !next.is_finite() { Err(MidpointError::NonFinite) }
+                                        else if next.length() > cap_speed { Err(MidpointError::RotationLimit) }
+                                        else { Ok((step, next)) }
+                                    });
+                                    match result {
+                                        Ok((step, angular)) => {
+                                            vs.solver_gyro[i].midpoint_rotation = Some(crate::math::Rotation::from_array(step.rotation.map(|v| v as Real)));
+                                            vs.solver_gyro[i].midpoint_counts[0] += 1;
+                                            vs.solver_gyro[i].midpoint_max_iterations = vs.solver_gyro[i].midpoint_max_iterations.max(step.iterations);
+                                            vs.solver_gyro[i].midpoint_max_residual = vs.solver_gyro[i].midpoint_max_residual.max(step.residual);
+                                            vs.solver_bodies.vels[i].angular = angular;
+                                            continue;
+                                        }
+                                        Err(reason) => {
+                                            let index = match reason {
+                                                MidpointError::NonPhysicalInertia => 1,
+                                                MidpointError::RotationLimit => 2,
+                                                _ => 3,
+                                            };
+                                            vs.solver_gyro[i].midpoint_counts[index] += 1;
+                                            // A rejected substep keeps this body on the control
+                                            // path for the remainder of this island solve.
+                                            vs.solver_gyro[i].midpoint_eligible = false;
+                                            // Use the original pre-cap velocity below, preserving
+                                            // the control's correction/cap/integration ordering.
+                                        }
+                                    }
+                                }
                                 // World-space principal axes = body rotation ∘ principal frame.
                                 let principal_axes =
                                     vs.solver_bodies.poses[i].rotation * gyro.principal_frame;
@@ -741,6 +791,12 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                             linvel: vels.linear,
                             angvel: vels.angular,
                         };
+                        #[cfg(feature = "dim3")]
+                        if let Some(rotation) = vs.solver_gyro[i].midpoint_rotation.take() {
+                            pose.translation += new_vels.linvel * params.dt;
+                            pose.rotation = rotation;
+                            continue;
+                        }
                         if vs.solver_bodies.flags[i] & SOLVER_BODY_VELOCITY_KINEMATIC != 0 {
                             // Prescribed velocity is constant within this solver pass. Avoid
                             // substep-count-dependent accumulation drift; use the already

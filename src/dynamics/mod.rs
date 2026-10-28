@@ -53,3 +53,6 @@ mod rigid_body;
 mod rigid_body_set;
 #[cfg(feature = "alloc")]
 mod soft_body;
+
+#[cfg(feature = "dim3")]
+mod rigid_midpoint;

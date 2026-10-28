@@ -448,3 +448,61 @@ fn native_float_storage_matrix_tracks_admission_and_free_motion_drift() {
     assert!(max_energy < 1e-4);
     assert!(max_momentum < 1e-4);
 }
+
+#[test]
+fn actual_inverse_storage_path_audits_reciprocal_rounding() {
+    let physical = |moments: V| {
+        (0..3).all(|i| (moments[(i + 1) % 3] - moments[(i + 2) % 3]).abs() <= moments[i])
+    };
+    let mut seed = 0xcab13988_u64;
+    let mut random = || {
+        seed = seed.wrapping_mul(6364136223846793005).wrapping_add(1);
+        ((seed >> 11) as f64) / (1u64 << 53) as f64
+    };
+    let mut rejected = [0; 3];
+    let mut changed = 0;
+    let mut max_relative_reconstruction = 0.0_f64;
+    for _ in 0..500 {
+        let covariance = [
+            10.0_f64.powf(-12.0 * random()),
+            10.0_f64.powf(-12.0 * random()),
+            1.0,
+        ];
+        let base = [
+            covariance[1] + covariance[2],
+            covariance[0] + covariance[2],
+            covariance[0] + covariance[1],
+        ];
+        // Match the preceding matrix's deterministic sequence, including spin draws.
+        for _ in 0..3 {
+            random();
+        }
+        for scale in [1e-10, 1.0, 1e10] {
+            let input = base.map(|x| (x * scale) as f32);
+            // Parry with_principal_inertia_frame stores inverse moments in Real.
+            let stored_inverse = input.map(|i| 1.0_f32 / i);
+            // principal_inertia() reconstructs in Real, not f64.
+            let native = stored_inverse.map(|i| (1.0_f32 / i) as f64);
+            let widened = stored_inverse.map(|i| 1.0 / (i as f64));
+            let inputs = input.map(|i| i as f64);
+            for (index, moments) in [inputs, native, widened].iter().enumerate() {
+                if !physical(*moments) {
+                    rejected[index] += 1;
+                }
+            }
+            if physical(native) != physical(widened) {
+                changed += 1;
+            }
+            for i in 0..3 {
+                max_relative_reconstruction =
+                    max_relative_reconstruction.max((native[i] / widened[i] - 1.0).abs());
+            }
+        }
+    }
+    println!("actual f32 inverse storage: rejected input/native-reconstructed/f64-reconstructed={rejected:?}, native-vs-f64 admission differences={changed}, max reciprocal reconstruction relative difference={max_relative_reconstruction:e}");
+    assert_eq!(rejected[0], 260);
+    assert!(changed > 0);
+    // Widening alone is not a representation repair.
+    assert!(rejected[2] > 0);
+    assert!(max_relative_reconstruction <= f32::EPSILON as f64);
+}

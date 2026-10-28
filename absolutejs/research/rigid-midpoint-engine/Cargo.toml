@@ -1,0 +1,12 @@
+[workspace]
+[package]
+name = "absolutejs-midpoint-engine-research"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[dependencies]
+rapier3d = { path = "../../../crates/rapier3d", features = ["profiler"] }
+[features]
+default = ["candidate"]
+candidate = []
+parallel = ["rapier3d/parallel"]

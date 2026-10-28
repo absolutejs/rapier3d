@@ -1,0 +1,13 @@
+    Updating crates.io index
+     Locking 5 packages to latest compatible versions
+      Adding crossbeam-deque v0.8.8
+      Adding crossbeam-epoch v0.9.21
+      Adding crossbeam-utils v0.8.23
+      Adding rayon v1.12.0
+      Adding rayon-core v1.13.0
+ Downloading crates ...
+  Downloaded crossbeam-epoch v0.9.21
+  Downloaded crossbeam-utils v0.8.23
+  Downloaded crossbeam-deque v0.8.8
+  Downloaded rayon-core v1.13.0
+  Downloaded rayon v1.12.0

@@ -1,0 +1,5 @@
+error: no matching package named `rayon` found
+location searched: crates.io index
+required by package `rapier3d v0.36.0 (/home/alexkahn/alex/rapier-midpoint-research/crates/rapier3d)`
+    ... which satisfies path dependency `rapier3d` (locked to 0.36.0) of package `absolutejs-midpoint-engine-research v0.0.0 (/home/alexkahn/alex/rapier-midpoint-research/absolutejs/research/rigid-midpoint-engine)`
+As a reminder, you're using offline mode (--offline) which can sometimes cause surprising resolution failures, if this error is too confusing you may wish to retry without `--offline`.

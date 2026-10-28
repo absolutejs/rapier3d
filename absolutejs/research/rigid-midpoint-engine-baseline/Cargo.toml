@@ -1,0 +1,13 @@
+[workspace]
+[package]
+name = "absolutejs-midpoint-engine-baseline"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[features]
+candidate = []
+[dependencies]
+rapier3d = { path = "../../../../rapier-inertia-research/crates/rapier3d", features = ["profiler"] }
+[[test]]
+name = "free_rotation"
+path = "../rigid-midpoint-engine/tests/free_rotation.rs"

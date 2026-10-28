@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "scope": "private native torque-free experiment; not a released engine",
+  "candidateLog": "/home/alexkahn/alex/rapier-midpoint-research/absolutejs/research/rigid-midpoint-engine/serial-final.log",
+  "candidateLogSha256": "7d8833228d685b5a090bfd644a44d554d53279d0a353861b55f2928a5eced1b5",
+  "baselineLogSha256": "b6601e9b08c0aaf9c40b2f03f7ee3ded0875d8e002072b5e7cd1c27caf6fd8d3",
+  "baselineSource": "65d37204d0e8e662389b77c5720e24c3a2108c57",
+  "freeCases": 96,
+  "excludedOrRejectedControlStates": 542,
+  "controlPoseAndVelocityBitsIdentical": true,
+  "metrics": {
+    "energy": {
+      "baselineMaximum": 0.03202786278582592,
+      "candidateMaximum": 2.590654970324735e-06,
+      "improvedBeyond1eMinus8": 72,
+      "worsenedBeyond1eMinus8": 0
+    },
+    "momentum": {
+      "baselineMaximum": 0.04651590413444873,
+      "candidateMaximum": 1.308937875704544e-06,
+      "improvedBeyond1eMinus8": 72,
+      "worsenedBeyond1eMinus8": 0
+    }
+  },
+  "limitations": [
+    "ordinary free rigid bodies only",
+    "no constrained rotation correction",
+    "nonphysical stored moments rejected, not repaired",
+    "no WASM or game qualification from this harness"
+  ]
+}

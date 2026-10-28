@@ -185,6 +185,8 @@ struct SharedCtx<'a> {
     /// the island's own bodies (slot id = `island_bodies.len() + position`).
     /// Never written back.
     has_multibodies: bool,
+    #[cfg(feature = "dim3")]
+    midpoint_isolated: bool,
     base_params: &'a IntegrationParameters,
     /// Raw manifold resolution: constraint generation reads manifolds through
     /// it, the impulse-writeback stage writes them back through it.

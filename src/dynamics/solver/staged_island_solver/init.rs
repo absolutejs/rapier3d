@@ -629,6 +629,12 @@ impl StagedIslandSolver {
             joint_chunk_rows: &self.joint_chunk_rows,
             island_bodies,
             has_multibodies: !self.velocity_solver.multibody_roots.is_empty(),
+            #[cfg(feature = "dim3")]
+            midpoint_isolated: graph.len() == 0 && joint_indices.is_empty()
+                && self.velocity_solver.multibody_roots.is_empty()
+                && self.soft_constraints.is_empty()
+                && { #[cfg(feature = "fem")] { self.soft_fem.is_empty() }
+                     #[cfg(not(feature = "fem"))] { true } },
             base_params,
             store,
             joints: impulse_joints.as_mut_ptr(),
@@ -682,6 +688,18 @@ impl StagedIslandSolver {
             // SAFETY: single worker, so no concurrent access to the shared context.
             unsafe {
                 run_worker(ctx_ref, 0);
+            }
+        }
+
+        #[cfg(feature = "dim3")]
+        if counters.enabled {
+            // All workers have joined; reduce per-slot data without shared writes.
+            for gyro in &self.velocity_solver.solver_gyro {
+                counters.solver.midpoint_max_iterations = counters.solver.midpoint_max_iterations.max(gyro.midpoint_max_iterations);
+                counters.solver.midpoint_max_residual = counters.solver.midpoint_max_residual.max(gyro.midpoint_max_residual);
+                for (total, count) in counters.solver.midpoint_counts.iter_mut().zip(gyro.midpoint_counts) {
+                    *total = total.saturating_add(count);
+                }
             }
         }
 

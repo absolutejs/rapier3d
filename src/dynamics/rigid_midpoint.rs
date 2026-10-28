@@ -225,6 +225,44 @@ pub fn rigid_rotation_step(
     angular_velocity: Vector,
     dt: f64,
 ) -> Result<RigidRotationStep, MidpointError> {
+    rigid_rotation_step_inner(
+        rotation,
+        principal_frame,
+        principal,
+        angular_velocity,
+        dt,
+        None,
+    )
+}
+
+/// Private native experiment boundary; accepts only a physical stored tensor and
+/// a matched attitude increment within the caller's substep rotation allowance.
+pub fn bounded_rigid_rotation_step(
+    rotation: [f64; 4],
+    principal_frame: [f64; 4],
+    principal: Vector,
+    angular_velocity: Vector,
+    dt: f64,
+    maximum_angle: f64,
+) -> Result<RigidRotationStep, MidpointError> {
+    rigid_rotation_step_inner(
+        rotation,
+        principal_frame,
+        principal,
+        angular_velocity,
+        dt,
+        Some(maximum_angle),
+    )
+}
+
+fn rigid_rotation_step_inner(
+    rotation: [f64; 4],
+    principal_frame: [f64; 4],
+    principal: Vector,
+    angular_velocity: Vector,
+    dt: f64,
+    maximum_angle: Option<f64>,
+) -> Result<RigidRotationStep, MidpointError> {
     if !principal.iter().all(|i| i.is_finite() && *i > 0.0)
         || !angular_velocity.iter().all(|w| w.is_finite())
     {
@@ -236,7 +274,10 @@ pub fn rigid_rotation_step(
     let omega = rotate(conjugate(principal_rotation), angular_velocity);
     let inverse = principal.map(|i| 1.0 / i);
     let j = core::array::from_fn(|i| principal[i] * omega[i]);
-    let result = midpoint_step_principal(j, principal, dt)?;
+    let result = match maximum_angle {
+        Some(cap) => bounded_midpoint_step(j, principal, dt, cap)?,
+        None => midpoint_step_principal(j, principal, dt)?,
+    };
     let next_principal_rotation =
         normalized(multiply(principal_rotation, result.rotation_increment))?;
     let next_omega = core::array::from_fn(|i| result.momentum[i] * inverse[i]);
