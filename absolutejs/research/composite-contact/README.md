@@ -63,3 +63,20 @@ These results support a coordinate-conditioning problem in closest-feature /
 clipped manifold construction. They do not yet qualify a production correction.
 No engine source, solver budget, rejection threshold or canonical terrain
 representation has changed in this research checkout.
+
+## Private persistent-frame candidate
+
+Parry research source `3ab3ba63460ec559e40e0801bea52e48e6dc00d1` now keeps
+3D heightfield triangle contacts relative to vertex A using explicit existing
+subshape poses. Five native tests pass, including the strict before-state
+failure, reversed ordering, snapshot roundtrip, old identity-cache conversion
+and internal-edge constraints. A private one-job WASM build is in progress;
+no game adoption or release qualification is implied.
+
+The first fetch exposed an incomplete source pin: the bindings build manifest
+still referenced the prior Parry revision. `--locked` correctly refused it.
+The diagnostic offline lock update and rejected mixed-pin lock are retained;
+no binary was built from them. Both engine and binding manifests now pin the
+same exact research revision, and the corrected immutable source workspace
+passes offline `--locked` fetch. The canonical source lock changes only Parry's
+revision; no registry dependency upgrades are intended.

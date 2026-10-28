@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "unqualified-composite-contact-research",
+  "qualifiedKernelRelease": "unqualified-heightfield-frame-research",
   "wasmSha256": "f1539c74bb9192cf8f6dfaa95bb6654a605d326faa0bdd02939d798a455bc57c",
   "wasmBytes": 3357159,
   "solverChanges": true,

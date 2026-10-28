@@ -1,0 +1,4 @@
+    Updating git repository `https://github.com/absolutejs/parry`
+    Updating git repository `https://github.com/absolutejs/parry`
+error: cannot update the lock file /home/alexkahn/alex/rapier-composite-contact-research/.absolutejs/native-source/5711e1d23df70b2683da0908596f40a0da5b98f4e6691cdbec2a2bcf2031d008/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.
