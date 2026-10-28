@@ -1,3 +1,4 @@
+import {qualifyPredictiveReplay} from '../tests/predictive-recycle-fixture';
 import R from '../../dist/rapier.mjs';
 import {buildInfo} from '../../dist/build-info.mjs';
 import {fixture} from '../tests/fixture';
@@ -255,6 +256,17 @@ try {
     wakeExactReplaySteps++;
    }
   }finally{wakeReplay?.free();wake.world.free();}
-  postMessage({wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const predictiveReplays=[];
+  for(const [path,first,second,expectedHash] of [
+   ['/predictive-floor.bin',0,1.5e-323,'a28c6cd9cc88698198c79aca241340d34b524f3f6e114afb740386b4444db348'],
+   ['/predictive-fragment.bin',5e-324,1e-323,'24e38c4e30ce37b069d5e9183353e3dd02347cbad02b0ede9a5a4c9270c97af5']
+  ] as const){
+   const response=await fetch(path);if(!response.ok)throw Error('Predictive fixture unavailable');
+   const bytes=new Uint8Array(await response.arrayBuffer());
+   const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),v=>v.toString(16).padStart(2,'0')).join('');
+   if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
+   predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
+  }
+  postMessage({predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

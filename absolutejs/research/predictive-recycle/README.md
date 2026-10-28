@@ -38,3 +38,19 @@ pairs penetrate 0.731/0.802/0.453 mm. These are selected-pair observations; the
 WASM whole-world floor maximum was a different pair at 0.319 mm. No native/WASM
 byte identity is assumed. The native replay consumes the complete version-1
 world and pending-event state. Candidate admission checks are now compiling.
+
+## Private native candidate
+
+The admission change refreshes pairs whose cached solver contacts are all
+positive-distance predictions. Empty-pair bounds and touching-contact reuse
+remain as before. It adds no policy default, snapshot field or public API.
+The four captured selected pairs stay below 1 mm over eight native replay steps;
+all 32 complete native replay states match exactly. The 1/8/16-box resting
+stacks remain upright and sleep after 1,200 steps. These two native regression
+tests pass; this does not yet establish browser behavior, general stack cost,
+full tree-drop quality, or unchanged behavior in mixed predictive/touching pairs.
+
+A browser/SDK regression is prepared from the exact same snapshots. The browser
+will verify both fixture hashes, eight complete replay states each, and read-only
+current-pose queries. WASM compilation, broader tests and cost qualification are
+pending. The package remains private and unqualified for release.

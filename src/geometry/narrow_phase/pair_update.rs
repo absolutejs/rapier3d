@@ -142,7 +142,23 @@ pub(super) fn process_pair(
                             &co2.pos.rotation,
                         ));
 
-                if drift <= state.max_drift && rot_cos > 0.98 {
+                // A predictive contact is not yet a supporting surface. Its
+                // closest features can change before impact while the frozen
+                // anchors still report separation. Refresh these pairs instead
+                // of carrying a speculative feature set across the drift window.
+                // Empty pairs retain their existing prediction-distance bound;
+                // touching pairs retain their existing resting-contact reuse.
+                let supported_or_empty = pair.rigid().is_some_and(|rigid| {
+                    !rigid.has_any_active_contact()
+                        || rigid.solver_manifolds().iter().any(|manifold| {
+                            manifold
+                                .data
+                                .solver_contacts
+                                .iter()
+                                .any(|contact| contact.dist <= 0.0)
+                        })
+                });
+                if drift <= state.max_drift && rot_cos > 0.98 && supported_or_empty {
                     // Recycling can't change the qualified-manifold count: only recompute
                     // a count-cleared hint (pair slept, or state was deserialized).
                     // SAFETY: each pair is processed at most once per update (disjoint slots).
