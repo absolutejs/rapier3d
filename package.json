@@ -1,6 +1,6 @@
 {
   "name": "@absolutejs/rapier3d",
-  "version": "0.8.1",
+  "version": "0.9.0",
   "description": "Rapier 3D with corrected contact witnesses, rotation precision and solver diagnostics",
   "type": "module",
   "license": "Apache-2.0",
