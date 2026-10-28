@@ -157,3 +157,12 @@ inputs, versus 260 before reciprocal storage. Widening only the reconstruction t
 f64 rejects 364, so it is not a repair. `inverse-storage-audit.log` records all
 three counts. Subsequent native integration and SDK qualification supersede the
 historical statements above about this module not being wired.
+
+## Clean-checkout fixture repair
+
+The 3 KiB RK4 CSV was initially excluded by the repository-wide CSV ignore
+rule. A fresh checkout exposed the missing compile-time input. It is now
+explicitly tracked, with SHA-256
+`ac7077f4af255cfa12729a1e3df1ac3bbc14397cf3543d434443d2fc7d609b13`,
+matching the original reference receipt exactly. No native or package runtime
+bytes change. This repairs reproduction from Git, not a numerical result.
