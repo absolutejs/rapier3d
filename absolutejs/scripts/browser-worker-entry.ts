@@ -1,6 +1,7 @@
 import R from '../../dist/rapier.mjs';
 import {buildInfo} from '../../dist/build-info.mjs';
 import {fixture} from '../tests/fixture';
+import {rotate, unit, vector, type V} from '../research/gyroscopic-precision/free-spin-math';
 try {
  await Promise.all([R.init(),R.init()]);
  const response=await fetch('/simplex-fixture.bin');
@@ -157,6 +158,23 @@ try {
     if(expected.length!==actual.length||expected.some((v,i)=>v!==actual[i]))throw Error('Browser profiling changed physics');
    }finally{control.free();}
   }finally{sampledWorld.free();}
-  postMessage({boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  let inertiaReconstructionError = 0;
+  const inertiaWorld = new R.World({x:0,y:0,z:0});
+  try {
+   const length = .001, radius = .0001;
+   inertiaWorld.lengthUnit = length;
+   const body = inertiaWorld.createRigidBody(R.RigidBodyDesc.dynamic());
+   inertiaWorld.createCollider(R.ColliderDesc.ball(radius).setMass(1),body);
+   inertiaWorld.createCollider(R.ColliderDesc.ball(radius).setTranslation(length,length,length).setMass(1),body);
+   body.recomputeMassPropertiesFromColliders();
+   const frame = body.principalInertiaLocalFrame(), q = unit([frame.x,frame.y,frame.z,frame.w]);
+   const axes = ([[1,0,0],[0,1,0],[0,0,1]] as V[]).map(v=>rotate(q,v));
+   const principal = vector(body.principalInertia());
+   const expected = Array.from({length:9},(_,i)=>i%4===0?length*length+.8*radius*radius:-.5*length*length);
+   const actual = expected.map((_,i)=>axes.reduce((sum,a,k)=>sum+principal[k]*a[Math.floor(i/3)]*a[i%3],0));
+   inertiaReconstructionError = Math.hypot(...actual.map((v,i)=>v-expected[i]))/Math.hypot(...expected);
+   if(!Number.isFinite(inertiaReconstructionError)||inertiaReconstructionError>3e-6)throw Error('Browser compound inertia reconstruction failed');
+  } finally {inertiaWorld.free();}
+  postMessage({inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

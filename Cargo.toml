@@ -80,9 +80,9 @@ approx = { version = "0.5", default-features = false }
 
 # Parry (each crate picks its own variant)
 parry2d = { version = "0.31.1", default-features = false, features = ["required-features"] }
-parry3d = { version = "0.31.1", git = "https://github.com/absolutejs/parry", rev = "dbd99a8dfce020da3698056471262435d56d3f69", default-features = false, features = ["required-features"] }
+parry3d = { version = "0.31.1", git = "https://github.com/absolutejs/parry", rev = "c566aabd77be8ac7a427c2b704860c47e34657b9", default-features = false, features = ["required-features"] }
 parry2d-f64 = { version = "0.31.1", default-features = false, features = ["required-features"] }
-parry3d-f64 = { version = "0.31.1", git = "https://github.com/absolutejs/parry", rev = "dbd99a8dfce020da3698056471262435d56d3f69", default-features = false, features = ["required-features"] }
+parry3d-f64 = { version = "0.31.1", git = "https://github.com/absolutejs/parry", rev = "c566aabd77be8ac7a427c2b704860c47e34657b9", default-features = false, features = ["required-features"] }
 
 # Utilities
 arrayvec = { version = "0.7", default-features = false }

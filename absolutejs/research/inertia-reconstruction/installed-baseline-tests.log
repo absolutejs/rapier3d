@@ -1,0 +1,36 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/inertia-aggregation.test.ts:
+94 |               ),
+95 |             );
+96 |             const relative =
+97 |               Math.hypot(...actual.map((v, i) => v - expected.tensor[i]!)) /
+98 |               Math.hypot(...expected.tensor);
+99 |             expect(relative).toBeLessThan(3e-6);
+                                  ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000003
+Received: 0.5273928952400005
+
+      at <anonymous> (/home/alexkahn/alex/rapier-inertia-research/absolutejs/tests/inertia-aggregation.test.ts:99:30)
+(fail) 2 collider masses preserve the physical inertia tensor across size and insertion order [28.45ms]
+94 |               ),
+95 |             );
+96 |             const relative =
+97 |               Math.hypot(...actual.map((v, i) => v - expected.tensor[i]!)) /
+98 |               Math.hypot(...expected.tensor);
+99 |             expect(relative).toBeLessThan(3e-6);
+                                  ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000003
+Received: 0.37744742779098783
+
+      at <anonymous> (/home/alexkahn/alex/rapier-inertia-research/absolutejs/tests/inertia-aggregation.test.ts:99:30)
+(fail) 3 collider masses preserve the physical inertia tensor across size and insertion order [16.50ms]
+
+ 0 pass
+ 2 fail
+ 2 expect() calls
+Ran 2 tests across 1 file. [411.00ms]
