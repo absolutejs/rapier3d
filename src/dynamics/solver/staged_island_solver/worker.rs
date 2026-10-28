@@ -613,7 +613,33 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
              * request (`RigidBody::additional_pgs_iterations`, 3 by default for soft bodies), so
              * the substep's constraints converge against each other at the same positions.
              */
-            for pgs_iter in 0..group.num_pgs_iterations {
+            // Private normal-compression convergence path. A normal-only
+            // residual cannot qualify friction, ordinary contacts, soft bodies
+            // or independent joint rows, so exclude all of them explicitly.
+            let no_soft = !has_soft && {
+                #[cfg(feature = "fem")] { !has_fem }
+                #[cfg(not(feature = "fem"))] { true }
+            };
+            let adaptive_compression = sync.num_workers == 1 && ctx.groups.len() == 1
+                && num_chunks == 0 && no_soft && group.num_pgs_iterations > 0
+                && {
+                    let joints = unsafe { &*ctx.joint_constraints };
+                    joints.velocity_constraints.is_empty()
+                        && joints.simd_velocity_constraints.is_empty()
+                        && joints.generic_velocity_constraints.is_empty()
+                } && {
+                    let contacts = unsafe { &*ctx.contact_constraints };
+                    !contacts.generic_velocity_constraints.is_empty()
+                        && contacts.generic_velocity_constraints.iter().all(|c| c.limit == 0.0)
+                };
+            let pgs_budget = if adaptive_compression { group.num_pgs_iterations.max(256) }
+                else { group.num_pgs_iterations };
+            if adaptive_compression {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.begin_precise_normal_solve();
+                }
+            }
+            for pgs_iter in 0..pgs_budget {
                 // Joint warm-starting is fused into the first biased pass: each claimed joint
                 // applies its warm impulse right before being solved. Soft-body constraints do
                 // the same and update their geometry on the first iteration of the pass.
@@ -634,6 +660,21 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                         solved_dt,
                     )
                 };
+                if adaptive_compression && pgs_iter + 1 >= group.num_pgs_iterations {
+                    let contacts = unsafe { &*ctx.contact_constraints };
+                    let vs = unsafe { &*ctx.velocity_solver };
+                    let residual = contacts.generic_velocity_constraints.iter()
+                        .map(|c| c.normal_solve_residual(&contacts.generic_jacobians,
+                            &vs.solver_bodies, &vs.generic_solver_vels))
+                        .fold(0.0 as Real, Real::max);
+                    if residual <= 1.0e-6 * params.length_unit { break; }
+                }
+            }
+
+            if adaptive_compression {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.end_precise_normal_solve();
+                }
             }
 
             /*
@@ -746,11 +787,24 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
         }
 
         /*
-         * Stages: end-of-step restitution, color by color (box2d-style). Applied ONCE after
+         * Stages: end-of-step restitution, color by color (box2d-style). Applied after
          * all substeps, gated on the point having applied an impulse: inside the substep rhs
          * the speculative `dist * inv_dt` slack would truncate the bounce.
          */
         if has_bouncy {
+            // Private bounded convergence experiment. Only the single-worker,
+            // generic-only path can use this residual: ordinary contact and
+            // multi-worker residual aggregation are deliberately not claimed.
+            let has_generic = ctx.groups.len() == 1
+                && !unsafe { &*ctx.contact_constraints }.generic_velocity_constraints.is_empty();
+            let adaptive_generic = has_generic && sync.num_workers == 1 && num_chunks == 0;
+            let restitution_sweeps = if adaptive_generic { 256 } else { 1 };
+            if adaptive_generic {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.begin_precise_normal_solve();
+                }
+            }
+            for _restitution_sweep in 0..restitution_sweeps {
             for (_, color) in &ctx.color_ranges[group.colors.clone()] {
                 let mut done = 0;
                 while let Some(claimed) = sync.claim(
@@ -827,6 +881,22 @@ pub(super) unsafe fn run_worker(ctx: &SharedCtx, worker_id: usize) {
                 sync.complete(stage, 1, 1);
             }
             stage = sync.sync(stage, 1);
+            if adaptive_generic {
+                let contacts = unsafe { &*ctx.contact_constraints };
+                let vs = unsafe { &*ctx.velocity_solver };
+                let residual = contacts.generic_velocity_constraints_builder.iter()
+                    .zip(&contacts.generic_velocity_constraints)
+                    .map(|(builder, c)| builder.restitution_residual(c, &contacts.generic_jacobians,
+                        &vs.solver_bodies, &vs.generic_solver_vels))
+                    .fold(0.0 as Real, Real::max);
+                if residual <= 1.0e-6 * params.length_unit { break; }
+            }
+            }
+            if adaptive_generic {
+                for c in &mut unsafe { &mut *ctx.contact_constraints }.generic_velocity_constraints {
+                    c.end_precise_normal_solve();
+                }
+            }
         }
     }
 

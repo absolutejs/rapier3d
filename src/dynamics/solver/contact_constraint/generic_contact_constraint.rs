@@ -42,6 +42,7 @@ impl GenericContactConstraintBuilder {
         jacobians: &mut DVector,
         jacobian_id: &mut usize,
     ) {
+        out_constraint.precise_normal_solve = false;
         // TODO PERF: we haven’t tried to optimized this codepath yet (since it relies
         //            on multibodies which are already much slower than regular bodies).
         let handle1 = manifold
@@ -507,6 +508,30 @@ impl GenericContactConstraintBuilder {
             .any(|info| info.restitution_seed < 0.0)
     }
 
+    /// Projected normal-velocity residual of the existing restitution law.
+    /// Read-only: a later point can disturb an earlier point, so inspect the
+    /// complete generic set only after a full sweep. No work/energy ledger.
+    pub fn restitution_residual(
+        &self,
+        constraint: &GenericContactConstraint,
+        jacobians: &DVector,
+        bodies: &SolverBodies,
+        generic_solver_vels: &DVector,
+    ) -> Real {
+        let mut residual: Real = 0.0;
+        for (point, (info, part)) in self.infos[..constraint.num_contacts as usize]
+            .iter().zip(&constraint.normal_part[..constraint.num_contacts as usize]).enumerate()
+        {
+            if info.restitution_seed >= 0.0 || part.total_impulse() <= 0.0 || part.r <= 0.0 { continue; }
+            let velocity = constraint.normal_velocity(point, jacobians, bodies, generic_solver_vels);
+            let error = velocity + info.restitution_seed;
+            if !error.is_finite() { return Real::MAX; }
+            let projected = if part.impulse > 0.0 { error.abs() } else { (-error).max(0.0) };
+            residual = residual.max(projected);
+        }
+        residual
+    }
+
     /// End-of-step restitution pass (box2d-style): after all substeps, drive each bouncy
     /// point's normal velocity to its prepare-time `restitution * approach_velocity`, gated
     /// on the point having applied an impulse. Implemented by re-running the normal solve
@@ -568,10 +593,64 @@ pub(crate) struct GenericContactConstraint {
     pub manifold_contact_id: [u8; MAX_MANIFOLD_POINTS],
     pub num_contacts: u8,
     pub normal_part: [ContactConstraintNormalPart<Real>; MAX_MANIFOLD_POINTS],
+    /// Per-phase accumulator: retain corrections smaller than a stored f32
+    /// warmstart impulse. Not persistent manifold or snapshot state.
+    pub normal_impulses64: [f64; MAX_MANIFOLD_POINTS],
+    pub precise_normal_solve: bool,
     pub tangent_part: [ContactConstraintTangentPart<Real>; MAX_MANIFOLD_POINTS],
 }
 
 impl GenericContactConstraint {
+    pub fn begin_precise_normal_solve(&mut self) {
+        for (precise, part) in self.normal_impulses64.iter_mut().zip(&self.normal_part) {
+            *precise = part.impulse as f64;
+        }
+        self.precise_normal_solve = true;
+    }
+
+    pub fn end_precise_normal_solve(&mut self) {
+        self.precise_normal_solve = false;
+    }
+
+    /// Velocity of one current geometric normal row, without mutating solver state.
+    fn normal_velocity(&self, point: usize, jacobians: &DVector,
+        bodies: &SolverBodies, generic_solver_vels: &DVector) -> Real {
+        let rhs = |id: u32, mask: u8| {
+            if id == u32::MAX { GenericRhs::Fixed }
+            else if self.generic_constraint_mask & mask == 0 {
+                GenericRhs::SolverVel(bodies.vels[id as usize])
+            } else { GenericRhs::GenericId(id) }
+        };
+        let row = self.j_id + point * (self.ndofs1 + self.ndofs2) * 2 * DIM;
+        let part = &self.normal_part[point];
+        rhs(self.solver_vel1, 0b01).dvel(row, self.ndofs1, jacobians,
+            self.dir1, part.torque_dir1, generic_solver_vels)
+            + rhs(self.solver_vel2, 0b10).dvel(row + self.ndofs1 * 2, self.ndofs2,
+                jacobians, -self.dir1, part.torque_dir2, generic_solver_vels)
+    }
+
+    /// Fixed-point residual of the actual softened normal update:
+    /// lambda = cfm * max(0, lambda - r * (velocity + rhs)).
+    /// Only used by the restricted frictionless, joint-free serial experiment.
+    pub fn normal_solve_residual(&self, jacobians: &DVector,
+        bodies: &SolverBodies, generic_solver_vels: &DVector) -> Real {
+        if self.cfm_factor <= 0.0 { return 0.0; }
+        let mut residual: Real = 0.0;
+        for (point, part) in self.normal_part[..self.num_contacts as usize].iter().enumerate() {
+            if part.r <= 0.0 { continue; }
+            let velocity = self.normal_velocity(point, jacobians, bodies, generic_solver_vels);
+            let impulse = if self.precise_normal_solve { self.normal_impulses64[point] }
+                else { part.impulse as f64 };
+            let cfm = self.cfm_factor as f64;
+            let softness = impulse * ((1.0 - cfm) / cfm) / part.r as f64;
+            let error = ((velocity + part.rhs) as f64 + softness) as Real;
+            if !error.is_finite() { return Real::MAX; }
+            let projected = if part.impulse > 0.0 { error.abs() } else { (-error).max(0.0) };
+            residual = residual.max(projected);
+        }
+        residual
+    }
+
     pub fn invalid() -> Self {
         Self {
             j_id: usize::MAX,
@@ -591,6 +670,8 @@ impl GenericContactConstraint {
             manifold_contact_id: [u8::MAX; MAX_MANIFOLD_POINTS],
             num_contacts: u8::MAX,
             normal_part: [ContactConstraintNormalPart::zero(); MAX_MANIFOLD_POINTS],
+            normal_impulses64: [0.0; MAX_MANIFOLD_POINTS],
+            precise_normal_solve: false,
             tangent_part: [ContactConstraintTangentPart::zero(); MAX_MANIFOLD_POINTS],
         }
     }
@@ -673,6 +754,7 @@ impl GenericContactConstraint {
         let tangent_parts = &mut self.tangent_part[..self.num_contacts as usize];
         Self::generic_solve_group(
             self.cfm_factor,
+            if self.precise_normal_solve { Some(&mut self.normal_impulses64) } else { None },
             normal_parts,
             tangent_parts,
             jacobians,
