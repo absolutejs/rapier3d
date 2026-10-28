@@ -1,0 +1,269 @@
+{
+  "gpu": false,
+  "result": {
+    "predictedSupportCases": [
+      {
+        "scale": 0.01,
+        "reverse": false,
+        "geometric": 8,
+        "solver": 4,
+        "minX": -0.9940537624061108,
+        "maxX": 1.001048181205988,
+        "replayExact": true
+      },
+      {
+        "scale": 0.01,
+        "reverse": true,
+        "geometric": 8,
+        "solver": 4,
+        "minX": -0.9940537624061108,
+        "maxX": 1.001048181205988,
+        "replayExact": true
+      },
+      {
+        "scale": 1,
+        "reverse": false,
+        "geometric": 8,
+        "solver": 4,
+        "minX": -0.9940537810325623,
+        "maxX": 1.0010480880737305,
+        "replayExact": true
+      },
+      {
+        "scale": 1,
+        "reverse": true,
+        "geometric": 8,
+        "solver": 4,
+        "minX": -0.9940537810325623,
+        "maxX": 1.0010480880737305,
+        "replayExact": true
+      },
+      {
+        "scale": 100,
+        "reverse": false,
+        "geometric": 8,
+        "solver": 4,
+        "minX": -0.9940538787841797,
+        "maxX": 1.0010481262207032,
+        "replayExact": true
+      },
+      {
+        "scale": 100,
+        "reverse": true,
+        "geometric": 8,
+        "solver": 4,
+        "minX": -0.9940538787841797,
+        "maxX": 1.0010481262207032,
+        "replayExact": true
+      }
+    ],
+    "predictiveReplays": [
+      {
+        "maxPenetrationM": 0.0003662109375,
+        "returnedContacts": 8,
+        "exactSteps": 8
+      },
+      {
+        "maxPenetrationM": 0.0008023377507925033,
+        "returnedContacts": 6,
+        "exactSteps": 8
+      }
+    ],
+    "wakeExactReplaySteps": 8,
+    "splitMaximumMomentumError": 2.471293012487066e-7,
+    "splitExactReplaySteps": 32,
+    "assemblyAcceptedSteps": 960,
+    "rootOriginError": 4.19955232029151e-7,
+    "inertiaReconstructionError": 1.5608561790905355e-7,
+    "boundedStepProfile": {
+      "sampleEvery": 2,
+      "sampleStartStep": 0,
+      "maxSamples": 3,
+      "attemptedSteps": 10,
+      "completedSteps": 10,
+      "failedSteps": 0,
+      "timedSteps": 10,
+      "totalWallTimeMs": 1.7000000178813934,
+      "maxWallTimeMs": 1,
+      "slowestStep": 2,
+      "timingErrors": 0,
+      "captureErrors": 0,
+      "samplesOmittedForBudget": 2,
+      "samples": [
+        {
+          "step": 0,
+          "outcome": "completed",
+          "wallTimeMs": 0.4000000059604645,
+          "captureStatus": "captured",
+          "native": {
+            "lengthUnit": 1,
+            "timestep": 0.01666666753590107,
+            "solverIterations": 4,
+            "ccdSubsteps": 0,
+            "timings": {
+              "stepMs": 0.2,
+              "collisionDetectionMs": 0.1,
+              "solverMs": 0.1,
+              "assemblyMs": 0.1,
+              "resolutionMs": 0,
+              "ccdMs": 0
+            },
+            "convergence": {
+              "compressionSolves": 0,
+              "compressionIterations": 0,
+              "compressionLimitHits": 0,
+              "maxCompressionResidual": 0,
+              "restitutionSolves": 0,
+              "restitutionIterations": 0,
+              "restitutionLimitHits": 0,
+              "maxRestitutionResidual": 0
+            },
+            "freeRotation": {
+              "acceptedSteps": 4,
+              "nonphysicalInertiaRejections": 0,
+              "rotationLimitRejections": 0,
+              "invalidOrFailedSolves": 0,
+              "maxNewtonIterations": 0,
+              "maxResidualRadiansPerSecond": 0
+            },
+            "freeAssembly": {
+              "acceptedSteps": 0,
+              "nonphysicalInertiaRejections": 0,
+              "rotationLimitRejections": 0,
+              "invalidOrFailedSolves": 0
+            }
+          }
+        },
+        {
+          "step": 2,
+          "outcome": "completed",
+          "wallTimeMs": 1,
+          "captureStatus": "captured",
+          "native": {
+            "lengthUnit": 1,
+            "timestep": 0.01666666753590107,
+            "solverIterations": 4,
+            "ccdSubsteps": 0,
+            "timings": {
+              "stepMs": 1,
+              "collisionDetectionMs": 0,
+              "solverMs": 0,
+              "assemblyMs": 0,
+              "resolutionMs": 0,
+              "ccdMs": 0
+            },
+            "convergence": {
+              "compressionSolves": 0,
+              "compressionIterations": 0,
+              "compressionLimitHits": 0,
+              "maxCompressionResidual": 0,
+              "restitutionSolves": 0,
+              "restitutionIterations": 0,
+              "restitutionLimitHits": 0,
+              "maxRestitutionResidual": 0
+            },
+            "freeRotation": {
+              "acceptedSteps": 4,
+              "nonphysicalInertiaRejections": 0,
+              "rotationLimitRejections": 0,
+              "invalidOrFailedSolves": 0,
+              "maxNewtonIterations": 0,
+              "maxResidualRadiansPerSecond": 0
+            },
+            "freeAssembly": {
+              "acceptedSteps": 0,
+              "nonphysicalInertiaRejections": 0,
+              "rotationLimitRejections": 0,
+              "invalidOrFailedSolves": 0
+            }
+          }
+        },
+        {
+          "step": 4,
+          "outcome": "completed",
+          "wallTimeMs": 0,
+          "captureStatus": "captured",
+          "native": {
+            "lengthUnit": 1,
+            "timestep": 0.01666666753590107,
+            "solverIterations": 4,
+            "ccdSubsteps": 0,
+            "timings": {
+              "stepMs": 0,
+              "collisionDetectionMs": 0,
+              "solverMs": 0,
+              "assemblyMs": 0,
+              "resolutionMs": 0,
+              "ccdMs": 0
+            },
+            "convergence": {
+              "compressionSolves": 0,
+              "compressionIterations": 0,
+              "compressionLimitHits": 0,
+              "maxCompressionResidual": 0,
+              "restitutionSolves": 0,
+              "restitutionIterations": 0,
+              "restitutionLimitHits": 0,
+              "maxRestitutionResidual": 0
+            },
+            "freeRotation": {
+              "acceptedSteps": 4,
+              "nonphysicalInertiaRejections": 0,
+              "rotationLimitRejections": 0,
+              "invalidOrFailedSolves": 0,
+              "maxNewtonIterations": 0,
+              "maxResidualRadiansPerSecond": 0
+            },
+            "freeAssembly": {
+              "acceptedSteps": 0,
+              "nonphysicalInertiaRejections": 0,
+              "rotationLimitRejections": 0,
+              "invalidOrFailedSolves": 0
+            }
+          }
+        }
+      ]
+    },
+    "buildInfo": {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.16.3-support-research.0",
+      "qualifiedKernelRelease": "unqualified-isolated-predictive-support",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "1f2e3e463298859e3819d2c8b1f3741ba5bed2673687b71576c57fc1c0c035a2",
+      "wasmBytes": 3357191,
+      "solverChanges": true
+    },
+    "contactConvergenceControls": true,
+    "coupledCases": 6,
+    "coupledMaximumEnergyError": 0.00017166134671242617,
+    "coupledMaximumVelocityError": 0.0000021457672119140625,
+    "generalizedDampingControls": true,
+    "multibodyMomentumError": 0,
+    "multibodyRigidVelocityError": 1.1501528826470645e-7,
+    "simplexMinimumDistanceCm": 0.0006346320733428001,
+    "kinematicPositionErrorM": 3.5762786865234375e-7,
+    "kinematicRotationErrorRad": 3.3717478808715265e-7,
+    "currentBodyPoseQuery": true,
+    "totalCcdMs": 15.19999999999997,
+    "totalToiMs": 11.999999999999977,
+    "maximumCcdSubsteps": 1,
+    "fastCcdSubsteps": 2,
+    "restoredOwners": true,
+    "contactPolicyControls": true,
+    "passed": true,
+    "version": "0.21.0",
+    "original": 0,
+    "solver": 24,
+    "points": 24,
+    "liveAnchors": true,
+    "clusteringControl": true,
+    "ccdMinimumControl": true
+  }
+}

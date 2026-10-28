@@ -1,3 +1,4 @@
+import {predictiveSupportFixture,predictiveSupport} from '../tests/predictive-support-fixture';
 import {qualifyPredictiveReplay} from '../tests/predictive-recycle-fixture';
 import R from '../../dist/rapier.mjs';
 import {buildInfo} from '../../dist/build-info.mjs';
@@ -6,6 +7,19 @@ import {equalSnapshot,wakeFixture} from '../tests/snapshot-order-fixture';
 import {rotate, unit, vector, type V} from '../research/gyroscopic-precision/free-spin-math';
 try {
  await Promise.all([R.init(),R.init()]);
+ const predictedSupportCases=[];
+ for(const scale of [.01,1,100])for(const reverse of [false,true]){
+  const {w:patch,floor,box}=predictiveSupportFixture(R,scale,-2,reverse);
+  try{
+   const before=patch.takeSnapshot(),replay=R.World.restoreSnapshot(before);
+   try{patch.step();replay.step();if(!equalSnapshot(patch.takeSnapshot(),replay.takeSnapshot()))throw Error('Predicted-support replay differs');}finally{replay.free();}
+   const {geometric,points}=predictiveSupport(patch,floor,box);
+   const minX=Math.min(...points.map(p=>p.x))/scale,maxX=Math.max(...points.map(p=>p.x))/scale;
+   if(geometric<=4||points.length!==4||minX>=-.9||maxX<=.9||points.some(p=>Math.abs(p.y)/scale>=1e-4))throw Error('Predicted support patch collapsed');
+   predictedSupportCases.push({scale,reverse,geometric,solver:points.length,minX,maxX,replayExact:true});
+  }finally{patch.free();}
+ }
+
  const response=await fetch('/simplex-fixture.bin');
  if(!response.ok)throw Error('Simplex fixture unavailable');
  const simplexBytes=new Uint8Array(await response.arrayBuffer());
@@ -267,6 +281,6 @@ try {
    if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
-  postMessage({predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

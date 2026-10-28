@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "ENOENT",
+    "summary": "ENOENT: no such file or directory, open '/home/alexkahn/alex/rapier-predictive-support-release/.absolutejs/pack/absolutejs-rapier3d-0.16.3-support-research.0.tgz'",
+    "detail": "This is related to npm not being able to find a file."
+  }
+}

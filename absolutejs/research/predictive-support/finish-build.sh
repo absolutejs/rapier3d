@@ -13,5 +13,6 @@ Path('absolutejs/research/predictive-support/native-identity.json').write_text(j
 PY
 bun run build:api > "$research_dir/api-build.log" 2>&1
 bun test absolutejs/tests > "$research_dir/package-tests.log" 2>&1
+mkdir -p .absolutejs/pack
 npm pack --cache .cache/npm-pack --ignore-scripts --json --pack-destination .absolutejs/pack > "$research_dir/pack.json"
 python3 absolutejs/scripts/audit-pack.py "$research_dir/pack.json" "$research_dir/pack-audit.json" --research
