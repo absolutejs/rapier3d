@@ -1,0 +1,254 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling autocfg v1.5.1
+   Compiling serde_core v1.0.229
+   Compiling libm v0.2.16
+   Compiling syn v3.0.9
+   Compiling num-traits v0.2.19
+   Compiling serde v1.0.229
+   Compiling serde_derive v1.0.229
+   Compiling syn v2.0.119
+   Compiling bytemuck v1.25.2
+   Compiling safe_arch v1.2.0
+   Compiling approx v0.5.1
+   Compiling matrixmultiply v0.3.11
+   Compiling wide v1.7.1
+   Compiling num-complex v0.4.6
+   Compiling num-integer v0.1.47
+   Compiling byteorder v1.5.0
+   Compiling rawpointer v0.2.1
+   Compiling heapless v0.8.0
+   Compiling hash32 v0.3.1
+   Compiling num-rational v0.4.2
+   Compiling nalgebra-macros v0.3.0
+   Compiling glam v0.33.12
+   Compiling simba v0.10.2
+   Compiling thiserror v2.0.21
+   Compiling typenum v1.20.1
+   Compiling stable_deref_trait v1.2.1
+   Compiling thiserror-impl v2.0.21
+   Compiling nalgebra v0.35.0
+   Compiling log v0.4.34
+   Compiling smallvec v1.16.4
+   Compiling foldhash v0.2.0
+   Compiling zmij v1.0.23
+   Compiling hashbrown v0.17.1
+   Compiling rstar v0.13.0
+   Compiling ena v0.14.4
+   Compiling profiling-procmacros v1.0.18
+   Compiling serde_arrays v0.2.0
+   Compiling arrayvec v0.7.8
+   Compiling ordered-float v5.5.0
+   Compiling bitflags v2.13.2
+   Compiling num-derive v0.5.1
+   Compiling downcast-rs v2.0.2
+   Compiling slab v0.4.12
+   Compiling static_assertions v1.1.0
+   Compiling either v1.19.0
+   Compiling serde_json v1.0.154
+   Compiling profiling v1.0.18
+   Compiling web-time v1.1.0
+   Compiling memchr v2.8.3
+   Compiling itoa v1.0.18
+   Compiling bincode v1.3.3
+   Compiling glamx v0.3.1
+   Compiling parry3d v0.31.1 (https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd)
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d)
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-predictive-recycle-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-predictive-recycle-research v0.0.0 (/home/alexkahn/alex/rapier-predictive-recycle-research/absolutejs/research/predictive-recycle)
+    Finished `release` profile [optimized] target(s) in 2m 55s
+     Running `.cache/research-target/release/probe-predictive-recycle absolutejs/research/predictive-recycle/fixtures absolutejs/research/predictive-recycle/native-baseline.json`
+{
+  "rows": [
+    {
+      "distancesM": [
+        -0.011470794677734375,
+        -0.010919647291302681,
+        -0.008936310186982155,
+        -0.006899490486830473,
+        -0.004904251080006361,
+        -0.0029509735759347677,
+        -0.0010394287528470159,
+        null
+      ],
+      "initialDistanceM": 0.0007150258170440793,
+      "name": "tree-1-stage-3-480",
+      "recycle": true
+    },
+    {
+      "distancesM": [
+        0.00039727240800857544,
+        -0.00016014098946470767,
+        -0.00015785217692609876,
+        0.003103868570178747,
+        0.00010682633728720248,
+        0.004270477686077356,
+        0.005567552521824837,
+        0.0002780941140372306
+      ],
+      "initialDistanceM": 0.0007150258170440793,
+      "name": "tree-1-stage-3-480",
+      "recycle": false
+    },
+    {
+      "distancesM": [
+        -0.003940977621823549,
+        -0.007040885277092457,
+        -0.007026595063507557,
+        -0.006352799013257027,
+        -0.005430214572697878,
+        -0.004263262264430523,
+        -0.0028425196651369333,
+        -0.0011531839845702052
+      ],
+      "initialDistanceM": -0.00047072418965399265,
+      "name": "tree-4-stage-3-480",
+      "recycle": true
+    },
+    {
+      "distancesM": [
+        -0.0007307955529540777,
+        -0.0005060315597802401,
+        -0.00006373759242706001,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "initialDistanceM": -0.00047072418965399265,
+      "name": "tree-4-stage-3-480",
+      "recycle": false
+    },
+    {
+      "distancesM": [
+        -0.002345914486795664,
+        -0.0039839972741901875,
+        -0.0055518015287816525,
+        -0.0070485444739460945,
+        -0.007113394793123007,
+        -0.006872217170894146,
+        -0.006567757576704025,
+        -0.006200934760272503
+      ],
+      "initialDistanceM": -0.000601434032432735,
+      "name": "tree-4-stage-3-960",
+      "recycle": true
+    },
+    {
+      "distancesM": [
+        -0.0008024986600503325,
+        -0.0007642191485501826,
+        -0.0006722648395225406,
+        -0.0005264507490210235,
+        -0.00032710342202335596,
+        -0.00007472199649782851,
+        null,
+        null
+      ],
+      "initialDistanceM": -0.000601434032432735,
+      "name": "tree-4-stage-3-960",
+      "recycle": false
+    },
+    {
+      "distancesM": [
+        -0.0014581341529265046,
+        -0.0018592608394101262,
+        -0.0022626996506005526,
+        -0.002651163609698415,
+        -0.003204717068001628,
+        -0.00384790007956326,
+        -0.004477106966078281,
+        -0.005091637838631868
+      ],
+      "initialDistanceM": -0.0000156776459334651,
+      "name": "tree-4-stage-3-1920",
+      "recycle": true
+    },
+    {
+      "distancesM": [
+        -0.0004528939025476575,
+        -0.0004869392141699791,
+        -0.0004279358545318246,
+        -0.0003628368431236595,
+        -0.00029219724819995463,
+        -0.00021615930018015206,
+        -0.00013453183055389673,
+        -0.00004741114389616996
+      ],
+      "initialDistanceM": -0.0000156776459334651,
+      "name": "tree-4-stage-3-1920",
+      "recycle": false
+    }
+  ],
+  "scope": "Native replay of four captured onset pairs; two contact-recycling policies; no cross-backend byte identity claim"
+}

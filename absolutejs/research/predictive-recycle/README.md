@@ -28,3 +28,13 @@ state, and queries the selected convex pair at current body poses. Native and
 WASM arithmetic are reported separately; cross-backend byte identity is not
 assumed. Builds use two Cargo jobs, offline verified dependencies and a checkout-
 local target. No GPU tests or PAAS edits are involved.
+
+## Native baseline reproduced
+
+The unchanged native engine reproduces the four selected onset penetrations:
+11.471/3.941/2.346/1.458 mm with recycling. With recycling disabled, the
+selected floor pair is separated by 0.397 mm and the three selected fragment
+pairs penetrate 0.731/0.802/0.453 mm. These are selected-pair observations; the
+WASM whole-world floor maximum was a different pair at 0.319 mm. No native/WASM
+byte identity is assumed. The native replay consumes the complete version-1
+world and pending-event state. Candidate admission checks are now compiling.
