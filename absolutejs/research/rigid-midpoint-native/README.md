@@ -128,3 +128,22 @@ Source audit at the current 0.13.0 base:
 
 These obligations are next work, not implemented solver behavior. The game remains
 on published 0.13.0; no private candidate is installed or released.
+
+## Native float-storage matrix
+
+Thirteen tests pass after adding 1,500 independently sampled covariance-derived
+inertias rounded through f32 at three scales. Of these, 1,240 pass the physical
+admission check and 260 fail it after rounding. The admitted cases run 240 steps
+each with attitude and angular velocity stored through f32 every step: 297,600
+checked states. Maximum relative energy drift is 2.6857869635e-6 and complete
+world-momentum-vector drift is 1.3438561422e-6. Measurements normalize stored
+quaternions before interpreting attitude. `native-float-matrix.log` contains the
+complete run. The rejected fraction is specific to this deliberately thin-body
+sampling distribution, not an estimate of gameplay rejection frequency.
+
+This establishes a concrete limitation before native integration: independent
+float principal moments can cease to represent any physical mass distribution.
+The admission boundary detects this rather than introducing a hidden correction.
+A production choice needs either a physically consistent representation or an
+explicit qualified policy for those cases. The matrix does not exercise contacts,
+external torque, damping, native SIMD/parallel scheduling or actual engine state.

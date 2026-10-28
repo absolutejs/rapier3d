@@ -379,3 +379,72 @@ fn representable_physical_covariances_qualify_the_admission_boundary() {
     assert_eq!(count, 3072);
     println!("exactly representable physical admission cases={count}");
 }
+
+#[test]
+fn native_float_storage_matrix_tracks_admission_and_free_motion_drift() {
+    use absolutejs_rigid_midpoint_reference::midpoint::{
+        bounded_midpoint_step, rigid_rotation_step,
+    };
+    let mut seed = 0xcab13988_u64;
+    let mut random = || {
+        seed = seed.wrapping_mul(6364136223846793005).wrapping_add(1);
+        ((seed >> 11) as f64) / (1u64 << 53) as f64
+    };
+    let mut accepted = 0;
+    let mut rejected = 0;
+    let mut max_energy = 0.0_f64;
+    let mut max_momentum = 0.0_f64;
+    for _ in 0..500 {
+        let covariance = [
+            10.0_f64.powf(-12.0 * random()),
+            10.0_f64.powf(-12.0 * random()),
+            1.0,
+        ];
+        let base = [
+            covariance[1] + covariance[2],
+            covariance[0] + covariance[2],
+            covariance[0] + covariance[1],
+        ];
+        let initial_w = [
+            random() * 2.0 - 1.0,
+            random() * 2.0 - 1.0,
+            random() * 2.0 - 1.0,
+        ]
+        .map(|x| x as f32 as f64);
+        for scale in [1e-10, 1.0, 1e10] {
+            let moments = base.map(|i| (i * scale) as f32 as f64);
+            let j0: V = core::array::from_fn(|i| moments[i] * initial_w[i]);
+            match bounded_midpoint_step(j0, moments, 1.0 / 240.0, core::f64::consts::FRAC_PI_4) {
+                Err(MidpointError::NonPhysicalInertia) => {
+                    rejected += 1;
+                    continue;
+                }
+                Err(error) => panic!("unexpected admission error: {error:?}"),
+                Ok(_) => accepted += 1,
+            }
+            let inverse = moments.map(|i| 1.0 / i);
+            let e0 = energy(j0, inverse);
+            let identity = [0., 0., 0., 1.];
+            let mut q = identity;
+            let mut w = initial_w;
+            for _ in 0..240 {
+                let step = rigid_rotation_step(q, identity, moments, w, 1.0 / 240.0).unwrap();
+                q = step.rotation.map(|x| x as f32 as f64);
+                w = step.angular_velocity.map(|x| x as f32 as f64);
+                // Normalize the stored quaternion when measuring physical attitude.
+                let attitude = multiply(identity, q);
+                let omega = rotate([-attitude[0], -attitude[1], -attitude[2], attitude[3]], w);
+                let j = core::array::from_fn(|i| moments[i] * omega[i]);
+                let l = rotate(attitude, j);
+                max_energy = max_energy.max((energy(j, inverse) / e0 - 1.0).abs());
+                max_momentum =
+                    max_momentum.max(norm(core::array::from_fn(|i| l[i] - j0[i])) / norm(j0));
+            }
+        }
+    }
+    println!("native f32 matrix: admitted={accepted}, rejected nonphysical stored moments={rejected}, checked states={}, max relative energy={max_energy:e}, momentum={max_momentum:e}", accepted*240);
+    assert_eq!(accepted + rejected, 1500);
+    assert!(accepted > 1000 && rejected > 0);
+    assert!(max_energy < 1e-4);
+    assert!(max_momentum < 1e-4);
+}
