@@ -853,48 +853,297 @@ fn split_chain_preserves_motion_and_explicit_zero_damping() {
     world.integration_parameters.dt = 1.0 / 120.0;
     world.integration_parameters.num_solver_iterations = 4;
     world.physics_pipeline.counters.enable();
-    let bodies: Vec<_> = (0..4).map(|i| {
-        let mass = (i + 1) as f32;
-        world.bodies.insert(RigidBodyBuilder::dynamic().can_sleep(false)
-            .translation(Vector::new(i as f32, 0.0, 0.0))
-            .additional_mass_properties(MassProperties::with_principal_inertia_frame(
-                Vector::new(0.1, 0.05, -0.02) * mass, mass,
-                Vector::new(0.2, 0.3, 0.4) * mass, Rotation::IDENTITY)))
-    }).collect();
-    let joints: Vec<_> = (0..3).map(|i| world.multibody_joints.insert(
-        bodies[i], bodies[i+1], FixedJointBuilder::new()
-            .local_anchor1(Vector::X).build(), true).unwrap()).collect();
+    let bodies: Vec<_> = (0..4)
+        .map(|i| {
+            let mass = (i + 1) as f32;
+            world.bodies.insert(
+                RigidBodyBuilder::dynamic()
+                    .can_sleep(false)
+                    .translation(Vector::new(i as f32, 0.0, 0.0))
+                    .additional_mass_properties(MassProperties::with_principal_inertia_frame(
+                        Vector::new(0.1, 0.05, -0.02) * mass,
+                        mass,
+                        Vector::new(0.2, 0.3, 0.4) * mass,
+                        Rotation::IDENTITY,
+                    )),
+            )
+        })
+        .collect();
+    let joints: Vec<_> = (0..3)
+        .map(|i| {
+            world
+                .multibody_joints
+                .insert(
+                    bodies[i],
+                    bodies[i + 1],
+                    FixedJointBuilder::new().local_anchor1(Vector::X).build(),
+                    true,
+                )
+                .unwrap()
+        })
+        .collect();
     world.step();
     let (mb, _) = world.multibody_joints.get_mut(joints[0]).unwrap();
     mb.damping_mut().fill(0.0);
     mb.generalized_velocity_mut().as_mut_slice()[..6]
         .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
-    for _ in 0..24 {world.step();}
-    let before: Vec<_> = bodies.iter().map(|h| {
-        let rb=&world.bodies[*h];(*rb.position(),rb.linvel(),rb.angvel())
-    }).collect();
-    let (mass,c0,p0,l0,e0)=quantities(&world,&bodies,None);
-    world.multibody_joints.remove(joints[1],true);
-    for (i,h) in bodies.iter().enumerate() {
-        let rb=&world.bodies[*h];assert_eq!((*rb.position(),rb.linvel(),rb.angvel()),before[i]);
+    for _ in 0..24 {
+        world.step();
     }
-    let mut maxima=[0.0_f64;4];
+    let before: Vec<_> = bodies
+        .iter()
+        .map(|h| {
+            let rb = &world.bodies[*h];
+            (*rb.position(), rb.linvel(), rb.angvel())
+        })
+        .collect();
+    let (mass, c0, p0, l0, e0) = quantities(&world, &bodies, None);
+    world.multibody_joints.remove(joints[1], true);
+    for (i, h) in bodies.iter().enumerate() {
+        let rb = &world.bodies[*h];
+        assert_eq!((*rb.position(), rb.linvel(), rb.angvel()), before[i]);
+    }
+    let mut maxima = [0.0_f64; 4];
     for step in 1..=24 {
         world.step();
-        let (_,c,p,l,e)=quantities(&world,&bodies,None);
-        let time=step as f64 * world.integration_parameters.dt as f64;
-        let expected:V=core::array::from_fn(|i|c0[i]+p0[i]/mass*time);
-        let errors=[norm(difference(p,p0))/norm(p0),norm(difference(l,l0))/norm(l0),
-            (e/e0-1.0).abs(),norm(difference(c,expected))];
-        for i in 0..4 {assert!(errors[i].is_finite());maxima[i]=maxima[i].max(errors[i]);}
-        if step==1 || step==24 {
-            for handle in [joints[0],joints[2]] {
-                let (mb,_) = world.multibody_joints.get_mut(handle).unwrap();
-                println!("SPLIT_DAMPING step={step} values={:?}",mb.damping_mut().as_slice());
+        let (_, c, p, l, e) = quantities(&world, &bodies, None);
+        let time = step as f64 * world.integration_parameters.dt as f64;
+        let expected: V = core::array::from_fn(|i| c0[i] + p0[i] / mass * time);
+        let errors = [
+            norm(difference(p, p0)) / norm(p0),
+            norm(difference(l, l0)) / norm(l0),
+            (e / e0 - 1.0).abs(),
+            norm(difference(c, expected)),
+        ];
+        for i in 0..4 {
+            assert!(errors[i].is_finite());
+            maxima[i] = maxima[i].max(errors[i]);
+        }
+        if step == 1 || step == 24 {
+            for handle in [joints[0], joints[2]] {
+                let (mb, _) = world.multibody_joints.get_mut(handle).unwrap();
+                println!(
+                    "SPLIT_DAMPING step={step} values={:?}",
+                    mb.damping_mut().as_slice()
+                );
             }
-            println!("SPLIT_MOTION step={step} errors={errors:?} counts={:?}",assembly_counts(&world));
+            println!(
+                "SPLIT_MOTION step={step} errors={errors:?} counts={:?}",
+                assembly_counts(&world)
+            );
         }
     }
     println!("SPLIT_MAXIMUM errors={maxima:?}");
     assert!(maxima.iter().all(|x| *x < 1e-4));
+}
+
+#[test]
+fn split_chain_scale_gravity_orientation_matrix() {
+    let mut cases = 0;
+    let mut maxima = [0.0_f64; 4];
+    for scale in [0.01, 1.0, 100.0] {
+        for reverse in [false, true] {
+            for tilted in [false, true] {
+                for gravity in [false, true] {
+                    for hz in [60, 240] {
+                        let mut world = PhysicsWorld::new();
+                        world.gravity = if gravity {
+                            Vector::new(0.0, -9.81 * scale, 0.0)
+                        } else {
+                            Vector::ZERO
+                        };
+                        world.integration_parameters.dt = 1.0 / hz as f32;
+                        world.integration_parameters.num_solver_iterations = 4;
+                        world.physics_pipeline.counters.enable();
+                        let rotation = if tilted {
+                            Rotation::from_scaled_axis(Vector::new(0.4, -0.3, 0.7))
+                        } else {
+                            Rotation::IDENTITY
+                        };
+                        let mut bodies: Vec<_> = (0..4)
+                            .map(|i| {
+                                let mass = (i + 1) as f32;
+                                world.bodies.insert(
+                                    RigidBodyBuilder::dynamic()
+                                        .can_sleep(false)
+                                        .pose(Pose::from_parts(
+                                            rotation * Vector::new(i as f32 * scale, 0.0, 0.0),
+                                            rotation,
+                                        ))
+                                        .additional_mass_properties(
+                                            MassProperties::with_principal_inertia_frame(
+                                                Vector::new(0.1, 0.05, -0.02) * (mass * scale),
+                                                mass,
+                                                Vector::new(0.2, 0.3, 0.4) * (mass * scale * scale),
+                                                Rotation::IDENTITY,
+                                            ),
+                                        ),
+                                )
+                            })
+                            .collect();
+                        if reverse {
+                            bodies.reverse();
+                        }
+                        let joints: Vec<_> = (0..3)
+                            .map(|i| {
+                                world
+                                    .multibody_joints
+                                    .insert(
+                                        bodies[i],
+                                        bodies[i + 1],
+                                        FixedJointBuilder::new()
+                                            .local_anchor1(
+                                                Vector::X * if reverse { -scale } else { scale },
+                                            )
+                                            .build(),
+                                        true,
+                                    )
+                                    .unwrap()
+                            })
+                            .collect();
+                        world.step();
+                        let (mb, _) = world.multibody_joints.get_mut(joints[0]).unwrap();
+                        mb.damping_mut().fill(0.0);
+                        mb.generalized_velocity_mut().as_mut_slice()[..6].copy_from_slice(&[
+                            0.3 * scale,
+                            -0.2 * scale,
+                            0.1 * scale,
+                            2.0,
+                            -3.0,
+                            4.0,
+                        ]);
+                        for _ in 0..12 {
+                            world.step();
+                        }
+                        let (mass, c0, p0, l0, e0) = quantities(&world, &bodies, None);
+                        world.multibody_joints.remove(joints[1], true);
+                        let acceleration = vec(world.gravity);
+                        let h = (world.integration_parameters.dt / 4.0) as f64;
+                        let mut errors = [0.0_f64; 4];
+                        for step in 1..=24 {
+                            world.step();
+                            let (_, c, p, l, e) = quantities(&world, &bodies, None);
+                            let k = (step * 4) as f64;
+                            let time = k * h;
+                            let expected_p: V =
+                                core::array::from_fn(|i| p0[i] + mass * acceleration[i] * time);
+                            let expected_c: V = core::array::from_fn(|i| {
+                                c0[i]
+                                    + p0[i] / mass * time
+                                    + 0.5 * acceleration[i] * h * h * k * (k + 1.0)
+                            });
+                            let work: f64 = (0..3)
+                                .map(|i| {
+                                    p0[i] * acceleration[i] * time
+                                        + 0.5 * mass * acceleration[i].powi(2) * time * time
+                                })
+                                .sum();
+                            let values = [
+                                norm(difference(p, expected_p)) / (mass * scale as f64),
+                                norm(difference(l, l0)) / norm(l0),
+                                ((e - e0 - work) / e0).abs(),
+                                norm(difference(c, expected_c)) / scale as f64,
+                            ];
+                            for i in 0..4 {
+                                assert!(values[i].is_finite());
+                                errors[i] = errors[i].max(values[i]);
+                            }
+                            assert_eq!(assembly_counts(&world), [8, 0, 0, 0]);
+                        }
+                        println!("SPLIT_MATRIX scale={scale} reverse={reverse} tilted={tilted} gravity={gravity} hz={hz} errors={errors:?}");
+                        assert!(errors.iter().all(|x| *x < 1e-4));
+                        for i in 0..4 {
+                            maxima[i] = maxima[i].max(errors[i]);
+                        }
+                        cases += 1;
+                    }
+                }
+            }
+        }
+    }
+    assert_eq!(cases, 48);
+    println!("SPLIT_MATRIX_SUMMARY cases={cases} errors={maxima:?}");
+}
+
+#[test]
+fn split_keeps_surviving_root_generalized_properties() {
+    let (mut world, bodies, removed) = fixture(1.0, 0, 0.0, true);
+    let damping = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
+    let armature = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7];
+    let friction = [0.01, 0.02, 0.03, 0.04, 0.05, 0.06];
+    let (mb, _) = world.multibody_joints.get_mut(removed).unwrap();
+    mb.damping_mut().as_mut_slice().copy_from_slice(&damping);
+    mb.armature_mut().as_mut_slice().copy_from_slice(&armature);
+    mb.frictions_mut().as_mut_slice().copy_from_slice(&friction);
+    mb.generalized_velocity_mut()
+        .as_mut_slice()
+        .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
+    world.step();
+    let before = world
+        .multibody_joints
+        .get(removed)
+        .unwrap()
+        .0
+        .generalized_velocity()
+        .as_slice()
+        .to_vec();
+    world.multibody_joints.remove(removed, true);
+    let index = world
+        .multibody_joints
+        .rigid_body_link(bodies[0])
+        .unwrap()
+        .multibody;
+    let mb = world.multibody_joints.get_multibody(index).unwrap();
+    println!(
+        "SPLIT_RETAINED_ROOT velocities={:?} damping={:?} armature={:?} friction={:?}",
+        mb.generalized_velocity().as_slice(),
+        mb.damping().as_slice(),
+        mb.armature().as_slice(),
+        mb.frictions().as_slice()
+    );
+    assert_eq!(mb.generalized_velocity().as_slice(), before);
+    assert_eq!(mb.damping().as_slice(), damping);
+    assert_eq!(mb.armature().as_slice(), armature);
+    assert_eq!(mb.frictions().as_slice(), friction);
+    world.step();
+    let mb = world.multibody_joints.get_multibody(index).unwrap();
+    assert_eq!(mb.damping().as_slice(), damping);
+    assert_eq!(mb.armature().as_slice(), armature);
+    assert_eq!(mb.frictions().as_slice(), friction);
+}
+
+#[test]
+fn fixed_to_dynamic_root_preserves_prescribed_world_com_velocity() {
+    for root in 0..3 {
+        let (mut world, bodies, _) = fixture(1.0, root, 0.0, true);
+        world.integration_parameters.dt = 1.0 / 120.0;
+        world.integration_parameters.num_solver_iterations = 4;
+        world.physics_pipeline.counters.enable();
+        world.bodies[bodies[root]].set_body_type(RigidBodyType::Fixed, true);
+        world.step();
+        let v = Vector::new(0.3, -0.2, 0.1);
+        let w = Vector::new(2.0, -3.0, 4.0);
+        world.bodies[bodies[root]].set_body_type(RigidBodyType::Dynamic, true);
+        world.bodies[bodies[root]].set_linvel(v, true);
+        world.bodies[bodies[root]].set_angvel(w, true);
+        let root_center = center_of(&world.bodies[bodies[root]]);
+        let (mass, c0, p0, l0, e0) =
+            quantities(&world, &bodies, Some((vec(v), vec(w), root_center)));
+        world.step();
+        let (_, c, p, l, e) = quantities(&world, &bodies, None);
+        let time = world.integration_parameters.dt as f64;
+        let expected: V = core::array::from_fn(|i| c0[i] + p0[i] / mass * time);
+        let errors = [
+            norm(difference(p, p0)) / norm(p0),
+            norm(difference(l, l0)) / norm(l0),
+            (e / e0 - 1.0).abs(),
+            norm(difference(c, expected)),
+        ];
+        println!(
+            "ROOT_ACTIVATION root={root} errors={errors:?} counts={:?}",
+            assembly_counts(&world)
+        );
+        assert!(errors.iter().all(|x| *x < 1e-5));
+        assert_eq!(assembly_counts(&world), [4, 0, 0, 0]);
+    }
 }

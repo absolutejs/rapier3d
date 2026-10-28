@@ -1,0 +1,135 @@
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-aggregate-free-transport-research v0.0.0 (/home/alexkahn/alex/rapier-assembly-split-research/absolutejs/research/aggregate-free-transport)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.62s
+     Running tests/aggregate_frame.rs (.cache/split-target/debug/deps/aggregate_frame-8e8ae50f054d30b8)
+
+running 2 tests
+test split_chain_preserves_motion_and_explicit_zero_damping ... SPLIT_DAMPING step=1 values=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SPLIT_DAMPING step=1 values=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SPLIT_MOTION step=1 errors=[5.084910820902585e-8, 4.645939807258637e-8, 2.388281572507367e-8, 6.897909011435451e-8] counts=[8, 0, 0, 0]
+SPLIT_DAMPING step=24 values=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SPLIT_DAMPING step=24 values=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+SPLIT_MOTION step=24 errors=[1.486957417436351e-7, 2.71668810025836e-7, 1.8610878393943153e-8, 2.1751688931829041e-7] counts=[8, 0, 0, 0]
+SPLIT_MAXIMUM errors=[1.5315890452647322e-7, 2.9235319465740746e-7, 1.6420436621533696e-7, 3.8957900882180494e-7]
+ok
+test split_chain_scale_gravity_orientation_matrix ... SPLIT_MATRIX scale=0.01 reverse=false tilted=false gravity=false hz=60 errors=[1.2904784428203335e-6, 3.844789835478406e-7, 1.4603289094862859e-7, 4.982173687056678e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=false gravity=false hz=240 errors=[1.1365750703446143e-6, 1.7658125834475688e-7, 2.0945918663388336e-7, 3.3023319470480913e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=false gravity=true hz=60 errors=[1.0449550794624973e-6, 3.1896610755988456e-7, 9.394047129533022e-8, 3.1935563238365426e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=false gravity=true hz=240 errors=[1.7563740504814433e-6, 2.0630921096245158e-7, 3.093221525593243e-7, 3.3212215330893665e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=true gravity=false hz=60 errors=[1.8253922870470349e-6, 3.9136422035082753e-7, 1.690725369110395e-7, 8.025426115099835e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=true gravity=false hz=240 errors=[2.6412315374315596e-6, 2.858948112563346e-7, 3.2382083454503066e-7, 3.1803173739050045e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=true gravity=true hz=60 errors=[1.2470114825959252e-6, 2.589966177585827e-7, 2.0745608088936548e-7, 6.417172741484771e-7]
+SPLIT_MATRIX scale=0.01 reverse=false tilted=true gravity=true hz=240 errors=[2.486496974176714e-6, 2.932274668419956e-7, 3.3601280490568464e-7, 3.4257972663757853e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=false gravity=false hz=60 errors=[7.422588501321743e-7, 3.6747824351742134e-7, 1.2152179340332086e-7, 4.1089376434388843e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=false gravity=false hz=240 errors=[7.54793593873105e-7, 1.6474471140353496e-7, 1.5087839457546506e-7, 2.3461407280412386e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=false gravity=true hz=60 errors=[7.279301656117651e-7, 3.491040645855016e-7, 1.438242415353294e-7, 3.93980604594453e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=false gravity=true hz=240 errors=[5.825915073662199e-7, 1.587539896034146e-7, 1.266134994503044e-7, 2.3321902682095784e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=true gravity=false hz=60 errors=[1.031878537984796e-6, 1.9781450174641204e-7, 1.9594899545725698e-7, 4.5878622739499716e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=true gravity=false hz=240 errors=[6.718445271245446e-7, 1.805486893356232e-7, 1.3981643006176068e-7, 4.5037599333534046e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=true gravity=true hz=60 errors=[9.001633867335057e-7, 1.9372309630899232e-7, 1.606972555742913e-7, 4.144649332462575e-7]
+SPLIT_MATRIX scale=0.01 reverse=true tilted=true gravity=true hz=240 errors=[6.988032041563981e-7, 7.694326020437816e-8, 1.2820519785071365e-7, 1.928246867167617e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=false gravity=false hz=60 errors=[1.6421917973561688e-6, 3.0598902514853873e-7, 2.910204184114718e-7, 5.16386538380968e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=false gravity=false hz=240 errors=[1.5346691372642553e-6, 2.405169950767464e-7, 2.965618583082194e-7, 2.0879970897844764e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=false gravity=true hz=60 errors=[1.7708565145729653e-6, 2.341267725280154e-7, 2.0642782741402926e-7, 6.831757912366383e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=false gravity=true hz=240 errors=[2.060296170502509e-6, 1.6144487682907212e-7, 2.1752070128849175e-7, 2.069100325849009e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=true gravity=false hz=60 errors=[1.8252651257918552e-6, 2.5727222681915635e-7, 1.6364382282096143e-7, 5.361368724131624e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=true gravity=false hz=240 errors=[2.0017579034552378e-6, 1.379579785772644e-7, 2.241515493494415e-7, 1.902253982283389e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=true gravity=true hz=60 errors=[1.6310328879231839e-6, 2.34881498474436e-7, 1.594839782899543e-7, 5.445390081834687e-7]
+SPLIT_MATRIX scale=1 reverse=false tilted=true gravity=true hz=240 errors=[1.6396992981240183e-6, 1.0782069692594486e-7, 1.4879992173091697e-7, 3.298750725004142e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=false gravity=false hz=60 errors=[1.6179120614360376e-6, 4.085216478868395e-7, 2.1385877243164537e-7, 3.7003352239184454e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=false gravity=false hz=240 errors=[4.994357089642101e-7, 1.6810240851060144e-7, 1.0946350769054387e-7, 1.9566573575332171e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=false gravity=true hz=60 errors=[1.1668497621282961e-6, 2.1322241257418933e-7, 2.1982711966166887e-7, 3.569980454914264e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=false gravity=true hz=240 errors=[8.631625607412821e-7, 2.1829816224609446e-7, 2.1494088918256097e-7, 2.2512479212679454e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=true gravity=false hz=60 errors=[7.60046869721178e-7, 2.4158020354773626e-7, 1.4642702622336487e-7, 3.86571178854729e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=true gravity=false hz=240 errors=[6.696973755449361e-7, 1.2771904379516306e-7, 8.414186135587425e-8, 3.0836254929902113e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=true gravity=true hz=60 errors=[1.5320799561125044e-6, 1.3841087071139125e-7, 1.3138919229642476e-7, 2.8222248511983214e-7]
+SPLIT_MATRIX scale=1 reverse=true tilted=true gravity=true hz=240 errors=[5.674019228160648e-7, 1.0214419098772016e-7, 7.687915494536373e-8, 2.9728744061529777e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=false gravity=false hz=60 errors=[1.891412921532923e-6, 4.31486945853923e-7, 1.6915703877014302e-7, 4.804789995076855e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=false gravity=false hz=240 errors=[1.183134368310515e-6, 1.5843195516158585e-7, 1.7017793382183716e-7, 2.537248315631972e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=false gravity=true hz=60 errors=[2.0692540529053313e-6, 3.5813209842689437e-7, 1.6487953604128639e-7, 3.8254562412395803e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=false gravity=true hz=240 errors=[1.6093520617778084e-6, 1.9904847081237303e-7, 2.4760610006727074e-7, 2.636597172906686e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=true gravity=false hz=60 errors=[1.6651142640345115e-6, 2.9056099891113216e-7, 1.7094996962953995e-7, 6.281213672897041e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=true gravity=false hz=240 errors=[1.457354154421841e-6, 1.6110340250826388e-7, 1.6487760568729394e-7, 2.3266344507819075e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=true gravity=true hz=60 errors=[1.7004165850878813e-6, 3.88409344735681e-7, 1.7707769408617601e-7, 6.212171098205848e-7]
+SPLIT_MATRIX scale=100 reverse=false tilted=true gravity=true hz=240 errors=[1.5574685270467263e-6, 1.850544394427067e-7, 2.2270714809523683e-7, 2.16452786510775e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=false gravity=false hz=60 errors=[1.0659331785017687e-6, 1.4282670437765763e-7, 1.334829458553693e-7, 6.294762241529539e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=false gravity=false hz=240 errors=[8.045869367743518e-7, 1.6036423665205073e-7, 1.671153900410819e-7, 2.7172202116882497e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=false gravity=true hz=60 errors=[1.6369446455129574e-6, 1.9873850988652026e-7, 2.527317419791581e-7, 2.897173563519384e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=false gravity=true hz=240 errors=[1.729197247851377e-6, 2.394979117554763e-7, 4.1082426816731356e-7, 2.7014416620112997e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=true gravity=false hz=60 errors=[1.5830947692069015e-6, 2.760510367763404e-7, 2.5238202092823197e-7, 5.47805436422394e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=true gravity=false hz=240 errors=[7.618705891613726e-7, 1.0871674735442569e-7, 1.1079513325063833e-7, 1.7602931271766948e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=true gravity=true hz=60 errors=[1.4080740115417678e-6, 2.8845414913472597e-7, 2.5734309610268226e-7, 4.715400250089028e-7]
+SPLIT_MATRIX scale=100 reverse=true tilted=true gravity=true hz=240 errors=[8.43863259793223e-7, 9.698745514589988e-8, 7.318274860395744e-8, 2.009028319882253e-7]
+SPLIT_MATRIX_SUMMARY cases=48 errors=[2.6412315374315596e-6, 4.31486945853923e-7, 4.1082426816731356e-7, 8.025426115099835e-7]
+ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 9 filtered out; finished in 14.60s
+

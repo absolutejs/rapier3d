@@ -31,3 +31,18 @@ maximum relative linear momentum 1.532e-7, angular momentum 2.924e-7, energy
 1.643e-7, and COM position error 3.896e-7 m over 24 steps. Both resulting
 assemblies report eight admitted substeps per frame. This is one fixture, not
 release qualification; broader transition/gravity/scale and replay checks remain.
+
+A 48-case matrix passes with scale 0.01/1/100, both chain directions, tilted and
+axis-aligned assembly frames, zero/uniform gravity and 60/240 Hz. Maximum errors:
+normalized momentum 2.642e-6, relative angular momentum 4.315e-7, normalized work
+residual 4.109e-7, scale-normalized COM position 8.026e-7. This first matrix tests
+the velocity correction before original-root property retention.
+
+A separate strict test then showed that remove_link also discarded the surviving
+original root's generalized velocity, damping, armature and friction vectors.
+Retaining that original root joint and its dynamic flag preserves these existing
+DoFs and allows surviving couplings to remain associated with them. Only newly
+released subtree roots get new free coordinates. The property-retention test and
+all split cases pass after this extension (retained-root-correction.log). The
+expanded full native suite, including fixed-to-dynamic velocity activation, is
+running; browser, independent-build and game qualification remain pending.

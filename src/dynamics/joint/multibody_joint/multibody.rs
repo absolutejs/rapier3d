@@ -210,9 +210,15 @@ impl Multibody {
             link_id2new_id[i] = curr_mb.links.len();
 
             if is_new_root {
-                let joint = MultibodyJoint::fixed(*link.local_to_world());
-                link.joint = joint;
-                joint_replaced[i] = true;
+                if i == 0 {
+                    // The original root still owns the same generalized DoFs,
+                    // damping, armature, friction and surviving couplings.
+                    curr_mb.root_is_dynamic = self.root_is_dynamic;
+                } else {
+                    let joint = MultibodyJoint::fixed(*link.local_to_world());
+                    link.joint = joint;
+                    joint_replaced[i] = true;
+                }
             }
 
             curr_mb.ndofs += link.joint().ndofs();
