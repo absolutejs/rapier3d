@@ -479,3 +479,22 @@ Qualification and retained failed assumptions are in
 body removal; they do not invent a fracture-energy budget or model cutting
 forces, plastic deformation or coupled-contact accuracy. Those remain separate
 physical models and qualification work.
+
+## Stable queued wake replay (0.16.1)
+
+Snapshots now serialize unordered pending wake/join membership in handle order.
+The default backend also consumes queued wake requests in handle order, retaining
+impulse-before-multibody priority. Previously, restoring a snapshot could reorder
+sleeping bodies when they woke, changing active-set records on subsequent steps.
+Only queued edits are sorted; there is no scan of every world body. The enhanced-
+determinism feature retains its existing insertion-ordered behavior. Ordered
+connectivity events and the version-1 snapshot payload layout are unchanged;
+this is not a general cross-engine snapshot-compatibility promise.
+
+Qualification includes 223 package tests, 843 game tests, exact sleeping-wake
+replays, native feature/worker checks, GPU-disabled browser replay and identical
+independent builds. Unaffected transport and impact states match published
+0.16.0. Sorting has a measured cost: at 256 released bodies, median first-wake
+step time was 0.82 ms versus 0.98 ms, with about 26 microseconds added per pending
+snapshot capture. These are bounded CPU fixtures, not hardware FPS claims.
+See `absolutejs/research/snapshot-order/` for original failures and full evidence.

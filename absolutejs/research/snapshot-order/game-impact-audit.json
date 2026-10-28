@@ -1,0 +1,34 @@
+{
+  "scope": "Bounded CPU first-impact fixture only; no rendering, hardware FPS or mixed-world claim",
+  "rows": [
+    {
+      "islands": 1,
+      "physicalStateExactlyUnchanged": true,
+      "baselineMedianMs": 0.6392505000000028,
+      "candidateMedianMs": 0.6402534999999148,
+      "medianPairedRatio": 1.0197772904952538,
+      "maxVelocityError": 1.6689300537109375e-06,
+      "candidateRestoredSnapshotHashes": 1
+    },
+    {
+      "islands": 8,
+      "physicalStateExactlyUnchanged": true,
+      "baselineMedianMs": 2.391181500000016,
+      "candidateMedianMs": 2.3354554999999664,
+      "medianPairedRatio": 0.974334385540815,
+      "maxVelocityError": 1.6689300537109375e-06,
+      "candidateRestoredSnapshotHashes": 1
+    },
+    {
+      "islands": 32,
+      "physicalStateExactlyUnchanged": true,
+      "baselineMedianMs": 6.37038849999999,
+      "candidateMedianMs": 6.487893499999927,
+      "medianPairedRatio": 0.9957340023124914,
+      "maxVelocityError": 1.6689300537109375e-06,
+      "candidateRestoredSnapshotHashes": 1
+    }
+  ],
+  "resultsSha256": "fd32f84b749453c55efdd3b5ec89e7ec3d72b26ed836933c2aad0f82444881bb",
+  "auditSourceSha256": "e3bfd678e79ab6721b47179c79265c68306ca9ae2b1828dfd258d84f57ece98a"
+}

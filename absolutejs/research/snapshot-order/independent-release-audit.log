@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-snapshot-order-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 49,
+  "packagedNativeSha256": "8639aa4bc16710820fcfc99274e1065bdf9ebfba7e3b5a27acc41fa2bdb8ca5d",
+  "packagedNativeBytes": 3357015,
+  "rawIntermediateIdentical": true,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": null,
+  "rawPrimarySha256": "211c9fa04728e1dbfe300b5511fd1c7e80fee72de69b27f83d78beb30d51919b",
+  "rawIndependentSha256": "211c9fa04728e1dbfe300b5511fd1c7e80fee72de69b27f83d78beb30d51919b",
+  "sourceInputDifferences": [],
+  "primarySourceContentSha256": "2a7d01b43e516f0ea1eaee906c7ba65f4256f2e6514c9eb13da24f759bcd99ad",
+  "independentSourceContentSha256": "2a7d01b43e516f0ea1eaee906c7ba65f4256f2e6514c9eb13da24f759bcd99ad",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

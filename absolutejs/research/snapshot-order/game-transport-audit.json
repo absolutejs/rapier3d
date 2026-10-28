@@ -1,0 +1,21 @@
+{
+  "cases": 80,
+  "allPhysicalRowsExactlyUnchanged": true,
+  "absoluteBound": 0.0001,
+  "replays": {
+    "baseline": {
+      "exactRoundtrips": 80,
+      "exactOneStepReplays": 80
+    },
+    "candidate": {
+      "exactRoundtrips": 80,
+      "exactOneStepReplays": 80
+    }
+  },
+  "crossEngineTransportSnapshotsExactlyUnchanged": 160,
+  "inputs": {
+    "transport-baseline/results.json": "6d447d3002c2b5a1708880cad2bbb7886f274031575e168dd90502c37cb8abf1",
+    "transport-candidate/results.json": "6d447d3002c2b5a1708880cad2bbb7886f274031575e168dd90502c37cb8abf1"
+  },
+  "auditSourceSha256": "5a48a63adfe032ad39a9ac29e3d5df1b9a27487978d9bec49fe26e41634b6c30"
+}

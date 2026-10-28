@@ -81,3 +81,19 @@ packaged WASM and the raw WASM intermediate byte-for-byte. Native source inputs
 also match exactly; see `independent-build-audit.json`. Full game qualification
 is running in an isolated checkout. The kernel remains private until that gate
 and the unchanged transport/impact comparisons pass.
+
+## Completed game gate
+
+Isolated game checkpoint `476e3fb76b2dfc0b67376cd186ae19bebdadf420` passes
+843 tests (7,408,733 assertions), type/dependency checks and the browser-worker
+bundle. Fresh published-0.16.0 and candidate transport runs retain 80 exact
+roundtrips and replays each; all 160 before/after snapshots and all physical
+measurement rows match across engines. The 1/8/32-assembly coupled-impact
+comparison retains identical physical states and error/energy results. Its
+median paired CPU ratios are 1.020/0.974/0.996; these bounded CPU results do
+not establish rendering FPS or erase the sleeping-wake cost reported above.
+The game branch retains both exact archives, scripts, logs and binary captures.
+
+These completed gates qualify patch release 0.16.1. Promotion must change only
+package identity and documentation; the native bytes remain those independently
+rebuilt above. Registry publication and canonical game adoption remain pending.

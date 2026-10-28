@@ -1,0 +1,31 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/pending-topology-snapshot.test.ts:
+(pass) snapshot retains pending impulse topology: insert [62.27ms]
+(pass) snapshot retains pending impulse topology: remove [13.45ms]
+(pass) snapshot retains pending impulse topology: remove-body [12.80ms]
+(pass) snapshot envelope identifies version and rejects unknown or incomplete payloads [3.01ms]
+(pass) historical raw capture imports and re-saves in the canonical envelope [6.70ms]
+
+absolutejs/tests/snapshot-order.test.ts:
+(pass) queued wake snapshot/replay impulse count=1 sleeping=false [10.63ms]
+(pass) queued wake snapshot/replay impulse count=1 sleeping=true [9.19ms]
+(pass) queued wake snapshot/replay impulse count=8 sleeping=false [14.06ms]
+(pass) queued wake snapshot/replay impulse count=8 sleeping=true [31.85ms]
+(pass) queued wake snapshot/replay impulse count=32 sleeping=false [84.98ms]
+(pass) queued wake snapshot/replay impulse count=32 sleeping=true [60.48ms]
+(pass) queued wake snapshot/replay impulse count=64 sleeping=false [73.97ms]
+(pass) queued wake snapshot/replay impulse count=64 sleeping=true [86.98ms]
+(pass) queued wake snapshot/replay multibody count=1 sleeping=false [22.56ms]
+(pass) queued wake snapshot/replay multibody count=1 sleeping=true [7.68ms]
+(pass) queued wake snapshot/replay multibody count=8 sleeping=false [36.15ms]
+(pass) queued wake snapshot/replay multibody count=8 sleeping=true [36.58ms]
+(pass) queued wake snapshot/replay multibody count=32 sleeping=false [101.94ms]
+(pass) queued wake snapshot/replay multibody count=32 sleeping=true [134.31ms]
+(pass) queued wake snapshot/replay multibody count=64 sleeping=false [139.07ms]
+(pass) queued wake snapshot/replay multibody count=64 sleeping=true [124.65ms]
+
+ 21 pass
+ 0 fail
+ 254 expect() calls
+Ran 21 tests across 2 files. [2.87s]
