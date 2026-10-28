@@ -18,3 +18,16 @@ receding exclusion, skin margin, empty/small selection and ten reordered patches
 This isolated harness does not compile or qualify the complete narrow phase.
 Full browser-engine compilation, package tests, captured replay and tree matrix
 are next. Native and game acceptance remain pending; no release is claimed.
+
+## Combined browser result: blocked
+
+Private .2 passes 227 package tests and the archive audit. Its paired impact
+replay is physically identical to .1. The 24-case game comparison retains the
+same three clearance rejections; four other physical rows change within their
+existing gates. Full-game/release qualification is not claimed. The exact
+archive and evidence are retained on the game research branch under
+`docs/certified-normal-qualification-2026-10-28/predictive-support/`.
+
+Next qualify the independently reproduced reduction correction alone on the
+published 0.16.2 engine, excluding the blocked GJK/CCD changes. No combined
+candidate will be published or adopted.
