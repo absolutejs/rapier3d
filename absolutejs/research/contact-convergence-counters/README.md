@@ -25,3 +25,7 @@ Independent offline build completed in 6m27s with two Cargo jobs and a separate 
 Final 0.11.0 browser worker passes with GPU disabled. The audited archive `.absolutejs/pack/absolutejs-rapier3d-0.11.0.tgz` has SHA256 `92339dc5d2f3d36b0a14d291ce6871164b2650fe8ceaffe7b8800021b814568e`, SHA1 `72405fdcfd09598975738011de88931d0b8988d8`. Every distribution byte, native payload, export, file allowlist and canonical README is verified.
 
 Prepared game inspection integration is backed up separately on `research/convergence-observations` at 021c943, with six focused tests / 58 assertions passing against the explicit candidate. Canonical game source remains on published 0.10.0 until registry verification, installed-byte audit and adoption checks complete. Publication and adoption are not asserted by this qualification record.
+
+## Publication
+
+npm accepted browser confirmation for 0.11.0. The first registry query returned E404 during propagation; the second verifies exact archive SHA1/integrity. No duplicate publish was attempted. `registry-verified.json` and `publication-state.json` record completion. The canonical game installed the verified registry package and merged the prepared inspection changes for installed-byte, dependency, focused native-contact and type validation; its final adoption record is maintained in `hello-world/docs/rapier-0.11.0-adoption-2026-10-28/`.
