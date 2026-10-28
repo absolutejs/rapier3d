@@ -13,3 +13,7 @@ Qualification must measure free-flight momentum, angular momentum, energy, COM m
 ## First experiment result
 
 Native SHA256 `6e3e1a6d2fc8dd0e60c83c36e2f3f2879856039afef151ed4d6a28c7eda8e580`, 3,296,852 bytes. Native compilation succeeds, followed by expected stable-hash rejection and explicit private API packaging. Game diagnostics complete 80 published/80 candidate diversity cases plus 32 zero/32 default controls. Default damping, compound, translation and excluded local-COM controls remain exactly unchanged. Planar drift improves substantially; nonprincipal 3D drift remains. This is not qualified for release. Full replay data and comparisons are in hello-world/docs/root-transport-2026-10-27.
+
+## Second experiment: explicit COM coordinates
+
+Keep the same scope gates, adding exclusion of generalized couplings. Compute COM velocity from the previous rigid state, net physical force times dt/mass, and the constraint-solved generalized increment after subtracting the native acceleration increment. Integrate COM semi-implicitly, rotate its root offset using the solved angular velocity, and reconstruct root position/velocity. This avoids assuming that the native semi-implicit Coriolis contribution equals a first-order centripetal term in nonprincipal rotation. It is still an experiment: force/torque response, contact coupling, angular momentum and energy require validation.

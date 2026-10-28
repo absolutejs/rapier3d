@@ -138,12 +138,16 @@ impl VelocitySolver {
                 .generic_solver_vels
                 .rows(multibody.solver_id as usize, multibody.ndofs());
             #[cfg(feature = "dim3")]
-            let root_transport = multibody.rigid_root_transport_input(bodies);
+            let root_transport = multibody.rigid_root_transport_input(
+                bodies, params.dt, solver_vels.as_slice(),
+                self.generic_solver_vels_increment
+                    .rows(multibody.solver_id as usize, multibody.ndofs()).as_slice(),
+            );
             multibody.velocities.copy_from(&solver_vels);
             multibody.integrate(params.dt);
             #[cfg(feature = "dim3")]
-            if let Some((offset, old_omega)) = root_transport {
-                multibody.finish_rigid_root_transport(params.dt, offset, old_omega);
+            if let Some((offset, target_com, com_velocity)) = root_transport {
+                multibody.finish_rigid_root_transport(params.dt, offset, target_com, com_velocity);
                 self.generic_solver_vels
                     .rows_mut(multibody.solver_id as usize, multibody.ndofs())
                     .copy_from(&multibody.velocities);
