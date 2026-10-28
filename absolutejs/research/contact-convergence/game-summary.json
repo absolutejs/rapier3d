@@ -1,0 +1,76 @@
+{
+  "scope": "Restricted coupled-contact gates and non-regression comparisons; not general articulation/geometry qualification",
+  "coupled": [
+    {
+      "engine": "refresh",
+      "pgsIterations": 1,
+      "qualified": false
+    },
+    {
+      "engine": "refresh",
+      "pgsIterations": 4,
+      "qualified": false
+    },
+    {
+      "engine": "refresh",
+      "pgsIterations": 16,
+      "qualified": false
+    },
+    {
+      "engine": "convergence",
+      "pgsIterations": 1,
+      "qualified": true
+    },
+    {
+      "engine": "convergence",
+      "pgsIterations": 4,
+      "qualified": true
+    },
+    {
+      "engine": "convergence",
+      "pgsIterations": 16,
+      "qualified": true
+    }
+  ],
+  "massRatios": {
+    "mass-60-4": {
+      "cases": 162,
+      "maxFinalVelocityError": 2.4208655844404348e-06,
+      "maxFinalEnergyError": 0.000131313583182191,
+      "maxTraceEnergyError": 0.0001716613395501554,
+      "maxEnergyGain": 3.450567760410195e-05
+    },
+    "mass-60-1": {
+      "cases": 162,
+      "maxFinalVelocityError": 6.235562850065435e-06,
+      "maxFinalEnergyError": 0.00010808307428078479,
+      "maxTraceEnergyError": 0.00017166134625767882,
+      "maxEnergyGain": 5.132502201377065e-05
+    },
+    "mass-240-1": {
+      "cases": 162,
+      "maxFinalVelocityError": 6.235562850065435e-06,
+      "maxFinalEnergyError": 0.00010808307428078479,
+      "maxTraceEnergyError": 0.00017166134625767882,
+      "maxEnergyGain": 5.132502201377065e-05
+    }
+  },
+  "exactUnaffectedPairs": 40,
+  "isolatedNonRegression": {
+    "maxMomentumError": {
+      "maxIncrease": 8.627589636531208e-07,
+      "allowance": 0.0001
+    },
+    "maxAngularError": {
+      "maxIncrease": 7.711563663193033e-07,
+      "allowance": 0.0001
+    },
+    "maxEnergyGain": {
+      "maxIncrease": 0,
+      "allowance": 0.0001
+    },
+    "maxFinalEnergyDifference": 9.127221325400114e-06
+  },
+  "exactReplays": 184,
+  "verifiedHarnessSnapshots": 9
+}

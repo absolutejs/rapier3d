@@ -1,0 +1,1016 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/coupled-mass-ratio.test.ts:
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2908105850219727
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=60 substeps=1 reverse=false [57.10ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2908105850219727
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=60 substeps=1 reverse=true [11.88ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2908105850219727
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=240 substeps=1 reverse=false [6.11ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2908105850219727
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=240 substeps=1 reverse=true [16.67ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.4518718719482422
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=60 substeps=4 reverse=false [10.84ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.4518718719482422
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=60 substeps=4 reverse=true [3.88ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.4518718719482422
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=240 substeps=4 reverse=false [3.31ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.4518718719482422
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0 hz=240 substeps=4 reverse=true [7.99ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 4.798919677734375
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=1 reverse=false [13.72ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 4.798919677734375
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=1 reverse=true [6.18ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 4.798919677734375
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=1 reverse=false [1.27ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 4.798919677734375
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=1 reverse=true [1.27ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.4041976928710938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=4 reverse=false [2.18ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.4041976928710938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=4 reverse=true [2.46ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.4041976928710938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=4 reverse=false [2.23ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.4041976928710938
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=4 reverse=true [2.36ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 6.612979888916016
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=60 substeps=1 reverse=false [2.37ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 6.612979888916016
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=60 substeps=1 reverse=true [1.41ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 6.612979888916016
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=240 substeps=1 reverse=false [3.39ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 6.612979888916016
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=240 substeps=1 reverse=true [1.32ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2182579040527344
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=60 substeps=4 reverse=false [2.91ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2182579040527344
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=60 substeps=4 reverse=true [1.87ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2182579040527344
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=240 substeps=4 reverse=false [1.37ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2182579040527344
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/20 e=1 hz=240 substeps=4 reverse=true [2.49ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.065954190034133
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=60 substeps=1 reverse=false [1.91ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.9730994884784403
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=60 substeps=1 reverse=true [13.61ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.065954190034133
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=240 substeps=1 reverse=false [2.25ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.9730994884784403
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=240 substeps=1 reverse=true [2.08ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5808265392596903
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=60 substeps=4 reverse=false [1.76ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1648490245525656
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=60 substeps=4 reverse=true [1.86ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5808131878192606
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=240 substeps=4 reverse=false [2.73ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1648275668804464
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0 hz=240 substeps=4 reverse=true [1.94ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.5175455533541164
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=1 reverse=false [1.35ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 5.656305459829477
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=1 reverse=true [3.19ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.5175455533541164
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=1 reverse=false [5.73ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 5.656305459829477
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=1 reverse=true [10.45ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.21058878531822778
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=4 reverse=false [2.46ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7849179781400242
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=4 reverse=true [2.11ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.21058783164391137
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=4 reverse=false [2.85ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7849351442777195
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=4 reverse=true [3.33ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1890968909630413
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=60 substeps=1 reverse=false [1.41ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 8.159356630765474
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=60 substeps=1 reverse=true [2.46ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1890968909630413
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=240 substeps=1 reverse=false [2.32ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 8.159356630765474
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=240 substeps=1 reverse=true [1.61ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.8821401229271526
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=60 substeps=4 reverse=false [1.41ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.287970579587496
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=60 substeps=4 reverse=true [1.52ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.882138692415678
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=240 substeps=4 reverse=false [1.18ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2879882225623493
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 5/1/20 e=1 hz=240 substeps=4 reverse=true [1.30ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.9730994884784403
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=60 substeps=1 reverse=false [2.88ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.065954190034133
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=60 substeps=1 reverse=true [2.34ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.9730994884784403
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=240 substeps=1 reverse=false [4.97ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.065954190034133
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=240 substeps=1 reverse=true [1.98ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1648490245525656
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=60 substeps=4 reverse=false [1.80ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5808265392596903
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=60 substeps=4 reverse=true [1.64ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1648275668804464
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=240 substeps=4 reverse=false [1.29ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.5808131878192606
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0 hz=240 substeps=4 reverse=true [1.69ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 5.656305459829477
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=1 reverse=false [4.07ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.5175455533541164
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=1 reverse=true [6.98ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 5.656305459829477
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=1 reverse=false [1.72ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 1.5175455533541164
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=1 reverse=true [1.51ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7849179781400242
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=4 reverse=false [1.44ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.21058878531822778
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=4 reverse=true [1.57ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.7849351442777195
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=4 reverse=false [3.14ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.21058783164391137
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=4 reverse=true [1.76ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 8.159356630765474
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=60 substeps=1 reverse=false [3.26ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1890968909630413
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=60 substeps=1 reverse=true [5.66ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 8.159356630765474
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=240 substeps=1 reverse=false [2.22ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 2.1890968909630413
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=240 substeps=1 reverse=true [1.59ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.287970579587496
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=60 substeps=4 reverse=false [1.58ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.8821401229271526
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=60 substeps=4 reverse=true [1.69ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 3.2879882225623493
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=240 substeps=4 reverse=false [1.54ms]
+27 |    const center=(1+e)*4*(ml-mr)/(ml+mc+mr);
+28 |    const target=[center,center,center-4*e,center+4*e];
+29 |    for(let step=0;step<hz/4;step++){
+30 |     w.step();
+31 |     const velocity=bodies.map(b=>b.linvel().x);
+32 |     for(let i=0;i<4;i++)expect(Math.abs(velocity[i]!-target[i]!)).toBeLessThan(.001);
+                                                                       ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.001
+Received: 0.882138692415678
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convergence-release/absolutejs/tests/coupled-mass-ratio.test.ts:32:67)
+(fail) coupled mass ratio 20/1/5 e=1 hz=240 substeps=4 reverse=true [1.63ms]
+
+ 0 pass
+ 72 fail
+ 144 expect() calls
+Ran 72 tests across 1 file. [1068.00ms]

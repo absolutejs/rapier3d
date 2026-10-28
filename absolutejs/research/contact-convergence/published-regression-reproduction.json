@@ -1,0 +1,7 @@
+{
+  "expectedFailure": true,
+  "exitCode": 1,
+  "publishedEngine": "@absolutejs/rapier3d@0.9.0",
+  "failingTests": 72,
+  "scope": "Added unequal-mass regressions must expose the prior published defect; this is not a release-candidate failure."
+}

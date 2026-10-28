@@ -15,3 +15,11 @@ Game evidence: `hello-world/docs/convergence-only-qualification-2026-10-28/`. It
 The 1/8/32-island benchmark records candidate median CPU step costs 0.62/2.48/7.87 ms (p95 1.06/4.09/17.65 ms). It is a deliberately difficult 20/1/20 kg collision, not a general scene forecast. Restricting iteration scope and preserving minimum configured counts is intentional. Do not describe the change as a speedup.
 
 Release metadata is being prepared for 0.10.0. Independent native rebuild, final archive audit and npm publication must be verified separately; this record does not assert publication or game adoption.
+
+## Final release qualification
+
+The independent build completed offline with two Cargo jobs and a separate target directory in 9m47s. `reproducibility.json` verifies identical packaged native bytes and all 48 distribution files. Raw executable/data sections are identical; only unshipped wasm-bindgen custom metadata differs. Source manifests differ only in README content.
+
+Final 0.10.0 API passes all 165 tests / 76,909 assertions and declaration contracts. GPU-disabled browser-worker qualification passes under the final identity. All 72 new unequal-mass regressions fail against published 0.9.0 as expected, confirming the regression fixtures expose the prior defect. Native build input/flag tests also pass.
+
+The exact audited npm archive is `.absolutejs/pack/absolutejs-rapier3d-0.10.0.tgz`, SHA256 `f0c5cd8904f08d3d87d9e1c6c14879fff3ab3ec3e8465b0dbd848be35a14f669`, SHA1 `59ad174b348ef8c37e3b86dbe16d2c82a4e7b7c8`. The archive audit verifies every distribution byte, embedded native payload, file allowlist, package exports and canonical README. Publication and installed game adoption are still separate gates.
