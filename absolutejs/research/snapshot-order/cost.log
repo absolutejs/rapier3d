@@ -1,0 +1,54 @@
+[
+  {
+    "assemblies": 1,
+    "bodies": 2,
+    "pairs": 12,
+    "warmups": 4,
+    "capturesPerMeasurement": 100,
+    "captureMedianPairedRatio": 1.0707164369309083,
+    "stepMedianPairedRatio": 1.1391598964412533,
+    "baselineStepMedianMs": 0.14044649999999592,
+    "candidateStepMedianMs": 0.15962000000001808,
+    "additionalMicrosecondsPerCapture": 0.7890800000001263,
+    "allPhysicalStatesExactlyMatch": true
+  },
+  {
+    "assemblies": 8,
+    "bodies": 16,
+    "pairs": 12,
+    "warmups": 4,
+    "capturesPerMeasurement": 100,
+    "captureMedianPairedRatio": 0.8760462390588706,
+    "stepMedianPairedRatio": 0.9889852721202401,
+    "baselineStepMedianMs": 0.23194300000000112,
+    "candidateStepMedianMs": 0.2567490000000703,
+    "additionalMicrosecondsPerCapture": -5.019850000000474,
+    "allPhysicalStatesExactlyMatch": true
+  },
+  {
+    "assemblies": 32,
+    "bodies": 64,
+    "pairs": 12,
+    "warmups": 4,
+    "capturesPerMeasurement": 100,
+    "captureMedianPairedRatio": 1.0781391312800777,
+    "stepMedianPairedRatio": 0.9683392471193188,
+    "baselineStepMedianMs": 0.44742849999994405,
+    "candidateStepMedianMs": 0.429913499999941,
+    "additionalMicrosecondsPerCapture": 4.331264999999576,
+    "allPhysicalStatesExactlyMatch": true
+  },
+  {
+    "assemblies": 128,
+    "bodies": 256,
+    "pairs": 12,
+    "warmups": 4,
+    "capturesPerMeasurement": 100,
+    "captureMedianPairedRatio": 1.1578276374538805,
+    "stepMedianPairedRatio": 1.3596811466478074,
+    "baselineStepMedianMs": 0.8241314999999076,
+    "candidateStepMedianMs": 0.9795345000001134,
+    "additionalMicrosecondsPerCapture": 26.255820000000085,
+    "allPhysicalStatesExactlyMatch": true
+  }
+]

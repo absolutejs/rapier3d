@@ -1,0 +1,584 @@
+{
+  "engine": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.16.0-snapshot-order-research.0",
+    "qualifiedKernelRelease": "unqualified-snapshot-order-research",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "8639aa4bc16710820fcfc99274e1065bdf9ebfba7e3b5a27acc41fa2bdb8ca5d",
+    "wasmBytes": 3357015,
+    "solverChanges": true
+  },
+  "engineApiSha256": "dc872533e1e9c09da5a662b53c95f6e97f06c0ccf021608e8f2a695f03e27708",
+  "sourceSha256": "962ba66e84fc2306ba333fd8cb544090f7a95522c4a4417f8e2e1cb68a92ab70",
+  "allSnapshotsExact": true,
+  "allPhysicalStatesExact": true,
+  "rows": [
+    {
+      "count": 1,
+      "phase": "fresh",
+      "round": 0,
+      "bytes": [
+        6230,
+        6230
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a",
+      "afterSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a"
+    },
+    {
+      "count": 1,
+      "phase": "fresh",
+      "round": 1,
+      "bytes": [
+        6230,
+        6230
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a",
+      "afterSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a"
+    },
+    {
+      "count": 1,
+      "phase": "fresh",
+      "round": 2,
+      "bytes": [
+        6230,
+        6230
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a",
+      "afterSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a"
+    },
+    {
+      "count": 1,
+      "phase": "fresh",
+      "round": 3,
+      "bytes": [
+        6230,
+        6230
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a",
+      "afterSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a"
+    },
+    {
+      "count": 1,
+      "phase": "fresh",
+      "round": 4,
+      "bytes": [
+        6230,
+        6230
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a",
+      "afterSha256": "6d5a302e8b1dda2b32d128a648d28b260085d47b97f180db92673cac0dbfba3a"
+    },
+    {
+      "count": 1,
+      "phase": "stepped",
+      "round": 0,
+      "bytes": [
+        9308,
+        9308
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47",
+      "afterSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47"
+    },
+    {
+      "count": 1,
+      "phase": "stepped",
+      "round": 1,
+      "bytes": [
+        9308,
+        9308
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47",
+      "afterSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47"
+    },
+    {
+      "count": 1,
+      "phase": "stepped",
+      "round": 2,
+      "bytes": [
+        9308,
+        9308
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47",
+      "afterSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47"
+    },
+    {
+      "count": 1,
+      "phase": "stepped",
+      "round": 3,
+      "bytes": [
+        9308,
+        9308
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47",
+      "afterSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47"
+    },
+    {
+      "count": 1,
+      "phase": "stepped",
+      "round": 4,
+      "bytes": [
+        9308,
+        9308
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47",
+      "afterSha256": "ff00d56a5b599ff38a89053fc94bcfe5ac166a26a9c2fae3aa790bdaf758cb47"
+    },
+    {
+      "count": 8,
+      "phase": "fresh",
+      "round": 0,
+      "bytes": [
+        37201,
+        37201
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163",
+      "afterSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163"
+    },
+    {
+      "count": 8,
+      "phase": "fresh",
+      "round": 1,
+      "bytes": [
+        37201,
+        37201
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163",
+      "afterSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163"
+    },
+    {
+      "count": 8,
+      "phase": "fresh",
+      "round": 2,
+      "bytes": [
+        37201,
+        37201
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163",
+      "afterSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163"
+    },
+    {
+      "count": 8,
+      "phase": "fresh",
+      "round": 3,
+      "bytes": [
+        37201,
+        37201
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163",
+      "afterSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163"
+    },
+    {
+      "count": 8,
+      "phase": "fresh",
+      "round": 4,
+      "bytes": [
+        37201,
+        37201
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163",
+      "afterSha256": "a2b23f1619e454095475428e773d630b5eb4adb5003fea6ce3cd2cc440b0a163"
+    },
+    {
+      "count": 8,
+      "phase": "stepped",
+      "round": 0,
+      "bytes": [
+        62234,
+        62234
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3",
+      "afterSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3"
+    },
+    {
+      "count": 8,
+      "phase": "stepped",
+      "round": 1,
+      "bytes": [
+        62234,
+        62234
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3",
+      "afterSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3"
+    },
+    {
+      "count": 8,
+      "phase": "stepped",
+      "round": 2,
+      "bytes": [
+        62234,
+        62234
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3",
+      "afterSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3"
+    },
+    {
+      "count": 8,
+      "phase": "stepped",
+      "round": 3,
+      "bytes": [
+        62234,
+        62234
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3",
+      "afterSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3"
+    },
+    {
+      "count": 8,
+      "phase": "stepped",
+      "round": 4,
+      "bytes": [
+        62234,
+        62234
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3",
+      "afterSha256": "699c32cf3c8489a5d40f693f9959bcc15b6ee5fa6a5b0c661b3057276d7bf9e3"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 0,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506",
+      "afterSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 1,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506",
+      "afterSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 2,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506",
+      "afterSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 3,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506",
+      "afterSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506"
+    },
+    {
+      "count": 32,
+      "phase": "fresh",
+      "round": 4,
+      "bytes": [
+        143449,
+        143449
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506",
+      "afterSha256": "d42f33176e9d04c7d1fbda59b23c733063810c700e66bc9dd85f08553791d506"
+    },
+    {
+      "count": 32,
+      "phase": "stepped",
+      "round": 0,
+      "bytes": [
+        243794,
+        243794
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea",
+      "afterSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea"
+    },
+    {
+      "count": 32,
+      "phase": "stepped",
+      "round": 1,
+      "bytes": [
+        243794,
+        243794
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea",
+      "afterSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea"
+    },
+    {
+      "count": 32,
+      "phase": "stepped",
+      "round": 2,
+      "bytes": [
+        243794,
+        243794
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea",
+      "afterSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea"
+    },
+    {
+      "count": 32,
+      "phase": "stepped",
+      "round": 3,
+      "bytes": [
+        243794,
+        243794
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea",
+      "afterSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea"
+    },
+    {
+      "count": 32,
+      "phase": "stepped",
+      "round": 4,
+      "bytes": [
+        243794,
+        243794
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea",
+      "afterSha256": "28c94046f9ca25f4236a46b5e2326ab3efbe61a733a21e09eaa9adb72feb3bea"
+    },
+    {
+      "count": 64,
+      "phase": "fresh",
+      "round": 0,
+      "bytes": [
+        285113,
+        285113
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44",
+      "afterSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44"
+    },
+    {
+      "count": 64,
+      "phase": "fresh",
+      "round": 1,
+      "bytes": [
+        285113,
+        285113
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44",
+      "afterSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44"
+    },
+    {
+      "count": 64,
+      "phase": "fresh",
+      "round": 2,
+      "bytes": [
+        285113,
+        285113
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44",
+      "afterSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44"
+    },
+    {
+      "count": 64,
+      "phase": "fresh",
+      "round": 3,
+      "bytes": [
+        285113,
+        285113
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44",
+      "afterSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44"
+    },
+    {
+      "count": 64,
+      "phase": "fresh",
+      "round": 4,
+      "bytes": [
+        285113,
+        285113
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44",
+      "afterSha256": "47a38bf16a581a3b3dc49c7e2337322164ae73514ce07ce91cb9b3576f669a44"
+    },
+    {
+      "count": 64,
+      "phase": "stepped",
+      "round": 0,
+      "bytes": [
+        485714,
+        485714
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598",
+      "afterSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598"
+    },
+    {
+      "count": 64,
+      "phase": "stepped",
+      "round": 1,
+      "bytes": [
+        485714,
+        485714
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598",
+      "afterSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598"
+    },
+    {
+      "count": 64,
+      "phase": "stepped",
+      "round": 2,
+      "bytes": [
+        485714,
+        485714
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598",
+      "afterSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598"
+    },
+    {
+      "count": 64,
+      "phase": "stepped",
+      "round": 3,
+      "bytes": [
+        485714,
+        485714
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598",
+      "afterSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598"
+    },
+    {
+      "count": 64,
+      "phase": "stepped",
+      "round": 4,
+      "bytes": [
+        485714,
+        485714
+      ],
+      "differenceCount": 0,
+      "differences": [],
+      "physicalExact": true,
+      "beforeSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598",
+      "afterSha256": "4d97955425abca59136781d250fb4915912045051e16f7334e1f91b804911598"
+    }
+  ]
+}

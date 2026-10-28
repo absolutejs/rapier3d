@@ -1,0 +1,726 @@
+{
+  "scope": "CPU pending-snapshot capture and first wake after joint removal; no rendering or FPS claim; step excludes restoration and serialization",
+  "rows": [
+    {
+      "assemblies": 1,
+      "bodies": 2,
+      "pairs": 12,
+      "warmups": 4,
+      "capturesPerMeasurement": 100,
+      "captureMedianPairedRatio": 1.0707164369309083,
+      "stepMedianPairedRatio": 1.1391598964412533,
+      "baselineStepMedianMs": 0.14044649999999592,
+      "candidateStepMedianMs": 0.15962000000001808,
+      "additionalMicrosecondsPerCapture": 0.7890800000001263,
+      "allPhysicalStatesExactlyMatch": true,
+      "samples": [
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 2.484053999999958,
+            "stepMs": 0.30942299999998113,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.7522869999999671,
+            "stepMs": 0.28966300000001866,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 1.4859920000000102,
+            "stepMs": 0.13983399999995072,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 1.6453779999999938,
+            "stepMs": 0.2304550000000063,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 0.7962390000000141,
+            "stepMs": 0.16236800000001494,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 1.463828000000035,
+            "stepMs": 0.17841800000002195,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 0.9583119999999781,
+            "stepMs": 0.19429999999999836,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 1.5347769999999628,
+            "stepMs": 0.3298089999999547,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 0.7472349999999892,
+            "stepMs": 0.23649599999998827,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.7610880000000293,
+            "stepMs": 0.27894000000003416,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 1.6016419999999698,
+            "stepMs": 0.14105900000004112,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.8372810000000186,
+            "stepMs": 0.17048600000003944,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 0.47659199999998236,
+            "stepMs": 0.09344600000002856,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.4928790000000163,
+            "stepMs": 0.14875399999999672,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 0.44253600000001825,
+            "stepMs": 0.2761239999999816,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.6988729999999919,
+            "stepMs": 0.12684600000000046,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 0.7443680000000086,
+            "stepMs": 0.07946300000003248,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.5511920000000146,
+            "stepMs": 0.08024999999997817,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 0.5733759999999961,
+            "stepMs": 0.05682699999999841,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.46513299999998026,
+            "stepMs": 0.035284000000046944,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 0.44418300000000954,
+            "stepMs": 0.036587999999994736,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 0.5857120000000009,
+            "stepMs": 0.06078000000002248,
+            "snapshotBytes": 3085
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 0.4224009999999794,
+            "stepMs": 0.07285300000000916,
+            "snapshotBytes": 3085
+          },
+          "candidate": {
+            "captureMs": 1.1216909999999984,
+            "stepMs": 0.06629799999996067,
+            "snapshotBytes": 3085
+          }
+        }
+      ]
+    },
+    {
+      "assemblies": 8,
+      "bodies": 16,
+      "pairs": 12,
+      "warmups": 4,
+      "capturesPerMeasurement": 100,
+      "captureMedianPairedRatio": 0.8760462390588706,
+      "stepMedianPairedRatio": 0.9889852721202401,
+      "baselineStepMedianMs": 0.23194300000000112,
+      "candidateStepMedianMs": 0.2567490000000703,
+      "additionalMicrosecondsPerCapture": -5.019850000000474,
+      "allPhysicalStatesExactlyMatch": true,
+      "samples": [
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 1.7233659999999418,
+            "stepMs": 0.23583100000007562,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 3.056976000000077,
+            "stepMs": 0.29297300000007453,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 3.069885999999997,
+            "stepMs": 0.1402420000000575,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 3.5280500000000075,
+            "stepMs": 0.24704700000006596,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 1.9040390000000116,
+            "stepMs": 0.22946699999999964,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 2.960757000000058,
+            "stepMs": 0.1856190000000879,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 3.503300999999965,
+            "stepMs": 0.2450779999999213,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 3.176533999999947,
+            "stepMs": 0.19387600000004568,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 3.4562100000000555,
+            "stepMs": 0.14935800000000654,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 1.2003949999999577,
+            "stepMs": 0.2718599999999469,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 3.852527000000009,
+            "stepMs": 0.2344190000000026,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 2.2429670000000215,
+            "stepMs": 0.21183600000006209,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 3.410857999999962,
+            "stepMs": 0.359059000000002,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 4.918968999999947,
+            "stepMs": 0.36335299999996096,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 2.8312690000000202,
+            "stepMs": 0.4919280000000299,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 4.163383000000067,
+            "stepMs": 0.2664510000000746,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 2.866659000000027,
+            "stepMs": 0.15034500000001572,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 1.1125879999999597,
+            "stepMs": 0.1452350000000706,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 4.379407000000015,
+            "stepMs": 0.1974759999999378,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 3.702203999999938,
+            "stepMs": 0.46574199999997745,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 3.653163999999947,
+            "stepMs": 0.33338500000002114,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 1.8053699999999253,
+            "stepMs": 0.5058619999999792,
+            "snapshotBytes": 11326
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 3.78111100000001,
+            "stepMs": 0.1440779999999222,
+            "snapshotBytes": 11326
+          },
+          "candidate": {
+            "captureMs": 1.8685100000000148,
+            "stepMs": 0.13007600000003094,
+            "snapshotBytes": 11326
+          }
+        }
+      ]
+    },
+    {
+      "assemblies": 32,
+      "bodies": 64,
+      "pairs": 12,
+      "warmups": 4,
+      "capturesPerMeasurement": 100,
+      "captureMedianPairedRatio": 1.0781391312800777,
+      "stepMedianPairedRatio": 0.9683392471193188,
+      "baselineStepMedianMs": 0.44742849999994405,
+      "candidateStepMedianMs": 0.429913499999941,
+      "additionalMicrosecondsPerCapture": 4.331264999999576,
+      "allPhysicalStatesExactlyMatch": true,
+      "samples": [
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 8.63573400000007,
+            "stepMs": 0.5525640000000749,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 5.963603000000035,
+            "stepMs": 0.4533010000000104,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 5.899001999999996,
+            "stepMs": 0.47092799999995805,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 7.484133000000043,
+            "stepMs": 0.711430000000064,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 15.582605999999942,
+            "stepMs": 0.2831580000000713,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 3.8310599999999795,
+            "stepMs": 0.3730990000000247,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 5.602346000000011,
+            "stepMs": 0.668769999999995,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 5.0081050000000005,
+            "stepMs": 0.5182640000000447,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 6.167587000000026,
+            "stepMs": 0.6410379999999805,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 6.3757739999999785,
+            "stepMs": 0.5149059999999963,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 4.836476999999945,
+            "stepMs": 1.1299830000000384,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 5.748618000000079,
+            "stepMs": 0.43675999999993564,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 7.878378999999995,
+            "stepMs": 0.42392899999993006,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 8.15912000000003,
+            "stepMs": 0.45931800000005296,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 5.238292000000001,
+            "stepMs": 0.3859579999999596,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 7.438788000000045,
+            "stepMs": 0.41180199999996603,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 4.39814100000001,
+            "stepMs": 0.3539050000000543,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 5.171435000000088,
+            "stepMs": 0.42306699999994635,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 3.331373999999869,
+            "stepMs": 0.25262100000009013,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 8.169496999999865,
+            "stepMs": 0.23557100000016362,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 4.853225000000066,
+            "stepMs": 0.7999750000001313,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 5.438736999999946,
+            "stepMs": 0.37147299999992356,
+            "snapshotBytes": 39646
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 5.921171000000186,
+            "stepMs": 0.38744599999995444,
+            "snapshotBytes": 39646
+          },
+          "candidate": {
+            "captureMs": 5.277499999999918,
+            "stepMs": 0.38906199999996716,
+            "snapshotBytes": 39646
+          }
+        }
+      ]
+    },
+    {
+      "assemblies": 128,
+      "bodies": 256,
+      "pairs": 12,
+      "warmups": 4,
+      "capturesPerMeasurement": 100,
+      "captureMedianPairedRatio": 1.1578276374538805,
+      "stepMedianPairedRatio": 1.3596811466478074,
+      "baselineStepMedianMs": 0.8241314999999076,
+      "candidateStepMedianMs": 0.9795345000001134,
+      "additionalMicrosecondsPerCapture": 26.255820000000085,
+      "allPhysicalStatesExactlyMatch": true,
+      "samples": [
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 18.67771000000016,
+            "stepMs": 0.5604699999998957,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 12.34046699999999,
+            "stepMs": 1.046891000000187,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 15.955288999999993,
+            "stepMs": 1.4831289999999626,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 15.04084899999998,
+            "stepMs": 2.1056550000000698,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 19.184995999999956,
+            "stepMs": 0.6353129999999965,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 17.950272999999925,
+            "stepMs": 1.1109050000000025,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 26.755374000000074,
+            "stepMs": 1.0155749999998989,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 13.833433999999897,
+            "stepMs": 1.5405849999999646,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 15.517847999999958,
+            "stepMs": 0.8374879999998939,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 19.342229999999972,
+            "stepMs": 0.9121780000000399,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 22.957815999999866,
+            "stepMs": 1.6239660000001095,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 26.19590100000005,
+            "stepMs": 0.4928730000001451,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 19.669701000000032,
+            "stepMs": 0.8107749999999214,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 13.085904999999912,
+            "stepMs": 0.4841469999998935,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 11.593568000000005,
+            "stepMs": 0.5471090000000913,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 26.28419299999996,
+            "stepMs": 0.7110359999999218,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 14.541531999999961,
+            "stepMs": 0.730310000000145,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 17.080633000000034,
+            "stepMs": 1.6004760000000715,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 12.72235499999988,
+            "stepMs": 1.106988999999885,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 25.9198879999999,
+            "stepMs": 0.47977400000013404,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "baseline-first",
+          "baseline": {
+            "captureMs": 11.116629999999986,
+            "stepMs": 0.5948480000001837,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 13.82869299999993,
+            "stepMs": 1.0970339999998941,
+            "snapshotBytes": 152926
+          }
+        },
+        {
+          "order": "candidate-first",
+          "baseline": {
+            "captureMs": 12.453506999999945,
+            "stepMs": 2.08716000000004,
+            "snapshotBytes": 152926
+          },
+          "candidate": {
+            "captureMs": 22.30394799999999,
+            "stepMs": 0.6796899999999368,
+            "snapshotBytes": 152926
+          }
+        }
+      ]
+    }
+  ],
+  "engines": [
+    {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.16.0",
+      "qualifiedKernelRelease": "0.16.0",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "fb44e31fd971a0577889408a95266ab1e61d9293a1f6657647ca51417b93c83d",
+      "wasmBytes": 3324606,
+      "solverChanges": true,
+      "apiSha256": "1aac9e8e9a3664574d7ad6357acf593059955d8b471506b2ee7fe4b2f70fa580"
+    },
+    {
+      "schemaVersion": 1,
+      "scope": "package",
+      "packageName": "@absolutejs/rapier3d",
+      "packageVersion": "0.16.0-snapshot-order-research.0",
+      "qualifiedKernelRelease": "unqualified-snapshot-order-research",
+      "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+      "engine": "0.36.0",
+      "collisionLibraryVersion": "0.31.1",
+      "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+      "bindings": "0.21.0",
+      "bindgen": "0.2.129",
+      "wasmSha256": "8639aa4bc16710820fcfc99274e1065bdf9ebfba7e3b5a27acc41fa2bdb8ca5d",
+      "wasmBytes": 3357015,
+      "solverChanges": true,
+      "apiSha256": "dc872533e1e9c09da5a662b53c95f6e97f06c0ccf021608e8f2a695f03e27708"
+    }
+  ],
+  "sourceSha256": "fd19a64f6ac246f23038d1f427797630baa5b77e9425395dfb06fe1ee5a570a2"
+}

@@ -55,3 +55,27 @@ All 19 broader assembly/topology tests pass; the existing comparator verifies
 against the retained baseline. `build-pressure-check.json` records Linux memory
 and filesystem headroom for the bounded two-job build; it is not a Windows/GPU
 health measurement. WASM/browser and cost qualification are now in progress.
+
+## Private WASM and measured cost
+
+The candidate WASM passes all 223 package tests (86,811 assertions), public
+declaration checks and the GPU-disabled browser worker, including eight exact
+sleeping-wake replay steps. Both original probes now pass: all 40 immediate
+roundtrips and all eight sleeping-body replay steps are byte-exact, with equal
+public body states. Packaged native SHA-256 is
+`8639aa4bc16710820fcfc99274e1065bdf9ebfba7e3b5a27acc41fa2bdb8ca5d`
+(3,357,015 bytes). The first build log records the expected qualification-guard
+rejection before updating the explicitly private manifest.
+
+The CPU benchmark uses 12 alternating pairs after four warmups at 1/8/32/128
+assemblies. Physical first-wake results match 0.16.0 exactly throughout. At the
+largest case (256 released bodies), observed median first-step time is 0.824 ms
+baseline and 0.980 ms candidate; median paired ratio is 1.36. Pending snapshot
+capture adds about 26.3 microseconds per capture there (paired ratio 1.16).
+Smaller cases are noisy; their complete samples, including apparent speedups,
+are retained without claiming a general speedup. Step timing excludes explicit
+restore/serialization calls but includes normal VM effects. This is a bounded
+host CPU workload, not hardware FPS or a general frame budget.
+
+Independent rebuilds and full game qualification remain pending. The kernel is
+still private and unqualified for a public release.

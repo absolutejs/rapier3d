@@ -1,0 +1,24 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/snapshot-order.test.ts:
+(pass) queued wake snapshot/replay impulse count=1 sleeping=false [38.37ms]
+(pass) queued wake snapshot/replay impulse count=1 sleeping=true [18.54ms]
+(pass) queued wake snapshot/replay impulse count=8 sleeping=false [20.41ms]
+(pass) queued wake snapshot/replay impulse count=8 sleeping=true [28.77ms]
+(pass) queued wake snapshot/replay impulse count=32 sleeping=false [49.15ms]
+(pass) queued wake snapshot/replay impulse count=32 sleeping=true [46.47ms]
+(pass) queued wake snapshot/replay impulse count=64 sleeping=false [66.37ms]
+(pass) queued wake snapshot/replay impulse count=64 sleeping=true [98.49ms]
+(pass) queued wake snapshot/replay multibody count=1 sleeping=false [19.76ms]
+(pass) queued wake snapshot/replay multibody count=1 sleeping=true [14.20ms]
+(pass) queued wake snapshot/replay multibody count=8 sleeping=false [43.34ms]
+(pass) queued wake snapshot/replay multibody count=8 sleeping=true [79.91ms]
+(pass) queued wake snapshot/replay multibody count=32 sleeping=false [85.56ms]
+(pass) queued wake snapshot/replay multibody count=32 sleeping=true [76.71ms]
+(pass) queued wake snapshot/replay multibody count=64 sleeping=false [137.37ms]
+(pass) queued wake snapshot/replay multibody count=64 sleeping=true [118.03ms]
+
+ 16 pass
+ 0 fail
+ 144 expect() calls
+Ran 16 tests across 1 file. [1310.00ms]
