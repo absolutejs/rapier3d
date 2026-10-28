@@ -22,3 +22,21 @@ The isolated published-source baseline now independently reproduces the failure
 is byte-identical to b113d14. All five corrected tests pass with published Parry
 c566aabd (`controls-test.log`). Run `--test predictive-support` for the positive
 suite; `--test baseline-support` is deliberately failing historical evidence.
+
+## Initial isolated browser/game gates
+
+The native WASM build succeeds in 6m28s. All 236 package tests pass (86,879
+assertions), including nine public-API regression tests covering three scales,
+both collider insertion orders, nonapproaching controls and exact snapshot
+replay. The GPU-disabled browser worker passes six support-patch/replay cases
+alongside the existing physics qualification. Public probe: the published engine
+retains only three solver points on one edge from eight geometric contacts;
+this isolated candidate retains four points spanning both sides.
+
+The first archive command lacked the output directory; its failed receipt is
+retained. The script now creates that directory. Audited archive SHA-256:
+`badfff5ed31cb317fa0d70243d0127c990e2f28330b3448e002492b6275b59b6`.
+All 53 installed game files match. No new rejections occur in 24 paired terrain
+cases. All four generated/excavated work cases and 18 flat-floor tree cases pass.
+Physical results change in some cases; no universal improvement is asserted.
+Full game, cost, feature and independent rebuild qualification remain pending.
