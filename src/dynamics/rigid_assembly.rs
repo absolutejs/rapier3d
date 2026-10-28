@@ -1,4 +1,4 @@
-//! Private force-free fixed-assembly integration experiment.
+//! Private fixed-assembly integration with no external loads except uniform gravity.
 use crate::dynamics::rigid_midpoint::{
     bounded_rigid_rotation_step, cross, normalized, rotate, MidpointError,
 };
@@ -14,6 +14,7 @@ pub(crate) struct FreeAssemblyState {
     root_com: V,
     center_world: V,
     velocity: V,
+    acceleration: V,
     rotation: [f64; 4],
     angular_velocity: V,
     principal: V,
@@ -29,6 +30,7 @@ impl FreeAssemblyState {
         root_com: Vector,
         pose: Pose,
         velocity: RigidBodyVelocity<Real>,
+        acceleration: Vector,
     ) -> Option<Self> {
         if !props.mass().is_finite() || props.mass() <= 0.0 {
             return None;
@@ -57,6 +59,7 @@ impl FreeAssemblyState {
             root_com,
             center_world,
             velocity,
+            acceleration: acceleration.to_array().map(|x| x as f64),
             rotation,
             angular_velocity,
             principal: props.principal_inertia().to_array().map(|x| x as f64),
@@ -66,6 +69,7 @@ impl FreeAssemblyState {
             .center_world
             .iter()
             .chain(result.velocity.iter())
+            .chain(result.acceleration.iter())
             .chain(result.principal.iter())
             .all(|x| x.is_finite())
         {
@@ -97,7 +101,10 @@ impl FreeAssemblyState {
         if speed(next.angular_velocity) > maximum_speed {
             return Err(MidpointError::RotationLimit);
         }
-        let center: V = core::array::from_fn(|i| self.center_world[i] + dt * self.velocity[i]);
+        // Preserve the native kick-then-drift convention for uniform gravity.
+        // Angular motion is torque-free about the aggregate center of mass.
+        let velocity: V = core::array::from_fn(|i| self.velocity[i] + dt * self.acceleration[i]);
+        let center: V = core::array::from_fn(|i| self.center_world[i] + dt * velocity[i]);
         let offset = rotate(next.rotation, self.center_local);
         let root_offset = rotate(
             next.rotation,
@@ -107,7 +114,7 @@ impl FreeAssemblyState {
         let position =
             Vector::from_array(core::array::from_fn(|i| (center[i] - offset[i]) as Real));
         let linear = Vector::from_array(core::array::from_fn(|i| {
-            (self.velocity[i] + angular_shift[i]) as Real
+            (velocity[i] + angular_shift[i]) as Real
         }));
         let angular = Vector::from_array(next.angular_velocity.map(|x| x as Real));
         let rotation = next.rotation.map(|x| x as Real);
@@ -119,6 +126,7 @@ impl FreeAssemblyState {
             return Err(MidpointError::NonFinite);
         }
         self.center_world = center;
+        self.velocity = velocity;
         self.rotation = next.rotation;
         self.angular_velocity = next.angular_velocity;
         Ok(FreeAssemblyStep {

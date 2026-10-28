@@ -350,7 +350,7 @@ fn excluded_assembly_paths_preserve_controls() {
         "fast",
         "force",
         "torque",
-        "gravity",
+        "differential-gravity",
         "armature",
         "friction",
         "spring",
@@ -388,7 +388,10 @@ fn excluded_assembly_paths_preserve_controls() {
             "fast" => world.bodies[bodies[root]].set_allow_fast_rotation(true),
             "force" => world.bodies[bodies[root]].add_force(Vector::X, true),
             "torque" => world.bodies[bodies[root]].add_torque(Vector::Y, true),
-            "gravity" => world.gravity = Vector::new(0.0, -9.81, 0.0),
+            "differential-gravity" => {
+                world.gravity = Vector::new(0.0, -9.81, 0.0);
+                world.bodies[bodies[0]].set_gravity_scale(0.5, true);
+            }
             "locked" => world.bodies[bodies[root]].lock_rotations(true, true),
             "external-joint" => {
                 let pose = *world.bodies[bodies[root]].position();
@@ -630,5 +633,189 @@ fn aggregate_trajectory_converges_to_independently_refined_rk4() {
             #[cfg(feature = "candidate")]
             assert!(pair[1].3 < pair[0].3 * 0.35 + 1e-5);
         }
+    }
+}
+
+#[test]
+fn uniform_gravity_preserves_spin_and_native_linear_step_convention() {
+    let mut maxima = [0.0_f64; 5];
+    let mut cases = 0;
+    for scale in [0.01, 1.0, 100.0] {
+        for root in 0..3 {
+            for hz in [60, 240] {
+                for substeps in [1, 4] {
+                    for gravity_scale in [0.5, 1.0] {
+                        let (mut world, bodies, handle) = fixture(scale, root, 0.0, true);
+                        world.integration_parameters.dt = 1.0 / hz as f32;
+                        world.integration_parameters.num_solver_iterations = substeps;
+                        world.gravity = Vector::new(0.0, -9.81 * scale, 0.0);
+                        for h in &bodies {
+                            world.bodies[*h].set_gravity_scale(gravity_scale, true);
+                        }
+                        world.physics_pipeline.counters.enable();
+                        let root_center = center_of(&world.bodies[bodies[root]]);
+                        let v = Vector::new(0.3, -0.2, 0.1) * scale;
+                        let w = Vector::new(2.0, -3.0, 4.0);
+                        let (mb, _) = world.multibody_joints.get_mut(handle).unwrap();
+                        mb.damping_mut().fill(0.0);
+                        mb.generalized_velocity_mut().as_mut_slice()[..3]
+                            .copy_from_slice(&v.to_array());
+                        mb.generalized_velocity_mut().as_mut_slice()[3..6]
+                            .copy_from_slice(&w.to_array());
+                        let (mass, c0, p0, l0, e0) =
+                            quantities(&world, &bodies, Some((vec(v), vec(w), root_center)));
+                        let spin0 = e0 - norm(p0).powi(2) / (2.0 * mass);
+                        assert!(spin0 > 0.0);
+                        let acceleration = vec(world.gravity * gravity_scale);
+                        let h = (world.integration_parameters.dt / substeps as f32) as f64;
+                        let mut errors = [0.0_f64; 5];
+                        let mut counts = [0usize; 4];
+                        for step in 1..=hz {
+                            world.step();
+                            let (_, c, p, l, e) = quantities(&world, &bodies, None);
+                            let k = (step * substeps) as f64;
+                            let time = k * h;
+                            let expected_p: V =
+                                core::array::from_fn(|i| p0[i] + mass * acceleration[i] * time);
+                            let expected_c: V = core::array::from_fn(|i| {
+                                c0[i]
+                                    + p0[i] / mass * time
+                                    + 0.5 * acceleration[i] * h * h * k * (k + 1.0)
+                            });
+                            let spin = e - norm(p).powi(2) / (2.0 * mass);
+                            let work: f64 = (0..3)
+                                .map(|i| {
+                                    p0[i] * acceleration[i] * time
+                                        + 0.5
+                                            * mass
+                                            * acceleration[i]
+                                            * acceleration[i]
+                                            * time
+                                            * time
+                                })
+                                .sum();
+                            let values = [
+                                norm(difference(p, expected_p)) / (mass * scale as f64),
+                                norm(difference(l, l0)) / norm(l0),
+                                (spin / spin0 - 1.0).abs(),
+                                norm(difference(c, expected_c)) / scale as f64,
+                                ((e - e0 - work) / e0).abs(),
+                            ];
+                            for i in 0..5 {
+                                assert!(values[i].is_finite());
+                                errors[i] = errors[i].max(values[i]);
+                            }
+                            for i in 0..4 {
+                                counts[i] += assembly_counts(&world)[i];
+                            }
+                        }
+                        println!("AGGREGATE_GRAVITY root={root} scale={scale} hz={hz} substeps={substeps} gravity_scale={gravity_scale} errors={errors:?} counts={counts:?}");
+                        #[cfg(feature = "candidate")]
+                        {
+                            assert_eq!(counts, [hz * substeps, 0, 0, 0]);
+                            assert!(errors.iter().all(|x| *x < 1e-4));
+                        }
+                        for i in 0..5 {
+                            maxima[i] = maxima[i].max(errors[i]);
+                        }
+                        cases += 1;
+                    }
+                }
+            }
+        }
+    }
+    assert_eq!(cases, 72);
+    println!("AGGREGATE_GRAVITY_SUMMARY cases={cases} errors={maxima:?}");
+}
+
+#[test]
+fn changing_uniform_gravity_rebuilds_cached_acceleration() {
+    for root in 0..3 {
+        let (mut world, bodies, handle) = fixture(1.0, root, 0.0, true);
+        world.integration_parameters.dt = 1.0 / 120.0;
+        world.integration_parameters.num_solver_iterations = 4;
+        world.physics_pipeline.counters.enable();
+        let v = Vector::new(0.3, -0.2, 0.1);
+        let w = Vector::new(2.0, -3.0, 4.0);
+        let root_center = center_of(&world.bodies[bodies[root]]);
+        let (mb, _) = world.multibody_joints.get_mut(handle).unwrap();
+        mb.damping_mut().fill(0.0);
+        mb.generalized_velocity_mut().as_mut_slice()[..3].copy_from_slice(&v.to_array());
+        mb.generalized_velocity_mut().as_mut_slice()[3..6].copy_from_slice(&w.to_array());
+        let (mass, mut expected_center, initial_p, initial_l, initial_e) =
+            quantities(&world, &bodies, Some((vec(v), vec(w), root_center)));
+        let initial_spin = initial_e - norm(initial_p).powi(2) / (2.0 * mass);
+        let mut expected_velocity = initial_p.map(|x| x / mass);
+        let h = (world.integration_parameters.dt / 4.0) as f64;
+        let mut maxima = [0.0_f64; 4];
+        for step in 0..72 {
+            world.gravity = match (step / 12) % 3 {
+                0 => Vector::new(0.0, -9.81, 0.0),
+                1 => Vector::new(3.0, 0.0, -2.0),
+                _ => Vector::ZERO,
+            };
+            let gravity_scale = [1.0, 0.0, -0.5, 2.0][(step / 6) % 4];
+            for body in &bodies { world.bodies[*body].set_gravity_scale(gravity_scale, true); }
+            let acceleration = vec(world.gravity * gravity_scale);
+            for _ in 0..4 {
+                for i in 0..3 {
+                    expected_velocity[i] += acceleration[i] * h;
+                    expected_center[i] += expected_velocity[i] * h;
+                }
+            }
+            world.step();
+            let (_, center, momentum, angular, energy) = quantities(&world, &bodies, None);
+            let spin = energy - norm(momentum).powi(2) / (2.0 * mass);
+            let errors = [
+                norm(difference(momentum.map(|x| x / mass), expected_velocity)),
+                norm(difference(center, expected_center)),
+                norm(difference(angular, initial_l)) / norm(initial_l),
+                (spin / initial_spin - 1.0).abs(),
+            ];
+            for i in 0..4 { assert!(errors[i].is_finite()); maxima[i] = maxima[i].max(errors[i]); }
+            #[cfg(feature = "candidate")]
+            { assert_eq!(assembly_counts(&world), [4, 0, 0, 0]); assert!(errors.iter().all(|x| *x < 1e-4)); }
+        }
+        println!("AGGREGATE_GRAVITY_SWITCH root={root} errors={maxima:?}");
+    }
+}
+
+#[test]
+fn separating_all_links_preserves_instantaneous_motion() {
+    for root in 0..3 {
+        let (mut world, bodies, handle) = fixture(1.0, root, 0.0, true);
+        world.integration_parameters.dt = 1.0 / 120.0;
+        world.integration_parameters.num_solver_iterations = 4;
+        world.physics_pipeline.counters.enable();
+        let (mb, _) = world.multibody_joints.get_mut(handle).unwrap();
+        mb.damping_mut().fill(0.0);
+        mb.generalized_velocity_mut().as_mut_slice()[..6]
+            .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
+        for _ in 0..24 { world.step(); }
+        let before: Vec<_> = bodies.iter().map(|h| {
+            let rb = &world.bodies[*h];
+            (*rb.position(), rb.linvel(), rb.angvel())
+        }).collect();
+        let (mass, c0, p0, l0, e0) = quantities(&world, &bodies, None);
+        world.multibody_joints.remove_joints_attached_to_rigid_body(bodies[root]);
+        for (i, h) in bodies.iter().enumerate() {
+            assert!(world.multibody_joints.rigid_body_link(*h).is_none());
+            let rb = &world.bodies[*h];
+            assert_eq!((*rb.position(), rb.linvel(), rb.angvel()), before[i]);
+        }
+        let mut maxima = [0.0_f64; 4];
+        for step in 1..=120 {
+            world.step();
+            assert_eq!(assembly_counts(&world), [0; 4]);
+            let (_, c, p, l, e) = quantities(&world, &bodies, None);
+            let t = step as f64 * world.integration_parameters.dt as f64;
+            let expected: V = core::array::from_fn(|i| c0[i] + p0[i] / mass * t);
+            let errors = [norm(difference(p, p0)) / norm(p0),
+                norm(difference(l, l0)) / norm(l0), (e / e0 - 1.0).abs(),
+                norm(difference(c, expected))];
+            for i in 0..4 { assert!(errors[i].is_finite()); maxima[i] = maxima[i].max(errors[i]); }
+            assert!(errors.iter().all(|x| *x < 1e-4));
+        }
+        println!("AGGREGATE_DETACH root={root} errors={maxima:?}");
     }
 }

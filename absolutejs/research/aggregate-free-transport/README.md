@@ -106,3 +106,21 @@ versus matching double-precision integration differs by at most 3.984e-6 rad;
 that storage difference is not the total physical trajectory error. This check
 uses the native stored aggregate tensor, whose reconstruction error is measured
 separately above. It does not prove arbitrary-contact trajectory accuracy.
+
+## Uniform gravity extension (private, qualification in progress)
+
+The candidate now admits uniform gravity only when every link has the same
+finite gravity scale, no user force or torque, and the effective native force
+exactly matches the native gravity calculation. Differential gravity remains
+excluded. The historical exclusion logs above tested the earlier zero-gravity
+scope; new paired logs are required for the expanded admission rule.
+
+All 72 initial gravity cases passed: three scales, three roots, two rates,
+one/four substeps and gravity scales 0.5/1. Maximum normalized momentum error
+was 6.107e-6, relative angular-momentum error 2.020e-6, relative spin-energy
+error 2.933e-6, scale-normalized COM error 3.853e-6, and normalized gravity-work
+residual 1.253e-5. The linear oracle deliberately uses the native semi-implicit
+kick-then-drift convention; this is not exact continuous falling position or
+a second-order linear integrator. Spin and angular momentum are measured about
+the moving aggregate COM. Source remains private and has not been adopted by
+the game or released to npm.

@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib,json,math,re,sys
 root=Path(__file__).resolve().parent
 candidate=Path(sys.argv[1]) if len(sys.argv)>1 else root/'root-order-controls.log'
+baseline=Path(sys.argv[2]) if len(sys.argv)>2 else root/'baseline-expanded.log'
 def read(path):
  text=path.read_text();assert 'test result: FAILED' not in text and 'error:' not in text
  free={};controls={}
@@ -12,8 +13,8 @@ def read(path):
   key=(m[1],m[2]);assert key not in controls;controls[key]=json.loads(m[3])
  assert len(free)==36 and len(controls)==386,(len(free),len(controls))
  return free,controls
-a,ac=read(root/'baseline-expanded.log');b,bc=read(candidate)
+a,ac=read(baseline);b,bc=read(candidate)
 assert a.keys()==b.keys() and ac==bc,'Excluded/rejected physical state changed'
 assert all(b[k][i]<a[k][i] for k in a for i in range(4)), 'A free-case metric did not improve'
-result={'scope':'private force-free fixed-assembly native experiment','baselineSource':'06b02e8c7220b779723e904e930c100901a1c253','freeCases':36,'excludedOrRejectedStates':386,'allExcludedPoseAndVelocityBitsIdentical':True,'allFreeMetricsImprove':True,'metrics':{name:{'baselineMaximum':max(v[i] for v in a.values()),'candidateMaximum':max(v[i] for v in b.values())} for i,name in enumerate(['relativeLinearMomentum','relativeAngularMomentum','relativeEnergy','comErrorDividedByScale'])},'baselineLogSha256':hashlib.sha256((root/'baseline-expanded.log').read_bytes()).hexdigest(),'candidateLogSha256':hashlib.sha256(candidate.read_bytes()).hexdigest(),'scriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
+result={'scope':'private force-free fixed-assembly native experiment','baselineSource':'06b02e8c7220b779723e904e930c100901a1c253','freeCases':36,'excludedOrRejectedStates':386,'allExcludedPoseAndVelocityBitsIdentical':True,'allFreeMetricsImprove':True,'metrics':{name:{'baselineMaximum':max(v[i] for v in a.values()),'candidateMaximum':max(v[i] for v in b.values())} for i,name in enumerate(['relativeLinearMomentum','relativeAngularMomentum','relativeEnergy','comErrorDividedByScale'])},'baselineLogSha256':hashlib.sha256(baseline.read_bytes()).hexdigest(),'candidateLogSha256':hashlib.sha256(candidate.read_bytes()).hexdigest(),'scriptSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
 print(json.dumps(result,indent=2))

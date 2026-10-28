@@ -1,0 +1,152 @@
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d)
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-aggregate-transport-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-aggregate-free-transport-research v0.0.0 (/home/alexkahn/alex/rapier-aggregate-transport-research/absolutejs/research/aggregate-free-transport)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.58s
+     Running tests/aggregate_frame.rs (.cache/aggregate-target/debug/deps/aggregate_frame-810cfe430c87a5b4)
+
+running 1 test
+test uniform_gravity_preserves_spin_and_native_linear_step_convention ... AGGREGATE_GRAVITY root=0 scale=0.01 hz=60 substeps=1 gravity_scale=0.5 errors=[1.890289763886348e-6, 5.49055583553782e-7, 4.564723565803064e-7, 1.0757679932481804e-6, 5.359479561758264e-7] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=60 substeps=1 gravity_scale=1 errors=[1.958219509758538e-6, 5.757370769765673e-7, 5.163505847338712e-7, 1.0088377604420374e-6, 8.935824852041811e-7] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=60 substeps=4 gravity_scale=0.5 errors=[2.8633925519664842e-6, 4.481848843034505e-7, 5.878222160138336e-7, 1.0373851321950497e-6, 5.954594991422105e-7] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=60 substeps=4 gravity_scale=1 errors=[2.038124824295876e-6, 6.306608698219365e-7, 5.47319143451297e-7, 7.558844265259772e-7, 9.786967341454509e-7] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=240 substeps=1 gravity_scale=0.5 errors=[2.4023668055780037e-6, 1.709346204100374e-6, 2.2615846837492626e-6, 1.0287235113664854e-6, 7.072745827247034e-7] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=240 substeps=1 gravity_scale=1 errors=[3.5234062318023095e-6, 1.6983756777327355e-6, 2.3542422498135096e-6, 1.0303812594810912e-6, 3.5259352616202194e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=240 substeps=4 gravity_scale=0.5 errors=[2.7228229965086187e-6, 1.1355520832797327e-6, 1.1376145678809735e-6, 1.0878726032056933e-6, 6.689663410917627e-7] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=0.01 hz=240 substeps=4 gravity_scale=1 errors=[2.574549159238279e-6, 1.227139285447223e-6, 1.1888251170155684e-6, 2.0029465716772892e-6, 1.8018762895395923e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=60 substeps=1 gravity_scale=0.5 errors=[2.520951837036774e-6, 8.500680731686145e-7, 8.712241221786599e-7, 1.2102493986188725e-6, 8.374255069268494e-7] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=60 substeps=1 gravity_scale=1 errors=[2.881480949726091e-6, 8.763533169705753e-7, 8.636049619870079e-7, 1.1101995767410328e-6, 2.3719585544840252e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=60 substeps=4 gravity_scale=0.5 errors=[2.894898534245773e-6, 7.774322999727206e-7, 6.586345948633721e-7, 1.5396776747637592e-6, 1.8169792287157536e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=60 substeps=4 gravity_scale=1 errors=[4.735361534403402e-6, 8.60185787205313e-7, 6.586345948633721e-7, 1.5662295877714287e-6, 2.393272750108501e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=240 substeps=1 gravity_scale=0.5 errors=[4.207588084753556e-6, 1.3741479279348309e-6, 1.706580548876957e-6, 2.3970327652858912e-6, 2.1196095836839085e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=240 substeps=1 gravity_scale=1 errors=[4.749660508313331e-6, 1.405980059709204e-6, 1.7390752142798505e-6, 2.467774845658448e-6, 5.1993315762387825e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=240 substeps=4 gravity_scale=0.5 errors=[3.941934149465714e-6, 1.2723865940331075e-6, 1.3355416155214073e-6, 3.0269396951495346e-6, 2.724600592500874e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=0.01 hz=240 substeps=4 gravity_scale=1 errors=[4.023938864764715e-6, 1.2885935128693512e-6, 1.3582214832830175e-6, 3.163024911329072e-6, 3.4810220298417623e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=60 substeps=1 gravity_scale=0.5 errors=[1.3101472699923895e-6, 6.54391810977644e-7, 8.98932621895554e-7, 7.755725014663462e-7, 1.2302681270291473e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=60 substeps=1 gravity_scale=1 errors=[2.1858165313725054e-6, 7.874043398676218e-7, 8.247648146664233e-7, 1.138617947628778e-6, 4.4068162711463785e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=60 substeps=4 gravity_scale=0.5 errors=[1.0701958865205878e-6, 7.183678292227064e-7, 8.081773665846725e-7, 3.961911098828728e-7, 1.3180814855937286e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=60 substeps=4 gravity_scale=1 errors=[2.101266362843244e-6, 7.617020916748821e-7, 8.622635627730801e-7, 7.218587120787751e-7, 5.884211946455284e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=240 substeps=1 gravity_scale=0.5 errors=[4.0513302121939735e-6, 1.7870948109998466e-6, 2.409555133420227e-6, 2.407194153290164e-6, 7.078782736562254e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=240 substeps=1 gravity_scale=1 errors=[4.122481545849488e-6, 2.019419786872113e-6, 2.8570923653603586e-6, 3.852610163944166e-6, 1.1949880252726882e-5] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=240 substeps=4 gravity_scale=0.5 errors=[5.128247891213589e-6, 1.4930156088682719e-6, 1.3176141313575584e-6, 3.004531693946806e-6, 3.955685242484298e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=0.01 hz=240 substeps=4 gravity_scale=1 errors=[6.015502720421682e-6, 1.5022495323672723e-6, 1.375581114571034e-6, 3.0740938579906935e-6, 1.1289396025778909e-5] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=60 substeps=1 gravity_scale=0.5 errors=[2.3448358435350094e-6, 5.165902385499576e-7, 6.00538595629807e-7, 1.2035199285393811e-6, 6.338669730186826e-7] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=60 substeps=1 gravity_scale=1 errors=[2.823539312224262e-6, 6.732718695128739e-7, 5.45596221313005e-7, 1.1631529028649875e-6, 1.789479941581286e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=60 substeps=4 gravity_scale=0.5 errors=[2.823924837570656e-6, 4.4222920080207696e-7, 5.913474968588517e-7, 1.363152290905946e-6, 5.604239210631157e-7] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=60 substeps=4 gravity_scale=1 errors=[3.3671261175624647e-6, 4.838869811662551e-7, 5.432503926705579e-7, 1.3824856500358347e-6, 1.0757964349561413e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=240 substeps=1 gravity_scale=0.5 errors=[2.6213353931721334e-6, 1.6518401080738041e-6, 2.2224987548113972e-6, 8.966886060773768e-7, 1.189102534958935e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=240 substeps=1 gravity_scale=1 errors=[4.093190778438201e-6, 1.6965542583898627e-6, 2.3161713582631194e-6, 1.851751724913042e-6, 3.04897179432619e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=240 substeps=4 gravity_scale=0.5 errors=[2.794287660311649e-6, 8.625618255208568e-7, 1.05335692413e-6, 1.3871464662035338e-6, 9.807682669416894e-7] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=1 hz=240 substeps=4 gravity_scale=1 errors=[3.427007354507147e-6, 8.81643374159132e-7, 1.0723921277655535e-6, 1.0613684854972393e-6, 2.709210618880386e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=60 substeps=1 gravity_scale=0.5 errors=[1.7901316696586139e-6, 6.273891975175748e-7, 6.139412855876714e-7, 5.80445050134659e-7, 8.742185323093701e-7] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=60 substeps=1 gravity_scale=1 errors=[2.070095847511427e-6, 1.02907665866067e-6, 8.810444610540813e-7, 6.229508765136851e-7, 2.120768452226912e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=60 substeps=4 gravity_scale=0.5 errors=[2.896733741213122e-6, 7.593463746913712e-7, 6.928480074108734e-7, 1.3358755912079354e-6, 1.3387042365808017e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=60 substeps=4 gravity_scale=1 errors=[3.560231067370285e-6, 8.181223182925654e-7, 6.928480074108734e-7, 1.523628896700066e-6, 3.1938883033755643e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=240 substeps=1 gravity_scale=0.5 errors=[4.023621807407671e-6, 1.63434726067313e-6, 1.8214491728230087e-6, 2.3070050788791432e-6, 2.584747118454377e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=240 substeps=1 gravity_scale=1 errors=[4.774565637222829e-6, 1.8842834951078278e-6, 2.002685512314528e-6, 1.5330893406158438e-6, 4.582480661368438e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=240 substeps=4 gravity_scale=0.5 errors=[4.177021638518556e-6, 1.0049219992316618e-6, 1.2129649618053406e-6, 1.268056937047553e-6, 3.206613231023099e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=1 hz=240 substeps=4 gravity_scale=1 errors=[3.6635855785040413e-6, 1.2000952012006219e-6, 1.3269912757518654e-6, 2.087331110341191e-6, 3.2042379478825845e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=60 substeps=1 gravity_scale=0.5 errors=[1.9034667179989537e-6, 6.021388917097958e-7, 7.595168465268642e-7, 9.343654300754056e-7, 2.7453565261318666e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=60 substeps=1 gravity_scale=1 errors=[2.6083483688660647e-6, 6.362473848980224e-7, 8.048273105742965e-7, 1.4906339838847908e-6, 6.525651586898564e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=60 substeps=4 gravity_scale=0.5 errors=[1.0093023219307718e-6, 4.6857380470296874e-7, 6.133386778461869e-7, 5.025284087657711e-7, 1.1230415714021687e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=60 substeps=4 gravity_scale=1 errors=[1.4318737313920864e-6, 7.251194501451093e-7, 6.133386778461869e-7, 1.3336828569787096e-6, 2.288293789078132e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=240 substeps=1 gravity_scale=0.5 errors=[2.3709351299035147e-6, 1.3009667087665268e-6, 2.0609064974586033e-6, 1.0909541389303114e-6, 4.917745403167652e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=240 substeps=1 gravity_scale=1 errors=[3.776562374079733e-6, 1.4190512608692319e-6, 2.177702910000079e-6, 1.8401936248814809e-6, 1.2524160831430257e-5] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=240 substeps=4 gravity_scale=0.5 errors=[3.7967428900714387e-6, 1.5518677468091916e-6, 1.5718504424722113e-6, 2.478118159006312e-6, 3.802427767420343e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=1 hz=240 substeps=4 gravity_scale=1 errors=[3.8660628201838844e-6, 1.5246744281773454e-6, 1.6202082722127642e-6, 2.549497193538531e-6, 3.7384957659419227e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=60 substeps=1 gravity_scale=0.5 errors=[4.491630644126821e-6, 6.917730989748063e-7, 5.724454099631515e-7, 1.5992244494552124e-6, 1.8022475421646932e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=60 substeps=1 gravity_scale=1 errors=[4.062121148494826e-6, 6.980526271733338e-7, 4.335247043574242e-7, 1.6538519570380956e-6, 3.905975529095732e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=60 substeps=4 gravity_scale=0.5 errors=[2.856063679470518e-6, 6.016214636207358e-7, 6.607640656852709e-7, 1.2931875389460133e-6, 9.090619198913721e-7] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=60 substeps=4 gravity_scale=1 errors=[3.5131793142726644e-6, 8.10228840976507e-7, 6.65796729526491e-7, 1.2829439696872728e-6, 1.0525747342514628e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=240 substeps=1 gravity_scale=0.5 errors=[2.853049357475825e-6, 1.7195371931073544e-6, 2.094122961926459e-6, 1.367823930856326e-6, 1.0334743940285935e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=240 substeps=1 gravity_scale=1 errors=[3.6040330436933437e-6, 1.7199835331566193e-6, 2.12823985412669e-6, 1.5297469679457817e-6, 2.8910727218873333e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=240 substeps=4 gravity_scale=0.5 errors=[2.535390131403158e-6, 1.005547999921009e-6, 1.2648879517129785e-6, 6.408280104412699e-7, 1.1692590449869736e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=0 scale=100 hz=240 substeps=4 gravity_scale=1 errors=[3.6750619718020627e-6, 1.085696826144295e-6, 1.3202759039376843e-6, 6.202427724262747e-7, 3.0008814987304253e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=60 substeps=1 gravity_scale=0.5 errors=[3.3837258496055036e-6, 9.878966852369545e-7, 7.656097964492403e-7, 1.1035168872404956e-6, 2.3272424472000246e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=60 substeps=1 gravity_scale=1 errors=[3.021585397919824e-6, 8.492168202501651e-7, 7.955569765183412e-7, 1.0379042833113897e-6, 2.0023390999682526e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=60 substeps=4 gravity_scale=0.5 errors=[3.4885361554154863e-6, 8.79033993181314e-7, 7.29155649747959e-7, 2.1459877029399774e-6, 2.272698407061723e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=60 substeps=4 gravity_scale=1 errors=[4.642615156485285e-6, 8.428337411545973e-7, 6.701700603350957e-7, 2.7796779178000875e-6, 5.445652210824366e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=240 substeps=1 gravity_scale=0.5 errors=[4.564268392267564e-6, 1.6393846960422463e-6, 2.2395678191955426e-6, 3.0108071646478783e-6, 2.6621277980863403e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=240 substeps=1 gravity_scale=1 errors=[5.707022670372658e-6, 1.7882095786741689e-6, 2.453664567081404e-6, 2.9800488200284717e-6, 6.987156326710365e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=240 substeps=4 gravity_scale=0.5 errors=[4.7214403522858474e-6, 1.3192059409054854e-6, 1.3126976146082825e-6, 1.6846927581280846e-6, 3.248295757978747e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=1 scale=100 hz=240 substeps=4 gravity_scale=1 errors=[6.10669773487446e-6, 1.3189284749134945e-6, 1.315845563842899e-6, 2.860311777047521e-6, 2.4347607716024624e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=60 substeps=1 gravity_scale=0.5 errors=[9.087566280567703e-7, 6.043179250817667e-7, 8.46943026822089e-7, 3.2297592675891933e-7, 1.352263248485144e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=60 substeps=1 gravity_scale=1 errors=[1.1596149812541083e-6, 5.131806566350226e-7, 6.842533377682258e-7, 2.4932892692368815e-7, 3.1527407034128763e-6] counts=[60, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=60 substeps=4 gravity_scale=0.5 errors=[1.074865208930335e-6, 7.709495324572038e-7, 7.405048461084363e-7, 4.945623129986353e-7, 1.13500730929635e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=60 substeps=4 gravity_scale=1 errors=[2.0070416990026493e-6, 9.09855556632042e-7, 7.596720090763398e-7, 1.783539701241693e-6, 4.910941525159453e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=240 substeps=1 gravity_scale=0.5 errors=[2.271237657981681e-6, 1.6614182017609407e-6, 2.57516122692536e-6, 1.9734086946187495e-6, 3.607300370899525e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=240 substeps=1 gravity_scale=1 errors=[2.6241936629625605e-6, 1.8397238467350643e-6, 2.93242215843037e-6, 1.8223009834054158e-6, 5.845732507337625e-6] counts=[240, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=240 substeps=4 gravity_scale=0.5 errors=[3.1945878123818337e-6, 1.1165944089484699e-6, 1.3652662784746639e-6, 1.8370433441401942e-6, 4.291317464049995e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY root=2 scale=100 hz=240 substeps=4 gravity_scale=1 errors=[3.670874201933163e-6, 1.3224567406747994e-6, 1.474083740404808e-6, 1.369820112053317e-6, 7.807151748243023e-6] counts=[960, 0, 0, 0]
+AGGREGATE_GRAVITY_SUMMARY cases=72 errors=[6.10669773487446e-6, 2.019419786872113e-6, 2.93242215843037e-6, 3.852610163944166e-6, 1.2524160831430257e-5]
+ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 6 filtered out; finished in 62.58s
+

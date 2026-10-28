@@ -1291,10 +1291,10 @@ impl Multibody {
         self.velocities.rows_mut(0, self.ndofs)
     }
 
-    /// Admits only an unforced floating rigid assembly; global contact/joint
+    /// Admits only a floating rigid assembly under uniform gravity; global contact/joint
     /// isolation is checked by the staged solver before calling this method.
     #[cfg(feature = "dim3")]
-    pub(crate) fn free_assembly_state(&self, bodies: &RigidBodySet) -> Option<crate::dynamics::rigid_assembly::FreeAssemblyState> {
+    pub(crate) fn free_assembly_state(&self, bodies: &RigidBodySet, gravity: Vector) -> Option<crate::dynamics::rigid_assembly::FreeAssemblyState> {
         use parry::mass_properties::MassProperties;
         if !self.root_is_dynamic || self.ndofs != SPATIAL_DIM || self.links.len() < 2
             || self.links[0].joint.ndofs() != SPATIAL_DIM
@@ -1302,6 +1302,9 @@ impl Multibody {
             || self.armature.iter().any(|v| *v != 0.0)
             || self.frictions.iter().any(|v| *v != 0.0)
             || !self.couplings.is_empty() { return None; }
+        let gravity_scale = bodies[self.links[0].rigid_body].gravity_scale();
+        let acceleration = gravity * gravity_scale;
+        if !gravity_scale.is_finite() || !acceleration.is_finite() { return None; }
         let mut relative = vec![Pose::IDENTITY; self.links.len()];
         let mut props = Vec::with_capacity(self.links.len());
         for (i, link) in self.links.iter().enumerate() {
@@ -1309,7 +1312,10 @@ impl Multibody {
             if !rb.is_dynamic() || rb.is_sleeping() || !rb.locked_axes().is_empty()
                 || rb.is_fast_rotation_allowed() || !rb.gyroscopic_forces_enabled()
                 || rb.linear_damping() != 0.0 || rb.angular_damping() != 0.0
-                || rb.forces.force != Vector::ZERO || rb.forces.torque != AngVector::ZERO
+                || rb.gravity_scale() != gravity_scale
+                || rb.forces.user_force != Vector::ZERO || rb.forces.user_torque != AngVector::ZERO
+                || rb.forces.torque != AngVector::ZERO
+                || rb.forces.force != gravity * rb.mprops.effective_mass() * gravity_scale
                 || link.joint.kinematic || (i != 0 && link.joint.ndofs() != 0)
                 || link.joint.spring_stiffness.iter().any(|v| *v != 0.0)
                 || !link.joint.data.motor_axes.is_empty() || !link.joint.data.limit_axes.is_empty()
@@ -1323,7 +1329,7 @@ impl Multibody {
             self.links[0].local_to_world, RigidBodyVelocity {
                 linvel: Vector::from_slice(&self.velocities.as_slice()[0..DIM]),
                 angvel: AngVector::from_slice(&self.velocities.as_slice()[DIM..SPATIAL_DIM]),
-            })
+            }, acceleration)
     }
 
     #[cfg(feature = "dim3")]

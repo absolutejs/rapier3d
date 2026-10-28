@@ -122,12 +122,12 @@ impl VelocitySolver {
     }
 
     #[cfg(feature = "dim3")]
-    pub(super) fn prepare_free_assemblies(&mut self, isolated: bool, bodies: &RigidBodySet, multibodies: &MultibodyJointSet) {
+    pub(super) fn prepare_free_assemblies(&mut self, isolated: bool, gravity: crate::math::Vector, bodies: &RigidBodySet, multibodies: &MultibodyJointSet) {
         self.free_assemblies.clear();
         self.free_assembly_counts = [0; 4];
         for link in &self.multibody_roots {
             let state = if isolated {
-                multibodies.get_multibody(link.multibody).and_then(|mb| mb.free_assembly_state(bodies))
+                multibodies.get_multibody(link.multibody).and_then(|mb| mb.free_assembly_state(bodies, gravity))
             } else { None };
             self.free_assemblies.push(state);
         }

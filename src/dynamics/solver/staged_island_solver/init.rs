@@ -622,7 +622,7 @@ impl StagedIslandSolver {
             graph.len() == 0 && joint_indices.is_empty() && self.soft_constraints.is_empty()
                 && { #[cfg(feature = "fem")] { self.soft_fem.is_empty() }
                      #[cfg(not(feature = "fem"))] { true } },
-            bodies, multibodies,
+            gravity, bodies, multibodies,
         );
 
         let ctx = SharedCtx {
