@@ -1,0 +1,378 @@
+{
+  "engine": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.15.0-split-research.0",
+    "qualifiedKernelRelease": "unqualified-assembly-split-research",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "cdf83632d41702d8ec9c9e579f539d8ad7aea08eeb91c37e3f0abcd5a14ab91b",
+    "wasmBytes": 3317627,
+    "solverChanges": true
+  },
+  "engineApiSha256": "62933563fde7ad647d92f626d748980d3a67a629f2c1458f31575bc2f3319302",
+  "roundtripExact": true,
+  "beforeSha256": "fe932dc23c65aca47166d83b2a446820fc1fdc4c72a2334d4cdc70ee18c88250",
+  "roundtripSha256": "fe932dc23c65aca47166d83b2a446820fc1fdc4c72a2334d4cdc70ee18c88250",
+  "allPhysicalStatesExact": true,
+  "allSnapshotsExact": false,
+  "rows": [
+    {
+      "step": 1,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 1.7994206714529923e-7,
+      "energyError": 1.1135342092849498e-8
+    },
+    {
+      "step": 2,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 5.195680942276442e-7,
+      "energyError": 3.4072924481876044e-9
+    },
+    {
+      "step": 3,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.441634227187802e-7,
+      "energyError": 8.548997065815911e-9
+    },
+    {
+      "step": 4,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 3.3787621402125453e-7,
+      "energyError": 3.887702959559647e-8
+    },
+    {
+      "step": 5,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.8691142741049796e-7,
+      "energyError": 2.7987014927788323e-8
+    },
+    {
+      "step": 6,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 5.373108270132053e-7,
+      "energyError": 3.468453591004561e-8
+    },
+    {
+      "step": 7,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 7.921804447366746e-7,
+      "energyError": 3.9755255087925434e-8
+    },
+    {
+      "step": 8,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 4.782788941537022e-7,
+      "energyError": 1.626097589912945e-8
+    },
+    {
+      "step": 9,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 5.863826583206563e-7,
+      "energyError": 8.240778570645091e-8
+    },
+    {
+      "step": 10,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 6.754688046762416e-7,
+      "energyError": 1.0324981203346795e-7
+    },
+    {
+      "step": 11,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 3.736173900351744e-7,
+      "energyError": 4.3077359457299735e-8
+    },
+    {
+      "step": 12,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 3.0803377375478594e-7,
+      "energyError": 1.2160538265248988e-7
+    },
+    {
+      "step": 13,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 7.210054523959764e-7,
+      "energyError": 1.4787385360648386e-7
+    },
+    {
+      "step": 14,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 1.7754871613986446e-7,
+      "energyError": 6.238393357449468e-8
+    },
+    {
+      "step": 15,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 3.766820696877811e-7,
+      "energyError": 3.7584012124725064e-8
+    },
+    {
+      "step": 16,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.430154666142243e-7,
+      "energyError": 1.1890026030414447e-7
+    },
+    {
+      "step": 17,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.682860933162105e-7,
+      "energyError": 1.5589204682697755e-7
+    },
+    {
+      "step": 18,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.7093478465668976e-7,
+      "energyError": 1.7214120529018828e-7
+    },
+    {
+      "step": 19,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 4.985879531792277e-7,
+      "energyError": 1.4014301141784813e-7
+    },
+    {
+      "step": 20,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.8403919695113403e-7,
+      "energyError": 1.384941787918592e-7
+    },
+    {
+      "step": 21,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.4183902992829e-7,
+      "energyError": 1.3095902340332088e-7
+    },
+    {
+      "step": 22,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 4.4244388333333673e-7,
+      "energyError": 8.728110612032935e-8
+    },
+    {
+      "step": 23,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 6.065692236103328e-7,
+      "energyError": 7.735975726674837e-8
+    },
+    {
+      "step": 24,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 1.232804001721912e-7,
+      "energyError": 1.3212658722672188e-7
+    },
+    {
+      "step": 25,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 6.389904570633807e-7,
+      "energyError": 3.394540804002588e-8
+    },
+    {
+      "step": 26,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 5.140344360806433e-7,
+      "energyError": 1.1115857989629774e-7
+    },
+    {
+      "step": 27,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 3.184334315390629e-7,
+      "energyError": 8.427419562195837e-8
+    },
+    {
+      "step": 28,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 3.956758426977967e-7,
+      "energyError": 6.189129497791157e-8
+    },
+    {
+      "step": 29,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 1.8904804591285216e-7,
+      "energyError": 8.911002047362615e-8
+    },
+    {
+      "step": 30,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.3569402325283097e-7,
+      "energyError": 6.77512437263772e-8
+    },
+    {
+      "step": 31,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 1.686741204332085e-7,
+      "energyError": 1.1513880782132446e-7
+    },
+    {
+      "step": 32,
+      "snapshotExact": false,
+      "physicalExact": true,
+      "bytes": [
+        10652,
+        10708
+      ],
+      "momentumError": 2.7521034694049686e-7,
+      "energyError": 1.4199559261740546e-7
+    }
+  ]
+}

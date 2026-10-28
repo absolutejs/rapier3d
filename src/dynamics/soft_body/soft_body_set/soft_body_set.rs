@@ -12,6 +12,7 @@ use parry::utils::hashmap::HashMap;
 /// Deferred island-connectivity event emitted by [`SoftBodySet`] on insertion, removal and
 /// attachment changes, drained at the start of the next step.
 #[derive(Copy, Clone, Debug)]
+#[cfg_attr(feature = "serde-serialize", derive(Serialize, Deserialize))]
 pub(crate) struct SoftBodyIslandEvent {
     /// The soft body whose attachment links must be updated (relinked if it still exists,
     /// unlinked otherwise).

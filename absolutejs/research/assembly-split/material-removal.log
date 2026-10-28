@@ -1,0 +1,18 @@
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d)
+error[E0432]: unresolved import `crate::dynamics::soft_body::SoftBodyIslandEvent`
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/dynamics/pending_island_events.rs:3:5
+   |
+ 3 | use crate::dynamics::soft_body::SoftBodyIslandEvent;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^-------------------
+   |     |                           |
+   |     |                           help: a similar name exists in the module: `SoftBodyTearEvent`
+   |     no `SoftBodyIslandEvent` in `dynamics::soft_body`
+   |
+note: struct `crate::dynamics::soft_body::soft_body_set::SoftBodyIslandEvent` exists but is inaccessible
+  --> /home/alexkahn/alex/rapier-assembly-split-research/crates/rapier3d/../../src/dynamics/soft_body/soft_body_set/soft_body_set.rs:16:1
+   |
+16 | pub(crate) struct SoftBodyIslandEvent {
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ not accessible
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `rapier3d` (lib) due to 1 previous error

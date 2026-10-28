@@ -1,0 +1,11 @@
+{
+  "scope": "current Linux environment; not a Windows/GPU health assessment",
+  "utc": "2026-10-28T16:46:53.933919+00:00",
+  "nativeBuildJobs": 2,
+  "memory": {
+    "MemTotal": "22547236 kB",
+    "MemAvailable": "12756356 kB",
+    "SwapTotal": "33554432 kB",
+    "SwapFree": "30713468 kB"
+  }
+}

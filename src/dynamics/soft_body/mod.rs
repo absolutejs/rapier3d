@@ -22,6 +22,7 @@ pub use self::soft_body_material::SoftBodyMaterial;
 pub use self::soft_body_motion::SoftParticleAttachment;
 pub use self::soft_body_plasticity::SoftEdgePlasticFlow;
 pub use self::soft_body_set::SoftBodySet;
+pub(crate) use self::soft_body_set::SoftBodyIslandEvent;
 pub use self::soft_body_volume::SoftVolumePiece;
 
 pub(crate) use self::soft_body::SOFT_BODY_OVERFLOW_COLOR;

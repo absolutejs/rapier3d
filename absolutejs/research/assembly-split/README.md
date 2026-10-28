@@ -67,3 +67,36 @@ browser worker now includes a prepared partial-split momentum and 32-step exact
 replay check. Both the SDK and browser additions await the new private WASM
 build; the production correction remains 13 added/three removed lines in one
 native source file, including explanatory comments.
+
+## Pending connectivity snapshot defect
+
+The first private WASM build passed damping retention and fixed-to-dynamic
+activation, but failed the strict post-cut snapshot replay test. Both this build
+and published 0.15.0 reproduce the mismatch: snapshot roundtrip before stepping
+is exact and all public body states match for 32 replay steps, but the serialized
+island bookkeeping differs after stepping. The published build also loses the
+motion as recorded above. Raw captures and measurements are retained in
+`snapshot-candidate/` and `snapshot-published-0150/`; these are failures, not
+successful exact replay qualifications.
+
+The native joint sets omit pending connectivity queues from their ordinary
+serialization. A cut made before saving therefore disappears from the restored
+event stream while the old island graph remains serialized. The candidate adds
+an opaque `PendingIslandEvents` companion and a versioned SDK snapshot envelope
+(`ABSJS3DS`, little-endian version 1). It preserves ordered multibody, impulse
+joint and soft-body connectivity events plus dirty impulse-joint handles. It
+does not flush edits or scan/reconstruct the entire world during capture.
+Historical raw captures remain readable for investigation; missing historical
+events cannot be recovered. Every new save uses the canonical envelope. The
+implementation and new strict tests await WASM qualification.
+
+## Remaining material removal failure
+
+A separate test removes each actual body from a rotating four-body chain and
+measures momentum, angular momentum, energy and COM of the remaining material.
+Immediate remaining poses/velocities are exact. Removing body 2 exceeds the
+predeclared 1e-4 relative angular-momentum bound over 120 steps (3.2152e-4).
+`material-removal-corrected.log` retains this strict failure; the earlier
+`material-removal.log` records an import visibility compile error. This does not
+invalidate the narrower joint-cut results, but blocks a claim of fully qualified
+material-removal conservation. Investigation is pending; the bound is unchanged.

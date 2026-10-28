@@ -58,10 +58,10 @@ pub struct ImpulseJointSet {
     /// Joints accessed mutably since the last timestep: their enabled status may have changed,
     /// so their island links are refreshed by [`Self::flush_modified_joints`].
     #[cfg_attr(feature = "serde-serialize", serde(skip))]
-    modified_joints: Vec<ImpulseJointHandle>,
+    pub(crate) modified_joints: Vec<ImpulseJointHandle>,
     /// Set by [`Self::iter_mut`]: every joint counts as modified.
     #[cfg_attr(feature = "serde-serialize", serde(skip))]
-    all_joints_modified: bool,
+    pub(crate) all_joints_modified: bool,
     /// Bumped by every mutation that can affect the solver's joint constraint assembly (joint
     /// insertion/removal, mutable joint access, user-changes to a rigid-body with attached joints).
     /// The solver reuses its joint assembly while this, the joint list, and the island epoch are unchanged.

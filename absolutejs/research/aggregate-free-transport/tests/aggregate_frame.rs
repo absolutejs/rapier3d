@@ -1076,8 +1076,14 @@ fn split_keeps_surviving_root_generalized_properties() {
     mb.armature_mut().as_mut_slice().copy_from_slice(&armature);
     mb.frictions_mut().as_mut_slice().copy_from_slice(&friction);
     mb.add_dof_coupling(rapier3d::dynamics::MultibodyDofCoupling {
-        link1: 0, dof1: 0, axis1: 0, link2: 0, dof2: 1, axis2: 1,
-        coeff: 2.0, offset: 0.0,
+        link1: 0,
+        dof1: 0,
+        axis1: 0,
+        link2: 0,
+        dof2: 1,
+        axis2: 1,
+        coeff: 2.0,
+        offset: 0.0,
     });
     mb.generalized_velocity_mut()
         .as_mut_slice()
@@ -1109,19 +1115,39 @@ fn split_keeps_surviving_root_generalized_properties() {
     assert_eq!(mb.damping().as_slice(), damping);
     assert_eq!(mb.armature().as_slice(), armature);
     assert_eq!(mb.frictions().as_slice(), friction);
-    assert_eq!(mb.couplings().len(),1);
-    let coupling=mb.couplings()[0];
-    assert_eq!((coupling.link1,coupling.dof1,coupling.axis1,coupling.link2,coupling.dof2,coupling.axis2), (0,0,0,0,1,1));
-    assert_eq!((coupling.coeff,coupling.offset),(2.0,0.0));
+    assert_eq!(mb.couplings().len(), 1);
+    let coupling = mb.couplings()[0];
+    assert_eq!(
+        (
+            coupling.link1,
+            coupling.dof1,
+            coupling.axis1,
+            coupling.link2,
+            coupling.dof2,
+            coupling.axis2
+        ),
+        (0, 0, 0, 0, 1, 1)
+    );
+    assert_eq!((coupling.coeff, coupling.offset), (2.0, 0.0));
     world.step();
     let mb = world.multibody_joints.get_multibody(index).unwrap();
     assert_eq!(mb.damping().as_slice(), damping);
     assert_eq!(mb.armature().as_slice(), armature);
     assert_eq!(mb.frictions().as_slice(), friction);
-    assert_eq!(mb.couplings().len(),1);
-    let coupling=mb.couplings()[0];
-    assert_eq!((coupling.link1,coupling.dof1,coupling.axis1,coupling.link2,coupling.dof2,coupling.axis2), (0,0,0,0,1,1));
-    assert_eq!((coupling.coeff,coupling.offset),(2.0,0.0));
+    assert_eq!(mb.couplings().len(), 1);
+    let coupling = mb.couplings()[0];
+    assert_eq!(
+        (
+            coupling.link1,
+            coupling.dof1,
+            coupling.axis1,
+            coupling.link2,
+            coupling.dof2,
+            coupling.axis2
+        ),
+        (0, 0, 0, 0, 1, 1)
+    );
+    assert_eq!((coupling.coeff, coupling.offset), (2.0, 0.0));
 }
 
 #[test]
@@ -1157,5 +1183,92 @@ fn fixed_to_dynamic_root_preserves_prescribed_world_com_velocity() {
         );
         assert!(errors.iter().all(|x| *x < 1e-5));
         assert_eq!(assembly_counts(&world), [4, 0, 0, 0]);
+    }
+}
+
+#[test]
+fn removing_chain_material_preserves_remaining_motion() {
+    for removed in 0..4 {
+        let mut world = PhysicsWorld::new();
+        world.gravity = Vector::ZERO;
+        world.integration_parameters.dt = 1.0 / 120.0;
+        world.integration_parameters.num_solver_iterations = 4;
+        world.physics_pipeline.counters.enable();
+        let bodies: Vec<_> = (0..4)
+            .map(|i| {
+                let mass = (i + 1) as f32;
+                world.bodies.insert(
+                    RigidBodyBuilder::dynamic()
+                        .can_sleep(false)
+                        .translation(Vector::new(i as f32, 0.0, 0.0))
+                        .additional_mass_properties(MassProperties::with_principal_inertia_frame(
+                            Vector::new(0.1, 0.05, -0.02) * mass,
+                            mass,
+                            Vector::new(0.2, 0.3, 0.4) * mass,
+                            Rotation::IDENTITY,
+                        )),
+                )
+            })
+            .collect();
+        let joints: Vec<_> = (0..3)
+            .map(|i| {
+                world
+                    .multibody_joints
+                    .insert(
+                        bodies[i],
+                        bodies[i + 1],
+                        FixedJointBuilder::new().local_anchor1(Vector::X).build(),
+                        true,
+                    )
+                    .unwrap()
+            })
+            .collect();
+        world.step();
+        let (mb, _) = world.multibody_joints.get_mut(joints[0]).unwrap();
+        mb.damping_mut().fill(0.0);
+        mb.generalized_velocity_mut()
+            .as_mut_slice()
+            .copy_from_slice(&[0.3, -0.2, 0.1, 2.0, -3.0, 4.0]);
+        for _ in 0..24 {
+            world.step();
+        }
+        let remaining: Vec<_> = bodies
+            .iter()
+            .enumerate()
+            .filter_map(|(i, h)| if i != removed { Some(*h) } else { None })
+            .collect();
+        let before: Vec<_> = remaining
+            .iter()
+            .map(|h| {
+                let b = &world.bodies[*h];
+                (*b.position(), b.linvel(), b.angvel())
+            })
+            .collect();
+        let (mass, c0, p0, l0, e0) = quantities(&world, &remaining, None);
+        assert!(world.remove_body(bodies[removed]).is_some());
+        for (i, h) in remaining.iter().enumerate() {
+            let b = &world.bodies[*h];
+            assert_eq!((*b.position(), b.linvel(), b.angvel()), before[i]);
+        }
+        let mut maxima = [0.0_f64; 4];
+        for step in 1..=120 {
+            world.step();
+            let (_, c, p, l, e) = quantities(&world, &remaining, None);
+            let time = step as f64 * world.integration_parameters.dt as f64;
+            let expected: V = core::array::from_fn(|i| c0[i] + p0[i] / mass * time);
+            let errors = [
+                norm(difference(p, p0)) / norm(p0),
+                norm(difference(l, l0)) / norm(l0),
+                (e / e0 - 1.0).abs(),
+                norm(difference(c, expected)),
+            ];
+            for i in 0..4 {
+                assert!(errors[i].is_finite());
+                maxima[i] = maxima[i].max(errors[i]);
+            }
+            assert_eq!(assembly_counts(&world), [4, 0, 0, 0]);
+        }
+        println!("REMOVED_MATERIAL index={removed} errors={maxima:?}");
+        assert!(maxima.iter().all(|x| *x < 1e-4));
     }
 }

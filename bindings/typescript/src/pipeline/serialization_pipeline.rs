@@ -7,7 +7,7 @@ use crate::math::RawVector;
 use js_sys::Uint8Array;
 use rapier::dynamics::{
     ImpulseJointSet, IntegrationParameters, IslandManager, MultibodyJointSet, RigidBodySet,
-    SoftBodySet,
+    SoftBodySet, PendingIslandEvents,
 };
 use rapier::geometry::{ColliderSet, DefaultBroadPhase, NarrowPhase};
 use rapier::math::Vector;
@@ -40,6 +40,22 @@ struct DeserializableWorld {
     multibody_joints: MultibodyJointSet,
     #[serde(default)]
     soft_bodies: SoftBodySet,
+}
+
+// Versioned envelope: raw world bytes alone omit pending connectivity edits.
+const SNAPSHOT_MAGIC: &[u8; 8] = b"ABSJS3DS";
+const SNAPSHOT_VERSION: u32 = 1;
+
+#[derive(Serialize)]
+struct SerializableSnapshot<'a> {
+    world: SerializableWorld<'a>,
+    pending_islands: PendingIslandEvents,
+}
+
+#[derive(Deserialize)]
+struct DeserializableSnapshot {
+    world: DeserializableWorld,
+    pending_islands: PendingIslandEvents,
 }
 
 #[wasm_bindgen]
@@ -134,13 +150,34 @@ impl RawSerializationPipeline {
             multibody_joints: &multibody_joints.0,
             soft_bodies: &soft_bodies.0,
         };
-        let snap = bincode::serialize(&to_serialize).ok()?;
+        let payload = bincode::serialize(&SerializableSnapshot {
+            world: to_serialize,
+            pending_islands: PendingIslandEvents::capture(
+                &impulse_joints.0, &multibody_joints.0, &soft_bodies.0,
+            ),
+        }).ok()?;
+        let mut snap = Vec::with_capacity(12 + payload.len());
+        snap.extend_from_slice(SNAPSHOT_MAGIC);
+        snap.extend_from_slice(&SNAPSHOT_VERSION.to_le_bytes());
+        snap.extend_from_slice(&payload);
         Some(Uint8Array::from(&snap[..]))
     }
 
     pub fn deserializeAll(&self, data: Uint8Array) -> Option<RawDeserializedWorld> {
         let data = data.to_vec();
-        let d: DeserializableWorld = bincode::deserialize(&data[..]).ok()?;
+        let (mut d, pending) = if data.starts_with(SNAPSHOT_MAGIC) {
+            let version = u32::from_le_bytes(data.get(8..12)?.try_into().ok()?);
+            if version != SNAPSHOT_VERSION { return None; }
+            let snapshot: DeserializableSnapshot = bincode::deserialize(&data[12..]).ok()?;
+            (snapshot.world, Some(snapshot.pending_islands))
+        } else {
+            // Read prior raw captures for diagnostics. Missing pending edits in
+            // that historical format cannot be recovered; all new saves use v1.
+            (bincode::deserialize::<DeserializableWorld>(&data[..]).ok()?, None)
+        };
+        if let Some(pending) = pending {
+            pending.restore(&mut d.impulse_joints, &mut d.multibody_joints, &mut d.soft_bodies);
+        }
         Some(RawDeserializedWorld {
             gravity: Some(RawVector(d.gravity)),
             integrationParameters: Some(RawIntegrationParameters(d.integration_parameters)),

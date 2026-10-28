@@ -58,3 +58,8 @@ mod soft_body;
 mod rigid_midpoint;
 #[cfg(feature = "dim3")]
 mod rigid_assembly;
+
+#[cfg(feature = "alloc")]
+mod pending_island_events;
+#[cfg(feature = "alloc")]
+pub use self::pending_island_events::PendingIslandEvents;
