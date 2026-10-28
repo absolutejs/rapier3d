@@ -30,6 +30,9 @@ impl FreeAssemblyState {
         pose: Pose,
         velocity: RigidBodyVelocity<Real>,
     ) -> Option<Self> {
+        if !props.mass().is_finite() || props.mass() <= 0.0 {
+            return None;
+        }
         let rotation = normalized(pose.rotation.to_array().map(|x| x as f64)).ok()?;
         let principal_frame = normalized(
             props
@@ -79,7 +82,7 @@ impl FreeAssemblyState {
         maximum_angle: f64,
         maximum_speed: f64,
     ) -> Result<FreeAssemblyStep, MidpointError> {
-        let speed = |v: V| v.iter().map(|x| x * x).sum::<f64>().sqrt();
+        let speed = |v: V| num_traits::Float::sqrt(v.iter().map(|x| x * x).sum::<f64>());
         if speed(self.angular_velocity) > maximum_speed {
             return Err(MidpointError::RotationLimit);
         }

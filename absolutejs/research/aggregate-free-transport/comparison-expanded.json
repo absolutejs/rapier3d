@@ -1,0 +1,29 @@
+{
+  "scope": "private force-free fixed-assembly native experiment",
+  "baselineSource": "06b02e8c7220b779723e904e930c100901a1c253",
+  "freeCases": 36,
+  "excludedOrRejectedStates": 386,
+  "allExcludedPoseAndVelocityBitsIdentical": true,
+  "allFreeMetricsImprove": true,
+  "metrics": {
+    "relativeLinearMomentum": {
+      "baselineMaximum": 0.21735441731071692,
+      "candidateMaximum": 6.28716369049705e-06
+    },
+    "relativeAngularMomentum": {
+      "baselineMaximum": 0.054205798289571214,
+      "candidateMaximum": 1.738670840289921e-06
+    },
+    "relativeEnergy": {
+      "baselineMaximum": 0.06120088470363505,
+      "candidateMaximum": 2.56330243386671e-06
+    },
+    "comErrorDividedByScale": {
+      "baselineMaximum": 0.17732110155890085,
+      "candidateMaximum": 3.2345113992529974e-06
+    }
+  },
+  "baselineLogSha256": "0b64d2e3c4ecae31ea2f006f50ee75d2183dc1caa597275ef643ae6f9c01e678",
+  "candidateLogSha256": "f9381f10e68d4d8500e7284782f531b02642e36c2b8e926d0fb9aa79d38759bf",
+  "scriptSha256": "0df699768b6739f8c4c68b9030cdb9c9b3cd48ef44d9b60d5f64c915abbb03a0"
+}

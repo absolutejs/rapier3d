@@ -61,3 +61,31 @@ execution, thin-body admission and performance costs remain to be qualified.
 No WASM build or game adoption has been performed for this experiment. The first
 compile error (an omitted scalar type parameter) is retained. Candidate source
 is isolated from the canonical published 0.14.1 game/package delivery.
+
+## Baseline, exclusion and root-choice controls
+
+The extended native candidate and retained 0.14.1 source pass four harness tests.
+All 386 excluded/rejected pose/velocity records match exactly, including default
+and body damping, gyro disabled, fast rotation, force/torque/gravity, armature,
+friction, springs, an external joint, active contact, locks, hinges, nonphysical
+inertia, unrepresentable aggregate mass and angular cap rejection. Contact/cap
+controls inspect their first step; other controls span 24 steps. Numeric invalid
+aggregate mass is explicitly rejected before constructing a cached state.
+
+Every free-case metric improves versus 0.14.1. Maximum relative linear momentum
+drift drops from 0.2173544 to 6.288e-6, angular momentum from 0.0542058 to 1.739e-6,
+energy from 0.0612009 to 2.564e-6, and scale-normalized COM error from 0.1773211
+to 3.235e-6. These remain synthetic fixture measurements, not gameplay guarantees.
+
+Equivalent physical initial conditions with three different roots now agree
+within 3.791e-6 m in COM positions, 2.343e-6 rad in attitude and 8.835e-6 m/s
+in linear velocity over one second. The old path's maxima are about 0.2404 m,
+0.04836 rad and 0.5131 m/s. Authored-frame invariance at distant world coordinates
+is a mass-property guarantee only; float32 position resolution still requires
+the game's normal local simulation coordinates/rebasing.
+
+The first 362-control comparison and original logs/scripts are retained; the
+expanded comparison adds aggregate mass overflow. The native square root now
+uses num-traits for no-std compatibility, but a complete no-std build has not yet
+been qualified. Uniform gravity is currently excluded: admitting free fall is
+a separate next step, with explicit force semantics and discrete work checks.

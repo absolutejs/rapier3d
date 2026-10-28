@@ -1,0 +1,14 @@
+[workspace]
+[package]
+name = "absolutejs-aggregate-baseline"
+version = "0.0.0"
+edition = "2021"
+publish = false
+[dependencies]
+num-traits = { version = "=0.2.19", default-features = false, features = ["libm"] }
+rapier3d = { path = "/home/alexkahn/alex/rapier-rigid-assembly-research/crates/rapier3d", features = ["profiler"] }
+[features]
+candidate = []
+[[test]]
+name = "aggregate_frame"
+path = "../tests/aggregate_frame.rs"

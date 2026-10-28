@@ -8,4 +8,6 @@ publish = false
 num-traits = { version = "=0.2.19", default-features = false, features = ["libm"] }
 rapier3d = { path = "../../../crates/rapier3d", features = ["profiler"] }
 [features]
+default = ["candidate"]
+candidate = []
 parallel = ["rapier3d/parallel"]
