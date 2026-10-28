@@ -1,0 +1,184 @@
+{
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.16.1-predictive-recycle-research.1",
+    "qualifiedKernelRelease": "unqualified-predictive-recycle-research",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "6695b95a293fe0d5494b304badbbea1ee0333d09735d122ff27aac7c1886e68a",
+    "wasmBytes": 3356980,
+    "solverChanges": true
+  },
+  "sources": {
+    "/home/alexkahn/alex/hello-world-predictive-recycle-qualification/docs/predictive-recycle-qualification-2026-10-28/terrain-controls.ts": "68d98839b61f39ee1b6a1010ff249cfd76029720d08d436c3a826a1a5f4087e9",
+    "src/world/branchDrop.ts": "92d19806a356f8a30147560a3d2221bd48edc31ae5ea689c3d83c49fc9ee2803",
+    "src/world/branchWork.ts": "8b8c0dca39aaeee4bb16a9b4749aefeb866411f82e448f5bff913ff73fa0ebc7",
+    "node_modules/@absolutejs/rapier3d/dist/rapier.mjs": "7f741f36785e4adb163bba82623fcaa9791ecc834745e2b2776fdc31a7214699"
+  },
+  "rows": [
+    {
+      "variant": 0,
+      "policy": "unchanged",
+      "accepted": false,
+      "error": "Error: Branch contact budget exceeded; no trajectory published: [{\"simulationHz\":480,\"termination\":\"clearance-limit\",\"replayFailure\":null,\"steps\":448,\"rejectedBody\":0,\"accepted\":false,\"maximumContactPenetration\":0.010979276895523072,\"minimumClearance\":-0.02887503845908812,\"elapsedMs\":249.02782799999994},{\"simulationHz\":960,\"termination\":\"clearance-limit\",\"replayFailure\":null,\"steps\":928,\"rejectedBody\":0,\"accepted\":false,\"maximumContactPenetration\":0.013936625719070435,\"minimumClearance\":-0.020434076419818648,\"elapsedMs\":253.86989099999994},{\"simulationHz\":1920,\"termination\":\"clearance-limit\",\"replayFailure\":null,\"steps\":1824,\"rejectedBody\":0,\"accepted\":false,\"maximumContactPenetration\":0.008776420950889588,\"minimumClearance\":-0.022262480334665824,\"elapsedMs\":381.735314}]",
+      "totalSteps": 3200
+    },
+    {
+      "variant": 0,
+      "policy": "recycling-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "clearance-limit",
+          "replayFailure": null,
+          "steps": 448,
+          "rejectedBody": 0,
+          "accepted": false,
+          "maximumContactPenetration": 0.010979276895523072,
+          "minimumClearance": -0.028874681835136085,
+          "elapsedMs": 104.20538399999987
+        },
+        {
+          "simulationHz": 960,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 1909,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.017763724327087404,
+          "minimumClearance": -0.0040063242414639655,
+          "elapsedMs": 505.98058400000014
+        }
+      ],
+      "totalSteps": 2357,
+      "minimumClearance": -0.0040063242414639655
+    },
+    {
+      "variant": 0,
+      "policy": "clustering-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 1121,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.005048927068710327,
+          "minimumClearance": -0.00834832268677721,
+          "elapsedMs": 297.82005900000013
+        }
+      ],
+      "totalSteps": 1121,
+      "minimumClearance": -0.00834832268677721
+    },
+    {
+      "variant": 0,
+      "policy": "iterations-32",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 1005,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.007623952031135559,
+          "minimumClearance": -0.004304253372666267,
+          "elapsedMs": 325.1572729999998
+        }
+      ],
+      "totalSteps": 1005,
+      "minimumClearance": -0.004304253372666267
+    },
+    {
+      "variant": 4,
+      "policy": "unchanged",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 724,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.000013696890091523528,
+          "minimumClearance": -0.0001850328490496933,
+          "elapsedMs": 119.33060299999988
+        }
+      ],
+      "totalSteps": 724,
+      "minimumClearance": -0.0001850328490496933
+    },
+    {
+      "variant": 4,
+      "policy": "recycling-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 724,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.00018995758146047592,
+          "minimumClearance": -0.0001911741632532049,
+          "elapsedMs": 159.50840400000016
+        }
+      ],
+      "totalSteps": 724,
+      "minimumClearance": -0.0001911741632532049
+    },
+    {
+      "variant": 4,
+      "policy": "clustering-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 724,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.000025029866956174375,
+          "minimumClearance": -0.00019579388720103452,
+          "elapsedMs": 180.078489
+        }
+      ],
+      "totalSteps": 724,
+      "minimumClearance": -0.00019579388720103452
+    },
+    {
+      "variant": 4,
+      "policy": "iterations-32",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 718,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.0000012900975707452744,
+          "minimumClearance": -0.00005911256923973873,
+          "elapsedMs": 248.7179900000001
+        }
+      ],
+      "totalSteps": 718,
+      "minimumClearance": -0.00005911256923973873
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "variant": 0,
+    "stage": 0,
+    "hz": 480,
+    "accepted": true,
+    "baselineCachedMaxM": 0.004319076538085938,
+    "candidateCachedMaxM": 0.004319076538085938,
+    "baselineClearanceM": -0.002032769483429453,
+    "candidateClearanceM": -0.001442660724695094
+  },
+  {
+    "variant": 0,
+    "stage": 0,
+    "hz": 960,
+    "accepted": true,
+    "baselineCachedMaxM": 0.0046031191945075985,
+    "candidateCachedMaxM": 0.0056805419921875,
+    "baselineClearanceM": -0.0020681679155174493,
+    "candidateClearanceM": -0.002495099917923349
+  },
+  {
+    "variant": 0,
+    "stage": 0,
+    "hz": 1920,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00157440185546875,
+    "candidateCachedMaxM": 0.005301513671875,
+    "baselineClearanceM": -0.001403611330060825,
+    "candidateClearanceM": -0.004561166494527702
+  },
+  {
+    "variant": 0,
+    "stage": 3,
+    "hz": 480,
+    "accepted": true,
+    "baselineCachedMaxM": 0.0012646484375,
+    "candidateCachedMaxM": 0.001105804443359375,
+    "baselineClearanceM": -0.0013126544895867842,
+    "candidateClearanceM": -0.0013134138314500193
+  },
+  {
+    "variant": 0,
+    "stage": 3,
+    "hz": 960,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00293792724609375,
+    "candidateCachedMaxM": 0.002644195556640625,
+    "baselineClearanceM": -0.002959442180584082,
+    "candidateClearanceM": -0.002683173084310722
+  },
+  {
+    "variant": 0,
+    "stage": 3,
+    "hz": 1920,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00177215576171875,
+    "candidateCachedMaxM": 0.0009323883056640625,
+    "baselineClearanceM": -0.0019616246952062766,
+    "candidateClearanceM": -0.0013034118917314985
+  },
+  {
+    "variant": 1,
+    "stage": 0,
+    "hz": 480,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00022247314453125,
+    "candidateCachedMaxM": 0.000210723876953125,
+    "baselineClearanceM": -0.00024112876253970517,
+    "candidateClearanceM": -0.00024068773489306639
+  },
+  {
+    "variant": 1,
+    "stage": 0,
+    "hz": 960,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00016616830602288245,
+    "candidateCachedMaxM": 0.0004180908203125,
+    "baselineClearanceM": -0.00023730950504658593,
+    "candidateClearanceM": -0.00023761127240227303
+  },
+  {
+    "variant": 1,
+    "stage": 0,
+    "hz": 1920,
+    "accepted": true,
+    "baselineCachedMaxM": 9.37652587890625e-05,
+    "candidateCachedMaxM": 0.000107574462890625,
+    "baselineClearanceM": -0.0001247808501155384,
+    "candidateClearanceM": -0.00012656802190545713
+  },
+  {
+    "variant": 1,
+    "stage": 3,
+    "hz": 480,
+    "accepted": true,
+    "baselineCachedMaxM": 0.01172576904296875,
+    "candidateCachedMaxM": 0.0003128814697265625,
+    "baselineClearanceM": -0.004904562437164119,
+    "candidateClearanceM": -0.0002868688652677351
+  },
+  {
+    "variant": 1,
+    "stage": 3,
+    "hz": 960,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00011383056640625,
+    "candidateCachedMaxM": 0.000106353759765625,
+    "baselineClearanceM": -0.00021433136114365828,
+    "candidateClearanceM": -0.00021406821168584028
+  },
+  {
+    "variant": 1,
+    "stage": 3,
+    "hz": 1920,
+    "accepted": true,
+    "baselineCachedMaxM": 8.5906982421875e-05,
+    "candidateCachedMaxM": 7.843017578125e-05,
+    "baselineClearanceM": -0.00020784213950471656,
+    "candidateClearanceM": -0.0002064859633571399
+  },
+  {
+    "variant": 4,
+    "stage": 2,
+    "hz": 480,
+    "accepted": true,
+    "baselineCachedMaxM": 0.0001714324951171875,
+    "candidateCachedMaxM": 6.622314453125e-05,
+    "baselineClearanceM": -0.0001445310687128165,
+    "candidateClearanceM": -9.445175852140775e-05
+  },
+  {
+    "variant": 4,
+    "stage": 2,
+    "hz": 960,
+    "accepted": true,
+    "baselineCachedMaxM": 0.0001172637939453125,
+    "candidateCachedMaxM": 6.9122314453125e-05,
+    "baselineClearanceM": -0.00011615232902639772,
+    "candidateClearanceM": -8.317208584862623e-05
+  },
+  {
+    "variant": 4,
+    "stage": 2,
+    "hz": 1920,
+    "accepted": true,
+    "baselineCachedMaxM": 0.00032806396484375,
+    "candidateCachedMaxM": 0.000194931048899889,
+    "baselineClearanceM": -8.491591498960283e-05,
+    "candidateClearanceM": -9.776454453575001e-05
+  },
+  {
+    "variant": 4,
+    "stage": 3,
+    "hz": 480,
+    "accepted": true,
+    "baselineCachedMaxM": 0.007040969729423523,
+    "candidateCachedMaxM": 0.0004706940799951553,
+    "baselineClearanceM": -0.00015578668605918666,
+    "candidateClearanceM": -0.00021923257526840212
+  },
+  {
+    "variant": 4,
+    "stage": 3,
+    "hz": 960,
+    "accepted": true,
+    "baselineCachedMaxM": 0.007048460841178894,
+    "candidateCachedMaxM": 0.0005691656842827797,
+    "baselineClearanceM": -0.00013621163141021297,
+    "candidateClearanceM": -0.00013308222152058624
+  },
+  {
+    "variant": 4,
+    "stage": 3,
+    "hz": 1920,
+    "accepted": true,
+    "baselineCachedMaxM": 0.005691998600959778,
+    "candidateCachedMaxM": 0.00014495849609375,
+    "baselineClearanceM": -0.0005711603801340503,
+    "candidateClearanceM": -0.0001471744545692294
+  }
+]

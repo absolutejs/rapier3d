@@ -1,0 +1,101 @@
+{
+  "rows": [
+    {
+      "clearanceAccepted": false,
+      "hz": 480,
+      "minimumClearanceM": -0.028821410611271858,
+      "policy": "unchanged",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 480,
+      "minimumClearanceM": -0.028821410611271858,
+      "policy": "recycling-off",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 480,
+      "minimumClearanceM": -0.028821410611271858,
+      "policy": "clustering-off",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 480,
+      "minimumClearanceM": -0.028821410611271858,
+      "policy": "iterations-32",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 960,
+      "minimumClearanceM": -0.020406188443303108,
+      "policy": "unchanged",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 960,
+      "minimumClearanceM": -0.020406188443303108,
+      "policy": "recycling-off",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 960,
+      "minimumClearanceM": -0.020406188443303108,
+      "policy": "clustering-off",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 960,
+      "minimumClearanceM": -0.020406188443303108,
+      "policy": "iterations-32",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 1920,
+      "minimumClearanceM": -0.0221974179148674,
+      "policy": "unchanged",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 1920,
+      "minimumClearanceM": -0.0221974179148674,
+      "policy": "recycling-off",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 1920,
+      "minimumClearanceM": -0.0221974179148674,
+      "policy": "clustering-off",
+      "sleeping": false,
+      "steps": 1
+    },
+    {
+      "clearanceAccepted": false,
+      "hz": 1920,
+      "minimumClearanceM": -0.0221974179148674,
+      "policy": "iterations-32",
+      "sleeping": false,
+      "steps": 1
+    }
+  ],
+  "scope": "Native convex vertex clearance sampled at game cadence; does not replace all game gates or claim cross-backend identity"
+}

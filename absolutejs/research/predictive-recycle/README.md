@@ -1,3 +1,18 @@
+# Release blocked by terrain regression
+
+The optimized candidate passes package checks but fails one of 844 game tests:
+generated terrain rejects variant 0 at all three simulation rates. Canonical game
+stays on published 0.16.1. Independent/release qualification is postponed.
+All 18 flat-floor drop cases pass, with substantial improvement in the targeted
+pairs but small regressions elsewhere. `terrain/` preserves results and initial
+snapshots for native reduction. The full game evidence is on
+`research/predictive-recycle-qualification` at `f1522776`.
+
+Baseline terrain controls pass unchanged at 480 Hz. Both engines with recycling
+disabled reject 480 Hz and pass 960 Hz with identical measured physical limits.
+Candidate clustering-off and 32-iteration controls pass at 480 Hz. These isolate
+a real composite-contact interaction; no tolerance or game policy is changed.
+
 # Predictive contact recycling investigation
 
 Current state: private revision `.1` (exact-geometry fast path), native SHA
@@ -115,3 +130,15 @@ existing isolated harness. The first root-workspace check could not load an
 omitted upstream C-testbed workspace member; its log is preserved and the
 working isolated command is used instead. The optimized private archive audits
 all 53 files and is installed byte-exactly in the isolated game checkout.
+
+## Native terrain reduction
+
+Corrected airborne snapshots reproduce rejection natively at 960/1920 Hz,
+but the native 480 Hz path passes. These backends are not byte-equivalent;
+native controls do not replace actual WASM game qualification. The generated
+terrain uses composite triangle manifolds and clustering; all four original
+onset fixtures instead use pairs of convex shapes. The broad first candidate
+is rejected. Next qualification will restrict the new predictive reuse rule
+to two convex shapes, retaining existing composite contact behavior while the
+separate composite interaction is reduced. This scope is explicit, not a claim
+that triangle-mesh predictive contacts are solved. No gate will be relaxed.

@@ -14,3 +14,7 @@ path = "probe.rs"
 
 [features]
 parallel = ["rapier3d/parallel"]
+
+[[bin]]
+name = "probe-terrain-recycle"
+path = "terrain.rs"

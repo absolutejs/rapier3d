@@ -1,0 +1,197 @@
+{
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.16.1",
+    "qualifiedKernelRelease": "0.16.1",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "8639aa4bc16710820fcfc99274e1065bdf9ebfba7e3b5a27acc41fa2bdb8ca5d",
+    "wasmBytes": 3357015,
+    "solverChanges": true
+  },
+  "sources": {
+    "/home/alexkahn/alex/hello-world-snapshot-order-qualification/docs/predictive-recycle-terrain-baseline-2026-10-28/terrain-controls.ts": "68d98839b61f39ee1b6a1010ff249cfd76029720d08d436c3a826a1a5f4087e9",
+    "src/world/branchDrop.ts": "d90bf736cc0f90450aef0b4a648ef50401ea2d7f0b656e90cd00b49e692459d7",
+    "src/world/branchWork.ts": "8b8c0dca39aaeee4bb16a9b4749aefeb866411f82e448f5bff913ff73fa0ebc7",
+    "node_modules/@absolutejs/rapier3d/dist/rapier.mjs": "324cce157473857743fbfccbd215b445840bf79645679ad1ad757890c6cad9a9"
+  },
+  "rows": [
+    {
+      "variant": 0,
+      "policy": "unchanged",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 986,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.012108368873596191,
+          "minimumClearance": -0.004663279444006019,
+          "elapsedMs": 484.252471
+        }
+      ],
+      "totalSteps": 986,
+      "minimumClearance": -0.004663279444006019
+    },
+    {
+      "variant": 0,
+      "policy": "recycling-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "clearance-limit",
+          "replayFailure": null,
+          "steps": 448,
+          "rejectedBody": 0,
+          "accepted": false,
+          "maximumContactPenetration": 0.010979276895523072,
+          "minimumClearance": -0.028874681835136085,
+          "elapsedMs": 144.53022699999997
+        },
+        {
+          "simulationHz": 960,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 1909,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.017763724327087404,
+          "minimumClearance": -0.0040063242414639655,
+          "elapsedMs": 567.0440500000002
+        }
+      ],
+      "totalSteps": 2357,
+      "minimumClearance": -0.0040063242414639655
+    },
+    {
+      "variant": 0,
+      "policy": "clustering-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 1215,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.004966013133525848,
+          "minimumClearance": -0.008903988333939794,
+          "elapsedMs": 330.9842429999999
+        }
+      ],
+      "totalSteps": 1215,
+      "minimumClearance": -0.008903988333939794
+    },
+    {
+      "variant": 0,
+      "policy": "iterations-32",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 1012,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.003006001114845276,
+          "minimumClearance": -0.0037143192736645014,
+          "elapsedMs": 336.56067399999984
+        }
+      ],
+      "totalSteps": 1012,
+      "minimumClearance": -0.0037143192736645014
+    },
+    {
+      "variant": 4,
+      "policy": "unchanged",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 724,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.000011137159308418632,
+          "minimumClearance": -0.000185026552160239,
+          "elapsedMs": 129.65015300000005
+        }
+      ],
+      "totalSteps": 724,
+      "minimumClearance": -0.000185026552160239
+    },
+    {
+      "variant": 4,
+      "policy": "recycling-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 724,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.00018995758146047592,
+          "minimumClearance": -0.0001911741632532049,
+          "elapsedMs": 150.88997999999992
+        }
+      ],
+      "totalSteps": 724,
+      "minimumClearance": -0.0001911741632532049
+    },
+    {
+      "variant": 4,
+      "policy": "clustering-off",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 722,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0.000009396660607308149,
+          "minimumClearance": -0.00019764708594682823,
+          "elapsedMs": 142.37441100000024
+        }
+      ],
+      "totalSteps": 722,
+      "minimumClearance": -0.00019764708594682823
+    },
+    {
+      "variant": 4,
+      "policy": "iterations-32",
+      "accepted": true,
+      "attempts": [
+        {
+          "simulationHz": 480,
+          "termination": "sleep",
+          "replayFailure": null,
+          "steps": 718,
+          "rejectedBody": null,
+          "accepted": true,
+          "maximumContactPenetration": 0,
+          "minimumClearance": -0.000059378173850266336,
+          "elapsedMs": 208.6525099999999
+        }
+      ],
+      "totalSteps": 718,
+      "minimumClearance": -0.000059378173850266336
+    }
+  ]
+}
