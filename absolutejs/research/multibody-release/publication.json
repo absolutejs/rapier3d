@@ -1,0 +1,14 @@
+{
+  "package": "@absolutejs/rapier3d",
+  "version": "0.8.1",
+  "sourceCommit": "8aa7e214fa21bb2766d75a9fad5e3a2f856944ec",
+  "tag": "absolutejs-v0.8.1",
+  "npmExitCode": 0,
+  "npmReportedPublished": true,
+  "npmNotice": "Your package is being processed and may take a few minutes to become available.",
+  "registryReadable": true,
+  "gameAdopted": true,
+  "tarballSha256": "e93de05b25505a5e51ef080ad052675973d334eb7945222ad8f4ed80e7067212",
+  "gameAdoptionCommit": "c5e16b6468531178199d8d1cef618096c55959d5",
+  "installedPackagedFilesVerified": 52
+}

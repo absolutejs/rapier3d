@@ -16,3 +16,8 @@ The first canonical build attempt used an empty local Cargo cache and failed to 
 0.8.1 is qualified for the articulated velocity consistency correction. The final release-labelled package passes all 40 tests (57,606 assertions) and the CPU-only browser worker. Independent native builds have identical executable/data sections and identical packaged WASM. All 48 distribution files match; only the unshipped raw wasm-bindgen custom metadata differs between compiler intermediates. The final API differs from the fully game-tested candidate only in package version and release identity, verified byte-for-byte after those two substitutions.
 
 The exact publish archive passes the canonical tarball audit: all allowed files and bytes, embedded native payload, lightweight identity, documentation and provenance agree. `pack-audit.json` records integrity and SHA-256. Source and these records are committed before publication; npm confirmation and public game adoption are separate pending steps. No restitution-sweep experiment is included.
+
+
+## Publication and adoption complete
+
+npm accepted 0.8.1, then served registry metadata with integrity exactly matching the audited archive after its processing delay. The initial 404 responses are retained as processing evidence; no duplicate publication was attempted. The game pins and installs 0.8.1 at c5e16b6. All 52 installed archive files match. Frozen installation, static runtime dependency resolution, both current type checks and 9 installed-package tests / 420,308 assertions pass, including all-species contact gates. The source release remains tag/commit 8aa7e21; this later commit only records publication and adoption.
