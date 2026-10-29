@@ -1,0 +1,12 @@
+{
+  "scope": "Exact pre-step snapshot from broad oak excavation failure; native geometry units centimetres",
+  "sha256": "a3e13459a656bc3436c91452f96a2c30e76232e5757c06d8dd09e2decc1bff53",
+  "sourceGameCommit": "783431f3d4fd2bffed85737b6d05230172943587",
+  "reductionEngineCommit": "dd8ad68cbad198be34ea402adf26720ed1264a64",
+  "triangle": 6111,
+  "floorRawHandle": 0,
+  "woodRawHandle": 10,
+  "oldDepthCentimetres": 20.19365119934082,
+  "independentSeparatingTranslationUpperBoundCentimetres": 0.0012646278851473625,
+  "source": "absolutejs/research/rotational-sweep/oak-plane-oracle.json"
+}
