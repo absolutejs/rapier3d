@@ -65,3 +65,8 @@ costs 0.6520 ms/step for published defaults, 0.6623 ms/step for candidate defaul
 and 0.5671 ms/step with the proposed 600 Hz policy. Restoration and inspection
 are excluded. Contact trajectories differ, so the latter is a bounded fixture
 observation, not a general speedup, whole-fall cost or browser FPS claim.
+
+Fresh native serial qualification passes the new scope-isolation test for both
+friction models and all three predictive-support/scale/order/snapshot controls.
+The parallel build is configured for two runtime workers and one compiler job;
+its results and no-std remain pending at this checkpoint.
