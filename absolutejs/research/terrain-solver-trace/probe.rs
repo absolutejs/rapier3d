@@ -10,9 +10,11 @@ fn body_rows(w:&PhysicsWorld)->serde_json::Value{
  json!(w.bodies.iter().map(|(h,b)|json!({"handle":h.into_raw_parts(),"position":b.position(),"linearVelocity":b.linvel().to_array(),"angularVelocity":b.angvel().to_array()})).collect::<Vec<_>>())
 }
 fn main(){
- let args:Vec<_>=std::env::args().collect();assert_eq!(args.len(),3);
+ let args:Vec<_>=std::env::args().collect();assert!(args.len()==3||args.len()==6);
+ let long=args.len()==6;let first:u32=if long{args[3].parse().unwrap()}else{881};let last:u32=if long{args[4].parse().unwrap()}else{912};let stride:u32=if long{args[5].parse().unwrap()}else{1};assert!(stride>0&&last>=first&&last-first<=20000);
  let input=fs::read(&args[1]).unwrap();let mut rows=Vec::new();
- for mode in ["default","coulomb","no-warmstart","pgs-8","no-friction","no-restitution"]{
+ let modes:Vec<&str>=if long{vec!["default","coulomb","static-600hz","static-1mhz"]}else{vec!["default","coulomb","no-warmstart","pgs-8","no-friction","no-restitution","static-120hz","static-240hz","static-600hz","static-1mhz"]};
+ for mode in modes{
   let mut w=restore(&input);
   match mode{
    "coulomb"=>w.integration_parameters.friction_model=FrictionModel::Coulomb,
@@ -20,12 +22,17 @@ fn main(){
    "pgs-8"=>w.integration_parameters.num_internal_pgs_iterations=8,
    "no-friction"=>{for(_,c)in w.colliders.iter_mut(){c.set_friction(0.0);}},
    "no-restitution"=>{for(_,c)in w.colliders.iter_mut(){c.set_restitution(0.0);}},
+   "static-120hz"=>w.integration_parameters.static_contact_softness.natural_frequency=120.0,
+   "static-240hz"=>w.integration_parameters.static_contact_softness.natural_frequency=240.0,
+   "static-600hz"=>w.integration_parameters.static_contact_softness.natural_frequency=600.0,
+   "static-1mhz"=>w.integration_parameters.static_contact_softness.natural_frequency=1.0e6,
    _=>{}
   }
   let params=json!(w.integration_parameters);let mut samples=Vec::new();
-  for step in 881..=912{
-   w.step();let mut pairs=Vec::new();
-   for raw in 1..=15{
+  for step in first..=last{
+   w.step();let sleeping=w.bodies.iter().all(|(_,b)|b.is_sleeping());if step%stride!=0&&step!=first&&step!=last&&!sleeping{continue;}
+   let mut pairs=Vec::new();
+   if !long{for raw in 1..=15{
     let a=ColliderHandle::from_raw_parts(0,0);let b=ColliderHandle::from_raw_parts(raw,0);
     if let Some(pair)=w.narrow_phase.contact_pair(a,b){if let Some(r)=pair.rigid(){
      let manifolds:Vec<_>=r.manifolds.iter().filter(|m|!m.points.is_empty()).collect();
@@ -33,7 +40,9 @@ fn main(){
      if !manifolds.is_empty()||!clusters.is_empty(){pairs.push(json!({"collider":raw,"manifolds":manifolds,"clusters":clusters}));}
     }}
    }
-   samples.push(json!({"step":step,"bodies":body_rows(&w),"pairs":pairs}));
+   }
+   samples.push(json!({"step":step,"sleeping":sleeping,"bodies":body_rows(&w),"pairs":pairs}));
+   if sleeping{break;}
   }
   rows.push(json!({"mode":mode,"parameters":params,"samples":samples}));
  }

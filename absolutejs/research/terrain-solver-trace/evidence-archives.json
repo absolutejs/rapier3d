@@ -1,0 +1,37 @@
+{
+  "scope": "Lossless compressed native diagnostic evidence; raw copies remain in checkout cache",
+  "rows": [
+    {
+      "name": "controls",
+      "uncompressedBytes": 15469014,
+      "uncompressedSha256": "94e5577a7e17eb13a6ba8afafa9d5ea9d0044776d8c80a1514c5dd359008ac66",
+      "archiveBytes": 935544,
+      "archiveSha256": "c39e19b0ea61aa235a0acffda83ae6c05998cab91ae6ca44717a3ce2f15396c2",
+      "losslessRoundtrip": true
+    },
+    {
+      "name": "softness-controls",
+      "uncompressedBytes": 23208840,
+      "uncompressedSha256": "68085c2a5da639c19b8e759184984020bad3387e379916ac544932c4d91b67fc",
+      "archiveBytes": 1406227,
+      "archiveSha256": "8c18713a369f19a53d9bac11b11277083c21acac3908712e1e95a9d2f429647d",
+      "losslessRoundtrip": true
+    },
+    {
+      "name": "initial-variant-0",
+      "uncompressedBytes": 1587118,
+      "uncompressedSha256": "2f479c6068278186bf54bd398106a8c561d27827001164a74c1cd2302e67e9d1",
+      "archiveBytes": 209612,
+      "archiveSha256": "24c0660ab114f93ceeb6b2dd4129704e94d1847cd51af7838717bf0b678e7d1c",
+      "losslessRoundtrip": true
+    },
+    {
+      "name": "initial-variant-5",
+      "uncompressedBytes": 461328,
+      "uncompressedSha256": "fb505b00319f007d9c0f8ff2c03e9fc3339bed6f4e2ec5f3653e818b3966d90d",
+      "archiveBytes": 40635,
+      "archiveSha256": "e9dc622038e75623b8cd725fa8baa0c33b44e5bed8a6640f9bd4ff7551070a37",
+      "losslessRoundtrip": true
+    }
+  ]
+}

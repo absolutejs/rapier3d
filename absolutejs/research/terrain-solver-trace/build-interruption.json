@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-10-29T02:13:15.499124+00:00",
+  "session": 5239,
+  "exitCode": 143,
+  "signalInterpretation": "SIGTERM; source of termination not established",
+  "lastLoggedStage": "Compiling absolutejs-predictive-recycle-research after rapier3d compiled",
+  "compilerJobs": 1,
+  "nativeGpu": false,
+  "memoryAvailableMiB": 13540,
+  "diskAvailableGiB": 290,
+  "originalLog": "controls.log",
+  "retryLog": "controls-retry-1.log",
+  "recovery": "Resume same immutable source and same checkout-owned Cargo target; no source or evidence lost"
+}
