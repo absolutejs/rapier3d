@@ -26,3 +26,7 @@ path = "../predictive-support/native.rs"
 [[bin]]
 name = "extract-rotational-oak-contact"
 path = "../rotational-sweep/extract-oak.rs"
+
+[[bin]]
+name="extract-terrain-contact-onset"
+path="../terrain-contact-onset/extract.rs"
