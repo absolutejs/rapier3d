@@ -1,0 +1,23 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/predictive-support.test.ts:
+(pass) predicted support spans approaching patch scale=0.01 reverse=false [12.60ms]
+(pass) predicted support spans approaching patch scale=0.01 reverse=true [3.38ms]
+(pass) predicted support spans approaching patch scale=1 reverse=false [4.03ms]
+(pass) predicted support spans approaching patch scale=1 reverse=true [2.58ms]
+(pass) predicted support spans approaching patch scale=100 reverse=false [5.04ms]
+(pass) predicted support spans approaching patch scale=100 reverse=true [1.57ms]
+(pass) nonapproaching outer support stays outside prediction speed=0 [1.97ms]
+(pass) nonapproaching outer support stays outside prediction speed=2 [2.83ms]
+(pass) predicted support snapshot restores and replays exactly [10.94ms]
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [17.40ms]
+
+absolutejs/tests/cached-direction.test.ts:
+(pass) cached triangle direction cannot invent deep oak penetration [25.64ms]
+
+ 11 pass
+ 0 fail
+ 70 expect() calls
+Ran 11 tests across 3 files. [328.00ms]

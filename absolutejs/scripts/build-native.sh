@@ -11,7 +11,7 @@ if [[ "$(cargo --version)" != 'cargo 1.94.0 (85eff7c80 2026-01-15)' ]]; then
 fi
 export CARGO_HOME="${CARGO_HOME:-$PWD/.cache/cargo}"
 export CARGO_TARGET_DIR="$PWD/.cache/target"
-export CARGO_BUILD_JOBS=2
+export CARGO_BUILD_JOBS="${CARGO_BUILD_JOBS:-1}"
 mkdir -p "$CARGO_HOME" "$CARGO_TARGET_DIR"
 export CARGO_HOME="$(python3 -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve())' "$CARGO_HOME")"
 export CARGO_TARGET_DIR="$(python3 -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve())' "$CARGO_TARGET_DIR")"

@@ -59,7 +59,7 @@ reconstructing the entire angular velocity through the inertia frame.
 
 Use Bun 1.4.4+absolute.1, Rust 1.94.0 with `wasm32-unknown-unknown`, and Python 3.12.
 Run `bun install --frozen-lockfile`, then `bash absolutejs/scripts/build-native.sh`.
-Cargo's exact lockfile is versioned, compilation is limited to two jobs, and the
+Cargo's exact lockfile is versioned, compilation defaults to one job (override with `CARGO_BUILD_JOBS`), and the
 wasm-bindgen 0.2.129 CLI archive is checksum verified before extraction. Caches and
 generated build output are reproducible; modified source and selected test
 receipts are committed. `dist/provenance.json` records the resulting WASM hash.
@@ -566,3 +566,33 @@ observations are not hardware FPS or a universal speedup claim. See
 Independent builds match all 49 distribution files and the packaged native
 payload byte-for-byte. Raw executable/data sections match; only unshipped
 wasm-bindgen metadata differs.
+
+## Rotational intervals and cached contact directions (0.17.0)
+
+Orientation-changing 3D direct sweeps now use separating-plane motion bounds
+to detect the captured case where a rotating bar crosses a surface between
+two clear endpoint poses. Translation-only sweeps retain the existing path.
+The distance-query budget remains 25, with explicit failure if safe progress
+cannot be established. Composite traversal is a separate limitation; this is
+not a universal continuous-separation guarantee.
+
+Stalled convex queries preserve the direction associated with the support
+bound used for classification. This fixes a captured tree/triangle query that
+reported about 202 mm penetration while independent plane projection bounded
+required separation to about 0.013 mm. Both corrections are qualified together: 
+the rotational change alone exposed this cached-direction error in the full
+oak excavation test. The combined engine passes it and all 844 game tests.
+
+Package API, snapshot layout, contact tolerances and solver budgets are unchanged.
+The raw variant-5/960 terrain clearance rejection remains identically present;
+physical outcomes elsewhere may change. Bounded CPU control scenes retain
+identical physical results and comparable timings. The targeted tilted-contact
+fixture costs about 51% more after extended warmup, about 0.037 ms extra per
+restored step in that fixture. This is a measured correctness tradeoff, not a
+browser FPS or general performance guarantee.
+
+Qualification includes 432 direct-sweep cases, captured old/new contact
+regressions, 237 package tests, GPU-disabled browser checks, native one/two-worker
+controls, no-std, 24 tree/rate comparisons, four generated/excavated requests,
+18 flat-tree cases and an independent build matching all shipped files.
+Evidence: `absolutejs/research/rotational-contact/`.
