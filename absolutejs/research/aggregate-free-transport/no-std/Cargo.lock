@@ -217,7 +217,7 @@ dependencies = [
 [[package]]
 name = "parry3d"
 version = "0.31.1"
-source = "git+https://github.com/absolutejs/parry?rev=8c68a625c15930ca8b685f30861aedf5d59c3726#8c68a625c15930ca8b685f30861aedf5d59c3726"
+source = "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947"
 dependencies = [
  "approx",
  "arrayvec",

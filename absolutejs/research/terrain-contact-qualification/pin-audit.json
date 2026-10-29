@@ -1,0 +1,27 @@
+{
+  "old": "8c68a625c15930ca8b685f30861aedf5d59c3726",
+  "new": "53ac0b0b02767300da09d092d97cef53a975c947",
+  "onlyRevisionChanged": true,
+  "files": [
+    {
+      "path": "Cargo.toml",
+      "replacements": 2
+    },
+    {
+      "path": "bindings/typescript/builds/hello-wasm/Cargo.toml",
+      "replacements": 1
+    },
+    {
+      "path": "bindings/typescript/Cargo.lock",
+      "replacements": 2
+    },
+    {
+      "path": "absolutejs/research/predictive-recycle/Cargo.lock",
+      "replacements": 2
+    },
+    {
+      "path": "absolutejs/research/aggregate-free-transport/no-std/Cargo.lock",
+      "replacements": 2
+    }
+  ]
+}
