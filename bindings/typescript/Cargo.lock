@@ -410,7 +410,7 @@ checksum = "6e6eb142958d64335fb0e345c5b9ead2ecd6fc438c307e9d7d3c4fd428dbaf12"
 [[package]]
 name = "parry3d"
 version = "0.31.1"
-source = "git+https://github.com/absolutejs/parry?rev=c566aabd77be8ac7a427c2b704860c47e34657b9#c566aabd77be8ac7a427c2b704860c47e34657b9"
+source = "git+https://github.com/absolutejs/parry?rev=627113c5cf9fc630d5ea2a727d77d89c1bc8114b#627113c5cf9fc630d5ea2a727d77d89c1bc8114b"
 dependencies = [
  "approx",
  "arrayvec",
