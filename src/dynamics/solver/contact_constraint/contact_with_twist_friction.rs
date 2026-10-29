@@ -432,21 +432,22 @@ impl ContactWithTwistFrictionBuilder<SimdReal> {
         constraint: &mut ContactWithTwistFriction<SimdReal>,
     ) {
         // Contacts touching a fixed body (world-attached side ⇒ solver-vel id `u32::MAX`)
-        // use a stiffer "static" softness. Blend per lane with a 0/1 mask.
+        // use a stiffer "static" softness. Select per lane without cancellation:
+        // dynamic + (static - dynamic) can depend on the unrelated dynamic value.
         let lane_static = |ii: usize| -> Real {
             (constraint.solver_vel1[ii] == u32::MAX || constraint.solver_vel2[ii] == u32::MAX)
                 as u32 as Real
         };
-        let is_static = SimdReal::from(array![lane_static]);
+        let is_static = SimdReal::from(array![lane_static]).simd_gt(SimdReal::zero());
         let dyn_cfm = params.contact_softness.cfm_factor(params.dt);
         let static_cfm = params.static_contact_softness.cfm_factor(params.dt);
         let dyn_erp = params.contact_softness.erp_inv_dt(params.dt);
         let static_erp = params.static_contact_softness.erp_inv_dt(params.dt);
         let cfm_factor =
-            SimdReal::splat(dyn_cfm) + is_static * SimdReal::splat(static_cfm - dyn_cfm);
+            SimdReal::splat(static_cfm).select(is_static, SimdReal::splat(dyn_cfm));
         let inv_dt = SimdReal::splat(params.inv_dt());
         let erp_inv_dt =
-            SimdReal::splat(dyn_erp) + is_static * SimdReal::splat(static_erp - dyn_erp);
+            SimdReal::splat(static_erp).select(is_static, SimdReal::splat(dyn_erp));
         let max_corrective_velocity = SimdReal::splat(params.max_corrective_velocity());
         let warmstart_coeff = SimdReal::splat(params.warmstart_coefficient);
 
