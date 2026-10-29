@@ -1,4 +1,4 @@
-# Prepared 0.18.0 release notes — qualification in progress
+# 0.18.0 release qualification
 
 The native contact query now rejects an exactly duplicated CSO point before it
 can form a degenerate tetrahedron. The captured tree/terrain query previously
@@ -25,9 +25,10 @@ sampled clearance), while the original missed-contact case is corrected.
 The unchanged-default matrix is retained as a failure: this release must not be
 represented as universally improving every trajectory at existing settings.
 
-Completed qualification: 242 package tests, 847 game tests, four generated and
+Completed qualification: 242 package tests, 847 game tests, 18 cut-tree cases
+(27 pieces, all sleeping), four generated and
 excavated terrain work requests, GPU-disabled browser controls, exact independent
 builds and bounded paired CPU measurements. Ordinary CPU fixtures are within
 roughly 1% of the published version in this run. Native serial/parallel and
-no-std gates, final archive checks and publication remain pending. The source
-and measured evidence live in the research branches until these gates finish.
+no-std gates pass. Final public identity/archive checks and publication follow
+source qualification; no registry adoption is claimed until verified.

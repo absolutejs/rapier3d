@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-contact-softness-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 49,
+  "packagedNativeSha256": "67e366a5151fd865f6e6fb154a8cb27a7c4073c19e51e0e594633cf07f6e956e",
+  "packagedNativeBytes": 3363613,
+  "rawIntermediateIdentical": true,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": null,
+  "rawPrimarySha256": "43c24bc421fd336408c030cd078b696e3bc134537ca27643a87cc8f3719dbb5f",
+  "rawIndependentSha256": "43c24bc421fd336408c030cd078b696e3bc134537ca27643a87cc8f3719dbb5f",
+  "sourceInputDifferences": [
+    "README.md"
+  ],
+  "primarySourceContentSha256": "34ad7006e07aef82a7ab0f3c2932b88f88e5dfcf810e02448bb9bceb46189d25",
+  "independentSourceContentSha256": "8654938038c519d595897ca4eb7ee3bdb5e861ed2ad2fab88968a66f7fd56132",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

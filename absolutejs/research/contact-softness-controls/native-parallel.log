@@ -1,0 +1,94 @@
+   Compiling crossbeam-utils v0.8.23
+   Compiling crossbeam-epoch v0.9.21
+   Compiling crossbeam-deque v0.8.8
+   Compiling rayon-core v1.13.0
+   Compiling rayon v1.12.0
+   Compiling parry3d v0.31.1 (https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b)
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d)
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-contact-softness-research/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 10 warnings
+   Compiling absolutejs-predictive-recycle-research v0.0.0 (/home/alexkahn/alex/rapier-contact-softness-research/absolutejs/research/predictive-recycle)
+    Finished `release` profile [optimized] target(s) in 5m 38s
+     Running ../contact-softness-controls/native.rs (.cache/source-qualified/release/deps/contact_softness_native-27746bf970cd72db)
+
+running 1 test
+test fixed_contact_does_not_depend_on_dynamic_softness_for_either_friction_model ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running ../predictive-support/native.rs (.cache/source-qualified/release/deps/predictive_support_native-ff9126c5a7d69630)
+
+running 3 tests
+test nonapproaching_extents_stay_outside_prediction ... ok
+test predicted_support_spans_scales_and_collider_orders ... ok
+test support_snapshot_replay_is_exact ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

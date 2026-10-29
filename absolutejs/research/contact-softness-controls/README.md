@@ -70,3 +70,20 @@ Fresh native serial qualification passes the new scope-isolation test for both
 friction models and all three predictive-support/scale/order/snapshot controls.
 The parallel build is configured for two runtime workers and one compiler job;
 its results and no-std remain pending at this checkpoint.
+
+Native qualification is complete: the same four tests pass with serial and
+explicit two-worker execution, and the allocation-only no-std build passes.
+Each uses the pinned Parry 53ac0b0 and this checkout's isolated Cargo target.
+All runs use one compiler job; no native GPU was used. The logs retain the
+existing documentation warnings.
+
+Public 0.18.0 promotion passes the same 242 tests (87,474 assertions). Both
+independent outputs match all 49 distribution files and packaged/raw WASM.
+The exact public archive contains 53 files; its SHA-256 is
+b1c9b830738e4ebdeb50374ba3122ae1cd30a0719122e50de3d248d2ae38c4b7.
+Private/public equivalence proves runtime differences are only packageVersion
+and qualifiedKernelRelease identity strings; declarations and native bytes are
+unchanged. Documentation records the default-policy failure explicitly. Final
+source audit confirms all compiled inputs still match the qualified native
+snapshot (only the noncompiled README differs). Publication remains a separate
+registry operation; no registry success is inferred from these checks.

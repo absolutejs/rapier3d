@@ -615,3 +615,25 @@ These are numerical regularization parameters, not measured material elasticity.
 Higher frequency can reduce transient penetration but may produce jitter or
 prevent sleeping. Qualify motion, contact, sleeping and cost across actual
 scenarios before changing a product's policy. Defaults are unchanged.
+
+### 0.18.0 contact correction and adoption limits
+
+The collision library rejects an exactly duplicated CSO point before it can
+form a degenerate tetrahedron and lose a valid terrain contact. Both friction
+builders select static/dynamic coefficients directly, avoiding dependence on
+an unused coefficient through floating-point cancellation.
+
+Native defaults remain unchanged. In the game's actual tree matrix, the
+collision correction fixes one missed-contact case but makes another case
+exceed the game's clearance limit at default softness (-21.007 mm). The game
+therefore qualifies an explicit 600 Hz / 10 static-contact policy alongside
+this engine: all 24 tree/rate cases and 18 cut-tree cases pass and sleep.
+This is a bounded product policy, not a universal stiffness recommendation.
+The default-policy failure is retained in the investigation records.
+
+Qualification: 242 package tests, 847 game tests, four generated/excavated
+terrain requests, GPU-disabled browser controls, native serial/two-worker
+checks, no-std, and independent builds matching all shipped files. Three
+ordinary CPU controls are within roughly 1% of 0.17.0 in this run. See
+`absolutejs/research/contact-softness-controls/` for measured fixture costs,
+source hashes, intermediate failures and scope limitations.
