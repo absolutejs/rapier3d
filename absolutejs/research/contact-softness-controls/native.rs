@@ -1,7 +1,9 @@
 use rapier3d::{dynamics::{PendingIslandEvents,FrictionModel},prelude::*};
 fn restore(bytes:&[u8])->PhysicsWorld{
  let(mut w,p):(PhysicsWorld,PendingIslandEvents)=bincode::deserialize(&bytes[12..]).unwrap();
- p.restore(&mut w.impulse_joints,&mut w.multibody_joints,&mut w.soft_bodies);w
+ p.restore(&mut w.impulse_joints,&mut w.multibody_joints,&mut w.soft_bodies);
+ #[cfg(feature="parallel")] w.configure_thread_pool(2).unwrap();
+ w
 }
 #[test]
 fn fixed_contact_does_not_depend_on_dynamic_softness_for_either_friction_model(){

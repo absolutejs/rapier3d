@@ -7,6 +7,23 @@ import {equalSnapshot,wakeFixture} from '../tests/snapshot-order-fixture';
 import {rotate, unit, vector, type V} from '../research/gyroscopic-precision/free-spin-math';
 try {
  await Promise.all([R.init(),R.init()]);
+ const settingsWorld=new R.World({x:0,y:-9.81,z:0});
+ let contactSoftnessControls;
+ try{
+  const recorder=R.createPhysicsStepProfiler(settingsWorld,{sampleEvery:1,maxSamples:3});
+  recorder.step();recorder.step();
+  settingsWorld.integrationParameters.staticContactSoftness={naturalFrequency:600,dampingRatio:10};recorder.step();
+  const report=recorder.snapshot();
+  if(report.contactSettings.length!==2||report.samples.map(s=>s.native?.contactSettingsIndex).join(',')!=='0,0,1')throw Error('Browser settings table failed');
+  const before=settingsWorld.takeSnapshot();let rejected=false;
+  try{settingsWorld.integrationParameters.staticContactSoftness={naturalFrequency:600,dampingRatio:-1};}catch{rejected=true;}
+  if(!rejected||!equalSnapshot(before,settingsWorld.takeSnapshot()))throw Error('Browser settings validation mutated state');
+  const restored=R.World.restoreSnapshot(before);
+  try{if(restored.integrationParameters.staticContactSoftness.naturalFrequency!==600)throw Error('Browser settings snapshot failed');}finally{restored.free();}
+  report.contactSettings[0]!.contactSoftness.naturalFrequency=-1;
+  if(recorder.snapshot().contactSettings[0]!.contactSoftness.naturalFrequency!==30)throw Error('Browser settings alias report');
+  contactSoftnessControls={owned:true,atomic:true,snapshot:true,distinctSettings:2,sampleIndices:[0,0,1]};
+ }finally{settingsWorld.free();}
  const predictedSupportCases=[];
  for(const scale of [.01,1,100])for(const reverse of [false,true]){
   const {w:patch,floor,box}=predictiveSupportFixture(R,scale,-2,reverse);
@@ -281,6 +298,6 @@ try {
    if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
-  postMessage({predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

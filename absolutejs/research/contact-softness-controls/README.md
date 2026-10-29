@@ -34,3 +34,11 @@ pass without increasing the event budget. Its 24 actual tree/rate matrix passes
 all cases and all trees sleep with the proposed 600 Hz static policy; worst
 sampled clearance is about -1.03 mm. Four actual terrain requests also pass.
 Full game tests and further native/browser/reproducibility gates are pending.
+
+The selected .1 game integration now passes all 847 game tests (7,408,759
+assertions), physics-tool type checks, dependency resolution and the browser
+worker build. A GPU-disabled Chromium worker verifies the new controls are
+owned and atomic, survive snapshot restoration, and retain two distinct settings
+for three samples through the bounded settings table. This is CPU/browser API
+qualification, not a hardware rendering or FPS result. Native feature gates,
+independent output equivalence and paired CPU measurements still gate release.
