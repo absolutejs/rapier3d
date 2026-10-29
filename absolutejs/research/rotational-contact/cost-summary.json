@@ -1,0 +1,69 @@
+{
+  "scope": "Sequential CPU observations, not hardware FPS; warmup-sensitive original samples retained",
+  "rows": [
+    {
+      "source": "cpu-controls/results.json",
+      "scene": "stationary-prediction-32",
+      "baselineMs": 46.64389100000017,
+      "candidateMs": 44.169467999999824,
+      "ratio": 0.946950759318078,
+      "physicalExact": true
+    },
+    {
+      "source": "cpu-controls/results.json",
+      "scene": "resting-stack-16",
+      "baselineMs": 23.185985500000015,
+      "candidateMs": 23.915352500000154,
+      "ratio": 1.0314572352337639,
+      "physicalExact": true
+    },
+    {
+      "source": "cpu-controls/results.json",
+      "scene": "falling-grid-32",
+      "baselineMs": 36.676802999999836,
+      "candidateMs": 38.41884100000016,
+      "ratio": 1.0474969969438266,
+      "physicalExact": true
+    },
+    {
+      "source": "cpu-controls-warm/results.json",
+      "scene": "stationary-prediction-32",
+      "baselineMs": 38.46777599999996,
+      "candidateMs": 36.913982499999975,
+      "ratio": 0.9596079196260271,
+      "physicalExact": true
+    },
+    {
+      "source": "cpu-controls-warm/results.json",
+      "scene": "resting-stack-16",
+      "baselineMs": 21.158622000000378,
+      "candidateMs": 19.813662000000022,
+      "ratio": 0.9364344237540454,
+      "physicalExact": true
+    },
+    {
+      "source": "cpu-controls-warm/results.json",
+      "scene": "falling-grid-32",
+      "baselineMs": 32.022719499999766,
+      "candidateMs": 31.631640000000516,
+      "ratio": 0.9877874363543904,
+      "physicalExact": true
+    },
+    {
+      "source": "patch-cost.json",
+      "scene": "tilted-support-patch",
+      "baselineMs": 13.972399500000279,
+      "candidateMs": 22.851325499999575,
+      "ratio": 1.6354617902243003,
+      "physicalExact": false
+    },
+    {
+      "source": "patch-cost-warm.json",
+      "scene": "tilted-support-patch",
+      "baselineMs": 9.364290000000551,
+      "candidateMs": 14.143218000001525,
+      "ratio": 1.5103353270777276,
+      "physicalExact": false
+    }
+  ]
+}

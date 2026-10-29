@@ -1,0 +1,22 @@
+{
+  "scope": "Source difference audit against delivered 0.16.3 engine and its Parry revision",
+  "parryRevision": "8c68a625c15930ca8b685f30861aedf5d59c3726",
+  "changedParrySourceFiles": [
+    "crates/parry3d/Cargo.toml",
+    "src/query/gjk/gjk.rs",
+    "src/query/gjk/voronoi_simplex3.rs",
+    "src/query/sweep_toi/mod.rs",
+    "src/query/sweep_toi/rotational.rs",
+    "src/query/sweep_toi/sweep_toi.rs"
+  ],
+  "changedEngineOrBindingSourceFiles": [],
+  "parryFilesSha256": {
+    "crates/parry3d/Cargo.toml": "d36f0206b870770bff7e7795014d9f10feae5043a27a367573a82ab1c422a57f",
+    "src/query/gjk/gjk.rs": "04594343c4942b9881abae031a7fef21faf8bd09dab3775e714b0ab0c6fee21d",
+    "src/query/gjk/voronoi_simplex3.rs": "e758c0821312ebfd3fbaa4ded42b58faeb361c240254f99552b55e85bb21f9c2",
+    "src/query/sweep_toi/mod.rs": "fbb4e6ef37f9e99c50d1f110ffb0f762b63732f5b2e9a0c5fd380a064717c751",
+    "src/query/sweep_toi/rotational.rs": "c9daa9156738677145150d37fd6671660a47528ea181bfd7aa975c494494cc32",
+    "src/query/sweep_toi/sweep_toi.rs": "f2caa1f56ebe893b467bbf620597edf1f8093a711a3959c4c3228bf6db252f60"
+  },
+  "excludedExperiments": "No persistent triangle-frame or composite sweep-bound changes"
+}

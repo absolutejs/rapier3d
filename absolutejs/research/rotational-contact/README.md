@@ -34,3 +34,19 @@ now passes 237 tests (86,885 assertions). Native support scale/order/replay
 controls pass in one-worker and two-worker configurations (three tests each);
 allocation-enabled native no-std check passes. Source fixtures preserve the
 original input bytes and hash. Cost and independent-build gates remain.
+
+Paired CPU evidence preserves both original four-warmup/eight-sample runs and
+a twelve-warmup/twelve-sample follow-up prompted by visible warmup drift.
+The follow-up control ratios are 0.960, 0.936 and 0.988 with exact physical
+results. They are timing observations, not a speedup claim. The tilted support
+patch changes physical results and costs 1.510x baseline (14.143 versus 9.364 ms
+per 128 restored steps, about 0.0373 ms extra per step). Original patch ratio
+was 1.635x. Both reports are retained; there is no claim that corrected sweeps
+are free. The rare interior-crossing native fixture also costs more because
+the old query incorrectly skips the collision. Query cap stays 25; translating
+sweeps retain their original algorithm. This is not a browser FPS benchmark.
+
+Source audit confirms no engine/binding Rust edits beyond published 0.16.3;
+the pinned collision library contains the interval sweeps, GJK direction fix,
+f64 bounds feature and test-only lint/import changes. No frame or composite
+bounds experiments are present. Independent rebuild is underway.

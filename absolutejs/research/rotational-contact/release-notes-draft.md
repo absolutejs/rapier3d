@@ -19,3 +19,9 @@ Qualification and release gates are in release-plan.md. Known remaining raw
 variant-5/960 terrain rejection is unchanged. These fixes do not certify every
 composite broad-phase sweep, arbitrary material geometry, or frame rate.
 No game tolerance, solver budget, friction or restitution setting is relaxed.
+
+Performance qualification: the three bounded CPU control scenes retain exact
+physical results and roughly comparable timings. The targeted tilted-contact
+fixture costs about 51% more after extended warmup (about 0.037 ms per restored
+step in this small fixture). Correct rotational interval checks are more
+expensive than the old missed-collision path; no universal speed or FPS claim.

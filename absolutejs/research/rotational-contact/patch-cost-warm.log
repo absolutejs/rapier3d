@@ -1,0 +1,10 @@
+[
+  {
+    "name": "baseline",
+    "medianMs": 9.364290000000551
+  },
+  {
+    "name": "candidate",
+    "medianMs": 14.143218000001525
+  }
+]

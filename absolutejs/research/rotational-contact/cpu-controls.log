@@ -1,0 +1,38 @@
+[
+  {
+    scene: "stationary-prediction-32",
+    engine: "baseline",
+    medianMs: 46.64389100000017,
+    physicalSha256: "41687f5957d3b4ab583c746c07205ff36c610f12e93f323a6b0ae0b46f8b8251",
+  },
+  {
+    scene: "stationary-prediction-32",
+    engine: "candidate",
+    medianMs: 44.169467999999824,
+    physicalSha256: "41687f5957d3b4ab583c746c07205ff36c610f12e93f323a6b0ae0b46f8b8251",
+  },
+  {
+    scene: "resting-stack-16",
+    engine: "baseline",
+    medianMs: 23.185985500000015,
+    physicalSha256: "a2c6f57f56ee3e286d57cc4df5eb0f6d314913901d16c717acb189f3b8ad1e2d",
+  },
+  {
+    scene: "resting-stack-16",
+    engine: "candidate",
+    medianMs: 23.915352500000154,
+    physicalSha256: "a2c6f57f56ee3e286d57cc4df5eb0f6d314913901d16c717acb189f3b8ad1e2d",
+  },
+  {
+    scene: "falling-grid-32",
+    engine: "baseline",
+    medianMs: 36.676802999999836,
+    physicalSha256: "d86421a16b202da1374b6fdacab7f16eeb86adcccf199c0a57afd83e140f52eb",
+  },
+  {
+    scene: "falling-grid-32",
+    engine: "candidate",
+    medianMs: 38.41884100000016,
+    physicalSha256: "d86421a16b202da1374b6fdacab7f16eeb86adcccf199c0a57afd83e140f52eb",
+  }
+]
