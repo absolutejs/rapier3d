@@ -41,3 +41,13 @@ install matches all 53 archive files and both kerf worker tests pass.
 Exact public archive SHA-256:
 7a8fb479e8d14a43a859b8800e19207b891d0323e59d2cf26cf99e8638b68c30.
 Publication and canonical registry adoption remain outstanding.
+
+## Publication verified
+
+npm accepted 0.17.0 after its required browser confirmation. Two initial
+version-endpoint reads returned 404 during propagation; the third verifies
+registry metadata and downloaded bytes against the exact audited archive.
+Do not republish. Engine release source is 036cfd0 on canonical main. Parry
+source is pinned to 8c68a62, backed on its main/research branches; its default
+master has divergent upstream history and was deliberately not overwritten.
+Canonical game registry adoption checks are running.

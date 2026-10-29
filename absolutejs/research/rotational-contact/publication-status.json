@@ -1,12 +1,13 @@
 {
   "package": "@absolutejs/rapier3d",
   "version": "0.17.0",
-  "status": "npm-accepted-awaiting-registry-propagation",
+  "status": "registry-verified-awaiting-canonical-game-adoption",
   "recordedAt": "2026-10-29T01:05:08.663394+00:00",
   "publishExitCode": 0,
   "sourceCommit": "036cfd05ca36140f5e0ec5973ab7b45555e290ba",
   "archiveSha256": "7a8fb479e8d14a43a859b8800e19207b891d0323e59d2cf26cf99e8638b68c30",
   "firstNonInteractiveAttempt": "EOTP; no publish accepted; retried with interactive browser confirmation",
   "doNotRepublish": true,
-  "parrySourceBranch": "main at 8c68a625c15930ca8b685f30861aedf5d59c3726; default master is divergent upstream and was not modified"
+  "parrySourceBranch": "main at 8c68a625c15930ca8b685f30861aedf5d59c3726; default master is divergent upstream and was not modified",
+  "registryVerified": true
 }
