@@ -94,3 +94,12 @@ verifies metadata, SHA-1, SHA-256 and SHA-512 integrity against the backed-up
 archive. Source release is f2a38c4; the acceptance record describes its earlier
 pre-propagation checkpoint. Do not republish 0.18.0. Canonical game adoption
 is handled and recorded separately after this verified registry publication.
+
+Canonical game adoption is delivered and remotely verified at dfbc27c5. It pins
+published 0.18.0 and the jointly qualified 600 Hz static branch policy. All 53
+installed files match; 1,437 compared source files match full-game qualification.
+Twenty-one focused tests, physics types, dependencies, worker bundle and frozen
+offline install pass. Adoption evidence is in the game's
+`docs/rapier-0.18.0-adoption-2026-10-29/`. No authorization remains pending.
+Broader actual-terrain and deformed finite-cut coverage continues separately;
+this delivery does not claim arbitrary-world or continuous-material robustness.
