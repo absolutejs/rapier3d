@@ -30,3 +30,7 @@ path = "../rotational-sweep/extract-oak.rs"
 [[bin]]
 name="extract-terrain-contact-onset"
 path="../terrain-contact-onset/extract.rs"
+
+[[bin]]
+name="probe-terrain-solver"
+path="../terrain-solver-trace/probe.rs"
