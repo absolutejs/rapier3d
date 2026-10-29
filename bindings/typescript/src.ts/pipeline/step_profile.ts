@@ -3,6 +3,11 @@ import type {World, ContactConvergenceStats, FreeRotationStats, FreeAssemblyStat
 import type {EventQueue} from "./event_queue";
 import type {PhysicsHooks} from "./physics_hooks";
 
+export interface PhysicsContactSettings {
+    contactSoftness: ContactSoftness;
+    staticContactSoftness: ContactSoftness;
+}
+
 export interface PhysicsStepSample {
     /** Zero-based index among calls made through this recorder. */
     step: number;
@@ -14,9 +19,8 @@ export interface PhysicsStepSample {
         lengthUnit: number;
         timestep: number;
         solverIterations: number;
-        /** Numerical contact settings observed at capture time. */
-        contactSoftness: ContactSoftness;
-        staticContactSoftness: ContactSoftness;
+        /** Index into the owning profile's bounded contactSettings table. */
+        contactSettingsIndex: number;
         ccdSubsteps: number;
         timings: {
             stepMs: number;
@@ -49,6 +53,8 @@ export interface PhysicsStepProfile {
     samplesOmittedForBudget: number;
     /** Owned bounded samples. They do not estimate all unsampled native phases. */
     samples: PhysicsStepSample[];
+    /** Distinct numerical settings, at most one entry per retained sample. */
+    contactSettings: PhysicsContactSettings[];
 }
 
 export interface PhysicsStepProfileOptions {
@@ -89,6 +95,25 @@ export function createPhysicsStepProfiler(
         throw new TypeError("now must be a function");
     const now = options.now ?? (() => performance.now());
     const samples: PhysicsStepSample[] = [];
+    const contactSettings: PhysicsContactSettings[] = [];
+    const captureContactSettings = (): number => {
+        const dynamic = world.integrationParameters.contactSoftness;
+        const fixed = world.integrationParameters.staticContactSoftness;
+        // Capture native states faithfully, including zero-frequency rigid diagnostic fixtures.
+        for (const value of [dynamic, fixed]) {
+            if (!Number.isFinite(value.naturalFrequency) || value.naturalFrequency < 0 ||
+                !Number.isFinite(value.dampingRatio) || value.dampingRatio < 0)
+                throw new Error("Invalid native contact settings");
+        }
+        const found = contactSettings.findIndex(s =>
+            s.contactSoftness.naturalFrequency === dynamic.naturalFrequency &&
+            s.contactSoftness.dampingRatio === dynamic.dampingRatio &&
+            s.staticContactSoftness.naturalFrequency === fixed.naturalFrequency &&
+            s.staticContactSoftness.dampingRatio === fixed.dampingRatio);
+        if (found !== -1) return found;
+        contactSettings.push({contactSoftness: dynamic, staticContactSoftness: fixed});
+        return contactSettings.length - 1;
+    };
     let attemptedSteps = 0,
         completedSteps = 0,
         failedSteps = 0,
@@ -141,13 +166,12 @@ export function createPhysicsStepProfiler(
             lengthUnit: world.lengthUnit,
             timestep: world.timestep,
             solverIterations: world.numSolverIterations,
-            contactSoftness: world.integrationParameters.contactSoftness,
-            staticContactSoftness: world.integrationParameters.staticContactSoftness,
             ccdSubsteps,
             timings,
             convergence,
             freeRotation,
             freeAssembly,
+            contactSettingsIndex: captureContactSettings(),
         };
     };
     return {
@@ -253,13 +277,15 @@ export function createPhysicsStepProfiler(
                 timingErrors,
                 captureErrors,
                 samplesOmittedForBudget,
+                contactSettings: contactSettings.map(settings => ({
+                    contactSoftness: {...settings.contactSoftness},
+                    staticContactSoftness: {...settings.staticContactSoftness},
+                })),
                 samples: samples.map((sample) => ({
                     ...sample,
                     native: sample.native
                         ? {
                               ...sample.native,
-                              contactSoftness: {...sample.native.contactSoftness},
-                              staticContactSoftness: {...sample.native.staticContactSoftness},
                               timings: {...sample.native.timings},
                               convergence: {...sample.native.convergence},
                               freeRotation: {...sample.native.freeRotation},

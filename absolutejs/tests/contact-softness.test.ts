@@ -57,18 +57,21 @@ test('fixed-contact coefficient changes actual saved-world response and replays 
  }finally{for(const w of worlds)w.free();}
 });
 
-test('bounded profiles retain owned contact settings across later changes and world disposal',()=>{
+test('bounded profiles deduplicate and own settings across later changes and world disposal',()=>{
  const w=new R.World({x:0,y:-9.81,z:0});
- const p=R.createPhysicsStepProfiler(w,{sampleEvery:1,maxSamples:2});
+ const p=R.createPhysicsStepProfiler(w,{sampleEvery:1,maxSamples:4});
  try{
-  p.step();w.integrationParameters.staticContactSoftness={naturalFrequency:600,dampingRatio:10};p.step();
+  p.step();p.step();w.integrationParameters.staticContactSoftness={naturalFrequency:600,dampingRatio:10};p.step();
+  w.integrationParameters.staticContactSoftness={naturalFrequency:60,dampingRatio:10};p.step();
   const report=p.snapshot();
-  expect(report.samples[0]!.native!.staticContactSoftness).toEqual({naturalFrequency:60,dampingRatio:10});
-  expect(report.samples[1]!.native!.staticContactSoftness).toEqual({naturalFrequency:600,dampingRatio:10});
-  report.samples[0]!.native!.staticContactSoftness.naturalFrequency=-1;
-  report.samples[1]!.native!.contactSoftness.dampingRatio=-1;
-  expect(p.snapshot().samples[0]!.native!.staticContactSoftness.naturalFrequency).toBe(60);
-  expect(p.snapshot().samples[1]!.native!.contactSoftness.dampingRatio).toBe(10);
+  expect(report.contactSettings).toHaveLength(2);
+  expect(report.samples.map(s=>s.native!.contactSettingsIndex)).toEqual([0,0,1,0]);
+  expect(report.contactSettings[0]!.staticContactSoftness).toEqual({naturalFrequency:60,dampingRatio:10});
+  expect(report.contactSettings[1]!.staticContactSoftness).toEqual({naturalFrequency:600,dampingRatio:10});
+  report.contactSettings[0]!.staticContactSoftness.naturalFrequency=-1;
+  report.contactSettings[1]!.contactSoftness.dampingRatio=-1;
+  expect(p.snapshot().contactSettings[0]!.staticContactSoftness.naturalFrequency).toBe(60);
+  expect(p.snapshot().contactSettings[1]!.contactSoftness.dampingRatio).toBe(10);
  }finally{w.free();}
- expect(p.snapshot().samples[1]!.native!.staticContactSoftness.naturalFrequency).toBe(600);
+ expect(p.snapshot().contactSettings[1]!.staticContactSoftness.naturalFrequency).toBe(600);
 });

@@ -3,7 +3,7 @@ import {SoftRecoverySettings} from "./soft_body";
 
 /** Numerical spring regularization, not a measured material elasticity model. */
 export interface ContactSoftness {
-    /** Positive natural frequency in Hz; higher values stiffen contact. */
+    /** Frequency in Hz. Setters require positive values; raw native snapshots may contain zero. */
     naturalFrequency: number;
     /** Nonnegative damping ratio. */
     dampingRatio: number;

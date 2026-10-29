@@ -1,0 +1,9 @@
+{
+  "scope": "Current compiled Rust/manifests/locks versus immutable selected native build inputs",
+  "nativeInputContentSha256": "34ad7006e07aef82a7ab0f3c2932b88f88e5dfcf810e02448bb9bceb46189d25",
+  "allCompiledInputsMatch": true,
+  "nonCompiledDifferences": [
+    "README.md"
+  ],
+  "reason": "API documentation was extended after native build; TypeScript profiler changes do not enter native input snapshot"
+}

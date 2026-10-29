@@ -606,7 +606,10 @@ a fixed body (native default 60 Hz / 10). Change them between steps. Reads
 return owned copies; values must be representable finite native coefficients,
 with positive frequency and nonnegative damping. Both values are validated
 before either changes. Snapshots preserve both settings. Bounded step profiles
-record owned copies of the settings observed at capture time.
+record each distinct settings pair once in a bounded `contactSettings` table;
+samples carry `native.contactSettingsIndex`. Reports deeply own that table,
+including after the world is freed. This avoids repeating configuration in
+every sample and keeps telemetry within existing event budgets.
 
 These are numerical regularization parameters, not measured material elasticity.
 Higher frequency can reduce transient penetration but may produce jitter or

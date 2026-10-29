@@ -21,3 +21,16 @@ the unselected dynamic value. Both Coulomb and simplified builders now select
 the appropriate coefficient directly. This is an additional native arithmetic
 correction; defaults remain the same, but exact trajectories may change. The
 failed API-only test log is retained as package-tests.log. New-build gates follow.
+
+Direct selection passes all 242 package tests, including exact fixed-body
+response independence from the dynamic coefficients. The first game telemetry
+check rejected repeated settings in every sample (32,500 bytes for a bounded
+two-attempt event, exceeding its 30,000-byte guard). The private .1 API instead
+interns distinct settings in an owned bounded table, referenced by each sample.
+Zero-frequency native diagnostic snapshots remain observable; new setter input
+still requires positive frequency. Both intermediate failures are preserved.
+Final .1 package tests: 242 pass, 87,474 assertions. Game telemetry checks now
+pass without increasing the event budget. Its 24 actual tree/rate matrix passes
+all cases and all trees sleep with the proposed 600 Hz static policy; worst
+sampled clearance is about -1.03 mm. Four actual terrain requests also pass.
+Full game tests and further native/browser/reproducibility gates are pending.
