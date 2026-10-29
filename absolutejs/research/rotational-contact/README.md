@@ -27,3 +27,10 @@ succeeded. Pack audit verifies 49 distribution files. Native SHA-256
 3,362,690 bytes. Archive SHA-256
 `5369db8fc7f2243d629586c3eff2b27d875b8dd4d700ee54e5b9e3519d3598c4`.
 Game install matches all 53 archive files. Game qualification is pending.
+
+Permanent saved-world regression passes in the candidate and fails in published
+0.16.3 at the exact old -20.19365119934082 cm depth. The complete package suite
+now passes 237 tests (86,885 assertions). Native support scale/order/replay
+controls pass in one-worker and two-worker configurations (three tests each);
+allocation-enabled native no-std check passes. Source fixtures preserve the
+original input bytes and hash. Cost and independent-build gates remain.

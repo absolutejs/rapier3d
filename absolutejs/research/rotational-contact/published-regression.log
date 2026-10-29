@@ -1,0 +1,22 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/research/rotational-contact/published-regression.test.ts:
+17 |   });
+18 |   expect(distances.length).toBeGreaterThan(0);
+19 |   expect(distances.every(Number.isFinite)).toBe(true);
+20 |   // Independent pre-step plane bound is 0.001265 cm. This fixture assertion
+21 |   // allows f32 projection error; it changes no simulation tolerance.
+22 |   expect(Math.min(...distances)).toBeGreaterThanOrEqual(-0.003);
+                                      ^
+error: expect(received).toBeGreaterThanOrEqual(expected)
+
+Expected: >= -0.003
+Received: -20.19365119934082
+
+      at <anonymous> (/home/alexkahn/alex/rapier-rotational-contact-research/absolutejs/research/rotational-contact/published-regression.test.ts:22:34)
+(fail) cached triangle direction cannot invent deep oak penetration [63.50ms]
+
+ 0 pass
+ 1 fail
+ 6 expect() calls
+Ran 1 test across 1 file. [285.00ms]
