@@ -1,0 +1,125 @@
+{
+  "scope": "Saved tree variant 0 at step 880; eight independent 32-step spans per sample; 12 warmups then 12 alternating samples. Restore, settings, state capture and free excluded. Fixed work, not whole-fall cost or browser FPS. Physical acceptance measured separately.",
+  "sources": {
+    "/home/alexkahn/alex/rapier-contact-softness-research/absolutejs/research/contact-softness-controls/benchmark-tree.ts": "b36d11c0c5078bcf469797267a4526a4398eb516461126b86637e89db530970e",
+    "/home/alexkahn/alex/hello-world/node_modules/@absolutejs/rapier3d/dist/rapier.mjs": "c18f6f4036cf1196a0cf285ed3c9d8f9318b3e75342fa6971b4dec86607e36c3",
+    "dist/rapier.mjs": "a491036f21f197f71b2b0a2d0043908fd72e001b0e51843c1ebc4f78b3d99c99",
+    "absolutejs/tests/fixtures/terrain-contact-softness-before.bin": "e31d7530200f3cf27bb09cc3b6067c7f45fb107a0d02ee29c03042a0097d52d7"
+  },
+  "rows": [
+    {
+      "name": "published-default",
+      "buildInfo": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.17.0",
+        "qualifiedKernelRelease": "0.17.0",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=8c68a625c15930ca8b685f30861aedf5d59c3726#8c68a625c15930ca8b685f30861aedf5d59c3726",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "0dad2a033f7d46e262a08a370429dc6e23ea95009f824c14a76302a15a8f73a8",
+        "wasmBytes": 3362690,
+        "solverChanges": true
+      },
+      "frequency": 60,
+      "dampingRatio": 10,
+      "samplesMs": [
+        173.1782490000005,
+        210.30125699999917,
+        181.04750000000422,
+        185.839876,
+        170.40382499999942,
+        156.75758700000188,
+        163.42427300000054,
+        173.4396059999981,
+        150.38808000000063,
+        137.73025400000188,
+        145.52702200000022,
+        151.82189800000197
+      ],
+      "medianMs": 166.91404899999998,
+      "msPerStep": 0.6520080039062499,
+      "stateSha256": "5dd35a1cf74d71156f2dd7501733810abeecca1d4c641c0eba12dd42b4edadc5"
+    },
+    {
+      "name": "candidate-default",
+      "buildInfo": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.18.0-contact-policy-research.1",
+        "qualifiedKernelRelease": "unqualified-contact-softness-controls",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "67e366a5151fd865f6e6fb154a8cb27a7c4073c19e51e0e594633cf07f6e956e",
+        "wasmBytes": 3363613,
+        "solverChanges": true
+      },
+      "frequency": 60,
+      "dampingRatio": 10,
+      "samplesMs": [
+        184.88962900000297,
+        206.6340730000029,
+        196.19472699999824,
+        177.78757999999834,
+        155.87443699999858,
+        173.6221170000008,
+        188.1112099999973,
+        163.83725900000172,
+        165.47995300000184,
+        147.81771700000172,
+        138.15392299999803,
+        159.47735999999895
+      ],
+      "medianMs": 169.55103500000132,
+      "msPerStep": 0.6623087304687552,
+      "stateSha256": "29a5c68528698172bfce3f4262629a9392a240189e3fec33e34378dcb203015c"
+    },
+    {
+      "name": "candidate-game-policy",
+      "buildInfo": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.18.0-contact-policy-research.1",
+        "qualifiedKernelRelease": "unqualified-contact-softness-controls",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "67e366a5151fd865f6e6fb154a8cb27a7c4073c19e51e0e594633cf07f6e956e",
+        "wasmBytes": 3363613,
+        "solverChanges": true
+      },
+      "frequency": 600,
+      "dampingRatio": 10,
+      "samplesMs": [
+        140.10265699999945,
+        176.46360700000332,
+        151.22578699999576,
+        148.63420099999894,
+        159.6823669999976,
+        154.4700900000007,
+        147.08195100000194,
+        143.2537450000018,
+        111.84059999999954,
+        130.13913199999843,
+        114.38367899999685,
+        117.59948299999996
+      ],
+      "medianMs": 145.16784800000187,
+      "msPerStep": 0.5670619062500073,
+      "stateSha256": "9852c2ccd1f069154f825b6f94cf7d27805b34bfccfb2825a87f292c7cad25da"
+    }
+  ]
+}

@@ -42,3 +42,26 @@ owned and atomic, survive snapshot restoration, and retain two distinct settings
 for three samples through the bounded settings table. This is CPU/browser API
 qualification, not a hardware rendering or FPS result. Native feature gates,
 independent output equivalence and paired CPU measurements still gate release.
+
+The independent build at source 3757a48 uses its own Cargo target and matches all
+49 distribution files, packaged WASM, and the raw compiler WASM byte-for-byte.
+The immutable native source input manifests differ only in README.md, which is
+not compiled; the later documentation update is recorded explicitly in
+reproducibility.json. Both builds use Bun 1.4.4+absolute.1.
+
+A separate 24-case game comparison at unchanged native default static softness
+(60 Hz / 10) still rejects variant 0 / 960 Hz at -21.007 mm, while correcting
+variant 5 / 960 Hz (-0.119 mm). Its harness exits nonzero as intended; this
+limitation is retained in the game research branch. The package correction does
+not by itself qualify the game's old contact policy. The proposed game upgrade
+requires the jointly tested explicit 600 Hz policy (24/24 accepted and asleep).
+This is a product policy qualification, not a universal parameter recommendation.
+
+Paired CPU measurements use 12 warmups and 12 alternating measurements, with
+source hashes and repeatable physical state checks. Three ordinary active-world
+controls have candidate/baseline median ratios 0.996 (speculative), 1.002 (stack)
+and 1.008 (falling grid). In the affected saved tree onset, equal 256-step work
+costs 0.6520 ms/step for published defaults, 0.6623 ms/step for candidate defaults,
+and 0.5671 ms/step with the proposed 600 Hz policy. Restoration and inspection
+are excluded. Contact trajectories differ, so the latter is a bounded fixture
+observation, not a general speedup, whole-fall cost or browser FPS claim.

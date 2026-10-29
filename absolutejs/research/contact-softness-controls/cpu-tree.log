@@ -1,0 +1,14 @@
+[
+  {
+    "name": "published-default",
+    "msPerStep": 0.6520080039062499
+  },
+  {
+    "name": "candidate-default",
+    "msPerStep": 0.6623087304687552
+  },
+  {
+    "name": "candidate-game-policy",
+    "msPerStep": 0.5670619062500073
+  }
+]
