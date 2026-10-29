@@ -51,3 +51,9 @@ Do not republish. Engine release source is 036cfd0 on canonical main. Parry
 source is pinned to 8c68a62, backed on its main/research branches; its default
 master has divergent upstream history and was deliberately not overwritten.
 Canonical game registry adoption checks are running.
+
+Canonical registry adoption is complete at game 5d5f4217, pushed and verified.
+All 53 installed files match, nine focused tests/dependencies/worker/frozen
+install pass, and 1,436 source files match the full-game qualification.
+Release delivery is closed. Remaining terrain research is separate and must
+not reopen or republish 0.17.0.

@@ -1,7 +1,7 @@
 {
   "package": "@absolutejs/rapier3d",
   "version": "0.17.0",
-  "status": "registry-verified-awaiting-canonical-game-adoption",
+  "status": "published-verified-and-adopted",
   "recordedAt": "2026-10-29T01:05:08.663394+00:00",
   "publishExitCode": 0,
   "sourceCommit": "036cfd05ca36140f5e0ec5973ab7b45555e290ba",
@@ -9,5 +9,7 @@
   "firstNonInteractiveAttempt": "EOTP; no publish accepted; retried with interactive browser confirmation",
   "doNotRepublish": true,
   "parrySourceBranch": "main at 8c68a625c15930ca8b685f30861aedf5d59c3726; default master is divergent upstream and was not modified",
-  "registryVerified": true
+  "registryVerified": true,
+  "canonicalGameAdoption": "5d5f42171be0e1ceab2cfb0f94744f45db058d27",
+  "releaseReceiptCommit": "2e64fb6fdd3b03a30d6e95e1eaa3818aebb4f94a"
 }
