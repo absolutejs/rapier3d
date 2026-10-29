@@ -1,0 +1,7 @@
+warning: patch `rapier2d v0.36.0 (/home/alexkahn/alex/rapier-rotational-contact-research/crates/rapier2d)` was not used in the crate graph
+help: Check that the patched package version and available features are compatible
+      with the dependency requirements. If the patch has a different version from
+      what is locked in the Cargo.lock file, run `cargo update` to use the new
+      version. This may also occur with an optional dependency that is not enabled.
+     Locking 1 package to latest compatible version
+      Adding parry3d v0.31.1 (https://github.com/absolutejs/parry?rev=627113c5cf9fc630d5ea2a727d77d89c1bc8114b#627113c5)
