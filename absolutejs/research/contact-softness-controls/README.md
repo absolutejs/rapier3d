@@ -87,3 +87,10 @@ unchanged. Documentation records the default-policy failure explicitly. Final
 source audit confirms all compiled inputs still match the qualified native
 snapshot (only the noncompiled README differs). Publication remains a separate
 registry operation; no registry success is inferred from these checks.
+
+npm accepted publication and, after two recorded 404 propagation checks, the
+registry returned the exact audited archive on 2026-10-29. registry-receipt.json
+verifies metadata, SHA-1, SHA-256 and SHA-512 integrity against the backed-up
+archive. Source release is f2a38c4; the acceptance record describes its earlier
+pre-propagation checkpoint. Do not republish 0.18.0. Canonical game adoption
+is handled and recorded separately after this verified registry publication.
