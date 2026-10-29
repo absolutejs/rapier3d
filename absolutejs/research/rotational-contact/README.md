@@ -18,3 +18,12 @@ pin. After updating that manifest, an exact parsed lock comparison confirms
 only the intended Parry source revision changes. Failed fetch logs retained.
 Native build uses the immutable source workspace recorded in source-path.txt,
 offline Cargo and one compiler job. Package results still pending.
+
+Private native build completes in 3m29s. All 236 package tests pass with
+86,879 assertions, and the bounded GPU-disabled browser check passes. Its
+first sandboxed server attempt failed EPERM; the authorized localhost run
+succeeded. Pack audit verifies 49 distribution files. Native SHA-256
+`0dad2a033f7d46e262a08a370429dc6e23ea95009f824c14a76302a15a8f73a8`,
+3,362,690 bytes. Archive SHA-256
+`5369db8fc7f2243d629586c3eff2b27d875b8dd4d700ee54e5b9e3519d3598c4`.
+Game install matches all 53 archive files. Game qualification is pending.

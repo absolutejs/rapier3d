@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "qualifiedKernelRelease": "unqualified-rotational-contact",
-  "wasmSha256": "0000000000000000000000000000000000000000000000000000000000000000",
-  "wasmBytes": 0,
+  "wasmSha256": "0dad2a033f7d46e262a08a370429dc6e23ea95009f824c14a76302a15a8f73a8",
+  "wasmBytes": 3362690,
   "solverChanges": true,
   "researchOnly": true
 }

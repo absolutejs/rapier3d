@@ -1,0 +1,11 @@
+{
+  "scope": "Single memory-availability observation; process list belongs to this command namespace and does not measure the separate build session. Not peak memory.",
+  "timeUnix": 1793234198.999177,
+  "memory": {
+    "MemTotal": "22547236 kB",
+    "MemAvailable": "17247120 kB",
+    "SwapTotal": "33554432 kB",
+    "SwapFree": "30447036 kB"
+  },
+  "processes": []
+}
