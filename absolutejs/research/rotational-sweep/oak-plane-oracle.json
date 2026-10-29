@@ -1,0 +1,94 @@
+{
+  "scope": "Independent double-precision triangle-plane separating translation bound.\n\nNo collision-engine queries. This is an upper bound on translation needed to\nseparate the convex solid from this triangle, not the exact minimum distance.\nBoth normalized f64 quaternion reconstruction and recorded native f32 vertices\nare reported; they are distinct arithmetic controls.\n",
+  "inputSha256": "d0ea11bde28e4c9fc4f3454adf4118478207aa68d06705f9ab7a7e5222298dce",
+  "rows": [
+    {
+      "state": "before",
+      "pose": "collider",
+      "upwardPlaneNormal": [
+        -0.27115288335464727,
+        0.7944115053103261,
+        -0.5434946863392894
+      ],
+      "nativeManifoldDepthMillimetres": 0,
+      "controls": {
+        "native_f32_vertices": {
+          "minSignedCentimetres": -0.0012646278851473625,
+          "maxSignedCentimetres": 12.007550130884795,
+          "separatingTranslationUpperBoundMillimetres": 0.012646278851473625
+        },
+        "normalized_f64_quaternion": {
+          "minSignedCentimetres": -0.0012467786313319351,
+          "maxSignedCentimetres": 12.007550765133104,
+          "separatingTranslationUpperBoundMillimetres": 0.012467786313319351
+        }
+      }
+    },
+    {
+      "state": "before",
+      "pose": "current-body",
+      "upwardPlaneNormal": [
+        -0.27115288335464727,
+        0.7944115053103261,
+        -0.5434946863392894
+      ],
+      "nativeManifoldDepthMillimetres": 0,
+      "controls": {
+        "native_f32_vertices": {
+          "minSignedCentimetres": -0.0012646278851473625,
+          "maxSignedCentimetres": 12.007550130884795,
+          "separatingTranslationUpperBoundMillimetres": 0.012646278851473625
+        },
+        "normalized_f64_quaternion": {
+          "minSignedCentimetres": -0.0012467786313319351,
+          "maxSignedCentimetres": 12.007550765133104,
+          "separatingTranslationUpperBoundMillimetres": 0.012467786313319351
+        }
+      }
+    },
+    {
+      "state": "after",
+      "pose": "collider",
+      "upwardPlaneNormal": [
+        -0.27115288335464727,
+        0.7944115053103261,
+        -0.5434946863392894
+      ],
+      "nativeManifoldDepthMillimetres": 0.30686814337968826,
+      "controls": {
+        "native_f32_vertices": {
+          "minSignedCentimetres": -0.03068573160397836,
+          "maxSignedCentimetres": 11.99692401573326,
+          "separatingTranslationUpperBoundMillimetres": 0.3068573160397836
+        },
+        "normalized_f64_quaternion": {
+          "minSignedCentimetres": -0.030678556542505397,
+          "maxSignedCentimetres": 11.99692478655019,
+          "separatingTranslationUpperBoundMillimetres": 0.306785565425054
+        }
+      }
+    },
+    {
+      "state": "after",
+      "pose": "current-body",
+      "upwardPlaneNormal": [
+        -0.27115288335464727,
+        0.7944115053103261,
+        -0.5434946863392894
+      ],
+      "nativeManifoldDepthMillimetres": 0.30686814337968826,
+      "controls": {
+        "native_f32_vertices": {
+          "minSignedCentimetres": -0.03068573160397836,
+          "maxSignedCentimetres": 11.99692401573326,
+          "separatingTranslationUpperBoundMillimetres": 0.3068573160397836
+        },
+        "normalized_f64_quaternion": {
+          "minSignedCentimetres": -0.030678556542505397,
+          "maxSignedCentimetres": 11.99692478655019,
+          "separatingTranslationUpperBoundMillimetres": 0.306785565425054
+        }
+      }
+    }
+  ]
+}
