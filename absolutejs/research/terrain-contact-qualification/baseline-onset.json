@@ -1,0 +1,378 @@
+{
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.17.0",
+    "qualifiedKernelRelease": "0.17.0",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=8c68a625c15930ca8b685f30861aedf5d59c3726#8c68a625c15930ca8b685f30861aedf5d59c3726",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "0dad2a033f7d46e262a08a370429dc6e23ea95009f824c14a76302a15a8f73a8",
+    "wasmBytes": 3362690,
+    "solverChanges": true
+  },
+  "inputSha256": "129f41ae042258d91863f4deac7a8e9c2187f77f15681930c8f24320d9f26607",
+  "rows": [
+    {
+      "step": 877,
+      "contacts": [
+        {
+          "triangle": 998,
+          "normal": {
+            "x": 0.2442123144865036,
+            "y": 0.5348893404006958,
+            "z": 0.8088594675064087
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 999,
+          "normal": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1000,
+          "normal": {
+            "x": -0.8806309700012207,
+            "y": 0.258187472820282,
+            "z": 0.39727622270584106
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1001,
+          "normal": {
+            "x": -0.7059815526008606,
+            "y": 0.6904922127723694,
+            "z": -0.1575133502483368
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1062,
+          "normal": {
+            "x": -0.0856708362698555,
+            "y": 0.8816130757331848,
+            "z": -0.46413251757621765
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1063,
+          "normal": {
+            "x": -0.6120066046714783,
+            "y": 0.3716423213481903,
+            "z": -0.698090136051178
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1064,
+          "normal": {
+            "x": -0.7059815526008606,
+            "y": 0.6904922127723694,
+            "z": -0.1575133502483368
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1065,
+          "normal": {
+            "x": -0.6099082827568054,
+            "y": 0.3536561131477356,
+            "z": -0.70918208360672
+          },
+          "distances": [],
+          "solverDistances": []
+        }
+      ],
+      "snapshotSha256": "aa5afd8ab6c89d490360bbf87c2658278bfd3aa18970f1bba8ebc3e8569f8aea"
+    },
+    {
+      "step": 878,
+      "contacts": [
+        {
+          "triangle": 998,
+          "normal": {
+            "x": 0.2442123144865036,
+            "y": 0.5348893404006958,
+            "z": 0.8088594675064087
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 999,
+          "normal": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1000,
+          "normal": {
+            "x": -0.8806309700012207,
+            "y": 0.258187472820282,
+            "z": 0.39727622270584106
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1001,
+          "normal": {
+            "x": -0.7059815526008606,
+            "y": 0.6904922127723694,
+            "z": -0.1575133502483368
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1062,
+          "normal": {
+            "x": -0.0856708362698555,
+            "y": 0.8816130757331848,
+            "z": -0.46413251757621765
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1063,
+          "normal": {
+            "x": -0.6120066046714783,
+            "y": 0.3716423213481903,
+            "z": -0.698090136051178
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1064,
+          "normal": {
+            "x": -0.7059815526008606,
+            "y": 0.6904922127723694,
+            "z": -0.1575133502483368
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1065,
+          "normal": {
+            "x": -0.6099082827568054,
+            "y": 0.3536561131477356,
+            "z": -0.70918208360672
+          },
+          "distances": [],
+          "solverDistances": []
+        }
+      ],
+      "snapshotSha256": "90c8070c496264e2591a0ae9b9f5fd3980981d8ccad0120fe5448731dadbaaeb"
+    },
+    {
+      "step": 879,
+      "contacts": [
+        {
+          "triangle": 998,
+          "normal": {
+            "x": 0.2442123144865036,
+            "y": 0.5348893404006958,
+            "z": 0.8088594675064087
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 999,
+          "normal": {
+            "x": 1,
+            "y": 0,
+            "z": 0
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1000,
+          "normal": {
+            "x": -0.8806309700012207,
+            "y": 0.258187472820282,
+            "z": 0.39727622270584106
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1001,
+          "normal": {
+            "x": -0.7059815526008606,
+            "y": 0.6904922127723694,
+            "z": -0.1575133502483368
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1062,
+          "normal": {
+            "x": -0.0856708362698555,
+            "y": 0.8816130757331848,
+            "z": -0.46413251757621765
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1063,
+          "normal": {
+            "x": -0.6120066046714783,
+            "y": 0.3716423213481903,
+            "z": -0.698090136051178
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1064,
+          "normal": {
+            "x": -0.7059815526008606,
+            "y": 0.6904922127723694,
+            "z": -0.1575133502483368
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1065,
+          "normal": {
+            "x": -0.6099082827568054,
+            "y": 0.3536561131477356,
+            "z": -0.70918208360672
+          },
+          "distances": [],
+          "solverDistances": []
+        }
+      ],
+      "snapshotSha256": "075b5618d0e3835ab6312cae1370af157be17d69facce01176c8ab5dd4f72fc4"
+    },
+    {
+      "step": 880,
+      "contacts": [
+        {
+          "triangle": 998,
+          "normal": {
+            "x": 0.6958212852478027,
+            "y": 0.22370545566082,
+            "z": 0.6824870705604553
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 999,
+          "normal": {
+            "x": -0.0967211052775383,
+            "y": 0.9953066110610962,
+            "z": -0.003122976515442133
+          },
+          "distances": [
+            -2.122454881668091,
+            -1.3549087047576904,
+            84.98594665527344,
+            85.59561920166016,
+            -2.1224544048309326
+          ],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1000,
+          "normal": {
+            "x": -0.3000538945198059,
+            "y": 0.930659830570221,
+            "z": 0.2093799114227295
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1001,
+          "normal": {
+            "x": -0.7055762410163879,
+            "y": 0.6900027990341187,
+            "z": -0.1614261120557785
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1062,
+          "normal": {
+            "x": -0.08567020297050476,
+            "y": 0.8816127777099609,
+            "z": -0.464133083820343
+          },
+          "distances": [
+            0.9983102679252625,
+            72.21769714355469,
+            0.7732235193252563,
+            72.27025604248047,
+            10.447669982910156,
+            0.7732261419296265
+          ],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1063,
+          "normal": {
+            "x": -0.6023765206336975,
+            "y": 0.5847921967506409,
+            "z": -0.5432868599891663
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1064,
+          "normal": {
+            "x": -0.7055762410163879,
+            "y": 0.6900027990341187,
+            "z": -0.1614261120557785
+          },
+          "distances": [],
+          "solverDistances": []
+        },
+        {
+          "triangle": 1065,
+          "normal": {
+            "x": -0.8654246926307678,
+            "y": 0.49895286560058594,
+            "z": -0.04567575454711914
+          },
+          "distances": [],
+          "solverDistances": []
+        }
+      ],
+      "snapshotSha256": "9d703f4005b663111dea661bb6ca921e00f9272084ad4b5a20e4f9536466c674"
+    }
+  ]
+}

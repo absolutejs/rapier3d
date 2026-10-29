@@ -1,0 +1,11 @@
+{
+  "scope": "Private qualification identity; not release approval",
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "unqualified-terrain-simplex-guard",
+    "wasmSha256": "fdcc8b0b5a568ef703c51ce0b77d6ae8508cac060757050adcece02cc7ed6e39",
+    "wasmBytes": 3362807,
+    "solverChanges": true,
+    "researchOnly": true
+  }
+}

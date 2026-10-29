@@ -1,0 +1,300 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/predictive-support.test.ts:
+(pass) predicted support spans approaching patch scale=0.01 reverse=false [13.95ms]
+(pass) predicted support spans approaching patch scale=0.01 reverse=true [4.91ms]
+(pass) predicted support spans approaching patch scale=1 reverse=false [4.04ms]
+(pass) predicted support spans approaching patch scale=1 reverse=true [3.42ms]
+(pass) predicted support spans approaching patch scale=100 reverse=false [4.28ms]
+(pass) predicted support spans approaching patch scale=100 reverse=true [1.32ms]
+(pass) nonapproaching outer support stays outside prediction speed=0 [2.59ms]
+(pass) nonapproaching outer support stays outside prediction speed=2 [3.65ms]
+(pass) predicted support snapshot restores and replays exactly [16.34ms]
+
+absolutejs/tests/inertia-aggregation.test.ts:
+(pass) 2 collider masses preserve the physical inertia tensor across size and insertion order [18.67ms]
+(pass) 3 collider masses preserve the physical inertia tensor across size and insertion order [15.13ms]
+
+absolutejs/tests/assembly-split.test.ts:
+(pass) unrelated assembly does not change an isolated ordinary body rotation [36.13ms]
+(pass) partial fixed-chain split preserves motion and exact snapshot replay [58.32ms]
+(pass) surviving root retains explicit damping immediately and after a split step [3.63ms]
+(pass) fixed-to-dynamic root uses prescribed world COM and angular velocity [4.48ms]
+
+absolutejs/tests/free-assembly-stats.test.ts:
+(pass) assembly observations are fresh, owned and absent after restore [2.57ms]
+(pass) bounded assembly profiles own samples across excluded loads and detachment [3.60ms]
+(pass) assembly observation sampling preserves exact snapshot trajectories [12.85ms]
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [1.93ms]
+(pass) invalid contact policy values fail before mutating native state [0.70ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [7.41ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [4.71ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [4.46ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [1.84ms]
+
+absolutejs/tests/dynamic-impact.test.ts:
+(pass) unequal moving spheres obey the analytic impact law across units, ordering and timesteps [225.77ms]
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [635.60ms]
+(pass) live separation follows pose changes while cached distance stays fixed [485.89ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [443.14ms]
+
+absolutejs/tests/step-profile.test.ts:
+(pass) bounded deterministic sampling measures every managed call and labels omitted native samples [3.39ms]
+(pass) sampling preserves exact native motion and borrowed profiler settings [11.35ms]
+(pass) captured native data and reports are owned and remain readable after the world is freed [1.24ms]
+(pass) World.step failures retain their exact thrown value and restore profiling [0.97ms]
+(pass) bad clocks do not stop physics and never become invented zero timings [1.09ms]
+(pass) finite duration sum overflow is explicit instead of serializing Infinity as a false measurement [0.66ms]
+(pass) native capture failure cannot change the successful physical step or escape as its failure [1.40ms]
+(pass) profiler setup/restore errors are counted while the underlying step still runs [0.94ms]
+(pass) sampling configuration is bounded and rejected before mutating the world [0.37ms]
+(pass) zero sample budget retains no native buffers and steps continue past the cap [8.53ms]
+(pass) event queue and hook arguments are forwarded without taking ownership [2.15ms]
+
+absolutejs/tests/pending-topology-snapshot.test.ts:
+(pass) snapshot retains pending impulse topology: insert [3.55ms]
+(pass) snapshot retains pending impulse topology: remove [1.47ms]
+(pass) snapshot retains pending impulse topology: remove-body [3.27ms]
+(pass) snapshot envelope identifies version and rejects unknown or incomplete payloads [0.36ms]
+(pass) historical raw capture imports and re-saves in the canonical envelope [1.32ms]
+
+absolutejs/tests/kinematic-path.test.ts:
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 1 subdivisions [0.84ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 4 subdivisions [0.28ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 32 subdivisions [0.37ms]
+(pass) velocity-driven path follows its prescribed rotation and displaced center of mass at 128 subdivisions [0.71ms]
+(pass) prescribed position endpoint remains authoritative [0.34ms]
+(pass) absolute kinematic evaluation retains existing linear and angular speed limits [0.12ms]
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [1.34ms]
+(pass) current-body query composes noncommuting parent and child rotations [1.41ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.03ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [0.83ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [895.92ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [0.84ms]
+
+absolutejs/tests/articulation-damping.test.ts:
+(pass) generalized damping exposes root defaults as an owned read-only copy [0.60ms]
+(pass) damping writes are transactional including native bypass, overflow and stale handles [0.65ms]
+(pass) explicit damping survives snapshot restoration and does not affect another articulation [1.76ms]
+(pass) articulation topology changes require a freshly sized damping vector [0.51ms]
+(pass) zero generalized damping removes native angular decay in a freely rotating assembly [10.27ms]
+
+absolutejs/tests/coupled-mass-ratio.test.ts:
+(pass) coupled mass ratio 20/1/20 e=0 hz=60 substeps=1 reverse=false [1.76ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=60 substeps=1 reverse=true [1.18ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=240 substeps=1 reverse=false [1.26ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=240 substeps=1 reverse=true [1.23ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=60 substeps=4 reverse=false [0.76ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=60 substeps=4 reverse=true [0.88ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=240 substeps=4 reverse=false [2.00ms]
+(pass) coupled mass ratio 20/1/20 e=0 hz=240 substeps=4 reverse=true [2.09ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=1 reverse=false [0.70ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=1 reverse=true [0.58ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=1 reverse=false [1.44ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=1 reverse=true [2.07ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=4 reverse=false [0.78ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=60 substeps=4 reverse=true [0.60ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=4 reverse=false [1.51ms]
+(pass) coupled mass ratio 20/1/20 e=0.5 hz=240 substeps=4 reverse=true [1.57ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=60 substeps=1 reverse=false [0.49ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=60 substeps=1 reverse=true [0.49ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=240 substeps=1 reverse=false [1.10ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=240 substeps=1 reverse=true [1.10ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=60 substeps=4 reverse=false [0.58ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=60 substeps=4 reverse=true [0.57ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=240 substeps=4 reverse=false [1.59ms]
+(pass) coupled mass ratio 20/1/20 e=1 hz=240 substeps=4 reverse=true [1.90ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=60 substeps=1 reverse=false [0.45ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=60 substeps=1 reverse=true [0.42ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=240 substeps=1 reverse=false [1.00ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=240 substeps=1 reverse=true [1.37ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=60 substeps=4 reverse=false [1.45ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=60 substeps=4 reverse=true [0.93ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=240 substeps=4 reverse=false [2.43ms]
+(pass) coupled mass ratio 5/1/20 e=0 hz=240 substeps=4 reverse=true [2.23ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=1 reverse=false [0.56ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=1 reverse=true [0.67ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=1 reverse=false [1.16ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=1 reverse=true [1.07ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=4 reverse=false [0.73ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=60 substeps=4 reverse=true [0.66ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=4 reverse=false [1.72ms]
+(pass) coupled mass ratio 5/1/20 e=0.5 hz=240 substeps=4 reverse=true [2.37ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=60 substeps=1 reverse=false [0.60ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=60 substeps=1 reverse=true [0.37ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=240 substeps=1 reverse=false [0.92ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=240 substeps=1 reverse=true [1.23ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=60 substeps=4 reverse=false [0.70ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=60 substeps=4 reverse=true [1.16ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=240 substeps=4 reverse=false [2.24ms]
+(pass) coupled mass ratio 5/1/20 e=1 hz=240 substeps=4 reverse=true [1.96ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=60 substeps=1 reverse=false [0.42ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=60 substeps=1 reverse=true [0.35ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=240 substeps=1 reverse=false [1.33ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=240 substeps=1 reverse=true [1.57ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=60 substeps=4 reverse=false [0.76ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=60 substeps=4 reverse=true [0.71ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=240 substeps=4 reverse=false [1.99ms]
+(pass) coupled mass ratio 20/1/5 e=0 hz=240 substeps=4 reverse=true [1.72ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=1 reverse=false [0.43ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=1 reverse=true [0.61ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=1 reverse=false [1.85ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=1 reverse=true [1.12ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=4 reverse=false [0.82ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=60 substeps=4 reverse=true [0.76ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=4 reverse=false [1.79ms]
+(pass) coupled mass ratio 20/1/5 e=0.5 hz=240 substeps=4 reverse=true [1.88ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=60 substeps=1 reverse=false [0.40ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=60 substeps=1 reverse=true [0.34ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=240 substeps=1 reverse=false [1.05ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=240 substeps=1 reverse=true [2.08ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=60 substeps=4 reverse=false [1.27ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=60 substeps=4 reverse=true [0.88ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=240 substeps=4 reverse=false [2.96ms]
+(pass) coupled mass ratio 20/1/5 e=1 hz=240 substeps=4 reverse=true [1.77ms]
+
+absolutejs/tests/predictive-recycle.test.ts:
+(pass) predictive feature refresh preserves tree-1-stage-3-480 replay [24.19ms]
+(pass) predictive feature refresh preserves tree-4-stage-3-480 replay [17.36ms]
+(pass) predictive feature refresh preserves tree-4-stage-3-960 replay [16.43ms]
+(pass) predictive feature refresh preserves tree-4-stage-3-1920 replay [14.25ms]
+
+absolutejs/tests/contact-convergence-counters.test.ts:
+(pass) convergence observations are opt-in, fresh, owned, and absent after restore [5.07ms]
+(pass) profiling does not alter physical state across coupled impacts [3.07ms]
+(pass) coupled impact reports actual iterations and converged projected residuals [0.78ms]
+(pass) large mass ratio explicitly reports exhausted budgets [0.70ms]
+(pass) configured compression minimum is measured even above the default adaptive cap [1.11ms]
+(pass) substeps aggregate phases and a new empty step resets observations [3.93ms]
+(pass) ordinary contacts expose no eligible adaptive solves [0.57ms]
+(pass) friction excludes adaptive compression while eligible restitution is still measured [0.55ms]
+(pass) terminal restitution residual agrees with exposed physical velocities near float precision [0.42ms]
+(pass) CCD reports only eligible adaptive phases without changing motion [1.16ms]
+(pass) adaptive observations aggregate contacts before and after a later CCD impact [1.06ms]
+
+absolutejs/tests/snapshot-order.test.ts:
+(pass) queued wake snapshot/replay impulse count=1 sleeping=false [1.93ms]
+(pass) queued wake snapshot/replay impulse count=1 sleeping=true [2.82ms]
+(pass) queued wake snapshot/replay impulse count=8 sleeping=false [3.62ms]
+(pass) queued wake snapshot/replay impulse count=8 sleeping=true [9.07ms]
+(pass) queued wake snapshot/replay impulse count=32 sleeping=false [10.92ms]
+(pass) queued wake snapshot/replay impulse count=32 sleeping=true [12.85ms]
+(pass) queued wake snapshot/replay impulse count=64 sleeping=false [22.84ms]
+(pass) queued wake snapshot/replay impulse count=64 sleeping=true [22.68ms]
+(pass) queued wake snapshot/replay multibody count=1 sleeping=false [1.97ms]
+(pass) queued wake snapshot/replay multibody count=1 sleeping=true [2.09ms]
+(pass) queued wake snapshot/replay multibody count=8 sleeping=false [6.40ms]
+(pass) queued wake snapshot/replay multibody count=8 sleeping=true [6.49ms]
+(pass) queued wake snapshot/replay multibody count=32 sleeping=false [22.45ms]
+(pass) queued wake snapshot/replay multibody count=32 sleeping=true [22.39ms]
+(pass) queued wake snapshot/replay multibody count=64 sleeping=false [49.60ms]
+(pass) queued wake snapshot/replay multibody count=64 sleeping=true [41.22ms]
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [2.63ms]
+
+absolutejs/tests/multibody-writeback.test.ts:
+(pass) articulation link velocities expose current solved momentum at every step [101.30ms]
+(pass) fixed articulation velocities use final COM geometry after off-center impacts [86.85ms]
+(pass) a revolute articulation exposes COM velocity tangent to its current hinge [14.48ms]
+
+absolutejs/tests/build-info.test.ts:
+(pass) build identity matches the actual package and qualified native bytes [5.25ms]
+(pass) diagnostic identity imports independently of the physics runtime [9.13ms]
+
+absolutejs/tests/articulation-origin.test.ts:
+WASM_ORIGIN_MAXIMUM 0.000001425229077601911
+(pass) floating-root origins preserve physical motion for fixed and movable assemblies [48.66ms]
+(pass) offset-root assembly snapshots replay exactly through free flight [10.90ms]
+
+absolutejs/tests/free-spin.test.ts:
+(pass) force-free principal-axis spin does not accelerate at axis 0 [6.76ms]
+(pass) force-free principal-axis spin does not accelerate at axis 1 [5.73ms]
+(pass) force-free principal-axis spin does not accelerate at axis 2 [6.84ms]
+(pass) isotropic bodies preserve arbitrary force-free angular velocity [9.77ms]
+(pass) asymmetric free rotation retains genuine gyroscopic precession [24.48ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [1.00ms]
+
+absolutejs/tests/contact-work-restitution.test.ts:
+(pass) head-on material transfer e=0 hz=60 iterations=1 touching=false [1.91ms]
+(pass) head-on material transfer e=0 hz=60 iterations=1 touching=true [0.84ms]
+(pass) head-on material transfer e=0 hz=60 iterations=4 touching=false [1.14ms]
+(pass) head-on material transfer e=0 hz=60 iterations=4 touching=true [1.16ms]
+(pass) head-on material transfer e=0 hz=240 iterations=1 touching=false [1.07ms]
+(pass) head-on material transfer e=0 hz=240 iterations=1 touching=true [0.78ms]
+(pass) head-on material transfer e=0 hz=240 iterations=4 touching=false [1.36ms]
+(pass) head-on material transfer e=0 hz=240 iterations=4 touching=true [1.86ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=1 touching=false [0.81ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=1 touching=true [0.86ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=4 touching=false [1.64ms]
+(pass) head-on material transfer e=0.5 hz=60 iterations=4 touching=true [1.11ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=1 touching=false [0.99ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=1 touching=true [0.93ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=4 touching=false [1.78ms]
+(pass) head-on material transfer e=0.5 hz=240 iterations=4 touching=true [1.84ms]
+(pass) head-on material transfer e=1 hz=60 iterations=1 touching=false [0.80ms]
+(pass) head-on material transfer e=1 hz=60 iterations=1 touching=true [0.36ms]
+(pass) head-on material transfer e=1 hz=60 iterations=4 touching=false [0.55ms]
+(pass) head-on material transfer e=1 hz=60 iterations=4 touching=true [0.49ms]
+(pass) head-on material transfer e=1 hz=240 iterations=1 touching=false [0.74ms]
+(pass) head-on material transfer e=1 hz=240 iterations=1 touching=true [0.71ms]
+(pass) head-on material transfer e=1 hz=240 iterations=4 touching=false [2.11ms]
+(pass) head-on material transfer e=1 hz=240 iterations=4 touching=true [1.56ms]
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [562.82ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [442.55ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [1331.49ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [1517.81ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [2584.67ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0.3 [2995.92ms]
+
+absolutejs/tests/free-rotation-stats.test.ts:
+(pass) free rotation observations are fresh, owned, and absent after restore [1.11ms]
+(pass) nonphysical moments report one rejection per solve and retain finite state [0.48ms]
+(pass) bounded profiles retain deep-owned free rotation counts across eligibility changes [0.41ms]
+(pass) free rotation observation sampling preserves exact physics snapshots [1.51ms]
+
+absolutejs/tests/cached-direction.test.ts:
+(pass) cached triangle direction cannot invent deep oak penetration [12.09ms]
+
+absolutejs/tests/coupled-impact-convergence.test.ts:
+(pass) symmetric coupled impact e=0 hz=60 substeps=1 reverse=false [2.55ms]
+(pass) symmetric coupled impact e=0 hz=60 substeps=1 reverse=true [0.87ms]
+(pass) symmetric coupled impact e=0 hz=60 substeps=4 reverse=false [1.29ms]
+(pass) symmetric coupled impact e=0 hz=60 substeps=4 reverse=true [0.96ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=1 reverse=false [1.39ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=1 reverse=true [1.30ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=4 reverse=false [2.85ms]
+(pass) symmetric coupled impact e=0 hz=240 substeps=4 reverse=true [2.27ms]
+(pass) symmetric coupled impact e=0.5 hz=60 substeps=1 reverse=false [0.99ms]
+(pass) symmetric coupled impact e=0.5 hz=60 substeps=1 reverse=true [0.60ms]
+(pass) symmetric coupled impact e=0.5 hz=60 substeps=4 reverse=false [0.96ms]
+(pass) symmetric coupled impact e=0.5 hz=60 substeps=4 reverse=true [0.58ms]
+(pass) symmetric coupled impact e=0.5 hz=240 substeps=1 reverse=false [0.85ms]
+(pass) symmetric coupled impact e=0.5 hz=240 substeps=1 reverse=true [1.79ms]
+(pass) symmetric coupled impact e=0.5 hz=240 substeps=4 reverse=false [2.56ms]
+(pass) symmetric coupled impact e=0.5 hz=240 substeps=4 reverse=true [1.74ms]
+(pass) symmetric coupled impact e=1 hz=60 substeps=1 reverse=false [0.45ms]
+(pass) symmetric coupled impact e=1 hz=60 substeps=1 reverse=true [0.49ms]
+(pass) symmetric coupled impact e=1 hz=60 substeps=4 reverse=false [0.75ms]
+(pass) symmetric coupled impact e=1 hz=60 substeps=4 reverse=true [0.53ms]
+(pass) symmetric coupled impact e=1 hz=240 substeps=1 reverse=false [0.91ms]
+(pass) symmetric coupled impact e=1 hz=240 substeps=1 reverse=true [1.17ms]
+(pass) symmetric coupled impact e=1 hz=240 substeps=4 reverse=false [1.68ms]
+(pass) symmetric coupled impact e=1 hz=240 substeps=4 reverse=true [2.74ms]
+
+ 237 pass
+ 0 fail
+ 86885 expect() calls
+Ran 237 tests across 28 files. [13.56s]
