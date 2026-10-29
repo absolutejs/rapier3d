@@ -1,6 +1,27 @@
 import {RawIntegrationParameters} from "../raw";
 import {SoftRecoverySettings} from "./soft_body";
 
+/** Numerical spring regularization, not a measured material elasticity model. */
+export interface ContactSoftness {
+    /** Positive natural frequency in Hz; higher values stiffen contact. */
+    naturalFrequency: number;
+    /** Nonnegative damping ratio. */
+    dampingRatio: number;
+}
+
+function checkedContactSoftness(value: ContactSoftness): [number, number] {
+    if (value === null || typeof value !== "object") throw new TypeError("Contact softness must be an object");
+    const frequency = value.naturalFrequency, damping = value.dampingRatio;
+    const f = Math.fround(frequency), d = Math.fround(damping);
+    if (typeof frequency !== "number" || !Number.isFinite(frequency) || !(f > 0) ||
+        !Number.isFinite(Math.fround(f * Math.fround(2 * Math.PI))) ||
+        typeof damping !== "number" || !Number.isFinite(damping) || damping < 0 ||
+        !Number.isFinite(Math.fround(d * 2))) {
+        throw new RangeError("Contact softness needs a positive finite f32 frequency and nonnegative finite f32 damping ratio");
+    }
+    return [f, d];
+}
+
 export class IntegrationParameters {
     raw: RawIntegrationParameters;
 
@@ -16,6 +37,26 @@ export class IntegrationParameters {
             this.raw.free();
         }
         this.raw = undefined;
+    }
+
+    /** A copy of dynamic-contact softness. Native defaults are 30 Hz and damping ratio 10. */
+    get contactSoftness(): ContactSoftness {
+        return {naturalFrequency: this.raw.contactNaturalFrequency(false), dampingRatio: this.raw.contactDampingRatio(false)};
+    }
+    /** Change between steps. Both coefficients are validated before either changes. */
+    set contactSoftness(value: ContactSoftness) {
+        const [frequency, damping] = checkedContactSoftness(value);
+        this.raw.setContactSoftness(false, frequency, damping);
+    }
+
+    /** A copy of fixed-body contact softness. Native defaults are 60 Hz and damping ratio 10. */
+    get staticContactSoftness(): ContactSoftness {
+        return {naturalFrequency: this.raw.contactNaturalFrequency(true), dampingRatio: this.raw.contactDampingRatio(true)};
+    }
+    /** Change between steps. Higher stiffness may reduce penetration but can increase jitter. */
+    set staticContactSoftness(value: ContactSoftness) {
+        const [frequency, damping] = checkedContactSoftness(value);
+        this.raw.setContactSoftness(true, frequency, damping);
     }
 
     /** Merge compatible contact manifolds into solver clusters. Upstream default: true. */

@@ -596,3 +596,19 @@ regressions, 237 package tests, GPU-disabled browser checks, native one/two-work
 controls, no-std, 24 tree/rate comparisons, four generated/excavated requests,
 18 flat-tree cases and an independent build matching all shipped files.
 Evidence: `absolutejs/research/rotational-contact/`.
+
+### Numerical contact softness
+
+`world.integrationParameters.contactSoftness` and `staticContactSoftness` read
+or atomically replace `{ naturalFrequency, dampingRatio }`. The first controls
+dynamic contacts (native default 30 Hz / 10); the second controls contacts with
+a fixed body (native default 60 Hz / 10). Change them between steps. Reads
+return owned copies; values must be representable finite native coefficients,
+with positive frequency and nonnegative damping. Both values are validated
+before either changes. Snapshots preserve both settings. Bounded step profiles
+record owned copies of the settings observed at capture time.
+
+These are numerical regularization parameters, not measured material elasticity.
+Higher frequency can reduce transient penetration but may produce jitter or
+prevent sleeping. Qualify motion, contact, sleeping and cost across actual
+scenarios before changing a product's policy. Defaults are unchanged.

@@ -12,6 +12,31 @@ impl RawIntegrationParameters {
         RawIntegrationParameters(IntegrationParameters::default())
     }
 
+    /// Existing native spring settings; static contacts have their own coefficients.
+    pub fn contactNaturalFrequency(&self, fixed: bool) -> f32 {
+        if fixed { self.0.static_contact_softness.natural_frequency }
+        else { self.0.contact_softness.natural_frequency }
+    }
+
+    pub fn contactDampingRatio(&self, fixed: bool) -> f32 {
+        if fixed { self.0.static_contact_softness.damping_ratio }
+        else { self.0.contact_softness.damping_ratio }
+    }
+
+    /// Validate both values before changing either coefficient.
+    pub fn setContactSoftness(&mut self, fixed: bool, frequency: f32, damping: f32) -> Result<(), JsError> {
+        if !frequency.is_finite() || frequency <= 0.0
+            || !(frequency * core::f32::consts::TAU).is_finite()
+            || !damping.is_finite() || damping < 0.0 || !(damping * 2.0).is_finite() {
+            return Err(JsError::new("Contact softness needs a positive finite f32 frequency and nonnegative finite f32 damping ratio"));
+        }
+        let settings = if fixed { &mut self.0.static_contact_softness }
+            else { &mut self.0.contact_softness };
+        settings.natural_frequency = frequency;
+        settings.damping_ratio = damping;
+        Ok(())
+    }
+
     #[wasm_bindgen(getter)]
     pub fn contactClustering(&self) -> bool {
         self.0.contact_clustering

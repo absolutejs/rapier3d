@@ -1,3 +1,4 @@
+import type {ContactSoftness} from "../dynamics/integration_parameters";
 import type {World, ContactConvergenceStats, FreeRotationStats, FreeAssemblyStats} from "./world";
 import type {EventQueue} from "./event_queue";
 import type {PhysicsHooks} from "./physics_hooks";
@@ -13,6 +14,9 @@ export interface PhysicsStepSample {
         lengthUnit: number;
         timestep: number;
         solverIterations: number;
+        /** Numerical contact settings observed at capture time. */
+        contactSoftness: ContactSoftness;
+        staticContactSoftness: ContactSoftness;
         ccdSubsteps: number;
         timings: {
             stepMs: number;
@@ -137,6 +141,8 @@ export function createPhysicsStepProfiler(
             lengthUnit: world.lengthUnit,
             timestep: world.timestep,
             solverIterations: world.numSolverIterations,
+            contactSoftness: world.integrationParameters.contactSoftness,
+            staticContactSoftness: world.integrationParameters.staticContactSoftness,
             ccdSubsteps,
             timings,
             convergence,
@@ -252,6 +258,8 @@ export function createPhysicsStepProfiler(
                     native: sample.native
                         ? {
                               ...sample.native,
+                              contactSoftness: {...sample.native.contactSoftness},
+                              staticContactSoftness: {...sample.native.staticContactSoftness},
                               timings: {...sample.native.timings},
                               convergence: {...sample.native.convergence},
                               freeRotation: {...sample.native.freeRotation},
