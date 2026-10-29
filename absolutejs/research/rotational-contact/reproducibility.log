@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-rotational-contact-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 49,
+  "packagedNativeSha256": "0dad2a033f7d46e262a08a370429dc6e23ea95009f824c14a76302a15a8f73a8",
+  "packagedNativeBytes": 3362690,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "82a448f2286f6d326f9d04de1b42199ace695876fcba8f18ae1009329dd080e9",
+  "rawIndependentSha256": "3576b0a3c5eeca513e0bb6d8a969e28268e7f5c8694c41367a555f9904e01cb1",
+  "sourceInputDifferences": [],
+  "primarySourceContentSha256": "1aac882537f4a5ab2280c66a505fe09bdd774e6669ea1f9618a19fed170ea1ab",
+  "independentSourceContentSha256": "1aac882537f4a5ab2280c66a505fe09bdd774e6669ea1f9618a19fed170ea1ab",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

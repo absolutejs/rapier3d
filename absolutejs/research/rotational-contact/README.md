@@ -50,3 +50,9 @@ Source audit confirms no engine/binding Rust edits beyond published 0.16.3;
 the pinned collision library contains the interval sweeps, GJK direction fix,
 f64 bounds feature and test-only lint/import changes. No frame or composite
 bounds experiments are present. Independent rebuild is underway.
+
+Independent clean-target build completes in 3m30s. All 49 distribution files
+and packaged WASM match exactly. Raw executable/data sections match; only the
+unshipped wasm-bindgen custom metadata differs. Input manifests match exactly.
+See reproducibility.json. Public promotion is now eligible, subject to public
+archive equivalence and focused identity/browser checks.
