@@ -23,3 +23,12 @@ Parry is now pinned to native-qualified 627113c5cf9fc630d5ea2a727d77d89c1bc8114b
 Native selected suites pass 85/84/98/98 tests, plus both 3D no-std checks. The
 432-case actual native matrix matches the private prototype exactly. Engine
 qualification below remains pending. The earlier zero identity is intentional.
+
+Private WASM compilation passes in 5m38s with one Cargo job. All 236 package
+tests pass (86,879 assertions), and the GPU-disabled browser regression/replay
+passes. Packaged native SHA-256 is
+174bf8d5a0bacd46f9a3cd2304e5b044e95ade47459f621eebab5ed7c692de55,
+3,362,954 bytes (5,763 bytes above published 0.16.3). Audited private archive
+SHA-256 a8eebecfa706f367324c47f9c797b6e1124d65bd200cbc5f0937447afb1940e2.
+All 53 files match the isolated game install. Real-game comparisons are underway;
+no publication or canonical adoption is authorized by these initial checks alone.

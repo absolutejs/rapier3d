@@ -1,0 +1,11 @@
+{
+  "scope": "Private qualification identity; not release approval",
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "unqualified-rotational-interval",
+    "wasmSha256": "174bf8d5a0bacd46f9a3cd2304e5b044e95ade47459f621eebab5ed7c692de55",
+    "wasmBytes": 3362954,
+    "solverChanges": true,
+    "researchOnly": true
+  }
+}
