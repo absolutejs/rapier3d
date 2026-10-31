@@ -637,3 +637,13 @@ checks, no-std, and independent builds matching all shipped files. Three
 ordinary CPU controls are within roughly 1% of 0.17.0 in this run. See
 `absolutejs/research/contact-softness-controls/` for measured fixture costs,
 source hashes, intermediate failures and scope limitations.
+
+### Queued 0.19.0: explicit quadratic resistance
+
+`solveQuadraticDragImpulse` analytically integrates one quadratic relative-flow
+resistance channel with positive supplied effective inverse mass. It returns the
+signed impulse, implicit relative speed, dissipated energy and separate body /
+reservoir work. It is pure and does not infer shape, exposure or coefficients.
+Use consistent units and the complete effective mass response; verify native
+application precision. See `absolutejs/research/quadratic-drag-2026-10-31/README.md`
+for the derivation, scope and evidence. Native engine qualification stays 0.18.0.

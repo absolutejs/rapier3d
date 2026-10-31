@@ -10,3 +10,4 @@ export * from "./ccd_solver";
 export * from "./island_manager";
 export * from "./soft_body";
 export * from "./soft_body_set";
+export * from "./quadratic_drag";

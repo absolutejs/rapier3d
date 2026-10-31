@@ -6,6 +6,8 @@ import {fixture} from '../tests/fixture';
 import {equalSnapshot,wakeFixture} from '../tests/snapshot-order-fixture';
 import {rotate, unit, vector, type V} from '../research/gyroscopic-precision/free-spin-math';
 try {
+ const quadraticDrag=R.solveQuadraticDragImpulse({relativeSpeed:3,fluidSpeed:4,inverseEffectiveMass:.5,quadraticResistance:2,dt:.25});
+ if(Math.abs(quadraticDrag.impulse+2)>1e-12||Math.abs(quadraticDrag.bodyWork+13)>1e-12||Math.abs(quadraticDrag.dissipatedEnergy-5)>1e-12)throw Error('Browser quadratic drag energy ledger failed');
  await Promise.all([R.init(),R.init()]);
  const settingsWorld=new R.World({x:0,y:-9.81,z:0});
  let contactSoftnessControls;
@@ -298,6 +300,6 @@ try {
    if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
-  postMessage({contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
