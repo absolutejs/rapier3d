@@ -67,3 +67,10 @@ Complete package qualification passes **248 tests / 92,014 assertions**. The
 GPU-disabled browser worker passes the new energy ledger and all existing
 native/contact/snapshot checks. Independent archive/build verification is next;
 publication remains deferred.
+
+Independent API builds match all 50 distribution files. The embedded native WASM
+is byte-for-byte identical to qualified 0.18.0 (SHA256
+`67e366a5151fd865f6e6fb154a8cb27a7c4073c19e51e0e594633cf07f6e956e`).
+The exact prepared archive and its file/native/provenance audit are saved here.
+This is an additive pure-API candidate, not a new native integration algorithm.
+No npm authentication or publishing has been initiated.
