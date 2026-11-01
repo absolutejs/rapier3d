@@ -13,3 +13,11 @@ Native compilation completed in 2m44s. The wrapper's tool installer attempted a 
 The game's existing redaction test caught the initial `groupPasses` / `rigidBodyPasses` names: its established credential-key policy redacts names containing `pass`. Before any release, the API now uses `groupVisits` / `rigidBodyVisits`. This preserves the visit semantics and the privacy policy. Original test/browser/parity receipts and the research.0 archive remain immutable; later receipts qualify the corrected names. Native fields and WASM bytes are unchanged.
 
 The representative two-attempt game profile also rejected repeated schedules at34,471bytes under its unchanged30,000byte gate. A bounded dictionary reduces repetition; the default index0 is omitted explicitly, rather than repeated in every sample. The always-present table and optional-index contract preserve each sampled observation. Worker consumers must validate the table and range before defaulting the index; old profiles lacking the table are not interpreted as an empty schedule. Native solver bytes remain unchanged.
+
+## Current private qualification
+
+The current private build is 0.20.0-research.1 (not a publication candidate). Its lossless packet codec passes all 266 package tests / 92,170 assertions and a GPU-disabled browser worker. Independent API builds using the separately built native targets match all 53 shipped files exactly; api-reproducibility-packet.json records every hash. The refreshed 18-case / 9,240-step predecessor comparison matches full native snapshots at every step for old, candidate-unprofiled and candidate-profiled worlds. Distribution hashes remain unchanged throughout that comparison. See physical-parity-1.json.
+
+The initial short-window cost probe remains preliminary. Seven longer rotating paired rounds are in overhead-long.json: observed unprofiled median ratios are approximately 1.030, 1.010 and 1.002 for 2, 32 and 128 collision-free bodies; profiled ratios are approximately 1.017, 1.003 and 0.995. These noisy local CPU measurements do not establish zero cost or browser frame rate.
+
+Game integration initially rejected the old hard-coded float build version; this is being corrected to require full loaded-build identity. No integration release is implied until the new full suite and actual inspection checks pass.
