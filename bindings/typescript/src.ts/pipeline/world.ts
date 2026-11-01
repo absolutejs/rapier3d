@@ -80,8 +80,8 @@ import {DynamicRayCastVehicleController} from "../control";
 /** Prepared rigid-body schedules, summed across CCD passes. Counts are not unique
  * bodies or iterations of the internal PGS loop. Empty groups are omitted. */
 export interface SolverScheduleStats {
-    groupPasses: number;
-    rigidBodyPasses: number;
+    groupVisits: number;
+    rigidBodyVisits: number;
     rigidBodySubsteps: number;
     minSubsteps: number | null;
     maxSubsteps: number | null;
@@ -1474,7 +1474,7 @@ export class World {
         const values = this.physicsPipeline.raw.solver_schedule();
         if (values == null) return null;
         const nonempty = values[0] > 0;
-        return { groupPasses: values[0], rigidBodyPasses: values[1], rigidBodySubsteps: values[2],
+        return { groupVisits: values[0], rigidBodyVisits: values[1], rigidBodySubsteps: values[2],
             minSubsteps: nonempty ? values[3] : null, maxSubsteps: nonempty ? values[4] : null,
             minSubstepDt: nonempty ? values[5] : null, maxSubstepDt: nonempty ? values[6] : null };
     }

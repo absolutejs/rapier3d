@@ -5,7 +5,7 @@ import type {SolverScheduleStats} from './world';
 export function isSolverScheduleStats(value: unknown): value is SolverScheduleStats {
     if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
     try {
-        const keys = ['groupPasses', 'rigidBodyPasses', 'rigidBodySubsteps',
+        const keys = ['groupVisits', 'rigidBodyVisits', 'rigidBodySubsteps',
             'minSubsteps', 'maxSubsteps', 'minSubstepDt', 'maxSubstepDt'];
         const descriptors = keys.map(key => Object.getOwnPropertyDescriptor(value, key));
         if (descriptors.some(d => !d || !('value' in d))) return false;
