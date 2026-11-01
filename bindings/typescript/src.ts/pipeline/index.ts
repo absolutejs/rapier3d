@@ -9,3 +9,5 @@ export * from "./query_pipeline";
 export * from "./step_profile";
 
 export * from "./solver_schedule";
+
+export * from "./step_profile_packet";
