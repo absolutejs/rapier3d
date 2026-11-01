@@ -1,5 +1,5 @@
 import type {ContactSoftness} from "../dynamics/integration_parameters";
-import type {World, ContactConvergenceStats, FreeRotationStats, FreeAssemblyStats} from "./world";
+import type {World, ContactConvergenceStats, FreeRotationStats, FreeAssemblyStats, SolverScheduleStats} from "./world";
 import type {EventQueue} from "./event_queue";
 import type {PhysicsHooks} from "./physics_hooks";
 
@@ -33,6 +33,7 @@ export interface PhysicsStepSample {
         convergence: ContactConvergenceStats;
         freeRotation: FreeRotationStats;
         freeAssembly: FreeAssemblyStats;
+        schedule: SolverScheduleStats;
     } | null;
 }
 
@@ -136,8 +137,9 @@ export function createPhysicsStepProfiler(
         const ccdSubsteps = world.ccdSubsteps(),
             convergence = world.contactConvergence(),
             freeRotation = world.freeRotationStats(),
-            freeAssembly = world.freeAssemblyStats();
-        if (ccdSubsteps === null || convergence === null || freeRotation === null || freeAssembly === null)
+            freeAssembly = world.freeAssemblyStats(),
+            schedule = world.solverSchedule();
+        if (ccdSubsteps === null || convergence === null || freeRotation === null || freeAssembly === null || schedule === null)
             throw new Error("No completed profiled step");
         const timings = {
             stepMs: world.timingStep(),
@@ -148,6 +150,7 @@ export function createPhysicsStepProfiler(
             ccdMs: world.timingCcd(),
         };
         if (
+            Object.values(schedule).some(value => value !== null && (!Number.isFinite(value) || value < 0)) ||
             Object.values(timings).some(
                 (value) => !Number.isFinite(value) || value < 0,
             ) ||
@@ -171,6 +174,7 @@ export function createPhysicsStepProfiler(
             convergence,
             freeRotation,
             freeAssembly,
+            schedule,
             contactSettingsIndex: captureContactSettings(),
         };
     };
@@ -288,6 +292,7 @@ export function createPhysicsStepProfiler(
                               ...sample.native,
                               timings: {...sample.native.timings},
                               convergence: {...sample.native.convergence},
+                              schedule: {...sample.native.schedule},
                               freeRotation: {...sample.native.freeRotation},
                               freeAssembly: {...sample.native.freeAssembly},
                           }
