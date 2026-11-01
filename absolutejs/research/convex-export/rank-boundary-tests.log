@@ -1,0 +1,37 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/convex-export.test.ts:
+(pass) exact test predicate distinguishes thin outward and reversed planes [1.68ms]
+(pass) convex export 0 is a closed outward boundary of unchanged stored points [6.89ms]
+(pass) convex export 1 is a closed outward boundary of unchanged stored points [5.74ms]
+(pass) convex export 2 is a closed outward boundary of unchanged stored points [2.10ms]
+(pass) convex export 3 is a closed outward boundary of unchanged stored points [1.51ms]
+(pass) convex export 4 is a closed outward boundary of unchanged stored points [3.69ms]
+(pass) convex export 5 is a closed outward boundary of unchanged stored points [1.59ms]
+(pass) convex export 6 is a closed outward boundary of unchanged stored points [0.75ms]
+(pass) convex export 7 is a closed outward boundary of unchanged stored points [1.34ms]
+(pass) convex export 8 is a closed outward boundary of unchanged stored points [1.30ms]
+(pass) convex export 9 is a closed outward boundary of unchanged stored points [9.06ms]
+(pass) convex export 10 is a closed outward boundary of unchanged stored points [0.82ms]
+(pass) convex export 11 is a closed outward boundary of unchanged stored points [0.64ms]
+(pass) convex export 12 is a closed outward boundary of unchanged stored points [0.46ms]
+(pass) convex export 13 is a closed outward boundary of unchanged stored points [0.89ms]
+(pass) convex export 14 is a closed outward boundary of unchanged stored points [0.46ms]
+(pass) convex export 15 is a closed outward boundary of unchanged stored points [0.52ms]
+(pass) convex export 16 is a closed outward boundary of unchanged stored points [0.62ms]
+(pass) convex export 17 is a closed outward boundary of unchanged stored points [1.22ms]
+(pass) convex export 18 is a closed outward boundary of unchanged stored points [0.48ms]
+(pass) convex export 19 is a closed outward boundary of unchanged stored points [0.44ms]
+(pass) convex export 20 is a closed outward boundary of unchanged stored points [0.54ms]
+(pass) convex export 21 is a closed outward boundary of unchanged stored points [0.80ms]
+(pass) convex export 22 is a closed outward boundary of unchanged stored points [0.47ms]
+(pass) convex export 23 is a closed outward boundary of unchanged stored points [0.31ms]
+(pass) convex export 24 is a closed outward boundary of unchanged stored points [0.18ms]
+(pass) convex export 25 is a closed outward boundary of unchanged stored points [0.15ms]
+(pass) atomic convex buffers are owned and follow shape replacement [0.68ms]
+(pass) atomic convex export distinguishes nonconvex and rounded core boundaries [0.85ms]
+
+ 29 pass
+ 0 fail
+ 587 expect() calls
+Ran 29 tests across 1 file. [229.00ms]

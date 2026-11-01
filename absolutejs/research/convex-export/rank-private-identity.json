@@ -1,0 +1,13 @@
+{
+  "scope": "Private research identity only; not release qualification",
+  "native": {
+    "schemaVersion": 1,
+    "qualifiedKernelRelease": "unqualified-convex-export-rank",
+    "wasmSha256": "f1a909f788cc332e4ed8a4af3da1f38c84fd9bd995aa1ffe85dd9bee36f04050",
+    "wasmBytes": 3411245,
+    "solverChanges": true,
+    "researchOnly": true
+  },
+  "baselineBytes": 3364616,
+  "addedBytes": 46629
+}

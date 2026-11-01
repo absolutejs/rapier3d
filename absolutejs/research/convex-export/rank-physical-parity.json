@@ -1,0 +1,214 @@
+{
+  "scope": "Exact snapshot state at every step: predecessor, candidate unprofiled and candidate profiled; not a performance benchmark",
+  "distributions": [
+    {
+      "root": "/home/alexkahn/alex/rapier-solver-schedule/dist",
+      "sha256": "010103084780500c0fb9611892b372bbc33481293009e1e8c8a56515433d2337",
+      "provenance": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.20.0",
+        "qualifiedKernelRelease": "0.20.0",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "ea0d5cef08a15c9a4ff88f3696ddc55ddd82136ee776ea78844889fe65667654",
+        "wasmBytes": 3364616,
+        "solverChanges": true
+      }
+    },
+    {
+      "root": "/home/alexkahn/alex/rapier-convex-export/dist",
+      "sha256": "4e6e6cdd841ea3f1e1b3a6847a78e12a23387024a5d9295b1b35e0525e9d6df9",
+      "provenance": {
+        "schemaVersion": 1,
+        "scope": "package",
+        "packageName": "@absolutejs/rapier3d",
+        "packageVersion": "0.21.0-research.1",
+        "qualifiedKernelRelease": "unqualified-convex-export-rank",
+        "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+        "engine": "0.36.0",
+        "collisionLibraryVersion": "0.31.1",
+        "collisionSource": "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72",
+        "convexExportPrecision": "float64",
+        "bindings": "0.21.0",
+        "bindgen": "0.2.129",
+        "wasmSha256": "f1a909f788cc332e4ed8a4af3da1f38c84fd9bd995aa1ffe85dd9bee36f04050",
+        "wasmBytes": 3411245,
+        "solverChanges": true
+      }
+    }
+  ],
+  "cases": 18,
+  "comparedSteps": 9240,
+  "rows": [
+    {
+      "key": "cavity-480-0",
+      "steps": 720,
+      "initialSha256": "856e7f7ce4274f5ad7f98afe52efddd2a7906fe8057022e1b52098dc941945fe",
+      "stateSequenceSha256": "2114aee523b2022b7f73fa0150d4a2c559ef33f0bc5d43c3d9e2025b37417152",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 144
+    },
+    {
+      "key": "cavity-480-0.35",
+      "steps": 720,
+      "initialSha256": "37a63db162ba3c62fe8d3a6225a74e159a80c0a13bd8c06956788d65847473ca",
+      "stateSequenceSha256": "42b66d96f33e833e77b2aa923809426cfd6868f77293b0287616ecb96128f272",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 144
+    },
+    {
+      "key": "cavity-480-1",
+      "steps": 720,
+      "initialSha256": "da0dbc4f53d3a4bf1be35d141c4169a480bf93aaf43ad05e2a17a77920107f4f",
+      "stateSequenceSha256": "1c07ba2941c82cba559764390f55455eb3d7c37bd7c230ce56ef8eea6fd24e51",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 144
+    },
+    {
+      "key": "cavity-960-0",
+      "steps": 720,
+      "initialSha256": "ed49aeaa674cecb7c393511b873d11059d34b94f01b10047bc1847061340dd78",
+      "stateSequenceSha256": "cca1efbdc231c5e67d3309c8c4e3f622f0af21d1d983f5a206cc89966be51819",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 72
+    },
+    {
+      "key": "cavity-960-0.35",
+      "steps": 720,
+      "initialSha256": "946f8372818f941b7e98e54be7c21a60907b4fbe2f1adee229f586123f72f741",
+      "stateSequenceSha256": "34b84f20fad4a1ac4daaa67cf1d83fcafeaf853d6e76cf93c275eef43aab2322",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 144
+    },
+    {
+      "key": "cavity-960-1",
+      "steps": 720,
+      "initialSha256": "a11707f9edafe02ed44bbc413d2e42bbbc604e8e8a3bf5412c775d414ce106d3",
+      "stateSequenceSha256": "370d326fa8250cce8f849454a5a194ded82abdec88fd3edda513e738c86bb9f0",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 144
+    },
+    {
+      "key": "cavity-1920-0",
+      "steps": 720,
+      "initialSha256": "5e2da63fe3e0789591453fa15fee47655fb8ed893bff36532a7dfab28b040304",
+      "stateSequenceSha256": "e3baf1edd9c186345ca985c8c21ee72a20928f3b9357da19d2e537c8b3d6e652",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 72
+    },
+    {
+      "key": "cavity-1920-0.35",
+      "steps": 720,
+      "initialSha256": "d623b694481265b9cabaefdc8318395a56aa8245609923a33697571f7a1d02ca",
+      "stateSequenceSha256": "2bd527cecb4956e426577671492f4f9c9a9c725628dd03fc4cf689713dd5305e",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 72
+    },
+    {
+      "key": "cavity-1920-1",
+      "steps": 720,
+      "initialSha256": "8e3cfb47d4844816a12a90ac4b89db7c66e453fd569509a41cb2bd2b837d2d83",
+      "stateSequenceSha256": "19ddbefe318d598c3f00954c61d5beb7423da90684f290af2d6b55cad3a49aea",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 72
+    },
+    {
+      "key": "coupled",
+      "steps": 120,
+      "initialSha256": "64e5cb12f837ed78dfb9259e990321e3b05e3ab2976974684ec8231b59c9aac3",
+      "stateSequenceSha256": "be0c04d1f81e732760d1082a9a022652f08a7c5e70240b474ba1f938d54159ed",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 4
+    },
+    {
+      "key": "simplex",
+      "steps": 120,
+      "initialSha256": "c865ce89eaec5ddd19ea2a32884cf0b4e744cb5b856969535b705d473b7fe195",
+      "stateSequenceSha256": "6804ff4282485a51dbddfbce3065ae3c0e68de365abb02005f9a5f951bb4d3fd",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 16
+    },
+    {
+      "key": "predictive-floor",
+      "steps": 120,
+      "initialSha256": "a28c6cd9cc88698198c79aca241340d34b524f3f6e114afb740386b4444db348",
+      "stateSequenceSha256": "e9eb18876f78713bb98fd9c8b5f700e5b0c9fb835cb692e40f3123a4b8769ce8",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 16
+    },
+    {
+      "key": "predictive-fragment",
+      "steps": 120,
+      "initialSha256": "24e38c4e30ce37b069d5e9183353e3dd02347cbad02b0ede9a5a4c9270c97af5",
+      "stateSequenceSha256": "01444757bcd268d0e150dcae5c370b309e2cc32854ff655011cdb47c9231f8f2",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 2,
+      "maximumBodySubsteps": 32
+    },
+    {
+      "key": "pending-wake-impulse",
+      "steps": 60,
+      "initialSha256": "f36f8e49e09dcf9a0a8001f71ac54820e8d32c90fc2758cf52b0d463aa6f0bfb",
+      "stateSequenceSha256": "0300cead6559ee027a76435d76187dd79555f46477c9264fa5bf07cd23495369",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 64
+    },
+    {
+      "key": "pending-wake-multibody",
+      "steps": 60,
+      "initialSha256": "3a0eadb5702c50b44f077edf0a27c038b0baaff2c7d37f04e258e527dd363602",
+      "stateSequenceSha256": "bd604c077c4f8dff180e7b68ff5524800642b122e79141b62cde20cdfeace49b",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 64
+    },
+    {
+      "key": "free-anisotropic-0",
+      "steps": 720,
+      "initialSha256": "406533b5977c1d93d6592ebdda54702bc0f050e14a5b76949caf8598f9107eb7",
+      "stateSequenceSha256": "403172dc880fdcfdd8aabfa10cb16178d271b2e128b1b168ac804e1bbf3a8b6d",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 8
+    },
+    {
+      "key": "free-anisotropic-8",
+      "steps": 720,
+      "initialSha256": "481836a57b22eaa970216437c34e3088cbae4b8f475bcbd77a4f89cc44c6f249",
+      "stateSequenceSha256": "3b6fc9dab351c052ab3798e589614dc633166541af4ca98423fa040e51c219d4",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 16
+    },
+    {
+      "key": "free-anisotropic-24",
+      "steps": 720,
+      "initialSha256": "f6bd60947990d7cfbdaed1f9b7603cd9377405466a66e4a7bc8ac8d40e75b6e7",
+      "stateSequenceSha256": "433ad3186ba6d58547d00edd998894f25eabc72bf2ed9c8fb894285c3a1c2262",
+      "exactBaselineCandidateProfiledParity": true,
+      "maximumGroups": 1,
+      "maximumBodySubsteps": 32
+    }
+  ],
+  "sourceSha256": "273e22eb3c5c82b32ca854b700592f91cf67e66f3a7cca3cee7e699df93a794c",
+  "unchangedDistributions": true
+}
