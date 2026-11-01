@@ -1,4 +1,4 @@
-# Next: lossless bounded diagnostic profile packet
+# Lossless bounded diagnostic profile packet
 
 The representative game report contains two attempts with16retained samples each. New schedule fields first triggered credential-key redaction (`*Passes`); corrected API names are `groupVisits` and `rigidBodyVisits`. Full repeated schedules exceeded the existing30,000byte gate at34,471bytes. Interned schedules reduced this to30,741bytes; omitting explicit default index0 reduced it to30,017bytes in the recorded run. Do not round observations, delete samples or quietly raise that gate.
 
@@ -7,3 +7,7 @@ Implement reusable `encodePhysicsStepProfile` / `decodePhysicsStepProfile` in th
 Hard decode bounds: at most256samples/settings/schedules, fixed tuple lengths, finite scalars or explicitly permittednulls, safe integer counts/indices, known enums/version, no sparse arrays or dangling table references. Use the shared schedule validator. Return owned readable objects, never aliases. Round-trip real empty/active/failed-clock/capture-failed profiles, malformed/oversized packets, mutation ownership and a real browser worker. Maintain unchanged nativebytes. Existing private build/version0.20.0-research.1 is not a release.
 
 Game integration: compact only diagnostic checkpoint transport; physical worker results retain the normal readable profile and existing validation. `physical.worker.ts` already centralizes report(event,fields), with compact terminal summaries computed before reporter.emit. Add a bounded game adapter for known `profile`/`physicsProfile` fields and attempt profiles; do not recursively rewrite arbitrary trees. Test actual adapter→redactor→decoder equality and the same30KB event budget, then real browser copied diagnostics/terminal sampled schedule and maintained suite. Failed codec/size experiments remain preserved. No publication or user question is needed.
+
+## Implemented qualification
+
+The codec and game adapter are implemented. All 266 package tests pass (92,170 assertions). GPU-disabled Chromium worker round trips real captured profiles, checks owned decoded tables and rejects unknown versions. The first browser comparison incorrectly relied on object insertion order; its failed receipt is preserved, and the corrected comparator recursively compares own keys and `Object.is` values. Native bytes are unchanged from the initial private schedule build. Game targeted integration passes 19 tests including actual redaction and the unchanged 30,000-byte gate. Full game qualification and current API reproducibility remain pending; this is still private research.

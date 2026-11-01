@@ -1,0 +1,13 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/step-profile-packet.test.ts:
+(pass) numeric profile packets exactly round trip real active, empty and failure observations through JSON [34.33ms]
+(pass) packet transport preserves signed zero, subnormal numbers and explicit versus omitted indices [2.58ms]
+(pass) encoded and decoded profiles own all arrays and nested observations [2.62ms]
+(pass) packet decoding rejects oversized sparse malformed and dangling records before accepting data [7.90ms]
+(pass) two complete sampled attempts fit a compact diagnostic budget without rounding [4.94ms]
+
+ 5 pass
+ 0 fail
+ 44 expect() calls
+Ran 5 tests across 1 file. [201.00ms]

@@ -1,0 +1,11 @@
+17 |   w.onmessage=e=>{clearTimeout(timer);w.terminate();resolve(e.data);};
+18 |   w.onerror=e=>{clearTimeout(timer);w.terminate();reject(Error(e.message));};
+19 |  }));
+20 |  mkdirSync('.absolutejs/logs',{recursive:true});
+21 |  writeFileSync('.absolutejs/logs/browser-result.json',JSON.stringify({gpu:false,result},null,2)+'\n');
+22 |  if(!(result as {passed:boolean}).passed)throw Error(JSON.stringify(result));
+                                                    ^
+error: {"passed":false,"error":"Error: Browser profile packet round-trip failed"}
+      at /home/alexkahn/alex/rapier-solver-schedule/absolutejs/scripts/verify-browser.ts:22:48
+
+Bun v1.4.4+absolute.1 (Linux x64)

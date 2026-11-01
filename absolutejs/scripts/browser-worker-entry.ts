@@ -218,6 +218,20 @@ try {
     if(boundedStepProfile.completedSteps!==10||boundedStepProfile.samples.length!==3||boundedStepProfile.samplesOmittedForBudget!==2||boundedStepProfile.captureErrors||boundedStepProfile.timingErrors||sampledWorld.profilerEnabled)throw Error('Invalid browser step profile');
     if(boundedStepProfile.samples.some(s=>s.captureStatus!=='captured'||!s.native))throw Error('Missing native browser sample');
     if(boundedStepProfile.samples.some(s=>s.native?.freeRotation.acceptedSteps!==sampledWorld.numSolverIterations))throw Error('Missing browser free rotation observations');
+    const packet=R.encodePhysicsStepProfile(boundedStepProfile);
+    const decoded=R.decodePhysicsStepProfile(JSON.parse(JSON.stringify(packet)));
+    const sameValue=(a:unknown,b:unknown):boolean=>{
+     if(Object.is(a,b))return true;
+     if(!a||!b||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;
+     const ak=Object.keys(a).sort(),bk=Object.keys(b).sort();
+     return ak.length===bk.length&&ak.every((key,i)=>key===bk[i]&&sameValue((a as any)[key],(b as any)[key]));
+    };
+    if(!sameValue(decoded,boundedStepProfile))throw Error('Browser profile packet round-trip failed');
+    decoded.solverSchedules[0]!.groupVisits=999;
+    if(boundedStepProfile.solverSchedules[0]!.groupVisits===999)throw Error('Browser profile packet ownership failed');
+    let rejectedPacket=false;
+    try{R.decodePhysicsStepProfile({...packet,format:'unknown'});}catch{rejectedPacket=true;}
+    if(!rejectedPacket)throw Error('Browser accepted unknown profile packet');
     const ownedProfile=profiler.snapshot();
     ownedProfile.samples[0]!.native!.freeRotation.acceptedSteps=-1;
     if(profiler.snapshot().samples[0]!.native!.freeRotation.acceptedSteps<0)throw Error('Browser free rotation observations are not owned');
