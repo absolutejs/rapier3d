@@ -715,7 +715,7 @@ always-present `solverSchedules` table and optional sample index are part of tha
 schema; older readable profiles without this table are not silently upgraded.
 Keep the format tag with stored packets and decode before displaying their fields.
 
-## Convex boundary export (0.21 candidate)
+## Convex boundary export (0.21)
 
 `collider.convexMeshData()` returns an owned `{vertices: Float32Array,
 indices: Uint32Array}` pair from one native hull reconstruction. Use it when both
@@ -744,5 +744,5 @@ validate both.
 `buildInfo.convexExportPrecision` identifies this reconstruction as `float64`.
 The f32 and f64 collision-library dependencies use the same recorded source pin.
 Captured export, browser-worker, simulation-parity and CPU timing evidence lives
-in `absolutejs/research/convex-export/`. This candidate remains private pending
-complete release qualification; source availability does not imply npm release.
+in `absolutejs/research/convex-export/`. Release availability is separate from source qualification; publication may be
+deferred. The unchanged physical engine retains its existing settling limits.

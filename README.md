@@ -714,3 +714,35 @@ Readable `PhysicsStepProfile` remains the simulation-facing API. In 0.20 its
 always-present `solverSchedules` table and optional sample index are part of that
 schema; older readable profiles without this table are not silently upgraded.
 Keep the format tag with stored packets and decode before displaying their fields.
+
+## Convex boundary export (0.21)
+
+`collider.convexMeshData()` returns an owned `{vertices: Float32Array,
+indices: Uint32Array}` pair from one native hull reconstruction. Use it when both
+buffers are needed; separate `vertices()` and `indices()` calls each reconstruct
+the hull. The query observes the current shape, so replacing a collider's shape
+requires no cache invalidation. Mutating returned arrays does not change the
+collider.
+
+```ts
+const mesh = collider.convexMeshData();
+if (mesh) {
+  // Positions are in collider-local coordinates; indices describe triangles.
+  uploadBoundary(mesh.vertices, mesh.indices);
+}
+```
+
+Nonconvex shapes return `undefined`. Rounded convex shapes return the inner
+polyhedron, excluding the round radius. The mesh is a reconstructed boundary of
+the stored Float32 points, not a copy of internal contact faces. Reconstruction
+uses double precision and exact-sign dimension checks for thin point clouds;
+returned positions remain original Float32 coordinates. It does not upgrade the
+physics engine's storage or solver to double precision. Boundary measurements
+and native mass measurements remain distinct; applications must continue to
+validate both.
+
+`buildInfo.convexExportPrecision` identifies this reconstruction as `float64`.
+The f32 and f64 collision-library dependencies use the same recorded source pin.
+Captured export, browser-worker, simulation-parity and CPU timing evidence lives
+in `absolutejs/research/convex-export/`. Release availability is separate from source qualification; publication may be
+deferred. The unchanged physical engine retains its existing settling limits.
