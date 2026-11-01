@@ -1,0 +1,114 @@
+{
+  "dynamicBodies": [
+    {
+      "activation": {
+        "angular_threshold": 0.5,
+        "normalized_linear_threshold": 0.05000000074505806,
+        "sleep_prev_pose": {
+          "padding": 0,
+          "rotation": [
+            -0.521412193775177,
+            -0.4316622316837311,
+            -0.5176216959953308,
+            0.5233209133148193
+          ],
+          "translation": [
+            31.36675262451172,
+            2.8770718574523926,
+            3.2312967777252197
+          ]
+        },
+        "sleeping": false,
+        "time_since_can_sleep": 0.0072916666977107525,
+        "time_until_sleep": 0.5
+      },
+      "angularVelocity": [
+        0.29342302680015564,
+        -6.899450255559714e-8,
+        0.10402705520391464
+      ],
+      "handle": [
+        0,
+        0
+      ],
+      "linearVelocity": [
+        -0.2992112338542938,
+        -0.2955836355686188,
+        0.8439675569534302
+      ],
+      "mass": 0.7353917956352234,
+      "maxExtent": 38.268898010253906,
+      "pose": {
+        "padding": 0,
+        "rotation": [
+          -0.5213187336921692,
+          -0.4316163659095764,
+          -0.517655611038208,
+          0.5234183669090271
+        ],
+        "translation": [
+          31.366470336914062,
+          2.8767929077148438,
+          3.2320921421051025
+        ]
+      }
+    },
+    {
+      "activation": {
+        "angular_threshold": 0.5,
+        "normalized_linear_threshold": 0.05000000074505806,
+        "sleep_prev_pose": {
+          "padding": 0,
+          "rotation": [
+            -0.0016108520794659853,
+            0.1708981990814209,
+            -0.33330950140953064,
+            0.9271979331970215
+          ],
+          "translation": [
+            105.42364501953125,
+            13.319741249084473,
+            17.691516876220703
+          ]
+        },
+        "sleeping": true,
+        "time_since_can_sleep": 0.5,
+        "time_until_sleep": 0.5
+      },
+      "angularVelocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "handle": [
+        1,
+        0
+      ],
+      "linearVelocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mass": 0.7384390234947205,
+      "maxExtent": 98.1124267578125,
+      "pose": {
+        "padding": 0,
+        "rotation": [
+          -0.0016108520794659853,
+          0.1708981990814209,
+          -0.33330950140953064,
+          0.9271979331970215
+        ],
+        "translation": [
+          105.42364501953125,
+          13.319741249084473,
+          17.691516876220703
+        ]
+      }
+    }
+  ],
+  "exactSerializationRoundTrip": true,
+  "lengthUnit": 100.0,
+  "snapshot": "/home/alexkahn/alex/hello-world-film-controls/docs/native-export-settling-tail-960-2026-11-01/7-slender-3-0-terminal.bin",
+  "stepDt": 0.0010416667209938169
+}

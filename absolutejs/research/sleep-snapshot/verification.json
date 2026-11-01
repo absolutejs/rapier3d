@@ -1,0 +1,75 @@
+{
+  "readOnly": true,
+  "checks": [
+    {
+      "report": "1920-6-slender-3-0-continued.json",
+      "snapshotSha256": "c2c2131ee5495130dcca1047b60e2337f211d4184fb85b0d9ac1caa728e947d9",
+      "sleeping": [
+        true,
+        true
+      ]
+    },
+    {
+      "report": "1920-6-slender-3-0-terminal.json",
+      "snapshotSha256": "e6df3e05d458bf3416c8135b67aa8e871614ddbea21265df0afd1d0d8d2fe118",
+      "sleeping": [
+        false,
+        true
+      ]
+    },
+    {
+      "report": "960-6-slender-3-0-continued.json",
+      "snapshotSha256": "d8b27f002a77110a16a6651e54eb5c4d14cf9221ccfedc868dc565c7a7fb0722",
+      "sleeping": [
+        false,
+        true
+      ]
+    },
+    {
+      "report": "960-6-slender-3-0-terminal.json",
+      "snapshotSha256": "14adc99883abc99a9074f18e9fbfdc57d13fbd64176c77a6aa27110fe5e55941",
+      "sleeping": [
+        false,
+        true
+      ]
+    },
+    {
+      "report": "960-7-slender-3-0-continued.json",
+      "snapshotSha256": "fc85db382218265246233fb8ac6e22118b38c14ee52ab14c8b0aa9ae60dc079e",
+      "sleeping": [
+        false,
+        true
+      ]
+    },
+    {
+      "report": "960-7-slender-3-0-terminal.json",
+      "snapshotSha256": "f902743dad393660e85e537d64c5a581195cea8f240a3a350bd60c3c7b22ba66",
+      "sleeping": [
+        false,
+        true
+      ]
+    },
+    {
+      "control": "magic",
+      "rejected": true,
+      "stderr": "Error: \"invalid bounded snapshot envelope\""
+    },
+    {
+      "control": "version",
+      "rejected": true,
+      "stderr": "Error: \"invalid bounded snapshot envelope\""
+    },
+    {
+      "control": "truncated",
+      "rejected": true,
+      "stderr": "Error: Io(Kind(UnexpectedEof))"
+    }
+  ],
+  "binarySha256": "cbbe009c09bba203da9ad86d94ca895a7b584f4b98366c83c908cd5cb00b7612",
+  "sourceHashes": {
+    "Cargo.toml": "246f061599d2f3db349ec799fca4defd4e3fb2072f2408cbe8fa4ff4757465c7",
+    "Cargo.lock": "853ff8c6af3378cda2ad61b5edeaad29bedbb3d19c3e0c73975af01f9d781c32",
+    "src/main.rs": "45c66d75458b53e9e4304db4fff3e19bd3525e07a9ea6d495a0e6c4c5438d0c5",
+    "verify.py": "5cf8abfc43aeddb4670585a8fa5f465b4d43c5b4bfa08fb047f506f0303f91b4"
+  }
+}
