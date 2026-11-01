@@ -34,7 +34,8 @@ export interface PhysicsStepSample {
         convergence: ContactConvergenceStats;
         freeRotation: FreeRotationStats;
         freeAssembly: FreeAssemblyStats;
-        schedule: SolverScheduleStats;
+        /** Index into the owning profile's bounded solverSchedules table. */
+        solverScheduleIndex: number;
     } | null;
 }
 
@@ -57,6 +58,8 @@ export interface PhysicsStepProfile {
     samples: PhysicsStepSample[];
     /** Distinct numerical settings, at most one entry per retained sample. */
     contactSettings: PhysicsContactSettings[];
+    /** Distinct owned schedules, at most one per retained sample. */
+    solverSchedules: SolverScheduleStats[];
 }
 
 export interface PhysicsStepProfileOptions {
@@ -98,6 +101,20 @@ export function createPhysicsStepProfiler(
     const now = options.now ?? (() => performance.now());
     const samples: PhysicsStepSample[] = [];
     const contactSettings: PhysicsContactSettings[] = [];
+    const solverSchedules: SolverScheduleStats[] = [];
+    const captureSchedule = (schedule: SolverScheduleStats): number => {
+        const owned: SolverScheduleStats = {groupVisits: schedule.groupVisits,
+            rigidBodyVisits: schedule.rigidBodyVisits, rigidBodySubsteps: schedule.rigidBodySubsteps,
+            minSubsteps: schedule.minSubsteps, maxSubsteps: schedule.maxSubsteps,
+            minSubstepDt: schedule.minSubstepDt, maxSubstepDt: schedule.maxSubstepDt};
+        const found = solverSchedules.findIndex(s =>
+            s.groupVisits === owned.groupVisits && s.rigidBodyVisits === owned.rigidBodyVisits &&
+            s.rigidBodySubsteps === owned.rigidBodySubsteps && s.minSubsteps === owned.minSubsteps &&
+            s.maxSubsteps === owned.maxSubsteps && s.minSubstepDt === owned.minSubstepDt && s.maxSubstepDt === owned.maxSubstepDt);
+        if (found !== -1) return found;
+        solverSchedules.push(owned);
+        return solverSchedules.length - 1;
+    };
     const captureContactSettings = (): number => {
         const dynamic = world.integrationParameters.contactSoftness;
         const fixed = world.integrationParameters.staticContactSoftness;
@@ -175,7 +192,7 @@ export function createPhysicsStepProfiler(
             convergence,
             freeRotation,
             freeAssembly,
-            schedule,
+            solverScheduleIndex: captureSchedule(schedule),
             contactSettingsIndex: captureContactSettings(),
         };
     };
@@ -286,6 +303,7 @@ export function createPhysicsStepProfiler(
                     contactSoftness: {...settings.contactSoftness},
                     staticContactSoftness: {...settings.staticContactSoftness},
                 })),
+                solverSchedules: solverSchedules.map(schedule => ({...schedule})),
                 samples: samples.map((sample) => ({
                     ...sample,
                     native: sample.native
@@ -293,7 +311,6 @@ export function createPhysicsStepProfiler(
                               ...sample.native,
                               timings: {...sample.native.timings},
                               convergence: {...sample.native.convergence},
-                              schedule: {...sample.native.schedule},
                               freeRotation: {...sample.native.freeRotation},
                               freeAssembly: {...sample.native.freeAssembly},
                           }

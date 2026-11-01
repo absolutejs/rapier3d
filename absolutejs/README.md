@@ -664,8 +664,9 @@ convergence remain measurable approximation limits.
 The opt-in `world.solverSchedule()` query returns owned observations from the last
 completed profiled step. Like `ccdSubsteps()`, it returns `null` before such a
 step, when profiling is disabled or toggled, and after snapshot restoration.
-`createPhysicsStepProfiler` retains an owned `native.schedule` in each captured
-sample under its existing sample-count budget.
+`createPhysicsStepProfiler` retains distinct owned records in `solverSchedules`, referenced by each
+sample's `native.solverScheduleIndex`. The table cannot exceed the retained sample
+count; repeated observations do not repeat the full record.
 
 `groupVisits` counts prepared nonempty rigid-body solve groups across CCD passes.
 `rigidBodyVisits` sums their rigid-body slots, while `rigidBodySubsteps` weights

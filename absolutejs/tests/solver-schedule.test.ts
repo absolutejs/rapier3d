@@ -28,8 +28,8 @@ test('prepared groups distinguish independent extra iterations from connected pr
 test('querying and sampling schedule leave physical snapshots unchanged and own nested results',()=>{
  const a=fixture(true),b=R.World.restoreSnapshot(a.takeSnapshot());try{
  const p=R.createPhysicsStepProfiler(a,{sampleEvery:1,maxSamples:3});for(let i=0;i<5;i++){p.step();b.step();expect(a.takeSnapshot()).toEqual(b.takeSnapshot());}
- const profile=p.snapshot();expect(profile.samples).toHaveLength(3);expect(profile.samples.every(s=>s.native!.schedule.rigidBodySubsteps===32)).toBe(true);
- profile.samples[0]!.native!.schedule.groupVisits=999;expect(p.snapshot().samples[0]!.native!.schedule.groupVisits).toBe(1);
+ const profile=p.snapshot();expect(profile.samples).toHaveLength(3);expect(profile.samples.every(s=>profile.solverSchedules[s.native!.solverScheduleIndex]!.rigidBodySubsteps===32)).toBe(true);
+ profile.solverSchedules[0]!.groupVisits=999;expect(p.snapshot().solverSchedules[0]!.groupVisits).toBe(1);
  }finally{a.free();b.free();}
 });
 
@@ -62,4 +62,13 @@ test('serialized schedule validation rejects inconsistent counts and preserves n
  expect(R.isSolverScheduleStats(null)).toBe(false);expect(R.isSolverScheduleStats([])).toBe(false);expect(R.isSolverScheduleStats(Object.create(s))).toBe(false);expect(R.isSolverScheduleStats({...s,minSubsteps:'8'})).toBe(false);
  let invoked=false;const getter={...s};Object.defineProperty(getter,'groupVisits',{get(){invoked=true;return 2;}});expect(R.isSolverScheduleStats(getter)).toBe(false);expect(invoked).toBe(false);expect(R.isSolverScheduleStats(new Proxy(s,{getOwnPropertyDescriptor(){throw Error('no');}}))).toBe(false);
  expect(s.groupVisits).toBe(2);
+});
+
+test('bounded profiles intern equal schedules and retain changes without aliasing',()=>{
+ const w=new R.World({x:0,y:0,z:0});try{
+ w.numSolverIterations=8;const b=w.createRigidBody(R.RigidBodyDesc.dynamic().setCanSleep(false));w.createCollider(R.ColliderDesc.ball(.5),b);
+ const p=R.createPhysicsStepProfiler(w,{sampleEvery:1,maxSamples:4});p.step();p.step();b.setAdditionalSolverIterations(8);p.step();b.setAdditionalSolverIterations(0);p.step();b.setAdditionalSolverIterations(24);p.step();
+ const s=p.snapshot();expect(s.solverSchedules).toHaveLength(2);expect(s.samples.map(x=>x.native!.solverScheduleIndex)).toEqual([0,0,1,0]);expect(s.solverSchedules.map(x=>x.minSubsteps)).toEqual([8,16]);
+ s.solverSchedules[0]!.rigidBodyVisits=999;expect(p.snapshot().solverSchedules[0]!.rigidBodyVisits).toBe(1);expect(s.samplesOmittedForBudget).toBe(1);
+ }finally{w.free();}
 });

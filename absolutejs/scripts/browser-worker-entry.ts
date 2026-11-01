@@ -22,10 +22,10 @@ try {
   }
   if(scheduleWorld.solverSchedule()!==null)throw Error('Browser schedule freshness failed');
   const recorder=R.createPhysicsStepProfiler(scheduleWorld,{sampleEvery:1,maxSamples:1});recorder.step();
-  const report=recorder.snapshot(), schedule=report.samples[0]!.native!.schedule;
+  const report=recorder.snapshot(), schedule=report.solverSchedules[report.samples[0]!.native!.solverScheduleIndex]!;
   if(schedule.groupVisits!==2||schedule.rigidBodySubsteps!==24||schedule.minSubsteps!==8||schedule.maxSubsteps!==16)throw Error('Browser schedule grouping failed');
   const owned={...schedule};schedule.groupVisits=999;
-  if(recorder.snapshot().samples[0]!.native!.schedule.groupVisits!==2)throw Error('Browser schedule ownership failed');
+  if(recorder.snapshot().solverSchedules[0]!.groupVisits!==2)throw Error('Browser schedule ownership failed');
   solverScheduleControls={owned:true,fresh:true,schedule:owned};
  }finally{scheduleWorld.free();}
  const ownershipWorld=new R.World({x:0,y:0,z:0});
