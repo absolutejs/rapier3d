@@ -74,3 +74,44 @@ is byte-for-byte identical to qualified 0.18.0 (SHA256
 The exact prepared archive and its file/native/provenance audit are saved here.
 This is an additive pure-API candidate, not a new native integration algorithm.
 No npm authentication or publishing has been initiated.
+
+## Matrix ownership defect found by real surface integration
+
+The first actual-tree pressure run rejected a negative effective inverse mass.
+The inertia matrix returned by `SdpMatrix3Ops.fromBuffer` borrowed the shared native
+scratch buffer: subsequent velocity queries overwrote its first three entries.
+A regression fails on the prepared archive, while explicit caller-owned targets
+already behave correctly. Default matrix results now allocate six owned elements
+before copying. Both inverse inertia and inertia results remain unchanged across
+other getters and independent returned matrices.
+
+The previously saved 0.19 archive is superseded until this fix completes full
+qualification and the archive/independent build are regenerated. Native kernel
+bytes remain unchanged. This is an API ownership correction, not a weaker drag
+input gate or a game-local workaround.
+
+## Batched surface response
+
+The fixed real-tree run exposed native Float32 accumulation error when each tiny
+surface impulse was applied separately. `solveQuadraticDragPatches` now performs
+up to 4,096 sequential frozen-pose channels in JS double precision and returns
+one combined linear/angular impulse pair. It takes explicit world-frame offsets,
+directions, fluid velocities, coefficients, one-sided policies and a free rigid
+body's inverse response. It validates positive-semidefinite inverse inertia,
+reports locked channels, and never changes caller storage. Native coupling to
+articulations or contact constraints is outside this response model.
+
+Tests check the scalar limit, full-tensor work identity, directional normalization,
+locked/invalid inputs, and native application in metre/centimetre worlds. The first
+448-patch branch comparison reduces 480 Hz ledger error from 2.28e-4 to 4.60e-7
+of initial energy and reduces native impulse calls from about 253,545 to 1,920.
+The measured wall time did not improve in this small run; the demonstrated gain
+is precision and fewer native calls, not a hardware/performance claim. Spatial,
+timestep and ordering qualification is still required.
+
+The owned-matrix correction and batched patch API pass the complete **254-test /
+92,063-assertion** package suite. The GPU-disabled browser worker passes both
+scalar and batched energy ledgers, returned-matrix ownership, and all previous
+native/contact/snapshot checks. A 27-case actual-tree rate/refinement/order
+matrix is now running with frozen package outputs. The earlier archive remains
+superseded until regeneration after this source checkpoint.

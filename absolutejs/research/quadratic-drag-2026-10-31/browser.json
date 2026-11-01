@@ -1,6 +1,34 @@
 {
   "gpu": false,
   "result": {
+    "batchedDrag": {
+      "impulse": {
+        "x": -2,
+        "y": 0,
+        "z": 0
+      },
+      "angularImpulse": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "linearVelocity": {
+        "x": 6,
+        "y": 0,
+        "z": 0
+      },
+      "angularVelocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "dissipatedEnergy": 5,
+      "reservoirWork": -8,
+      "bodyWork": -13,
+      "activePatches": 1,
+      "lockedPatches": 0
+    },
+    "ownedInertiaMatrices": true,
     "quadraticDrag": {
       "impulse": -2,
       "relativeSpeedAfter": 2,
@@ -101,9 +129,9 @@
       "completedSteps": 10,
       "failedSteps": 0,
       "timedSteps": 10,
-      "totalWallTimeMs": 0,
-      "maxWallTimeMs": 0,
-      "slowestStep": 0,
+      "totalWallTimeMs": 0.09999999962747097,
+      "maxWallTimeMs": 0.09999999962747097,
+      "slowestStep": 6,
       "timingErrors": 0,
       "captureErrors": 0,
       "samplesOmittedForBudget": 2,
@@ -284,8 +312,8 @@
     "kinematicPositionErrorM": 3.5762786865234375e-7,
     "kinematicRotationErrorRad": 3.3717478808715265e-7,
     "currentBodyPoseQuery": true,
-    "totalCcdMs": 5.899999999999997,
-    "totalToiMs": 5.399999999999999,
+    "totalCcdMs": 3.700000000000002,
+    "totalToiMs": 3.2000000000000015,
     "maximumCcdSubsteps": 1,
     "fastCcdSubsteps": 2,
     "restoredOwners": true,

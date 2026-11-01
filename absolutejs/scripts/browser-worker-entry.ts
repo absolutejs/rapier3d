@@ -8,7 +8,19 @@ import {rotate, unit, vector, type V} from '../research/gyroscopic-precision/fre
 try {
  const quadraticDrag=R.solveQuadraticDragImpulse({relativeSpeed:3,fluidSpeed:4,inverseEffectiveMass:.5,quadraticResistance:2,dt:.25});
  if(Math.abs(quadraticDrag.impulse+2)>1e-12||Math.abs(quadraticDrag.bodyWork+13)>1e-12||Math.abs(quadraticDrag.dissipatedEnergy-5)>1e-12)throw Error('Browser quadratic drag energy ledger failed');
+ const batchedDrag=R.solveQuadraticDragPatches({linearVelocity:{x:7,y:0,z:0},angularVelocity:{x:0,y:0,z:0},inverseMass:{x:.5,y:.5,z:.5},inverseInertia:[1,0,0,1,0,1],dt:.25,
+  patches:[{offset:{x:0,y:0,z:0},direction:{x:1,y:0,z:0},fluidVelocity:{x:4,y:0,z:0},quadraticResistance:2,oneSided:false}]});
+ if(Math.abs(batchedDrag.impulse.x+2)>1e-12||Math.abs(batchedDrag.bodyWork+13)>1e-12)throw Error('Browser batched drag ledger failed');
  await Promise.all([R.init(),R.init()]);
+ const ownershipWorld=new R.World({x:0,y:0,z:0});
+ try {
+  const body=ownershipWorld.createRigidBody(R.RigidBodyDesc.dynamic());
+  ownershipWorld.createCollider(R.ColliderDesc.cuboid(.4,.2,.1),body);
+  body.recomputeMassPropertiesFromColliders();
+  const matrix=body.effectiveWorldInvInertia(),saved=Array.from(matrix.elements);
+  body.linvel();body.angvel();body.worldCom();body.effectiveAngularInertia();
+  if(matrix.elements.length!==6||JSON.stringify(Array.from(matrix.elements))!==JSON.stringify(saved))throw Error('Browser inertia matrix aliases scratch state');
+ } finally { ownershipWorld.free(); }
  const settingsWorld=new R.World({x:0,y:-9.81,z:0});
  let contactSoftnessControls;
  try{
@@ -300,6 +312,6 @@ try {
    if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
-  postMessage({quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

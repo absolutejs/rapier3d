@@ -1,0 +1,45 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/matrix-ownership.test.ts:
+11 | test('returned inertia matrices own their six elements across unrelated native getters',()=>{
+12 |  const {world,body}=fixture();
+13 |  try{
+14 |   const inverse=body.effectiveWorldInvInertia(),saved=Array.from(inverse.elements);
+15 |   body.linvel();body.angvel();body.velocityAtPoint({x:3,y:2,z:1});body.worldCom();body.effectiveInvMass();
+16 |   expect(Array.from(inverse.elements)).toEqual(saved);
+                                            ^
+error: expect(received).toEqual(expected)
+
+  [
+-   7.133288383483887,
+-   0,
+-   -3.2766995429992676,
++   0.15625,
++   0.15625,
++   0.15625,
+    2.757352828979492,
+    0,
+    4.585460662841797,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+  ]
+
+- Expected  - 3
++ Received  + 3
+
+      at <anonymous> (/home/alexkahn/alex/rapier-fluid-impulses/absolutejs/tests/matrix-ownership.test.ts:16:40)
+(fail) returned inertia matrices own their six elements across unrelated native getters [6.02ms]
+(pass) an explicit matrix target is reused and stays unchanged until explicitly filled again [0.67ms]
+
+ 1 pass
+ 1 fail
+ 5 expect() calls
+Ran 2 tests across 1 file. [161.00ms]

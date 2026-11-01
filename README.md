@@ -647,3 +647,14 @@ reservoir work. It is pure and does not infer shape, exposure or coefficients.
 Use consistent units and the complete effective mass response; verify native
 application precision. See `absolutejs/research/quadratic-drag-2026-10-31/README.md`
 for the derivation, scope and evidence. Native engine qualification stays 0.18.0.
+
+Default inertia-matrix getter results now own their six coefficients. Later
+native getters cannot overwrite a matrix already returned to the caller. Passing
+an explicit matrix target still reuses that target as documented.
+
+`solveQuadraticDragPatches` evaluates up to 4,096 explicit resistance patches in
+double precision at a fixed pose and returns combined linear/angular impulses.
+It reports body/reservoir work and dissipation, owns its outputs and preserves
+inputs. Free-body inverse mass/inertia and patch exposure are caller supplied;
+this is not an articulated-fluid or full CFD model. Patch order and timestep
+convergence remain measurable approximation limits.

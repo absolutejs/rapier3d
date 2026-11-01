@@ -295,7 +295,9 @@ export class SdpMatrix3Ops {
     ): SdpMatrix3 {
         if (!buffer) return null;
 
-        target ??= new SdpMatrix3(buffer);
+        // Native getters share scratchBuffer. A default result must own its six
+        // coefficients so subsequent queries cannot overwrite the returned tensor.
+        target ??= new SdpMatrix3(new Float32Array(6));
         target.elements[0] = buffer[0];
         target.elements[1] = buffer[1];
         target.elements[2] = buffer[2];
