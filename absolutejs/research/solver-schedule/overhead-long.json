@@ -1,0 +1,899 @@
+{
+  "scope": "One-process paired Bun CPU observation, collision-free rigid groups with alternating additional iterations; timer/profiler/read costs are separate, no hardware FPS or general performance guarantee",
+  "bun": "1.4.4+absolute.1",
+  "hashes": {
+    "baseline": "43b9778ed518c2c081f41a038b4cdd9a21a1a3d01942cdb9829e745ebe5c7bdc",
+    "candidate": "8042972549d63aef953d816509f6cd89753b552cd26f687b2c0d33b5101d0cc1",
+    "source": "ed771d0602ab00d7a0156a6f3bac8f17d5aafa7818775a39623eac573ad3f8ed"
+  },
+  "measuredStepsByBodyCount": {
+    "2": 20000,
+    "32": 2500,
+    "128": 600
+  },
+  "warmSteps": 100,
+  "rounds": 7,
+  "rows": [
+    {
+      "round": 0,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 235.5289580000001,
+      "microsecondsPerStep": 11.776447900000004
+    },
+    {
+      "round": 0,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 222.53130399999986,
+      "microsecondsPerStep": 11.126565199999993
+    },
+    {
+      "round": 0,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 220.0657030000002,
+      "microsecondsPerStep": 11.00328515000001
+    },
+    {
+      "round": 0,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 236.9532949999998,
+      "microsecondsPerStep": 11.847664749999991
+    },
+    {
+      "round": 0,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 240.24048300000004,
+      "microsecondsPerStep": 12.012024150000002
+    },
+    {
+      "round": 1,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 211.75383499999998,
+      "microsecondsPerStep": 10.58769175
+    },
+    {
+      "round": 1,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 231.71012999999994,
+      "microsecondsPerStep": 11.585506499999997
+    },
+    {
+      "round": 1,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 219.22615200000018,
+      "microsecondsPerStep": 10.961307600000008
+    },
+    {
+      "round": 1,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 215.84529399999974,
+      "microsecondsPerStep": 10.792264699999986
+    },
+    {
+      "round": 1,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 199.48288500000035,
+      "microsecondsPerStep": 9.974144250000018
+    },
+    {
+      "round": 2,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 214.15539499999977,
+      "microsecondsPerStep": 10.70776974999999
+    },
+    {
+      "round": 2,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 223.63859300000058,
+      "microsecondsPerStep": 11.18192965000003
+    },
+    {
+      "round": 2,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 233.41514000000006,
+      "microsecondsPerStep": 11.670757000000004
+    },
+    {
+      "round": 2,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 220.22541499999988,
+      "microsecondsPerStep": 11.011270749999994
+    },
+    {
+      "round": 2,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 226.74607500000002,
+      "microsecondsPerStep": 11.33730375
+    },
+    {
+      "round": 3,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 243.27030000000013,
+      "microsecondsPerStep": 12.163515000000007
+    },
+    {
+      "round": 3,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 269.2703819999997,
+      "microsecondsPerStep": 13.463519099999985
+    },
+    {
+      "round": 3,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 254.77670500000022,
+      "microsecondsPerStep": 12.738835250000012
+    },
+    {
+      "round": 3,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 267.87513300000046,
+      "microsecondsPerStep": 13.393756650000022
+    },
+    {
+      "round": 3,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 267.4881299999997,
+      "microsecondsPerStep": 13.374406499999985
+    },
+    {
+      "round": 4,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 277.05168200000026,
+      "microsecondsPerStep": 13.852584100000014
+    },
+    {
+      "round": 4,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 252.76175199999943,
+      "microsecondsPerStep": 12.638087599999972
+    },
+    {
+      "round": 4,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 251.45403200000055,
+      "microsecondsPerStep": 12.572701600000029
+    },
+    {
+      "round": 4,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 251.16089499999998,
+      "microsecondsPerStep": 12.558044749999999
+    },
+    {
+      "round": 4,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 255.81826999999976,
+      "microsecondsPerStep": 12.790913499999988
+    },
+    {
+      "round": 5,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 245.17458199999965,
+      "microsecondsPerStep": 12.258729099999982
+    },
+    {
+      "round": 5,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 261.2940609999996,
+      "microsecondsPerStep": 13.06470304999998
+    },
+    {
+      "round": 5,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 258.5757339999991,
+      "microsecondsPerStep": 12.928786699999955
+    },
+    {
+      "round": 5,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 259.1077089999999,
+      "microsecondsPerStep": 12.955385449999994
+    },
+    {
+      "round": 5,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 263.7133809999996,
+      "microsecondsPerStep": 13.18566904999998
+    },
+    {
+      "round": 6,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 237.68116599999848,
+      "microsecondsPerStep": 11.884058299999925
+    },
+    {
+      "round": 6,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 243.9055040000003,
+      "microsecondsPerStep": 12.195275200000015
+    },
+    {
+      "round": 6,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 248.0751059999984,
+      "microsecondsPerStep": 12.40375529999992
+    },
+    {
+      "round": 6,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 252.21506399999998,
+      "microsecondsPerStep": 12.6107532
+    },
+    {
+      "round": 6,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "measuredSteps": 20000,
+      "elapsedMs": 242.06630100000075,
+      "microsecondsPerStep": 12.103315050000036
+    },
+    {
+      "round": 0,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 246.7392660000005,
+      "microsecondsPerStep": 98.6957064000002
+    },
+    {
+      "round": 0,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 250.89773500000047,
+      "microsecondsPerStep": 100.35909400000018
+    },
+    {
+      "round": 0,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 262.3579289999998,
+      "microsecondsPerStep": 104.94317159999991
+    },
+    {
+      "round": 0,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 262.57246900000064,
+      "microsecondsPerStep": 105.02898760000025
+    },
+    {
+      "round": 0,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 253.21874099999877,
+      "microsecondsPerStep": 101.2874963999995
+    },
+    {
+      "round": 1,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 243.49418499999956,
+      "microsecondsPerStep": 97.39767399999982
+    },
+    {
+      "round": 1,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 240.4308809999984,
+      "microsecondsPerStep": 96.17235239999937
+    },
+    {
+      "round": 1,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 253.2168959999999,
+      "microsecondsPerStep": 101.28675839999995
+    },
+    {
+      "round": 1,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 240.31053600000087,
+      "microsecondsPerStep": 96.12421440000034
+    },
+    {
+      "round": 1,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 231.93177099999957,
+      "microsecondsPerStep": 92.77270839999983
+    },
+    {
+      "round": 2,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 231.07896900000014,
+      "microsecondsPerStep": 92.43158760000006
+    },
+    {
+      "round": 2,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 231.85335699999996,
+      "microsecondsPerStep": 92.74134279999998
+    },
+    {
+      "round": 2,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 237.9954630000011,
+      "microsecondsPerStep": 95.19818520000044
+    },
+    {
+      "round": 2,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 228.91726800000106,
+      "microsecondsPerStep": 91.56690720000043
+    },
+    {
+      "round": 2,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 225.41979199999878,
+      "microsecondsPerStep": 90.16791679999952
+    },
+    {
+      "round": 3,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 226.86756699999933,
+      "microsecondsPerStep": 90.74702679999973
+    },
+    {
+      "round": 3,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 241.23971899999924,
+      "microsecondsPerStep": 96.49588759999969
+    },
+    {
+      "round": 3,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 231.47586000000047,
+      "microsecondsPerStep": 92.59034400000019
+    },
+    {
+      "round": 3,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 245.18345699999918,
+      "microsecondsPerStep": 98.07338279999968
+    },
+    {
+      "round": 3,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 249.75711799999954,
+      "microsecondsPerStep": 99.90284719999983
+    },
+    {
+      "round": 4,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 250.5022399999998,
+      "microsecondsPerStep": 100.20089599999993
+    },
+    {
+      "round": 4,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 241.31171499999982,
+      "microsecondsPerStep": 96.52468599999993
+    },
+    {
+      "round": 4,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 235.85524500000065,
+      "microsecondsPerStep": 94.34209800000025
+    },
+    {
+      "round": 4,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 293.8859130000001,
+      "microsecondsPerStep": 117.55436520000002
+    },
+    {
+      "round": 4,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 260.62677200000144,
+      "microsecondsPerStep": 104.25070880000058
+    },
+    {
+      "round": 5,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 247.11492200000066,
+      "microsecondsPerStep": 98.84596880000026
+    },
+    {
+      "round": 5,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 227.70779499999844,
+      "microsecondsPerStep": 91.08311799999937
+    },
+    {
+      "round": 5,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 225.8546040000001,
+      "microsecondsPerStep": 90.34184160000004
+    },
+    {
+      "round": 5,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 236.52631800000017,
+      "microsecondsPerStep": 94.61052720000006
+    },
+    {
+      "round": 5,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 236.6699460000018,
+      "microsecondsPerStep": 94.66797840000072
+    },
+    {
+      "round": 6,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 225.7992639999975,
+      "microsecondsPerStep": 90.319705599999
+    },
+    {
+      "round": 6,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 219.66882100000294,
+      "microsecondsPerStep": 87.86752840000118
+    },
+    {
+      "round": 6,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 230.3065409999981,
+      "microsecondsPerStep": 92.12261639999925
+    },
+    {
+      "round": 6,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 227.52910200000042,
+      "microsecondsPerStep": 91.01164080000017
+    },
+    {
+      "round": 6,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "measuredSteps": 2500,
+      "elapsedMs": 223.57436199999938,
+      "microsecondsPerStep": 89.42974479999975
+    },
+    {
+      "round": 0,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 198.62423899999703,
+      "microsecondsPerStep": 331.04039833332837
+    },
+    {
+      "round": 0,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 200.4235750000007,
+      "microsecondsPerStep": 334.03929166666785
+    },
+    {
+      "round": 0,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 201.75674300000173,
+      "microsecondsPerStep": 336.2612383333362
+    },
+    {
+      "round": 0,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 198.18517900000006,
+      "microsecondsPerStep": 330.30863166666677
+    },
+    {
+      "round": 0,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 191.53675699999803,
+      "microsecondsPerStep": 319.22792833333006
+    },
+    {
+      "round": 1,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 188.18647500000225,
+      "microsecondsPerStep": 313.6441250000037
+    },
+    {
+      "round": 1,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 194.84118000000308,
+      "microsecondsPerStep": 324.7353000000051
+    },
+    {
+      "round": 1,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 203.7487000000001,
+      "microsecondsPerStep": 339.58116666666683
+    },
+    {
+      "round": 1,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 195.10656999999992,
+      "microsecondsPerStep": 325.17761666666655
+    },
+    {
+      "round": 1,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 193.34223400000337,
+      "microsecondsPerStep": 322.2370566666723
+    },
+    {
+      "round": 2,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 188.18594099999973,
+      "microsecondsPerStep": 313.64323499999955
+    },
+    {
+      "round": 2,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 187.33761500000037,
+      "microsecondsPerStep": 312.22935833333395
+    },
+    {
+      "round": 2,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 185.6934829999991,
+      "microsecondsPerStep": 309.4891383333318
+    },
+    {
+      "round": 2,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 182.28413700000237,
+      "microsecondsPerStep": 303.806895000004
+    },
+    {
+      "round": 2,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 187.7409200000002,
+      "microsecondsPerStep": 312.90153333333365
+    },
+    {
+      "round": 3,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 194.0786189999999,
+      "microsecondsPerStep": 323.4643649999998
+    },
+    {
+      "round": 3,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 211.0645829999994,
+      "microsecondsPerStep": 351.774304999999
+    },
+    {
+      "round": 3,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 230.23178800000096,
+      "microsecondsPerStep": 383.71964666666827
+    },
+    {
+      "round": 3,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 218.26778200000263,
+      "microsecondsPerStep": 363.779636666671
+    },
+    {
+      "round": 3,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 197.19603700000152,
+      "microsecondsPerStep": 328.6600616666692
+    },
+    {
+      "round": 4,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 191.78844599999866,
+      "microsecondsPerStep": 319.64740999999776
+    },
+    {
+      "round": 4,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 192.06296199999997,
+      "microsecondsPerStep": 320.1049366666666
+    },
+    {
+      "round": 4,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 191.32260400000087,
+      "microsecondsPerStep": 318.8710066666681
+    },
+    {
+      "round": 4,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 192.26748299999963,
+      "microsecondsPerStep": 320.4458049999994
+    },
+    {
+      "round": 4,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 202.96892000000298,
+      "microsecondsPerStep": 338.2815333333383
+    },
+    {
+      "round": 5,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 196.3456589999987,
+      "microsecondsPerStep": 327.24276499999786
+    },
+    {
+      "round": 5,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 196.67874099999972,
+      "microsecondsPerStep": 327.7979016666662
+    },
+    {
+      "round": 5,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 195.11260699999912,
+      "microsecondsPerStep": 325.18767833333186
+    },
+    {
+      "round": 5,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 198.14378200000283,
+      "microsecondsPerStep": 330.2396366666714
+    },
+    {
+      "round": 5,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 220.53052899999966,
+      "microsecondsPerStep": 367.5508816666661
+    },
+    {
+      "round": 6,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 219.9365009999965,
+      "microsecondsPerStep": 366.56083499999414
+    },
+    {
+      "round": 6,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 234.15920499999993,
+      "microsecondsPerStep": 390.26534166666653
+    },
+    {
+      "round": 6,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 203.94174999999814,
+      "microsecondsPerStep": 339.90291666666354
+    },
+    {
+      "round": 6,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 214.84966200000054,
+      "microsecondsPerStep": 358.0827700000009
+    },
+    {
+      "round": 6,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "measuredSteps": 600,
+      "elapsedMs": 213.32185300000128,
+      "microsecondsPerStep": 355.5364216666688
+    }
+  ],
+  "summaries": [
+    {
+      "bodies": 2,
+      "medianMicrosecondsPerStep": {
+        "baseline-unprofiled": 12.103315050000036,
+        "candidate-unprofiled": 11.884058299999925,
+        "baseline-profiled": 12.195275200000015,
+        "candidate-profiled": 12.163515000000007,
+        "candidate-read-schedule": 12.6107532
+      },
+      "medianPairedUnprofiledRatio": 1.0296090258247448,
+      "medianPairedProfiledRatio": 1.0170951533754569,
+      "medianPairedReadRatio": 1.0177751253244252
+    },
+    {
+      "bodies": 32,
+      "medianMicrosecondsPerStep": {
+        "baseline-unprofiled": 92.77270839999983,
+        "candidate-unprofiled": 94.34209800000025,
+        "baseline-profiled": 96.17235239999937,
+        "candidate-profiled": 94.61052720000006,
+        "candidate-read-schedule": 96.12421440000034
+      },
+      "medianPairedUnprofiledRatio": 1.0099515077672372,
+      "medianPairedProfiledRatio": 1.0033511833783533,
+      "medianPairedReadRatio": 0.987940251336597
+    },
+    {
+      "bodies": 128,
+      "medianMicrosecondsPerStep": {
+        "baseline-unprofiled": 327.24276499999786,
+        "candidate-unprofiled": 327.7979016666662,
+        "baseline-profiled": 325.18767833333186,
+        "candidate-profiled": 330.30863166666677,
+        "candidate-read-schedule": 325.17761666666655
+      },
+      "medianPairedUnprofiledRatio": 1.001696406234278,
+      "medianPairedProfiledRatio": 0.9954920862021284,
+      "medianPairedReadRatio": 0.9912236952520119
+    }
+  ]
+}
