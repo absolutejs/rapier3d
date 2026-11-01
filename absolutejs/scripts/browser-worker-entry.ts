@@ -12,6 +12,22 @@ try {
   patches:[{offset:{x:0,y:0,z:0},direction:{x:1,y:0,z:0},fluidVelocity:{x:4,y:0,z:0},quadraticResistance:2,oneSided:false}]});
  if(Math.abs(batchedDrag.impulse.x+2)>1e-12||Math.abs(batchedDrag.bodyWork+13)>1e-12)throw Error('Browser batched drag ledger failed');
  await Promise.all([R.init(),R.init()]);
+ const scheduleWorld = new R.World({x:0,y:0,z:0});
+ let solverScheduleControls;
+ try {
+  scheduleWorld.numSolverIterations=8;
+  for(const [x,extra] of [[0,0],[4,8]]) {
+   const b=scheduleWorld.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x!,0,0).setCanSleep(false));b.setAdditionalSolverIterations(extra!);
+   scheduleWorld.createCollider(R.ColliderDesc.ball(.5).setMass(1),b);
+  }
+  if(scheduleWorld.solverSchedule()!==null)throw Error('Browser schedule freshness failed');
+  const recorder=R.createPhysicsStepProfiler(scheduleWorld,{sampleEvery:1,maxSamples:1});recorder.step();
+  const report=recorder.snapshot(), schedule=report.samples[0]!.native!.schedule;
+  if(schedule.groupPasses!==2||schedule.rigidBodySubsteps!==24||schedule.minSubsteps!==8||schedule.maxSubsteps!==16)throw Error('Browser schedule grouping failed');
+  const owned={...schedule};schedule.groupPasses=999;
+  if(recorder.snapshot().samples[0]!.native!.schedule.groupPasses!==2)throw Error('Browser schedule ownership failed');
+  solverScheduleControls={owned:true,fresh:true,schedule:owned};
+ }finally{scheduleWorld.free();}
  const ownershipWorld=new R.World({x:0,y:0,z:0});
  try {
   const body=ownershipWorld.createRigidBody(R.RigidBodyDesc.dynamic());
@@ -312,6 +328,6 @@ try {
    if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
-  postMessage({batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

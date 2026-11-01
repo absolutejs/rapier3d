@@ -8,7 +8,7 @@ const predictiveFixtures=new Map(['/predictive-floor.bin','/predictive-fragment.
 const server=Bun.serve({hostname:'127.0.0.1',port:0,fetch(req){const predictive=predictiveFixtures.get(new URL(req.url).pathname);if(predictive)return new Response(predictive,{headers:{'Content-Type':'application/octet-stream'}});return new URL(req.url).pathname==='/simplex-fixture.bin'?new Response(simplexFixture,{headers:{'Content-Type':'application/octet-stream'}}):new URL(req.url).pathname==='/worker.js'?new Response(worker,{headers:{'Content-Type':'text/javascript'}}):new Response('<!doctype html><title>CPU-only contact worker</title>',{headers:{'Content-Type':'text/html'}});}});
 let browser;
 try {
- browser=await chromium.launch({headless:true,args:['--disable-gpu']});
+ browser=await chromium.launch({headless:true,args:['--disable-gpu'],...(process.env.DIAGNOSTIC_CHROMIUM_PATH?{executablePath:process.env.DIAGNOSTIC_CHROMIUM_PATH}:{})});
  const page=await browser.newPage();
  await page.goto(`http://127.0.0.1:${server.port}`);
  const result=await page.evaluate(()=>new Promise((resolve,reject)=>{

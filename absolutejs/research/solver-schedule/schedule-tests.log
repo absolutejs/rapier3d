@@ -1,0 +1,13 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/solver-schedule.test.ts:
+(pass) solver schedule is fresh, owned and explicitly empty when no rigid group exists [4.05ms]
+(pass) prepared groups distinguish independent extra iterations from connected propagation [7.56ms]
+(pass) querying and sampling schedule leave physical snapshots unchanged and own nested results [7.41ms]
+(pass) schedule sums CCD group passes and resets independently of the CCD counter [1.88ms]
+(pass) contact connectivity propagates additional substeps without confusing PGS sweeps [1.62ms]
+
+ 5 pass
+ 0 fail
+ 32 expect() calls
+Ran 5 tests across 1 file. [164.00ms]
