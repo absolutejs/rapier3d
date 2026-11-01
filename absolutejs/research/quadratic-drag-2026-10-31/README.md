@@ -115,3 +115,14 @@ scalar and batched energy ledgers, returned-matrix ownership, and all previous
 native/contact/snapshot checks. A 27-case actual-tree rate/refinement/order
 matrix is now running with frozen package outputs. The earlier archive remains
 superseded until regeneration after this source checkpoint.
+
+## Final batched/ownership archive
+
+The refreshed archive includes source 45df83d (owned inertia matrices and batched
+patch integration). All 51 shipped files match a clean independent build; the
+archive audit verifies those bytes and the embedded unchanged 0.18.0 native
+kernel. SHA1: f8b061f78e562cfa23cdf1ee53831ce35d3e453d.
+SHA256: 95b648b35240c7781068edb83f9d744d33ff362d0b290da88adbfb14a64cfef4.
+This supersedes the earlier scalar-only archive; it is queued, not published.
+Package qualification remains 254 passing tests plus GPU-disabled browser checks.
+No npm authentication should be requested while the user is away.
