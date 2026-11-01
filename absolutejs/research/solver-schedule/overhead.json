@@ -1,0 +1,790 @@
+{
+  "scope": "One-process paired Bun CPU observation, collision-free rigid groups with alternating additional iterations; timer/profiler/read costs are separate, no hardware FPS or general performance guarantee",
+  "bun": "1.4.4+absolute.1",
+  "hashes": {
+    "baseline": "43b9778ed518c2c081f41a038b4cdd9a21a1a3d01942cdb9829e745ebe5c7bdc",
+    "candidate": "8042972549d63aef953d816509f6cd89753b552cd26f687b2c0d33b5101d0cc1",
+    "source": "1105c5c2f01d992f5f8b2dc14b54959cc64017868a9c0ec59adb528690d75fea"
+  },
+  "measuredSteps": 1000,
+  "warmSteps": 100,
+  "rounds": 7,
+  "rows": [
+    {
+      "round": 0,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 24.284039999999948,
+      "microsecondsPerStep": 24.284039999999948
+    },
+    {
+      "round": 0,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 21.55369500000006,
+      "microsecondsPerStep": 21.55369500000006
+    },
+    {
+      "round": 0,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 18.438536,
+      "microsecondsPerStep": 18.438536
+    },
+    {
+      "round": 0,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 20.325178999999935,
+      "microsecondsPerStep": 20.325178999999935
+    },
+    {
+      "round": 0,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 17.34376300000008,
+      "microsecondsPerStep": 17.343763000000077
+    },
+    {
+      "round": 1,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 19.144007999999985,
+      "microsecondsPerStep": 19.14400799999999
+    },
+    {
+      "round": 1,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 18.570018000000005,
+      "microsecondsPerStep": 18.570018000000005
+    },
+    {
+      "round": 1,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 11.359147000000007,
+      "microsecondsPerStep": 11.359147000000009
+    },
+    {
+      "round": 1,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 13.319616999999994,
+      "microsecondsPerStep": 13.319616999999996
+    },
+    {
+      "round": 1,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 14.919308999999998,
+      "microsecondsPerStep": 14.919308999999997
+    },
+    {
+      "round": 2,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 18.826944000000026,
+      "microsecondsPerStep": 18.826944000000026
+    },
+    {
+      "round": 2,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 10.17591600000003,
+      "microsecondsPerStep": 10.175916000000031
+    },
+    {
+      "round": 2,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 18.23054400000001,
+      "microsecondsPerStep": 18.23054400000001
+    },
+    {
+      "round": 2,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.128072999999972,
+      "microsecondsPerStep": 9.12807299999997
+    },
+    {
+      "round": 2,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 14.454236000000037,
+      "microsecondsPerStep": 14.454236000000037
+    },
+    {
+      "round": 3,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 9.615032999999926,
+      "microsecondsPerStep": 9.615032999999928
+    },
+    {
+      "round": 3,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 10.663548999999989,
+      "microsecondsPerStep": 10.663548999999987
+    },
+    {
+      "round": 3,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.096904999999992,
+      "microsecondsPerStep": 9.09690499999999
+    },
+    {
+      "round": 3,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.894355000000019,
+      "microsecondsPerStep": 9.894355000000017
+    },
+    {
+      "round": 3,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 11.228087999999957,
+      "microsecondsPerStep": 11.228087999999955
+    },
+    {
+      "round": 4,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 11.825619999999958,
+      "microsecondsPerStep": 11.82561999999996
+    },
+    {
+      "round": 4,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 10.816329999999994,
+      "microsecondsPerStep": 10.816329999999995
+    },
+    {
+      "round": 4,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.870441000000028,
+      "microsecondsPerStep": 9.870441000000028
+    },
+    {
+      "round": 4,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 11.027820999999904,
+      "microsecondsPerStep": 11.027820999999904
+    },
+    {
+      "round": 4,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 9.000779999999963,
+      "microsecondsPerStep": 9.000779999999962
+    },
+    {
+      "round": 5,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.1305329999999,
+      "microsecondsPerStep": 9.130532999999902
+    },
+    {
+      "round": 5,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.975378999999975,
+      "microsecondsPerStep": 9.975378999999975
+    },
+    {
+      "round": 5,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 9.936556999999993,
+      "microsecondsPerStep": 9.936556999999993
+    },
+    {
+      "round": 5,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 16.462865999999963,
+      "microsecondsPerStep": 16.462865999999963
+    },
+    {
+      "round": 5,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 12.923958999999968,
+      "microsecondsPerStep": 12.923958999999968
+    },
+    {
+      "round": 6,
+      "mode": "candidate-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.372609000000011,
+      "microsecondsPerStep": 9.372609000000011
+    },
+    {
+      "round": 6,
+      "mode": "baseline-profiled",
+      "bodies": 2,
+      "elapsedMs": 10.350381999999968,
+      "microsecondsPerStep": 10.35038199999997
+    },
+    {
+      "round": 6,
+      "mode": "candidate-profiled",
+      "bodies": 2,
+      "elapsedMs": 11.001676999999972,
+      "microsecondsPerStep": 11.001676999999972
+    },
+    {
+      "round": 6,
+      "mode": "candidate-read-schedule",
+      "bodies": 2,
+      "elapsedMs": 10.905955000000063,
+      "microsecondsPerStep": 10.905955000000064
+    },
+    {
+      "round": 6,
+      "mode": "baseline-unprofiled",
+      "bodies": 2,
+      "elapsedMs": 9.805115999999998,
+      "microsecondsPerStep": 9.805115999999998
+    },
+    {
+      "round": 0,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 78.49833399999989,
+      "microsecondsPerStep": 78.49833399999989
+    },
+    {
+      "round": 0,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 98.44167399999992,
+      "microsecondsPerStep": 98.44167399999992
+    },
+    {
+      "round": 0,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 86.29494399999999,
+      "microsecondsPerStep": 86.29494399999999
+    },
+    {
+      "round": 0,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 125.93545000000017,
+      "microsecondsPerStep": 125.93545000000017
+    },
+    {
+      "round": 0,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 84.57266499999992,
+      "microsecondsPerStep": 84.57266499999992
+    },
+    {
+      "round": 1,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 79.70804999999996,
+      "microsecondsPerStep": 79.70804999999996
+    },
+    {
+      "round": 1,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 85.38971500000002,
+      "microsecondsPerStep": 85.38971500000002
+    },
+    {
+      "round": 1,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 137.3902619999999,
+      "microsecondsPerStep": 137.3902619999999
+    },
+    {
+      "round": 1,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 136.77960600000006,
+      "microsecondsPerStep": 136.77960600000006
+    },
+    {
+      "round": 1,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 97.12749100000019,
+      "microsecondsPerStep": 97.12749100000018
+    },
+    {
+      "round": 2,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 90.23143399999981,
+      "microsecondsPerStep": 90.23143399999981
+    },
+    {
+      "round": 2,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 95.80905799999982,
+      "microsecondsPerStep": 95.80905799999981
+    },
+    {
+      "round": 2,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 87.13186299999961,
+      "microsecondsPerStep": 87.1318629999996
+    },
+    {
+      "round": 2,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 87.52948400000014,
+      "microsecondsPerStep": 87.52948400000014
+    },
+    {
+      "round": 2,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 93.87058000000025,
+      "microsecondsPerStep": 93.87058000000025
+    },
+    {
+      "round": 3,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 94.14252499999975,
+      "microsecondsPerStep": 94.14252499999975
+    },
+    {
+      "round": 3,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 105.64936500000022,
+      "microsecondsPerStep": 105.64936500000023
+    },
+    {
+      "round": 3,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 93.56557599999996,
+      "microsecondsPerStep": 93.56557599999998
+    },
+    {
+      "round": 3,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 94.42960999999968,
+      "microsecondsPerStep": 94.42960999999968
+    },
+    {
+      "round": 3,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 93.06707099999994,
+      "microsecondsPerStep": 93.06707099999994
+    },
+    {
+      "round": 4,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 96.55743500000017,
+      "microsecondsPerStep": 96.55743500000017
+    },
+    {
+      "round": 4,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 94.13006099999984,
+      "microsecondsPerStep": 94.13006099999984
+    },
+    {
+      "round": 4,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 101.78929500000004,
+      "microsecondsPerStep": 101.78929500000004
+    },
+    {
+      "round": 4,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 95.23578799999996,
+      "microsecondsPerStep": 95.23578799999996
+    },
+    {
+      "round": 4,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 94.93765900000017,
+      "microsecondsPerStep": 94.93765900000015
+    },
+    {
+      "round": 5,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 96.26396999999997,
+      "microsecondsPerStep": 96.26396999999997
+    },
+    {
+      "round": 5,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 96.17353700000012,
+      "microsecondsPerStep": 96.17353700000012
+    },
+    {
+      "round": 5,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 97.31723999999986,
+      "microsecondsPerStep": 97.31723999999986
+    },
+    {
+      "round": 5,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 95.87188900000001,
+      "microsecondsPerStep": 95.87188900000001
+    },
+    {
+      "round": 5,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 94.9619500000008,
+      "microsecondsPerStep": 94.9619500000008
+    },
+    {
+      "round": 6,
+      "mode": "candidate-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 103.20451099999991,
+      "microsecondsPerStep": 103.20451099999991
+    },
+    {
+      "round": 6,
+      "mode": "baseline-profiled",
+      "bodies": 32,
+      "elapsedMs": 96.0037739999998,
+      "microsecondsPerStep": 96.00377399999981
+    },
+    {
+      "round": 6,
+      "mode": "candidate-profiled",
+      "bodies": 32,
+      "elapsedMs": 96.62566999999945,
+      "microsecondsPerStep": 96.62566999999945
+    },
+    {
+      "round": 6,
+      "mode": "candidate-read-schedule",
+      "bodies": 32,
+      "elapsedMs": 94.57063300000027,
+      "microsecondsPerStep": 94.57063300000026
+    },
+    {
+      "round": 6,
+      "mode": "baseline-unprofiled",
+      "bodies": 32,
+      "elapsedMs": 92.37257899999986,
+      "microsecondsPerStep": 92.37257899999985
+    },
+    {
+      "round": 0,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 361.1059230000001,
+      "microsecondsPerStep": 361.1059230000001
+    },
+    {
+      "round": 0,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 404.4469570000001,
+      "microsecondsPerStep": 404.4469570000001
+    },
+    {
+      "round": 0,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 383.3811149999992,
+      "microsecondsPerStep": 383.3811149999992
+    },
+    {
+      "round": 0,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 367.025071,
+      "microsecondsPerStep": 367.02507099999997
+    },
+    {
+      "round": 0,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 360.06838699999935,
+      "microsecondsPerStep": 360.06838699999935
+    },
+    {
+      "round": 1,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 358.25999500000034,
+      "microsecondsPerStep": 358.25999500000034
+    },
+    {
+      "round": 1,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 357.4661189999997,
+      "microsecondsPerStep": 357.4661189999997
+    },
+    {
+      "round": 1,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 365.05770399999983,
+      "microsecondsPerStep": 365.05770399999983
+    },
+    {
+      "round": 1,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 359.04381899999953,
+      "microsecondsPerStep": 359.04381899999953
+    },
+    {
+      "round": 1,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 361.1099670000003,
+      "microsecondsPerStep": 361.10996700000027
+    },
+    {
+      "round": 2,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 379.64571100000103,
+      "microsecondsPerStep": 379.6457110000011
+    },
+    {
+      "round": 2,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 366.3079460000008,
+      "microsecondsPerStep": 366.3079460000008
+    },
+    {
+      "round": 2,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 355.78690300000017,
+      "microsecondsPerStep": 355.78690300000017
+    },
+    {
+      "round": 2,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 348.6790059999985,
+      "microsecondsPerStep": 348.6790059999985
+    },
+    {
+      "round": 2,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 357.87854400000106,
+      "microsecondsPerStep": 357.87854400000106
+    },
+    {
+      "round": 3,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 351.17448800000057,
+      "microsecondsPerStep": 351.1744880000006
+    },
+    {
+      "round": 3,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 355.7122899999995,
+      "microsecondsPerStep": 355.7122899999994
+    },
+    {
+      "round": 3,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 354.60602500000095,
+      "microsecondsPerStep": 354.60602500000095
+    },
+    {
+      "round": 3,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 347.7688909999997,
+      "microsecondsPerStep": 347.7688909999997
+    },
+    {
+      "round": 3,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 351.69260199999917,
+      "microsecondsPerStep": 351.6926019999991
+    },
+    {
+      "round": 4,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 364.4427830000004,
+      "microsecondsPerStep": 364.4427830000004
+    },
+    {
+      "round": 4,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 347.6561899999997,
+      "microsecondsPerStep": 347.6561899999997
+    },
+    {
+      "round": 4,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 351.91102300000057,
+      "microsecondsPerStep": 351.91102300000057
+    },
+    {
+      "round": 4,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 358.4683420000001,
+      "microsecondsPerStep": 358.4683420000001
+    },
+    {
+      "round": 4,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 377.93259300000136,
+      "microsecondsPerStep": 377.9325930000014
+    },
+    {
+      "round": 5,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 363.4086669999997,
+      "microsecondsPerStep": 363.40866699999964
+    },
+    {
+      "round": 5,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 377.03751199999897,
+      "microsecondsPerStep": 377.0375119999989
+    },
+    {
+      "round": 5,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 363.1583530000007,
+      "microsecondsPerStep": 363.1583530000007
+    },
+    {
+      "round": 5,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 357.61243000000104,
+      "microsecondsPerStep": 357.61243000000104
+    },
+    {
+      "round": 5,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 354.5573750000003,
+      "microsecondsPerStep": 354.5573750000004
+    },
+    {
+      "round": 6,
+      "mode": "candidate-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 357.5320309999988,
+      "microsecondsPerStep": 357.53203099999877
+    },
+    {
+      "round": 6,
+      "mode": "baseline-profiled",
+      "bodies": 128,
+      "elapsedMs": 352.1520780000028,
+      "microsecondsPerStep": 352.15207800000275
+    },
+    {
+      "round": 6,
+      "mode": "candidate-profiled",
+      "bodies": 128,
+      "elapsedMs": 354.31305299999804,
+      "microsecondsPerStep": 354.31305299999804
+    },
+    {
+      "round": 6,
+      "mode": "candidate-read-schedule",
+      "bodies": 128,
+      "elapsedMs": 342.949902999997,
+      "microsecondsPerStep": 342.94990299999705
+    },
+    {
+      "round": 6,
+      "mode": "baseline-unprofiled",
+      "bodies": 128,
+      "elapsedMs": 337.43432600000233,
+      "microsecondsPerStep": 337.43432600000233
+    }
+  ],
+  "summaries": [
+    {
+      "bodies": 2,
+      "medianMicrosecondsPerStep": {
+        "baseline-unprofiled": 9.805115999999998,
+        "candidate-unprofiled": 9.975378999999975,
+        "baseline-profiled": 11.228087999999955,
+        "candidate-profiled": 11.001676999999972,
+        "candidate-read-schedule": 12.923958999999968
+      },
+      "medianPairedUnprofiledRatio": 1.0876616827371537,
+      "medianPairedProfiledRatio": 0.8563375171266883,
+      "medianPairedReadRatio": 1.1090496517276718
+    },
+    {
+      "bodies": 32,
+      "medianMicrosecondsPerStep": {
+        "baseline-unprofiled": 93.56557599999998,
+        "candidate-unprofiled": 96.17353700000012,
+        "baseline-profiled": 93.06707099999994,
+        "candidate-profiled": 95.87188900000001,
+        "candidate-read-schedule": 94.9619500000008
+      },
+      "medianPairedUnprofiledRatio": 1.0724452574174903,
+      "medianPairedProfiledRatio": 1.011555687618017,
+      "medianPairedReadRatio": 0.9905088028462732
+    },
+    {
+      "bodies": 128,
+      "medianMicrosecondsPerStep": {
+        "baseline-unprofiled": 354.60602500000095,
+        "candidate-unprofiled": 357.87854400000106,
+        "baseline-profiled": 358.4683420000001,
+        "candidate-profiled": 365.05770399999983,
+        "candidate-read-schedule": 355.78690300000017
+      },
+      "medianPairedUnprofiledRatio": 1.0263839744914343,
+      "medianPairedProfiledRatio": 0.9985267986956444,
+      "medianPairedReadRatio": 0.9810457525938312
+    }
+  ]
+}
