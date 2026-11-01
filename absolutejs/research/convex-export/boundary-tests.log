@@ -1,0 +1,30 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/convex-export.test.ts:
+(pass) exact test predicate distinguishes thin outward and reversed planes [1.61ms]
+(pass) convex export 0 is a closed outward boundary of unchanged stored points [4.57ms]
+(pass) convex export 1 is a closed outward boundary of unchanged stored points [5.07ms]
+(pass) convex export 2 is a closed outward boundary of unchanged stored points [2.06ms]
+(pass) convex export 3 is a closed outward boundary of unchanged stored points [1.53ms]
+(pass) convex export 4 is a closed outward boundary of unchanged stored points [2.55ms]
+(pass) convex export 5 is a closed outward boundary of unchanged stored points [1.21ms]
+(pass) convex export 6 is a closed outward boundary of unchanged stored points [0.74ms]
+(pass) convex export 7 is a closed outward boundary of unchanged stored points [1.23ms]
+(pass) convex export 8 is a closed outward boundary of unchanged stored points [0.80ms]
+(pass) convex export 9 is a closed outward boundary of unchanged stored points [3.60ms]
+(pass) convex export 10 is a closed outward boundary of unchanged stored points [0.58ms]
+(pass) convex export 11 is a closed outward boundary of unchanged stored points [0.49ms]
+(pass) convex export 12 is a closed outward boundary of unchanged stored points [0.46ms]
+(pass) convex export 13 is a closed outward boundary of unchanged stored points [1.07ms]
+(pass) convex export 14 is a closed outward boundary of unchanged stored points [0.51ms]
+(pass) convex export 15 is a closed outward boundary of unchanged stored points [0.39ms]
+(pass) convex export 16 is a closed outward boundary of unchanged stored points [0.62ms]
+(pass) convex export 17 is a closed outward boundary of unchanged stored points [1.19ms]
+(pass) convex export 18 is a closed outward boundary of unchanged stored points [0.38ms]
+(pass) convex export 19 is a closed outward boundary of unchanged stored points [0.35ms]
+(pass) convex export 20 is a closed outward boundary of unchanged stored points [0.42ms]
+
+ 22 pass
+ 0 fail
+ 458 expect() calls
+Ran 22 tests across 1 file. [202.00ms]

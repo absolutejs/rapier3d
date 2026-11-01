@@ -1,3 +1,5 @@
+import convexFixture from '../tests/fixtures/captured-convex-exports.json';
+import {certifyConvexBoundary} from '../tests/convex-export-certificate';
 import {predictiveSupportFixture,predictiveSupport} from '../tests/predictive-support-fixture';
 import {qualifyPredictiveReplay} from '../tests/predictive-recycle-fixture';
 import R from '../../dist/rapier.mjs';
@@ -342,6 +344,16 @@ try {
    if(digest!==expectedHash)throw Error('Predictive fixture identity mismatch');
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
-  postMessage({solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  const convexWorld=new R.World({x:0,y:0,z:0});let certifiedConvexExports=0;
+  try{for(const f of convexFixture.members){
+   const desc=f.inputIndices?R.ColliderDesc.convexMesh(Float32Array.from(f.inputPositions),Uint32Array.from(f.inputIndices)):R.ColliderDesc.convexHull(Float32Array.from(f.inputPositions));
+   if(!desc)throw Error('Browser captured hull rejected');
+   const collider=convexWorld.createCollider(desc.setDensity(0));
+   const before=convexWorld.takeSnapshot();
+   certifyConvexBoundary(collider.vertices(),collider.indices()!,f.positions);
+   if(!equalSnapshot(before,convexWorld.takeSnapshot()))throw Error('Browser convex export changed native state');
+   convexWorld.removeCollider(collider,false);certifiedConvexExports++;
+  }}finally{convexWorld.free();}
+  postMessage({certifiedConvexExports,solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}
