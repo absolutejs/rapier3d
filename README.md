@@ -659,7 +659,7 @@ inputs. Free-body inverse mass/inertia and patch exposure are caller supplied;
 this is not an articulated-fluid or full CFD model. Patch order and timestep
 convergence remain measurable approximation limits.
 
-## Private prepared solver schedules (0.20 research)
+## Prepared solver schedules (0.20.0)
 
 The opt-in `world.solverSchedule()` query returns owned observations from the last
 completed profiled step. Like `ccdSubsteps()`, it returns `null` before such a
@@ -684,5 +684,33 @@ CPU timing, proof of force/energy accuracy, or forecast of the next step. In
 particular, a previous group's substep count must not silently select gameplay
 fluid-force timing when contact connectivity or CCD can change.
 
-This branch remains private/unqualified pending independent reproducibility,
-measured costs and release review; the queued 0.19.0 release remains intact.
+The native observer is qualified by independent native builds and exact full-state
+comparisons across 18 fixtures / 9,240 steps against 0.19.0. Sampled local CPU
+costs and limits are recorded in `absolutejs/research/solver-schedule/`.
+The previous private artifacts remain archived; release availability is separate
+from source qualification.
+
+### Bounded diagnostic profile transport
+
+`encodePhysicsStepProfile(profile)` converts a readable report into an owned,
+versioned numeric packet. `decodePhysicsStepProfile(value)` validates an unknown
+packet and reconstructs owned readable observations. For example:
+
+```ts
+const packet = encodePhysicsStepProfile(profiler.snapshot());
+const restored = decodePhysicsStepProfile(JSON.parse(JSON.stringify(packet)));
+```
+
+The codec preserves every defined observation without rounding, including null
+measurements, failed samples, signed zero and explicit versus omitted default
+schedule references. It excludes arbitrary application metadata and user strings.
+The format tag is `absolutejs-physics-step-profile/1`; one fixed `'-0'` cell tag
+preserves signed zero through JSON. Arrays are bounded to 256 entries, tuple
+lengths and enums are fixed, and indices/scalars are validated. Malformed packets
+throw `TypeError`. This is transport validation, not a claim of native provenance
+or physical correctness. Apply normal metadata redaction outside the codec.
+
+Readable `PhysicsStepProfile` remains the simulation-facing API. In 0.20 its
+always-present `solverSchedules` table and optional sample index are part of that
+schema; older readable profiles without this table are not silently upgraded.
+Keep the format tag with stored packets and decode before displaying their fields.
