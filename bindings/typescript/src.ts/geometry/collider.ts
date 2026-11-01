@@ -930,6 +930,26 @@ export class Collider {
         return this.colliderSet.raw.coIndices(this.handle);
     }
 
+    // #if DIM3
+    /**
+     * Owned vertices and indices of the current convex core, computed together.
+     * Reconstructs the boundary once instead of once per separate buffer query.
+     * Rounded convex shapes exclude their border radius. Other shapes return
+     * undefined. Mutating returned arrays does not change this collider.
+     */
+    public convexMeshData():
+        | { vertices: Float32Array; indices: Uint32Array }
+        | undefined {
+        const mesh = this.colliderSet.raw.coConvexMeshData(this.handle);
+        if (!mesh) return undefined;
+        try {
+            return { vertices: mesh.vertices, indices: mesh.indices };
+        } finally {
+            mesh.free();
+        }
+    }
+    // #endif
+
     /**
      * If this collider has a heightfield shape, this returns the heights buffer of
      * the heightfield.

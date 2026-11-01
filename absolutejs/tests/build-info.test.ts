@@ -14,6 +14,8 @@ test('build identity matches the actual package and qualified native bytes',()=>
  expect(collision).toHaveLength(1);
  expect(buildInfo.collisionLibraryVersion).toBe(collision[0]!.version);
  expect(buildInfo.collisionSource).toBe(collision[0]!.source);
+ expect(buildInfo.convexExportPrecision).toBe('float64');
+ expect(lock.package.filter(p=>p.name==='parry3d-f64').map(p=>p.source)).toEqual([collision[0]!.source]);
 
  expect(buildInfo.wasmSha256).toBe(createHash('sha256').update(wasm).digest('hex'));
  expect(buildInfo.wasmBytes).toBe(wasm.length);

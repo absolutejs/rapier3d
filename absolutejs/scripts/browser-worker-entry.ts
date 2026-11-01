@@ -1,4 +1,5 @@
 import convexFixture from '../tests/fixtures/captured-convex-exports.json';
+import slenderConvexFixture from '../tests/fixtures/slender-convex-exports.json';
 import {certifyConvexBoundary} from '../tests/convex-export-certificate';
 import {predictiveSupportFixture,predictiveSupport} from '../tests/predictive-support-fixture';
 import {qualifyPredictiveReplay} from '../tests/predictive-recycle-fixture';
@@ -345,12 +346,13 @@ try {
    predictiveReplays.push(qualifyPredictiveReplay(bytes,first,second,R));
   }
   const convexWorld=new R.World({x:0,y:0,z:0});let certifiedConvexExports=0;
-  try{for(const f of convexFixture.members){
+  try{for(const f of [...convexFixture.members,...slenderConvexFixture.members]){
    const desc=f.inputIndices?R.ColliderDesc.convexMesh(Float32Array.from(f.inputPositions),Uint32Array.from(f.inputIndices)):R.ColliderDesc.convexHull(Float32Array.from(f.inputPositions));
    if(!desc)throw Error('Browser captured hull rejected');
    const collider=convexWorld.createCollider(desc.setDensity(0));
    const before=convexWorld.takeSnapshot();
-   certifyConvexBoundary(collider.vertices(),collider.indices()!,f.positions);
+   const mesh=collider.convexMeshData();if(!mesh)throw Error('Missing atomic convex export');
+   certifyConvexBoundary(mesh.vertices,mesh.indices,f.positions);
    if(!equalSnapshot(before,convexWorld.takeSnapshot()))throw Error('Browser convex export changed native state');
    convexWorld.removeCollider(collider,false);certifiedConvexExports++;
   }}finally{convexWorld.free();}

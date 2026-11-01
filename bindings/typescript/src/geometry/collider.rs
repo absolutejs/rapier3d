@@ -1,6 +1,6 @@
-#[cfg(feature = "dim3")]
-use crate::geometry::shape::normalized_convex_polyhedron_mesh;
 use crate::geometry::shape::SharedShapeUtility;
+#[cfg(feature = "dim3")]
+use crate::geometry::shape::{normalized_convex_polyhedron_mesh, RawConvexMeshData};
 use crate::geometry::{
     RawColliderSet, RawColliderShapeCastHit, RawPointProjection, RawRayIntersection, RawShape,
     RawShapeCastHit, RawShapeContact, RawShapeType,
@@ -747,6 +747,27 @@ impl RawColliderSet {
                 .and_then(|p| normalized_convex_polyhedron_mesh(&p.inner_shape))
                 .map(|(_, indices)| indices),
             _ => None,
+        })
+    }
+
+    /// Owned core boundary of a convex collider, reconstructed only once.
+    /// Rounded shapes exclude their border radius from this core mesh.
+    #[cfg(feature = "dim3")]
+    pub fn coConvexMeshData(&self, handle: FlatHandle) -> Option<RawConvexMeshData> {
+        self.map(handle, |co| {
+            let polyhedron = match co.shape().shape_type() {
+                ShapeType::ConvexPolyhedron => co.shape().as_convex_polyhedron(),
+                ShapeType::RoundConvexPolyhedron => co
+                    .shape()
+                    .as_round_convex_polyhedron()
+                    .map(|p| &p.inner_shape),
+                _ => None,
+            }?;
+            let (points, indices) = normalized_convex_polyhedron_mesh(polyhedron)?;
+            Some(RawConvexMeshData {
+                vertices: points.iter().flat_map(|p| p.to_array()).collect(),
+                indices,
+            })
         })
     }
 

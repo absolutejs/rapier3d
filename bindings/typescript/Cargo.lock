@@ -411,7 +411,7 @@ checksum = "6e6eb142958d64335fb0e345c5b9ead2ecd6fc438c307e9d7d3c4fd428dbaf12"
 [[package]]
 name = "parry3d"
 version = "0.31.1"
-source = "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947"
+source = "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72"
 dependencies = [
  "approx",
  "arrayvec",
@@ -440,7 +440,7 @@ dependencies = [
 [[package]]
 name = "parry3d-f64"
 version = "0.31.1"
-source = "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947"
+source = "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72"
 dependencies = [
  "approx",
  "arrayvec",
@@ -455,6 +455,7 @@ dependencies = [
  "num-derive",
  "num-traits",
  "ordered-float",
+ "robust",
  "rstar",
  "simba",
  "slab",

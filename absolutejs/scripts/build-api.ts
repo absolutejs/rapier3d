@@ -34,6 +34,8 @@ const packageInfo=JSON.parse(readFileSync('package.json','utf8'));
 const nativeLock=Bun.TOML.parse(readFileSync('bindings/typescript/Cargo.lock','utf8')) as {package?:{name?:string;version?:string;source?:string}[]};
 const collisionPackages=nativeLock.package?.filter(p=>p.name==='parry3d')??[];
 if(collisionPackages.length!==1||!collisionPackages[0]!.version||!collisionPackages[0]!.source)throw Error('Collision provenance requires one locked Parry source');
+const exportPackages=nativeLock.package?.filter(p=>p.name==='parry3d-f64')??[];
+if(exportPackages.length!==1||exportPackages[0]!.version!==collisionPackages[0]!.version||exportPackages[0]!.source!==collisionPackages[0]!.source)throw Error('Convex export and collision source identities differ');
 const collisionPackage=collisionPackages[0]!;
 
 const buildInfo={schemaVersion:1,scope:'package',packageName:packageInfo.name,packageVersion:packageInfo.version,qualifiedKernelRelease:nativeQualification.qualifiedKernelRelease,upstream:'b716d375efc0201003f0cd9ef7168eee0b62c177',engine:'0.36.0',collisionLibraryVersion:collisionPackage.version,collisionSource:collisionPackage.source,convexExportPrecision:'float64',bindings:'0.21.0',bindgen:'0.2.129',wasmSha256:qualifiedWasmSha256,wasmBytes:wasm.length,solverChanges:nativeQualification.solverChanges};

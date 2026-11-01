@@ -74,8 +74,7 @@ pub(crate) fn normalized_convex_polyhedron_mesh(
     if input.iter().any(|p| !p.is_finite()) {
         return None;
     }
-    let (wide_points, indices) =
-        parry3d_f64::transformation::try_convex_hull(&input).ok()?;
+    let (wide_points, indices) = parry3d_f64::transformation::try_convex_hull(&input).ok()?;
     let points: Option<Vec<_>> = wide_points
         .iter()
         .map(|p| {
