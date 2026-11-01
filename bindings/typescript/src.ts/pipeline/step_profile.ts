@@ -35,7 +35,8 @@ export interface PhysicsStepSample {
         freeRotation: FreeRotationStats;
         freeAssembly: FreeAssemblyStats;
         /** Index into the owning profile's bounded solverSchedules table. */
-        solverScheduleIndex: number;
+        /** Omitted means table entry 0; the table is always present. */
+        solverScheduleIndex?: number;
     } | null;
 }
 
@@ -183,6 +184,7 @@ export function createPhysicsStepProfiler(
             )
         )
             throw new Error("Invalid native profiling observations");
+        const solverScheduleIndex = captureSchedule(schedule);
         return {
             lengthUnit: world.lengthUnit,
             timestep: world.timestep,
@@ -192,7 +194,7 @@ export function createPhysicsStepProfiler(
             convergence,
             freeRotation,
             freeAssembly,
-            solverScheduleIndex: captureSchedule(schedule),
+            ...(solverScheduleIndex === 0 ? {} : {solverScheduleIndex}),
             contactSettingsIndex: captureContactSettings(),
         };
     };
