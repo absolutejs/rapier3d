@@ -110,6 +110,13 @@ impl StagedIslandSolver {
                 dt: base_params.dt / num_substeps as Real,
             });
         }
+        // Read the exact schedule prepared above without modifying group layout or solver policy.
+        // The completed-step API guards freshness; CCD passes accumulate these observations.
+        if counters.enabled() {
+            for group in &self.groups {
+                counters.solver.schedule.observe(group.bodies.len(), group.num_substeps, group.dt);
+            }
+        }
         let num_solver_iterations = base_params.num_solver_iterations + max_extra;
 
         // `params` keeps the FIRST group's substep dt (multibody precompute uses it; multibody

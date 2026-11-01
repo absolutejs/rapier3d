@@ -54,6 +54,15 @@ impl RawPhysicsPipeline {
             c.restitution_limit_hits as f64, c.max_restitution_residual as f64])
     }
 
+    // Owned prepared rigid-body group schedule from a completed profiled step.
+    pub fn solver_schedule(&self) -> Option<Vec<f64>> {
+        if !self.1 || !self.0.counters.enabled() { return None; }
+        let c = &self.0.counters.solver.schedule;
+        Some(vec![c.group_passes as f64, c.rigid_body_passes as f64,
+            c.rigid_body_substeps as f64, c.min_substeps as f64, c.max_substeps as f64,
+            c.min_substep_dt as f64, c.max_substep_dt as f64])
+    }
+
     // Owned rotation-attempt observations, valid only after a profiled step.
     // accepted / nonphysical / cap / numerical / max Newton / max residual rad/s.
     pub fn free_rotation_candidate(&self) -> Option<Vec<f64>> {

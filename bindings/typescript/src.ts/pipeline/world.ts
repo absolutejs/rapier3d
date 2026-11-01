@@ -77,6 +77,18 @@ import {DynamicRayCastVehicleController} from "../control";
  * Counts describe solve groups/phases, not individual contacts or physical islands.
  * Residuals are projected normal velocity errors in world units per second.
  */
+/** Prepared rigid-body schedules, summed across CCD passes. Counts are not unique
+ * bodies or iterations of the internal PGS loop. Empty groups are omitted. */
+export interface SolverScheduleStats {
+    groupPasses: number;
+    rigidBodyPasses: number;
+    rigidBodySubsteps: number;
+    minSubsteps: number | null;
+    maxSubsteps: number | null;
+    minSubstepDt: number | null;
+    maxSubstepDt: number | null;
+}
+
 export interface ContactConvergenceStats {
     compressionSolves: number;
     compressionIterations: number;
@@ -1451,6 +1463,20 @@ export class World {
             rotationLimitRejections: values[2], invalidOrFailedSolves: values[3],
             maxNewtonIterations: values[4], maxResidualRadiansPerSecond: values[5],
         };
+    }
+
+    /** Owned schedule observations from the last completed profiled step. Null
+     * before completion, with profiling disabled/toggled, or after restore.
+     * Min/max values are null when no nonempty rigid group was prepared. This
+     * reports prepared groups, not per-body identities, solver CPU time or a
+     * forecast for the next step; it must not select gameplay force timing. */
+    public solverSchedule(): SolverScheduleStats | null {
+        const values = this.physicsPipeline.raw.solver_schedule();
+        if (values == null) return null;
+        const nonempty = values[0] > 0;
+        return { groupPasses: values[0], rigidBodyPasses: values[1], rigidBodySubsteps: values[2],
+            minSubsteps: nonempty ? values[3] : null, maxSubsteps: nonempty ? values[4] : null,
+            minSubstepDt: nonempty ? values[5] : null, maxSubstepDt: nonempty ? values[6] : null };
     }
 
     /** Owned observations from the last completed profiled step; null before

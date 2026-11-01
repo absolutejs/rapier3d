@@ -16,9 +16,42 @@ pub struct ContactConvergenceCounters {
     pub max_restitution_residual: Real,
 }
 
+/// Prepared nonempty rigid-body group schedules, accumulated over CCD passes.
+/// Observational only: not unique bodies, elapsed CPU time, or a next-step forecast.
+#[derive(Default, Clone, Copy, Debug)]
+pub struct SolverScheduleCounters {
+    pub group_passes: usize,
+    pub rigid_body_passes: usize,
+    pub rigid_body_substeps: usize,
+    pub min_substeps: usize,
+    pub max_substeps: usize,
+    pub min_substep_dt: Real,
+    pub max_substep_dt: Real,
+}
+
+impl SolverScheduleCounters {
+    pub fn observe(&mut self, bodies: usize, substeps: usize, dt: Real) {
+        if bodies == 0 { return; }
+        if self.group_passes == 0 {
+            self.min_substeps = substeps;
+            self.min_substep_dt = dt;
+        } else {
+            self.min_substeps = self.min_substeps.min(substeps);
+            self.min_substep_dt = self.min_substep_dt.min(dt);
+        }
+        self.max_substeps = self.max_substeps.max(substeps);
+        self.max_substep_dt = self.max_substep_dt.max(dt);
+        self.group_passes = self.group_passes.saturating_add(1);
+        self.rigid_body_passes = self.rigid_body_passes.saturating_add(bodies);
+        self.rigid_body_substeps = self.rigid_body_substeps.saturating_add(bodies.saturating_mul(substeps));
+    }
+}
+
 /// Performance counters related to constraints resolution.
 #[derive(Default, Clone, Copy, Debug)]
 pub struct SolverCounters {
+    /// Last profiled step schedule; no per-body allocation or physical state.
+    pub schedule: SolverScheduleCounters,
     /// Private fixed-assembly free steps: accepted / nonphysical / cap / other.
     pub free_assembly_counts: [usize; 4],
     /// Free rotation: accepted / nonphysical / cap / invalid or failed solves.
@@ -54,6 +87,7 @@ impl SolverCounters {
     /// Creates a new counter initialized to zero.
     pub fn new() -> Self {
         SolverCounters {
+            schedule: SolverScheduleCounters::default(),
             free_assembly_counts: [0; 4],
             midpoint_counts: [0; 4],
             midpoint_max_iterations: 0,
@@ -72,6 +106,7 @@ impl SolverCounters {
 
     /// Reset all the counters to zero.
     pub fn reset(&mut self) {
+        self.schedule = SolverScheduleCounters::default();
         self.free_assembly_counts = [0; 4];
         self.midpoint_counts = [0; 4];
         self.midpoint_max_iterations = 0;

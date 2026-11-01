@@ -1,7 +1,8 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "0.18.0",
-  "wasmSha256": "67e366a5151fd865f6e6fb154a8cb27a7c4073c19e51e0e594633cf07f6e956e",
-  "wasmBytes": 3363613,
-  "solverChanges": true
+  "qualifiedKernelRelease": "unqualified-solver-schedule",
+  "wasmSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "wasmBytes": 0,
+  "solverChanges": true,
+  "researchOnly": true
 }
