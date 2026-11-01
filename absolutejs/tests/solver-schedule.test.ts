@@ -32,3 +32,23 @@ test('querying and sampling schedule leave physical snapshots unchanged and own 
  profile.samples[0]!.native!.schedule.groupPasses=999;expect(p.snapshot().samples[0]!.native!.schedule.groupPasses).toBe(1);
  }finally{a.free();b.free();}
 });
+
+test('schedule sums CCD group passes and resets independently of the CCD counter',()=>{
+ const w=new R.World({x:0,y:0,z:0});try{
+ w.timestep=1/60;w.numSolverIterations=8;w.integrationParameters.maxCcdSubsteps=4;w.profilerEnabled=true;
+ w.createCollider(R.ColliderDesc.cuboid(.01,2,2));
+ const b=w.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(-1,0,0).setLinvel(120,0,0).setCcdEnabled(true).setCanSleep(false));w.createCollider(R.ColliderDesc.ball(.1),b);
+ w.step();expect(w.ccdSubsteps()).toBe(2);const split=w.solverSchedule()!;
+ expect(split).toMatchObject({groupPasses:2,rigidBodyPasses:2,rigidBodySubsteps:16,minSubsteps:8,maxSubsteps:8});
+ expect(split.minSubstepDt!).toBeGreaterThan(0);expect(split.maxSubstepDt!).toBeLessThanOrEqual(w.timestep/8);
+ b.setTranslation({x:-2,y:0,z:0},true);b.setLinvel({x:0,y:0,z:0},true);b.setAngvel({x:0,y:0,z:0},true);w.step();
+ expect(w.ccdSubsteps()).toBe(0);expect(w.solverSchedule()).toMatchObject({groupPasses:1,rigidBodyPasses:1,rigidBodySubsteps:8});expect(w.solverSchedule()!.minSubstepDt!).toBeCloseTo(w.timestep/8,9);
+ }finally{w.free();}
+});
+test('contact connectivity propagates additional substeps without confusing PGS sweeps',()=>{
+ const w=new R.World({x:0,y:0,z:0});try{
+ w.numSolverIterations=8;w.integrationParameters.numInternalPgsIterations=7;w.profilerEnabled=true;
+ for(const [x,extra] of [[0,0],[.9,8]]) {const b=w.createRigidBody(R.RigidBodyDesc.dynamic().setTranslation(x!,0,0).setCanSleep(false));b.setAdditionalSolverIterations(extra!);w.createCollider(R.ColliderDesc.ball(.5).setMass(1),b);}
+ w.step();expect(w.solverSchedule()).toMatchObject({groupPasses:1,rigidBodyPasses:2,rigidBodySubsteps:32,minSubsteps:16,maxSubsteps:16});
+ }finally{w.free();}
+});
