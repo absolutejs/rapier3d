@@ -36,3 +36,9 @@ Publication is explicitly deferred while the user is away. No npm authentication
 or publish operation is part of this qualification. This consolidated release
 will supersede deferred0.20 after final stable game-adoption validation.
 Historical private archives remain in research/convex-export/private-{0,1}.
+
+Final stable0.21.0 game adoption passes **947tests /7,619,391assertions**,
+310files,146.31seconds. Source and all three explicit candidate distributions
+remain unchanged during the run. Game receipts are in
+`docs/native-export-landing-2026-11-01/stable-*` in the game research checkout.
+All required release checks are complete; only deferred publication remains.
