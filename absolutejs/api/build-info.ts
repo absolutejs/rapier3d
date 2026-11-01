@@ -10,6 +10,8 @@ export interface PhysicsBuildInfo {
     /** Collision library version and exact Cargo source identity used by this build. */
     readonly collisionLibraryVersion: string;
     readonly collisionSource: string;
+    /** Arithmetic used to reconstruct public convex boundaries; contact storage stays f32. */
+    readonly convexExportPrecision: 'float64';
     readonly bindings: string;
     readonly bindgen: string;
     readonly wasmSha256: string;

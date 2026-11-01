@@ -44,6 +44,10 @@ rapier{{ dimension }}d = { version = "0.36.0", features = [
 parry{{ dimension }}d = { version = "0.31", default-features = false, features = [
     "required-features",
 ] }
+{% if dimension == "3" %}
+# Boundary export uses f64 predicates without changing the f32 contact shape.
+parry3d-f64 = { version = "=0.31.1", git = "https://github.com/absolutejs/parry", rev = "53ac0b0b02767300da09d092d97cef53a975c947", default-features = false, features = ["required-features", "std", "alloc"] }
+{% endif %}
 ref-cast = "1"
 wasm-bindgen = "0.2.109"
 js-sys = "0.3"

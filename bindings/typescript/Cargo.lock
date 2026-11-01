@@ -230,6 +230,7 @@ dependencies = [
  "nalgebra",
  "palette",
  "parry3d",
+ "parry3d-f64",
  "rapier3d",
  "ref-cast",
  "serde",
@@ -433,6 +434,32 @@ dependencies = [
  "smallvec",
  "spade",
  "static_assertions",
+ "thiserror",
+]
+
+[[package]]
+name = "parry3d-f64"
+version = "0.31.1"
+source = "git+https://github.com/absolutejs/parry?rev=53ac0b0b02767300da09d092d97cef53a975c947#53ac0b0b02767300da09d092d97cef53a975c947"
+dependencies = [
+ "approx",
+ "arrayvec",
+ "bitflags",
+ "downcast-rs",
+ "either",
+ "ena",
+ "foldhash",
+ "glamx",
+ "hashbrown 0.17.1",
+ "log",
+ "num-derive",
+ "num-traits",
+ "ordered-float",
+ "rstar",
+ "simba",
+ "slab",
+ "smallvec",
+ "spade",
  "thiserror",
 ]
 

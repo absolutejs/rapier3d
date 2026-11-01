@@ -61,14 +61,38 @@ pub trait SharedShapeUtility {
 pub(crate) fn normalized_convex_polyhedron_mesh(
     polyhedron: &rapier::parry::shape::ConvexPolyhedron,
 ) -> Option<(Vec<Vector>, Vec<u32>)> {
-    let (points, indices) =
-        rapier::parry::transformation::try_convex_hull(polyhedron.points()).ok()?;
+    // Reconstruct the boundary in double precision. Re-running f32 Quickhull
+    // can fold thin facets even when all stored point coordinates are finite.
+    // This is an export operation: the native contact shape and its mass are
+    // unchanged, and every returned coordinate must survive an exact f32
+    // round trip. The hull implementation returns a subset of input points.
+    let input: Vec<_> = polyhedron
+        .points()
+        .iter()
+        .map(|p| parry3d_f64::math::Vector::new(p.x as f64, p.y as f64, p.z as f64))
+        .collect();
+    if input.iter().any(|p| !p.is_finite()) {
+        return None;
+    }
+    let (wide_points, indices) =
+        parry3d_f64::transformation::try_convex_hull(&input).ok()?;
+    let points: Option<Vec<_>> = wide_points
+        .iter()
+        .map(|p| {
+            let narrow = Vector::new(p.x as f32, p.y as f32, p.z as f32);
+            (narrow.is_finite()
+                && narrow.x as f64 == p.x
+                && narrow.y as f64 == p.y
+                && narrow.z as f64 == p.z)
+                .then_some(narrow)
+        })
+        .collect();
     let flat_indices = indices
         .iter()
         .flat_map(|triangle| triangle.iter())
         .copied()
         .collect();
-    Some((points, flat_indices))
+    Some((points?, flat_indices))
 }
 
 // for RawShape & Collider

@@ -1,0 +1,7 @@
+# Private convex export candidate
+
+Baseline qualified package0.20.0 af36077. This private0.21.0-research.0 candidate reconstructs public convex boundaries in double precision from unchanged stored Float32 points. Contact-shape construction, solver, mass/inertia and existing Parry source pin remain unchanged. Adds the f64 package from that exact same source revision, without enhanced-determinism feature changes. The lock update adds one package and changes no existing versions.
+
+Evidence motivating this change: game research/fluid-film-controls d3451c68; Parry research/captured-hull-boundary69c8f1a. A39-point original cloud reproduces a self-crossing Float32 export. Twelve points retain a reduced failure. All21 high-precision exported boundaries pass exact input halfspaces and the previously rejected game case passes unchanged coverage gates when only final exported arrays are substituted. This candidate replaces that research substitution with native reusable code.
+
+Initial qualification:21captured-descriptor boundary cases use exact BigInt Float32 plane predicates, paired oriented edges, original-point membership, repeatability and full native-snapshot equality before/after export. The predictor deliberately rejects a reversed thin tetrahedron face. Broader package tests, native/browser parity, all168coverage cases and independent builds remain required. No npm action while the user is away. The existing0.20 release queue remains qualified until this candidate earns promotion.
