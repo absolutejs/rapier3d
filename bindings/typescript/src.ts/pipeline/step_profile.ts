@@ -1,3 +1,4 @@
+import {isSolverScheduleStats} from "./solver_schedule";
 import type {ContactSoftness} from "../dynamics/integration_parameters";
 import type {World, ContactConvergenceStats, FreeRotationStats, FreeAssemblyStats, SolverScheduleStats} from "./world";
 import type {EventQueue} from "./event_queue";
@@ -150,7 +151,7 @@ export function createPhysicsStepProfiler(
             ccdMs: world.timingCcd(),
         };
         if (
-            Object.values(schedule).some(value => value !== null && (!Number.isFinite(value) || value < 0)) ||
+            !isSolverScheduleStats(schedule) ||
             Object.values(timings).some(
                 (value) => !Number.isFinite(value) || value < 0,
             ) ||

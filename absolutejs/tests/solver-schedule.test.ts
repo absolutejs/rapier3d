@@ -52,3 +52,14 @@ test('contact connectivity propagates additional substeps without confusing PGS 
  w.step();expect(w.solverSchedule()).toMatchObject({groupPasses:1,rigidBodyPasses:2,rigidBodySubsteps:32,minSubsteps:16,maxSubsteps:16});
  }finally{w.free();}
 });
+
+test('serialized schedule validation rejects inconsistent counts and preserves null versus zero',()=>{
+ const s={groupPasses:2,rigidBodyPasses:3,rigidBodySubsteps:32,minSubsteps:8,maxSubsteps:16,minSubstepDt:.001,maxSubstepDt:.002};
+ expect(R.isSolverScheduleStats(s)).toBe(true);expect(R.isSolverScheduleStats({...s,minSubstepDt:0})).toBe(true);
+ for(const patch of [{groupPasses:4},{rigidBodyPasses:0},{rigidBodySubsteps:23},{rigidBodySubsteps:49},{minSubsteps:0},{maxSubsteps:7},{minSubstepDt:-1},{maxSubstepDt:.0001},{maxSubstepDt:Infinity},{rigidBodySubsteps:2**53},{minSubsteps:null}])expect(R.isSolverScheduleStats({...s,...patch})).toBe(false);
+ const empty={groupPasses:0,rigidBodyPasses:0,rigidBodySubsteps:0,minSubsteps:null,maxSubsteps:null,minSubstepDt:null,maxSubstepDt:null};expect(R.isSolverScheduleStats(empty)).toBe(true);expect(R.isSolverScheduleStats({...empty,minSubstepDt:0})).toBe(false);expect(R.isSolverScheduleStats({...empty,rigidBodyPasses:1})).toBe(false);
+ const huge={...s,groupPasses:1,rigidBodyPasses:Number.MAX_SAFE_INTEGER,rigidBodySubsteps:Number.MAX_SAFE_INTEGER,minSubsteps:1,maxSubsteps:2};expect(R.isSolverScheduleStats(huge)).toBe(true);expect(R.isSolverScheduleStats({...huge,minSubsteps:2})).toBe(false);
+ expect(R.isSolverScheduleStats(null)).toBe(false);expect(R.isSolverScheduleStats([])).toBe(false);expect(R.isSolverScheduleStats(Object.create(s))).toBe(false);expect(R.isSolverScheduleStats({...s,minSubsteps:'8'})).toBe(false);
+ let invoked=false;const getter={...s};Object.defineProperty(getter,'groupPasses',{get(){invoked=true;return 2;}});expect(R.isSolverScheduleStats(getter)).toBe(false);expect(invoked).toBe(false);expect(R.isSolverScheduleStats(new Proxy(s,{getOwnPropertyDescriptor(){throw Error('no');}}))).toBe(false);
+ expect(s.groupPasses).toBe(2);
+});
