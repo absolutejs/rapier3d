@@ -658,3 +658,29 @@ It reports body/reservoir work and dissipation, owns its outputs and preserves
 inputs. Free-body inverse mass/inertia and patch exposure are caller supplied;
 this is not an articulated-fluid or full CFD model. Patch order and timestep
 convergence remain measurable approximation limits.
+
+## Private prepared solver schedules (0.20 research)
+
+The opt-in `world.solverSchedule()` query returns owned observations from the last
+completed profiled step. Like `ccdSubsteps()`, it returns `null` before such a
+step, when profiling is disabled or toggled, and after snapshot restoration.
+`createPhysicsStepProfiler` retains an owned `native.schedule` in each captured
+sample under its existing sample-count budget.
+
+`groupPasses` counts prepared nonempty rigid-body solve groups across CCD passes.
+`rigidBodyPasses` sums their rigid-body slots, while `rigidBodySubsteps` weights
+those slots by each group's prepared substep count. These are visits, not unique
+body identities. `minSubsteps`/`maxSubsteps` report the group range;
+`minSubstepDt`/`maxSubstepDt` are durations in seconds. All four range fields are
+`null` when no nonempty rigid group was prepared. Soft-particle-only work and
+internal PGS sweeps are outside these counts.
+
+This reads the actual group layout, including additional iterations propagated
+through constraint-connected bodies. It does not change that layout, force
+sampling, native timestep or contact policy. It is not a per-body mapping, elapsed
+CPU timing, proof of force/energy accuracy, or forecast of the next step. In
+particular, a previous group's substep count must not silently select gameplay
+fluid-force timing when contact connectivity or CCD can change.
+
+This branch remains private/unqualified pending independent reproducibility,
+measured costs and release review; the queued 0.19.0 release remains intact.
