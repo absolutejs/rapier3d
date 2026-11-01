@@ -1,0 +1,469 @@
+{
+  "scope": "Paired sequential CPU query timings; not GPU/FPS, end-to-end preparation or universal speed guarantee",
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.21.0-research.1",
+    "qualifiedKernelRelease": "unqualified-convex-export-rank",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72",
+    "convexExportPrecision": "float64",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "f1a909f788cc332e4ed8a4af3da1f38c84fd9bd995aa1ffe85dd9bee36f04050",
+    "wasmBytes": 3411245,
+    "solverChanges": true
+  },
+  "distributionSha256": "4e6e6cdd841ea3f1e1b3a6847a78e12a23387024a5d9295b1b35e0525e9d6df9",
+  "scriptSha256": "19930710abc657d9ec3cc9120812a607798b4c92666f70d7690ce6255f3e4f0d",
+  "rows": [
+    {
+      "member": 0,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8675869999999861,
+      "separate": 0.8924780000000112
+    },
+    {
+      "member": 0,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.3392479999999978,
+      "atomic": 0.7698379999999929
+    },
+    {
+      "member": 0,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.7275199999999984,
+      "separate": 0.6288189999999929
+    },
+    {
+      "member": 1,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 4.469038000000012,
+      "separate": 7.94931200000002
+    },
+    {
+      "member": 1,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 5.870377999999988,
+      "atomic": 2.7119909999999834
+    },
+    {
+      "member": 1,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 2.8258459999999843,
+      "separate": 5.540732999999989
+    },
+    {
+      "member": 2,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 3.123732000000018,
+      "separate": 4.236797999999993
+    },
+    {
+      "member": 2,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 4.332761000000005,
+      "atomic": 2.294614000000024
+    },
+    {
+      "member": 2,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 2.2194839999999942,
+      "separate": 4.542785000000009
+    },
+    {
+      "member": 3,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 2.4600169999999935,
+      "separate": 4.5121070000000145
+    },
+    {
+      "member": 3,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 4.738385999999991,
+      "atomic": 2.5439160000000243
+    },
+    {
+      "member": 3,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 2.5145169999999837,
+      "separate": 4.877467000000024
+    },
+    {
+      "member": 4,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 1.5058970000000045,
+      "separate": 2.8787240000000054
+    },
+    {
+      "member": 4,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 3.0435529999999744,
+      "atomic": 1.673228000000023
+    },
+    {
+      "member": 4,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 1.6380350000000021,
+      "separate": 3.815465999999958
+    },
+    {
+      "member": 5,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 2.89851699999997,
+      "separate": 4.056403999999986
+    },
+    {
+      "member": 5,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 3.202044000000001,
+      "atomic": 1.648725000000013
+    },
+    {
+      "member": 5,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 1.7260269999999878,
+      "separate": 3.2981100000000083
+    },
+    {
+      "member": 6,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8164160000000038,
+      "separate": 1.5563240000000178
+    },
+    {
+      "member": 6,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.5965510000000336,
+      "atomic": 1.123125000000016
+    },
+    {
+      "member": 6,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8778790000000072,
+      "separate": 1.4675940000000196
+    },
+    {
+      "member": 7,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8215649999999641,
+      "separate": 1.400637999999958
+    },
+    {
+      "member": 7,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.352371000000005,
+      "atomic": 0.7774990000000344
+    },
+    {
+      "member": 7,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8154049999999984,
+      "separate": 2.4882319999999822
+    },
+    {
+      "member": 8,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8160499999999615,
+      "separate": 1.548010999999974
+    },
+    {
+      "member": 8,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.4813159999999925,
+      "atomic": 0.9484810000000152
+    },
+    {
+      "member": 8,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8463350000000105,
+      "separate": 1.7979190000000358
+    },
+    {
+      "member": 9,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 1.7513079999999945,
+      "separate": 3.544965999999988
+    },
+    {
+      "member": 9,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 3.8648599999999647,
+      "atomic": 2.1985879999999725
+    },
+    {
+      "member": 9,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 2.1421770000000038,
+      "separate": 3.918938999999966
+    },
+    {
+      "member": 10,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8260810000000447,
+      "separate": 1.6316519999999741
+    },
+    {
+      "member": 10,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.470591000000013,
+      "atomic": 0.8605620000000158
+    },
+    {
+      "member": 10,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8503000000000043,
+      "separate": 1.4772570000000087
+    },
+    {
+      "member": 11,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 1.1149749999999585,
+      "separate": 2.293939000000023
+    },
+    {
+      "member": 11,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.4270650000000273,
+      "atomic": 0.9343830000000253
+    },
+    {
+      "member": 11,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8189590000000067,
+      "separate": 1.4564780000000042
+    },
+    {
+      "member": 12,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.9801269999999818,
+      "separate": 2.298283999999967
+    },
+    {
+      "member": 12,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.5137679999999705,
+      "atomic": 0.8280530000000113
+    },
+    {
+      "member": 12,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8042269999999689,
+      "separate": 1.6780310000000327
+    },
+    {
+      "member": 13,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 1.7613340000000335,
+      "separate": 3.964127000000019
+    },
+    {
+      "member": 13,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 3.9799150000000054,
+      "atomic": 1.8274720000000002
+    },
+    {
+      "member": 13,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 1.8853680000000281,
+      "separate": 3.240310999999963
+    },
+    {
+      "member": 14,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8459580000000528,
+      "separate": 1.7171049999999468
+    },
+    {
+      "member": 14,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.7441350000000284,
+      "atomic": 0.9191749999999956
+    },
+    {
+      "member": 14,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 1.0692300000000046,
+      "separate": 1.6325060000000349
+    },
+    {
+      "member": 15,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 1.0228520000000003,
+      "separate": 1.6456300000000397
+    },
+    {
+      "member": 15,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.6488000000000511,
+      "atomic": 0.8490740000000301
+    },
+    {
+      "member": 15,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8701059999999643,
+      "separate": 1.8080160000000092
+    },
+    {
+      "member": 16,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8017419999999902,
+      "separate": 1.4938459999999623
+    },
+    {
+      "member": 16,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.499445000000037,
+      "atomic": 0.7972499999999627
+    },
+    {
+      "member": 16,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8539729999999963,
+      "separate": 1.5210889999999608
+    },
+    {
+      "member": 17,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 2.794296999999972,
+      "separate": 3.350416999999993
+    },
+    {
+      "member": 17,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 3.338354000000038,
+      "atomic": 1.8147289999999998
+    },
+    {
+      "member": 17,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 2.2660190000000284,
+      "separate": 3.2554939999999988
+    },
+    {
+      "member": 18,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.8275749999999675,
+      "separate": 1.8545889999999758
+    },
+    {
+      "member": 18,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.8485239999999976,
+      "atomic": 0.8306960000000458
+    },
+    {
+      "member": 18,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8058390000000486,
+      "separate": 1.5794740000000047
+    },
+    {
+      "member": 19,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.7956970000000183,
+      "separate": 1.4234219999999596
+    },
+    {
+      "member": 19,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.4924419999999827,
+      "atomic": 0.816319999999962
+    },
+    {
+      "member": 19,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 1.1393109999999638,
+      "separate": 1.9251790000000142
+    },
+    {
+      "member": 20,
+      "round": 0,
+      "repetitions": 200,
+      "atomic": 0.9425980000000322,
+      "separate": 1.4507199999999898
+    },
+    {
+      "member": 20,
+      "round": 1,
+      "repetitions": 200,
+      "separate": 1.9933320000000094,
+      "atomic": 0.8641470000000027
+    },
+    {
+      "member": 20,
+      "round": 2,
+      "repetitions": 200,
+      "atomic": 0.8441359999999918,
+      "separate": 1.5160649999999691
+    }
+  ],
+  "sink": 3674160,
+  "atomicMs": 88.81592200000009,
+  "separateMs": 161.94329599999992,
+  "atomicOverSeparate": 0.5484383990801331
+}
