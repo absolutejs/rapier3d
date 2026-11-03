@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "unqualified-convex-interior-support-1",
+  "qualifiedKernelRelease": "0.22.0",
   "wasmSha256": "41035f4d7c6a119c185f42d1fd165477200d40d45231fb0eead10681f0c09cc5",
   "wasmBytes": 3424813,
-  "solverChanges": true,
-  "researchOnly": true
+  "solverChanges": true
 }
