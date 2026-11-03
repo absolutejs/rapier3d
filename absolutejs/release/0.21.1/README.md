@@ -5,8 +5,8 @@ Geometric centroids use Parry's identical volume/centroid first pass, avoiding t
 unused inertia calculation. Unsupported and compound-shape rejection before user
 hooks is preserved. CCD tolerances, solver settings and shape geometry are unchanged.
 
-Qualification in progress; publication is not yet authorized by npm's interactive
-confirmation. Do not interpret this file as a publication receipt.
+All pre-publication checks below pass. npm publication and registry verification
+remain pending; this file is not a publication receipt.
 
 - 295 package tests pass, including stable build identity.
 - Research controls preserve every recorded pose/velocity and hook count over
@@ -21,3 +21,10 @@ confirmation. Do not interpret this file as a publication receipt.
 
 Game evidence: `docs/stone-pair-lazy-sweep-2026-11-03/` in hello-world.
 Research recipe, control data and native provenance: `absolutejs/research/lazy-sweep/`.
+
+- GPU-disabled browser-worker check passes.
+- Two independent native builds match all 53 shipped files byte-for-byte.
+- Exact archive audit and extracted-archive CCD/snapshot consumer pass.
+
+Archive SHA256: `4ab9bc9a28477eb6b0aac5d7a8d77cdb1ca697d22dab5c81cd7a6b57064c35f8`.
+Native SHA256: `1d35b69d746eee6383401a68ec37d051391e0fa321096675b46c86072616e9d5`.

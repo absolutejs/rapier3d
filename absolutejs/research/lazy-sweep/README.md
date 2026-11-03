@@ -36,3 +36,10 @@ The second candidate uses Parry's public signed-volume/centroid first pass for
 convex polyhedra and preserves its zero-volume result. All other shapes keep their
 existing centroid calculation. It avoids the unused inertia calculation but still
 retains the exact triangle construction and centroid arithmetic.
+
+Final qualification: the explicit-import runner passes all 293 runtime tests
+(92,740 assertions); stable 0.21.1 adds both identity tests for 295 passes.
+The matched game runs use the same bundling harness, alternating baseline and
+candidate order, and reject a mismatched WASM hash before starting. Earlier failed
+preload-based tests and missing-fixture-copy attempts are retained as harness
+failures, not physical regressions or performance evidence.
