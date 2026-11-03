@@ -84,3 +84,31 @@ Research consulted 2026-11-03:
   justification to flatten measured game geometry or relax mass acceptance.
 
 Do not publish this candidate or change game rejection gates to pass it.
+
+## Rejected duplicate-witness experiment (research.1)
+
+The independent native build uses Parry 586b183, native SHA256
+3b4f0323a268c7087ed067c12ffcfdf3a70758680df9358dc91bdedbd7a96225 (3417499 bytes).
+The exact private archive is retained for reproducibility; archive audit verifies
+all 53 files, not dynamic release qualification. The native source change passes
+fresh 86 f32 / 85 f64 library tests. It fails the frozen fragment: still awake at
+20 seconds, final speed 0.0526 m/s versus 0.0520 m/s for exact-face research.0.
+Do not adopt or publish research.1. No full game suite was spent on this failed
+reduced acceptance case.
+
+Contact-normal sampling after two seconds finds similar maximum horizontal
+normal components (~0.0013–0.0015) in all three engines; the candidate is not
+uniquely explained by a grossly tilted normal. Mechanical-energy controls using
+native mass and principal inertia show small late energy rises in all engines,
+larger for exact-face than published; this is observation, not a complete causal
+explanation. Raw samples are retained.
+
+A stronger control changes only the floor query: on an analytic halfspace,
+research.0 settles in 7.622917 s, published in 13.276563 s. Research.0 remains
+awake on a four-metre-half-width box, so reducing the original 32-metre box alone
+does not fix it. This motivates a separate exact interior-box-face path with
+finite edge/corner fallback. That source experiment excludes witness coalescing.
+
+The build log preserves the expected native-identity guard rejection before the
+new binary was explicitly labeled private/unqualified. No stable identity guard
+was weakened. This branch contains research evidence only.

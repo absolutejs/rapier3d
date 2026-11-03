@@ -1,0 +1,2 @@
+$ bun absolutejs/scripts/build-api.ts
+Built standalone API, declarations and provenance.
