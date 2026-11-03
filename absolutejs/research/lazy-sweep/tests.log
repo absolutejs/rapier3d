@@ -1,0 +1,284 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/articulation-damping.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/articulation-damping.test.ts'
+-------------------------------
+
+
+absolutejs/tests/articulation-origin.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/articulation-origin.test.ts'
+-------------------------------
+
+
+absolutejs/tests/assembly-split.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/assembly-split.test.ts'
+-------------------------------
+
+
+absolutejs/tests/cached-direction.test.ts:
+(pass) cached triangle direction cannot invent deep oak penetration [56.97ms]
+
+absolutejs/tests/ccd-counters.test.ts:
+(pass) CCD counter distinguishes unavailable, inactive and fresh profiled steps [2.48ms]
+(pass) profiled CCD counts preserve every fixture pose with and without event collection [1772.09ms]
+(pass) CCD reports actual subdivision and resets after an inactive step [6.72ms]
+
+absolutejs/tests/collider-owner.test.ts:
+(pass) snapshot restore preserves null collider owners and real body zero [12.24ms]
+
+absolutejs/tests/contact-convergence-counters.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/contact-convergence-counters.test.ts'
+-------------------------------
+
+
+absolutejs/tests/contact-policy-controls.test.ts:
+(pass) contact policy controls preserve defaults and survive native snapshots [2.79ms]
+(pass) invalid contact policy values fail before mutating native state [0.70ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=0 [8.84ms]
+(pass) explicit policy still resolves solid floor contacts recycling=true warmstart=1 [2.99ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=0 [6.00ms]
+(pass) explicit policy still resolves solid floor contacts recycling=false warmstart=1 [4.04ms]
+
+absolutejs/tests/contact-softness.test.ts:
+(pass) contact softness defaults, independent scopes and copy semantics [1.25ms]
+(pass) invalid softness updates are atomic in both wrapper and native binding [1.15ms]
+(pass) fixed-contact coefficient changes actual saved-world response and replays exactly [143.30ms]
+(pass) bounded profiles deduplicate and own settings across later changes and world disposal [2.69ms]
+
+absolutejs/tests/contact-work-restitution.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/contact-work-restitution.test.ts'
+-------------------------------
+
+
+absolutejs/tests/convex-export.test.ts:
+(pass) exact test predicate distinguishes thin outward and reversed planes [3.02ms]
+(pass) convex export 0 is a closed outward boundary of unchanged stored points [4.91ms]
+(pass) convex export 1 is a closed outward boundary of unchanged stored points [9.20ms]
+(pass) convex export 2 is a closed outward boundary of unchanged stored points [4.91ms]
+(pass) convex export 3 is a closed outward boundary of unchanged stored points [2.98ms]
+(pass) convex export 4 is a closed outward boundary of unchanged stored points [3.81ms]
+(pass) convex export 5 is a closed outward boundary of unchanged stored points [2.96ms]
+(pass) convex export 6 is a closed outward boundary of unchanged stored points [1.24ms]
+(pass) convex export 7 is a closed outward boundary of unchanged stored points [1.67ms]
+(pass) convex export 8 is a closed outward boundary of unchanged stored points [5.19ms]
+(pass) convex export 9 is a closed outward boundary of unchanged stored points [2.59ms]
+(pass) convex export 10 is a closed outward boundary of unchanged stored points [1.33ms]
+(pass) convex export 11 is a closed outward boundary of unchanged stored points [1.68ms]
+(pass) convex export 12 is a closed outward boundary of unchanged stored points [0.80ms]
+(pass) convex export 13 is a closed outward boundary of unchanged stored points [2.01ms]
+(pass) convex export 14 is a closed outward boundary of unchanged stored points [1.30ms]
+(pass) convex export 15 is a closed outward boundary of unchanged stored points [2.10ms]
+(pass) convex export 16 is a closed outward boundary of unchanged stored points [2.30ms]
+(pass) convex export 17 is a closed outward boundary of unchanged stored points [2.53ms]
+(pass) convex export 18 is a closed outward boundary of unchanged stored points [1.24ms]
+(pass) convex export 19 is a closed outward boundary of unchanged stored points [2.55ms]
+(pass) convex export 20 is a closed outward boundary of unchanged stored points [1.40ms]
+(pass) convex export 21 is a closed outward boundary of unchanged stored points [1.42ms]
+(pass) convex export 22 is a closed outward boundary of unchanged stored points [0.83ms]
+(pass) convex export 23 is a closed outward boundary of unchanged stored points [1.01ms]
+(pass) convex export 24 is a closed outward boundary of unchanged stored points [0.85ms]
+(pass) convex export 25 is a closed outward boundary of unchanged stored points [0.62ms]
+(pass) atomic convex buffers are owned and follow shape replacement [1.47ms]
+(pass) atomic convex export distinguishes nonconvex and rounded core boundaries [1.19ms]
+
+absolutejs/tests/coupled-impact-convergence.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/coupled-impact-convergence.test.ts'
+-------------------------------
+
+
+absolutejs/tests/coupled-mass-ratio.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/coupled-mass-ratio.test.ts'
+-------------------------------
+
+
+absolutejs/tests/current-body-contact.test.ts:
+(pass) current-body query observes unpropagated edits without changing the world [3.37ms]
+(pass) current-body query composes noncommuting parent and child rotations [2.26ms]
+(pass) fresh shape results are owned, reusable, and prediction is validated [1.25ms]
+
+absolutejs/tests/dynamic-impact.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/dynamic-impact.test.ts'
+-------------------------------
+
+
+absolutejs/tests/free-assembly-stats.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/free-assembly-stats.test.ts'
+-------------------------------
+
+
+absolutejs/tests/free-rotation-stats.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/free-rotation-stats.test.ts'
+-------------------------------
+
+
+absolutejs/tests/free-spin.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/free-spin.test.ts'
+-------------------------------
+
+
+absolutejs/tests/inertia-aggregation.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/inertia-aggregation.test.ts'
+-------------------------------
+
+
+absolutejs/tests/kinematic-path.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/kinematic-path.test.ts'
+-------------------------------
+
+
+absolutejs/tests/live-contact.test.ts:
+(pass) live anchors reconstruct solver midpoint and signed normal separation [876.57ms]
+(pass) live separation follows pose changes while cached distance stays fixed [871.37ms]
+(pass) clustering defaults stay upstream-compatible and explicit opt-out survives snapshots [889.44ms]
+
+absolutejs/tests/matrix-ownership.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/matrix-ownership.test.ts'
+-------------------------------
+
+
+absolutejs/tests/multibody-writeback.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/multibody-writeback.test.ts'
+-------------------------------
+
+
+absolutejs/tests/pending-topology-snapshot.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/pending-topology-snapshot.test.ts'
+-------------------------------
+
+
+absolutejs/tests/predictive-recycle.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/snapshot-order-fixture.ts'
+-------------------------------
+
+
+absolutejs/tests/predictive-support.test.ts:
+(pass) predicted support spans approaching patch scale=0.01 reverse=false [2.38ms]
+(pass) predicted support spans approaching patch scale=0.01 reverse=true [1.20ms]
+(pass) predicted support spans approaching patch scale=1 reverse=false [1.57ms]
+(pass) predicted support spans approaching patch scale=1 reverse=true [0.95ms]
+(pass) predicted support spans approaching patch scale=100 reverse=false [1.18ms]
+(pass) predicted support spans approaching patch scale=100 reverse=true [0.63ms]
+(pass) nonapproaching outer support stays outside prediction speed=0 [0.82ms]
+(pass) nonapproaching outer support stays outside prediction speed=2 [0.77ms]
+(pass) predicted support snapshot restores and replays exactly [1.65ms]
+
+absolutejs/tests/quadratic-drag-patches.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/quadratic-drag-patches.test.ts'
+-------------------------------
+
+
+absolutejs/tests/quadratic-drag.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/quadratic-drag.test.ts'
+-------------------------------
+
+
+absolutejs/tests/simplex-witness.test.ts:
+(pass) tetrahedron reduction does not invent deep penetration in a separated floor/hull pair [2.95ms]
+
+absolutejs/tests/snapshot-order.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/snapshot-order.test.ts'
+-------------------------------
+
+
+absolutejs/tests/solver-contacts.test.ts:
+(pass) clustered solver contacts are exposed separately from original geometry [910.70ms]
+(pass) query is reentrant, preserves argument flipping, and frees views after throws [616.50ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0 [1879.41ms]
+(pass) contact inspection preserves native motion 960Hz tilt=0.3 [1769.56ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0 [3262.75ms]
+(pass) contact inspection preserves native motion 1920Hz tilt=0.3 [3781.37ms]
+
+absolutejs/tests/solver-schedule.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/solver-schedule.test.ts'
+-------------------------------
+
+
+absolutejs/tests/step-profile-packet.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/step-profile-packet.test.ts'
+-------------------------------
+
+
+absolutejs/tests/step-profile.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '@absolutejs/rapier3d' from '/home/alexkahn/alex/rapier-lazy-sweep/absolutejs/tests/step-profile.test.ts'
+-------------------------------
+
+
+absolutejs/tests/terrain-duplicate-cso.test.ts:
+(pass) cached terrain approach keeps contact before the tree crosses the floor [17.15ms]
+
+23 tests failed:
+
+ 67 pass
+ 23 fail
+ 23 errors
+ 49254 expect() calls
+Ran 90 tests across 35 files. [18.10s]

@@ -746,3 +746,10 @@ The f32 and f64 collision-library dependencies use the same recorded source pin.
 Captured export, browser-worker, simulation-parity and CPU timing evidence lives
 in `absolutejs/research/convex-export/`. Release availability is separate from source qualification; publication may be
 deferred. The unchanged physical engine retains its existing settling limits.
+
+Version 0.21.1 reduces continuous-collision preparation work. Convex sweeps defer
+preparation until a candidate passes the existing filters and compute the same
+geometric centroid without an unused inertia calculation. CCD settings, shape
+geometry, collision filtering and solver arithmetic are unchanged. Qualification
+records include exact recorded-motion comparisons; this is not a frame-rate or
+universal latency guarantee.

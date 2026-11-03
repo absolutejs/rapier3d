@@ -1,0 +1,120 @@
+[
+  {
+    repetition: 0,
+    mode: "empty",
+    exactMotion: true,
+    hookCalls: 0,
+    baseline: {
+      ccdMs: 73.26316500000007,
+      elapsedMs: 124.46436700000004,
+    },
+    candidate: {
+      ccdMs: 34.26915100000001,
+      elapsedMs: 77.55561699999998,
+    },
+  }, {
+    repetition: 0,
+    mode: "wall",
+    exactMotion: true,
+    hookCalls: 567,
+    baseline: {
+      ccdMs: 89.42551600000003,
+      elapsedMs: 136.28406200000006,
+    },
+    candidate: {
+      ccdMs: 54.48953199999997,
+      elapsedMs: 103.71267699999999,
+    },
+  }, {
+    repetition: 0,
+    mode: "filtered",
+    exactMotion: true,
+    hookCalls: 288,
+    baseline: {
+      ccdMs: 76.91270900000004,
+      elapsedMs: 105.31915600000002,
+    },
+    candidate: {
+      ccdMs: 33.81174899999999,
+      elapsedMs: 58.00947000000008,
+    },
+  }, {
+    repetition: 1,
+    mode: "empty",
+    exactMotion: true,
+    hookCalls: 0,
+    baseline: {
+      ccdMs: 68.50595800000006,
+      elapsedMs: 93.66103599999997,
+    },
+    candidate: {
+      ccdMs: 26.78879499999999,
+      elapsedMs: 45.63082499999996,
+    },
+  }, {
+    repetition: 1,
+    mode: "wall",
+    exactMotion: true,
+    hookCalls: 567,
+    baseline: {
+      ccdMs: 76.890386,
+      elapsedMs: 103.87908100000004,
+    },
+    candidate: {
+      ccdMs: 38.26949199999999,
+      elapsedMs: 60.3631519999999,
+    },
+  }, {
+    repetition: 1,
+    mode: "filtered",
+    exactMotion: true,
+    hookCalls: 288,
+    baseline: {
+      ccdMs: 59.22392500000001,
+      elapsedMs: 77.18349999999987,
+    },
+    candidate: {
+      ccdMs: 30.559019000000017,
+      elapsedMs: 50.991100999999844,
+    },
+  }, {
+    repetition: 2,
+    mode: "empty",
+    exactMotion: true,
+    hookCalls: 0,
+    baseline: {
+      ccdMs: 53.06011499999997,
+      elapsedMs: 69.70814599999994,
+    },
+    candidate: {
+      ccdMs: 24.35698999999999,
+      elapsedMs: 40.664901999999984,
+    },
+  }, {
+    repetition: 2,
+    mode: "wall",
+    exactMotion: true,
+    hookCalls: 567,
+    baseline: {
+      ccdMs: 68.63316000000002,
+      elapsedMs: 90.90074100000015,
+    },
+    candidate: {
+      ccdMs: 37.171029999999966,
+      elapsedMs: 59.33085899999992,
+    },
+  }, {
+    repetition: 2,
+    mode: "filtered",
+    exactMotion: true,
+    hookCalls: 288,
+    baseline: {
+      ccdMs: 67.207869,
+      elapsedMs: 90.61231399999997,
+    },
+    candidate: {
+      ccdMs: 30.872556000000014,
+      elapsedMs: 53.96520600000008,
+    },
+  }
+]

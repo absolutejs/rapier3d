@@ -230,6 +230,22 @@ struct FastColliderInfo<'a> {
     kind: FastShapeKind<'a>,
 }
 
+// The sweep only needs the geometric centroid, not an inertia tensor or its
+// principal-axis decomposition. Use the same first pass as Parry mass properties.
+fn sweep_centroid(shape: &dyn Shape) -> Vector {
+    #[cfg(feature = "dim3")]
+    if let TypedShape::ConvexPolyhedron(polyhedron) = shape.as_typed_shape() {
+        let (vertices, indices) = polyhedron.to_trimesh();
+        let (volume, center) =
+            parry::mass_properties::details::trimesh_signed_volume_and_center_of_mass(
+                &vertices, &indices,
+            );
+        // MassProperties::from_trimesh returns zero properties for zero volume.
+        return if volume == 0.0 { Vector::ZERO } else { center };
+    }
+    shape.mass_properties(1.0).local_com
+}
+
 impl<'a> FastColliderInfo<'a> {
     /// Builds the fast-collider description for a sweep from collider pose `start` to `end`, or
     /// `None` for never-swept shapes (meshes, heightfields, polylines, voxels — and compounds with
@@ -250,7 +266,7 @@ impl<'a> FastColliderInfo<'a> {
             FastShapeKind::Convex(FastSubShape {
                 proxy,
                 sweep: Sweep::from_poses(start, end, local_com),
-                local_centroid: shape.mass_properties(1.0).local_com,
+                local_centroid: sweep_centroid(shape),
                 min_extent: shape.ccd_thickness(),
             })
         } else if let TypedShape::Compound(compound) = shape.as_typed_shape() {
@@ -266,7 +282,7 @@ impl<'a> FastColliderInfo<'a> {
                             &(*end * *child_pose),
                             child_pose.inverse_transform_point(local_com),
                         ),
-                        local_centroid: child_shape.mass_properties(1.0).local_com,
+                        local_centroid: sweep_centroid(child_shape.as_ref()),
                         min_extent: child_shape.ccd_thickness(),
                     })
                 })
@@ -566,13 +582,24 @@ pub(super) fn sweep_fast_body(
 
         let start = rb1.pos.position * parent1.pos_wrt_parent;
         let end = end_body_pose * parent1.pos_wrt_parent;
-        let local_com = parent1
-            .pos_wrt_parent
-            .inverse_transform_point(rb1.mprops.local_mprops.local_com);
-        let Some(fast) = FastColliderInfo::new(co1, rb1, &start, &end, local_com) else {
-            // Never-swept shape (mesh, heightfield, polyline, voxels): no CCD.
-            continue;
+        // Preparing a convex sweep computes mass properties. Defer that work until
+        // a candidate survives the exact existing broad-phase and pair filters.
+        // Preserve eager rejection for unsupported/compound shapes: in particular,
+        // a compound without sweepable children must not start invoking user hooks.
+        let prepare_fast = || {
+            let local_com = parent1
+                .pos_wrt_parent
+                .inverse_transform_point(rb1.mprops.local_mprops.local_com);
+            FastColliderInfo::new(co1, rb1, &start, &end, local_com)
         };
+        let mut fast = if ToiProxy::from_shape(co1.shape.as_ref()).is_some() {
+            None
+        } else {
+            Some(prepare_fast())
+        };
+        if matches!(fast, Some(None)) {
+            continue;
+        }
 
         // Swept box: union of the collider's AABBs at the start and end poses.
         let start_aabb = co1.shape.compute_aabb(&start);
@@ -606,9 +633,11 @@ pub(super) fn sweep_fast_body(
             ) {
                 return;
             }
+            let fast = fast.get_or_insert_with(&prepare_fast);
+            let Some(fast) = fast.as_ref() else { return; };
             if let Some(hit_fraction) = cast_collider_pair(
                 dispatcher,
-                &fast,
+                fast,
                 co2,
                 rb2,
                 fraction,

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "scope": "research",
+  "packageName": "@absolutejs/rapier3d",
+  "packageVersion": "0.21.0-lazy-sweep-research",
+  "qualifiedKernelRelease": "research-lazy-sweep",
+  "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+  "engine": "0.36.0",
+  "collisionLibraryVersion": "0.31.1",
+  "collisionSource": "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72",
+  "convexExportPrecision": "float64",
+  "bindings": "0.21.0",
+  "bindgen": "0.2.129",
+  "wasmSha256": "1d35b69d746eee6383401a68ec37d051391e0fa321096675b46c86072616e9d5",
+  "wasmBytes": 3411729,
+  "solverChanges": false,
+  "nativeSourceFiles": {
+    "src/dynamics/ccd/sweeps.rs": "4e0e1ade42c22ab57ff1fdbb555a64f2bfb4ac3a540c5b80ad03b60dadf74b2d",
+    "src/dynamics/ccd/ccd_solver.rs": "0543f497406c6d404b6b214d42333532bfe97fc07180da2c946d196d60b7fee8"
+  },
+  "baselineCommit": "dc0892d73e4a826e0442d3a08b60c8abd34faf7e"
+}
