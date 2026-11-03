@@ -15,5 +15,10 @@ CCD time decreases 38–42%, total native step time 10–21% in this fixture.
 This is CPU fixture evidence, not a hardware FPS claim. The fixture has no
 mutual body contacts; separate moving-body tests cover those contacts.
 
-Independent build and exact archive verification are pending. The game remains
-on published 0.21.1 until registry verification and adoption checks complete.
+Two independent native builds match all 53 distribution files byte-for-byte.
+The exact publish archive passes file/native identity audit and all ten extracted
+archive motion/event/hook scenarios. Archive SHA256:
+`de2be249bd7923e2150c50c7db4090578aaa43316eb04aa05fa1973966d779d4`.
+
+Publication is pending. The game remains on published 0.21.1 until registry
+verification and adoption checks complete.
