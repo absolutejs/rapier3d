@@ -41,3 +41,15 @@ build reproduction are still pending at this checkpoint.
 The initial cold native build took 3m38s. Downloading the binding generator then
 failed under restricted DNS; the existing checksum-pinned archive was reused and
 verified by the package installer. No build tools or source were fetched into tmp.
+
+Follow-up at unchanged settings records all twelve new candidate forms sleeping
+by twenty seconds and still sleeping at thirty; the initially flagged form also
+rolls at ten seconds with the published engine. All remain within the floor area.
+The original ten-second gate is not retroactively reported as passed. Game evidence
+is retained under docs/stone-form-native-fix-2026-11-03 in the game checkout.
+
+The private archive now uses the existing audit convention 0.21.3-research.0 and
+unqualified-convex-face-preservation-1. This changes metadata only; native bytes
+remain identical. All 53 packed distribution files and embedded native payload
+pass the existing --research archive audit. Eight focused identity/geometry tests
+pass after relabeling. The exact private archive is backed up for isolated consumers.

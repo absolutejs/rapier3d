@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "qualifiedKernelRelease": "research-convex-face-preservation-1",
+  "qualifiedKernelRelease": "unqualified-convex-face-preservation-1",
   "wasmSha256": "47b1f4a5acaa2776fd787e0117dfeaf90e7df9093ab64910a69fae8ed6319809",
   "wasmBytes": 3416097,
   "solverChanges": true,
