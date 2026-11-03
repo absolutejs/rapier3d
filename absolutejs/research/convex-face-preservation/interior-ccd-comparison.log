@@ -1,0 +1,10 @@
+{"mode":"single","identical":true,"hooks":[234,234],"events":[1,1],"finalX":[1.9650100469589233,1.9650100469589233]}
+{"mode":"pieces","identical":false,"hooks":[567,643],"events":[48,36],"finalX":[0.6135529279708862,0.5766858458518982]}
+{"mode":"rotating","identical":false,"hooks":[130,123],"events":[18,10],"finalX":[-1.6942867040634155,-1.4088152647018433]}
+{"mode":"moving","identical":true,"hooks":[1100,1100],"events":[208,208],"finalX":[24.48707389831543,24.48707389831543]}
+{"mode":"sensor","identical":true,"hooks":[176,176],"events":[160,160],"finalX":[49.99971389770508,49.99971389770508]}
+{"mode":"filtered","identical":true,"hooks":[288,288],"events":[0,0],"finalX":[49.99971389770508,49.99971389770508]}
+{"mode":"disabled","identical":true,"hooks":[0,0],"events":[0,0],"finalX":[49.99971389770508,49.99971389770508]}
+{"mode":"dense","identical":true,"hooks":[468,468],"events":[2,2],"finalX":[1.9650098085403442,1.9650098085403442]}
+{"mode":"restored-edit","identical":false,"hooks":[1470,1095],"events":[210,70],"finalX":[0.8834587335586548,5.0650506019592285]}
+{"mode":"translated-scaled","identical":false,"hooks":[538,469],"events":[40,36],"finalX":[0.5,-0.4596875]}

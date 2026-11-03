@@ -84,3 +84,26 @@ Research consulted 2026-11-03:
   justification to flatten measured game geometry or relax mass acceptance.
 
 Do not publish this candidate or change game rejection gates to pass it.
+
+## Interior-face candidate (research.2): not qualified
+
+Native source af84bb6, SHA256 a9483da1bd491f79d488b417306242e58fa2921ecf9edd92255c5f9f463994ac,
+3422207 bytes. The audited archive preserves all 53 shipped files. The source
+excludes rejected witness coalescing. All three physical-material game fixtures
+now qualify at 960 Hz; however, the full game suite has 1122 passes and five real
+contact/settling failures. Do not publish or adopt this candidate.
+
+Package tests: 307 pass, four historical CCD motion hashes differ for convex-wall
+scenarios. Ten-mode repeated comparisons are deterministic, with six scenarios
+still bit-identical to 0.21.2. The four changed scenarios pass their existing
+wall-crossing controls; a separate authored-vertex endpoint audit records up to
+0.000168 normalized-unit wall-plane overlap. This is discrete endpoint evidence,
+not proof of continuous clearance. Historical references remain unchanged.
+
+The isolated fragment still fails at 1920 Hz; it settles at 960 Hz in 17.379167 s.
+Equivalent top planes with different box depths produce different settling
+outcomes, so a simple monotonic precision/timestep explanation is not established.
+A new native support reduction identifies a concrete issue: selecting a face by
+normal alignment can omit the actual supporting vertex, producing zero analytic
+contacts for a penetrating anisotropic hull. The follow-up source preserves that
+vertex explicitly and must pass the five game regressions before release work.

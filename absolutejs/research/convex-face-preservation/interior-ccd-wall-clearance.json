@@ -1,0 +1,58 @@
+[
+  {
+    "version": "0.21.2",
+    "mode": "pieces",
+    "minimumWallPlaneClearance": 0.00011107074756067092,
+    "worstStep": 21,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.2",
+    "mode": "rotating",
+    "minimumWallPlaneClearance": 0.00145727830567699,
+    "worstStep": 9,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.2",
+    "mode": "restored-edit",
+    "minimumWallPlaneClearance": 0.00011107074756067092,
+    "worstStep": 21,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.2",
+    "mode": "translated-scaled",
+    "minimumWallPlaneClearance": -0.00011742890474453205,
+    "worstStep": 8,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.3-research.2",
+    "mode": "pieces",
+    "minimumWallPlaneClearance": -6.5193617597048e-05,
+    "worstStep": 8,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.3-research.2",
+    "mode": "rotating",
+    "minimumWallPlaneClearance": 0.0010097618131759134,
+    "worstStep": 9,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.3-research.2",
+    "mode": "restored-edit",
+    "minimumWallPlaneClearance": -6.5193617597048e-05,
+    "worstStep": 8,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  },
+  {
+    "version": "0.21.3-research.2",
+    "mode": "translated-scaled",
+    "minimumWallPlaneClearance": -0.000167652712006916,
+    "worstStep": 8,
+    "note": "All authored tetrahedron vertices transformed by recorded body pose; step-end observation, not continuous swept bound."
+  }
+]
