@@ -3,3 +3,4 @@ pub(crate) use self::sweeps::shape_never_ccd_swept;
 
 mod ccd_solver;
 mod sweeps;
+mod sweep_candidates;

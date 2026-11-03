@@ -1,7 +1,7 @@
 # Host sweep workload probe
 
 Research source based on published 0.21.1. The opt-in `sweep-probe` feature is off
-by default and is not present in shipped WASM. It retains only 15 scalar counters
+by default and is not present in shipped WASM. It retains only 16 scalar counters
 per thread and resets before each captured host step. The extra mesh BVH query
 for counting candidates adds overhead; probe timers are not production timings.
 
@@ -17,7 +17,8 @@ self), eligible pairs, prepared pieces, preparation ns, cast pairs, cast ns
 including counting overhead, subshape queries, mesh triangle candidates,
 rotating queries, hit, separated, overlapped, failed.
 
-Baseline: `cargo build --locked --release --manifest-path
+Baseline source is commit `f565c76` (before body-query reuse); current source is
+the candidate. Build either checkout with `cargo build --locked --release --manifest-path
 absolutejs/research/terrain-sweep/Cargo.toml`. Probe: add `--features probe`.
 Use one job and the pinned offline Cargo cache. The inspector accepts before.bin,
 after.bin, output-prefix, and steps only once. It does not mutate input files.
@@ -30,3 +31,25 @@ Observed candidate callbacks/same-body rejects/eligible pairs:
 
 The failed first probe build lacked an explicit `std::thread_local!` macro path;
 the fixed build succeeds. This was a diagnostic build error, not a physics result.
+
+
+## Candidate body-level query reuse
+
+The cache is rebuilt within each `sweep_fast_body` call and holds at most 512
+external leaves. Overflow, nonfinite envelopes, and single-collider/list paths
+retain the original per-piece query. It preserves stored leaf AABBs (including
+padding), left-first BVH order, and the original tier/group/hook filters. It never
+uses freshly computed target geometry bounds to narrow an existing query.
+
+For all three host captures, complete post-step serialized state and actual cast
+counts match baseline exactly. Candidate callbacks drop to 520 / 520 / 360;
+cache construction visits 524 / 524 / 362 leaves. Counter index 15 records these
+cache-construction leaf visits. Earlier probe records have only indices 0–14.
+The counter feature is intended for serial host diagnosis; thread-local values
+must not be interpreted as an aggregate across parallel workers.
+
+The ordering test compiles the production helper directly and compares 4,000
+contained queries across Binned and PLOC trees, including deliberately fat leaf
+bounds. Additional controls require exact-capacity success, overflow fallback,
+self-body exclusion, touching-bound behavior, and removed/reused handle handling.
+Browser/WASM qualification is still required before adoption.

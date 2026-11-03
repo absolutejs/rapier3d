@@ -1,0 +1,91 @@
+{
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.21.1",
+    "qualifiedKernelRelease": "0.21.1",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72",
+    "convexExportPrecision": "float64",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "1d35b69d746eee6383401a68ec37d051391e0fa321096675b46c86072616e9d5",
+    "wasmBytes": 3411729,
+    "solverChanges": false
+  },
+  "cases": [
+    {
+      "mode": "single",
+      "hash": "0e6657a76226dfc4aca2a3f37b7d54d4e87e3ea79812e0a33facfb31eb90b281",
+      "hookCalls": 234,
+      "events": 1,
+      "finalX": 1.9650100469589233
+    },
+    {
+      "mode": "pieces",
+      "hash": "f74b530a8f877ae322a65edfd53f5bcaed1c9c520e63ae27b623320f27405a67",
+      "hookCalls": 567,
+      "events": 48,
+      "finalX": 0.6135529279708862
+    },
+    {
+      "mode": "rotating",
+      "hash": "d157425d31393962cb67b8be9cb9c61c89bca06e81616a0e0b6cb52537dedf4c",
+      "hookCalls": 130,
+      "events": 18,
+      "finalX": -1.6942867040634155
+    },
+    {
+      "mode": "moving",
+      "hash": "c3bd63921f86cf7c04040046704515a4ab26b14f0dd815779bd2424d46bf76bf",
+      "hookCalls": 1100,
+      "events": 208,
+      "finalX": 24.48707389831543
+    },
+    {
+      "mode": "sensor",
+      "hash": "89ea9f97bf64fd6e5c09b03e6bebe5dbdb7f1ced685086426ecaf41c9160177f",
+      "hookCalls": 176,
+      "events": 160,
+      "finalX": 49.99971389770508
+    },
+    {
+      "mode": "filtered",
+      "hash": "68b820c27d96997e56ac9eb82a28eb70d8d39ebc3fcab8b83af9d816a9b9ea7a",
+      "hookCalls": 288,
+      "events": 0,
+      "finalX": 49.99971389770508
+    },
+    {
+      "mode": "disabled",
+      "hash": "db408a1f1b8838d5a3e93db18399a89868eee002dd88bf629c43c54566a1656b",
+      "hookCalls": 0,
+      "events": 0,
+      "finalX": 49.99971389770508
+    },
+    {
+      "mode": "dense",
+      "hash": "1de2e27fc3fd4f112f460ba07c86fe8309840ecd5c92dfbf81db9ca900f892fc",
+      "hookCalls": 468,
+      "events": 2,
+      "finalX": 1.9650098085403442
+    },
+    {
+      "mode": "restored-edit",
+      "hash": "1288d2cd127424a5e5ca61407f346572d0c0a363d8565f3f95fefdfaedd6c730",
+      "hookCalls": 1470,
+      "events": 210,
+      "finalX": 0.8834587335586548
+    },
+    {
+      "mode": "translated-scaled",
+      "hash": "c1ad9f04e7dccfcb6fbe83a6ea63f38c959925a0db0e80bb8e86bcfc9fa6b14a",
+      "hookCalls": 538,
+      "events": 40,
+      "finalX": 0.5
+    }
+  ]
+}

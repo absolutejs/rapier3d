@@ -2,6 +2,7 @@
 //! per-pair time-of-impact casts (proxy sweeps + nonlinear fallback),
 //! and the per-body continuous solve.
 
+use super::sweep_candidates::collect_external_sweep_candidates;
 use crate::alloc_prelude::*;
 use crate::dynamics::{RigidBody, RigidBodyHandle, RigidBodySet, SoftBodySet};
 use crate::geometry::{Collider, ColliderHandle, ColliderSet};
@@ -13,8 +14,8 @@ use crate::pipeline::{ActiveHooks, PairFilterContext, PhysicsHooks};
 #[cfg(feature = "dim2")]
 use parry::query::sweep_toi::CORE_FRACTION;
 use parry::query::sweep_toi::{
-    Sweep, SweepCompositeFastShape, SweepToiStatus, ToiProxy, sweep_time_of_impact,
-    sweep_time_of_impact_composite,
+    sweep_time_of_impact, sweep_time_of_impact_composite, Sweep, SweepCompositeFastShape,
+    SweepToiStatus, ToiProxy,
 };
 use parry::query::{NonlinearRigidMotion, QueryDispatcher};
 use parry::shape::{Shape, TypedShape};
@@ -413,16 +414,19 @@ fn cast_sub_shape(
     linear_slop: Real,
     is_pseudo: bool,
 ) -> Option<Real> {
-    #[cfg(feature="sweep-probe")] {
+    #[cfg(feature = "sweep-probe")]
+    {
         use crate::counters::sweep_probe::add;
-        add(8,1);
-        let q=&sub.sweep;
-        if q.q1!=q.q2 && q.q1!=-q.q2 {add(10,1);}
-        if let TypedShape::TriMesh(mesh)=shape2.as_typed_shape() {
-            let start=sub.proxy.compute_aabb(&q.transform_at(0.0));
-            let end=sub.proxy.compute_aabb(&q.transform_at(max_fraction));
-            let bounds=start.merged(&end).transform_by(&target_pose.inverse());
-            add(9,mesh.bvh().intersect_aabb(&bounds).count() as u64);
+        add(8, 1);
+        let q = &sub.sweep;
+        if q.q1 != q.q2 && q.q1 != -q.q2 {
+            add(10, 1);
+        }
+        if let TypedShape::TriMesh(mesh) = shape2.as_typed_shape() {
+            let start = sub.proxy.compute_aabb(&q.transform_at(0.0));
+            let end = sub.proxy.compute_aabb(&q.transform_at(max_fraction));
+            let bounds = start.merged(&end).transform_by(&target_pose.inverse());
+            add(9, mesh.bvh().intersect_aabb(&bounds).count() as u64);
         }
     }
     let output = match target {
@@ -464,10 +468,16 @@ fn cast_sub_shape(
         }
     };
 
-    #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(match output.status {
-        SweepToiStatus::Hit=>11, SweepToiStatus::Separated=>12,
-        SweepToiStatus::Overlapped=>13, SweepToiStatus::Failed=>14,
-    },1);
+    #[cfg(feature = "sweep-probe")]
+    crate::counters::sweep_probe::add(
+        match output.status {
+            SweepToiStatus::Hit => 11,
+            SweepToiStatus::Separated => 12,
+            SweepToiStatus::Overlapped => 13,
+            SweepToiStatus::Failed => 14,
+        },
+        1,
+    );
     if is_pseudo {
         // Any genuine impact counts (initial overlaps are filtered later by the endpoint
         // intersection re-check); `Separated` does not.
@@ -587,8 +597,37 @@ pub(super) fn sweep_fast_body(
     let mut fraction: Real = 1.0;
     let mut pseudo_hits = Vec::new();
 
+    // Many convex pieces share a body and intersect each other's swept boxes.
+    // Walk the global BVH once, then reuse only external leaves. Single-collider
+    // bodies and the existing fixed-target-list path keep their original cost.
+    let candidates = if rb1.colliders.0.len() > 1 {
+        if let CcdTargets::FullBvh(bvh) = targets {
+            let mut envelope: Option<Aabb> = None;
+            for ch in &rb1.colliders.0 {
+                let co = &colliders[*ch];
+                if let Some(parent) = &co.parent {
+                    let start = rb1.pos.position * parent.pos_wrt_parent;
+                    let end = end_body_pose * parent.pos_wrt_parent;
+                    let bounds = co
+                        .shape
+                        .compute_aabb(&start)
+                        .merged(&co.shape.compute_aabb(&end));
+                    envelope = Some(envelope.map_or(bounds, |a| a.merged(&bounds)));
+                }
+            }
+            envelope.and_then(|bounds| {
+                collect_external_sweep_candidates(bvh, colliders, handle, bounds)
+            })
+        } else {
+            None
+        }
+    } else {
+        None
+    };
+
     for ch1 in &rb1.colliders.0 {
-        #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(0, 1);
+        #[cfg(feature = "sweep-probe")]
+        crate::counters::sweep_probe::add(0, 1);
         let co1 = &colliders[*ch1];
         let Some(parent1) = co1.parent.as_ref() else {
             continue;
@@ -604,14 +643,16 @@ pub(super) fn sweep_fast_body(
         // Preserve eager rejection for unsupported/compound shapes: in particular,
         // a compound without sweepable children must not start invoking user hooks.
         let prepare_fast = || {
-            #[cfg(feature="sweep-probe")] let started=std::time::Instant::now();
+            #[cfg(feature = "sweep-probe")]
+            let started = std::time::Instant::now();
             let local_com = parent1
                 .pos_wrt_parent
                 .inverse_transform_point(rb1.mprops.local_mprops.local_com);
-            let result=FastColliderInfo::new(co1, rb1, &start, &end, local_com);
-            #[cfg(feature="sweep-probe")] {
-                crate::counters::sweep_probe::add(4,1);
-                crate::counters::sweep_probe::add(5,started.elapsed().as_nanos() as u64);
+            let result = FastColliderInfo::new(co1, rb1, &start, &end, local_com);
+            #[cfg(feature = "sweep-probe")]
+            {
+                crate::counters::sweep_probe::add(4, 1);
+                crate::counters::sweep_probe::add(5, started.elapsed().as_nanos() as u64);
             }
             result
         };
@@ -630,13 +671,15 @@ pub(super) fn sweep_fast_body(
         let swept_aabb = start_aabb.merged(&end_aabb);
 
         let mut handle_candidate = |ch2: ColliderHandle, co2: &Collider| {
-            #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(1, 1);
+            #[cfg(feature = "sweep-probe")]
+            crate::counters::sweep_probe::add(1, 1);
             if ch2 == *ch1 {
                 return;
             }
             let bh2 = co2.parent.map(|p| p.handle);
             if bh2 == Some(handle) {
-                #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(2, 1);
+                #[cfg(feature = "sweep-probe")]
+                crate::counters::sweep_probe::add(2, 1);
                 return; // Skip same body.
             }
             let rb2 = bh2.and_then(|h| bodies.get(h));
@@ -658,11 +701,15 @@ pub(super) fn sweep_fast_body(
             ) {
                 return;
             }
-            #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(3, 1);
+            #[cfg(feature = "sweep-probe")]
+            crate::counters::sweep_probe::add(3, 1);
             let fast = fast.get_or_insert_with(&prepare_fast);
-            let Some(fast) = fast.as_ref() else { return; };
-            #[cfg(feature="sweep-probe")] let cast_started=std::time::Instant::now();
-            let hit=cast_collider_pair(
+            let Some(fast) = fast.as_ref() else {
+                return;
+            };
+            #[cfg(feature = "sweep-probe")]
+            let cast_started = std::time::Instant::now();
+            let hit = cast_collider_pair(
                 dispatcher,
                 fast,
                 co2,
@@ -672,9 +719,10 @@ pub(super) fn sweep_fast_body(
                 linear_slop,
                 is_pseudo,
             );
-            #[cfg(feature="sweep-probe")] {
-                crate::counters::sweep_probe::add(6,1);
-                crate::counters::sweep_probe::add(7,cast_started.elapsed().as_nanos() as u64);
+            #[cfg(feature = "sweep-probe")]
+            {
+                crate::counters::sweep_probe::add(6, 1);
+                crate::counters::sweep_probe::add(7, cast_started.elapsed().as_nanos() as u64);
             }
             if let Some(hit_fraction) = hit {
                 if is_pseudo {
@@ -698,8 +746,16 @@ pub(super) fn sweep_fast_body(
                 }
             }
             CcdTargets::FullBvh(bvh) => {
-                for (ch2, co2) in intersect_swept_aabb(bvh, colliders, swept_aabb) {
-                    handle_candidate(ch2, co2);
+                if let Some(candidates) = &candidates {
+                    for (ch2, bounds) in candidates {
+                        if bounds.intersects(&swept_aabb) {
+                            handle_candidate(*ch2, &colliders[*ch2]);
+                        }
+                    }
+                } else {
+                    for (ch2, co2) in intersect_swept_aabb(bvh, colliders, swept_aabb) {
+                        handle_candidate(ch2, co2);
+                    }
                 }
             }
         }

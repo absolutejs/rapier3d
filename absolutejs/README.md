@@ -753,3 +753,11 @@ geometric centroid without an unused inertia calculation. CCD settings, shape
 geometry, collision filtering and solver arithmetic are unchanged. Qualification
 records include exact recorded-motion comparisons; this is not a frame-rate or
 universal latency guarantee.
+
+Version 0.21.2 reuses broad-phase candidates within a multi-collider body's CCD
+sweep. It keeps the original stored leaf bounds and candidate order, excludes only
+same-body leaves before existing filters, and falls back to the original query
+above 512 external candidates. The cache ends with the sweep; it is never reused
+across steps, edits or snapshot restoration. Physics settings and collision shapes
+remain unchanged. Release evidence includes exact motion/hook/event references,
+query-order controls and alternating generated-terrain measurements.

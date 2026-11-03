@@ -1,0 +1,151 @@
+warning: function `midpoint_step` is never used
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:78:8
+   |
+78 | pub fn midpoint_step(
+   |        ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `rigid_rotation_step` is never used
+   --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/dynamics/rigid_midpoint.rs:221:8
+    |
+221 | pub fn rigid_rotation_step(
+    |        ^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:9:5
+   |
+ 9 |     pub compression_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   |
+note: the lint level is defined here
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/lib.rs:15:9
+   |
+15 | #![warn(missing_docs)]
+   |         ^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:10:5
+   |
+10 |     pub compression_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:11:5
+   |
+11 |     pub compression_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:12:5
+   |
+12 |     pub max_compression_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:13:5
+   |
+13 |     pub restitution_solves: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:14:5
+   |
+14 |     pub restitution_iterations: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:15:5
+   |
+15 |     pub restitution_limit_hits: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:16:5
+   |
+16 |     pub max_restitution_residual: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:23:5
+   |
+23 |     pub group_passes: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:24:5
+   |
+24 |     pub rigid_body_passes: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:25:5
+   |
+25 |     pub rigid_body_substeps: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:26:5
+   |
+26 |     pub min_substeps: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:27:5
+   |
+27 |     pub max_substeps: usize,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:28:5
+   |
+28 |     pub min_substep_dt: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a struct field
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:29:5
+   |
+29 |     pub max_substep_dt: Real,
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: missing documentation for a method
+  --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/solver_counters.rs:33:5
+   |
+33 |     pub fn observe(&mut self, bodies: usize, substeps: usize, dt: Real) {
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `rapier3d` (lib) generated 18 warnings
+warning: variable does not need to be mutable
+  --> src/main.rs:40:9
+   |
+40 |     let mut result = json!({"scope":"one host step from exact WASM capture; host timings are not browser timings","inputBodies":inpu...
+   |         ----^^^^^^
+   |         |
+   |         help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` (part of `#[warn(unused)]`) on by default
+
+warning: `absolutejs-terrain-sweep-inspector` (bin "absolutejs-terrain-sweep-inspector") generated 1 warning (run `cargo fix --bin "absolutejs-terrain-sweep-inspector" -p absolutejs-terrain-sweep-inspector` to apply 1 suggestion)
+   Compiling absolutejs-terrain-sweep-inspector v0.0.0 (/home/alexkahn/alex/rapier-terrain-sweep-profile/absolutejs/research/terrain-sweep)
+warning: unexpected `cfg` condition value: `sweep-probe`
+  --> tests/../../../../src/dynamics/ccd/sweep_candidates.rs:28:15
+   |
+28 |         #[cfg(feature = "sweep-probe")]
+   |               ^^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: expected values for `feature` are: `probe`
+   = help: consider adding `sweep-probe` as a feature in `Cargo.toml`
+   = note: see <https://doc.rust-lang.org/nightly/rustc/check-cfg/cargo-specifics.html> for more information about checking conditional configuration
+   = note: `#[warn(unexpected_cfgs)]` on by default
+
+warning: `absolutejs-terrain-sweep-inspector` (test "candidates") generated 1 warning
+    Finished `release` profile [optimized] target(s) in 0.80s
+     Running tests/candidates.rs (.cache/host/release/deps/candidates-5e2084c999e1cbea)
+
+running 3 tests
+test retained_fat_bounds_cover_touching_queries_and_stale_generations_follow_original_lookup ... ok
+test overflow_falls_back_instead_of_truncating_and_own_pieces_do_not_consume_budget ... ok
+test preserves_fat_leaf_bounds_and_order_for_contained_queries ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
