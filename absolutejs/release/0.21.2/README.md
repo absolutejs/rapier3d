@@ -23,4 +23,11 @@ archive motion/event/hook scenarios. Archive SHA256:
 Published to npm. Registry metadata and downloaded archive bytes match the
 qualified archive exactly; see registry-receipt-5.json. The first four checks
 returned 404 while npm processed the accepted publication; it was not republished.
-Game 0.21.2 adoption checks are in progress.
+Game 0.21.2 adoption checks are complete, as recorded below.
+
+Game adoption is verified at hello-world commit `5bc10c6e`. All 53 installed
+files and lock integrity match the registry release. The maintained suite passes
+1,121 tests / 7,713,391 assertions, with typechecking clean. The GPU-disabled
+actual generated-pair workflow passes atomic commit, retry, persisted-pose
+identity and late-failure rollback; both diagnostic manifests record unchanged
+source. Durable game evidence: `docs/stone-sweep-workload-2026-11-03/`.
