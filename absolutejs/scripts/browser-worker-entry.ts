@@ -1,3 +1,4 @@
+import {verifyConvexFacePreservation} from '../tests/convex-face-fixture';
 import {ccdCandidateModes,ccdCandidateFixture} from '../tests/ccd-candidate-fixture';
 import ccdCandidateReference from '../tests/fixtures/ccd-candidate-reference.json';
 import convexFixture from '../tests/fixtures/captured-convex-exports.json';
@@ -17,6 +18,7 @@ try {
   patches:[{offset:{x:0,y:0,z:0},direction:{x:1,y:0,z:0},fluidVelocity:{x:4,y:0,z:0},quadraticResistance:2,oneSided:false}]});
  if(Math.abs(batchedDrag.impulse.x+2)>1e-12||Math.abs(batchedDrag.bodyWork+13)>1e-12)throw Error('Browser batched drag ledger failed');
  await Promise.all([R.init(),R.init()]);
+ const convexFacePreservation=verifyConvexFacePreservation(R);
  const scheduleWorld = new R.World({x:0,y:0,z:0});
  let solverScheduleControls;
  try {
@@ -366,6 +368,6 @@ try {
    if(hash!==ccdCandidateReference.cases.find(c=>c.mode===mode)?.hash)throw Error('Browser CCD candidate reference mismatch: '+mode);
    ccdCandidateCases.push({mode,hash,hookCalls:result.hookCalls,events:result.collisions.length});
   }
-  postMessage({ccdCandidateCases,certifiedConvexExports,solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({ccdCandidateCases,certifiedConvexExports,solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,convexFacePreservation,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

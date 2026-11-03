@@ -1,0 +1,14 @@
+$ bun absolutejs/scripts/build-api.ts
+4 |  const value=manifest as {schemaVersion?:number;wasmSha256?:string;wasmBytes?:number;solverChanges?:boolean};
+5 |  if(!value||value.schemaVersion!==1||typeof value.wasmSha256!=='string'||!/^[a-f0-9]{64}$/.test(value.wasmSha256)||!Number.isSafeInteger(value.wasmBytes)||typeof value.solverChanges!=='boolean')
+6 |   throw Error('Invalid stable native qualification manifest');
+7 |  const actual=createHash('sha256').update(wasm).digest('hex');
+8 |  if(actual!==value.wasmSha256||wasm.byteLength!==value.wasmBytes)
+9 |   throw Error(`Native kernel is not qualified for this stable package: got ${actual} (${wasm.byteLength} bytes), expected ${value.wasmSha256} (${value.wasmBytes} bytes). Rebuild the stable native source or qualify a new kernel; never reuse a research build.`);
+            ^
+error: Native kernel is not qualified for this stable package: got 47b1f4a5acaa2776fd787e0117dfeaf90e7df9093ab64910a69fae8ed6319809 (3416097 bytes), expected 36203be9bdcc2a65f39e44601bf878c5a622be877982a2ef2ad3b6ce7e74f47a (3414908 bytes). Rebuild the stable native source or qualify a new kernel; never reuse a research build.
+      at assertQualifiedNative (/home/alexkahn/alex/rapier-convex-face-preservation/absolutejs/scripts/qualified-native.ts:9:9)
+      at /home/alexkahn/alex/rapier-convex-face-preservation/absolutejs/scripts/build-api.ts:32:27
+
+Bun v1.4.4+absolute.1 (Linux x64)
+error: script "build:api" exited with code 1

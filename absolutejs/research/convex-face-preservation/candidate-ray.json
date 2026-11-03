@@ -1,0 +1,77 @@
+{
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.21.3-candidate.0",
+    "qualifiedKernelRelease": "research-convex-face-preservation-1",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=e6a86931ed45b99511e1cdfd1a0f59511faacd78#e6a86931ed45b99511e1cdfd1a0f59511faacd78",
+    "convexExportPrecision": "float64",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "47b1f4a5acaa2776fd787e0117dfeaf90e7df9093ab64910a69fae8ed6319809",
+    "wasmBytes": 3416097,
+    "solverChanges": true
+  },
+  "rows": [
+    {
+      "scale": 0.001,
+      "mass": 8.013335227966309,
+      "hit": {
+        "timeOfImpact": 0.001991245662793517,
+        "normal": {
+          "x": 0.12464836984872818,
+          "y": 0.9922009706497192,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0087543372064829
+    },
+    {
+      "scale": 1,
+      "mass": 8.01333236694336,
+      "hit": {
+        "timeOfImpact": 1.9924999475479126,
+        "normal": {
+          "x": 0.009999544359743595,
+          "y": 0.9999499917030334,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0075000524520874
+    },
+    {
+      "scale": 100,
+      "mass": 8.013334274291992,
+      "hit": {
+        "timeOfImpact": 199.25,
+        "normal": {
+          "x": 0.009999444708228111,
+          "y": 0.9999499917030334,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0075
+    },
+    {
+      "scale": 10000,
+      "mass": 8.013334274291992,
+      "hit": {
+        "timeOfImpact": 19925,
+        "normal": {
+          "x": 0.009999384172260761,
+          "y": 0.9999499917030334,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0075
+    }
+  ]
+}

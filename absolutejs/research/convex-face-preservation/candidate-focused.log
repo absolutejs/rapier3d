@@ -1,0 +1,27 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/convex-face-preservation.test.ts:
+ 8 |  const world=new R.World({x:0,y:0,z:0});try{
+ 9 |   const body=world.createRigidBody(R.RigidBodyDesc.dynamic());
+10 |   const collider=world.createCollider(R.ColliderDesc.convexMesh(points(.01,scale),indices)!.setDensity(1/scale**3),body);
+11 |   expect(Math.abs(body.mass()-(8+4*.01/3))/(8+4*.01/3)).toBeLessThan(2e-6);
+12 |   const hit=collider.castRayAndGetNormal(new R.Ray({x:.25*scale,y:3*scale,z:0},{x:0,y:-1,z:0}),5*scale,false);
+13 |   expect(hit).not.toBeNull();expect(Math.abs((3*scale-hit!.timeOfImpact)/scale-1.0075)).toBeLessThan(2e-6);
+                                                                                             ^
+error: expect(received).toBeLessThan(expected)
+
+Expected: < 0.000002
+Received: 0.001254337206482825
+
+      at <anonymous> (/home/alexkahn/alex/rapier-convex-face-preservation/absolutejs/tests/convex-face-preservation.test.ts:13:89)
+(fail) convex mesh retains shallow ridge mass and ray surface at scale 0.001 [5.44ms]
+(pass) convex mesh retains shallow ridge mass and ray surface at scale 1 [1.78ms]
+(pass) convex mesh retains shallow ridge mass and ray surface at scale 100 [1.35ms]
+(pass) convex mesh retains shallow ridge mass and ray surface at scale 10000 [1.34ms]
+(pass) captured stone mass matches its exact rendered boundary [1.91ms]
+(pass) coplanar cube retains its mass and exact snapshot restoration [4.93ms]
+
+ 5 pass
+ 1 fail
+ 15 expect() calls
+Ran 6 tests across 1 file. [289.00ms]

@@ -1,0 +1,64 @@
+--- bindings/typescript/Cargo.lock	2026-11-03 04:37:43.575834891 -0500
++++ /home/alexkahn/alex/rapier-convex-face-preservation/.absolutejs/native-source/857d16d93032792b159b169b64185730839b1ed8e39c294cb47d04726e50a4c5/Cargo.lock	2026-11-03 04:37:50.621984094 -0500
+@@ -229,7 +229,7 @@
+  "js-sys",
+  "nalgebra",
+  "palette",
+- "parry3d",
++ "parry3d 0.31.1 (git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72)",
+  "parry3d-f64",
+  "rapier3d",
+  "ref-cast",
+@@ -411,6 +411,26 @@
+ [[package]]
+ name = "parry3d"
+ version = "0.31.1"
++source = "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72"
++dependencies = [
++ "approx",
++ "arrayvec",
++ "bitflags",
++ "either",
++ "foldhash",
++ "glamx",
++ "log",
++ "num-derive",
++ "num-traits",
++ "ordered-float",
++ "simba",
++ "static_assertions",
++ "thiserror",
++]
++
++[[package]]
++name = "parry3d"
++version = "0.31.1"
+ source = "git+https://github.com/absolutejs/parry?rev=e6a86931ed45b99511e1cdfd1a0f59511faacd78#e6a86931ed45b99511e1cdfd1a0f59511faacd78"
+ dependencies = [
+  "approx",
+@@ -441,7 +461,7 @@
+ [[package]]
+ name = "parry3d-f64"
+ version = "0.31.1"
+-source = "git+https://github.com/absolutejs/parry?rev=e6a86931ed45b99511e1cdfd1a0f59511faacd78#e6a86931ed45b99511e1cdfd1a0f59511faacd78"
++source = "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72"
+ dependencies = [
+  "approx",
+  "arrayvec",
+@@ -537,7 +557,7 @@
+  "log",
+  "nalgebra",
+  "num-traits",
+- "parry3d",
++ "parry3d 0.31.1 (git+https://github.com/absolutejs/parry?rev=e6a86931ed45b99511e1cdfd1a0f59511faacd78)",
+  "profiling",
+  "serde",
+  "simba",
+@@ -817,7 +837,3 @@
+  "bytemuck",
+  "safe_arch",
+ ]
+-
+-[[patch.unused]]
+-name = "rapier2d"
+-version = "0.36.0"

@@ -1,0 +1,77 @@
+{
+  "buildInfo": {
+    "schemaVersion": 1,
+    "scope": "package",
+    "packageName": "@absolutejs/rapier3d",
+    "packageVersion": "0.21.2",
+    "qualifiedKernelRelease": "0.21.2",
+    "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
+    "engine": "0.36.0",
+    "collisionLibraryVersion": "0.31.1",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72",
+    "convexExportPrecision": "float64",
+    "bindings": "0.21.0",
+    "bindgen": "0.2.129",
+    "wasmSha256": "36203be9bdcc2a65f39e44601bf878c5a622be877982a2ef2ad3b6ce7e74f47a",
+    "wasmBytes": 3414908,
+    "solverChanges": false
+  },
+  "rows": [
+    {
+      "scale": 0.001,
+      "mass": 8.000001907348633,
+      "hit": {
+        "timeOfImpact": 0.001991245662793517,
+        "normal": {
+          "x": 0.12464836984872818,
+          "y": 0.9922009706497192,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0087543372064829
+    },
+    {
+      "scale": 1,
+      "mass": 7.999999046325684,
+      "hit": {
+        "timeOfImpact": 1.9924999475479126,
+        "normal": {
+          "x": 0.009999544359743595,
+          "y": 0.9999499917030334,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0075000524520874
+    },
+    {
+      "scale": 100,
+      "mass": 8,
+      "hit": {
+        "timeOfImpact": 199.25,
+        "normal": {
+          "x": 0.009999444708228111,
+          "y": 0.9999499917030334,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0075
+    },
+    {
+      "scale": 10000,
+      "mass": 8.000000953674316,
+      "hit": {
+        "timeOfImpact": 19925,
+        "normal": {
+          "x": 0.009999384172260761,
+          "y": 0.9999499917030334,
+          "z": 0
+        },
+        "featureType": 3
+      },
+      "height": 1.0075
+    }
+  ]
+}

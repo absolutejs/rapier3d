@@ -1,0 +1,6 @@
+$ bash absolutejs/scripts/build-native.sh
+    Updating git repository `https://github.com/absolutejs/parry`
+    Updating git repository `https://github.com/absolutejs/parry`
+error: cannot update the lock file /home/alexkahn/alex/rapier-convex-face-preservation/.absolutejs/native-source/9d51ff0b0412580f286c84d3d52157b59e61fbdde92e07cd411439f4959bc426/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.
+error: script "build" exited with code 101
