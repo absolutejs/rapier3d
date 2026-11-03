@@ -1,0 +1,56 @@
+   Compiling rapier3d v0.36.0 (/home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d)
+error: cannot find macro `thread_local` in this scope
+ --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/sweep_probe.rs:3:1
+  |
+3 | thread_local! { static COUNTS: Cell<[u64; 15]> = const { Cell::new([0; 15]) }; }
+  | ^^^^^^^^^^^^
+  |
+  = note: `thread_local` is in scope, but it is an attribute: `#[thread_local]`
+help: consider importing this macro
+  |
+2 + use std::thread_local;
+  |
+
+error[E0425]: cannot find value `COUNTS` in this scope
+ --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/sweep_probe.rs:5:18
+  |
+5 | pub fn reset() { COUNTS.with(|c| c.set([0;15])); }
+  |                  ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `COUNTS` in this scope
+ --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/sweep_probe.rs:7:29
+  |
+7 | pub fn read() -> [u64;15] { COUNTS.with(Cell::get) }
+  |                             ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `COUNTS` in this scope
+ --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/sweep_probe.rs:9:2
+  |
+9 |  COUNTS.with(|c| {let mut counts=c.get();counts[index]=counts[index].saturating_add(value);c.set(counts);});
+  |  ^^^^^^ not found in this scope
+
+error[E0282]: type annotations needed
+ --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/sweep_probe.rs:5:31
+  |
+5 | pub fn reset() { COUNTS.with(|c| c.set([0;15])); }
+  |                               ^  - type must be known at this point
+  |
+help: consider giving this closure parameter an explicit type
+  |
+5 | pub fn reset() { COUNTS.with(|c: /* Type */| c.set([0;15])); }
+  |                                ++++++++++++
+
+error[E0282]: type annotations needed
+ --> /home/alexkahn/alex/rapier-terrain-sweep-profile/crates/rapier3d/../../src/counters/sweep_probe.rs:9:15
+  |
+9 |  COUNTS.with(|c| {let mut counts=c.get();counts[index]=counts[index].saturating_add(value);c.set(counts);});
+  |               ^                  - type must be known at this point
+  |
+help: consider giving this closure parameter an explicit type
+  |
+9 |  COUNTS.with(|c: /* Type */| {let mut counts=c.get();counts[index]=counts[index].saturating_add(value);c.set(counts);});
+  |                ++++++++++++
+
+Some errors have detailed explanations: E0282, E0425.
+For more information about an error, try `rustc --explain E0282`.
+error: could not compile `rapier3d` (lib) due to 6 previous errors

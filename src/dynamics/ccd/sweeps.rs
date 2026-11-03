@@ -413,6 +413,18 @@ fn cast_sub_shape(
     linear_slop: Real,
     is_pseudo: bool,
 ) -> Option<Real> {
+    #[cfg(feature="sweep-probe")] {
+        use crate::counters::sweep_probe::add;
+        add(8,1);
+        let q=&sub.sweep;
+        if q.q1!=q.q2 && q.q1!=-q.q2 {add(10,1);}
+        if let TypedShape::TriMesh(mesh)=shape2.as_typed_shape() {
+            let start=sub.proxy.compute_aabb(&q.transform_at(0.0));
+            let end=sub.proxy.compute_aabb(&q.transform_at(max_fraction));
+            let bounds=start.merged(&end).transform_by(&target_pose.inverse());
+            add(9,mesh.bvh().intersect_aabb(&bounds).count() as u64);
+        }
+    }
     let output = match target {
         TargetKind::Proxy(target_proxy) => {
             let target_sweep = Sweep::constant(target_pose, Vector::ZERO);
@@ -452,6 +464,10 @@ fn cast_sub_shape(
         }
     };
 
+    #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(match output.status {
+        SweepToiStatus::Hit=>11, SweepToiStatus::Separated=>12,
+        SweepToiStatus::Overlapped=>13, SweepToiStatus::Failed=>14,
+    },1);
     if is_pseudo {
         // Any genuine impact counts (initial overlaps are filtered later by the endpoint
         // intersection re-check); `Separated` does not.
@@ -572,6 +588,7 @@ pub(super) fn sweep_fast_body(
     let mut pseudo_hits = Vec::new();
 
     for ch1 in &rb1.colliders.0 {
+        #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(0, 1);
         let co1 = &colliders[*ch1];
         let Some(parent1) = co1.parent.as_ref() else {
             continue;
@@ -587,10 +604,16 @@ pub(super) fn sweep_fast_body(
         // Preserve eager rejection for unsupported/compound shapes: in particular,
         // a compound without sweepable children must not start invoking user hooks.
         let prepare_fast = || {
+            #[cfg(feature="sweep-probe")] let started=std::time::Instant::now();
             let local_com = parent1
                 .pos_wrt_parent
                 .inverse_transform_point(rb1.mprops.local_mprops.local_com);
-            FastColliderInfo::new(co1, rb1, &start, &end, local_com)
+            let result=FastColliderInfo::new(co1, rb1, &start, &end, local_com);
+            #[cfg(feature="sweep-probe")] {
+                crate::counters::sweep_probe::add(4,1);
+                crate::counters::sweep_probe::add(5,started.elapsed().as_nanos() as u64);
+            }
+            result
         };
         let mut fast = if ToiProxy::from_shape(co1.shape.as_ref()).is_some() {
             None
@@ -607,11 +630,13 @@ pub(super) fn sweep_fast_body(
         let swept_aabb = start_aabb.merged(&end_aabb);
 
         let mut handle_candidate = |ch2: ColliderHandle, co2: &Collider| {
+            #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(1, 1);
             if ch2 == *ch1 {
                 return;
             }
             let bh2 = co2.parent.map(|p| p.handle);
             if bh2 == Some(handle) {
+                #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(2, 1);
                 return; // Skip same body.
             }
             let rb2 = bh2.and_then(|h| bodies.get(h));
@@ -633,9 +658,11 @@ pub(super) fn sweep_fast_body(
             ) {
                 return;
             }
+            #[cfg(feature="sweep-probe")] crate::counters::sweep_probe::add(3, 1);
             let fast = fast.get_or_insert_with(&prepare_fast);
             let Some(fast) = fast.as_ref() else { return; };
-            if let Some(hit_fraction) = cast_collider_pair(
+            #[cfg(feature="sweep-probe")] let cast_started=std::time::Instant::now();
+            let hit=cast_collider_pair(
                 dispatcher,
                 fast,
                 co2,
@@ -644,7 +671,12 @@ pub(super) fn sweep_fast_body(
                 dt,
                 linear_slop,
                 is_pseudo,
-            ) {
+            );
+            #[cfg(feature="sweep-probe")] {
+                crate::counters::sweep_probe::add(6,1);
+                crate::counters::sweep_probe::add(7,cast_started.elapsed().as_nanos() as u64);
+            }
+            if let Some(hit_fraction) = hit {
                 if is_pseudo {
                     pseudo_hits.push(PseudoHit {
                         ch1: *ch1,

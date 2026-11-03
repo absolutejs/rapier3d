@@ -24,6 +24,8 @@ rust.unexpected_cfgs = { level = "warn", check-cfg = [
 ] }
 
 [features]
+# Opt-in host research only; disabled in shipped WASM.
+sweep-probe = ["std"]
 default = ["dim3", "f32", "std"] # , "block-solver"]
 dim3 = []
 f32 = []

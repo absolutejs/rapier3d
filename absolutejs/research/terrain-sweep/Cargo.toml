@@ -1,0 +1,16 @@
+[package]
+name = "absolutejs-terrain-sweep-inspector"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+rapier3d = { path = "../../../crates/rapier3d", features = ["serde-serialize", "debug-render", "profiler", "fem"] }
+serde = { version = "1", features = ["derive", "rc"] }
+serde_json = "1"
+bincode = "1"
+
+[features]
+probe = ["rapier3d/sweep-probe"]

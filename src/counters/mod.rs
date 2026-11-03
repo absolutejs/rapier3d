@@ -9,6 +9,9 @@ pub use self::solver_counters::{ContactConvergenceCounters, SolverCounters, Solv
 pub use self::stages_counters::StagesCounters;
 pub use self::timer::Timer;
 
+#[cfg(feature = "sweep-probe")]
+pub mod sweep_probe;
+
 mod ccd_counters;
 mod collision_detection_counters;
 mod solver_counters;
