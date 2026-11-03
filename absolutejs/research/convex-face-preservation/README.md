@@ -53,3 +53,34 @@ unqualified-convex-face-preservation-1. This changes metadata only; native bytes
 remain identical. All 53 packed distribution files and embedded native payload
 pass the existing --research archive audit. Eight focused identity/geometry tests
 pass after relabeling. The exact private archive is backed up for isolated consumers.
+
+## Release hold: standalone cut fragment
+
+The installed candidate passes 1125/1127 game tests, with a real settling failure
+in physical-material variant 7. The native-only reproduce-cut-fragment.ts now
+reproduces it with one convex collider (48 input points) against a cuboid floor,
+without any game imports. Published 0.21.2 sleeps at step 17982 (9.365625 s at
+1920 Hz); the candidate remains awake after 38400 steps (20 s). It uses the same
+explicit material mass and inertia, contact parameters and input vertices.
+The larger material component sleeps independently in both engines.
+
+Diagnostic-only controls also fail to settle the candidate within 20 seconds:
+480, 960, 3840 and 7680 Hz; 32 solver iterations at 1920 Hz; and zero restitution
+at 1920 Hz. These controls are not proposed game settings. Increasing compute
+alone does not resolve the captured case.
+
+The genuine game trace is identical through step 1626; first motion divergence
+is step 1627 (0.847395833 s), at the first floor contact. Returned f64 collider
+meshes are identical, but f32 native support-face/contact-point selection changes.
+A candidate support-feature test confirms the captured initial selected polygon
+contains the extreme vertex. A separate source experiment investigates nearly
+coincident clipped and GJK witness points; it is not part of this archive.
+
+Research consulted 2026-11-03:
+- https://box2d.org/files/ErinCatto_ContactManifolds_GDC2007.pdf — contact coherence,
+  contact IDs, retaining a small manifold and rejecting nearby new points.
+- https://nvidia-omniverse.github.io/PhysX/physx/5.5.1/docs/Geometry.html — convex
+  cooking has an explicit plane tolerance. This is contextual evidence, not
+  justification to flatten measured game geometry or relax mass acceptance.
+
+Do not publish this candidate or change game rejection gates to pass it.
