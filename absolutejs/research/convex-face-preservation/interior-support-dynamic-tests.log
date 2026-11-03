@@ -1,0 +1,13 @@
+bun test v1.4.4+absolute.1 (38afee6c8)
+
+absolutejs/tests/convex-interior-face.test.ts:
+(pass) analytic box contact retains the deepest vertex across 96 rotations at units=1 [93.75ms]
+(pass) analytic box contact retains the deepest vertex across 96 rotations at units=100 [39.97ms]
+(pass) finite box does not become an infinite plane at units=1 [1.46ms]
+(pass) finite box does not become an infinite plane at units=100 [0.76ms]
+(pass) captured cut fragment settles on a finite box without contact tuning [602.36ms]
+
+ 5 pass
+ 0 fail
+ 1161 expect() calls
+Ran 5 tests across 1 file. [928.00ms]

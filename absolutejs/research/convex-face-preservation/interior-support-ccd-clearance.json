@@ -1,0 +1,58 @@
+[
+  {
+    "version": "0.21.2",
+    "mode": "pieces",
+    "minimumWallPlaneClearance": 0.00011107128499543428,
+    "worstStep": 21,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.2",
+    "mode": "rotating",
+    "minimumWallPlaneClearance": 0.0014572767985063795,
+    "worstStep": 9,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.2",
+    "mode": "restored-edit",
+    "minimumWallPlaneClearance": 0.00011107128499543428,
+    "worstStep": 21,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.2",
+    "mode": "translated-scaled",
+    "minimumWallPlaneClearance": -0.00011742890474453205,
+    "worstStep": 8,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.3-research.3",
+    "mode": "pieces",
+    "minimumWallPlaneClearance": -6.519125326320818e-05,
+    "worstStep": 8,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.3-research.3",
+    "mode": "rotating",
+    "minimumWallPlaneClearance": 0.0010097600438401244,
+    "worstStep": 9,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.3-research.3",
+    "mode": "restored-edit",
+    "minimumWallPlaneClearance": -6.519125326320818e-05,
+    "worstStep": 8,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  },
+  {
+    "version": "0.21.3-research.3",
+    "mode": "translated-scaled",
+    "minimumWallPlaneClearance": -0.000167652712006916,
+    "worstStep": 8,
+    "scope": "Float32 authored tetrahedron vertices; recorded step-end body poses; normalized units; not continuous swept clearance"
+  }
+]

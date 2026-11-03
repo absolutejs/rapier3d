@@ -3,18 +3,18 @@
     "schemaVersion": 1,
     "scope": "package",
     "packageName": "@absolutejs/rapier3d",
-    "packageVersion": "0.21.1",
-    "qualifiedKernelRelease": "0.21.1",
+    "packageVersion": "0.21.3-research.3",
+    "qualifiedKernelRelease": "unqualified-convex-interior-support-1",
     "upstream": "b716d375efc0201003f0cd9ef7168eee0b62c177",
     "engine": "0.36.0",
     "collisionLibraryVersion": "0.31.1",
-    "collisionSource": "git+https://github.com/absolutejs/parry?rev=6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72#6afbe26a23a4d89903c6a33d0a0c0d98d9af7b72",
+    "collisionSource": "git+https://github.com/absolutejs/parry?rev=83770355d2feb82234f19d89649f6c4d3a1de628#83770355d2feb82234f19d89649f6c4d3a1de628",
     "convexExportPrecision": "float64",
     "bindings": "0.21.0",
     "bindgen": "0.2.129",
-    "wasmSha256": "1d35b69d746eee6383401a68ec37d051391e0fa321096675b46c86072616e9d5",
-    "wasmBytes": 3411729,
-    "solverChanges": false
+    "wasmSha256": "41035f4d7c6a119c185f42d1fd165477200d40d45231fb0eead10681f0c09cc5",
+    "wasmBytes": 3424813,
+    "solverChanges": true
   },
   "cases": [
     {
@@ -26,17 +26,17 @@
     },
     {
       "mode": "pieces",
-      "hash": "f74b530a8f877ae322a65edfd53f5bcaed1c9c520e63ae27b623320f27405a67",
-      "hookCalls": 567,
-      "events": 48,
-      "finalX": 0.6135529279708862
+      "hash": "998551d8d88eb14db07588ddb435eb1ba2666d1753baec51ea7fdf136e6e042d",
+      "hookCalls": 643,
+      "events": 36,
+      "finalX": 0.5766858458518982
     },
     {
       "mode": "rotating",
-      "hash": "d157425d31393962cb67b8be9cb9c61c89bca06e81616a0e0b6cb52537dedf4c",
-      "hookCalls": 130,
-      "events": 18,
-      "finalX": -1.6942867040634155
+      "hash": "2a8be2d7d68c03688e56dfb6fb85789707b07fbfb05ea073b6ef4dfc7b068298",
+      "hookCalls": 123,
+      "events": 10,
+      "finalX": -1.4088152647018433
     },
     {
       "mode": "moving",
@@ -75,17 +75,17 @@
     },
     {
       "mode": "restored-edit",
-      "hash": "1288d2cd127424a5e5ca61407f346572d0c0a363d8565f3f95fefdfaedd6c730",
-      "hookCalls": 1470,
-      "events": 210,
-      "finalX": 0.8834587335586548
+      "hash": "49c644c75cda1d35c3e705fa04b27f5287d62e085552180e7f4ec78d9a049fe9",
+      "hookCalls": 1095,
+      "events": 70,
+      "finalX": 5.0650506019592285
     },
     {
       "mode": "translated-scaled",
-      "hash": "c1ad9f04e7dccfcb6fbe83a6ea63f38c959925a0db0e80bb8e86bcfc9fa6b14a",
-      "hookCalls": 538,
-      "events": 40,
-      "finalX": 0.5
+      "hash": "8c4d57772fda633100360bb2a1dc06b7ad283d34fcf0ed29539028b4d06eae81",
+      "hookCalls": 469,
+      "events": 36,
+      "finalX": -0.4596875
     }
   ]
 }

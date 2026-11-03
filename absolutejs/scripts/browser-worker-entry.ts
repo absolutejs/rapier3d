@@ -1,3 +1,5 @@
+import {cutFragmentFixture} from '../tests/cut-fragment-fixture';
+import cutFragment from '../tests/fixtures/cut-fragment.json';
 import {verifyConvexFacePreservation} from '../tests/convex-face-fixture';
 import {ccdCandidateModes,ccdCandidateFixture} from '../tests/ccd-candidate-fixture';
 import ccdCandidateReference from '../tests/fixtures/ccd-candidate-reference.json';
@@ -360,6 +362,9 @@ try {
    if(!equalSnapshot(before,convexWorld.takeSnapshot()))throw Error('Browser convex export changed native state');
    convexWorld.removeCollider(collider,false);certifiedConvexExports++;
   }}finally{convexWorld.free();}
+  const fragment=cutFragmentFixture(R,cutFragment.model);
+  if(!fragment.final.sleeping || fragment.seconds>=20 || fragment.normals.maximumHorizontal!==0)throw Error('Browser captured convex fragment did not qualify');
+  const convexInteriorFragment={steps:fragment.steps,seconds:fragment.seconds,sleeping:fragment.final.sleeping,maximumHorizontalNormal:fragment.normals.maximumHorizontal};
   const ccdCandidateCases=[];
   for(const mode of ccdCandidateModes){
    const result=ccdCandidateFixture(R,mode);
@@ -368,6 +373,6 @@ try {
    if(hash!==ccdCandidateReference.cases.find(c=>c.mode===mode)?.hash)throw Error('Browser CCD candidate reference mismatch: '+mode);
    ccdCandidateCases.push({mode,hash,hookCalls:result.hookCalls,events:result.collisions.length});
   }
-  postMessage({ccdCandidateCases,certifiedConvexExports,solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,convexFacePreservation,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
+  postMessage({convexInteriorFragment,ccdCandidateCases,certifiedConvexExports,solverScheduleControls,batchedDrag,ownedInertiaMatrices:true,quadraticDrag,contactSoftnessControls,predictedSupportCases,predictiveReplays,wakeExactReplaySteps,splitMaximumMomentumError,splitExactReplaySteps,assemblyAcceptedSteps,rootOriginError,inertiaReconstructionError,boundedStepProfile,buildInfo,contactConvergenceControls:true,coupledCases,coupledMaximumEnergyError,coupledMaximumVelocityError,generalizedDampingControls:true,multibodyMomentumError,multibodyRigidVelocityError,simplexMinimumDistanceCm,kinematicPositionErrorM,kinematicRotationErrorRad,currentBodyPoseQuery:true,totalCcdMs,totalToiMs,maximumCcdSubsteps,fastCcdSubsteps,restoredOwners:true,contactPolicyControls:true,passed:true,convexFacePreservation,version:R.version(),original,solver,points,liveAnchors:true,clusteringControl:true,ccdMinimumControl:true});
  }finally{w.free();}
 }catch(error){postMessage({passed:false,error:String(error)});}

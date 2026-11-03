@@ -107,3 +107,33 @@ A new native support reduction identifies a concrete issue: selecting a face by
 normal alignment can omit the actual supporting vertex, producing zero analytic
 contacts for a penetrating anisotropic hull. The follow-up source preserves that
 vertex explicitly and must pass the five game regressions before release work.
+
+## Exact supporting vertex candidate (research.3)
+
+Parry 8377035; native SHA256 41035f4d7c6a119c185f42d1fd165477200d40d45231fb0eead10681f0c09cc5,
+3424813 bytes. The exact private archive passes the 53-file distribution audit.
+All 14 focused game controls now pass, including every failure from research.2.
+The complete installed-archive game suite passes 1127 tests / 7,713,428 assertions
+in 253.31 seconds with peak RSS 2938764 KiB. Physical limits remain unchanged.
+All twelve procedural stone mass checks pass. All twelve sleep by 20 seconds;
+only seven sleep by ten, so the original ten-second form gate is not claimed.
+
+The frozen native fragment now sleeps at 1920 Hz in 7.215104 s, versus published
+0.21.2's 9.365625 s. These are simulation settling times, not hardware FPS.
+GPU-disabled browser-worker qualification passes and reproduces the fragment's
+13853 steps. The new portable fixture is shared by package tests, browser worker
+and the standalone diagnostic command.
+
+The four convex-wall CCD cases retain the intentional research.2 motion changes;
+six other modes remain bit-identical to 0.21.2, and all ten repeat exactly under
+the new kernel. The original 0.21.1 reference is preserved here. With physical
+game regressions resolved, the current test reference now records the new kernel,
+not a claim of unchanged old motion. An additional authored-Float32-vertex guard
+checks wall-plane overlap against the configured normalized linear allowance.
+The separate endpoint audit records at most 0.000168 normalized units; it is not
+continuous swept-clearance proof. The package suite passes 315 tests before the
+additional captured-fragment test; all five focused WASM tests also pass.
+
+Release preparation will use 0.22.0 because convex-box motion and contact event
+counts change. Independent native build, stable metadata, exact-archive consumer
+and registry checks remain required before game adoption.
