@@ -20,5 +20,7 @@ The exact publish archive passes file/native identity audit and all ten extracte
 archive motion/event/hook scenarios. Archive SHA256:
 `de2be249bd7923e2150c50c7db4090578aaa43316eb04aa05fa1973966d779d4`.
 
-Publication is pending. The game remains on published 0.21.1 until registry
-verification and adoption checks complete.
+Published to npm. Registry metadata and downloaded archive bytes match the
+qualified archive exactly; see registry-receipt-5.json. The first four checks
+returned 404 while npm processed the accepted publication; it was not republished.
+Game 0.21.2 adoption checks are in progress.
