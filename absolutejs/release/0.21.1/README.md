@@ -29,3 +29,9 @@ Research recipe, control data and native provenance: `absolutejs/research/lazy-s
 
 Archive SHA256: `4ab9bc9a28477eb6b0aac5d7a8d77cdb1ca697d22dab5c81cd7a6b57064c35f8`.
 Native SHA256: `1d35b69d746eee6383401a68ec37d051391e0fa321096675b46c86072616e9d5`.
+
+Published game adoption is complete at hello-world commit `8fa9f952`:
+1,121 tests / 7,713,391 assertions / 356 files pass, with dependency checks and
+project typecheck passing. All 53 installed files match the independently built
+release, and the diagnostic run records unchanged source. Game evidence is in
+`docs/stone-pair-lazy-sweep-2026-11-03/published-*` and `installed-release.json`.
