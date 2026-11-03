@@ -5,8 +5,9 @@ Geometric centroids use Parry's identical volume/centroid first pass, avoiding t
 unused inertia calculation. Unsupported and compound-shape rejection before user
 hooks is preserved. CCD tolerances, solver settings and shape geometry are unchanged.
 
-All pre-publication checks below pass. npm publication and registry verification
-remain pending; this file is not a publication receipt.
+Published to npm. Registry metadata and the downloaded archive match the audited
+bytes exactly; see `registry-receipt-3.json`. The first two checks returned 404
+while npm processed the accepted publication; no duplicate publish was attempted.
 
 - 295 package tests pass, including stable build identity.
 - Research controls preserve every recorded pose/velocity and hook count over

@@ -1,0 +1,9 @@
+{
+  "package": "@absolutejs/rapier3d",
+  "version": "0.21.1",
+  "sourceCommit": "9fd807f28766743250e2c799929bb2d875ef2628",
+  "tarballSha256": "4ab9bc9a28477eb6b0aac5d7a8d77cdb1ca697d22dab5c81cd7a6b57064c35f8",
+  "npmExitCode": 0,
+  "npmMessage": "+ @absolutejs/rapier3d@0.21.1",
+  "registryVerificationPending": true
+}
