@@ -34,7 +34,9 @@ then remove it and the extracted consumer. Existing completed archives were
 removed per the user's storage-retention request; removed-archives.json records
 recovery identities. Source, tests, build scripts and compact receipts remain.
 
-Publication and main-game adoption are pending. Main game remains on 0.21.2.
+npm accepted publication of 0.22.0. The first registry check returned 404 while
+processing; do not republish. Registry verification and main-game adoption are
+pending. Main game remains on 0.21.2.
 
 The completed independent checkout and extracted consumer were removed after
 recording the passing audits, per the retention request. Recreate the independent
