@@ -1,0 +1,27 @@
+{
+  "package": "@absolutejs/rapier3d",
+  "version": "0.22.0",
+  "checkedAt": "2026-11-04T04:22:37.363Z",
+  "registryStatus": 200,
+  "dist": {
+    "shasum": "eb566597dc6519b302bbf0eda0708f8c0ca7eb78",
+    "tarball": "https://registry.npmjs.org/@absolutejs/rapier3d/-/rapier3d-0.22.0.tgz",
+    "fileCount": 57,
+    "integrity": "sha512-gS0av8+RLGIrMZfHltlR0C6FHCxxqq4QV8zLUQVlCvLqtYnSQ4AiSHvIq5MZh+6p28Xo3QJjrP8moSIwAQT5uA==",
+    "signatures": [
+      {
+        "sig": "MEYCIQDiiDYMyZRvWV3RqTEIDun0x3qlmgu/su66F3iweBBPwQIhAOmiGKQSJk/LFgyLUZhbRx2n5ffDWzEqPmJ0hoHlFFQp",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEUCIQDpWu93yRgOjXIKAgMbRZZLfEepwsvzVYNGuP/A7t6oFAIgVudk2cM9KZp19Q9spimqfC9Wa9kBIxApc72xcjWtB1o=",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 5413352
+  },
+  "archiveSha256": "bb2be3d0a6ac98ba1d6c4a8009e6f3be957197ce484a9cf04249c84294b45b77",
+  "archiveBytes": 1898289,
+  "registryMatchesAuditedArchive": true,
+  "downloadedArchiveVerified": true
+}

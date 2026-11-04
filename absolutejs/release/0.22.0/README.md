@@ -42,3 +42,8 @@ The completed independent checkout and extracted consumer were removed after
 recording the passing audits, per the retention request. Recreate the independent
 checkout from fb1a568 to reproduce the build. The single 0.22.0 publish archive
 remains pending npm authentication; no completed release copy was added to Git.
+
+Registry verification completed: receipt-2 returns 200, and downloaded archive
+SHA256, SHA1 and integrity match the qualified release exactly. The local publish
+archive was removed after this check. Retrieve it from the recorded npm URL if
+needed for game adoption; do not publish again. Game adoption remains pending.
