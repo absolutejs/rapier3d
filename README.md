@@ -761,3 +761,23 @@ above 512 external candidates. The cache ends with the sweep; it is never reused
 across steps, edits or snapshot restoration. Physics settings and collision shapes
 remain unchanged. Release evidence includes exact motion/hook/event references,
 query-order controls and alternating generated-terrain measurements.
+
+## Convex mass and finite-box support (0.22)
+
+Convex hull construction now merges adjacent faces only when their stored
+coordinates are coplanar under an exact orientation predicate. Nearly parallel
+faces no longer silently remove shallow ridges and change native mass. This
+preserves represented geometry; it does not make the entire solver exact.
+
+Contacts wholly inside one finite cuboid face use its analytical normal and
+include the convex hull's true supporting vertex. Stable feature identifiers
+preserve cached contacts. Hulls near edges, corners, opposite faces or unsupported
+query configurations retain the existing collision path. General halfspace
+queries are unchanged.
+
+This release intentionally changes some convex-box motion, hook counts and
+collision events. Recorded old and new trajectories, physical clearance checks,
+frozen fragment tests and the complete game suite qualify the change. Existing
+snapshots retain their stored shape geometry; reconstruct affected convex shapes
+to apply the hull-construction correction. No sleeping, mass or penetration
+acceptance limits were relaxed.

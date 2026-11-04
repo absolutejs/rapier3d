@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "auditSourceSha256": "f04688fb9d7e53aa1f36c3e1fe9fd2c3e96e3bd766bf899f7811dc910749c3f7",
+  "independentCheckout": "/home/alexkahn/alex/rapier-convex-face-independent",
+  "separateTargetDirectories": true,
+  "allDistributionFilesIdentical": true,
+  "distributionFiles": 53,
+  "packagedNativeSha256": "41035f4d7c6a119c185f42d1fd165477200d40d45231fb0eead10681f0c09cc5",
+  "packagedNativeBytes": 3424813,
+  "rawIntermediateIdentical": false,
+  "rawExecutableAndDataSectionsIdentical": true,
+  "rawDifferenceOnly": "__wasm_bindgen_unstable custom metadata",
+  "rawPrimarySha256": "1a4d3088ab662d4a206da1522f2b7599f9af4680881586d344c06267475830b7",
+  "rawIndependentSha256": "c6e912a06c81668651248dcfb51c8969544738829c3ab2790e226942ea5dbb77",
+  "primarySections": [
+    {
+      "kind": 1,
+      "name": null,
+      "bytes": 2766,
+      "sha256": "8c543a628be2ce20088709c2548206d2d4e747b2aeefd9d4f5745c6e77d21517"
+    },
+    {
+      "kind": 2,
+      "name": null,
+      "bytes": 2195,
+      "sha256": "95986e124a461baae8a8ac3061f7a69ca22234d423b11cc244a4aa82e1de4077"
+    },
+    {
+      "kind": 3,
+      "name": null,
+      "bytes": 5542,
+      "sha256": "ca4b41bc980d865be072da6fc6d8432466c545307f83fced978513992ceb81f1"
+    },
+    {
+      "kind": 4,
+      "name": null,
+      "bytes": 7,
+      "sha256": "4c31db31ca974342bd0c0c7cbd25be6f09205b60472d50b2a1ea6445158faf4a"
+    },
+    {
+      "kind": 5,
+      "name": null,
+      "bytes": 3,
+      "sha256": "e3c4e8c4be74ea7897d60436685f5014a88654a4f415f7e08b959984bf15f5d0"
+    },
+    {
+      "kind": 6,
+      "name": null,
+      "bytes": 41,
+      "sha256": "fb02d1327eb2a3200633e51b366466106a7e0ae15c1a49246bc64cf6465ce0cf"
+    },
+    {
+      "kind": 7,
+      "name": null,
+      "bytes": 195610,
+      "sha256": "4675afd2afbd9177e2128af824e88cbea27e1cbadbba905f680249102f61ce73"
+    },
+    {
+      "kind": 9,
+      "name": null,
+      "bytes": 2446,
+      "sha256": "9de7a5bb600e133f34a1ce1a881b208aeac8299a89623ac8f6523ff8a5e99153"
+    },
+    {
+      "kind": 10,
+      "name": null,
+      "bytes": 3573711,
+      "sha256": "222d7e04ed87916e1696e6a140af041e650cf4f55e810d14db4b7334bed87fe3"
+    },
+    {
+      "kind": 11,
+      "name": null,
+      "bytes": 100947,
+      "sha256": "c1cf009569799074ef08c8b87ca96600280dc27e8355efa2b30723a42b23e1cd"
+    },
+    {
+      "kind": 0,
+      "name": "__wasm_bindgen_unstable",
+      "bytes": 387580,
+      "sha256": "83dcb992cf6ebb2be238de95c7d665439f746caf0ef53252116e8de511c36dc9"
+    }
+  ],
+  "independentSections": [
+    {
+      "kind": 1,
+      "name": null,
+      "bytes": 2766,
+      "sha256": "8c543a628be2ce20088709c2548206d2d4e747b2aeefd9d4f5745c6e77d21517"
+    },
+    {
+      "kind": 2,
+      "name": null,
+      "bytes": 2195,
+      "sha256": "95986e124a461baae8a8ac3061f7a69ca22234d423b11cc244a4aa82e1de4077"
+    },
+    {
+      "kind": 3,
+      "name": null,
+      "bytes": 5542,
+      "sha256": "ca4b41bc980d865be072da6fc6d8432466c545307f83fced978513992ceb81f1"
+    },
+    {
+      "kind": 4,
+      "name": null,
+      "bytes": 7,
+      "sha256": "4c31db31ca974342bd0c0c7cbd25be6f09205b60472d50b2a1ea6445158faf4a"
+    },
+    {
+      "kind": 5,
+      "name": null,
+      "bytes": 3,
+      "sha256": "e3c4e8c4be74ea7897d60436685f5014a88654a4f415f7e08b959984bf15f5d0"
+    },
+    {
+      "kind": 6,
+      "name": null,
+      "bytes": 41,
+      "sha256": "fb02d1327eb2a3200633e51b366466106a7e0ae15c1a49246bc64cf6465ce0cf"
+    },
+    {
+      "kind": 7,
+      "name": null,
+      "bytes": 195610,
+      "sha256": "4675afd2afbd9177e2128af824e88cbea27e1cbadbba905f680249102f61ce73"
+    },
+    {
+      "kind": 9,
+      "name": null,
+      "bytes": 2446,
+      "sha256": "9de7a5bb600e133f34a1ce1a881b208aeac8299a89623ac8f6523ff8a5e99153"
+    },
+    {
+      "kind": 10,
+      "name": null,
+      "bytes": 3573711,
+      "sha256": "222d7e04ed87916e1696e6a140af041e650cf4f55e810d14db4b7334bed87fe3"
+    },
+    {
+      "kind": 11,
+      "name": null,
+      "bytes": 100947,
+      "sha256": "c1cf009569799074ef08c8b87ca96600280dc27e8355efa2b30723a42b23e1cd"
+    },
+    {
+      "kind": 0,
+      "name": "__wasm_bindgen_unstable",
+      "bytes": 387580,
+      "sha256": "31d686b8e3c9fb86afea199ab8751ced7def97574a764eea79b8dcdae38c8351"
+    }
+  ],
+  "sourceInputDifferences": [],
+  "primarySourceContentSha256": "b6872a7af46b367761d267ef915656aba8445c43714500bc279a72bb44df5579",
+  "independentSourceContentSha256": "b6872a7af46b367761d267ef915656aba8445c43714500bc279a72bb44df5579",
+  "toolchain": {
+    "bun": "1.4.4+absolute.1",
+    "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)",
+    "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+    "python3": "Python 3.12.3"
+  }
+}

@@ -1,0 +1,20 @@
+$ bash absolutejs/scripts/build-native.sh
+   Compiling unicode-ident v1.0.27
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling syn v3.0.9
+   Compiling autocfg v1.5.1
+   Compiling libm v0.2.16
+   Compiling num-traits v0.2.19
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+   Compiling serde_derive v1.0.229
+   Compiling wasm-bindgen-shared v0.2.129
+   Compiling syn v2.0.119
+   Compiling approx v0.5.1
+   Compiling rustversion v1.0.23
+   Compiling matrixmultiply v0.3.11
+   Compiling bytemuck v1.25.2
+   Compiling wide v1.7.1
+
+INTERRUPTED by machine shutdown; no qualification result.

@@ -1,0 +1,63 @@
+{
+  "recoveryCommit": "fb1a56877a4f142c385d8624d25ced38dc7bae09",
+  "files": [
+    {
+      "path": "absolutejs/release/0.20.0/absolutejs-rapier3d-0.20.0.tgz",
+      "bytes": 1864561,
+      "sha256": "af8e46e66626a8a2cf6b712f5e24f78ca9b577c5e192de9267f484240dca2c04"
+    },
+    {
+      "path": "absolutejs/release/0.21.0/absolutejs-rapier3d-0.21.0.tgz",
+      "bytes": 1890576,
+      "sha256": "e793af5f65c83c2085228cb73a65856a6228fda443770c91688abf1eae9e4de6"
+    },
+    {
+      "path": "absolutejs/release/0.21.1/absolutejs-rapier3d-0.21.1.tgz",
+      "bytes": 1890173,
+      "sha256": "4ab9bc9a28477eb6b0aac5d7a8d77cdb1ca697d22dab5c81cd7a6b57064c35f8"
+    },
+    {
+      "path": "absolutejs/release/0.21.2/absolutejs-rapier3d-0.21.2.tgz",
+      "bytes": 1893137,
+      "sha256": "de2be249bd7923e2150c50c7db4090578aaa43316eb04aa05fa1973966d779d4"
+    },
+    {
+      "path": "absolutejs/research/convex-export/private-0/absolutejs-rapier3d-0.21.0-research.0.tgz",
+      "bytes": 1880739,
+      "sha256": "b9c4a05571eee8de375bcc9a52d6d039f9829558b9ed8412cf1a6d1c27f395aa"
+    },
+    {
+      "path": "absolutejs/research/convex-export/private-1/absolutejs-rapier3d-0.21.0-research.1.tgz",
+      "bytes": 1890640,
+      "sha256": "7ac53ecf9956044926ef35e53bb12db718b296063d1ba638ff217a4b1bece445"
+    },
+    {
+      "path": "absolutejs/research/convex-face-preservation/absolutejs-rapier3d-0.21.3-research.0.tgz",
+      "bytes": 1894364,
+      "sha256": "b989d71a8f01ed1c44bb94cff677b5d5500f49f1b0050c27fea4ec53764506b8"
+    },
+    {
+      "path": "absolutejs/research/convex-face-preservation/absolutejs-rapier3d-0.21.3-research.2.tgz",
+      "bytes": 1895127,
+      "sha256": "bfa8577ac947bf0b036af0396cacd09c61e801217726725fd5c6038bd02e93c7"
+    },
+    {
+      "path": "absolutejs/research/quadratic-drag-2026-10-31/absolutejs-rapier3d-0.19.0.tgz",
+      "bytes": 1858259,
+      "sha256": "95b648b35240c7781068edb83f9d744d33ff362d0b290da88adbfb14a64cfef4"
+    },
+    {
+      "path": "absolutejs/research/solver-schedule/initial-private-archive/absolutejs-rapier3d-0.20.0-research.0.tgz",
+      "bytes": 1860587,
+      "sha256": "78d0eb2efd2c4d4975bfb6482eb02912b1a7201d7e5f2a4a0aa5ca2f2ac96ecc"
+    },
+    {
+      "path": "absolutejs/research/solver-schedule/packet-private-archive/absolutejs-rapier3d-0.20.0-research.1.tgz",
+      "bytes": 1863368,
+      "sha256": "8c28a6f2d2dda3f12aefcbf6da2c81d421aa37e6f333a0b7c37ee248a87c6c61"
+    }
+  ],
+  "removedBytes": 20681531,
+  "retainedResearchArchive": "absolutejs/research/convex-face-preservation/absolutejs-rapier3d-0.21.3-research.3.tgz",
+  "reason": "Completed releases and rejected candidates are recoverable from registry or recorded Git commit; active qualification archive retained until adoption."
+}
